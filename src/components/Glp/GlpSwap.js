@@ -255,6 +255,7 @@ export default function GlpSwap(props) {
 
   const swapAmount = parseValue(swapValue, swapToken && swapToken.decimals);
   const glpAmount = parseValue(glpValue, GLP_DECIMALS);
+  console.log("meo", glpAmount);
 
   const needApproval =
     isBuying && swapTokenAddress !== AddressZero && tokenAllowance && swapAmount && swapAmount.gt(tokenAllowance);
@@ -270,6 +271,7 @@ export default function GlpSwap(props) {
   }
 
   const onSwapValueChange = (e) => {
+    console.log("here ne");
     setAnchorOnSwapAmount(true);
     setSwapValue(e.target.value);
   };
@@ -496,6 +498,7 @@ export default function GlpSwap(props) {
       return true;
     }
     const [error, modal] = getError();
+
     if (error && !modal) {
       return false;
     }

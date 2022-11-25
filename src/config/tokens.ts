@@ -582,7 +582,6 @@ export function isValidToken(chainId: number, address: string) {
 }
 
 export function getToken(chainId: number, address: string) {
-  console.log("meo ne", TOKENS_MAP);
   if (!TOKENS_MAP[chainId]) {
     throw new Error(`Incorrect chainId ${chainId}`);
   }
