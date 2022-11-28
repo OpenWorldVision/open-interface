@@ -198,8 +198,6 @@ export default function GlpSwap(props) {
     }
   );
 
-  console.log("la v", glpBalance);
-
   const glpVesterAddress = getContract(chainId, "GlpVester");
   const { data: reservedAmount } = useSWR(
     [`GlpSwap:reservedAmount:${active}`, chainId, glpVesterAddress, "pairAmounts", account || PLACEHOLDER_ACCOUNT],
@@ -257,7 +255,6 @@ export default function GlpSwap(props) {
 
   const swapAmount = parseValue(swapValue, swapToken && swapToken.decimals);
   const glpAmount = parseValue(glpValue, GLP_DECIMALS);
-  console.log("meo", glpAmount);
 
   const needApproval =
     isBuying && swapTokenAddress !== AddressZero && tokenAllowance && swapAmount && swapAmount.gt(tokenAllowance);
@@ -273,7 +270,6 @@ export default function GlpSwap(props) {
   }
 
   const onSwapValueChange = (e) => {
-    console.log("here ne");
     setAnchorOnSwapAmount(true);
     setSwapValue(e.target.value);
   };
@@ -649,22 +645,17 @@ export default function GlpSwap(props) {
   let payBalance = "$0.00";
   let receiveBalance = "$0.00";
   if (isBuying) {
-    console.log("1");
     if (swapUsdMin) {
-      console.log("2");
       payBalance = `$${formatAmount(swapUsdMin, USD_DECIMALS, 2, true)}`;
     }
     if (glpUsdMax) {
-      console.log("3");
       receiveBalance = `$${formatAmount(glpUsdMax, USD_DECIMALS, 2, true)}`;
     }
   } else {
     if (glpUsdMax) {
-      console.log("4");
       payBalance = `$${formatAmount(glpUsdMax, USD_DECIMALS, 2, true)}`;
     }
     if (swapUsdMin) {
-      console.log("5");
       receiveBalance = `$${formatAmount(swapUsdMin, USD_DECIMALS, 2, true)}`;
     }
   }

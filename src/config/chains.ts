@@ -63,6 +63,10 @@ const constants = {
     defaultFlagOrdersEnabled: true,
     positionReaderPropsLength: 8,
     v2: false,
+    SWAP_ORDER_EXECUTION_GAS_FEE: parseEther("0.0003"),
+    INCREASE_ORDER_EXECUTION_GAS_FEE: parseEther("0.0003"),
+    // contract requires that execution fee be strictly greater than instead of gte
+    DECREASE_ORDER_EXECUTION_GAS_FEE: parseEther("0.000300001"),
   },
 
   [ARBITRUM_TESTNET]: {
@@ -71,7 +75,6 @@ const constants = {
     defaultFlagOrdersEnabled: false,
     positionReaderPropsLength: 9,
     v2: true,
-
     SWAP_ORDER_EXECUTION_GAS_FEE: parseEther("0.0003"),
     INCREASE_ORDER_EXECUTION_GAS_FEE: parseEther("0.0003"),
     // contract requires that execution fee be strictly greater than instead of gte
