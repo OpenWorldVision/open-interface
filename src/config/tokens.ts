@@ -82,7 +82,7 @@ export const TOKENS: { [chainId: number]: Token[] } = {
       name: "Bitcoin (BTCB)",
       symbol: "BTC",
       decimals: 8,
-      address: "0xb19C12715134bee7c4b1Ca593ee9E430dABe7b56",
+      address: "0x8530E5595C07F4075d00a25515E416487a07D6d3",
       imageUrl: "https://assets.coingecko.com/coins/images/26115/thumb/btcb.png?1655921693",
     },
     {
@@ -586,6 +586,7 @@ export function getToken(chainId: number, address: string) {
     throw new Error(`Incorrect chainId ${chainId}`);
   }
   if (!TOKENS_MAP[chainId][address]) {
+    console.log("222", chainId);
     throw new Error(`Incorrect address "${address}" for chainId ${chainId}`);
   }
   return TOKENS_MAP[chainId][address];

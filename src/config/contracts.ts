@@ -123,7 +123,7 @@ const CONTRACTS = {
     Timelock: "0x8D0De55e339b8CC62eC98A05aA46b6F352dE4054",
     FastPriceEvents: "0x87B4b2bc90c12A5Da81F5AFf546d63537F2cf313",
     FastPriceFeed: "0xdf58c13991f687c955ac05B536c3e3d8050a4278",
-    VaultPriceFeed: "0x534E2851688a5aDbE5C021F7C8B3EB89dE6A6286",
+    VaultPriceFeed: "0xB6DF4EA5eDb0e34D19d88E242f3669Bc04fca0EC",
   },
   [ARBITRUM_TESTNET]: {
     // arbitrum testnet
