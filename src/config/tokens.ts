@@ -601,6 +601,10 @@ export function getTokenBySymbol(chainId: number, symbol: string) {
 }
 
 export function getWhitelistedTokens(chainId: number) {
+  // Only test BTC in testnet
+  if (chainId === 97) {
+    return TOKENS[chainId].filter((token) => token.symbol === "BTC");
+  }
   return TOKENS[chainId].filter((token) => token.symbol !== "USDG");
 }
 
