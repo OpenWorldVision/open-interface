@@ -81,7 +81,7 @@ export const TOKENS: { [chainId: number]: Token[] } = {
     {
       name: "Bitcoin (BTCB)",
       symbol: "BTC",
-      decimals: 8,
+      decimals: 18,
       address: "0x8530E5595C07F4075d00a25515E416487a07D6d3",
       imageUrl: "https://assets.coingecko.com/coins/images/26115/thumb/btcb.png?1655921693",
     },
