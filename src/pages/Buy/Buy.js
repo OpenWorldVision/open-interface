@@ -9,7 +9,7 @@ import { getPageTitle } from "lib/legacy";
 
 export default function BuyGMXGLP() {
   return (
-    <SEO title={getPageTitle("Buy GLP or GMX")}>
+    <SEO title={getPageTitle("Buy OPL or OPEN")}>
       <div className="BuyGMXGLP page-layout">
         <div className="BuyGMXGLP-container default-container">
           <div className="section-title-block">
@@ -18,7 +18,7 @@ export default function BuyGMXGLP() {
             </div>
             <div className="section-title-content">
               <div className="Page-title">
-                <Trans>Buy GMX or GLP</Trans>
+                <Trans>Buy OPEN or OPL</Trans>
               </div>
             </div>
           </div>

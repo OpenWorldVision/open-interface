@@ -62,11 +62,11 @@ export default function TokenCard({ showRedirectModal, redirectPopupTimestamp })
     <div className="Home-token-card-options">
       <div className="Home-token-card-option">
         <div className="Home-token-card-option-icon">
-          <img src={gmxBigIcon} alt="gmxBigIcon" /> GMX
+          <img src={gmxBigIcon} alt="gmxBigIcon" /> OPEN
         </div>
         <div className="Home-token-card-option-info">
           <div className="Home-token-card-option-title">
-            <Trans>GMX is the utility and governance token. Accrues 30% of the platform's generated fees.</Trans>
+            <Trans>OPEN is the utility and governance token. Accrues 30% of the platform's generated fees.</Trans>
           </div>
           <div className="Home-token-card-option-apr">
             <Trans>Arbitrum APR:</Trans> <APRLabel chainId={ARBITRUM} label="gmxAprTotal" />,{" "}
@@ -89,11 +89,11 @@ export default function TokenCard({ showRedirectModal, redirectPopupTimestamp })
       </div>
       <div className="Home-token-card-option">
         <div className="Home-token-card-option-icon">
-          <img src={glpBigIcon} alt="glpBigIcon" /> GLP
+          <img src={glpBigIcon} alt="glpBigIcon" /> OPL
         </div>
         <div className="Home-token-card-option-info">
           <div className="Home-token-card-option-title">
-            <Trans>GLP is the liquidity provider token. Accrues 70% of the platform's generated fees.</Trans>
+            <Trans>OPL is the liquidity provider token. Accrues 70% of the platform's generated fees.</Trans>
           </div>
           <div className="Home-token-card-option-apr">
             <Trans>Arbitrum APR:</Trans> <APRLabel chainId={ARBITRUM} label="glpAprTotal" key="ARBITRUM" />,{" "}

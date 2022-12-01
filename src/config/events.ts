@@ -37,7 +37,7 @@ export const homeEventsData: EventData[] = [
   //   isActive: true,
   //   validTill: "10 Jul 2022, 12:00",
   //   bodyText:
-  //     "Updates have been applied to the GMX frontend to inform users of the separation between gmx.io and app.gmx.io",
+  //     "Updates have been applied to the OPEN frontend to inform users of the separation between gmx.io and app.gmx.io",
   //   buttons: [
   //     {
   //       text: "Read More",
@@ -130,7 +130,7 @@ export const appEventsData: EventData[] = [
   //   title: "Referral Program Launch",
   //   isActive: true,
   //   validTill: "4 May 2022, 12:00",
-  //   bodyText: "The GMX referral program is now live! Get fee discounts and refer traders to earn rewards.",
+  //   bodyText: "The OPEN referral program is now live! Get fee discounts and refer traders to earn rewards.",
   //   buttons: [
   //     {
   //       text: "Read More",
@@ -144,11 +144,11 @@ export const appEventsData: EventData[] = [
   // },
   // {
   //   id: "gmx-arbitrum-odyssey",
-  //   title: "GMX Arbitrum Odyssey",
+  //   title: "OPEN Arbitrum Odyssey",
   //   isActive: true,
   //   validTill: "3 Jul 2022, 12:00",
   //   bodyText:
-  //     "The GMX Arbitrum Odyssey is taking place this week, all participants will receive prizes. Read on to find out more.",
+  //     "The OPEN Arbitrum Odyssey is taking place this week, all participants will receive prizes. Read on to find out more.",
   //   buttons: [
   //     {
   //       text: "Read More",
@@ -173,10 +173,10 @@ export const appEventsData: EventData[] = [
   // },
   // {
   //   id: "gmx-arbitrum-odyssey-paused",
-  //   title: "GMX Arbitrum Odyssey Paused",
+  //   title: "OPEN Arbitrum Odyssey Paused",
   //   isActive: true,
   //   validTill: "3 Jul 2022, 12:00",
-  //   bodyText: "The GMX Arbitrum Odyssey has been paused. Please read the linked post for more information.",
+  //   bodyText: "The OPEN Arbitrum Odyssey has been paused. Please read the linked post for more information.",
   //   buttons: [
   //     {
   //       text: "Read More",
@@ -191,7 +191,7 @@ export const appEventsData: EventData[] = [
   //   isActive: true,
   //   validTill: "6 Jul 2022, 12:00",
   //   bodyText:
-  //     "On 6 Jul 2022, updates will be applied to the GMX frontend to inform users of the separation between gmx.io and app.gmx.io",
+  //     "On 6 Jul 2022, updates will be applied to the OPEN frontend to inform users of the separation between gmx.io and app.gmx.io",
   //   buttons: [
   //     {
   //       text: "Read More",

@@ -13,7 +13,7 @@ export const ARBITRUM = 42161;
 export const DEFAULT_CHAIN_ID = TESTNET;
 export const CHAIN_ID = DEFAULT_CHAIN_ID;
 
-export const SUPPORTED_CHAIN_IDS = [ARBITRUM, AVALANCHE];
+export const SUPPORTED_CHAIN_IDS = [TESTNET];
 
 if (isDevelopment()) {
   SUPPORTED_CHAIN_IDS.push(ARBITRUM_TESTNET);
