@@ -1217,6 +1217,18 @@ export function getProcessedData(
   gmxPrice,
   gmxSupply
 ) {
+  console.log([
+    balanceData,
+    supplyData,
+    depositBalanceData,
+    stakingData,
+    vestingData,
+    aum,
+    nativeTokenPrice,
+    stakedGmxSupply,
+    gmxPrice,
+    gmxSupply,
+  ]);
   if (
     !balanceData ||
     !supplyData ||
@@ -1298,6 +1310,7 @@ export function getProcessedData(
   data.totalGmxRewardsUsd = data.stakedGmxTrackerRewardsUsd.add(data.feeGmxTrackerRewardsUsd);
 
   data.glpSupply = supplyData.glp;
+  console.log("supply: ", data.glpSupply, aum);
   data.glpPrice =
     data.glpSupply && data.glpSupply.gt(0)
       ? aum.mul(expandDecimals(1, GLP_DECIMALS)).div(data.glpSupply)

@@ -118,9 +118,9 @@ const CONTRACTS = {
 
     tokenManager: "0x15f54d599ADF24b809de9B9C917061Ce0cB7617f",
     Timelock: "0x8D0De55e339b8CC62eC98A05aA46b6F352dE4054",
-    FastPriceEvents: "0x87B4b2bc90c12A5Da81F5AFf546d63537F2cf313",
-    FastPriceFeed: "0xdf58c13991f687c955ac05B536c3e3d8050a4278",
-    VaultPriceFeed: "0xB6DF4EA5eDb0e34D19d88E242f3669Bc04fca0EC",
+    FastPriceEvents: "0x8bcAe6F141fABe19B28b05719B2f95E4657f4f4A",
+    FastPriceFeed: "0xa5fEf71fC8a2a4f6C08e8458FD507FdeC4B995DA",
+    VaultPriceFeed: "0xa53b6c3a0745D71D99c5C3eE1F9975E6d1199040",
   },
   [ARBITRUM_TESTNET]: {
     // arbitrum testnet
