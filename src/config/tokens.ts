@@ -85,13 +85,13 @@ export const TOKENS: { [chainId: number]: Token[] } = {
       address: "0x8530E5595C07F4075d00a25515E416487a07D6d3",
       imageUrl: "https://assets.coingecko.com/coins/images/26115/thumb/btcb.png?1655921693",
     },
-    // {
-    //   name: "Ethereum",
-    //   symbol: "ETH",
-    //   decimals: 18,
-    //   address: "0x1958f7C067226c7C8Ac310Dc994D0cebAbfb2B02",
-    //   imageUrl: "https://assets.coingecko.com/coins/images/279/small/ethereum.png?1595348880",
-    // },
+    {
+      name: "Ethereum",
+      symbol: "ETH",
+      decimals: 18,
+      address: "0x1958f7C067226c7C8Ac310Dc994D0cebAbfb2B02",
+      imageUrl: "https://assets.coingecko.com/coins/images/279/small/ethereum.png?1595348880",
+    },
     {
       name: "Binance Coin",
       symbol: "BNB",
