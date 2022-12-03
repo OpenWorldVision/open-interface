@@ -89,7 +89,7 @@ export const TOKENS: { [chainId: number]: Token[] } = {
       name: "Ethereum",
       symbol: "ETH",
       decimals: 18,
-      address: "0x1958f7C067226c7C8Ac310Dc994D0cebAbfb2B02",
+      address: "0x612777Eea37a44F7a95E3B101C39e1E2695fa6C2",
       imageUrl: "https://assets.coingecko.com/coins/images/279/small/ethereum.png?1595348880",
     },
     {
@@ -117,14 +117,14 @@ export const TOKENS: { [chainId: number]: Token[] } = {
     //   isUsdg: true,
     //   imageUrl: "https://assets.coingecko.com/coins/images/15886/small/usdg-02.png",
     // },
-    {
-      name: "Binance USD",
-      symbol: "BUSD",
-      decimals: 18,
-      address: "0x3F223C4E5ac67099CB695834b20cCd5E5D5AA9Ef",
-      isStable: true,
-      imageUrl: "https://assets.coingecko.com/coins/images/9576/small/BUSD.png",
-    },
+    // {
+    //   name: "Binance USD",
+    //   symbol: "BUSD",
+    //   decimals: 18,
+    //   address: "0x3F223C4E5ac67099CB695834b20cCd5E5D5AA9Ef",
+    //   isStable: true,
+    //   imageUrl: "https://assets.coingecko.com/coins/images/9576/small/BUSD.png",
+    // },
   ],
   [ARBITRUM_TESTNET]: [
     {
