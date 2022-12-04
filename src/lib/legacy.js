@@ -1217,18 +1217,6 @@ export function getProcessedData(
   gmxPrice,
   gmxSupply
 ) {
-  console.log([
-    balanceData,
-    supplyData,
-    depositBalanceData,
-    stakingData,
-    vestingData,
-    aum,
-    nativeTokenPrice,
-    stakedGmxSupply,
-    gmxPrice,
-    gmxSupply,
-  ]);
   if (
     !balanceData ||
     !supplyData ||
