@@ -109,22 +109,22 @@ export const TOKENS: { [chainId: number]: Token[] } = {
       baseSymbol: "BNB",
       imageUrl: "https://assets.coingecko.com/coins/images/825/small/binance-coin-logo.png",
     },
-    // {
-    //   name: "USD Gambit",
-    //   symbol: "USDG",
-    //   decimals: 18,
-    //   address: getContract(TESTNET, "USDG"),
-    //   isUsdg: true,
-    //   imageUrl: "https://assets.coingecko.com/coins/images/15886/small/usdg-02.png",
-    // },
-    // {
-    //   name: "Binance USD",
-    //   symbol: "BUSD",
-    //   decimals: 18,
-    //   address: "0x3F223C4E5ac67099CB695834b20cCd5E5D5AA9Ef",
-    //   isStable: true,
-    //   imageUrl: "https://assets.coingecko.com/coins/images/9576/small/BUSD.png",
-    // },
+    {
+      name: "USD Gambit",
+      symbol: "USDG",
+      decimals: 18,
+      address: getContract(TESTNET, "USDG"),
+      isUsdg: true,
+      imageUrl: "https://assets.coingecko.com/coins/images/15886/small/usdg-02.png",
+    },
+    {
+      name: "Binance USD",
+      symbol: "BUSD",
+      decimals: 18,
+      address: "0x3F223C4E5ac67099CB695834b20cCd5E5D5AA9Ef",
+      isStable: true,
+      imageUrl: "https://assets.coingecko.com/coins/images/9576/small/BUSD.png",
+    },
   ],
   [ARBITRUM_TESTNET]: [
     {
@@ -603,7 +603,7 @@ export function getTokenBySymbol(chainId: number, symbol: string) {
 export function getWhitelistedTokens(chainId: number) {
   // Only test BTC in testnet
   if (chainId === 97) {
-    return TOKENS[chainId];
+    return TOKENS[chainId].filter((token) => token.symbol !== "USDG" && token.symbol !== "BUSD");
   }
   return TOKENS[chainId].filter((token) => token.symbol !== "USDG");
 }

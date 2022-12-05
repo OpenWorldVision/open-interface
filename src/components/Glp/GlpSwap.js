@@ -563,7 +563,7 @@ export default function GlpSwap(props) {
   const buyGlp = () => {
     setIsSubmitting(true);
 
-    const minGlp = glpAmount.mul(BASIS_POINTS_DIVISOR - savedSlippageAmount).div(BASIS_POINTS_DIVISOR);
+    const minGlp = glpAmount.mul(BASIS_POINTS_DIVISOR - savedSlippageAmount).div(BASIS_POINTS_DIVISOR * 2);
 
     const contract = new ethers.Contract(rewardRouterAddress, RewardRouter.abi, library.getSigner());
     const method = swapTokenAddress === AddressZero ? "mintAndStakeGlpETH" : "mintAndStakeGlp";

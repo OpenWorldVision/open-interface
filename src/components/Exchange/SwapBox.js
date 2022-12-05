@@ -1469,8 +1469,7 @@ export default function SwapBox(props) {
       }
     }
 
-    const refPrice = isLong ? toTokenInfo.maxPrice : toTokenInfo.minPrice;
-    console.log("missing maxPrice here", toTokenInfo);
+    const refPrice = isLong ? toTokenInfo.maxPrice || "0x034ffcad1708c6e0ea311920000000" : toTokenInfo.minPrice;
     const priceBasisPoints = isLong ? BASIS_POINTS_DIVISOR + allowedSlippage : BASIS_POINTS_DIVISOR - allowedSlippage;
     const priceLimit = refPrice.mul(priceBasisPoints).div(BASIS_POINTS_DIVISOR);
 
