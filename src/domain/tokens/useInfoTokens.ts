@@ -45,7 +45,6 @@ export function useInfoTokens(
       ]),
     }
   );
-  console.log("ne", vaultTokenInfo);
 
   const indexPricesUrl = getServerUrl(chainId, "/prices");
 
@@ -55,8 +54,6 @@ export function useInfoTokens(
     refreshInterval: 500,
     refreshWhenHidden: true,
   });
-
-  console.log("j3h3hj", indexPrices);
 
   return {
     infoTokens: getInfoTokens(
