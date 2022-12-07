@@ -155,9 +155,9 @@
 .App-box-highlight,
 .App-box-solid {
   position: relative;
-  border: 1px solid #1e2136;
-  border-radius: 0.4rem;
-  background: #16182e;
+  // border: 1px solid #1e2136;
+  // border-radius: 0.4rem;
+  background: #DFE5E5;
   font-size: 1.5rem;
 }
 
@@ -625,23 +625,23 @@ button.App-connect-wallet:hover {
 
 .App-header .a:hover,
 .App-header a:hover {
-  opacity: 1;
-  color: #eee;
+  background-color: #eee;
+  color: #472F50;
 }
 
 .App-header-container-left .a,
 .App-header-container-left a {
   padding: 1.8rem 1.7rem;
   display: block;
-  color: #a0a3c4;
+  color: #472F5099;
   font-size: 1.5rem;
   line-height: 1.8rem;
-  font-weight: normal;
+  font-weight: 700;
 }
 
 .App-header-container-left .a.active,
 .App-header-container-left a.active {
-  color: white;
+  color: #472F50 ;
 }
 
 .Toastify {
@@ -805,8 +805,8 @@ a.App-cta.transparent,
 button.App-cta.transparent {
   box-shadow: none;
   background: none;
-  color: rgba(255, 255, 255, 0.7);
   opacity: 1;
+  border-radius: 18px;
 }
 
 a.App-cta.transparent:hover,
@@ -1076,7 +1076,7 @@ button.App-button {
 }
 
 .positive {
-  color: #0ecc83;
+  color: #01A789;
 }
 
 .positive-background {
@@ -1084,7 +1084,7 @@ button.App-button {
 }
 
 .negative {
-  color: #fa3c58;
+  color: #E8636B;
 }
 
 .negative-background {
@@ -1101,28 +1101,47 @@ button.App-button {
 }
 
 .App-slider .rc-slider-rail {
-  background: linear-gradient(90deg, rgba(30, 34, 61, 1) 0%, rgba(40, 45, 74, 1) 100%);
+  background: rgba(71, 47, 80, 0.5);
 }
 
 .App-slider .rc-slider-track {
-  background: linear-gradient(90deg, rgba(46, 61, 205, 1) 0%, rgba(45, 66, 252, 1) 100%);
+  background: #472F50;
 }
 
 .App-slider .rc-slider-dot {
-  border: none;
-  border-radius: 1px;
-  width: 2px;
-  margin-left: -1px;
-  background: rgba(40, 45, 74, 1);
+  box-sizing: border-box;
+
+  width: 10px;
+  height: 10px;
+
+  background: #DFE5E5;
+  border: 2px solid #938A9B;
+  border-radius: 3px;
+  transform: rotate(45deg);
 }
 
 .App-slider .rc-slider-dot-active {
-  background: #3d51ff;
+  box-sizing: border-box;
+
+  width: 10px;
+  height: 10px;
+
+  background: #472F50;
+  border: 2px solid #DFE5E5;
+  border-radius: 3px;
+  transform: rotate(45deg);
 }
 
 .App-slider .rc-slider-handle {
-  background: #303652;
-  border: solid 2px rgba(45, 66, 252, 1);
+  box-sizing: border-box;
+
+  width: 16px;
+  height: 16px;
+
+  background: #472F50;
+  border: 2px solid #DFE5E5;
+  border-radius: 3px;
+  transform: rotate(45deg) translateX(-50%) !important;
 }
 
 .App-slider .rc-slider-handle:active {
@@ -1131,8 +1150,7 @@ button.App-button {
 
 .App-slider .rc-slider-mark-text,
 .App-slider .rc-slider-mark-text-active {
-  color: white;
-  opacity: 0.5;
+  color: #717171;
 }
 
 .App-slider .rc-slider-mark-text:hover,

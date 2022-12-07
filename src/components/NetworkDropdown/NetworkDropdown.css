@@ -2,11 +2,12 @@
   position: relative;
   margin-left: 2.4rem;
   border: 1px solid var(--dark-blue-border);
-  border-radius: var(--border-radius-sm);
   height: 3.6rem;
   display: inline-flex;
   align-items: center;
-  color: white;
+  color: #472F50;
+  background: #DFE5E5;
+  border-radius: 18px;
 }
 
 .App-header-language {
