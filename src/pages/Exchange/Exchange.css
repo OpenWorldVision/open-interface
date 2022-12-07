@@ -39,6 +39,7 @@
 }
 .Exchange-should-show-position-lines .active {
   opacity: 1;
+
 }
 .TradeHistory-row.App-box{
   color:#717171;
@@ -432,6 +433,8 @@
 
 .PositionEditor .Tab {
   margin-bottom: 1.05rem;
+  border-radius: 18px;
+
 }
 
 .PositionEditor-token-symbol {
@@ -489,18 +492,18 @@ button.Exchange-list-action {
   border-radius: 3px;
   background: none;
   border: none;
-  color: rgba(255, 255, 255, 0.7);
+  color: #717171;
   margin: 0 0.3rem;
 }
 
 button.Exchange-list-action:hover {
-  color: rgba(255, 255, 255, 1);
+  /* color: rgba(255, 255, 255, 1); */
 }
 
 table.Exchange-list {
   border-collapse: collapse;
   border-radius: 0px 0px 18px 18px;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 table.Exchange-list th,
@@ -511,6 +514,7 @@ table.Exchange-list td {
   padding-left: 1.5rem;
   color: #717171;
 }
+
 table.Exchange-list.Orders th,
 table.Exchange-list.Orders td {
   padding-top: 1.4rem;
@@ -526,8 +530,7 @@ table.Exchange-list tr:last-child {
 }
 
 table.Exchange-list tr:hover {
-  background: #472F50;
-  opacity: 0.5;
+  background-color: rgba(71,47,80, 0.1);
   border-radius: 0px 0px 18px 18px;
 }
 

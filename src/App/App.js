@@ -97,6 +97,10 @@ import {
 } from "lib/wallets";
 import { useChainId } from "lib/chains";
 import ExternalLink from "components/ExternalLink/ExternalLink";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { faMoon, faRocket } from "@fortawesome/free-solid-svg-icons";
+
+library.add(faMoon, faRocket);
 
 if ("ethereum" in window) {
   window.ethereum.autoRefreshOnNetworkChange = false;

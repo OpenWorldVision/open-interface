@@ -375,7 +375,7 @@ button.App-connect-wallet {
   padding: 0.9rem 2.4rem;
   height: 3.6rem;
   color: #17182c;
-  background: #03cfcd 0% 0% no-repeat padding-box;
+  background: red;
   border-radius: 0.4rem;
 }
 
@@ -384,7 +384,10 @@ button.App-connect-wallet:hover {
 }
 
 .App-header-trade-link {
-  margin-right: 2.4rem;
+  margin-right: 1.25rem;
+}
+.App-header-trade-link .default-btn {
+  border-radius: 18px;
 }
 
 .App-header-user-address {
@@ -614,6 +617,9 @@ button.App-connect-wallet:hover {
   vertical-align: middle;
   display: inline-block;
   cursor: pointer;
+  font-weight: 700;
+
+color: #F1F2F2;
 }
 
 .App-header .a.active,
@@ -679,6 +685,10 @@ button.App-connect-wallet:hover {
 .App-icon {
   vertical-align: middle;
   margin-bottom: 0.465rem;
+}
+
+.Exchange-settings-row .Checkbox .Checkbox-icon-wrapper .App-icon.Checkbox-icon.inactive{
+ color: #717171;
 }
 
 .App-background-side-1 {
@@ -787,8 +797,7 @@ a.App-cta,
 button.App-cta {
   color: white;
   text-decoration: none;
-  background: linear-gradient(90deg, rgba(71, 47, 80, 1) 0%, rgb(69, 44, 79) 100%);
-  /* box-shadow: 0 0 0.4rem 0.6rem rgba(45,66,252,0.15); */
+  background: linear-gradient(90deg, rgb(63, 42, 71) 0%, rgb(55, 36, 63) 100%);
 }
 
 a.App-cta:hover,
@@ -895,10 +904,11 @@ button.App-button-option:disabled {
 }
 
 .App-slippage-tolerance-input {
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid #717171;
   margin-top: 0.8rem;
   margin-bottom: 0.8rem;
   width: 100%;
+  color: #717171;
 }
 
 .App-slippage-tolerance-input-percent {
@@ -1134,14 +1144,12 @@ button.App-button {
 
 .App-slider .rc-slider-handle {
   box-sizing: border-box;
-
   width: 16px;
   height: 16px;
-
   background: #472F50;
   border: 2px solid #DFE5E5;
   border-radius: 3px;
-  transform: rotate(45deg) translateX(-50%) !important;
+  transform: rotate(45deg) translateX(-50%) translateY(40%) !important;
 }
 
 .App-slider .rc-slider-handle:active {
