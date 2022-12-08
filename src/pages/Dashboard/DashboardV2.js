@@ -501,7 +501,7 @@ export default function DashboardV2() {
     if (active && payload && payload.length) {
       return (
         <div className="stats-label">
-          <div className="stats-label-color" style={{ backgroundColor: payload[0].color }}></div>
+          <div className="stats-label-color" style={{ backgroundColor: payload[0].color || "#472F50" }}></div>
           {payload[0].value}% {payload[0].name}
         </div>
       );
@@ -844,7 +844,7 @@ export default function DashboardV2() {
                           />
                         ))}
                       </Pie>
-                      <text x={"50%"} y={"50%"} fill="white" textAnchor="middle" dominantBaseline="middle">
+                      <text x={"50%"} y={"50%"} fill="#472F50" textAnchor="middle" dominantBaseline="middle">
                         <Trans>Distribution</Trans>
                       </text>
                       <Tooltip content={<CustomTooltip />} />
@@ -941,7 +941,7 @@ export default function DashboardV2() {
                           />
                         ))}
                       </Pie>
-                      <text x={"50%"} y={"50%"} fill="white" textAnchor="middle" dominantBaseline="middle">
+                      <text x={"50%"} y={"50%"} fill="#472F50" textAnchor="middle" dominantBaseline="middle">
                         GLP Pool
                       </text>
                       <Tooltip content={<CustomTooltip />} />

@@ -69,7 +69,10 @@ input {
 }
 
 a {
-  color: white;
+  color: #717171;
+}
+a:hover {
+  color: #472F50;
 }
 
 .Card-title {
@@ -205,7 +208,7 @@ a.plain {
   border-radius: 4px;
   font-size: 1.4rem;
   line-height: 2rem;
-  font-weight: normal;
+  font-weight: 700;
   letter-spacing: 0px;
   color: #ffffff !important;
   padding-left: 1.6rem;
@@ -221,6 +224,7 @@ a.plain {
   cursor: pointer;
   border: none;
   appearance: none;
+  border-radius: 18px;
 }
 
 .default-btn:hover {
