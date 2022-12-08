@@ -62,11 +62,11 @@ export default function TokenCard({ showRedirectModal, redirectPopupTimestamp })
     <div className="Home-token-card-options">
       <div className="Home-token-card-option">
         <div className="Home-token-card-option-icon">
-          <img src={glpBigIcon} alt="glpBigIcon" /> GLP
+          <img src={glpBigIcon} alt="glpBigIcon" /> OLP
         </div>
         <div className="Home-token-card-option-info">
           <div className="Home-token-card-option-title">
-            <Trans>GLP is the liquidity provider token. Accrues 70% of the platform's generated fees.</Trans>
+            <Trans>OLP is the liquidity provider token. Accrues 70% of the platform's generated fees.</Trans>
           </div>
 
           <div className="Home-token-card-option-action">
@@ -76,7 +76,7 @@ export default function TokenCard({ showRedirectModal, redirectPopupTimestamp })
               </BuyLink>
             </div>
             <a
-              href="https://gmxio.gitbook.io/gmx/glp"
+              href="https://vi.wiki.openworld.vision/glp"
               target="_blank"
               rel="noreferrer"
               className="default-btn read-more"

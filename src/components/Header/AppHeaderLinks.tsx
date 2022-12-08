@@ -29,7 +29,7 @@ export function AppHeaderLinks({
       {small && (
         <div className="App-header-links-header">
           <Link className="App-header-link-main" to="/">
-            <img src={logoImg} alt="GMX Logo" />
+            <img src={logoImg} alt="OPEN Logo" />
           </Link>
           <div
             className="App-header-menu-icon-block mobile-cross-menu"
@@ -77,7 +77,7 @@ export function AppHeaderLinks({
         </HeaderLink>
       </div>
       <div className="App-header-link-container">
-        <ExternalLink href="https://gmxio.gitbook.io/gmx/">
+        <ExternalLink href="https://vi.wiki.openworld.vision/">
           <Trans>About</Trans>
         </ExternalLink>
       </div>

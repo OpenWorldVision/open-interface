@@ -72,6 +72,12 @@
   align-items: center;
   padding: 0.8rem;
   justify-content: space-between;
+  background: #472F50;
+  border-radius: 18px;
+}
+.network-dropdown-menu-item:hover {
+  background: #472F5090 !important;
+  border-radius: 18px;
 }
 .last-dropdown-menu {
   margin-bottom: 0.8rem;
