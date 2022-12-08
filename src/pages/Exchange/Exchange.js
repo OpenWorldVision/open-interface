@@ -153,7 +153,7 @@ export function getPositions(
   updatedPositions
 ) {
   const propsLength = getConstant(chainId, "positionReaderPropsLength");
-  const positions = [];
+  let positions = [];
   const positionsMap = {};
   if (!positionData) {
     return { positions, positionsMap };
@@ -308,6 +308,7 @@ export function getPositions(
       positions.push(position);
     }
   }
+  positions = [...new Map(positions.map((item) => [item["contractKey"], item])).values()];
 
   return { positions, positionsMap };
 }
