@@ -14,7 +14,7 @@
   align-items: center;
   border-radius: 0.4rem;
   /* padding: 0.5rem 0; */
-  color: #ffffff;
+  color: rgba(71, 47, 80, 0.5);
   min-width: 4.65rem;
   font-size: 1.9rem;
   line-height: 2.5rem;
@@ -68,5 +68,5 @@
 }
 
 .buy-input .Exchange-swap-balance {
-  color: white;
+  color: #472F50;
 }
