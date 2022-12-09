@@ -43,18 +43,10 @@ export function AppHeaderUser({
     {
       label: getChainName(TESTNET),
       value: TESTNET,
-      icon: "ic_arbitrum_24.svg",
+      icon: "ic_bsc.svg",
       color: "#264f79",
     },
   ];
-  if (isDevelopment()) {
-    networkOptions.push({
-      label: getChainName(ARBITRUM_TESTNET),
-      value: ARBITRUM_TESTNET,
-      icon: "ic_arbitrum_24.svg",
-      color: "#264f79",
-    });
-  }
 
   useEffect(() => {
     if (active) {

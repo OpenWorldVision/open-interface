@@ -666,7 +666,7 @@ export default function ConfirmationBox(props) {
                         <br />
                         <Trans>
                           This is the network cost required to execute the postion.{" "}
-                          <ExternalLink href="https://vi.wiki.openworld.vision/trading#execution-fee">
+                          <ExternalLink href="https://wiki.openworld.vision/trading#execution-fee">
                             More Info
                           </ExternalLink>
                         </Trans>

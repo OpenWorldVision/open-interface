@@ -89,7 +89,7 @@ export const appEventsData: EventData[] = [
   //   buttons: [
   //     {
   //       text: "Read more",
-  //       link: "https://vi.wiki.openworld.vision/roadmap#30-march-2022",
+  //       link: "https://wiki.openworld.vision/roadmap#30-march-2022",
   //       newTab: true,
   //     },
   //     {
@@ -120,7 +120,7 @@ export const appEventsData: EventData[] = [
   //   buttons: [
   //     {
   //       text: "Learn More",
-  //       link: "https://vi.wiki.openworld.vision/trading#backup-rpc-urls",
+  //       link: "https://wiki.openworld.vision/trading#backup-rpc-urls",
   //       newTab: true,
   //     },
   //   ],
@@ -166,7 +166,7 @@ export const appEventsData: EventData[] = [
   //   buttons: [
   //     {
   //       text: "Learn More",
-  //       link: "https://vi.wiki.openworld.vision/trading#backup-rpc-urls",
+  //       link: "https://wiki.openworld.vision/trading#backup-rpc-urls",
   //       newTab: true,
   //     },
   //   ],
@@ -245,7 +245,7 @@ export const appEventsData: EventData[] = [
   //   buttons: [
   //     {
   //       text: "Learn More",
-  //       link: "https://vi.wiki.openworld.vision/trading#backup-rpc-urls",
+  //       link: "https://wiki.openworld.vision/trading#backup-rpc-urls",
   //       newTab: true,
   //     },
   //   ],

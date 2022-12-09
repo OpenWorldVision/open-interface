@@ -310,7 +310,7 @@ function UnstakeModal(props) {
         {burnAmount && burnAmount.gt(0) && rewardReductionBasisPoints && rewardReductionBasisPoints.gt(0) && (
           <div className="Modal-note">
             Unstaking will burn&nbsp;
-            <a href="https://vi.wiki.openworld.vision/rewards" target="_blank" rel="noopener noreferrer">
+            <a href="https://wiki.openworld.vision/rewards" target="_blank" rel="noopener noreferrer">
               {formatAmount(burnAmount, 18, 4, true)} Multiplier Points
             </a>
             .&nbsp;
@@ -1314,7 +1314,7 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
           return (
             <Trans>
               Boost your rewards with Multiplier Points.&nbsp;
-              <a href="https://vi.wiki.openworld.vision/rewards#multiplier-points" rel="noreferrer" target="_blank">
+              <a href="https://wiki.openworld.vision/rewards#multiplier-points" rel="noreferrer" target="_blank">
                 More info
               </a>
               .
@@ -1459,11 +1459,11 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
           <div className="Page-description">
             <Trans>
               Stake{" "}
-              <a href="https://vi.wiki.openworld.vision/tokenomics" target="_blank" rel="noopener noreferrer">
+              <a href="https://wiki.openworld.vision/tokenomics" target="_blank" rel="noopener noreferrer">
                 OPEN
               </a>{" "}
               and{" "}
-              <a href="https://vi.wiki.openworld.vision/glp" target="_blank" rel="noopener noreferrer">
+              <a href="https://wiki.openworld.vision/glp" target="_blank" rel="noopener noreferrer">
                 OLP
               </a>{" "}
               to earn rewards.
@@ -2091,7 +2091,7 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
               Convert esGMX tokens to OPEN tokens.
               <br />
               Please read the{" "}
-              <a href="https://vi.wiki.openworld.vision/rewards#vesting" target="_blank" rel="noopener noreferrer">
+              <a href="https://wiki.openworld.vision/rewards#vesting" target="_blank" rel="noopener noreferrer">
                 vesting details
               </a>{" "}
               before using the vaults.

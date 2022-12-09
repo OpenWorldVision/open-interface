@@ -396,7 +396,7 @@ export default function DashboardV2() {
               )}
               <br />
               <div>
-                <ExternalLink href="https://vi.wiki.openworld.vision/glp">
+                <ExternalLink href="https://wiki.openworld.vision/glp">
                   <Trans>More Info</Trans>
                 </ExternalLink>
               </div>
@@ -439,7 +439,7 @@ export default function DashboardV2() {
     },
   ];
 
-  const totalStatsStartDate = chainId === AVALANCHE ? t`06 Jan 2022` : t`01 Sep 2021`;
+  const totalStatsStartDate = t`09 Dec 2022`;
 
   let stableGlp = 0;
   let totalGlp = 0;
@@ -857,7 +857,7 @@ export default function DashboardV2() {
                   <div className="App-card-title">
                     <div className="App-card-title-mark">
                       <div className="App-card-title-mark-icon">
-                        <img src={glp40Icon} alt="glp40Icon" />
+                        <img src={gmx40Icon} alt="glp40Icon" />
                         {chainId === ARBITRUM ? (
                           <img src={arbitrum16Icon} alt={t`Arbitrum Icon`} className="selected-network-symbol" />
                         ) : (

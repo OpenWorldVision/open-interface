@@ -38,8 +38,8 @@ import Vester from "abis/Vester.json";
 import RewardRouter from "abis/RewardRouter.json";
 import Token from "abis/Token.json";
 
-import glp24Icon from "img/ic_glp_24.svg";
-import glp40Icon from "img/ic_glp_40.svg";
+import glp24Icon from "img/ic_gmx_24.svg";
+import glp40Icon from "img/ic_gmx_40.svg";
 import arrowIcon from "img/ic_convert_down.svg";
 
 import avalanche16Icon from "img/ic_avalanche_16.svg";
@@ -719,7 +719,7 @@ export default function GlpSwap(props) {
       {/* <div className="Page-title-section">
         <div className="Page-title">{isBuying ? "Buy OLP" : "Sell OLP"}</div>
         {isBuying && <div className="Page-description">
-          Purchase <a href="https://vi.wiki.openworld.vision/glp" target="_blank" rel="noopener noreferrer">OLP tokens</a> to earn {nativeTokenSymbol} fees from swaps and leverage trading.<br/>
+          Purchase <a href="https://wiki.openworld.vision/glp" target="_blank" rel="noopener noreferrer">OLP tokens</a> to earn {nativeTokenSymbol} fees from swaps and leverage trading.<br/>
           Note that there is a minimum holding time of 15 minutes after a purchase.<br/>
           <div>View <Link to="/earn">staking</Link> page.</div>
         </div>}

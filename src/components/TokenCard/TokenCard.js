@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Trans } from "@lingui/macro";
 
 import gmxBigIcon from "img/ic_gmx_custom.svg";
-import glpBigIcon from "img/ic_glp_custom.svg";
+import glpBigIcon from "img/ic_gmx_40.svg";
 
 import { isHomeSite } from "lib/legacy";
 
@@ -76,7 +76,7 @@ export default function TokenCard({ showRedirectModal, redirectPopupTimestamp })
               </BuyLink>
             </div>
             <a
-              href="https://vi.wiki.openworld.vision/glp"
+              href="https://wiki.openworld.vision/glp"
               target="_blank"
               rel="noreferrer"
               className="default-btn read-more"

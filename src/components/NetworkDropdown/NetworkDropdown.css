@@ -89,7 +89,7 @@
 }
 .network-option {
   cursor: pointer;
-  background: var(--dark-blue);
+  background: #DFE5E5;
   border: 1px solid var(--dark-blue-border);
   border-radius: 0.4rem;
   padding: 0.8rem 1.5rem;
@@ -196,6 +196,16 @@
   }
   .App-header-language {
     margin-left: 0;
+  }
+  .network-dropdown-items {
+    background: #DFE5E5;
+  }
+  .network-option {
+    background: #472F50;
+    border-radius: 32px;
+  }
+  .network-dropdown-label {
+    color: #472F50;
   }
 }
 @media (max-width: 450px) {

@@ -797,7 +797,7 @@ export default function PositionSeller(props) {
           <div className="Confirmation-box-warning">
             <Trans>
               Reducing the position at the current price will forfeit a&nbsp;
-              <ExternalLink href="https://vi.wiki.openworld.vision/trading#minimum-price-change">
+              <ExternalLink href="https://wiki.openworld.vision/trading#minimum-price-change">
                 pending profit
               </ExternalLink>{" "}
               of {deltaStr}. <br />
@@ -814,7 +814,7 @@ export default function PositionSeller(props) {
         <div className="Confirmation-box-warning">
           <Trans>
             This order will forfeit a&nbsp;
-            <ExternalLink href="https://vi.wiki.openworld.vision/trading#minimum-price-change">
+            <ExternalLink href="https://wiki.openworld.vision/trading#minimum-price-change">
               profit
             </ExternalLink> of {deltaStr}. <br />
           </Trans>
@@ -1145,8 +1145,8 @@ export default function PositionSeller(props) {
 
                       <div className="PositionSeller-fee-item">
                         <Trans>
-                          <ExternalLink href="https://vi.wiki.openworld.vision/trading#fees">More Info</ExternalLink>{" "}
-                          about fees.
+                          <ExternalLink href="https://wiki.openworld.vision/trading#fees">More Info</ExternalLink> about
+                          fees.
                         </Trans>
                       </div>
                     </div>

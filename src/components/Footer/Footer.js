@@ -15,11 +15,11 @@ const footerLinks = {
   home: [
     { text: t`Terms and Conditions`, link: "/terms-and-conditions" },
     { text: t`Referral Terms`, link: "/referral-terms" },
-    { text: t`Media Kit`, link: "https://vi.wiki.openworld.vision/media-kit", external: true },
+    { text: t`Media Kit`, link: "https://wiki.openworld.vision/media-kit", external: true },
     // { text: "Jobs", link: "/jobs", isAppLink: true },
   ],
   app: [
-    { text: t`Media Kit`, link: "https://vi.wiki.openworld.vision/media-kit", external: true },
+    { text: t`Media Kit`, link: "https://wiki.openworld.vision/media-kit", external: true },
     // { text: "Jobs", link: "/jobs" },
   ],
 };
