@@ -59,6 +59,7 @@ import { bigNumberify, expandDecimals, formatAmount, formatAmountFree, formatKey
 import { getNativeToken, getToken, getTokens, getWhitelistedTokens, getWrappedToken } from "config/tokens";
 import { useChainId } from "lib/chains";
 import ExternalLink from "components/ExternalLink/ExternalLink";
+import { IoMdSwap } from "react-icons/io";
 
 const { AddressZero } = ethers.constants;
 
@@ -894,8 +895,18 @@ export default function GlpSwap(props) {
               </div>
             </BuyInputSection>
           )}
-
-          <div className="AppOrder-ball-container">
+          <div className="Exchange-swap-ball-container">
+            <div
+              className="Exchange-swap-ball"
+              onClick={() => {
+                setIsBuying(!isBuying);
+                switchSwapOption(isBuying ? "redeem" : "");
+              }}
+            >
+              <IoMdSwap className="Exchange-swap-ball-icon" />
+            </div>
+          </div>
+          {/* <div className="AppOrder-ball-container">
             <div className="AppOrder-ball">
               <img
                 src={arrowIcon}
@@ -906,7 +917,7 @@ export default function GlpSwap(props) {
                 }}
               />
             </div>
-          </div>
+          </div> */}
 
           {isBuying && (
             <BuyInputSection
