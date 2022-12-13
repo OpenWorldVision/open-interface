@@ -58,7 +58,7 @@
 }
 .CheckBox .Checkbox-icon-wrapper .Checkbox-icon.inactive  {
   margin: 1.5rem;
-  color: #472F50;
+  color: #1A2B6B;
 }
 .Modal-body::-webkit-scrollbar {
   width: 0.6rem;
@@ -78,7 +78,7 @@
   text-align: left;
   font-size: 1.5rem;
   line-height: 1;
-  color: #472F50;
+  color: #1A2B6B;
   font-weight: 700;
 }
 

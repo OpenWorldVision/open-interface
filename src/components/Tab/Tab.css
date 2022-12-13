@@ -5,7 +5,7 @@
   border-radius: 3px;
   overflow: hidden;
   color: rgba(255, 255, 255);
-  background: rgba(71, 47, 80, 0.5);
+  background: #1A2B6B90;
   box-shadow: inset 0px 0px 30px 5px rgba(255, 255, 255, 0.01);
 }
 
@@ -27,14 +27,14 @@
 
 .Tab.block .Tab-option:hover {
   color: rgba(255, 255, 255, 1);
-  background: #472F50;
+  background: #1A2B6B;
   opacity: 0.5;
 }
 
 .Tab.block .Tab-option.active {
   opacity: 1;
   pointer-events: none;
-  background: #472F50;
+  background: #1A2B6B;
   color: rgba(255, 255, 255, 1);
 }
 

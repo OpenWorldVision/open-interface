@@ -60,7 +60,7 @@ const getSeriesOptions = () => ({
   topColor: "rgba(49, 69, 131, 0.4)",
   bottomColor: "rgba(42, 64, 103, 0.0)",
   lineWidth: 2,
-  priceLineColor: "#3a3e5e",
+  priceLineColor: "#1A2B6B",
   downColor: "#E8636B",
   wickDownColor: "#E8636B",
   upColor: "#01A789",
@@ -280,7 +280,7 @@ export default function ExchangeTVChart(props) {
           const title = `${order.type === INCREASE ? t`Inc.` : t`Dec.`} ${tokenSymbol} ${
             order.isLong ? t`Long` : t`Short`
           }`;
-          const color = "#3a3e5e";
+          const color = "#1A2B6B";
           lines.push(
             currentSeries.createPriceLine({
               price: parseFloat(formatAmount(order.triggerPrice, USD_DECIMALS, 2)),
@@ -291,7 +291,7 @@ export default function ExchangeTVChart(props) {
         });
       }
       if (positions && positions.length > 0) {
-        const color = "#3a3e5e";
+        const color = "#1A2B6B";
         positions.forEach((position) => {
           const longOrShortText = position.isLong ? t`Long` : t`Short`;
           lines.push(

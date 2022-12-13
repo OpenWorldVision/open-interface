@@ -496,7 +496,7 @@ export default function DashboardV2() {
     if (active && payload && payload.length) {
       return (
         <div className="stats-label">
-          <div className="stats-label-color" style={{ backgroundColor: payload[0].color || "#472F50" }}></div>
+          <div className="stats-label-color" style={{ backgroundColor: payload[0].color || "#1A2B6B" }}></div>
           {payload[0].value}% {payload[0].name}
         </div>
       );
@@ -839,7 +839,7 @@ export default function DashboardV2() {
                           />
                         ))}
                       </Pie>
-                      <text x={"50%"} y={"50%"} fill="#472F50" textAnchor="middle" dominantBaseline="middle">
+                      <text x={"50%"} y={"50%"} fill="#1A2B6B" textAnchor="middle" dominantBaseline="middle">
                         <Trans>Distribution</Trans>
                       </text>
                       <Tooltip content={<CustomTooltip />} />
@@ -937,7 +937,7 @@ export default function DashboardV2() {
                           />
                         ))}
                       </Pie>
-                      <text x={"50%"} y={"50%"} fill="#472F50" textAnchor="middle" dominantBaseline="middle">
+                      <text x={"50%"} y={"50%"} fill="#1A2B6B" textAnchor="middle" dominantBaseline="middle">
                         OLP Pool
                       </text>
                       <Tooltip content={<CustomTooltip />} />
