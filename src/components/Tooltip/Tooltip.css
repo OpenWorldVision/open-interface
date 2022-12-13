@@ -11,7 +11,7 @@
   letter-spacing: 0.4px;
   min-width: 25rem;
   text-align: left;
-  background: #472F50;
+  background: #1A2B6B;
   z-index: 1000;
   color: #ffffff;
 }
@@ -111,6 +111,7 @@
 
 .Tooltip-row > span.label {
   margin-right: 0.5rem;
+  color: #ffffff;
 }
 .Tooltip-row > .Tooltip-row-value {
   color: white;

@@ -5,7 +5,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  color: #472F50 !important;
+  color: #1A2B6B !important;
   background-color: #DFE5E5 !important;
 }
 
@@ -26,7 +26,7 @@
   width: 100%;
   transform-origin: top right;
   border-radius: 0.4rem;
-  background-color: #472F50;
+  background-color: #1A2B6B;
   list-style: none;
   cursor: pointer;
   outline: none;

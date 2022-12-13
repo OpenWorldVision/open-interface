@@ -97,7 +97,7 @@
   font-size: 1.6rem;
   line-height: 2.1rem;
   letter-spacing: 0px;
-  color: #472F50;
+  color: #1A2B6B;
   font-weight: 500;
 }
 
@@ -109,7 +109,7 @@
 }
 
 .GlpSwap-token-list {
-  border: 1px solid #472F50;
+  border: 1px solid #1A2B6B;
   border-radius: 4px;
   background: #DFE5E5;
   padding: 1.5rem;
@@ -251,7 +251,7 @@
   top: -2.2rem;
   border-radius: 3.1rem;
   user-select: none;
-  background: #472F50;
+  background: #1A2B6B;
   cursor: pointer;
   opacity: 0.85;
 }

@@ -6,7 +6,7 @@
 
 .Exchange-trigger-order-info,
 .Exchange-trigger-order-info a {
-  color: #472F50;
+  color: #1A2B6B;
   border: 1px solid #23263b;
 }
 
@@ -16,7 +16,7 @@
   padding-left: 2rem;
   padding-right: 2rem;
   margin-top: 1.5rem;
-  background-color: #472F50;
+  background-color: #1A2B6B;
   padding-top: 1rem;
   padding-bottom: 1rem;
   border-radius: 18px 18px 0px 0px;
@@ -28,7 +28,7 @@
   padding: 0.4rem 1rem;
 }
 .Exchange-list-tab-container .Tab.inline .Tab-option.active{
-  color: #472F50;
+  color: #1A2B6B;
   font-weight: 700;
   background: #DFE5E5;
   border-radius: 16px;
@@ -99,7 +99,7 @@
   color:red
 }
 .Exchange-leverage-slider-settings .Checkbox .Checkbox-label {
-  color: #472F50;
+  color: #1A2B6B;
   font-weight: 700;
 }
 
@@ -327,7 +327,7 @@
   position: relative;
   padding: 0.9rem 0.31rem;
   z-index: 2;
-  background-color: #472F50;
+  background-color: #1A2B6B;
   border-radius: 18px 18px 0px 0px;
   }
 
@@ -363,7 +363,7 @@
   z-index: 2;
 }
 .ExchangeChart-bottom-stats-label {
-  color:#472F50;
+  color:#1A2B6B;
   font-weight: bold;
 }
 .ExchangeChart-bottom-stats-value {
@@ -545,7 +545,7 @@ table.Exchange-list tr.Exchange-list-header th {
 
 table.Exchange-list th {
   opacity: 1;
-  color: #472F50;
+  color: #1A2B6B;
 }
 
 .Exchange-leverage-box {
@@ -628,7 +628,7 @@ table.Exchange-list th {
 .Exchange-swap-market-box-title {
   font-size: 1.5rem;
   margin-bottom: 1.25rem;
-  color: #472F50;
+  color: #1A2B6B;
   font-weight: 500;
 }
 
@@ -701,7 +701,7 @@ table.Exchange-list th {
   border-radius: 0.3rem;
   background: #F9F9F9;
   border-radius: 18px;
-  color: #472F50;
+  color: #1A2B6B;
 }
 
 .Exchange-swap-option-tabs.Tab.block .Tab-option {
@@ -711,7 +711,7 @@ table.Exchange-list th {
 .Exchange-swap-order-type-tabs {
   margin-top: 1.5rem;
   justify-content: center;
-  color: #472F50;
+  color: #1A2B6B;
   font-weight: 600;
   opacity: 1;
   display: block;
@@ -762,13 +762,13 @@ table.Exchange-list th {
   cursor: pointer;
   font-size: 1.5rem;
   font-weight: 700;
-  color: #472F50;
+  color: #1A2B6B;
   background-color: #DFE5E5;
 }
 
 .Exchange-swap-max:hover {
   color: rgba(255, 255, 255, 1);
-  background-color: #472F50;
+  background-color: #1A2B6B;
 }
 
 .Exchange-swap-section-bottom .TokenSelector-box {
@@ -786,14 +786,14 @@ input.Exchange-swap-input {
   font-size: 2.325rem;
   width: 100%;
   padding-right: 2rem;
-  color: rgba(71, 47, 80, 0.5);;
+  color: #1A2B6B;
 }
 input.Exchange-swap-input.small {
   max-width: 14.725rem;
 }
 
 .Exchange-swap-button-container {
-  background: #472F50;
+  background: #1A2B6B;
   border-radius: 18px;
   overflow: hidden;
 }
@@ -826,14 +826,14 @@ input.Exchange-swap-input.small {
   border-radius: 3.1rem;
   cursor: pointer;
   user-select: none;
-  background: #472F50;
+  background: #1A2B6B;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .Exchange-swap-ball:hover {
-  background: #472F50;
+  background: #1A2B6B;
 }
 
 .Exchange-swap-ball:hover .Exchange-swap-ball-icon {

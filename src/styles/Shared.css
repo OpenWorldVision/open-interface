@@ -72,7 +72,7 @@ a {
   color: #717171;
 }
 a:hover {
-  color: #472F50;
+  color: #1A2B6B;
 }
 
 .Card-title {
@@ -204,7 +204,7 @@ a.plain {
 }
 
 .default-btn {
-  background: #472F50;
+  background: #1A2B6B;
   border-radius: 4px;
   font-size: 1.4rem;
   line-height: 2rem;
@@ -228,7 +228,7 @@ a.plain {
 }
 
 .default-btn:hover {
-  background: #55395f;
+  background: #1A2B6B90;
 }
 
 /* .default-btn:focus {
