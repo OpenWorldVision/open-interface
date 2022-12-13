@@ -45,6 +45,8 @@ import arrowIcon from "img/ic_convert_down.svg";
 import avalanche16Icon from "img/ic_avalanche_16.svg";
 import arbitrum16Icon from "img/ic_arbitrum_16.svg";
 
+import bnbIcon from "img/ic_binance_logo.svg";
+
 import "./GlpSwap.css";
 import AssetDropdown from "pages/Dashboard/AssetDropdown";
 import SwapErrorModal from "./SwapErrorModal";
@@ -719,7 +721,7 @@ export default function GlpSwap(props) {
       {/* <div className="Page-title-section">
         <div className="Page-title">{isBuying ? "Buy OLP" : "Sell OLP"}</div>
         {isBuying && <div className="Page-description">
-          Purchase <a href="https://wiki.openworld.vision/glp" target="_blank" rel="noopener noreferrer">OLP tokens</a> to earn {nativeTokenSymbol} fees from swaps and leverage trading.<br/>
+          Purchase <a href="https://wiki.openworld.vision/tokenomics" target="_blank" rel="noopener noreferrer">OLP tokens</a> to earn {nativeTokenSymbol} fees from swaps and leverage trading.<br/>
           Note that there is a minimum holding time of 15 minutes after a purchase.<br/>
           <div>View <Link to="/earn">staking</Link> page.</div>
         </div>}
@@ -738,11 +740,12 @@ export default function GlpSwap(props) {
             <div className="App-card-title-mark">
               <div className="App-card-title-mark-icon">
                 <img src={glp40Icon} alt="glp40Icon" />
-                {chainId === ARBITRUM ? (
-                  <img src={arbitrum16Icon} alt="arbitrum16Icon" className="selected-network-symbol" />
-                ) : (
-                  <img src={avalanche16Icon} alt="avalanche16Icon" className="selected-network-symbol" />
-                )}
+                <img
+                  src={bnbIcon}
+                  alt={t`Avalanche Icon`}
+                  className="selected-network-symbol"
+                  style={{ backgroundColor: "#DFE5E5", padding: 2, width: 18 }}
+                />
               </div>
               <div className="App-card-title-mark-info">
                 <div className="App-card-title-mark-title">OLP</div>
