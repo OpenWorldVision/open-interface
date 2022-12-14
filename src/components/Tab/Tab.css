@@ -36,13 +36,18 @@
   background: #375BD2;
   opacity: 1;
 }
-
+.Tab.block .Tab-option:hover img {
+  filter: brightness(0) invert(1);
+}
 .Tab.block .Tab-option.active {
   opacity: 1;
   pointer-events: none;
   background: #375BD2;
   color: rgba(255, 255, 255, 1);
   font-weight: 700;
+}
+.Tab.block .Tab-option.active img {
+  filter: brightness(0) invert(1);
 }
 
 .Tab.block .Tab-option.active .Tab-option-icon {
