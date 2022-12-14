@@ -69,10 +69,10 @@ input {
 }
 
 a {
-  color: #717171;
+  color: #6D7380;
 }
 a:hover {
-  color: #1A2B6B;
+  color: #375BD2;
 }
 
 .Card-title {
@@ -92,7 +92,7 @@ input[type="number"] {
 
 input {
   font-size: 2rem;
-  color: white;
+  color: #1A2B6B;
   outline: none;
   background: none;
   border: none;
@@ -100,6 +100,11 @@ input {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+  
+}
+
+input::placeholder {
+  color: rgba(26, 43, 107, 0.5);
 }
 
 button {
@@ -204,7 +209,7 @@ a.plain {
 }
 
 .default-btn {
-  background: #1A2B6B;
+  background: #375BD2;
   border-radius: 4px;
   font-size: 1.4rem;
   line-height: 2rem;
@@ -227,9 +232,9 @@ a.plain {
   border-radius: 18px;
 }
 
-.default-btn:hover {
-  background: #1A2B6B90;
-}
+/* .default-btn:hover {
+  background: #DFE7FB;
+} */
 
 /* .default-btn:focus {
   background: #515ed8;

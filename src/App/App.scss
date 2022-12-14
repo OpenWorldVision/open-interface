@@ -157,7 +157,7 @@
   position: relative;
   // border: 1px solid #1e2136;
   // border-radius: 0.4rem;
-  background: #DFE5E5;
+  background: #F9F9F9;
   font-size: 1.5rem;
 }
 
@@ -291,7 +291,7 @@
   line-height: 2.1rem;
   font-weight: normal;
   letter-spacing: 0px;
-  color: #1A2B6B;
+  color: #375BD2;
 }
 
 .App-card-info-subtitle {
@@ -299,7 +299,7 @@
   line-height: 1.5rem;
   font-weight: normal;
   letter-spacing: 0px;
-  color: #717171;
+  color: #6D7380;
 }
 
 .App-card-title-iconlist {
@@ -320,7 +320,7 @@
 .Wallet-btn {
   display: block;
   box-shadow: inset 0px 0px 1rem 0.5rem rgba(27, 30, 46, 0.2);
-  background: #1A2B6B;
+  background: #375BD2;
   height: 5.1rem;
   width: 26.35rem;
   border: 1px solid var(--dark-blue-border);
@@ -335,7 +335,7 @@
   padding-top: 1.05rem;
 }
 .Wallet-btn:hover {
-  background: #1A2B6B90;
+  background: #DFE7FB;
 }
 
 .Wallet-btn:not(:last-child) {
@@ -400,7 +400,7 @@ button.App-connect-wallet:hover {
 
 .App-card-divider {
   height: 1px;
-  background: #23263b;
+  background: #DFE7FB;
   margin: 1.05rem -1.5rem;
 }
 
@@ -417,11 +417,11 @@ button.App-connect-wallet:hover {
 .Page-content {
   padding: 4.65rem;
   padding-top: 1.5rem;
-  color: #717171;
+  color: #6D7380;
 }
 .Page-content input{
-  color: #717171;
-  border: 1px solid #717171;
+  color: #6D7380;
+  border: 1px solid #6D7380;
 }
 
 
@@ -490,12 +490,12 @@ button.App-connect-wallet:hover {
   font-weight: 500;
   margin-bottom: 0.8rem;
   font-weight: bold;
-  color: #1A2B6B;
+  color: #375BD2;
 }
 
 .Page-description {
   /* opacity: 0.7; */
-  color: #717171;
+  color: #6D7380;
   line-height: 2.15rem;
   font-size: 1.5rem;
 }
@@ -535,10 +535,10 @@ button.App-connect-wallet:hover {
 
 .App-card {
   padding: 1.5rem 1.5rem 1.86rem;
-  border: 1px solid #1A2B6B;
+  border: 1px solid #DFE7FB;
   border-radius: 0.4rem;
   font-size: 1.5rem;
-  background-color: #DFE5E5;
+  background-color: #F9F9F9;
 }
 
 .App-card-title {
@@ -546,7 +546,7 @@ button.App-connect-wallet:hover {
   line-height: 2.1rem;
   font-weight: 500;
   letter-spacing: 0px;
-  color: #1A2B6B;
+  color: #375BD2;
   margin-bottom: 1.5rem;
   display: flex;
   align-items: center;
@@ -568,7 +568,7 @@ button.App-connect-wallet:hover {
   grid-template-columns: 1fr auto;
   grid-column-gap: 1.5rem;
   padding: unset;
-  color: #717171;
+  color: #6D7380;
 }
 
 .App-card-row.inner {
@@ -581,7 +581,7 @@ button.App-connect-wallet:hover {
   top: 2px;
 }
 .App-card-row .label {
- color:#717171;
+ color:#6D7380;
 }
 
 .App-card-row > div:last-child {
@@ -636,7 +636,6 @@ color: #F1F2F2;
 
 .App-header .a:hover,
 .App-header a:hover {
-  background-color: #eee;
   color: #1A2B6B;
 }
 
@@ -644,15 +643,17 @@ color: #F1F2F2;
 .App-header-container-left a {
   padding: 1.8rem 1.7rem;
   display: block;
-  color: #1A2B6B99;
+  color: #1A2B6B;
   font-size: 1.5rem;
   line-height: 1.8rem;
   font-weight: 700;
+  opacity: 0.8;
 }
 
 .App-header-container-left .a.active,
 .App-header-container-left a.active {
   color: #1A2B6B ;
+  // background-color: #DFE7FB;
 }
 
 .Toastify {
@@ -693,7 +694,7 @@ color: #F1F2F2;
 }
 
 .Exchange-settings-row .Checkbox .Checkbox-icon-wrapper .App-icon.Checkbox-icon.inactive{
- color: #717171;
+ color: #6D7380;
 }
 
 .App-background-side-1 {
@@ -800,7 +801,7 @@ color: #F1F2F2;
 
 a.App-cta,
 button.App-cta {
-  background: #1A2B6B;
+  background: #375BD2;
   font-size: 1.4rem;
   line-height: 2rem;
   font-weight: 700;
@@ -864,7 +865,7 @@ button.App-button-option {
   display: inline-flex !important;
   align-items: center;
   border: none;
-  background: #1A2B6B;
+  background: #375BD2;
   border-radius: 18px;
 }
 
@@ -920,11 +921,11 @@ button.App-button-option:disabled {
 }
 
 .App-slippage-tolerance-input {
-  border: 1px solid #717171;
+  border: 1px solid #6D7380;
   margin-top: 0.8rem;
   margin-bottom: 0.8rem;
   width: 100%;
-  color: #717171;
+  color: #6D7380;
 }
 
 .App-slippage-tolerance-input-percent {
@@ -1005,7 +1006,7 @@ a.App-social-link:hover {
 }
 
 .App-input-container {
-  border: 2px solid #1A2B6B90;
+  border: 2px solid #DFE7FB;
   background: rgba(0, 0, 0, 0.1);
   display: grid;
   grid-template-columns: 1fr auto;
@@ -1127,11 +1128,11 @@ button.App-button {
 }
 
 .App-slider .rc-slider-rail {
-  background: #1A2B6B90;
+  background: #DFE7FB;
 }
 
 .App-slider .rc-slider-track {
-  background: #1A2B6B;
+  background: #375BD2;
 }
 
 .App-slider .rc-slider-dot {
@@ -1140,20 +1141,18 @@ button.App-button {
   width: 10px;
   height: 10px;
 
-  background: #DFE5E5;
-  border: 2px solid #1A2B6B90;
+  background: #F9F9F9;
+  border: 2px solid #DFE7FB;
   border-radius: 3px;
   transform: rotate(45deg);
 }
 
 .App-slider .rc-slider-dot-active {
   box-sizing: border-box;
-
   width: 10px;
   height: 10px;
-
-  background: #1A2B6B;
-  border: 2px solid #DFE5E5;
+  background: #375BD2;
+  border: 2px solid #F9F9F9;
   border-radius: 3px;
   transform: rotate(45deg);
 }
@@ -1162,19 +1161,19 @@ button.App-button {
   box-sizing: border-box;
   width: 16px;
   height: 16px;
-  background: #1A2B6B;
-  border: 2px solid #DFE5E5;
-  border-radius: 3px;
+  background: #F9F9F9;
+  border: 3px solid #375BD2;
+  border-radius: 4px;
   transform: rotate(45deg) translateX(-50%) translateY(40%) !important;
 }
 
 .App-slider .rc-slider-handle:active {
-  box-shadow: 0 0 0.4rem 0.6rem rgba(45, 66, 252, 0.2);
+  box-shadow: 0 0 0.4rem 0.6rem #375BD2;
 }
 
 .App-slider .rc-slider-mark-text,
 .App-slider .rc-slider-mark-text-active {
-  color: #717171;
+  color: #6D7380;
 }
 
 .App-slider .rc-slider-mark-text:hover,

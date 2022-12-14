@@ -60,7 +60,7 @@ const getSeriesOptions = () => ({
   topColor: "rgba(49, 69, 131, 0.4)",
   bottomColor: "rgba(42, 64, 103, 0.0)",
   lineWidth: 2,
-  priceLineColor: "#1A2B6B",
+  priceLineColor: "#375BD2",
   downColor: "#E8636B",
   wickDownColor: "#E8636B",
   upColor: "#01A789",
@@ -72,7 +72,7 @@ const getChartOptions = (width, height) => ({
   width,
   height,
   layout: {
-    backgroundColor: "#DFE5E5",
+    backgroundColor: "#F9F9F9",
     textColor: "#7F8080",
     fontFamily: "Relative",
   },
@@ -88,7 +88,7 @@ const getChartOptions = (width, height) => ({
     },
     horzLines: {
       visible: true,
-      color: "#f9f9f9",
+      color: "#DFE7FB",
       style: 2,
     },
   },
@@ -105,12 +105,12 @@ const getChartOptions = (width, height) => ({
     borderVisible: false,
   },
   crosshair: {
-    horzLine: {
-      color: "#aaa",
-    },
-    vertLine: {
-      color: "#aaa",
-    },
+    // horzLine: {
+    //   color: "#aaa",
+    // },
+    // vertLine: {
+    //   color: "#aaa",
+    // },
     mode: 0,
   },
 });
@@ -280,7 +280,7 @@ export default function ExchangeTVChart(props) {
           const title = `${order.type === INCREASE ? t`Inc.` : t`Dec.`} ${tokenSymbol} ${
             order.isLong ? t`Long` : t`Short`
           }`;
-          const color = "#1A2B6B";
+          const color = "#375BD2";
           lines.push(
             currentSeries.createPriceLine({
               price: parseFloat(formatAmount(order.triggerPrice, USD_DECIMALS, 2)),
@@ -291,7 +291,7 @@ export default function ExchangeTVChart(props) {
         });
       }
       if (positions && positions.length > 0) {
-        const color = "#1A2B6B";
+        const color = "#375BD2";
         positions.forEach((position) => {
           const longOrShortText = position.isLong ? t`Long` : t`Short`;
           lines.push(
@@ -427,9 +427,6 @@ export default function ExchangeTVChart(props) {
           <div>
             <div className="ExchangeChart-main-price">
               {chartToken.maxPrice && formatAmount(chartToken.maxPrice, USD_DECIMALS, 2, true)}
-            </div>
-            <div className="ExchangeChart-info-label">
-              ${chartToken.minPrice && formatAmount(chartToken.minPrice, USD_DECIMALS, 2, true)}
             </div>
           </div>
           <div>

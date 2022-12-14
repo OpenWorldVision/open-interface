@@ -496,7 +496,7 @@ export default function DashboardV2() {
     if (active && payload && payload.length) {
       return (
         <div className="stats-label">
-          <div className="stats-label-color" style={{ backgroundColor: payload[0].color || "#1A2B6B" }}></div>
+          <div className="stats-label-color" style={{ backgroundColor: payload[0].color || "#375BD2" }}></div>
           {payload[0].value}% {payload[0].name}
         </div>
       );
@@ -839,7 +839,7 @@ export default function DashboardV2() {
                           />
                         ))}
                       </Pie>
-                      <text x={"50%"} y={"50%"} fill="#1A2B6B" textAnchor="middle" dominantBaseline="middle">
+                      <text x={"50%"} y={"50%"} fill="#375BD2" textAnchor="middle" dominantBaseline="middle">
                         <Trans>Distribution</Trans>
                       </text>
                       <Tooltip content={<CustomTooltip />} />
@@ -857,7 +857,7 @@ export default function DashboardV2() {
                           src={bnbIcon}
                           alt={t`Avalanche Icon`}
                           className="selected-network-symbol"
-                          style={{ backgroundColor: "#DFE5E5", padding: 2, width: 18 }}
+                          style={{ backgroundColor: "#F9F9F9", padding: 2, width: 18 }}
                         />
                       </div>
                       <div className="App-card-title-mark-info">
@@ -937,7 +937,7 @@ export default function DashboardV2() {
                           />
                         ))}
                       </Pie>
-                      <text x={"50%"} y={"50%"} fill="#1A2B6B" textAnchor="middle" dominantBaseline="middle">
+                      <text x={"50%"} y={"50%"} fill="#375BD2" textAnchor="middle" dominantBaseline="middle">
                         OLP Pool
                       </text>
                       <Tooltip content={<CustomTooltip />} />

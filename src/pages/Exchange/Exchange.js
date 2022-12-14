@@ -832,7 +832,6 @@ export const Exchange = forwardRef((props, ref) => {
           <div className="align-right Exchange-should-show-position-lines">
             {renderCancelOrderButton()}
             <Checkbox
-              inactiveColor={"rgba(255,255,255, 0.7)"}
               isChecked={savedShouldShowPositionLines}
               setIsChecked={setSavedShouldShowPositionLines}
               className={cx("muted chart-positions", { active: savedShouldShowPositionLines })}

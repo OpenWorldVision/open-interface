@@ -59,7 +59,7 @@
 }
 
 .GlpSwap-stats-card .App-card-row .label {
-  color: #717171;
+  color: #6D7380;
   opacity: 1;
 }
 
@@ -97,7 +97,7 @@
   font-size: 1.6rem;
   line-height: 2.1rem;
   letter-spacing: 0px;
-  color: #1A2B6B;
+  color: #375BD2;
   font-weight: 500;
 }
 
@@ -109,7 +109,7 @@
 }
 
 .GlpSwap-token-list {
-  border: 1px solid #1A2B6B;
+  border: 1px solid #375BD2;
   border-radius: 4px;
   background: #DFE5E5;
   padding: 1.5rem;
@@ -171,7 +171,7 @@
 .token-table td,
 .token-table th {
   padding: 1.1625rem;
-  color:#717171 !important;
+  color:#6D7380 !important;
 }
 
 .token-table td:nth-child(2),
@@ -251,7 +251,7 @@
   top: -2.2rem;
   border-radius: 3.1rem;
   user-select: none;
-  background: #1A2B6B;
+  background: #375BD2;
   cursor: pointer;
   opacity: 0.85;
 }

@@ -238,7 +238,7 @@ export default function SwapBox(props) {
   };
 
   const isMarketOrder = orderOption === MARKET;
-  const orderOptions = isSwap ? SWAP_ORDER_OPTIONS : LEVERAGE_ORDER_OPTIONS;
+  const orderOptions = SWAP_ORDER_OPTIONS; //isSwap ? SWAP_ORDER_OPTIONS : LEVERAGE_ORDER_OPTIONS;
   const orderOptionLabels = { [STOP]: t`Trigger`, [MARKET]: t`Market`, [LIMIT]: t`Limit` };
 
   const [triggerPriceValue, setTriggerPriceValue] = useState("");
@@ -265,7 +265,7 @@ export default function SwapBox(props) {
 
   const whitelistedTokens = getWhitelistedTokens(chainId);
   const tokens = getTokens(chainId);
-  const fromTokens = tokens;
+  const fromTokens = whitelistedTokens;
   const stableTokens = tokens.filter((token) => token.isStable);
   const indexTokens = whitelistedTokens.filter((token) => !token.isStable && !token.isWrapped);
   const shortableTokens = indexTokens.filter((token) => token.isShortable);
@@ -1836,9 +1836,9 @@ export default function SwapBox(props) {
         </div>
         {showFromAndToSection && (
           <React.Fragment>
-            <div className="Exchange-swap-section">
+            <div className="Exchange-swap-section highlight">
               <div className="Exchange-swap-section-top">
-                <div className="muted">
+                <div>
                   {fromUsdMin && (
                     <div className="Exchange-swap-usd">
                       <Trans>Pay: {formatAmount(fromUsdMin, USD_DECIMALS, 2, true)} USD</Trans>
@@ -1847,7 +1847,7 @@ export default function SwapBox(props) {
                   {!fromUsdMin && t`Pay`}
                 </div>
                 {fromBalance && (
-                  <div className="muted align-right clickable" onClick={setFromValueToMaximumAvailable}>
+                  <div className="align-right clickable" onClick={setFromValueToMaximumAvailable}>
                     <Trans>Balance: {formatAmount(fromBalance, fromToken.decimals, 4, true)}</Trans>
                   </div>
                 )}
@@ -1889,7 +1889,7 @@ export default function SwapBox(props) {
             </div>
             <div className="Exchange-swap-section">
               <div className="Exchange-swap-section-top">
-                <div className="muted">
+                <div>
                   {toUsdMax && (
                     <div className="Exchange-swap-usd">
                       {getToLabel()}: {formatAmount(toUsdMax, USD_DECIMALS, 2, true)} USD
@@ -1898,12 +1898,12 @@ export default function SwapBox(props) {
                   {!toUsdMax && getToLabel()}
                 </div>
                 {toBalance && isSwap && (
-                  <div className="muted align-right">
+                  <div className=" align-right">
                     <Trans>Balance</Trans>: {formatAmount(toBalance, toToken.decimals, 4, true)}
                   </div>
                 )}
                 {(isLong || isShort) && hasLeverageOption && (
-                  <div className="muted align-right">
+                  <div className=" align-right">
                     <Trans>Leverage</Trans>: {parseFloat(leverageOption).toFixed(2)}x
                   </div>
                 )}
