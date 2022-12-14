@@ -21,7 +21,7 @@ export default function Modal(props) {
   useEffect(() => {
     function close(e) {
       if (e.keyCode === 27) {
-        setIsVisible(false);
+        setIsVisible?.(false);
       }
     }
     window.addEventListener("keydown", close);
@@ -65,7 +65,7 @@ export default function Modal(props) {
             <div className="Modal-title-bar">
               <div className="Modal-title">{props.label}</div>
               <div className="Modal-close-button" onClick={() => setIsVisible(false)}>
-                <MdClose fontSize={20} className="Modal-close-icon" color={"#472F50"} />
+                <MdClose fontSize={20} className="Modal-close-icon" color={"#375BD2"} />
               </div>
             </div>
             <div className="divider" />

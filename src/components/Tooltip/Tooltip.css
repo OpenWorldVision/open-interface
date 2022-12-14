@@ -11,7 +11,7 @@
   letter-spacing: 0.4px;
   min-width: 25rem;
   text-align: left;
-  background: #472F50;
+  background: #375BD2;
   z-index: 1000;
   color: #ffffff;
 }
@@ -86,7 +86,7 @@
   text-decoration-style: dashed;
   text-decoration-thickness: 1px;
   text-underline-offset: 2px;
-  text-decoration-color: #717171;
+  text-decoration-color: #3D4556;
 }
 
 .Tooltip-handle.plain:after {
@@ -111,6 +111,7 @@
 
 .Tooltip-row > span.label {
   margin-right: 0.5rem;
+  color: #ffffff;
 }
 .Tooltip-row > .Tooltip-row-value {
   color: white;

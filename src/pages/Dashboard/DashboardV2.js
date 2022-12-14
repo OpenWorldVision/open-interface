@@ -31,7 +31,7 @@ import Footer from "components/Footer/Footer";
 
 import "./DashboardV2.css";
 
-import gmx40Icon from "img/ic_gmx_40.svg";
+import logoGMX from "img/logo_GMX.svg";
 import bnbIcon from "img/ic_binance_logo.svg";
 import glp40Icon from "img/ic_glp_40.svg";
 import avalanche16Icon from "img/ic_avalanche_16.svg";
@@ -496,7 +496,7 @@ export default function DashboardV2() {
     if (active && payload && payload.length) {
       return (
         <div className="stats-label">
-          <div className="stats-label-color" style={{ backgroundColor: payload[0].color || "#472F50" }}></div>
+          <div className="stats-label-color" style={{ backgroundColor: payload[0].color || "#375BD2" }}></div>
           {payload[0].value}% {payload[0].name}
         </div>
       );
@@ -727,7 +727,7 @@ export default function DashboardV2() {
                   <div className="App-card-title">
                     <div className="App-card-title-mark">
                       <div className="App-card-title-mark-icon">
-                        <img src={gmx40Icon} alt="OPEN Token Icon" />
+                        <img src={logoGMX} alt="OPEN Token Icon" />
                       </div>
                       <div className="App-card-title-mark-info">
                         <div className="App-card-title-mark-title">OPEN</div>
@@ -839,7 +839,7 @@ export default function DashboardV2() {
                           />
                         ))}
                       </Pie>
-                      <text x={"50%"} y={"50%"} fill="#472F50" textAnchor="middle" dominantBaseline="middle">
+                      <text x={"50%"} y={"50%"} fill="#375BD2" textAnchor="middle" dominantBaseline="middle">
                         <Trans>Distribution</Trans>
                       </text>
                       <Tooltip content={<CustomTooltip />} />
@@ -852,12 +852,12 @@ export default function DashboardV2() {
                   <div className="App-card-title">
                     <div className="App-card-title-mark">
                       <div className="App-card-title-mark-icon">
-                        <img src={gmx40Icon} alt="glp40Icon" />
+                        <img src={logoGMX} alt="glp40Icon" />
                         <img
                           src={bnbIcon}
                           alt={t`Avalanche Icon`}
                           className="selected-network-symbol"
-                          style={{ backgroundColor: "#DFE5E5", padding: 2, width: 18 }}
+                          style={{ backgroundColor: "#F9F9F9", padding: 2, width: 18 }}
                         />
                       </div>
                       <div className="App-card-title-mark-info">
@@ -937,7 +937,7 @@ export default function DashboardV2() {
                           />
                         ))}
                       </Pie>
-                      <text x={"50%"} y={"50%"} fill="#472F50" textAnchor="middle" dominantBaseline="middle">
+                      <text x={"50%"} y={"50%"} fill="#375BD2" textAnchor="middle" dominantBaseline="middle">
                         OLP Pool
                       </text>
                       <Tooltip content={<CustomTooltip />} />

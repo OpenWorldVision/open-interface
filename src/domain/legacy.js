@@ -295,12 +295,11 @@ export function useTrades(chainId, account, forSingleAccount, afterId) {
     url = urlItem.toString();
   }
 
-  const { data: trades, mutate: updateTrades } = useSWR(url && url, {
+  let { data: trades, mutate: updateTrades } = useSWR(url && url, {
     dedupingInterval: 10000,
     fetcher: (...args) => fetch(...args).then((res) => res.json()),
   });
-
-  if (trades) {
+  if (Array.isArray(trades)) {
     trades.sort((item0, item1) => {
       const data0 = item0.data;
       const data1 = item1.data;
@@ -338,6 +337,8 @@ export function useTrades(chainId, account, forSingleAccount, afterId) {
 
       return 0;
     });
+  } else {
+    trades = [];
   }
 
   return { trades, updateTrades };

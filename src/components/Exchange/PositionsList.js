@@ -27,6 +27,8 @@ import { helperToast } from "lib/helperToast";
 import { getUsd } from "domain/tokens/utils";
 import { bigNumberify, formatAmount } from "lib/numbers";
 import { AiOutlineEdit } from "react-icons/ai";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { fa0, faMagicWandSparkles, faPenToSquare } from "@fortawesome/free-solid-svg-icons";
 
 const getOrdersForPosition = (account, position, orders, nativeTokenAddress) => {
   if (!orders || orders.length === 0) {
@@ -676,7 +678,14 @@ export default function PositionsList(props) {
                       }}
                     />
                     <span className="edit-icon" onClick={() => editPosition(position)}>
-                      <AiOutlineEdit fontSize={16} />
+                      <FontAwesomeIcon
+                        icon={faPenToSquare}
+                        fontSize={16}
+                        color={"#3D4556"}
+                        style={{
+                          marginLeft: 8,
+                        }}
+                      />
                     </span>
                   </div>
                 </td>

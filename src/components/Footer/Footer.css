@@ -1,14 +1,14 @@
 .Footer-wrapper {
   text-align: center;
   padding-top: 4rem;
-  background: #472F50;
+  background: #375BD2;
   width: 100vw;
   position: absolute;
   transform: translateX(-50%);
   left: 50%;
   height: 20rem;
   bottom: 0;
-  border-top: 1px solid #55395f;
+  border-top: 1px solid #DFE7FB;
 }
 
 .Footer-logo {
@@ -29,7 +29,7 @@
   margin-bottom: 2.4rem;
 }
 .Footer-link {
-  color: #a0a3c4;
+  color: #ffffff;
   font-size: 1.5rem;
   line-height: 1.85rem;
   font-weight: normal;
@@ -49,6 +49,9 @@
   justify-content: center;
 }
 
+.Footer-social-link-block .App-social-link img {
+  filter: brightness(0) invert(1);
+}
 .Footer-social-link-block .App-social-link:hover img {
   filter: brightness(0) invert(1);
 }
@@ -62,7 +65,7 @@
   font-size: 1.3rem;
   line-height: 1.3rem;
   letter-spacing: -0.41px;
-  color: #a0a3c4;
+  color: #ffffff;
   display: block;
 }
 .Footer-links {

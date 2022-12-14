@@ -5,8 +5,8 @@
   height: 3.6rem;
   display: inline-flex;
   align-items: center;
-  color: #472F50;
-  background: #DFE5E5;
+  color: #375BD2;
+  background: #DFE7FB;
   border-radius: 18px;
 }
 
@@ -20,7 +20,7 @@
 .network-dropdown-items {
   min-width: 17rem;
   padding-bottom: 0.8rem;
-  background-color: #472F50;
+  background-color: #375BD2;
 }
 .network-dropdown-items:last-child {
   padding-bottom: 0;
@@ -72,12 +72,9 @@
   align-items: center;
   padding: 0.8rem;
   justify-content: space-between;
-  background: #472F50;
-  border-radius: 18px;
+  background: #375BD2;
 }
 .network-dropdown-menu-item:hover {
-  background: #472F5090 !important;
-  border-radius: 18px;
 }
 .last-dropdown-menu {
   margin-bottom: 0.8rem;
@@ -122,9 +119,10 @@
 }
 
 .dropdown-label {
-  color: #a0a3c4;
+  color: #ffffff;
   padding: 0.8rem;
   font-size: 1.25rem;
+  font-weight: 600;
 }
 
 .language-popup .Modal-body {
@@ -163,6 +161,7 @@
 .network-dropdown-list {
   display: grid;
   grid-template-columns: 1fr;
+  background: #F9F9F9;
 }
 
 .menu-item:hover .menu-item-label {
@@ -201,11 +200,12 @@
     background: #DFE5E5;
   }
   .network-option {
-    background: #472F50;
+    background: #375BD2;
     border-radius: 32px;
+    padding: 0.4rem;
   }
   .network-dropdown-label {
-    color: #472F50;
+    color: #375BD2;
   }
 }
 @media (max-width: 450px) {

@@ -5,13 +5,15 @@ import { AiOutlineEdit } from "react-icons/ai";
 import { BiSelectMultiple } from "react-icons/bi";
 import { RiShareBoxFill } from "react-icons/ri";
 import "./PositionDropdown.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEllipsisVertical, faGripVertical } from "@fortawesome/free-solid-svg-icons";
 
 function PositionDropdown({ handleEditCollateral, handleShare, handleMarketSelect }) {
   return (
     <Menu>
       <Menu.Button as="div">
         <button className="PositionDropdown-dots-icon">
-          <HiDotsVertical fontSize={20} fontWeight={700} color={"#717171"} />
+          <FontAwesomeIcon icon={faEllipsisVertical} fontSize={15} />
         </button>
       </Menu.Button>
       <div className="PositionDropdown-extra-options">
@@ -32,14 +34,14 @@ function PositionDropdown({ handleEditCollateral, handleShare, handleMarketSelec
               </p>
             </div>
           </Menu.Item>
-          <Menu.Item>
+          {/* <Menu.Item>
             <div className="menu-item" onClick={handleShare}>
               <RiShareBoxFill fontSize={16} />
               <p>
                 <Trans>Share Position</Trans>
               </p>
             </div>
-          </Menu.Item>
+          </Menu.Item> */}
         </Menu.Items>
       </div>
     </Menu>
