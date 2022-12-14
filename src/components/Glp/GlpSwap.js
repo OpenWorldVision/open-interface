@@ -39,7 +39,7 @@ import RewardRouter from "abis/RewardRouter.json";
 import Token from "abis/Token.json";
 
 import glp24Icon from "img/ic_gmx_24.svg";
-import glp40Icon from "img/ic_gmx_40.svg";
+import logoGMX from "img/logo_GMX.svg";
 import arrowIcon from "img/ic_convert_down.svg";
 
 import avalanche16Icon from "img/ic_avalanche_16.svg";
@@ -739,7 +739,7 @@ export default function GlpSwap(props) {
           <div className="App-card-title">
             <div className="App-card-title-mark">
               <div className="App-card-title-mark-icon">
-                <img src={glp40Icon} alt="glp40Icon" />
+                <img src={logoGMX} alt="glp40Icon" />
                 <img
                   src={bnbIcon}
                   alt={t`Avalanche Icon`}

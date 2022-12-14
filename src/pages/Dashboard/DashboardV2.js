@@ -31,7 +31,7 @@ import Footer from "components/Footer/Footer";
 
 import "./DashboardV2.css";
 
-import gmx40Icon from "img/ic_gmx_40.svg";
+import logoGMX from "img/logo_GMX.svg";
 import bnbIcon from "img/ic_binance_logo.svg";
 import glp40Icon from "img/ic_glp_40.svg";
 import avalanche16Icon from "img/ic_avalanche_16.svg";
@@ -727,7 +727,7 @@ export default function DashboardV2() {
                   <div className="App-card-title">
                     <div className="App-card-title-mark">
                       <div className="App-card-title-mark-icon">
-                        <img src={gmx40Icon} alt="OPEN Token Icon" />
+                        <img src={logoGMX} alt="OPEN Token Icon" />
                       </div>
                       <div className="App-card-title-mark-info">
                         <div className="App-card-title-mark-title">OPEN</div>
@@ -852,7 +852,7 @@ export default function DashboardV2() {
                   <div className="App-card-title">
                     <div className="App-card-title-mark">
                       <div className="App-card-title-mark-icon">
-                        <img src={gmx40Icon} alt="glp40Icon" />
+                        <img src={logoGMX} alt="glp40Icon" />
                         <img
                           src={bnbIcon}
                           alt={t`Avalanche Icon`}

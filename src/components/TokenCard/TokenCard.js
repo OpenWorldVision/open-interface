@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Trans } from "@lingui/macro";
 
 import gmxBigIcon from "img/ic_gmx_custom.svg";
-import glpBigIcon from "img/ic_gmx_40.svg";
+import logoGMX from "img/logo_GMX.svg";
 
 import { isHomeSite } from "lib/legacy";
 
@@ -62,7 +62,7 @@ export default function TokenCard({ showRedirectModal, redirectPopupTimestamp })
     <div className="Home-token-card-options">
       <div className="Home-token-card-option">
         <div className="Home-token-card-option-icon">
-          <img src={glpBigIcon} alt="glpBigIcon" /> OLP
+          <img src={logoGMX} alt="glpBigIcon" /> OLP
         </div>
         <div className="Home-token-card-option-info">
           <div className="Home-token-card-option-title">
