@@ -744,7 +744,7 @@ export default function GlpSwap(props) {
                   src={bnbIcon}
                   alt={t`Avalanche Icon`}
                   className="selected-network-symbol"
-                  style={{ backgroundColor: "#DFE5E5", padding: 2, width: 18 }}
+                  style={{ backgroundColor: "#F9F9F9", padding: 2, width: 18 }}
                 />
               </div>
               <div className="App-card-title-mark-info">

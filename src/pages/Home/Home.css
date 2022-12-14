@@ -229,8 +229,8 @@
   padding: 2.325rem;
   border-radius: 1.3rem;
   max-width: 59.2rem;
-  background: #DFE5E5;
-  border: 1px solid #1A2B6B;
+  background: #F9F9F9;
+  border: 1px solid #DFE7FB;
   border-radius: 4px;
 }
 
@@ -241,7 +241,7 @@
   font-size: 2.325rem;
   line-height: 3.1rem;
   letter-spacing: 0px;
-  color: #1A2B6B;
+  color: #375BD2;
   font-weight: 700;
   height: 3.1rem;
 }
@@ -254,7 +254,7 @@
   font-size: 1.8rem;
   line-height: 2.3rem;
   letter-spacing: 0px;
-  color: #1A2B6B;
+  color: #375BD2;
   margin-top: 2.325rem;
 }
 
@@ -273,7 +273,7 @@
 }
 .Home-token-card-option-action > .buy a
 .Home-token-card-option-action > .buy .a {
-  background: #1A2B6B;
+  background: #375BD2;
   border-radius: 18px;
   font-weight: 700;
   
