@@ -1937,12 +1937,12 @@ export default function SwapBox(props) {
         {showTriggerRatioSection && (
           <div className="Exchange-swap-section">
             <div className="Exchange-swap-section-top">
-              <div className="muted">
+              <div>
                 <Trans>Price</Trans>
               </div>
               {fromTokenInfo && toTokenInfo && (
                 <div
-                  className="muted align-right clickable"
+                  className="align-right clickable"
                   onClick={() => {
                     setTriggerRatioValue(
                       formatAmountFree(
@@ -1986,11 +1986,11 @@ export default function SwapBox(props) {
         {showTriggerPriceSection && (
           <div className="Exchange-swap-section">
             <div className="Exchange-swap-section-top">
-              <div className="muted">
+              <div>
                 <Trans>Price</Trans>
               </div>
               <div
-                className="muted align-right clickable"
+                className="align-right clickable"
                 onClick={() => {
                   setTriggerPriceValue(formatAmountFree(entryMarkPrice, USD_DECIMALS, 2));
                 }}
@@ -2032,7 +2032,7 @@ export default function SwapBox(props) {
           <div className="Exchange-leverage-box">
             <div className="Exchange-leverage-slider-settings">
               <Checkbox isChecked={isLeverageSliderEnabled} setIsChecked={setIsLeverageSliderEnabled}>
-                <span className="muted">Leverage slider</span>
+                <span>Leverage slider</span>
               </Checkbox>
             </div>
             {isLeverageSliderEnabled && (
