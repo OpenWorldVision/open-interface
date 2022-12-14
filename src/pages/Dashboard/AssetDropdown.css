@@ -1,6 +1,5 @@
 .asset-menu-items {
   position: absolute;
-  border: 1px solid #32344c;
   border-radius: 0.4rem;
   outline: none;
   z-index: 100;
@@ -27,7 +26,7 @@
   display: flex;
   align-items: center;
   cursor: pointer;
-  color: #a0a3c4;
+  color: #ffffff;
   text-decoration: none;
   padding: 0.85rem 0.8rem;
 }

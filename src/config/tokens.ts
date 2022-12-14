@@ -92,7 +92,6 @@ export const TOKENS: { [chainId: number]: Token[] } = {
       decimals: 18,
       address: "0x612777Eea37a44F7a95E3B101C39e1E2695fa6C2",
       imageUrl: "https://assets.coingecko.com/coins/images/279/small/ethereum.png?1595348880",
-      isHide: true,
     },
     {
       name: "Binance Coin",
@@ -112,7 +111,6 @@ export const TOKENS: { [chainId: number]: Token[] } = {
       baseSymbol: "BNB",
       isShortable: true,
       imageUrl: "https://assets.coingecko.com/coins/images/825/small/binance-coin-logo.png",
-      isHide: true,
     },
     {
       name: "USD Gambit",
@@ -121,7 +119,6 @@ export const TOKENS: { [chainId: number]: Token[] } = {
       address: getContract(TESTNET, "USDG"),
       isUsdg: true,
       imageUrl: "https://assets.coingecko.com/coins/images/15886/small/usdg-02.png",
-      isHide: true,
     },
     {
       name: "Binance USD",
@@ -130,7 +127,6 @@ export const TOKENS: { [chainId: number]: Token[] } = {
       address: "0x78867bbeef44f2326bf8ddd1941a4439382ef2a7",
       isStable: true,
       imageUrl: "https://assets.coingecko.com/coins/images/9576/small/BUSD.png",
-      isHide: true,
     },
   ],
   [ARBITRUM_TESTNET]: [
@@ -624,8 +620,8 @@ export function getTokenBySymbol(chainId: number, symbol: string) {
 
 export function getWhitelistedTokens(chainId: number) {
   // Only test BTC in testnet
-  if (chainId === TESTNET) {
-    return TOKENS[chainId].filter((token) => token.symbol !== "USDG" && !token?.isHide);
+  if (chainId === 97) {
+    return TOKENS[chainId].filter((token) => token.symbol !== "USDG");
   }
   return TOKENS[chainId].filter((token) => token.symbol !== "USDG");
 }
