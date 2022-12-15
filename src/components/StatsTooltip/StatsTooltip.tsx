@@ -25,7 +25,7 @@ export default function StatsTooltip({
 }: Props) {
   return (
     <>
-      <p className="Tooltip-row">
+      {/* <p className="Tooltip-row">
         <span className="label">
           <Trans>{title} on Arbitrum:</Trans>
         </span>
@@ -44,7 +44,7 @@ export default function StatsTooltip({
           {formatAmount(avaxValue, decimalsForConversion, 0, true)}
           {!showDollar && symbol && " " + symbol}
         </span>
-      </p>
+      </p> */}
       <div className="Tooltip-divider" />
       <p className="Tooltip-row">
         <span className="label">
