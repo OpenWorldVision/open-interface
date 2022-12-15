@@ -336,7 +336,7 @@ export default function ClaimEsGmx({ setPendingTxns }) {
         {!isArbitrum && (
           <div className="Page-description">
             <br />
-            <Trans>Please switch your network to Arbitrum.</Trans>
+            <Trans>Please switch your network to BSC.</Trans>
           </div>
         )}
         {isArbitrum && (
@@ -380,7 +380,7 @@ export default function ClaimEsGmx({ setPendingTxns }) {
                 setIsChecked={() => setSelectedOption(VEST_WITH_GMX_ARB)}
               >
                 <div className="ClaimEsGmx-option-label">
-                  <Trans>Vest with OPEN on Arbitrum</Trans>
+                  <Trans>Vest with OPEN on BSC</Trans>
                 </div>
                 <img src={arbitrumIcon} alt="Arbitrum" />
               </Checkbox>
@@ -390,7 +390,7 @@ export default function ClaimEsGmx({ setPendingTxns }) {
                 setIsChecked={() => setSelectedOption(VEST_WITH_GLP_ARB)}
               >
                 <div className="ClaimEsGmx-option-label">
-                  <Trans>Vest with OLP on Arbitrum</Trans>
+                  <Trans>Vest with OLP on BSC</Trans>
                 </div>
                 <img src={arbitrumIcon} alt="Arbitrum" />
               </Checkbox>
@@ -400,7 +400,7 @@ export default function ClaimEsGmx({ setPendingTxns }) {
                 setIsChecked={() => setSelectedOption(VEST_WITH_GMX_AVAX)}
               >
                 <div className="ClaimEsGmx-option-label">
-                  <Trans>Vest with OPEN on Avalanche</Trans>
+                  <Trans>Vest with OPEN on BSC</Trans>
                 </div>
                 <img src={avaIcon} alt="Avalanche" />
               </Checkbox>
@@ -410,7 +410,7 @@ export default function ClaimEsGmx({ setPendingTxns }) {
                 setIsChecked={() => setSelectedOption(VEST_WITH_GLP_AVAX)}
               >
                 <div className="ClaimEsGmx-option-label avalanche">
-                  <Trans>Vest with OLP on Avalanche</Trans>
+                  <Trans>Vest with OLP on BSC</Trans>
                 </div>
                 <img src={avaIcon} alt="Avalanche" />
               </Checkbox>

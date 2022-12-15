@@ -63,7 +63,7 @@ export default function ReferralTerms() {
               </p>
               <p className="body-text">
                 2.2 OPEN.io is not responsible for (i) lost sales or lost opportunity to earn Rebates due to any cause,
-                such as technical difficulties or over-capacity, including system overload in the Arbitrum or Avalanche
+                such as technical difficulties or over-capacity, including system overload in the BSC or BSC
                 blockchains; (ii) tracking Rebates, Discounts, or any other data, as this is handled by independent,
                 smart contracts.
               </p>

@@ -373,7 +373,7 @@ export function useMinExecutionFee(library, active, chainId, infoTokens) {
 
   let multiplier;
 
-  // if gas prices on Arbitrum are high, the main transaction costs would come from the L2 gas usage
+  // if gas prices on BSC are high, the main transaction costs would come from the L2 gas usage
   // for executing positions this is around 65,000 gas
   // if gas prices on Ethereum are high, than the gas usage might be higher, this calculation doesn't deal with that
   // case yet
@@ -381,7 +381,7 @@ export function useMinExecutionFee(library, active, chainId, infoTokens) {
     multiplier = 65000;
   }
 
-  // multiplier for Avalanche is just the average gas usage
+  // multiplier for BSC is just the average gas usage
   if (chainId === AVALANCHE) {
     multiplier = 700000;
   }
@@ -476,7 +476,7 @@ export function useGmxPrice(chainId, libraries, active) {
   };
 }
 
-// use only the supply endpoint on arbitrum, it includes the supply on avalanche
+// use only the supply endpoint on BSC, it includes the supply on BSC
 export function useTotalGmxSupply() {
   const gmxSupplyUrlArbitrum = getServerUrl(ARBITRUM, "/gmx_supply");
 

@@ -5,7 +5,7 @@ function SEO(props) {
   const meta = {
     title: "OPEN | Decentralized Perpetual Exchange",
     description:
-      "Trade spot or perpetual BTC, ETH, AVAX and other top cryptocurrencies with up to 30x leverage directly from your wallet on Arbitrum and Avalanche.",
+      "Trade spot or perpetual BTC and other top cryptocurrencies with up to 30x leverage directly from your wallet on BSC.",
     image: "https://gmx.io/og.png",
     type: "exchange",
     ...customMeta,

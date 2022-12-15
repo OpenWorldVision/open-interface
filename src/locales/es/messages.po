@@ -335,22 +335,22 @@ msgid "Available:"
 msgstr "Disponible:"
 
 #: src/pages/BuyGMX/BuyGMX.js
-msgid "Avalanche"
-msgstr "Avalanche"
+msgid "BSC"
+msgstr "BSC"
 
 #: src/components/TokenCard/TokenCard.js
 #: src/components/TokenCard/TokenCard.js
-msgid "Avalanche APR:"
-msgstr "Avalanche APR"
+msgid "BSC APR:"
+msgstr "BSC APR"
 
 #: src/pages/Dashboard/DashboardV2.js
 #: src/pages/Dashboard/DashboardV2.js
-msgid "Avalanche Icon"
+msgid "BSC Icon"
 msgstr ""
 
 #: src/pages/BuyGMX/BuyGMX.js
-msgid "Avax is needed on Avalanche to purchase OPEN."
-msgstr "Se necesita Avax en Avalanche para comprar OPEN."
+msgid "Avax is needed on BSC to purchase OPEN."
+msgstr "Se necesita Avax en BSC para comprar OPEN."
 
 #: src/components/Exchange/SwapBox.js
 msgid "Balance"
@@ -467,13 +467,13 @@ msgstr "Compra fallida."
 
 #: src/components/TokenCard/TokenCard.js
 #: src/components/TokenCard/TokenCard.js
-msgid "Buy on Arbitrum"
-msgstr "Comprar en Arbitrum"
+msgid "Buy on BSC"
+msgstr "Comprar en BSC"
 
 #: src/components/TokenCard/TokenCard.js
 #: src/components/TokenCard/TokenCard.js
-msgid "Buy on Avalanche"
-msgstr "Comprar en Avalanche"
+msgid "Buy on BSC"
+msgstr "Comprar en BSC"
 
 #: src/components/Glp/GlpSwap.js
 msgid "Buy submitted."
@@ -1043,8 +1043,8 @@ msgid "Download"
 msgstr "Descargar"
 
 #: src/pages/BuyGMX/BuyGMX.js
-msgid "ETH is needed on Arbitrum to purchase OPEN."
-msgstr "Se necesita ETH en Arbitrum para comprar OPEN."
+msgid "ETH is needed on BSC to purchase OPEN."
+msgstr "Se necesita ETH en BSC para comprar OPEN."
 
 #: src/components/Header/AppHeaderLinks.tsx
 #: src/pages/Stake/StakeV2.js
@@ -1420,8 +1420,8 @@ msgid "OPEN fundamentals"
 msgstr ""
 
 #: src/pages/Home/Home.js
-msgid "OPEN is currently live on Arbitrum and Avalanche."
-msgstr "OPEN esta actualmente en vivo en Arbitrum y Avalanche."
+msgid "OPEN is currently live on BSC and BSC."
+msgstr "OPEN esta actualmente en vivo en BSC yBSC."
 
 #: src/pages/Jobs/Jobs.js
 msgid "OPEN is not actively looking for new hires at the moment. However, if you think you can contribute to the project, please email <0>jobs@gmx.io</0>."
@@ -2318,8 +2318,8 @@ msgid "Please read the <0>Medium post</0> before migrating."
 msgstr ""
 
 #: src/pages/ClaimEsGmx/ClaimEsGmx.js
-msgid "Please switch your network to Arbitrum."
-msgstr "Por favor, cambie su red a Arbitrum."
+msgid "Please switch your network to BSC."
+msgstr "Por favor, cambie su red aBSC."
 
 #: src/components/Exchange/PositionSeller.js
 #: src/components/Exchange/PositionsList.js
@@ -2433,12 +2433,12 @@ msgstr ""
 
 #: src/pages/Dashboard/DashboardV2.js
 #: src/pages/Stake/StakeV2.js
-msgid "Price on Arbitrum"
+msgid "price on BSC"
 msgstr ""
 
 #: src/pages/Dashboard/DashboardV2.js
 #: src/pages/Stake/StakeV2.js
-msgid "Price on Avalanche"
+msgid "Price on BSC"
 msgstr ""
 
 #: src/pages/Actions/Actions.js
@@ -3121,7 +3121,7 @@ msgstr ""
 
 #: src/domain/tokens/approveTokens.tsx
 #: src/lib/contracts/callContract.tsx
-msgid "There is not enough ETH in your account on Arbitrum to send this transaction.<0/><1/><2>Bridge ETH to Arbitrum</2>"
+msgid "There is not enough ETH in your account on BSC to send this transaction.<0/><1/><2>Bridge ETH to BSC</2>"
 msgstr ""
 
 #: src/components/Glp/SwapErrorModal.tsx
@@ -3177,8 +3177,8 @@ msgid "To purchase OPEN on <0>Arbitrum</0>, please change your network."
 msgstr "Para comprar OPEN en <0>Arbitrum</0>, por favor cambie su red."
 
 #: src/pages/BuyGMX/BuyGMX.js
-msgid "To purchase OPEN on <0>Avalanche</0>, please change your network."
-msgstr "Para comprar OPEN en <0>Avalanche<1/></0>, por favor cambie su red."
+msgid "To purchase OPEN on <0>BSC</0>, please change your network."
+msgstr "Para comprar OPEN en <0>BSC<1/></0>, por favor cambie su red."
 
 #: src/components/Glp/GlpSwap.js
 msgid "To reduce fees, select a different asset to pay with."
@@ -3481,7 +3481,7 @@ msgid "Unstaking..."
 msgstr "Destakeando..."
 
 #: src/lib/wallets/index.js
-msgid "Unsupported chain. Switch to Arbitrum network on your wallet and try again"
+msgid "Unsupported chain. Switch to BSC network on your wallet and try again"
 msgstr ""
 
 #: src/components/Exchange/TradeHistory.js
@@ -3519,8 +3519,8 @@ msgid "Useful Links"
 msgstr "Enlaces útiles"
 
 #: src/pages/BuyGMX/BuyGMX.js
-msgid "Using the Avalanche or Synapse bridges, you can also transfer any other supported cryptocurrency, and receive free AVAX to pay for the network's fees."
-msgstr "Usando los puentes Avalanche o Synapse, tambien puedes transferir cualquier otra criptodivisa soportada, y recibir AVAX gratis para pagar las tarifas de la red."
+msgid "Using the BSC or Synapse bridges, you can also transfer any other supported cryptocurrency, and receive free AVAX to pay for the network's fees."
+msgstr "Usando los puentesBSC o Synapse, tambien puedes transferir cualquier otra criptodivisa soportada, y recibir AVAX gratis para pagar las tarifas de la red."
 
 #: src/pages/Dashboard/DashboardV1.js
 #: src/pages/Dashboard/DashboardV2.js
@@ -3540,20 +3540,20 @@ msgid "Vest"
 msgstr ""
 
 #: src/pages/ClaimEsGmx/ClaimEsGmx.js
-msgid "Vest with OLP on Arbitrum"
-msgstr "Adquiera con OLP en Arbitrum"
+msgid "Vest with OLP on BSC"
+msgstr "Adquiera con OLP en BSC"
 
 #: src/pages/ClaimEsGmx/ClaimEsGmx.js
-msgid "Vest with OLP on Avalanche"
-msgstr "Adquiera con OLP en Avalanche"
+msgid "Vest with OLP on BSC"
+msgstr "Adquiera con OLP en BSC"
 
 #: src/pages/ClaimEsGmx/ClaimEsGmx.js
-msgid "Vest with OPEN on Arbitrum"
-msgstr "Adquiera con OPEN en Arbitrum"
+msgid "Vest with OPEN on BSC"
+msgstr "Adquiera con OPEN en BSC"
 
 #: src/pages/ClaimEsGmx/ClaimEsGmx.js
-msgid "Vest with OPEN on Avalanche"
-msgstr "Adquiera con OPEN en Avalanche"
+msgid "Vest with OPEN on BSC"
+msgstr "Adquiera con OPEN en BSC"
 
 #: src/pages/BeginAccountTransfer/BeginAccountTransfer.js
 msgid "Vested OLP not withdrawn"
@@ -3713,7 +3713,7 @@ msgid "Withdrew {0} USD from {tokenSymbol} {longOrShortText}."
 msgstr ""
 
 #: src/pages/Ecosystem/Ecosystem.js
-msgid "Yield Optimizer on Avalanche"
+msgid "Yield Optimizer on BSC"
 msgstr ""
 
 #: src/pages/Ecosystem/Ecosystem.js
@@ -3737,8 +3737,8 @@ msgid "You are leaving OPEN.io and will be redirected to a third party, independ
 msgstr ""
 
 #: src/pages/BuyGMX/BuyGMX.js
-msgid "You can buy AVAX directly on <0>Avalanche</0> using Banxa:"
-msgstr "Puedes comprar AVAX directamente en <0>Avalanche</0> usando Banxa:"
+msgid "You can buy AVAX directly on <0>BSC</0> using Banxa:"
+msgstr "Puedes comprar AVAX directamente en <0>BSC</0> usando Banxa:"
 
 #: src/pages/BuyGMX/BuyGMX.js
 msgid "You can buy ETH directly on <0>Arbitrum</0> using Banxa:"
@@ -3762,12 +3762,12 @@ msgid "You can currently vest a maximum of {0} esOPEN tokens at a ratio of {1} {
 msgstr "Actualmente puede adquirir un máximo de {0} tokens esOPEN a razón de {1} {stakingToken} por 1 esOPEN\"."
 
 #: src/pages/BuyGMX/BuyGMX.js
-msgid "You can transfer AVAX to Avalanche using any of the below options."
-msgstr "Puedes transferir AVAX a Avalanche usando cualquiera de las siguientes opciones."
+msgid "You can transfer AVAX to BSC using any of the below options."
+msgstr "Puedes transferir AVAX aBSC usando cualquiera de las siguientes opciones."
 
 #: src/pages/BuyGMX/BuyGMX.js
-msgid "You can transfer ETH from other networks to Arbitrum using any of the below options:"
-msgstr "Puedes transferir ETH desde otras redes a Arbitrum usando cualquiera de las siguientes opciones:"
+msgid "You can transfer ETH from other networks to BSC using any of the below options:"
+msgstr "Puedes transferir ETH desde otras redes aBSC usando cualquiera de las siguientes opciones:"
 
 #: src/pages/BeginAccountTransfer/BeginAccountTransfer.js
 msgid "You have a <0>pending transfer</0> to {pendingReceiver}."
@@ -4032,11 +4032,11 @@ msgid "{swapOption, select, LONG {Longing} SHORT {Shorting}} {0} not supported"
 msgstr ""
 
 #: src/components/StatsTooltip/StatsTooltip.tsx
-msgid "{title} on Arbitrum:"
+msgid "{title} on BSC:"
 msgstr ""
 
 #: src/components/StatsTooltip/StatsTooltip.tsx
-msgid "{title} on Avalanche:"
+msgid "{title} on BSC:"
 msgstr ""
 
 #: src/pages/Dashboard/DashboardV1.js

@@ -561,7 +561,7 @@ export default function DashboardV2() {
                     />
                   </div>
                 </div>
-                <div className="App-card-row">
+                {/* <div className="App-card-row">
                   <div className="label">
                     <Trans>24h Volume</Trans>
                   </div>
@@ -630,7 +630,7 @@ export default function DashboardV2() {
                       )}
                     />
                   </div>
-                </div>
+                </div> */}
                 {feesSummary?.lastUpdatedAt ? (
                   <div className="App-card-row">
                     <div className="label">
@@ -661,7 +661,7 @@ export default function DashboardV2() {
               </div>
               <div className="App-card-divider"></div>
               <div className="App-card-content">
-                <div className="App-card-row">
+                {/* <div className="App-card-row">
                   <div className="label">
                     <Trans>Total Fees</Trans>
                   </div>
@@ -701,7 +701,7 @@ export default function DashboardV2() {
                       )}
                     />
                   </div>
-                </div>
+                </div> */}
                 <div className="App-card-row">
                   <div className="label">
                     <Trans>Floor Price Fund</Trans>
@@ -754,13 +754,8 @@ export default function DashboardV2() {
                             renderContent={() => (
                               <>
                                 <StatsTooltipRow
-                                  label={t`Price on Arbitrum`}
+                                  label={t`Price on BSC`}
                                   value={formatAmount(gmxPriceFromArbitrum, USD_DECIMALS, 2, true)}
-                                  showDollar={true}
-                                />
-                                <StatsTooltipRow
-                                  label={t`Price on Avalanche`}
-                                  value={formatAmount(gmxPriceFromAvalanche, USD_DECIMALS, 2, true)}
                                   showDollar={true}
                                 />
                               </>
@@ -769,12 +764,12 @@ export default function DashboardV2() {
                         )}
                       </div>
                     </div>
-                    <div className="App-card-row">
+                    {/* <div className="App-card-row">
                       <div className="label">
                         <Trans>Supply</Trans>
                       </div>
                       <div>{formatAmount(totalGmxSupply, GMX_DECIMALS, 0, true)} OPEN</div>
-                    </div>
+                    </div> */}
                     <div className="App-card-row">
                       <div className="label">
                         <Trans>Total Staked</Trans>
@@ -797,12 +792,12 @@ export default function DashboardV2() {
                         />
                       </div>
                     </div>
-                    <div className="App-card-row">
+                    {/* <div className="App-card-row">
                       <div className="label">
                         <Trans>Market Cap</Trans>
                       </div>
                       <div>${formatAmount(gmxMarketCap, USD_DECIMALS, 0, true)}</div>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
                 <div className="stats-piechart" onMouseLeave={onGMXDistributionChartLeave}>
@@ -877,24 +872,24 @@ export default function DashboardV2() {
                       </div>
                       <div>${formatAmount(glpPrice, USD_DECIMALS, 3, true)}</div>
                     </div>
-                    <div className="App-card-row">
+                    {/* <div className="App-card-row">
                       <div className="label">
                         <Trans>Supply</Trans>
                       </div>
                       <div>{formatAmount(glpSupply, GLP_DECIMALS, 0, true)} OLP</div>
-                    </div>
+                    </div> */}
                     <div className="App-card-row">
                       <div className="label">
                         <Trans>Total Staked</Trans>
                       </div>
                       <div>${formatAmount(glpMarketCap, USD_DECIMALS, 0, true)}</div>
                     </div>
-                    <div className="App-card-row">
+                    {/* <div className="App-card-row">
                       <div className="label">
                         <Trans>Market Cap</Trans>
                       </div>
                       <div>${formatAmount(glpMarketCap, USD_DECIMALS, 0, true)}</div>
-                    </div>
+                    </div> */}
                     <div className="App-card-row">
                       <div className="label">
                         <Trans>Stablecoin Percentage</Trans>

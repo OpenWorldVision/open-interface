@@ -51,7 +51,7 @@ export const homeEventsData: EventData[] = [
   //   title: "Arbitrum Nitro Upgrade",
   //   isActive: true,
   //   validTill: "31 Aug 2022, 20:00",
-  //   bodyText: "The Arbitrum Nitro upgrade has been completed.",
+  //   bodyText: "The BSC Nitro upgrade has been completed.",
   //   buttons: [
   //     {
   //       text: "Read More",
@@ -144,11 +144,11 @@ export const appEventsData: EventData[] = [
   // },
   // {
   //   id: "gmx-arbitrum-odyssey",
-  //   title: "OPEN Arbitrum Odyssey",
+  //   title: "OPEN BSC Odyssey",
   //   isActive: true,
   //   validTill: "3 Jul 2022, 12:00",
   //   bodyText:
-  //     "The OPEN Arbitrum Odyssey is taking place this week, all participants will receive prizes. Read on to find out more.",
+  //     "The OPEN BSC Odyssey is taking place this week, all participants will receive prizes. Read on to find out more.",
   //   buttons: [
   //     {
   //       text: "Read More",
@@ -158,11 +158,11 @@ export const appEventsData: EventData[] = [
   // },
   // {
   //   id: "fix-arbitrum-transaction-issues",
-  //   title: "Fix Arbitrum Transactions",
+  //   title: "Fix BSC Transactions",
   //   isActive: true,
   //   validTill: "30 Jun 2022, 12:00",
   //   bodyText:
-  //     "If you experience transaction errors on Arbitrum or data loading issues, please use a free RPC URL from Alchemy.",
+  //     "If you experience transaction errors on BSC or data loading issues, please use a free RPC URL from Alchemy.",
   //   buttons: [
   //     {
   //       text: "Learn More",
@@ -173,10 +173,10 @@ export const appEventsData: EventData[] = [
   // },
   // {
   //   id: "gmx-arbitrum-odyssey-paused",
-  //   title: "OPEN Arbitrum Odyssey Paused",
+  //   title: "OPEN BSC Odyssey Paused",
   //   isActive: true,
   //   validTill: "3 Jul 2022, 12:00",
-  //   bodyText: "The OPEN Arbitrum Odyssey has been paused. Please read the linked post for more information.",
+  //   bodyText: "The OPEN BSC Odyssey has been paused. Please read the linked post for more information.",
   //   buttons: [
   //     {
   //       text: "Read More",
@@ -206,7 +206,7 @@ export const appEventsData: EventData[] = [
   //   isActive: true,
   //   validTill: "3 Jul 2022, 12:00",
   //   bodyText:
-  //     "There are ongoing syncing issues on Alchemy for Arbitrum at the moment, please check their status page and use the public Arbitrum RPC in the meantime",
+  //     "There are ongoing syncing issues on Alchemy for BSC at the moment, please check their status page and use the publicBSC RPC in the meantime",
   //   buttons: [
   //     {
   //       text: "Check Status",
@@ -241,7 +241,7 @@ export const appEventsData: EventData[] = [
   //   isActive: true,
   //   validTill: "10 Jul 2022, 12:00",
   //   bodyText:
-  //     "If you experience data loading or transaction issues on Arbitrum, please use a free RPC URL from Alchemy.",
+  //     "If you experience data loading or transaction issues on BSC, please use a free RPC URL from Alchemy.",
   //   buttons: [
   //     {
   //       text: "Learn More",
@@ -255,7 +255,7 @@ export const appEventsData: EventData[] = [
   //   title: "Arbitrum Nitro Upgrade",
   //   isActive: true,
   //   validTill: "31 Aug 2022, 20:00",
-  //   bodyText: "The Arbitrum Nitro upgrade has been completed.",
+  //   bodyText: "The BSC Nitro upgrade has been completed.",
   //   buttons: [
   //     {
   //       text: "Read More",

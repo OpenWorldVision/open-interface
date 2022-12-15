@@ -204,7 +204,7 @@ export default function Ecosystem() {
       chainIds: [ARBITRUM, AVALANCHE],
     },
     {
-      title: "Shogun Dashboard (Dune Arbitrum)",
+      title: "Shogun Dashboard (Dune BSC)",
       link: "https://dune.com/shogun/gmx-analytics-arbitrum",
       linkLabel: "dune.com",
       about: t`Protocol analytics`,
@@ -213,7 +213,7 @@ export default function Ecosystem() {
       chainIds: [ARBITRUM],
     },
     {
-      title: "Shogun Dashboard (Dune Avalanche)",
+      title: "Shogun Dashboard (Dune BSC)",
       link: "https://dune.com/shogun/gmx-analytics-avalanche",
       linkLabel: "dune.com",
       about: t`Protocol analytics`,
@@ -291,7 +291,7 @@ export default function Ecosystem() {
       title: "Yield Yak Optimizer",
       link: "https://yieldyak.com/",
       linkLabel: "yieldyak.com",
-      about: t`Yield Optimizer on Avalanche`,
+      about: t`Yield Optimizer on BSC`,
       announcementLabel: "twitter.com",
       announcementLink: "https://twitter.com/OpenWorldVision/status/1484601407378378754",
       chainIds: [AVALANCHE],

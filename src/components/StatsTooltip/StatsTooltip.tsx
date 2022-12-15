@@ -27,21 +27,11 @@ export default function StatsTooltip({
     <>
       <p className="Tooltip-row">
         <span className="label">
-          <Trans>{title} on Arbitrum:</Trans>
+          <Trans>{title} on BSC:</Trans>
         </span>
         <span className="amount">
           {showDollar && "$"}
           {formatAmount(arbitrumValue, decimalsForConversion, 0, true)}
-          {!showDollar && symbol && " " + symbol}
-        </span>
-      </p>
-      <p className="Tooltip-row">
-        <span className="label">
-          <Trans>{title} on Avalanche:</Trans>
-        </span>
-        <span className="amount">
-          {showDollar && "$"}
-          {formatAmount(avaxValue, decimalsForConversion, 0, true)}
           {!showDollar && symbol && " " + symbol}
         </span>
       </p>

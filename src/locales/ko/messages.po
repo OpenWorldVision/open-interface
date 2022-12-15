@@ -319,7 +319,7 @@ msgstr "사용가능 유동성"
 #: src/components/Glp/GlpSwap.js
 #: src/components/Glp/GlpSwap.js
 msgid "Available amount to deposit into OLP."
-msgstr "GLP에 예치할 수 있는 양"
+msgstr "OLP에 예치할 수 있는 양"
 
 #: src/components/Glp/GlpSwap.js
 #: src/components/Glp/GlpSwap.js
@@ -335,22 +335,22 @@ msgid "Available:"
 msgstr "사용가능"
 
 #: src/pages/BuyGMX/BuyGMX.js
-msgid "Avalanche"
-msgstr "Avalanche"
+msgid "BSC"
+msgstr "BSC"
 
 #: src/components/TokenCard/TokenCard.js
 #: src/components/TokenCard/TokenCard.js
-msgid "Avalanche APR:"
-msgstr "Avalanche APR:"
+msgid "BSC APR:"
+msgstr "BSC APR:"
 
 #: src/pages/Dashboard/DashboardV2.js
 #: src/pages/Dashboard/DashboardV2.js
-msgid "Avalanche Icon"
+msgid "BSC Icon"
 msgstr ""
 
 #: src/pages/BuyGMX/BuyGMX.js
-msgid "Avax is needed on Avalanche to purchase OPEN."
-msgstr "Avalanche에서 GMX를 구입하기 위해서는 Avax가 필요합니다."
+msgid "Avax is needed on BSC to purchase OPEN."
+msgstr "BSC에서 GMX를 구입하기 위해서는 Avax가 필요합니다."
 
 #: src/components/Exchange/SwapBox.js
 msgid "Balance"
@@ -467,13 +467,13 @@ msgstr "구매 실패"
 
 #: src/components/TokenCard/TokenCard.js
 #: src/components/TokenCard/TokenCard.js
-msgid "Buy on Arbitrum"
+msgid "Buy on BSC"
 msgstr "Arbitrum에서 구매"
 
 #: src/components/TokenCard/TokenCard.js
 #: src/components/TokenCard/TokenCard.js
-msgid "Buy on Avalanche"
-msgstr "Avalanche에서 구매"
+msgid "Buy on BSC"
+msgstr "BSC에서 구매"
 
 #: src/components/Glp/GlpSwap.js
 msgid "Buy submitted."
@@ -1043,7 +1043,7 @@ msgid "Download"
 msgstr "다운로드"
 
 #: src/pages/BuyGMX/BuyGMX.js
-msgid "ETH is needed on Arbitrum to purchase OPEN."
+msgid "ETH is needed on BSC to purchase OPEN."
 msgstr "Arbitrum에서 GMX를 구매하기 위해서는 ETH가 필요합니다."
 
 #: src/components/Header/AppHeaderLinks.tsx
@@ -1352,7 +1352,7 @@ msgstr ""
 
 #: src/components/TokenCard/TokenCard.js
 msgid "OLP is the liquidity provider token. Accrues 70% of the platform's generated fees."
-msgstr "GLP는 유동성 공급 토큰입니다. 플랫폼에서 생성되는 수수료의 70%를 축적하세요."
+msgstr "OLP는 유동성 공급 토큰입니다. 플랫폼에서 생성되는 수수료의 70%를 축적하세요."
 
 #: src/components/Glp/GlpSwap.js
 msgid "OLP sell disabled, pending {0} upgrade"
@@ -1420,8 +1420,8 @@ msgid "OPEN fundamentals"
 msgstr ""
 
 #: src/pages/Home/Home.js
-msgid "OPEN is currently live on Arbitrum and Avalanche."
-msgstr "GMX는 현재 Arbitrum과 Avalanche에서 이용할 수 있습니다."
+msgid "OPEN is currently live on BSC and BSC."
+msgstr "GMX는 현재 Arbitrum과 BSC에서 이용할 수 있습니다."
 
 #: src/pages/Jobs/Jobs.js
 msgid "OPEN is not actively looking for new hires at the moment. However, if you think you can contribute to the project, please email <0>jobs@gmx.io</0>."
@@ -2318,7 +2318,7 @@ msgid "Please read the <0>Medium post</0> before migrating."
 msgstr ""
 
 #: src/pages/ClaimEsGmx/ClaimEsGmx.js
-msgid "Please switch your network to Arbitrum."
+msgid "Please switch your network to BSC."
 msgstr "네트워크를 Arbitrum으로 변경해주세요."
 
 #: src/components/Exchange/PositionSeller.js
@@ -2433,12 +2433,12 @@ msgstr ""
 
 #: src/pages/Dashboard/DashboardV2.js
 #: src/pages/Stake/StakeV2.js
-msgid "Price on Arbitrum"
+msgid "price on BSC"
 msgstr ""
 
 #: src/pages/Dashboard/DashboardV2.js
 #: src/pages/Stake/StakeV2.js
-msgid "Price on Avalanche"
+msgid "Price on BSC"
 msgstr ""
 
 #: src/pages/Actions/Actions.js
@@ -2720,7 +2720,7 @@ msgstr "판매중..."
 
 #: src/pages/BeginAccountTransfer/BeginAccountTransfer.js
 msgid "Sender has withdrawn all tokens from OLP Vesting Vault"
-msgstr "GLP의 베스팅 볼트에서 모든 토큰을 인출했습니다."
+msgstr "OLP의 베스팅 볼트에서 모든 토큰을 인출했습니다."
 
 #: src/pages/BeginAccountTransfer/BeginAccountTransfer.js
 msgid "Sender has withdrawn all tokens from OPEN Vesting Vault"
@@ -3121,7 +3121,7 @@ msgstr ""
 
 #: src/domain/tokens/approveTokens.tsx
 #: src/lib/contracts/callContract.tsx
-msgid "There is not enough ETH in your account on Arbitrum to send this transaction.<0/><1/><2>Bridge ETH to Arbitrum</2>"
+msgid "There is not enough ETH in your account on BSC to send this transaction.<0/><1/><2>Bridge ETH to BSC</2>"
 msgstr ""
 
 #: src/components/Glp/SwapErrorModal.tsx
@@ -3177,8 +3177,8 @@ msgid "To purchase OPEN on <0>Arbitrum</0>, please change your network."
 msgstr "<0>Arbitrum</0>에서 GMX를 구입하려면 네트워크를 변경해주세요."
 
 #: src/pages/BuyGMX/BuyGMX.js
-msgid "To purchase OPEN on <0>Avalanche</0>, please change your network."
-msgstr "<0>Avalanche</0>에서 GMX를 구입하려면 네트워크를 변경해주세요."
+msgid "To purchase OPEN on <0>BSC</0>, please change your network."
+msgstr "<0>BSC</0>에서 GMX를 구입하려면 네트워크를 변경해주세요."
 
 #: src/components/Glp/GlpSwap.js
 msgid "To reduce fees, select a different asset to pay with."
@@ -3481,7 +3481,7 @@ msgid "Unstaking..."
 msgstr "언스테이킹중..."
 
 #: src/lib/wallets/index.js
-msgid "Unsupported chain. Switch to Arbitrum network on your wallet and try again"
+msgid "Unsupported chain. Switch to BSC network on your wallet and try again"
 msgstr ""
 
 #: src/components/Exchange/TradeHistory.js
@@ -3519,7 +3519,7 @@ msgid "Useful Links"
 msgstr "유용한 링크"
 
 #: src/pages/BuyGMX/BuyGMX.js
-msgid "Using the Avalanche or Synapse bridges, you can also transfer any other supported cryptocurrency, and receive free AVAX to pay for the network's fees."
+msgid "Using the BSC or Synapse bridges, you can also transfer any other supported cryptocurrency, and receive free AVAX to pay for the network's fees."
 msgstr "Avalanche나 Synapse 브리지를 사용하면 지원되는 어떤 암호화폐든 이전할 수 있으며 네트워크 수수료 지불을 위한 AVAX를 무료로 받을 수 있습니다."
 
 #: src/pages/Dashboard/DashboardV1.js
@@ -3540,20 +3540,20 @@ msgid "Vest"
 msgstr ""
 
 #: src/pages/ClaimEsGmx/ClaimEsGmx.js
-msgid "Vest with OLP on Arbitrum"
+msgid "Vest with OLP on BSC"
 msgstr "Arbitrum에서 GLP로 베스팅하기"
 
 #: src/pages/ClaimEsGmx/ClaimEsGmx.js
-msgid "Vest with OLP on Avalanche"
-msgstr "Avalanche에서 GMX로 베스팅하기"
+msgid "Vest with OLP on BSC"
+msgstr "BSC에서 GMX로 베스팅하기"
 
 #: src/pages/ClaimEsGmx/ClaimEsGmx.js
-msgid "Vest with OPEN on Arbitrum"
+msgid "Vest with OPEN on BSC"
 msgstr "Arbitrum에서 GMX로 베스팅하기"
 
 #: src/pages/ClaimEsGmx/ClaimEsGmx.js
-msgid "Vest with OPEN on Avalanche"
-msgstr "Avalanche에서 GMX로 베스팅하기"
+msgid "Vest with OPEN on BSC"
+msgstr "BSC에서 GMX로 베스팅하기"
 
 #: src/pages/BeginAccountTransfer/BeginAccountTransfer.js
 msgid "Vested OLP not withdrawn"
@@ -3713,7 +3713,7 @@ msgid "Withdrew {0} USD from {tokenSymbol} {longOrShortText}."
 msgstr ""
 
 #: src/pages/Ecosystem/Ecosystem.js
-msgid "Yield Optimizer on Avalanche"
+msgid "Yield Optimizer on BSC"
 msgstr ""
 
 #: src/pages/Ecosystem/Ecosystem.js
@@ -3737,8 +3737,8 @@ msgid "You are leaving OPEN.io and will be redirected to a third party, independ
 msgstr ""
 
 #: src/pages/BuyGMX/BuyGMX.js
-msgid "You can buy AVAX directly on <0>Avalanche</0> using Banxa:"
-msgstr "Banxa를 사용하여 <0>Avalanche</0>상에서 직접 AVAX를 구입:"
+msgid "You can buy AVAX directly on <0>BSC</0> using Banxa:"
+msgstr "Banxa를 사용하여 <0>BSC</0>상에서 직접 AVAX를 구입:"
 
 #: src/pages/BuyGMX/BuyGMX.js
 msgid "You can buy ETH directly on <0>Arbitrum</0> using Banxa:"
@@ -3762,11 +3762,11 @@ msgid "You can currently vest a maximum of {0} esOPEN tokens at a ratio of {1} {
 msgstr "{1} {stakingToken} 대 1 esOPEN 비율로 최대 {0} esOPEN 토큰을 현재 베스팅 할 수 있습니다."
 
 #: src/pages/BuyGMX/BuyGMX.js
-msgid "You can transfer AVAX to Avalanche using any of the below options."
+msgid "You can transfer AVAX to BSC using any of the below options."
 msgstr "아래의 옵션중 하나를 사용해, AVAX를 Avalanche에 보낼 수 있습니다."
 
 #: src/pages/BuyGMX/BuyGMX.js
-msgid "You can transfer ETH from other networks to Arbitrum using any of the below options:"
+msgid "You can transfer ETH from other networks to BSC using any of the below options:"
 msgstr "아래의 옵션중 하나를 사용해, ETH를 Arbitrum에 보낼 수 있습니다."
 
 #: src/pages/BeginAccountTransfer/BeginAccountTransfer.js
@@ -4032,11 +4032,11 @@ msgid "{swapOption, select, LONG {Longing} SHORT {Shorting}} {0} not supported"
 msgstr ""
 
 #: src/components/StatsTooltip/StatsTooltip.tsx
-msgid "{title} on Arbitrum:"
+msgid "{title} on BSC:"
 msgstr ""
 
 #: src/components/StatsTooltip/StatsTooltip.tsx
-msgid "{title} on Avalanche:"
+msgid "{title} on BSC:"
 msgstr ""
 
 #: src/pages/Dashboard/DashboardV1.js
