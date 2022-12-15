@@ -573,8 +573,8 @@ export default function DashboardV2() {
                       renderContent={() => (
                         <StatsTooltip
                           title={t`Volume`}
-                          arbitrumValue={currentVolumeInfo?.[ARBITRUM].totalVolume}
-                          avaxValue={currentVolumeInfo?.[AVALANCHE].totalVolume}
+                          // arbitrumValue={currentVolumeInfo?.[ARBITRUM].totalVolume}
+                          // avaxValue={currentVolumeInfo?.[AVALANCHE].totalVolume}
                           total={currentVolumeInfo?.totalVolume}
                         />
                       )}
@@ -671,13 +671,7 @@ export default function DashboardV2() {
                       className="nowrap"
                       handle={`$${numberWithCommas(totalFees?.[chainId])}`}
                       renderContent={() => (
-                        <StatsTooltip
-                          title={t`Total Fees`}
-                          arbitrumValue={totalFees?.[ARBITRUM]}
-                          avaxValue={totalFees?.[AVALANCHE]}
-                          total={totalFees?.total}
-                          decimalsForConversion={0}
-                        />
+                        <StatsTooltip title={t`Total Fees`} total={totalFees?.total} decimalsForConversion={0} />
                       )}
                     />
                   </div>
