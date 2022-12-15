@@ -6,7 +6,6 @@ import useSWR from "swr";
 import { PieChart, Pie, Cell, Tooltip } from "recharts";
 import TooltipComponent from "components/Tooltip/Tooltip";
 
-import hexToRgba from "hex-to-rgba";
 import { ethers } from "ethers";
 
 import {
@@ -53,6 +52,7 @@ import { getTokenBySymbol, getWhitelistedTokens, GLP_POOL_COLORS } from "config/
 import { bigNumberify, expandDecimals, formatAmount, formatKeyAmount, numberWithCommas } from "lib/numbers";
 import { useChainId } from "lib/chains";
 import { formatDate } from "lib/dates";
+import { hexToRgba } from "hex-and-rgba/esm";
 const ACTIVE_CHAIN_IDS = [ARBITRUM, AVALANCHE];
 
 const { AddressZero } = ethers.constants;
@@ -818,21 +818,24 @@ export default function DashboardV2() {
                         onMouseOut={onGMXDistributionChartLeave}
                         onMouseLeave={onGMXDistributionChartLeave}
                       >
-                        {gmxDistributionData.map((entry, index) => (
-                          <Cell
-                            key={`cell-${index}`}
-                            fill={entry.color}
-                            style={{
-                              filter:
-                                gmxActiveIndex === index
-                                  ? `drop-shadow(0px 0px 6px ${hexToRgba(entry.color, 0.7)})`
-                                  : "none",
-                              cursor: "pointer",
-                            }}
-                            stroke={entry.color}
-                            strokeWidth={gmxActiveIndex === index ? 1 : 1}
-                          />
-                        ))}
+                        {gmxDistributionData.map((entry, index) => {
+                          console.log("\u001B[36m -> file: DashboardV2.js:822 -> entry", entry);
+                          return (
+                            <Cell
+                              key={`cell-${index}`}
+                              fill={entry.color}
+                              style={{
+                                filter:
+                                  gmxActiveIndex === index
+                                    ? `drop-shadow(0px 0px 6px ${hexToRgba(entry.color, 0.7)})`
+                                    : "none",
+                                cursor: "pointer",
+                              }}
+                              stroke={entry.color}
+                              strokeWidth={gmxActiveIndex === index ? 1 : 1}
+                            />
+                          );
+                        })}
                       </Pie>
                       <text x={"50%"} y={"50%"} fill="#375BD2" textAnchor="middle" dominantBaseline="middle">
                         <Trans>Distribution</Trans>

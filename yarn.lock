@@ -9199,7 +9199,8 @@ __metadata:
     ethers: 5.6.8
     framer-motion: 4.1.17
     graphql: 15.8.0
-    hex-to-rgba: 2.0.1
+    hex-and-rgba: ^2.0.0
+    hex-to-rgba: ^2.0.1
     html-to-image: ^1.10.8
     husky: 7.0.4
     krasulya-lightweight-charts: 3.4.3
@@ -9654,6 +9655,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"hex-and-rgba@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "hex-and-rgba@npm:2.0.0"
+  bin:
+    ahextorgba: bin/ahextorgba.js
+    hex-and-rgba: bin/hex-and-rgba.js
+    hexandrgba: bin/hex-and-rgba.js
+    hextorgba: bin/hextorgba.js
+    rgbatoahex: bin/rgbatoahex.js
+    rgbatohex: bin/rgbatohex.js
+  checksum: 8e384a68db2ccc506b81171c9025f2eabeb8e36079f1ffa339b4eea61e3b8b863b538cf991a7b82a3f518257b527e76654095e45be22b937f95d5ceb517c5979
+  languageName: node
+  linkType: hard
+
 "hex-color-regex@npm:^1.1.0":
   version: 1.1.0
   resolution: "hex-color-regex@npm:1.1.0"
@@ -9661,7 +9676,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"hex-to-rgba@npm:2.0.1":
+"hex-to-rgba@npm:^2.0.1":
   version: 2.0.1
   resolution: "hex-to-rgba@npm:2.0.1"
   checksum: adbb81babe9d06cf743b925e2104968bb32d9e10f0de328b71c9e20ff52da4028fadde4623261866eaed4d9a3b975fb325fa34f2422eb035e839ed71ec462431
