@@ -254,7 +254,7 @@ export const getWalletConnectHandler = (activate, deactivate, setActivatingConne
     setActivatingConnector(walletConnect);
     activate(walletConnect, (ex) => {
       if (ex instanceof UnsupportedChainIdError) {
-        helperToast.error(t`Unsupported chain. Switch to Arbitrum network on your wallet and try again`);
+        helperToast.error(t`Unsupported chain. Switch to BSC network on your wallet and try again`);
         console.warn(ex);
       } else if (!(ex instanceof UserRejectedRequestErrorWalletConnect)) {
         helperToast.error(ex.message);

@@ -335,22 +335,22 @@ msgid "Available:"
 msgstr "可用的"
 
 #: src/pages/BuyGMX/BuyGMX.js
-msgid "Avalanche"
-msgstr "Avalanche"
+msgid "BSC"
+msgstr "BSC"
 
 #: src/components/TokenCard/TokenCard.js
 #: src/components/TokenCard/TokenCard.js
-msgid "Avalanche APR:"
+msgid "BSC APR:"
 msgstr "Avalanche年利率"
 
 #: src/pages/Dashboard/DashboardV2.js
 #: src/pages/Dashboard/DashboardV2.js
-msgid "Avalanche Icon"
+msgid "BSC Icon"
 msgstr ""
 
 #: src/pages/BuyGMX/BuyGMX.js
-msgid "Avax is needed on Avalanche to purchase OPEN."
-msgstr "在Avalanche上需要Avax来购买GMX"
+msgid "BNB is needed on BSC to purchase OPEN."
+msgstr "在BSC上需要BNB来购买GMX"
 
 #: src/components/Exchange/SwapBox.js
 msgid "Balance"
@@ -467,13 +467,13 @@ msgstr "买入失败"
 
 #: src/components/TokenCard/TokenCard.js
 #: src/components/TokenCard/TokenCard.js
-msgid "Buy on Arbitrum"
+msgid "Buy on BSC"
 msgstr "在Arbitrum上购买"
 
 #: src/components/TokenCard/TokenCard.js
 #: src/components/TokenCard/TokenCard.js
-msgid "Buy on Avalanche"
-msgstr "在Avalanche上购买"
+msgid "Buy on BSC"
+msgstr "在BSC上购买"
 
 #: src/components/Glp/GlpSwap.js
 msgid "Buy submitted."
@@ -1043,7 +1043,7 @@ msgid "Download"
 msgstr "下载"
 
 #: src/pages/BuyGMX/BuyGMX.js
-msgid "ETH is needed on Arbitrum to purchase OPEN."
+msgid "ETH is needed on BSC to purchase OPEN."
 msgstr "在Arbitrum上需使用ETH来购买GMX"
 
 #: src/components/Header/AppHeaderLinks.tsx
@@ -1335,7 +1335,7 @@ msgstr ""
 
 #: src/pages/Dashboard/DashboardV2.js
 msgid "OLP Index Composition"
-msgstr "GLP指数构成"
+msgstr "OLP指数构成"
 
 #: src/pages/Dashboard/DashboardV2.js
 msgid "OLP Pool"
@@ -1352,7 +1352,7 @@ msgstr ""
 
 #: src/components/TokenCard/TokenCard.js
 msgid "OLP is the liquidity provider token. Accrues 70% of the platform's generated fees."
-msgstr "GLP是流动性提供者代币。累积了70%平台产生的费用"
+msgstr "OLP是流动性提供者代币。累积了70%平台产生的费用"
 
 #: src/components/Glp/GlpSwap.js
 msgid "OLP sell disabled, pending {0} upgrade"
@@ -1420,7 +1420,7 @@ msgid "OPEN fundamentals"
 msgstr ""
 
 #: src/pages/Home/Home.js
-msgid "OPEN is currently live on Arbitrum and Avalanche."
+msgid "OPEN is currently live on BSC and BSC."
 msgstr "GMX目前在Arbitrum和Avalanche上线"
 
 #: src/pages/Jobs/Jobs.js
@@ -1542,7 +1542,7 @@ msgstr ""
 
 #: src/components/Glp/GlpSwap.js
 msgid "Insufficient OLP balance"
-msgstr "GLP余额不足"
+msgstr "OLP余额不足"
 
 #: src/components/Exchange/SwapBox.js
 #: src/components/Exchange/SwapBox.js
@@ -2318,7 +2318,7 @@ msgid "Please read the <0>Medium post</0> before migrating."
 msgstr ""
 
 #: src/pages/ClaimEsGmx/ClaimEsGmx.js
-msgid "Please switch your network to Arbitrum."
+msgid "Please switch your network to BSC."
 msgstr "请将您的网络切换到Arbitrum"
 
 #: src/components/Exchange/PositionSeller.js
@@ -2433,12 +2433,12 @@ msgstr ""
 
 #: src/pages/Dashboard/DashboardV2.js
 #: src/pages/Stake/StakeV2.js
-msgid "Price on Arbitrum"
+msgid "price on BSC"
 msgstr ""
 
 #: src/pages/Dashboard/DashboardV2.js
 #: src/pages/Stake/StakeV2.js
-msgid "Price on Avalanche"
+msgid "Price on BSC"
 msgstr ""
 
 #: src/pages/Actions/Actions.js
@@ -3121,7 +3121,7 @@ msgstr ""
 
 #: src/domain/tokens/approveTokens.tsx
 #: src/lib/contracts/callContract.tsx
-msgid "There is not enough ETH in your account on Arbitrum to send this transaction.<0/><1/><2>Bridge ETH to Arbitrum</2>"
+msgid "There is not enough ETH in your account on BSC to send this transaction.<0/><1/><2>Bridge ETH to BSC</2>"
 msgstr ""
 
 #: src/components/Glp/SwapErrorModal.tsx
@@ -3177,8 +3177,8 @@ msgid "To purchase OPEN on <0>Arbitrum</0>, please change your network."
 msgstr "要在<0>Arbitrum</0>上购买GMX，请更换你的网络"
 
 #: src/pages/BuyGMX/BuyGMX.js
-msgid "To purchase OPEN on <0>Avalanche</0>, please change your network."
-msgstr "要在<0>Avalanche</0>上购买GMX，请改变你的网络"
+msgid "To purchase OPEN on <0>BSC</0>, please change your network."
+msgstr "要在<0>BSC</0>上购买GMX，请改变你的网络"
 
 #: src/components/Glp/GlpSwap.js
 msgid "To reduce fees, select a different asset to pay with."
@@ -3283,7 +3283,7 @@ msgstr ""
 
 #: src/pages/Dashboard/DashboardV2.js
 msgid "Total value of tokens in OLP pool ({chainName})"
-msgstr "GLP池中的代币总值({chainName})"
+msgstr "OLP池中的代币总值({chainName})"
 
 #: src/components/StatsTooltip/StatsTooltip.tsx
 msgid "Total:"
@@ -3481,7 +3481,7 @@ msgid "Unstaking..."
 msgstr "解除质押中..."
 
 #: src/lib/wallets/index.js
-msgid "Unsupported chain. Switch to Arbitrum network on your wallet and try again"
+msgid "Unsupported chain. Switch to BSC network on your wallet and try again"
 msgstr ""
 
 #: src/components/Exchange/TradeHistory.js
@@ -3519,7 +3519,7 @@ msgid "Useful Links"
 msgstr "实用链接"
 
 #: src/pages/BuyGMX/BuyGMX.js
-msgid "Using the Avalanche or Synapse bridges, you can also transfer any other supported cryptocurrency, and receive free AVAX to pay for the network's fees."
+msgid "Using the BSC or Synapse bridges, you can also transfer any other supported cryptocurrency, and receive free AVAX to pay for the network's fees."
 msgstr "使用Avalanche或Synapse桥接，你也可以转移任何其他支持的加密货币，并收到免费的AVAX来支付网络费用"
 
 #: src/pages/Dashboard/DashboardV1.js
@@ -3540,20 +3540,20 @@ msgid "Vest"
 msgstr ""
 
 #: src/pages/ClaimEsGmx/ClaimEsGmx.js
-msgid "Vest with OLP on Arbitrum"
+msgid "Vest with OLP on BSC"
 msgstr "在Arbitrum上授权GLP"
 
 #: src/pages/ClaimEsGmx/ClaimEsGmx.js
-msgid "Vest with OLP on Avalanche"
-msgstr "在Avalanche上授权GLP"
+msgid "Vest with OLP on BSC"
+msgstr "在BSC上授权GLP"
 
 #: src/pages/ClaimEsGmx/ClaimEsGmx.js
-msgid "Vest with OPEN on Arbitrum"
+msgid "Vest with OPEN on BSC"
 msgstr "在Arbitrum上授权GMX"
 
 #: src/pages/ClaimEsGmx/ClaimEsGmx.js
-msgid "Vest with OPEN on Avalanche"
-msgstr "在Avalanche上授权GMX"
+msgid "Vest with OPEN on BSC"
+msgstr "在BSC上授权GMX"
 
 #: src/pages/BeginAccountTransfer/BeginAccountTransfer.js
 msgid "Vested OLP not withdrawn"
@@ -3713,7 +3713,7 @@ msgid "Withdrew {0} USD from {tokenSymbol} {longOrShortText}."
 msgstr ""
 
 #: src/pages/Ecosystem/Ecosystem.js
-msgid "Yield Optimizer on Avalanche"
+msgid "Yield Optimizer on BSC"
 msgstr ""
 
 #: src/pages/Ecosystem/Ecosystem.js
@@ -3737,8 +3737,8 @@ msgid "You are leaving OPEN.io and will be redirected to a third party, independ
 msgstr ""
 
 #: src/pages/BuyGMX/BuyGMX.js
-msgid "You can buy AVAX directly on <0>Avalanche</0> using Banxa:"
-msgstr "你可以直接在<0>Avalanche</0>上使用Banxa购买AVAX："
+msgid "You can buy AVAX directly on <0>BSC</0> using Banxa:"
+msgstr "你可以直接在<0>BSC</0>上使用Banxa购买AVAX："
 
 #: src/pages/BuyGMX/BuyGMX.js
 msgid "You can buy ETH directly on <0>Arbitrum</0> using Banxa:"
@@ -3762,11 +3762,11 @@ msgid "You can currently vest a maximum of {0} esOPEN tokens at a ratio of {1} {
 msgstr "目前，您最多可以授权{0}个esGMX代币，比例为{1}个esGMX。 {stakingToken}对1esGMX"
 
 #: src/pages/BuyGMX/BuyGMX.js
-msgid "You can transfer AVAX to Avalanche using any of the below options."
+msgid "You can transfer AVAX to BSC using any of the below options."
 msgstr ""
 
 #: src/pages/BuyGMX/BuyGMX.js
-msgid "You can transfer ETH from other networks to Arbitrum using any of the below options:"
+msgid "You can transfer ETH from other networks to BSC using any of the below options:"
 msgstr "您可以使用以下任何一种方式将ETH从其他网络转移到Arbitrum："
 
 #: src/pages/BeginAccountTransfer/BeginAccountTransfer.js
@@ -4032,11 +4032,11 @@ msgid "{swapOption, select, LONG {Longing} SHORT {Shorting}} {0} not supported"
 msgstr ""
 
 #: src/components/StatsTooltip/StatsTooltip.tsx
-msgid "{title} on Arbitrum:"
+msgid "{title} on BSC:"
 msgstr ""
 
 #: src/components/StatsTooltip/StatsTooltip.tsx
-msgid "{title} on Avalanche:"
+msgid "{title} on BSC:"
 msgstr ""
 
 #: src/pages/Dashboard/DashboardV1.js

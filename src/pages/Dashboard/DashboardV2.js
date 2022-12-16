@@ -6,7 +6,6 @@ import useSWR from "swr";
 import { PieChart, Pie, Cell, Tooltip } from "recharts";
 import TooltipComponent from "components/Tooltip/Tooltip";
 
-import hexToRgba from "hex-to-rgba";
 import { ethers } from "ethers";
 
 import {
@@ -53,6 +52,7 @@ import { getTokenBySymbol, getWhitelistedTokens, GLP_POOL_COLORS } from "config/
 import { bigNumberify, expandDecimals, formatAmount, formatKeyAmount, numberWithCommas } from "lib/numbers";
 import { useChainId } from "lib/chains";
 import { formatDate } from "lib/dates";
+import { hexToRgba } from "hex-and-rgba/esm";
 const ACTIVE_CHAIN_IDS = [ARBITRUM, AVALANCHE];
 
 const { AddressZero } = ethers.constants;
@@ -561,7 +561,7 @@ export default function DashboardV2() {
                     />
                   </div>
                 </div>
-                <div className="App-card-row">
+                {/* <div className="App-card-row">
                   <div className="label">
                     <Trans>24h Volume</Trans>
                   </div>
@@ -630,7 +630,7 @@ export default function DashboardV2() {
                       )}
                     />
                   </div>
-                </div>
+                </div> */}
                 {feesSummary?.lastUpdatedAt ? (
                   <div className="App-card-row">
                     <div className="label">
@@ -661,7 +661,7 @@ export default function DashboardV2() {
               </div>
               <div className="App-card-divider"></div>
               <div className="App-card-content">
-                <div className="App-card-row">
+                {/* <div className="App-card-row">
                   <div className="label">
                     <Trans>Total Fees</Trans>
                   </div>
@@ -695,7 +695,7 @@ export default function DashboardV2() {
                       )}
                     />
                   </div>
-                </div>
+                </div> */}
                 <div className="App-card-row">
                   <div className="label">
                     <Trans>Floor Price Fund</Trans>
@@ -748,27 +748,22 @@ export default function DashboardV2() {
                             renderContent={() => (
                               <>
                                 <StatsTooltipRow
-                                  label={t`Price on BSC Testnet`}
+                                  label={t`Price on BSC`}
                                   value={formatAmount(gmxPriceFromArbitrum, USD_DECIMALS, 2, true)}
                                   showDollar={true}
                                 />
-                                {/* <StatsTooltipRow
-                                  label={t`Price on Avalanche`}
-                                  value={formatAmount(gmxPriceFromAvalanche, USD_DECIMALS, 2, true)}
-                                  showDollar={true}
-                                /> */}
                               </>
                             )}
                           />
                         )}
                       </div>
                     </div>
-                    <div className="App-card-row">
+                    {/* <div className="App-card-row">
                       <div className="label">
                         <Trans>Supply</Trans>
                       </div>
                       <div>{formatAmount(totalGmxSupply, GMX_DECIMALS, 0, true)} OPEN</div>
-                    </div>
+                    </div> */}
                     <div className="App-card-row">
                       <div className="label">
                         <Trans>Total Staked</Trans>
@@ -791,12 +786,12 @@ export default function DashboardV2() {
                         />
                       </div>
                     </div>
-                    <div className="App-card-row">
+                    {/* <div className="App-card-row">
                       <div className="label">
                         <Trans>Market Cap</Trans>
                       </div>
                       <div>${formatAmount(gmxMarketCap, USD_DECIMALS, 0, true)}</div>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
                 <div className="stats-piechart" onMouseLeave={onGMXDistributionChartLeave}>
@@ -817,21 +812,24 @@ export default function DashboardV2() {
                         onMouseOut={onGMXDistributionChartLeave}
                         onMouseLeave={onGMXDistributionChartLeave}
                       >
-                        {gmxDistributionData.map((entry, index) => (
-                          <Cell
-                            key={`cell-${index}`}
-                            fill={entry.color}
-                            style={{
-                              filter:
-                                gmxActiveIndex === index
-                                  ? `drop-shadow(0px 0px 6px ${hexToRgba(entry.color, 0.7)})`
-                                  : "none",
-                              cursor: "pointer",
-                            }}
-                            stroke={entry.color}
-                            strokeWidth={gmxActiveIndex === index ? 1 : 1}
-                          />
-                        ))}
+                        {gmxDistributionData.map((entry, index) => {
+                          console.log("\u001B[36m -> file: DashboardV2.js:822 -> entry", entry);
+                          return (
+                            <Cell
+                              key={`cell-${index}`}
+                              fill={entry.color}
+                              style={{
+                                filter:
+                                  gmxActiveIndex === index
+                                    ? `drop-shadow(0px 0px 6px ${hexToRgba(entry.color, 0.7)})`
+                                    : "none",
+                                cursor: "pointer",
+                              }}
+                              stroke={entry.color}
+                              strokeWidth={gmxActiveIndex === index ? 1 : 1}
+                            />
+                          );
+                        })}
                       </Pie>
                       <text x={"50%"} y={"50%"} fill="#375BD2" textAnchor="middle" dominantBaseline="middle">
                         <Trans>Distribution</Trans>
@@ -871,24 +869,24 @@ export default function DashboardV2() {
                       </div>
                       <div>${formatAmount(glpPrice, USD_DECIMALS, 3, true)}</div>
                     </div>
-                    <div className="App-card-row">
+                    {/* <div className="App-card-row">
                       <div className="label">
                         <Trans>Supply</Trans>
                       </div>
                       <div>{formatAmount(glpSupply, GLP_DECIMALS, 0, true)} OLP</div>
-                    </div>
+                    </div> */}
                     <div className="App-card-row">
                       <div className="label">
                         <Trans>Total Staked</Trans>
                       </div>
                       <div>${formatAmount(glpMarketCap, USD_DECIMALS, 0, true)}</div>
                     </div>
-                    <div className="App-card-row">
+                    {/* <div className="App-card-row">
                       <div className="label">
                         <Trans>Market Cap</Trans>
                       </div>
                       <div>${formatAmount(glpMarketCap, USD_DECIMALS, 0, true)}</div>
-                    </div>
+                    </div> */}
                     <div className="App-card-row">
                       <div className="label">
                         <Trans>Stablecoin Percentage</Trans>

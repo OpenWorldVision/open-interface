@@ -45,7 +45,7 @@ export default function BuyGMX() {
                 <Trans>Buy / Transfer ETH</Trans>
               </div>
               <div className="Page-description">
-                <Trans>ETH is needed on Arbitrum to purchase OPEN.</Trans>
+                <Trans>ETH is needed on BSC to purchase OPEN.</Trans>
                 <br />
                 <Trans>
                   To purchase OPEN on <span onClick={() => onNetworkSelect(AVALANCHE)}>Avalanche</span>, please change
@@ -86,7 +86,7 @@ export default function BuyGMX() {
               <div className="App-card-divider" />
               <div className="App-card-content">
                 <div className="BuyGMXGLP-description">
-                  <Trans>You can transfer ETH from other networks to Arbitrum using any of the below options:</Trans>
+                  <Trans>You can transfer ETH from other networks to BSC using any of the below options:</Trans>
                 </div>
                 <div className="bridge-options">
                   <Button
@@ -121,7 +121,7 @@ export default function BuyGMX() {
                 <Trans>Buy / Transfer AVAX</Trans>
               </div>
               <div className="Page-description">
-                <Trans>Avax is needed on Avalanche to purchase OPEN.</Trans>
+                <Trans>BNB is needed on BSC to purchase OPEN.</Trans>
                 <br />
                 <Trans>
                   To purchase OPEN on <span onClick={() => onNetworkSelect(ARBITRUM)}>Arbitrum</span>, please change
@@ -162,11 +162,11 @@ export default function BuyGMX() {
               <div className="App-card-divider" />
               <div className="App-card-content">
                 <div className="BuyGMXGLP-description">
-                  <Trans>You can transfer AVAX to Avalanche using any of the below options.</Trans> <br />
+                  <Trans>You can transfer AVAX to BSC using any of the below options.</Trans> <br />
                   <br />
                   <Trans>
-                    Using the Avalanche or Synapse bridges, you can also transfer any other supported cryptocurrency,
-                    and receive free AVAX to pay for the network's fees.
+                    Using the BSC or Synapse bridges, you can also transfer any other supported cryptocurrency, and
+                    receive free AVAX to pay for the network's fees.
                   </Trans>
                 </div>
                 <div className="bridge-options">

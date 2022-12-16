@@ -78,6 +78,7 @@ import { usePrevious } from "lib/usePrevious";
 import { bigNumberify, expandDecimals, formatAmount, formatAmountFree, parseValue } from "lib/numbers";
 import { getToken, getTokenBySymbol, getTokens, getWhitelistedTokens } from "config/tokens";
 import ExternalLink from "components/ExternalLink/ExternalLink";
+import Modal from "components/Modal/Modal";
 
 const SWAP_ICONS = {
   [LONG]: longImg,
@@ -169,6 +170,7 @@ export default function SwapBox(props) {
 
   const [fromValue, setFromValue] = useState("");
   const [toValue, setToValue] = useState("");
+  const [incomingModalVisible, setIncomingModalVisible] = useState(false);
   const [anchorOnFromAmount, setAnchorOnFromAmount] = useState(true);
   const [isApproving, setIsApproving] = useState(false);
   const [isWaitingForApproval, setIsWaitingForApproval] = useState(false);
@@ -234,6 +236,10 @@ export default function SwapBox(props) {
   }
 
   const onOrderOptionChange = (option) => {
+    if (option === "Limit") {
+      setIncomingModalVisible(true);
+      return;
+    }
     setOrderOption(option);
   };
 
@@ -1554,8 +1560,8 @@ export default function SwapBox(props) {
       sentMsg: `${longOrShortText} submitted.`,
       failMsg: `${longOrShortText} failed.`,
       successMsg,
-      // for Arbitrum, sometimes the successMsg shows after the position has already been executed
-      // hide the success message for Arbitrum as a workaround
+      // for BSC, sometimes the successMsg shows after the position has already been executed
+      // hide the success message for BSC as a workaround
       hideSuccessMsg: chainId === ARBITRUM,
     })
       .then(async () => {
@@ -2444,6 +2450,9 @@ export default function SwapBox(props) {
           minExecutionFeeErrorMessage={minExecutionFeeErrorMessage}
         />
       )}
+      <Modal isVisible={incomingModalVisible} setIsVisible={setIncomingModalVisible} label={t`Opps!`}>
+        <Trans>Incoming feature...</Trans>
+      </Modal>
     </div>
   );
 }

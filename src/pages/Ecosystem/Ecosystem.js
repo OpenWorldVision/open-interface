@@ -12,6 +12,7 @@ import "./Ecosystem.css";
 import ExternalLink from "components/ExternalLink/ExternalLink";
 import { ARBITRUM, AVALANCHE } from "config/chains";
 import { t } from "@lingui/macro";
+import PageNotFound from "pages/PageNotFound/PageNotFound";
 
 const NETWORK_ICONS = {
   [ARBITRUM]: arbitrumIcon,
@@ -204,7 +205,7 @@ export default function Ecosystem() {
       chainIds: [ARBITRUM, AVALANCHE],
     },
     {
-      title: "Shogun Dashboard (Dune Arbitrum)",
+      title: "Shogun Dashboard (Dune BSC)",
       link: "https://dune.com/shogun/gmx-analytics-arbitrum",
       linkLabel: "dune.com",
       about: t`Protocol analytics`,
@@ -213,7 +214,7 @@ export default function Ecosystem() {
       chainIds: [ARBITRUM],
     },
     {
-      title: "Shogun Dashboard (Dune Avalanche)",
+      title: "Shogun Dashboard (Dune BSC)",
       link: "https://dune.com/shogun/gmx-analytics-avalanche",
       linkLabel: "dune.com",
       about: t`Protocol analytics`,
@@ -291,7 +292,7 @@ export default function Ecosystem() {
       title: "Yield Yak Optimizer",
       link: "https://yieldyak.com/",
       linkLabel: "yieldyak.com",
-      about: t`Yield Optimizer on Avalanche`,
+      about: t`Yield Optimizer on BSC`,
       announcementLabel: "twitter.com",
       announcementLink: "https://twitter.com/OpenWorldVision/status/1484601407378378754",
       chainIds: [AVALANCHE],
@@ -396,245 +397,245 @@ export default function Ecosystem() {
       about: t`OPEN community discussion`,
     },
   ];
+  return <PageNotFound />;
+  // return (
+  //   <SEO title={getPageTitle("Ecosystem Projects")}>
+  //     <div className="default-container page-layout">
+  //       <div>
+  //         <div className="section-title-block">
+  //           <div className="section-title-icon" />
+  //           <div className="section-title-content">
+  //             <div className="Page-title">
+  //               <Trans>OPEN Pages</Trans>
+  //             </div>
+  //             <div className="Page-description">
+  //               <Trans>OPEN ecosystem pages.</Trans>
+  //             </div>
+  //           </div>
+  //         </div>
+  //         <div className="DashboardV2-projects">
+  //           {gmxPages.map((item) => {
+  //             const linkLabel = item.linkLabel ? item.linkLabel : item.link;
+  //             return (
+  //               <div className="App-card" key={item.title}>
+  //                 <div className="App-card-title">
+  //                   {item.title}
+  //                   <div className="App-card-title-icon">
+  //                     {item.chainIds.map((network) => (
+  //                       <img key={network} src={NETWORK_ICONS[network]} alt={NETWORK_ICON_ALTS[network]} />
+  //                     ))}
+  //                   </div>
+  //                 </div>
+  //                 <div className="App-card-divider"></div>
+  //                 <div className="App-card-content">
+  //                   <div className="App-card-row">
+  //                     <div className="label">
+  //                       <Trans>Link</Trans>
+  //                     </div>
+  //                     <div>
+  //                       <ExternalLink href={item.link}>{linkLabel}</ExternalLink>
+  //                     </div>
+  //                   </div>
+  //                   <div className="App-card-row">
+  //                     <div className="label">
+  //                       <Trans>About</Trans>
+  //                     </div>
+  //                     <div>{item.about}</div>
+  //                   </div>
+  //                 </div>
+  //               </div>
+  //             );
+  //           })}
+  //         </div>
+  //         <div className="Tab-title-section">
+  //           <div className="Page-title">
+  //             <Trans>Community Projects</Trans>
+  //           </div>
+  //           <div className="Page-description">
+  //             <Trans>Projects developed by the OPEN community.</Trans>
+  //           </div>
+  //         </div>
+  //         <div className="DashboardV2-projects">
+  //           {communityProjects.map((item) => {
+  //             const linkLabel = item.linkLabel ? item.linkLabel : item.link;
+  //             return (
+  //               <div className="App-card" key={item.title}>
+  //                 <div className="App-card-title">
+  //                   {item.title}
+  //                   <div className="App-card-title-icon">
+  //                     {item.chainIds.map((network) => (
+  //                       <img key={network} src={NETWORK_ICONS[network]} alt={NETWORK_ICON_ALTS[network]} />
+  //                     ))}
+  //                   </div>
+  //                 </div>
+  //                 <div className="App-card-divider" />
+  //                 <div className="App-card-content">
+  //                   <div className="App-card-row">
+  //                     <div className="label">
+  //                       <Trans>Link</Trans>
+  //                     </div>
+  //                     <div>
+  //                       <ExternalLink href={item.link}>{linkLabel}</ExternalLink>
+  //                     </div>
+  //                   </div>
+  //                   <div className="App-card-row">
+  //                     <div className="label">
+  //                       <Trans>About</Trans>
+  //                     </div>
+  //                     <div>{item.about}</div>
+  //                   </div>
+  //                   <div className="App-card-row">
+  //                     <div className="label">
+  //                       <Trans>Creator</Trans>
+  //                     </div>
+  //                     <div>
+  //                       <ExternalLink href={item.creatorLink}>{item.creatorLabel}</ExternalLink>
+  //                     </div>
+  //                   </div>
+  //                 </div>
+  //               </div>
+  //             );
+  //           })}
+  //         </div>
+  //         <div className="Tab-title-section">
+  //           <div className="Page-title">
+  //             <Trans>Dashboards</Trans>
+  //           </div>
+  //           <div className="Page-description">
+  //             <Trans>OPEN dashboards and analytics.</Trans>
+  //           </div>
+  //         </div>
+  //         <div className="DashboardV2-projects">
+  //           {dashboardProjects.map((item) => {
+  //             const linkLabel = item.linkLabel ? item.linkLabel : item.link;
+  //             return (
+  //               <div className="App-card" key={item.title}>
+  //                 <div className="App-card-title">
+  //                   {item.title}
+  //                   <div className="App-card-title-icon">
+  //                     {item.chainIds.map((network) => (
+  //                       <img key={network} src={NETWORK_ICONS[network]} alt={NETWORK_ICON_ALTS[network]} />
+  //                     ))}
+  //                   </div>
+  //                 </div>
 
-  return (
-    <SEO title={getPageTitle("Ecosystem Projects")}>
-      <div className="default-container page-layout">
-        <div>
-          <div className="section-title-block">
-            <div className="section-title-icon" />
-            <div className="section-title-content">
-              <div className="Page-title">
-                <Trans>OPEN Pages</Trans>
-              </div>
-              <div className="Page-description">
-                <Trans>OPEN ecosystem pages.</Trans>
-              </div>
-            </div>
-          </div>
-          <div className="DashboardV2-projects">
-            {gmxPages.map((item) => {
-              const linkLabel = item.linkLabel ? item.linkLabel : item.link;
-              return (
-                <div className="App-card" key={item.title}>
-                  <div className="App-card-title">
-                    {item.title}
-                    <div className="App-card-title-icon">
-                      {item.chainIds.map((network) => (
-                        <img key={network} src={NETWORK_ICONS[network]} alt={NETWORK_ICON_ALTS[network]} />
-                      ))}
-                    </div>
-                  </div>
-                  <div className="App-card-divider"></div>
-                  <div className="App-card-content">
-                    <div className="App-card-row">
-                      <div className="label">
-                        <Trans>Link</Trans>
-                      </div>
-                      <div>
-                        <ExternalLink href={item.link}>{linkLabel}</ExternalLink>
-                      </div>
-                    </div>
-                    <div className="App-card-row">
-                      <div className="label">
-                        <Trans>About</Trans>
-                      </div>
-                      <div>{item.about}</div>
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-          <div className="Tab-title-section">
-            <div className="Page-title">
-              <Trans>Community Projects</Trans>
-            </div>
-            <div className="Page-description">
-              <Trans>Projects developed by the OPEN community.</Trans>
-            </div>
-          </div>
-          <div className="DashboardV2-projects">
-            {communityProjects.map((item) => {
-              const linkLabel = item.linkLabel ? item.linkLabel : item.link;
-              return (
-                <div className="App-card" key={item.title}>
-                  <div className="App-card-title">
-                    {item.title}
-                    <div className="App-card-title-icon">
-                      {item.chainIds.map((network) => (
-                        <img key={network} src={NETWORK_ICONS[network]} alt={NETWORK_ICON_ALTS[network]} />
-                      ))}
-                    </div>
-                  </div>
-                  <div className="App-card-divider" />
-                  <div className="App-card-content">
-                    <div className="App-card-row">
-                      <div className="label">
-                        <Trans>Link</Trans>
-                      </div>
-                      <div>
-                        <ExternalLink href={item.link}>{linkLabel}</ExternalLink>
-                      </div>
-                    </div>
-                    <div className="App-card-row">
-                      <div className="label">
-                        <Trans>About</Trans>
-                      </div>
-                      <div>{item.about}</div>
-                    </div>
-                    <div className="App-card-row">
-                      <div className="label">
-                        <Trans>Creator</Trans>
-                      </div>
-                      <div>
-                        <ExternalLink href={item.creatorLink}>{item.creatorLabel}</ExternalLink>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-          <div className="Tab-title-section">
-            <div className="Page-title">
-              <Trans>Dashboards</Trans>
-            </div>
-            <div className="Page-description">
-              <Trans>OPEN dashboards and analytics.</Trans>
-            </div>
-          </div>
-          <div className="DashboardV2-projects">
-            {dashboardProjects.map((item) => {
-              const linkLabel = item.linkLabel ? item.linkLabel : item.link;
-              return (
-                <div className="App-card" key={item.title}>
-                  <div className="App-card-title">
-                    {item.title}
-                    <div className="App-card-title-icon">
-                      {item.chainIds.map((network) => (
-                        <img key={network} src={NETWORK_ICONS[network]} alt={NETWORK_ICON_ALTS[network]} />
-                      ))}
-                    </div>
-                  </div>
-
-                  <div className="App-card-divider"></div>
-                  <div className="App-card-content">
-                    <div className="App-card-row">
-                      <div className="label">
-                        <Trans>Link</Trans>
-                      </div>
-                      <div>
-                        <ExternalLink href={item.link}>{linkLabel}</ExternalLink>
-                      </div>
-                    </div>
-                    <div className="App-card-row">
-                      <div className="label">
-                        <Trans>About</Trans>
-                      </div>
-                      <div>{item.about}</div>
-                    </div>
-                    <div className="App-card-row">
-                      <div className="label">
-                        <Trans>Creator</Trans>
-                      </div>
-                      <div>
-                        <ExternalLink href={item.creatorLink}>{item.creatorLabel}</ExternalLink>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-          <div className="Tab-title-section">
-            <div className="Page-title">
-              <Trans>Partnerships and Integrations</Trans>
-            </div>
-            <div className="Page-description">
-              <Trans>Projects integrated with OPEN.</Trans>
-            </div>
-          </div>
-          <div className="DashboardV2-projects">
-            {integrations.map((item) => {
-              const linkLabel = item.linkLabel ? item.linkLabel : item.link;
-              return (
-                <div key={item.title} className="App-card">
-                  <div className="App-card-title">
-                    {item.title}
-                    <div className="App-card-title-icon">
-                      {item.chainIds.map((network) => (
-                        <img key={network} src={NETWORK_ICONS[network]} alt={NETWORK_ICON_ALTS[network]} />
-                      ))}
-                    </div>
-                  </div>
-                  <div className="App-card-divider"></div>
-                  <div className="App-card-content">
-                    <div className="App-card-row">
-                      <div className="label">
-                        <Trans>Link</Trans>
-                      </div>
-                      <div>
-                        <ExternalLink href={item.link}>{linkLabel}</ExternalLink>
-                      </div>
-                    </div>
-                    <div className="App-card-row">
-                      <div className="label">
-                        <Trans>About</Trans>
-                      </div>
-                      <div>{item.about}</div>
-                    </div>
-                    <div className="App-card-row">
-                      <div className="label">
-                        <Trans>Announcement</Trans>
-                      </div>
-                      <div>
-                        <ExternalLink href={item.announcementLink}>{item.announcementLabel}</ExternalLink>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-          <div className="Tab-title-section">
-            <div className="Page-title">
-              <Trans>Telegram Groups</Trans>
-            </div>
-            <div className="Page-description">
-              <Trans>Community-led Telegram groups.</Trans>
-            </div>
-          </div>
-          <div className="DashboardV2-projects">
-            {telegramGroups.map((item) => {
-              const linkLabel = item.linkLabel ? item.linkLabel : item.link;
-              return (
-                <div className="App-card" key={item.title}>
-                  <div className="App-card-title">{item.title}</div>
-                  <div className="App-card-divider"></div>
-                  <div className="App-card-content">
-                    <div className="App-card-row">
-                      <div className="label">
-                        <Trans>Link</Trans>
-                      </div>
-                      <div>
-                        <ExternalLink href={item.link}>{linkLabel}</ExternalLink>
-                      </div>
-                    </div>
-                    <div className="App-card-row">
-                      <div className="label">
-                        <Trans>About</Trans>
-                      </div>
-                      <div>{item.about}</div>
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-        <Footer />
-      </div>
-    </SEO>
-  );
+  //                 <div className="App-card-divider"></div>
+  //                 <div className="App-card-content">
+  //                   <div className="App-card-row">
+  //                     <div className="label">
+  //                       <Trans>Link</Trans>
+  //                     </div>
+  //                     <div>
+  //                       <ExternalLink href={item.link}>{linkLabel}</ExternalLink>
+  //                     </div>
+  //                   </div>
+  //                   <div className="App-card-row">
+  //                     <div className="label">
+  //                       <Trans>About</Trans>
+  //                     </div>
+  //                     <div>{item.about}</div>
+  //                   </div>
+  //                   <div className="App-card-row">
+  //                     <div className="label">
+  //                       <Trans>Creator</Trans>
+  //                     </div>
+  //                     <div>
+  //                       <ExternalLink href={item.creatorLink}>{item.creatorLabel}</ExternalLink>
+  //                     </div>
+  //                   </div>
+  //                 </div>
+  //               </div>
+  //             );
+  //           })}
+  //         </div>
+  //         <div className="Tab-title-section">
+  //           <div className="Page-title">
+  //             <Trans>Partnerships and Integrations</Trans>
+  //           </div>
+  //           <div className="Page-description">
+  //             <Trans>Projects integrated with OPEN.</Trans>
+  //           </div>
+  //         </div>
+  //         <div className="DashboardV2-projects">
+  //           {integrations.map((item) => {
+  //             const linkLabel = item.linkLabel ? item.linkLabel : item.link;
+  //             return (
+  //               <div key={item.title} className="App-card">
+  //                 <div className="App-card-title">
+  //                   {item.title}
+  //                   <div className="App-card-title-icon">
+  //                     {item.chainIds.map((network) => (
+  //                       <img key={network} src={NETWORK_ICONS[network]} alt={NETWORK_ICON_ALTS[network]} />
+  //                     ))}
+  //                   </div>
+  //                 </div>
+  //                 <div className="App-card-divider"></div>
+  //                 <div className="App-card-content">
+  //                   <div className="App-card-row">
+  //                     <div className="label">
+  //                       <Trans>Link</Trans>
+  //                     </div>
+  //                     <div>
+  //                       <ExternalLink href={item.link}>{linkLabel}</ExternalLink>
+  //                     </div>
+  //                   </div>
+  //                   <div className="App-card-row">
+  //                     <div className="label">
+  //                       <Trans>About</Trans>
+  //                     </div>
+  //                     <div>{item.about}</div>
+  //                   </div>
+  //                   <div className="App-card-row">
+  //                     <div className="label">
+  //                       <Trans>Announcement</Trans>
+  //                     </div>
+  //                     <div>
+  //                       <ExternalLink href={item.announcementLink}>{item.announcementLabel}</ExternalLink>
+  //                     </div>
+  //                   </div>
+  //                 </div>
+  //               </div>
+  //             );
+  //           })}
+  //         </div>
+  //         <div className="Tab-title-section">
+  //           <div className="Page-title">
+  //             <Trans>Telegram Groups</Trans>
+  //           </div>
+  //           <div className="Page-description">
+  //             <Trans>Community-led Telegram groups.</Trans>
+  //           </div>
+  //         </div>
+  //         <div className="DashboardV2-projects">
+  //           {telegramGroups.map((item) => {
+  //             const linkLabel = item.linkLabel ? item.linkLabel : item.link;
+  //             return (
+  //               <div className="App-card" key={item.title}>
+  //                 <div className="App-card-title">{item.title}</div>
+  //                 <div className="App-card-divider"></div>
+  //                 <div className="App-card-content">
+  //                   <div className="App-card-row">
+  //                     <div className="label">
+  //                       <Trans>Link</Trans>
+  //                     </div>
+  //                     <div>
+  //                       <ExternalLink href={item.link}>{linkLabel}</ExternalLink>
+  //                     </div>
+  //                   </div>
+  //                   <div className="App-card-row">
+  //                     <div className="label">
+  //                       <Trans>About</Trans>
+  //                     </div>
+  //                     <div>{item.about}</div>
+  //                   </div>
+  //                 </div>
+  //               </div>
+  //             );
+  //           })}
+  //         </div>
+  //       </div>
+  //       <Footer />
+  //     </div>
+  //   </SEO>
+  // );
 }

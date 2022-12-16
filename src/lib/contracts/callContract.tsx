@@ -83,10 +83,10 @@ export async function callContract(
         failMsg = (
           <div>
             <Trans>
-              There is not enough ETH in your account on Arbitrum to send this transaction.
+              There is not enough ETH in your account on BSC to send this transaction.
               <br />
               <br />
-              <ExternalLink href="https://arbitrum.io/bridge-tutorial/">Bridge ETH to Arbitrum</ExternalLink>
+              <ExternalLink href="https://arbitrum.io/bridge-tutorial/">Bridge ETH to BSC</ExternalLink>
             </Trans>
           </div>
         );

@@ -754,6 +754,19 @@ table.Exchange-list th {
   padding: 1.05rem;
 }
 
+.Exchange-swap-option-tabs.Tab.block div:nth-child(2) {
+  background: #F9F9F9;
+  color: #E8636B;
+}
+.Exchange-swap-option-tabs.Tab.block div:nth-child(2):hover {
+  background: #E8636B;
+  color: #FFFFFF;
+}
+.Exchange-swap-option-tabs.Tab.block div:nth-child(2).active {
+  background: #E8636B;
+  color: #FFFFFF;
+}
+
 .Exchange-swap-order-type-tabs {
   margin-top: 1.5rem;
   justify-content: center;

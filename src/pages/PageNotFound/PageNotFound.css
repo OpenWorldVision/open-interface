@@ -8,15 +8,16 @@
 
 .page-not-found {
   text-align: center;
+  color: #375BD2 !important;
 }
 .page-not-found img {
   max-width: 225px;
 }
 .go-back span {
-  color: #a0a3c4;
+  color: #505dec;
 }
 .go-back a {
-  color: white;
+  color: #375BD2;
 }
 
 @media (max-width: 500px) {

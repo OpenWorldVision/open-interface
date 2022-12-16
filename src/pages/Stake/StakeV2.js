@@ -1492,11 +1492,11 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
                       renderContent={() => (
                         <>
                           <StatsTooltipRow
-                            label={t`Price on Avalanche`}
+                            label={t`Price on BSC`}
                             value={formatAmount(gmxPriceFromAvalanche, USD_DECIMALS, 2, true)}
                           />
                           <StatsTooltipRow
-                            label={t`Price on Arbitrum`}
+                            label={t`price on BSC`}
                             value={formatAmount(gmxPriceFromArbitrum, USD_DECIMALS, 2, true)}
                           />
                         </>

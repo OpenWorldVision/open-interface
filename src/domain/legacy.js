@@ -15,7 +15,15 @@ import Token from "abis/Token.json";
 import PositionRouter from "abis/PositionRouter.json";
 
 import { getContract } from "config/contracts";
-import { ARBITRUM, ARBITRUM_TESTNET, AVALANCHE, getConstant, getHighExecutionFee, TESTNET } from "config/chains";
+import {
+  ARBITRUM,
+  ARBITRUM_TESTNET,
+  AVALANCHE,
+  getConstant,
+  getHighExecutionFee,
+  MAINNET,
+  TESTNET,
+} from "config/chains";
 import { DECREASE, getOrderKey, INCREASE, SWAP, USD_DECIMALS } from "lib/legacy";
 
 import { groupBy } from "lodash";
@@ -373,16 +381,20 @@ export function useMinExecutionFee(library, active, chainId, infoTokens) {
 
   let multiplier;
 
-  // if gas prices on Arbitrum are high, the main transaction costs would come from the L2 gas usage
+  // if gas prices on BSC are high, the main transaction costs would come from the L2 gas usage
   // for executing positions this is around 65,000 gas
   // if gas prices on Ethereum are high, than the gas usage might be higher, this calculation doesn't deal with that
   // case yet
-  if (chainId === ARBITRUM || chainId === ARBITRUM_TESTNET || chainId === TESTNET) {
+  if (chainId === ARBITRUM || chainId === ARBITRUM_TESTNET) {
     multiplier = 65000;
   }
 
-  // multiplier for Avalanche is just the average gas usage
-  if (chainId === AVALANCHE) {
+  if (chainId === TESTNET) {
+    multiplier = 800000;
+  }
+
+  // multiplier for BSC is just the average gas usage
+  if (chainId === AVALANCHE || chainId === MAINNET) {
     multiplier = 700000;
   }
 
@@ -476,7 +488,7 @@ export function useGmxPrice(chainId, libraries, active) {
   };
 }
 
-// use only the supply endpoint on arbitrum, it includes the supply on avalanche
+// use only the supply endpoint on BSC, it includes the supply on BSC
 export function useTotalGmxSupply() {
   const gmxSupplyUrlArbitrum = getServerUrl(ARBITRUM, "/gmx_supply");
 
