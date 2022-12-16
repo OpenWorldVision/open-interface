@@ -61,7 +61,7 @@ export const formatAmount = (
   defaultValue?: string
 ) => {
   if (!defaultValue) {
-    defaultValue = "0";
+    defaultValue = "...";
   }
   if (amount === undefined || amount.toString().length === 0) {
     return defaultValue;
@@ -131,7 +131,7 @@ export const parseValue = (value: string, tokenDecimals: number) => {
 
 export function numberWithCommas(x: BigNumberish) {
   if (!x) {
-    return "0";
+    return "...";
   }
 
   var parts = x.toString().split(".");
