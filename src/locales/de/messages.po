@@ -349,7 +349,7 @@ msgid "BSC Icon"
 msgstr ""
 
 #: src/pages/BuyGMX/BuyGMX.js
-msgid "Avax is needed on BSC to purchase OPEN."
+msgid "BNB is needed on BSC to purchase OPEN."
 msgstr ""
 
 #: src/components/Exchange/SwapBox.js

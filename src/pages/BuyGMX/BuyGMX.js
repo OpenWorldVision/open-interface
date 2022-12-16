@@ -121,7 +121,7 @@ export default function BuyGMX() {
                 <Trans>Buy / Transfer AVAX</Trans>
               </div>
               <div className="Page-description">
-                <Trans>Avax is needed on BSC to purchase OPEN.</Trans>
+                <Trans>BNB is needed on BSC to purchase OPEN.</Trans>
                 <br />
                 <Trans>
                   To purchase OPEN on <span onClick={() => onNetworkSelect(ARBITRUM)}>Arbitrum</span>, please change
