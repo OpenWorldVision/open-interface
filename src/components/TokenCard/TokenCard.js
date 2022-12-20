@@ -62,16 +62,16 @@ export default function TokenCard({ showRedirectModal, redirectPopupTimestamp })
     <div className="Home-token-card-options">
       <div className="Home-token-card-option">
         <div className="Home-token-card-option-icon">
-          <img src={logoGMX} alt="glpBigIcon" /> OLP
+          <img src={logoGMX} alt="glpBigIcon" /> OAP
         </div>
         <div className="Home-token-card-option-info">
           <div className="Home-token-card-option-title">
-            <Trans>OLP is the liquidity provider token. Accrues 70% of the platform's generated fees.</Trans>
+            <Trans>OAP is the liquidity provider token. Accrues 70% of the platform's generated fees.</Trans>
           </div>
 
           <div className="Home-token-card-option-action">
             <div className="buy">
-              <BuyLink to="/buy_olp" className="default-btn" network={TESTNET}>
+              <BuyLink to="/buy_oap" className="default-btn" network={TESTNET}>
                 <Trans>Buy on BSC</Trans>
               </BuyLink>
             </div>

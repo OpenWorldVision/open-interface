@@ -128,7 +128,7 @@ export default function BeginAccountTransfer(props) {
       return t`Vested OPEN not withdrawn`;
     }
     if (hasVestedGlp) {
-      return t`Vested OLP not withdrawn`;
+      return t`Vested OAP not withdrawn`;
     }
     if (!receiver || receiver.length === 0) {
       return t`Enter Receiver Address`;
@@ -236,9 +236,9 @@ export default function BeginAccountTransfer(props) {
           <Trans>
             Please only use this for full account transfers.
             <br />
-            This will transfer all your OPEN, esOPEN, OLP and Multiplier Points to your new account.
+            This will transfer all your OPEN, esOPEN, OAP and Multiplier Points to your new account.
             <br />
-            Transfers are only supported if the receiving account has not staked OPEN or OLP tokens before.
+            Transfers are only supported if the receiving account has not staked OPEN or OAP tokens before.
             <br />
             Transfers are one-way, you will not be able to transfer staked tokens back to the sending account.
           </Trans>
@@ -271,13 +271,13 @@ export default function BeginAccountTransfer(props) {
               <Trans>Sender has withdrawn all tokens from OPEN Vesting Vault</Trans>
             </ValidationRow>
             <ValidationRow isValid={!hasVestedGlp}>
-              <Trans>Sender has withdrawn all tokens from OLP Vesting Vault</Trans>
+              <Trans>Sender has withdrawn all tokens from OAP Vesting Vault</Trans>
             </ValidationRow>
             <ValidationRow isValid={!hasStakedGmx}>
               <Trans>Receiver has not staked OPEN tokens before</Trans>
             </ValidationRow>
             <ValidationRow isValid={!hasStakedGlp}>
-              <Trans>Receiver has not staked OLP tokens before</Trans>
+              <Trans>Receiver has not staked OAP tokens before</Trans>
             </ValidationRow>
           </div>
           <div className="input-row">

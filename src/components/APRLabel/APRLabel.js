@@ -37,7 +37,7 @@ export default function APRLabel({ chainId, label }) {
   const gmxAddress = getContract(chainId, "OPEN");
   const esGmxAddress = getContract(chainId, "ES_GMX");
   const bnGmxAddress = getContract(chainId, "BN_GMX");
-  const glpAddress = getContract(chainId, "OLP");
+  const glpAddress = getContract(chainId, "OAP");
 
   const stakedGmxTrackerAddress = getContract(chainId, "StakedGmxTracker");
   const bonusGmxTrackerAddress = getContract(chainId, "BonusGmxTracker");

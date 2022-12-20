@@ -38,8 +38,8 @@ export default function Home({ showRedirectModal, redirectPopupTimestamp }) {
   //   answer: "The OPEN token is the governance token of the OPEN ecosystem, it provides the token owner voting rights on the direction of the OPEN platform.<br><br>Additionally, when OPEN is staked you will earn 30% of the platform-generated fees, you will also earn Escrowed OPEN tokens and Multiplier Points."
   // }, {
   //   id: 3,
-  //   question: "What is the OLP Token? ",
-  //   answer: "The OLP token represents the liquidity users provide to the OPEN platform for Swaps and Margin Trading.<br><br>To provide liquidity to OLP you <a href='https://gmx.io/buy_olp' target='_blank'>trade</a> your crypto asset BTC, ETH, LINK, UNI, USDC, USDT, MIM, or FRAX to the liquidity pool, in exchange, you gain exposure to a diversified index of tokens while earning 50% of the platform trading fees and esOPEN."
+  //   question: "What is the OAP Token? ",
+  //   answer: "The OAP token represents the liquidity users provide to the OPEN platform for Swaps and Margin Trading.<br><br>To provide liquidity to OAP you <a href='https://gmx.io/buy_oap' target='_blank'>trade</a> your crypto asset BTC, ETH, LINK, UNI, USDC, USDT, MIM, or FRAX to the liquidity pool, in exchange, you gain exposure to a diversified index of tokens while earning 50% of the platform trading fees and esOPEN."
   // }, {
   //   id: 4,
   //   question: "What can I trade on OPEN? ",

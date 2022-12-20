@@ -349,8 +349,8 @@ export const ADDITIONAL_TOKENS: { [chainId: number]: Token[] } = {
     },
     {
       name: "OPEN LP",
-      symbol: "OLP",
-      address: getContract(ARBITRUM, "OLP"),
+      symbol: "OAP",
+      address: getContract(ARBITRUM, "OAP"),
       decimals: 18,
       imageUrl: "https://github.com/OpenWorldVision/gmx-assets/blob/main/OPEN-Assets/PNG/GLP_LOGO%20ONLY.png?raw=true",
     },
@@ -371,8 +371,8 @@ export const ADDITIONAL_TOKENS: { [chainId: number]: Token[] } = {
     },
     {
       name: "OPEN LP",
-      symbol: "OLP",
-      address: getContract(ARBITRUM, "OLP"),
+      symbol: "OAP",
+      address: getContract(ARBITRUM, "OAP"),
       decimals: 18,
       imageUrl: "https://github.com/OpenWorldVision/gmx-assets/blob/main/OPEN-Assets/PNG/GLP_LOGO%20ONLY.png?raw=true",
     },
@@ -388,9 +388,9 @@ export const PLATFORM_TOKENS: { [chainId: number]: { [symbol: string]: Token } }
       address: "0x27a339d9b59b21390d7209b78a839868e319301b",
       imageUrl: "https://assets.coingecko.com/coins/images/19416/small/open-world-icon-logo-favicon.png?1648527433",
     },
-    OLP: {
+    OAP: {
       name: "OPEN LP",
-      symbol: "OLP",
+      symbol: "OAP",
       decimals: 18,
       address: "0x8530E5595C07F4075d00a25515E416487a07D6d3", // address of fsGLP token because user only holds fsGLP
       imageUrl: "https://assets.coingecko.com/coins/images/19416/small/open-world-icon-logo-favicon.png?1648527433",
@@ -405,9 +405,9 @@ export const PLATFORM_TOKENS: { [chainId: number]: { [symbol: string]: Token } }
       address: "0x27a339d9b59b21390d7209b78a839868e319301b",
       imageUrl: "https://assets.coingecko.com/coins/images/19416/small/open-world-icon-logo-favicon.png?1648527433",
     },
-    OLP: {
+    OAP: {
       name: "OPEN LP",
-      symbol: "OLP",
+      symbol: "OAP",
       decimals: 18,
       address: "0x8530E5595C07F4075d00a25515E416487a07D6d3", // address of fsGLP token because user only holds fsGLP
       imageUrl: "https://assets.coingecko.com/coins/images/19416/small/open-world-icon-logo-favicon.png?1648527433",
@@ -422,9 +422,9 @@ export const PLATFORM_TOKENS: { [chainId: number]: { [symbol: string]: Token } }
       address: getContract(AVALANCHE, "OPEN"),
       imageUrl: "https://assets.coingecko.com/coins/images/18323/small/arbit.png?1631532468",
     },
-    OLP: {
+    OAP: {
       name: "OPEN LP",
-      symbol: "OLP",
+      symbol: "OAP",
       decimals: 18,
       address: getContract(AVALANCHE, "StakedGlpTracker"), // address of fsGLP token because user only holds fsGLP
       imageUrl: "https://github.com/OpenWorldVision/gmx-assets/blob/main/OPEN-Assets/PNG/GLP_LOGO%20ONLY.png?raw=true",
@@ -438,7 +438,7 @@ export const ICONLINKS = {
       coingecko: "https://www.coingecko.com/en/coins/openworld",
       arbitrum: "https://bscscan.com/address/0x27a339d9b59b21390d7209b78a839868e319301b",
     },
-    OLP: {
+    OAP: {
       arbitrum: "https://testnet.bscscan.com/address/0x8530E5595C07F4075d00a25515E416487a07D6d3",
     },
   },
@@ -447,7 +447,7 @@ export const ICONLINKS = {
       coingecko: "https://www.coingecko.com/en/coins/gmx",
       arbitrum: "https://arbiscan.io/address/0xfc5a1a6eb076a2c7ad06ed22c90d7e710e35ad0a",
     },
-    OLP: {
+    OAP: {
       arbitrum: "https://testnet.arbiscan.io/token/0xb4f81Fa74e06b5f762A104e47276BA9b2929cb27",
     },
   },
@@ -456,7 +456,7 @@ export const ICONLINKS = {
       coingecko: "https://www.coingecko.com/en/coins/gmx",
       arbitrum: "https://arbiscan.io/address/0xfc5a1a6eb076a2c7ad06ed22c90d7e710e35ad0a",
     },
-    OLP: {
+    OAP: {
       arbitrum: "https://arbiscan.io/token/0x1aDDD80E6039594eE970E5872D247bf0414C8903",
     },
     ETH: {
@@ -500,7 +500,7 @@ export const ICONLINKS = {
       coingecko: "https://www.coingecko.com/en/coins/gmx",
       avalanche: "https://snowtrace.io/address/0x62edc0692bd897d2295872a9ffcac5425011c661",
     },
-    OLP: {
+    OAP: {
       avalanche: "https://snowtrace.io/address/0x9e295B5B976a184B14aD8cd72413aD846C299660",
     },
     AVAX: {
