@@ -369,7 +369,7 @@
   background: #1A2B6B;
 }
 .ExchangeChart-bottom-controls .Tab .Tab-option:hover {
-  background: #1A2B6B;
+  background: #1A2B6BB3;
 }
 .ExchangeChart-bottom-controls .Tab {
   border: 0;
@@ -753,7 +753,18 @@ table.Exchange-list th {
 .Exchange-swap-option-tabs.Tab.block .Tab-option {
   padding: 1.05rem;
 }
-
+.Exchange-swap-option-tabs.Tab.block div:nth-child(1) {
+  background: #F9F9F9;
+  color: #01A789;
+}
+.Exchange-swap-option-tabs.Tab.block div:nth-child(1):hover {
+  background: #01A789;
+  color: #FFFFFF;
+}
+.Exchange-swap-option-tabs.Tab.block div:nth-child(1).active {
+  background: #01A789;
+  color: #FFFFFF;
+}
 .Exchange-swap-option-tabs.Tab.block div:nth-child(2) {
   background: #F9F9F9;
   color: #E8636B;

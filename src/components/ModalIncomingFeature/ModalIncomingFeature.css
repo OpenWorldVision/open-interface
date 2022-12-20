@@ -1,0 +1,16 @@
+.IncomingFeatureModal .Modal-content {
+    font-size: 1.5rem;
+    line-height: 1.9rem;
+  }
+  
+  .IncomingFeatureModal .Modal-body .Checkbox {
+    align-items: flex-start;
+  }
+  
+  .IncomingFeatureModal .Modal-body .Checkbox-icon-wrapper {
+    display: block;
+  }
+  
+  .IncomingFeatureModal .Modal-body .Checkbox .Checkbox-label {
+    margin-left: 0.5rem;
+  }

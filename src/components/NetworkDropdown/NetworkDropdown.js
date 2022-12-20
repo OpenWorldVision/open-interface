@@ -168,7 +168,7 @@ function NetworkMenuItems({ networkOptions, selectorLabel, onNetworkSelect }) {
       <Menu.Item key={network.value}>
         <div
           className="network-dropdown-menu-item menu-item"
-          onClick={() => handleNetworkSelect({ value: network.value })}
+          onClick={() => handleNetworkSelect({ value: network.value, isDevelopment: network.isDevelopment })}
         >
           <div className="menu-item-group">
             <div className="menu-item-icon">
@@ -230,7 +230,7 @@ function NetworkModalContent({ networkOptions, onNetworkSelect, selectorLabel, s
           return (
             <div
               className="network-option"
-              onClick={() => handleNetworkSelect({ value: network.value })}
+              onClick={() => handleNetworkSelect({ value: network.value, isDevelopment: network.isDevelopment })}
               key={network.value}
             >
               <div className="menu-item-group">
