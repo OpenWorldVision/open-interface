@@ -3,6 +3,7 @@ import { FiChevronDown } from "react-icons/fi";
 import "./AssetDropdown.css";
 import coingeckoIcon from "img/ic_coingecko_16.svg";
 import bnbIcon from "img/ic_binance_logo.svg";
+import harmonyIcon from "img/ic_harmony_one.svg";
 import avalancheIcon from "img/ic_avalanche_16.svg";
 import metamaskIcon from "img/ic_metamask_16.svg";
 import { useWeb3React } from "@web3-react/core";
@@ -16,7 +17,7 @@ import { useChainId } from "lib/chains";
 function AssetDropdown({ assetSymbol, assetInfo }) {
   const { active } = useWeb3React();
   const { chainId } = useChainId();
-  let { coingecko, arbitrum, avalanche } = ICONLINKS[chainId][assetSymbol] || {};
+  let { coingecko, arbitrum, avalanche, harmony } = ICONLINKS[chainId][assetSymbol] || {};
   const unavailableTokenSymbols =
     {
       42161: ["ETH"],
@@ -56,6 +57,26 @@ function AssetDropdown({ assetSymbol, assetInfo }) {
                 <img src={avalancheIcon} alt="Open in explorer" />
                 <p>
                   <Trans>Open in Explorer</Trans>
+                </p>
+              </ExternalLink>
+            )}
+          </>
+        </Menu.Item>
+        <Menu.Item>
+          <>
+            {harmony && (
+              <ExternalLink href={harmony} className="asset-item">
+                <img src={harmonyIcon} alt="Open in Harmony" style={{ width: 16 }} />
+                <p>
+                  <Trans>Open in Harmony</Trans>
+                </p>
+              </ExternalLink>
+            )}
+            {avalanche && (
+              <ExternalLink href={avalanche} className="asset-item">
+                <img src={avalancheIcon} alt="Open in Harmony" />
+                <p>
+                  <Trans>Open in Harmony</Trans>
                 </p>
               </ExternalLink>
             )}

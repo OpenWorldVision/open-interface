@@ -517,13 +517,8 @@ export default function DashboardV2() {
             </div>
             <div className="Page-description">
               <Trans>
-                {chainName} Total Stats start from {totalStatsStartDate}.<br /> For detailed stats:
-              </Trans>{" "}
-              {chainId === ARBITRUM && <ExternalLink href="https://stats.gmx.io">https://stats.gmx.io</ExternalLink>}
-              {chainId === AVALANCHE && (
-                <ExternalLink href="https://stats.gmx.io/avalanche">https://stats.gmx.io/avalanche</ExternalLink>
-              )}
-              .
+                {chainName} Total Stats start from {totalStatsStartDate}
+              </Trans>
             </div>
           </div>
         </div>
@@ -711,7 +706,7 @@ export default function DashboardV2() {
               {chainId === ARBITRUM && <img src={arbitrum24Icon} alt="arbitrum24Icon" />}
             </div>
             <div className="Page-description">
-              <Trans>Platform and OAP index tokens.</Trans>
+              <Trans>Platform and OAP index tokens</Trans>
             </div>
           </div>
           <div className="DashboardV2-token-cards">
