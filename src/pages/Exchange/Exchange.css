@@ -676,6 +676,44 @@ table.Exchange-list th {
   border-radius: 18px;
   border: 1px solid #DFE7FB;
 }
+.Exchange-swap-box-inner  {
+  padding: 1.5rem;
+  border-radius: 18px;
+  border: 1px solid #DFE7FB;
+}
+
+.Exchange-swap-box-inner div .Exchange-swap-option-tabs.Tab.block div:nth-child(1) {
+  background: #F9F9F9;
+  color: #01A789;
+}
+.Exchange-swap-box-inner div .Exchange-swap-option-tabs.Tab.block div:nth-child(1):hover {
+  background: #01A789;
+  color: #FFFFFF;
+}
+.Exchange-swap-box-inner div .Exchange-swap-option-tabs.Tab.block div:nth-child(1).active {
+  background: #01A789;
+  color: #FFFFFF;
+}
+.Exchange-swap-box-inner div .Exchange-swap-option-tabs.Tab.block div:nth-child(2) {
+  background: #F9F9F9;
+  color: #E8636B;
+}
+.Exchange-swap-box-inner div .Exchange-swap-option-tabs.Tab.block div:nth-child(2):hover {
+  background: #E8636B;
+  color: #FFFFFF;
+}
+.Exchange-swap-box-inner div .Exchange-swap-option-tabs.Tab.block div:nth-child(2).active {
+  background: #E8636B;
+  color: #FFFFFF;
+}
+.Exchange-swap-box-inner div .Exchange-swap-option-tabs.Tab.block div:nth-child(3):hover {
+  background: #375BD2;
+  color: #FFFFFF;
+}
+.Exchange-swap-box-inner div .Exchange-swap-option-tabs.Tab.block div:nth-child(3).active {
+  background: #375BD2;
+  color: #FFFFFF;
+}
 
 .Exchange-swap-market-box {
   padding: 1.5rem;
@@ -752,30 +790,6 @@ table.Exchange-list th {
 
 .Exchange-swap-option-tabs.Tab.block .Tab-option {
   padding: 1.05rem;
-}
-.Exchange-swap-option-tabs.Tab.block div:nth-child(1) {
-  background: #F9F9F9;
-  color: #01A789;
-}
-.Exchange-swap-option-tabs.Tab.block div:nth-child(1):hover {
-  background: #01A789;
-  color: #FFFFFF;
-}
-.Exchange-swap-option-tabs.Tab.block div:nth-child(1).active {
-  background: #01A789;
-  color: #FFFFFF;
-}
-.Exchange-swap-option-tabs.Tab.block div:nth-child(2) {
-  background: #F9F9F9;
-  color: #E8636B;
-}
-.Exchange-swap-option-tabs.Tab.block div:nth-child(2):hover {
-  background: #E8636B;
-  color: #FFFFFF;
-}
-.Exchange-swap-option-tabs.Tab.block div:nth-child(2).active {
-  background: #E8636B;
-  color: #FFFFFF;
 }
 
 .Exchange-swap-order-type-tabs {

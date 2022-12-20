@@ -68,10 +68,10 @@ export function AppHeaderUser({
       if (option.value === chainId) {
         return;
       }
-      // if (option.isDevelopment) {
-      //   ModalIncomingFeature.open();
-      //   return;
-      // }
+      if (option.isDevelopment) {
+        ModalIncomingFeature.open();
+        return;
+      }
       return switchNetwork(option.value, active);
     },
     [chainId, active]
