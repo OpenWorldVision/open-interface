@@ -13,7 +13,7 @@ export const ARBITRUM = 42161;
 export const DEFAULT_CHAIN_ID = TESTNET;
 export const CHAIN_ID = DEFAULT_CHAIN_ID;
 
-export const SUPPORTED_CHAIN_IDS = [TESTNET];
+export const SUPPORTED_CHAIN_IDS = [TESTNET, MAINNET];
 
 if (isDevelopment()) {
   SUPPORTED_CHAIN_IDS.push(ARBITRUM_TESTNET);
@@ -50,10 +50,15 @@ export const HIGH_EXECUTION_FEES_MAP = {
 const constants = {
   [MAINNET]: {
     nativeTokenSymbol: "BNB",
+    wrappedTokenSymbol: "TBNB",
     defaultCollateralSymbol: "BUSD",
     defaultFlagOrdersEnabled: false,
     positionReaderPropsLength: 8,
     v2: false,
+    SWAP_ORDER_EXECUTION_GAS_FEE: parseEther("0.0003"),
+    INCREASE_ORDER_EXECUTION_GAS_FEE: parseEther("0.0003"),
+    // contract requires that execution fee be strictly greater than inste
+    DECREASE_ORDER_EXECUTION_GAS_FEE: parseEther("0.000300001"),
   },
 
   [TESTNET]: {
