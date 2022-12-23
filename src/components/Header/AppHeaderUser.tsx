@@ -49,11 +49,10 @@ export function AppHeaderUser({
       color: "#264f79",
     },
     {
-      label: "HarmonyOne",
+      label: getChainName(MAINNET),
       value: MAINNET,
-      icon: "ic_harmony_one.svg",
+      icon: "ic_bsc.svg",
       color: "#264f79",
-      isDevelopment: true,
     },
   ];
 
