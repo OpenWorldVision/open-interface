@@ -99,6 +99,7 @@ import { useChainId } from "lib/chains";
 import ExternalLink from "components/ExternalLink/ExternalLink";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faMoon, faRocket } from "@fortawesome/free-solid-svg-icons";
+import ModalIncomingFeature from "components/ModalIncomingFeature/ModalIncomingFeature";
 
 library.add(faMoon, faRocket);
 
@@ -493,7 +494,7 @@ function FullApp() {
                   connectWallet={connectWallet}
                 />
               </Route>
-              <Route exact path="/buy_olp">
+              <Route exact path="/buy_oap">
                 <BuyGlp
                   savedSlippageAmount={savedSlippageAmount}
                   setPendingTxns={setPendingTxns}
@@ -568,6 +569,7 @@ function FullApp() {
         shouldHideRedirectModal={shouldHideRedirectModal}
         removeRedirectPopupTimestamp={removeRedirectPopupTimestamp}
       />
+      <ModalIncomingFeature />
       <Modal
         className="Connect-wallet-modal"
         isVisible={walletModalVisible}

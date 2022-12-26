@@ -24,6 +24,7 @@ import {
   faListDots,
   faPersonDotsFromLine,
 } from "@fortawesome/free-solid-svg-icons";
+import ModalIncomingFeature from "components/ModalIncomingFeature/ModalIncomingFeature";
 
 const LANGUAGE_MODAL_KEY = "LANGUAGE";
 const NETWORK_MODAL_KEY = "NETWORK";
@@ -168,7 +169,7 @@ function NetworkMenuItems({ networkOptions, selectorLabel, onNetworkSelect }) {
       <Menu.Item key={network.value}>
         <div
           className="network-dropdown-menu-item menu-item"
-          onClick={() => handleNetworkSelect({ value: network.value })}
+          onClick={() => handleNetworkSelect({ value: network.value, isDevelopment: network.isDevelopment })}
         >
           <div className="menu-item-group">
             <div className="menu-item-icon">
@@ -216,6 +217,7 @@ function LanguageModalContent({ currentLanguage }) {
 }
 function NetworkModalContent({ networkOptions, onNetworkSelect, selectorLabel, setActiveModal, openSettings }) {
   async function handleNetworkSelect(option) {
+    setActiveModal(false);
     await onNetworkSelect(option);
   }
   return (
@@ -226,15 +228,15 @@ function NetworkModalContent({ networkOptions, onNetworkSelect, selectorLabel, s
         </span>
 
         {networkOptions.map((network) => {
-          // const networkIcon = importImage(network.icon);
+          const networkIcon = importImage(network.icon);
           return (
             <div
               className="network-option"
-              onClick={() => handleNetworkSelect({ value: network.value })}
+              onClick={() => handleNetworkSelect({ value: network.value, isDevelopment: network.isDevelopment })}
               key={network.value}
             >
               <div className="menu-item-group">
-                {/* <img src={networkIcon} alt={network.label} /> */}
+                <img src={networkIcon} alt={network.label} style={{ width: 24, height: 24, marginLeft: 4 }} />
                 <span>{network.label}</span>
               </div>
               <div className={cx("active-dot", { [selectorLabel]: selectorLabel === network.label })} />

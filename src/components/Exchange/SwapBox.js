@@ -79,6 +79,7 @@ import { bigNumberify, expandDecimals, formatAmount, formatAmountFree, parseValu
 import { getToken, getTokenBySymbol, getTokens, getWhitelistedTokens } from "config/tokens";
 import ExternalLink from "components/ExternalLink/ExternalLink";
 import Modal from "components/Modal/Modal";
+import ModalIncomingFeature from "components/ModalIncomingFeature/ModalIncomingFeature";
 
 const SWAP_ICONS = {
   [LONG]: longImg,
@@ -170,7 +171,6 @@ export default function SwapBox(props) {
 
   const [fromValue, setFromValue] = useState("");
   const [toValue, setToValue] = useState("");
-  const [incomingModalVisible, setIncomingModalVisible] = useState(false);
   const [anchorOnFromAmount, setAnchorOnFromAmount] = useState(true);
   const [isApproving, setIsApproving] = useState(false);
   const [isWaitingForApproval, setIsWaitingForApproval] = useState(false);
@@ -237,7 +237,7 @@ export default function SwapBox(props) {
 
   const onOrderOptionChange = (option) => {
     if (option === "Limit") {
-      setIncomingModalVisible(true);
+      ModalIncomingFeature.open();
       return;
     }
     setOrderOption(option);
@@ -2450,9 +2450,6 @@ export default function SwapBox(props) {
           minExecutionFeeErrorMessage={minExecutionFeeErrorMessage}
         />
       )}
-      <Modal isVisible={incomingModalVisible} setIsVisible={setIncomingModalVisible} label={t`Opps!`}>
-        <Trans>Incoming feature...</Trans>
-      </Modal>
     </div>
   );
 }

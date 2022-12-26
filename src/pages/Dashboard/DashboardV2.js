@@ -171,7 +171,7 @@ export default function DashboardV2() {
   const glpManagerAddress = getContract(chainId, "GlpManager");
 
   const gmxAddress = getContract(chainId, "OPEN");
-  const glpAddress = getContract(chainId, "OLP");
+  const glpAddress = getContract(chainId, "OAP");
   const usdgAddress = getContract(chainId, "USDG");
 
   const tokensForSupplyQuery = [gmxAddress, glpAddress, usdgAddress];
@@ -370,8 +370,8 @@ export default function DashboardV2() {
                     <br />
                     <br />
                     Get lower fees to{" "}
-                    <Link to="/buy_olp" target="_blank" rel="noopener noreferrer">
-                      buy OLP
+                    <Link to="/buy_oap" target="_blank" rel="noopener noreferrer">
+                      buy OAP
                     </Link>{" "}
                     with {tokenInfo.symbol},&nbsp; and to{" "}
                     <Link to="/trade" target="_blank" rel="noopener noreferrer">
@@ -517,13 +517,8 @@ export default function DashboardV2() {
             </div>
             <div className="Page-description">
               <Trans>
-                {chainName} Total Stats start from {totalStatsStartDate}.<br /> For detailed stats:
-              </Trans>{" "}
-              {chainId === ARBITRUM && <ExternalLink href="https://stats.gmx.io">https://stats.gmx.io</ExternalLink>}
-              {chainId === AVALANCHE && (
-                <ExternalLink href="https://stats.gmx.io/avalanche">https://stats.gmx.io/avalanche</ExternalLink>
-              )}
-              .
+                {chainName} Total Stats start from {totalStatsStartDate}
+              </Trans>
             </div>
           </div>
         </div>
@@ -544,20 +539,20 @@ export default function DashboardV2() {
                       handle={`$${formatAmount(tvl, USD_DECIMALS, 0, true)}`}
                       position="right-bottom"
                       renderContent={() => (
-                        <span>{t`Assets Under Management: OPEN staked (All chains) + OLP pool (${chainName})`}</span>
+                        <span>{t`Assets Under Management: OPEN staked (All chains) + OAP pool (${chainName})`}</span>
                       )}
                     />
                   </div>
                 </div>
                 <div className="App-card-row">
                   <div className="label">
-                    <Trans>OLP Pool</Trans>
+                    <Trans>OAP Pool</Trans>
                   </div>
                   <div>
                     <TooltipComponent
                       handle={`$${formatAmount(aum, USD_DECIMALS, 0, true)}`}
                       position="right-bottom"
-                      renderContent={() => <span>{t`Total value of tokens in OLP pool (${chainName})`}</span>}
+                      renderContent={() => <span>{t`Total value of tokens in OAP pool (${chainName})`}</span>}
                     />
                   </div>
                 </div>
@@ -711,7 +706,7 @@ export default function DashboardV2() {
               {chainId === ARBITRUM && <img src={arbitrum24Icon} alt="arbitrum24Icon" />}
             </div>
             <div className="Page-description">
-              <Trans>Platform and OLP index tokens.</Trans>
+              <Trans>Platform and OAP index tokens</Trans>
             </div>
           </div>
           <div className="DashboardV2-token-cards">
@@ -853,11 +848,11 @@ export default function DashboardV2() {
                         />
                       </div>
                       <div className="App-card-title-mark-info">
-                        <div className="App-card-title-mark-title">OLP</div>
-                        <div className="App-card-title-mark-subtitle">OLP</div>
+                        <div className="App-card-title-mark-title">OAP</div>
+                        <div className="App-card-title-mark-subtitle">OAP</div>
                       </div>
                       <div>
-                        <AssetDropdown assetSymbol="OLP" />
+                        <AssetDropdown assetSymbol="OAP" />
                       </div>
                     </div>
                   </div>
@@ -873,7 +868,7 @@ export default function DashboardV2() {
                       <div className="label">
                         <Trans>Supply</Trans>
                       </div>
-                      <div>{formatAmount(glpSupply, GLP_DECIMALS, 0, true)} OLP</div>
+                      <div>{formatAmount(glpSupply, GLP_DECIMALS, 0, true)} OAP</div>
                     </div> */}
                     <div className="App-card-row">
                       <div className="label">
@@ -930,7 +925,7 @@ export default function DashboardV2() {
                         ))}
                       </Pie>
                       <text x={"50%"} y={"50%"} fill="#375BD2" textAnchor="middle" dominantBaseline="middle">
-                        OLP Pool
+                        OAP Pool
                       </text>
                       <Tooltip content={<CustomTooltip />} />
                     </PieChart>
@@ -940,7 +935,7 @@ export default function DashboardV2() {
             </div>
             <div className="token-table-wrapper App-card">
               <div className="App-card-title">
-                <Trans>OLP Index Composition</Trans>{" "}
+                <Trans>OAP Index Composition</Trans>{" "}
                 {chainId === AVALANCHE && <img src={avalanche16Icon} alt={t`Avalanche Icon`} />}
                 {chainId === ARBITRUM && <img src={arbitrum16Icon} alt={t`Arbitrum Icon`} />}
               </div>

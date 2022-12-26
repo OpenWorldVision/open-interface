@@ -28,16 +28,16 @@ export default function BuyGlp(props) {
     <div className="default-container page-layout">
       <div className="section-title-block">
         <div className="section-title-icon">
-          <img src={buyGLPIcon} alt={t`Buy OLP Icon`} />
+          <img src={buyGLPIcon} alt={t`Buy OAP Icon`} />
         </div>
         <div className="section-title-content">
           <div className="Page-title">
-            <Trans>Buy / Sell OLP</Trans>
+            <Trans>Buy / Sell OAP</Trans>
           </div>
           <div className="Page-description">
             <Trans>
               Purchase{" "}
-              <ExternalLink href="https://wiki.openworld.vision/buy-token-open-and-olp">OLP tokens</ExternalLink> to
+              <ExternalLink href="https://wiki.openworld.vision/buy-token-open-and-oap">OAP tokens</ExternalLink> to
               earn {nativeTokenSymbol} fees from swaps and leverages trading.
             </Trans>
             <br />

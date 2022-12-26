@@ -84,7 +84,9 @@ const getChartOptions = (width, height) => ({
   },
   grid: {
     vertLines: {
-      visible: false,
+      visible: true,
+      color: "#DFE7FB",
+      style: 2,
     },
     horzLines: {
       visible: true,

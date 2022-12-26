@@ -1,7 +1,7 @@
 import { useWeb3React } from "@web3-react/core";
 import AddressDropdown from "../AddressDropdown/AddressDropdown";
 import ConnectWalletButton from "../Common/ConnectWalletButton";
-import React, { useCallback, useEffect } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { HeaderLink } from "./HeaderLink";
 import connectWalletImg from "img/ic_wallet_24.svg";
 
@@ -9,14 +9,16 @@ import "./Header.css";
 import { isHomeSite, getAccountUrl } from "lib/legacy";
 import { isDevelopment } from "lib/legacy";
 import cx from "classnames";
-import { Trans } from "@lingui/macro";
+import { t, Trans } from "@lingui/macro";
 import NetworkDropdown from "../NetworkDropdown/NetworkDropdown";
 import LanguagePopupHome from "../NetworkDropdown/LanguagePopupHome";
-import { ARBITRUM, ARBITRUM_TESTNET, AVALANCHE, getChainName, TESTNET } from "config/chains";
+import { ARBITRUM, ARBITRUM_TESTNET, AVALANCHE, getChainName, MAINNET, TESTNET } from "config/chains";
 import { switchNetwork } from "lib/wallets";
 import { useChainId } from "lib/chains";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMoneyBillTransfer } from "@fortawesome/free-solid-svg-icons";
+import Modal from "components/Modal/Modal";
+import ModalIncomingFeature from "components/ModalIncomingFeature/ModalIncomingFeature";
 
 type Props = {
   openSettings: () => void;
@@ -46,6 +48,12 @@ export function AppHeaderUser({
       icon: "ic_bsc.svg",
       color: "#264f79",
     },
+    {
+      label: getChainName(MAINNET),
+      value: MAINNET,
+      icon: "ic_bsc.svg",
+      color: "#264f79",
+    },
   ];
 
   useEffect(() => {
@@ -57,6 +65,10 @@ export function AppHeaderUser({
   const onNetworkSelect = useCallback(
     (option) => {
       if (option.value === chainId) {
+        return;
+      }
+      if (option.isDevelopment) {
+        ModalIncomingFeature.open();
         return;
       }
       return switchNetwork(option.value, active);

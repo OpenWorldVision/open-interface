@@ -960,7 +960,7 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
   const gmxAddress = getContract(chainId, "OPEN");
   const esGmxAddress = getContract(chainId, "ES_GMX");
   const bnGmxAddress = getContract(chainId, "BN_GMX");
-  const glpAddress = getContract(chainId, "OLP");
+  const glpAddress = getContract(chainId, "OAP");
   const stakedGmxTrackerAddress = getContract(chainId, "StakedGmxTracker");
   const bonusGmxTrackerAddress = getContract(chainId, "BonusGmxTracker");
   const feeGmxTrackerAddress = getContract(chainId, "FeeGmxTracker");
@@ -1221,8 +1221,8 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
     }
 
     setIsVesterDepositModalVisible(true);
-    setVesterDepositTitle(t`OLP Vault`);
-    setVesterDepositStakeTokenLabel("staked OLP");
+    setVesterDepositTitle(t`OAP Vault`);
+    setVesterDepositStakeTokenLabel("staked OAP");
     setVesterDepositMaxAmount(remainingVestableAmount);
     setVesterDepositBalance(processedData.esGmxBalance);
     setVesterDepositEscrowedBalance(vestingData.glpVester.escrowedBalance);
@@ -1253,7 +1253,7 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
     }
 
     setIsVesterWithdrawModalVisible(true);
-    setVesterWithdrawTitle(t`Withdraw from OLP Vault`);
+    setVesterWithdrawTitle(t`Withdraw from OAP Vault`);
     setVesterWithdrawAddress(glpVesterAddress);
   };
 
@@ -1341,7 +1341,7 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
     }
     let glpStr;
     if (processedData.glpBalance && processedData.glpBalance.gt(0)) {
-      glpStr = formatAmount(processedData.glpBalance, 18, 2, true) + " OLP";
+      glpStr = formatAmount(processedData.glpBalance, 18, 2, true) + " OAP";
     }
     const amountStr = [gmxAmountStr, esGmxAmountStr, mpAmountStr, glpStr].filter((s) => s).join(", ");
     earnMsg = (
@@ -1464,7 +1464,7 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
               </a>{" "}
               and{" "} */}
               <a href="https://wiki.openworld.vision/tokenomics" target="_blank" rel="noopener noreferrer">
-                OLP
+                OAP
               </a>{" "}
               to earn rewards.
             </Trans>
@@ -1825,7 +1825,7 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
             </div>
           </div> */}
           <div className="App-card">
-            <div className="App-card-title">OLP ({chainName})</div>
+            <div className="App-card-title">OAP ({chainName})</div>
             <div className="App-card-divider"></div>
             <div className="App-card-content">
               <div className="App-card-row">
@@ -1839,7 +1839,7 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
                   <Trans>Wallet</Trans>
                 </div>
                 <div>
-                  {formatKeyAmount(processedData, "glpBalance", GLP_DECIMALS, 2, true)} OLP ($
+                  {formatKeyAmount(processedData, "glpBalance", GLP_DECIMALS, 2, true)} OAP ($
                   {formatKeyAmount(processedData, "glpBalanceUsd", USD_DECIMALS, 2, true)})
                 </div>
               </div>
@@ -1848,7 +1848,7 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
                   <Trans>Staked</Trans>
                 </div>
                 <div>
-                  {formatKeyAmount(processedData, "glpBalance", GLP_DECIMALS, 2, true)} OLP ($
+                  {formatKeyAmount(processedData, "glpBalance", GLP_DECIMALS, 2, true)} OAP ($
                   {formatKeyAmount(processedData, "glpBalanceUsd", USD_DECIMALS, 2, true)})
                 </div>
               </div>
@@ -1934,7 +1934,7 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
                   <Trans>Total Staked</Trans>
                 </div>
                 <div>
-                  {formatKeyAmount(processedData, "glpSupply", 18, 2, true)} OLP ($
+                  {formatKeyAmount(processedData, "glpSupply", 18, 2, true)} OAP ($
                   {formatKeyAmount(processedData, "glpSupplyUsd", USD_DECIMALS, 2, true)})
                 </div>
               </div>
@@ -1943,17 +1943,17 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
                   <Trans>Total Supply</Trans>
                 </div>
                 <div>
-                  {formatKeyAmount(processedData, "glpSupply", 18, 2, true)} OLP ($
+                  {formatKeyAmount(processedData, "glpSupply", 18, 2, true)} OAP ($
                   {formatKeyAmount(processedData, "glpSupplyUsd", USD_DECIMALS, 2, true)})
                 </div>
               </div>
               <div className="App-card-divider"></div>
               <div className="App-card-options">
-                <Link className="App-button-option App-card-option" to="/buy_olp">
-                  <Trans>Buy OLP</Trans>
+                <Link className="App-button-option App-card-option" to="/buy_oap">
+                  <Trans>Buy OAP</Trans>
                 </Link>
-                <Link className="App-button-option App-card-option" to="/buy_olp#redeem">
-                  <Trans>Sell OLP</Trans>
+                <Link className="App-button-option App-card-option" to="/buy_oap#redeem">
+                  <Trans>Sell OAP</Trans>
                 </Link>
                 {hasInsurance && (
                   <a
@@ -2216,7 +2216,7 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
             </div>
             <div className="App-card StakeV2-gmx-card">
               <div className="App-card-title">
-                <Trans>OLP Vault</Trans>
+                <Trans>OAP Vault</Trans>
               </div>
               <div className="App-card-divider"></div>
               <div className="App-card-content">
@@ -2224,7 +2224,7 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
                   <div className="label">
                     <Trans>Staked Tokens</Trans>
                   </div>
-                  <div>{formatAmount(processedData.glpBalance, 18, 2, true)} OLP</div>
+                  <div>{formatAmount(processedData.glpBalance, 18, 2, true)} OAP</div>
                 </div>
                 <div className="App-card-row">
                   <div className="label">

@@ -33,7 +33,7 @@
 }
 .Tab.block .Tab-option:hover {
   color: rgba(255, 255, 255, 1);
-  background: #375BD2;
+  background: #375BD290;
   opacity: 1;
 }
 .Tab.block .Tab-option:hover img {

@@ -224,7 +224,7 @@ export default function ClaimEsGmx({ setPendingTxns }) {
         result);
     }
 
-    stakingToken = "OLP";
+    stakingToken = "OAP";
   }
 
   if (selectedOption === VEST_WITH_GMX_AVAX && avaxVestingData) {
@@ -252,7 +252,7 @@ export default function ClaimEsGmx({ setPendingTxns }) {
         result);
     }
 
-    stakingToken = "OLP";
+    stakingToken = "OAP";
   }
 
   const getError = () => {
@@ -390,7 +390,7 @@ export default function ClaimEsGmx({ setPendingTxns }) {
                 setIsChecked={() => setSelectedOption(VEST_WITH_GLP_ARB)}
               >
                 <div className="ClaimEsGmx-option-label">
-                  <Trans>Vest with OLP on BSC</Trans>
+                  <Trans>Vest with OAP on BSC</Trans>
                 </div>
                 <img src={arbitrumIcon} alt="Arbitrum" />
               </Checkbox>
@@ -410,7 +410,7 @@ export default function ClaimEsGmx({ setPendingTxns }) {
                 setIsChecked={() => setSelectedOption(VEST_WITH_GLP_AVAX)}
               >
                 <div className="ClaimEsGmx-option-label avalanche">
-                  <Trans>Vest with OLP on BSC</Trans>
+                  <Trans>Vest with OAP on BSC</Trans>
                 </div>
                 <img src={avaIcon} alt="Avalanche" />
               </Checkbox>
