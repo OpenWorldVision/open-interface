@@ -85,7 +85,7 @@ a.btn {
   background: var(--dark-blue-active);
 }
 .connect-wallet {
-  background-color: #DFE5E5;
+  background-color: #DFE7FB;
   border-radius: 18px;
   color: #375BD2;
   min-height: 3.6rem;
@@ -94,7 +94,7 @@ a.btn {
   font-weight: 700 !important;
 }
 .connect-wallet:hover {
-  background-color: #DFE5E5;
+  background-color: #DFE7FB;
 }
 
 
