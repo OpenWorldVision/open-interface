@@ -65,14 +65,14 @@ input {
   --avax-red: #e84143;
   --arbitrum-blue: #28a0f0;
   --border-radius-sm: 0.4rem;
-  --error-red: #E8636B;
+  --error-red: #e8636b;
 }
 
 a {
-  color: #6D7380;
+  color: #6d7380;
 }
 a:hover {
-  color: #375BD2;
+  color: #375bd2;
 }
 
 .Card-title {
@@ -92,7 +92,7 @@ input[type="number"] {
 
 input {
   font-size: 2rem;
-  color: #1A2B6B;
+  color: white;
   outline: none;
   background: none;
   border: none;
@@ -100,7 +100,6 @@ input {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-  
 }
 
 input::placeholder {
@@ -209,7 +208,7 @@ a.plain {
 }
 
 .default-btn {
-  background: #375BD2;
+  background: #375bd2;
   border-radius: 4px;
   font-size: 1.4rem;
   line-height: 2rem;

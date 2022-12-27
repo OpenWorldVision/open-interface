@@ -8,7 +8,11 @@ import { MAX_REFERRAL_CODE_LENGTH, isAddressZero, isHashZero } from "lib/legacy"
 import { getContract } from "config/contracts";
 import { REGEX_VERIFY_BYTES32 } from "components/Referrals/referralsHelper";
 import { ARBITRUM, AVALANCHE, TESTNET } from "config/chains";
-import { arbitrumReferralsGraphClient, avalancheReferralsGraphClient } from "lib/subgraph/clients";
+import {
+  arbitrumReferralsGraphClient,
+  avalancheReferralsGraphClient,
+  testnetReferralsGraphClient,
+} from "lib/subgraph/clients";
 import { callContract, contractFetcher } from "lib/contracts";
 import { helperToast } from "lib/helperToast";
 import { REFERRAL_CODE_KEY } from "config/localStorage";
@@ -25,7 +29,7 @@ function getGraphClient(chainId) {
   } else if (chainId === AVALANCHE) {
     return avalancheReferralsGraphClient;
   } else if (chainId === TESTNET) {
-    return null;
+    return testnetReferralsGraphClient;
   }
   throw new Error(`Unsupported chain ${chainId}`);
 }
@@ -310,11 +314,18 @@ export async function setTraderReferralCodeByUser(chainId, referralCode, library
 }
 
 export async function getReferralCodeOwner(chainId, referralCode) {
-  const referralStorageAddress = getContract(chainId, "ReferralStorage");
-  const provider = getProvider(null, chainId);
-  const contract = new ethers.Contract(referralStorageAddress, ReferralStorage.abi, provider);
-  const codeOwner = await contract.codeOwners(referralCode);
-  return codeOwner;
+  try {
+    console.log("2.5", referralCode);
+    const referralStorageAddress = getContract(chainId, "ReferralStorage");
+    const provider = getProvider(null, chainId);
+    const contract = new ethers.Contract(referralStorageAddress, ReferralStorage.abi, provider);
+    console.log("3", contract);
+    const codeOwner = await contract.codeOwners(referralCode);
+    console.log("4", codeOwner);
+    return codeOwner;
+  } catch (error) {
+    console.log("error ", error);
+  }
 }
 
 export function useUserReferralCode(library, chainId, account) {
@@ -380,8 +391,12 @@ export function useCodeOwner(library, chainId, account, code) {
 }
 
 export async function validateReferralCodeExists(referralCode, chainId) {
+  console.log("-1", chainId);
+  console.log("0", referralCode);
   const referralCodeBytes32 = encodeReferralCode(referralCode);
+  console.log("1", referralCodeBytes32);
   const referralCodeOwner = await getReferralCodeOwner(chainId, referralCodeBytes32);
+  console.log("2", referralCodeOwner);
   return !isAddressZero(referralCodeOwner);
 }
 
