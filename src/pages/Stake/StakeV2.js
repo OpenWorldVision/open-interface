@@ -1474,7 +1474,7 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
       </div>
       <div className="StakeV2-content">
         <div className="StakeV2-cards">
-          {/* <div className="App-card StakeV2-gmx-card">
+          <div className="App-card StakeV2-gmx-card">
             <div className="App-card-title">OPEN</div>
             <div className="App-card-divider"></div>
             <div className="App-card-content">
@@ -1761,18 +1761,7 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
                   {formatKeyAmount(processedData, "totalEsGmxRewardsUsd", USD_DECIMALS, 2, true)})
                 </div>
               </div>
-              <div className="App-card-row">
-                <div className="label">
-                  <Trans>Multiplier Points</Trans>
-                </div>
-                <div>{formatKeyAmount(processedData, "bonusGmxTrackerRewards", 18, 4, true)}</div>
-              </div>
-              <div className="App-card-row">
-                <div className="label">
-                  <Trans>Staked Multiplier Points</Trans>
-                </div>
-                <div>{formatKeyAmount(processedData, "bnGmxInFeeGmx", 18, 4, true)}</div>
-              </div>
+
               <div className="App-card-row">
                 <div className="label">
                   <Trans>Total</Trans>
@@ -1823,7 +1812,7 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
                 </div>
               </div>
             </div>
-          </div> */}
+          </div>
           <div className="App-card">
             <div className="App-card-title">OAP ({chainName})</div>
             <div className="App-card-divider"></div>
@@ -1968,7 +1957,7 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
               </div>
             </div>
           </div>
-          {/* <div className="App-card">
+          <div className="App-card">
             <div className="App-card-title">
               <Trans>Escrowed OPEN</Trans>
             </div>
@@ -2054,8 +2043,8 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
                   <Trans>Total Supply</Trans>
                 </div>
                 <div>
-                  {formatAmount(esGmxSupply, 18, 0, true)} esOPEN (${formatAmount(esGmxSupplyUsd, USD_DECIMALS, 0, true)}
-                  )
+                  {formatAmount(esGmxSupply, 18, 0, true)} esOPEN ($
+                  {formatAmount(esGmxSupplyUsd, USD_DECIMALS, 0, true)})
                 </div>
               </div>
               <div className="App-card-divider"></div>
@@ -2077,7 +2066,7 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
                 )}
               </div>
             </div>
-          </div> */}
+          </div>
         </div>
       </div>
 
