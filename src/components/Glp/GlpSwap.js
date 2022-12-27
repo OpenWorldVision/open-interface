@@ -588,7 +588,7 @@ export default function GlpSwap(props) {
     const minGlp = glpAmount.mul(BASIS_POINTS_DIVISOR - savedSlippageAmount).div(BASIS_POINTS_DIVISOR);
 
     const contract = new ethers.Contract(rewardRouterAddress, RewardRouter.abi, library.getSigner());
-    const method = swapTokenAddress === AddressZero ? "mintAndStakeGlpETH" : "mintAndStakeGlp";
+    const method = swapTokenAddress === AddressZero ? "mintAndStakeOapETH" : "mintAndStakeOap";
     const params = swapTokenAddress === AddressZero ? [0, minGlp] : [swapTokenAddress, swapAmount, 0, minGlp];
     const value = swapTokenAddress === AddressZero ? swapAmount : 0;
 
@@ -616,7 +616,7 @@ export default function GlpSwap(props) {
     const minOut = swapAmount.mul(BASIS_POINTS_DIVISOR - savedSlippageAmount).div(BASIS_POINTS_DIVISOR * 1.5);
 
     const contract = new ethers.Contract(rewardRouterAddress, RewardRouter.abi, library.getSigner());
-    const method = swapTokenAddress === AddressZero ? "unstakeAndRedeemGlpETH" : "unstakeAndRedeemGlp";
+    const method = swapTokenAddress === AddressZero ? "unstakeAndRedeemOapETH" : "unstakeAndRedeemOap";
     const params =
       swapTokenAddress === AddressZero ? [glpAmount, minOut, account] : [swapTokenAddress, glpAmount, minOut, account];
 
