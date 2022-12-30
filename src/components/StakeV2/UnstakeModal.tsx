@@ -30,7 +30,7 @@ function UnstakeModal(props) {
   const onClickPrimary = () => {
     setIsUnstaking(true);
     const contract = new ethers.Contract(openStakingAddress, OpenStaking.abi, library.getSigner());
-    callContract(chainId, contract, "unstake", [amount], {
+    callContract(chainId, contract, "unstake", [], {
       sentMsg: t`Unstake submitted!`,
       failMsg: t`Unstake failed.`,
       successMsg: t`Unstake completed!`,
