@@ -30,20 +30,17 @@ function useOpenStakingInfo(chainId: number) {
   });
 
   const { data: totalOpenStaked } = useSWR<BigNumber>(
-    ["OpenStaking", chainId, openStakingAddress, "balanceOf", account],
+    ["OpenStaking", chainId, openStakingAddress, "getStakedAmount", account],
     {
       // @ts-ignore
       fetcher: contractFetcher(library, OpenStaking),
     }
   );
 
-  const { data: currentOpen } = useSWR<BigNumber>(
-    ["OpenStaking", chainId, openStakingAddress, "getPooledEthByShares", myShares],
-    {
-      // @ts-ignore
-      fetcher: contractFetcher(library, OpenStaking),
-    }
-  );
+  const { data: currentOpen } = useSWR<BigNumber>(["OpenStaking", chainId, openStakingAddress, "balanceOf", account], {
+    // @ts-ignore
+    fetcher: contractFetcher(library, OpenStaking),
+  });
   const { openPrice } = useOpenPrice(chainId, {}, true);
 
   const totalPooledOpenInUsd = useMemo(() => {
@@ -60,6 +57,13 @@ function useOpenStakingInfo(chainId: number) {
     return totalOpenStaked.mul(openPrice).div(expandDecimals(1, 18));
   }, [openPrice, totalOpenStaked]);
 
+  const currentOpenInUsd = useMemo(() => {
+    if (!currentOpen || !openPrice) {
+      return BigNumber.from("0");
+    }
+    return currentOpen.mul(openPrice).div(expandDecimals(1, 18));
+  }, [openPrice, currentOpen]);
+
   return {
     totalPooledOpen: totalPooledOpen ? totalPooledOpen : BigNumber.from("0"),
     totalShares: totalShares ? totalShares : BigNumber.from("0"),
@@ -68,6 +72,7 @@ function useOpenStakingInfo(chainId: number) {
     myShares: myShares ? myShares : BigNumber.from("0"),
     totalStaked: totalOpenStaked ? totalOpenStaked : BigNumber.from("0"),
     currentOpen: currentOpen ? currentOpen : BigNumber.from("0"),
+    currentOpenInUsd,
   };
 }
 

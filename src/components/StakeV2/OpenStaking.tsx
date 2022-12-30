@@ -1,13 +1,13 @@
 import { t, Trans } from "@lingui/macro";
-import StatsTooltip from "components/StatsTooltip/StatsTooltip";
 import StatsTooltipRow from "components/StatsTooltip/StatsTooltipRow";
 import Tooltip from "components/Tooltip/Tooltip";
 import { useOpenPrice } from "domain/hooks/useOpenPrice";
 import useOpenStakingInfo from "domain/hooks/useOpenStakingInfo";
 import { BigNumber } from "ethers";
-import { USD_DECIMALS } from "lib/legacy";
+import { useChainId } from "lib/chains";
+import { PRECISION, USD_DECIMALS } from "lib/legacy";
 import { expandDecimals, formatAmount, formatKeyAmount } from "lib/numbers";
-import React, { useMemo } from "react";
+import { useMemo } from "react";
 import { Link } from "react-router-dom";
 type Props = {
   gmxPrice: any;
@@ -26,18 +26,9 @@ type Props = {
   onUnstaking: () => void;
 };
 function OpenStaking(props: Props) {
-  const {
-    processedData,
-    nativeTokenSymbol,
-    active,
-    totalGmxStaked,
-    avaxGmxStaked,
-    arbitrumGmxStaked,
-    wrappedTokenSymbol,
-    onStaking,
-    onUnstaking,
-  } = props;
-  const { openPrice } = useOpenPrice(97, {}, active);
+  const { chainId } = useChainId();
+  const { processedData, active, onStaking, onUnstaking } = props;
+  const { openPrice } = useOpenPrice(chainId, {}, active);
   const {
     totalPooledOpen,
     totalShares,
@@ -46,7 +37,21 @@ function OpenStaking(props: Props) {
     totalOpenStakedInUsd,
     myShares,
     currentOpen,
-  } = useOpenStakingInfo(97);
+    currentOpenInUsd,
+  } = useOpenStakingInfo(chainId);
+
+  const apr = useMemo(() => {
+    if (!currentOpen || !totalStaked || currentOpen.eq("0") || totalStaked.eq("0")) {
+      return BigNumber.from("0");
+    }
+    return currentOpen
+      .mul(PRECISION)
+      .div(totalStaked)
+      .sub(PRECISION)
+      .div(BigNumber.from("7"))
+      .mul(BigNumber.from("100"));
+  }, [currentOpen, totalStaked]);
+  console.log(apr);
 
   const openBalanceUsd = useMemo(() => {
     if (!openPrice || !processedData.gmxBalance) {
@@ -71,7 +76,7 @@ function OpenStaking(props: Props) {
           <div className="label">
             <Trans>Price</Trans>
           </div>
-          <div>
+          <div className="value">
             {!openPrice && "..."}
             {openPrice && (
               <Tooltip
@@ -91,16 +96,18 @@ function OpenStaking(props: Props) {
           <div className="label">
             <Trans>Wallet</Trans>
           </div>
-          <div>
+          <div className="value">
             {formatKeyAmount(processedData, "gmxBalance", 18, 2, true)} OPEN ($
             {formatAmount(openBalanceUsd, 18, 2, true)})
           </div>
         </div>
+
+        <div className="App-card-divider"></div>
         <div className="App-card-row">
           <div className="label">
             <Trans>Staked</Trans>
           </div>
-          <div>
+          <div className="value">
             {formatAmount(totalStaked, 18, 2, true)} OPEN ($
             {formatAmount(totalOpenStakedInUsd, 18, 2, true)})
           </div>
@@ -110,23 +117,30 @@ function OpenStaking(props: Props) {
           <div className="label">
             <Trans>Shares</Trans>
           </div>
-          <div>{formatAmount(myShares, 18, 2, true)} shares</div>
+          <div className="value">{`${formatAmount(myShares, 18, 2, true)} shares (${formatAmount(
+            percentageOfShare,
+            2,
+            2,
+            true
+          )}%)`}</div>
         </div>
 
         <div className="App-card-row">
           <div className="label">
-            <Trans>% shares</Trans>
+            <Trans>Current</Trans>
           </div>
-          <div>{formatAmount(percentageOfShare, 2, 2, true)} %</div>
+          <div className="value">
+            {formatAmount(currentOpen, 18, 2, true)} OPEN ($
+            {formatAmount(currentOpenInUsd, 18, 2, true)})
+          </div>
         </div>
-        <div className="App-card-divider"></div>
         <div className="App-card-row">
           <div className="label">
             <Trans>APR</Trans>
           </div>
-          <div>
+          <div className="value" style={{ color: "#53BA95" }}>
             <Tooltip
-              handle={`${formatKeyAmount(processedData, "gmxAprTotalWithBoost", 2, 2, true)}%`}
+              handle={`${formatAmount(apr, 30, 2, true)}%`}
               position="right-bottom"
               renderContent={() => {
                 return (
@@ -143,19 +157,13 @@ function OpenStaking(props: Props) {
             />
           </div>
         </div>
-        <div className="App-card-row">
-          <div className="label">
-            <Trans>Rewards</Trans>
-          </div>
-          <div>{formatAmount(currentOpen.sub(totalStaked), 18, 2, true)}</div>
-        </div>
-
         <div className="App-card-divider"></div>
+
         <div className="App-card-row">
           <div className="label">
             <Trans>Total Shares</Trans>
           </div>
-          <div>
+          <div className="value">
             {!totalShares && "..."}
             {totalShares && `${formatAmount(totalShares, 18, 0, true)} shares`}
           </div>
@@ -165,7 +173,7 @@ function OpenStaking(props: Props) {
           <div className="label">
             <Trans>Total Pooled OPEN</Trans>
           </div>
-          <div>
+          <div className="value">
             {!totalPooledOpen && "..."}
             {totalPooledOpen &&
               `${formatAmount(totalPooledOpen, 18, 0, true)} OPEN ($${formatAmount(

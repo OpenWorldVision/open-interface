@@ -5,9 +5,10 @@ import { callContract, contractFetcher } from "lib/contracts";
 import { formatAmount, formatAmountFree, parseValue } from "lib/numbers";
 import { useState } from "react";
 import useSWR from "swr";
-import RewardRouter from "abis/RewardRouter.json";
 import Token from "abis/Token.json";
+import OpenStaking from "abis/OpenStaking.json";
 import { approveTokens } from "domain/tokens";
+import { getContract } from "config/contracts";
 
 const { AddressZero } = ethers.constants;
 
@@ -25,23 +26,21 @@ function StakeModal(props) {
     library,
     stakingTokenSymbol,
     stakingTokenAddress,
-    farmAddress,
-    rewardRouterAddress,
-    stakeMethodName,
     setPendingTxns,
   } = props;
+  const openStakingAddress = getContract(chainId, "OpenStaking");
   const [isStaking, setIsStaking] = useState(false);
   const [isApproving, setIsApproving] = useState(false);
 
   const { data: tokenAllowance } = useSWR<BigNumber>(
-    active && stakingTokenAddress && [active, chainId, stakingTokenAddress, "allowance", account, farmAddress],
+    active && stakingTokenAddress && [active, chainId, stakingTokenAddress, "allowance", account, openStakingAddress],
     {
       fetcher: contractFetcher(library, Token),
     }
   );
 
   let amount = parseValue(value, 18);
-  const needApproval = farmAddress !== AddressZero && tokenAllowance && amount && amount.gt(tokenAllowance);
+  const needApproval = openStakingAddress !== AddressZero && tokenAllowance && amount && amount.gt(tokenAllowance);
 
   const getError = () => {
     if (!amount || amount.eq(0)) {
@@ -59,16 +58,16 @@ function StakeModal(props) {
         setIsApproving,
         library,
         tokenAddress: stakingTokenAddress,
-        spender: farmAddress,
+        spender: openStakingAddress,
         chainId,
       });
       return;
     }
 
     setIsStaking(true);
-    const contract = new ethers.Contract(rewardRouterAddress, RewardRouter.abi, library.getSigner());
+    const contract = new ethers.Contract(openStakingAddress, OpenStaking.abi, library.getSigner());
 
-    callContract(chainId, contract, stakeMethodName, [amount], {
+    callContract(chainId, contract, "submit", [AddressZero, amount], {
       sentMsg: t`Stake submitted!`,
       failMsg: t`Stake failed.`,
       setPendingTxns,

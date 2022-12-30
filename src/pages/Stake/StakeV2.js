@@ -681,7 +681,7 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
 
   const vaultAddress = getContract(chainId, "Vault");
   const nativeTokenAddress = getContract(chainId, "NATIVE_TOKEN");
-  const gmxAddress = getContract(chainId, "OPEN");
+  const openAddress = getContract(chainId, "OPEN");
   const esGmxAddress = getContract(chainId, "ES_GMX");
   const bnGmxAddress = getContract(chainId, "BN_GMX");
   const glpAddress = getContract(chainId, "OAP");
@@ -707,9 +707,9 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
   const nativeTokenSymbol = getConstant(chainId, "nativeTokenSymbol");
   const wrappedTokenSymbol = getConstant(chainId, "wrappedTokenSymbol");
 
-  const walletTokens = [gmxAddress, esGmxAddress, glpAddress, stakedGmxTrackerAddress];
+  const walletTokens = [openAddress, esGmxAddress, glpAddress, stakedGmxTrackerAddress];
   const depositTokens = [
-    gmxAddress,
+    openAddress,
     esGmxAddress,
     stakedGmxTrackerAddress,
     bonusGmxTrackerAddress,
@@ -766,7 +766,7 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
   );
 
   const { data: stakedGmxSupply } = useSWR(
-    [`StakeV2:stakedGmxSupply:${active}`, chainId, gmxAddress, "balanceOf", stakedGmxTrackerAddress],
+    [`StakeV2:stakedGmxSupply:${active}`, chainId, openAddress, "balanceOf", stakedGmxTrackerAddress],
     {
       fetcher: contractFetcher(library, Token),
     }
@@ -884,7 +884,7 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
     }
   }
 
-  const showStakeGmxModal = () => {
+  const showStakeOpenModal = () => {
     if (!isGmxTransferEnabled) {
       helperToast.error(t`OPEN transfers not yet enabled`);
       return;
@@ -895,7 +895,7 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
     setStakeModalMaxAmount(processedData.gmxBalance);
     setStakeValue("");
     setStakingTokenSymbol("OPEN");
-    setStakingTokenAddress(gmxAddress);
+    setStakingTokenAddress(openAddress);
     setStakingFarmAddress(stakedGmxTrackerAddress);
     setStakeMethodName("stakeGmx");
   };
@@ -975,7 +975,7 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
     setVesterWithdrawAddress(glpVesterAddress);
   };
 
-  const showUnstakeGmxModal = () => {
+  const showUnstakeOpenModal = () => {
     if (!isGmxTransferEnabled) {
       helperToast.error(t`OPEN transfers not yet enabled`);
       return;
@@ -1195,8 +1195,8 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
           <OpenStaking
             processedData={processedData}
             active
-            onStaking={showStakeGmxModal}
-            onUnstaking={showUnstakeGmxModal}
+            onStaking={showStakeOpenModal}
+            onUnstaking={showUnstakeOpenModal}
           />
           <div className="App-card primary StakeV2-gmx-card StakeV2-total-rewards-card">
             <div className="App-card-title">
@@ -1425,7 +1425,7 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
               </div>
             </div>
           </div>
-          <div className="App-card StakeV2-gmx-card">
+          {/* <div className="App-card StakeV2-gmx-card">
             <div className="App-card-title">
               <Trans>Escrowed OPEN</Trans>
             </div>
@@ -1534,7 +1534,7 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
                 )}
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
 

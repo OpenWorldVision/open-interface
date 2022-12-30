@@ -537,7 +537,7 @@ button.App-connect-wallet:hover {
   padding: 1.5rem 1.5rem 1.86rem;
   border: 1px solid #DFE7FB;
   border-radius: 0.4rem;
-  font-size: 1.5rem;
+  font-size: 13px;
   background-color: #F9F9F9;
 }
 
@@ -581,7 +581,10 @@ button.App-connect-wallet:hover {
   top: 2px;
 }
 .App-card-row .label {
- color:#6D7380;
+  color:#6D7380;
+}
+.App-card-row .value {
+  color:#273852;
 }
 
 .App-card-row > div:last-child {
