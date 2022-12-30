@@ -1198,7 +1198,7 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
             onStaking={showStakeOpenModal}
             onUnstaking={showUnstakeOpenModal}
           />
-          <div className="App-card primary StakeV2-gmx-card StakeV2-total-rewards-card">
+          {/* <div className="App-card primary StakeV2-gmx-card StakeV2-total-rewards-card">
             <div className="App-card-title">
               <Trans>Total Rewards</Trans>
             </div>
@@ -1280,7 +1280,7 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
           <div className="App-card StakeV2-gmx-card">
             <div className="App-card-title">OAP ({chainName})</div>
             <div className="App-card-divider"></div>
