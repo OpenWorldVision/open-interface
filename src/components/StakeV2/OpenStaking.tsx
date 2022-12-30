@@ -51,7 +51,6 @@ function OpenStaking(props: Props) {
       .div(BigNumber.from("7"))
       .mul(BigNumber.from("100"));
   }, [currentOpen, totalStaked]);
-  console.log(apr);
 
   const openBalanceUsd = useMemo(() => {
     if (!openPrice || !processedData.gmxBalance) {

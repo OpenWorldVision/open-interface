@@ -63,7 +63,7 @@ function useOpenStakingInfo(chainId: number) {
     }
     return currentOpen.mul(openPrice).div(expandDecimals(1, 18));
   }, [openPrice, currentOpen]);
-
+  console.log(totalPooledOpen);
   return {
     totalPooledOpen: totalPooledOpen ? totalPooledOpen : BigNumber.from("0"),
     totalShares: totalShares ? totalShares : BigNumber.from("0"),
