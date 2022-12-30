@@ -119,7 +119,7 @@ function OpenStaking(props: Props) {
           <div className="value">{`${formatAmount(myShares, 18, 2, true)} shares (${formatAmount(
             percentageOfShare,
             2,
-            2,
+            4,
             true
           )}%)`}</div>
         </div>

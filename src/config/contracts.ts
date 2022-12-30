@@ -164,7 +164,7 @@ const CONTRACTS = {
     FastPriceEvents: "0x08A33b497FBa8921b5d2C2e9678Fb184eCE900b4",
     FastPriceFeed: "0xAE11B05Bf243b234F850E745327B06CAf08af4Cb",
     VaultPriceFeed: "0xeaE0398FBD233f8b50bCC3Ba9e81F92598B77dd0",
-    OpenStaking: "0x08a3d355ccf0Af8bC0A5836DE1a6226611d0ed8D",
+    OpenStaking: "0xDaC7156e913eA545a7170Aca255d7e1c71F244C0",
   },
   [ARBITRUM_TESTNET]: {
     // arbitrum testnet

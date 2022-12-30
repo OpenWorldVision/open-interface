@@ -8,39 +8,28 @@ import { useOpenPrice } from "./useOpenPrice";
 import { expandDecimals } from "lib/numbers";
 import { useMemo } from "react";
 
+const DEFAULT_VALUES = [
+  BigNumber.from("0"),
+  BigNumber.from("0"),
+  BigNumber.from("0"),
+  BigNumber.from("0"),
+  BigNumber.from("0"),
+];
+
 function useOpenStakingInfo(chainId: number) {
   const { library, account } = useWeb3React();
   const openStakingAddress = getContract(chainId, "OpenStaking");
-  const { data: totalPooledOpen } = useSWR<BigNumber>(
-    ["OpenStaking", chainId, openStakingAddress, "getTotalPooledEther"],
+
+  const { data: stakingInfo } = useSWR<BigNumber[]>(
+    ["OpenStaking", chainId, openStakingAddress, "getStakeInfo", account],
     {
       // @ts-ignore
       fetcher: contractFetcher(library, OpenStaking),
     }
   );
 
-  const { data: totalShares } = useSWR<BigNumber>(["OpenStaking", chainId, openStakingAddress, "getTotalShares"], {
-    // @ts-ignore
-    fetcher: contractFetcher(library, OpenStaking),
-  });
+  const [totalPooledOpen, totalShares, myShares, totalOpenStaked, currentOpen] = stakingInfo ?? DEFAULT_VALUES;
 
-  const { data: myShares } = useSWR<BigNumber>(["OpenStaking", chainId, openStakingAddress, "sharesOf", account], {
-    // @ts-ignore
-    fetcher: contractFetcher(library, OpenStaking),
-  });
-
-  const { data: totalOpenStaked } = useSWR<BigNumber>(
-    ["OpenStaking", chainId, openStakingAddress, "getStakedAmount", account],
-    {
-      // @ts-ignore
-      fetcher: contractFetcher(library, OpenStaking),
-    }
-  );
-
-  const { data: currentOpen } = useSWR<BigNumber>(["OpenStaking", chainId, openStakingAddress, "balanceOf", account], {
-    // @ts-ignore
-    fetcher: contractFetcher(library, OpenStaking),
-  });
   const { openPrice } = useOpenPrice(chainId, {}, true);
 
   const totalPooledOpenInUsd = useMemo(() => {
@@ -63,15 +52,15 @@ function useOpenStakingInfo(chainId: number) {
     }
     return currentOpen.mul(openPrice).div(expandDecimals(1, 18));
   }, [openPrice, currentOpen]);
-  console.log(totalPooledOpen);
+
   return {
-    totalPooledOpen: totalPooledOpen ? totalPooledOpen : BigNumber.from("0"),
-    totalShares: totalShares ? totalShares : BigNumber.from("0"),
+    totalPooledOpen,
+    totalShares,
     totalPooledOpenInUsd,
     totalOpenStakedInUsd,
-    myShares: myShares ? myShares : BigNumber.from("0"),
-    totalStaked: totalOpenStaked ? totalOpenStaked : BigNumber.from("0"),
-    currentOpen: currentOpen ? currentOpen : BigNumber.from("0"),
+    myShares,
+    totalStaked: totalOpenStaked,
+    currentOpen,
     currentOpenInUsd,
   };
 }
