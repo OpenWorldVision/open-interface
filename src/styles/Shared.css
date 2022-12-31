@@ -26,7 +26,7 @@ code {
 * {
   box-sizing: border-box;
   font-family: "Relative", sans-serif;
-  letter-spacing: 0.5px;
+  /* letter-spacing: 0.5px; */
   /* font-variant-numeric: tabular-nums; */
 }
 
@@ -100,7 +100,7 @@ input {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-  
+
 }
 
 input::placeholder {

@@ -614,6 +614,8 @@ function useGmxPriceFromAvalanche() {
   return { data: gmxPrice, mutate };
 }
 
+
+
 function useGmxPriceFromArbitrum(library, active) {
   const poolAddress = getContract(ARBITRUM, "UniswapGmxEthPool");
   const { data: uniPoolSlot0, mutate: updateUniPoolSlot0 } = useSWR(
