@@ -185,9 +185,14 @@ function OpenStaking(props: Props) {
         </div>
         <div className="App-card-divider" />
         <div className="App-card-options">
-          <Link className="App-button-option App-card-option" to="/buy_open">
+          <a
+            className="App-button-option App-card-option"
+            href="https://pancakeswap.finance/swap?outputCurrency=0x27a339d9B59b21390d7209b78a839868E319301B"
+            target="_blank"
+            rel="noreferrer"
+          >
             <Trans>Buy OPEN</Trans>
-          </Link>
+          </a>
           {active && (
             <button className="App-button-option App-card-option" onClick={onStaking}>
               <Trans>Stake</Trans>
