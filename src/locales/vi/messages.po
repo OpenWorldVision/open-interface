@@ -21,6 +21,10 @@ msgstr "01 Sep 2021"
 msgid "06 Jan 2022"
 msgstr "06 Jan 2022"
 
+#: src/pages/Dashboard/DashboardV2.js
+msgid "09 Dec 2022"
+msgstr "ngày 09 tháng 12 năm 2022"
+
 #: src/components/Exchange/ExchangeTVChart.js
 msgid "24h Change"
 msgstr "24h Change"
