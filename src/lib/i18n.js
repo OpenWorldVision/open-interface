@@ -7,10 +7,10 @@ import { isDevelopment } from "./legacy";
 export const locales = {
   en: "English",
   vi: "Tiếng Việt",
-  es: "Spanish",
-  zh: "Chinese",
-  ko: "Korean",
-  ja: "Japanese",
+  // es: "Spanish",
+  // zh: "Chinese",
+  // ko: "Korean",
+  // ja: "Japanese",
 };
 
 export const defaultLocale = "en";
