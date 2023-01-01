@@ -108,7 +108,7 @@ msgstr "AUM"
 #: src/components/Glp/GlpSwap.js
 #: src/components/Glp/GlpSwap.js
 msgid "AVAILABLE"
-msgstr "AVAILABLE"
+msgstr "HIỆN CÓ"
 
 #: src/components/Header/AppHeaderLinks.tsx
 #: src/pages/Ecosystem/Ecosystem.js
@@ -1254,7 +1254,7 @@ msgstr "Exit Price"
 
 #: src/components/Glp/GlpSwap.js
 msgid "FEES"
-msgstr "FEES"
+msgstr "Phí"
 
 #: src/components/Exchange/ConfirmationBox.js
 #: src/components/Exchange/ConfirmationBox.js
@@ -1267,7 +1267,7 @@ msgstr "FEES"
 #: src/pages/Dashboard/DashboardV1.js
 #: src/pages/Dashboard/DashboardV2.js
 msgid "Fees"
-msgstr "Fees"
+msgstr "Phí"
 
 #: src/components/Exchange/ConfirmationBox.js
 msgid "Fees are high to swap from {0} to {1}."
@@ -2264,7 +2264,7 @@ msgstr "POOL"
 #: src/components/Glp/GlpSwap.js
 #: src/pages/Dashboard/DashboardV2.js
 msgid "PRICE"
-msgstr "PRICE"
+msgstr "GIÁ"
 
 #: src/pages/PageNotFound/PageNotFound.js
 msgid "Page not found"
