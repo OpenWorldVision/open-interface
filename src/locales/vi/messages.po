@@ -43,7 +43,7 @@ msgstr "24h Volume"
 
 #: src/components/Exchange/PositionSeller.js
 msgid "<0/>Profit price: {0} ${1}. This rule applies for the next {2}, until {3}."
-msgstr "<0/>Profit price: {0} ${1}. This rule applies for the next {2}, until {3}."
+msgstr "<0/>Giá lợi nhuận: {0} ${1}. Quy tắc này áp dụng cho {2} tiếp theo, cho đến {3}."
 
 #: src/App/App.js
 msgid "<0>Install Coinbase Wallet</0> to start using OPEN"
@@ -55,23 +55,23 @@ msgstr "<0>Install Coinbase Wallet</0>, and use OPEN with its built-in browser"
 
 #: src/App/App.js
 msgid "<0>Install MetaMask</0> to start using OPEN"
-msgstr "<0>Install MetaMask</0> to start using OPEN"
+msgstr "<0>Cài đặt MetaMask</0> để bắt đầu sử dụng OPEN"
 
 #: src/App/App.js
 msgid "<0>Install MetaMask</0>, and use OPEN with its built-in browser"
-msgstr "<0>Install MetaMask</0>, and use OPEN with its built-in browser"
+msgstr "<0>Cài đặt MetaMask</0> và sử dụng OPEN bằng trình duyệt tích hợp"
 
 #: src/components/Exchange/OrdersToa.js
 msgid "<0>Insufficient liquidity to execute the order</0><1>The mark price which is an aggregate of exchange prices did not reach the specified price</1><2>The specified price was reached but not long enough for it to be executed</2><3>No keeper picked up the order for execution</3>"
-msgstr "<0>Insufficient liquidity to execute the order</0><1>The mark price which is an aggregate of exchange prices did not reach the specified price</1><2>The specified price was reached but not long enough for it to be executed</2><3>No keeper picked up the order for execution</3>"
+msgstr "<0>Không đủ thanh khoản để thực hiện lệnh</0><1>Giá đánh dấu là tổng giá trao đổi không đạt đến mức giá được chỉ định</1><2>Đã đạt được mức giá được chỉ định nhưng không đủ lâu để đạt được được thực hiện</2><3>Không có thủ kho nào nhận lệnh thực hiện</3>"
 
 #: src/components/Exchange/PositionSeller.js
 msgid "<0>More Info</0> about fees."
-msgstr "<0>More Info</0> about fees."
+msgstr "<0>Thông tin thêm</0> về phí."
 
 #: src/pages/PageNotFound/PageNotFound.js
 msgid "<0>Return to </0><1>Homepage</1> <2>or </2> <3>Trade</3>"
-msgstr "<0>Return to </0><1>Homepage</1> <2>or </2> <3>Trade</3>"
+msgstr "<0>Quay lại </0><1>Trang chủ</1> <2>hoặc </2> <3>Giao dịch</3>"
 
 #: src/components/Glp/SwapErrorModal.tsx
 msgid "<0>The pool's capacity has been reached for {0}. Please use another token to buy OAP.</0><1>Check the \"Save on Fees\" section for tokens with the lowest fees.</1>"
@@ -83,7 +83,7 @@ msgstr "<0>This will withdraw and unreserve all tokens as well as pause vesting.
 
 #: src/lib/wallets/index.js
 msgid "<0>Your wallet is not connected to {0}.</0><1/><2>Switch to {1}</2><3>Add {2}</3>"
-msgstr "<0>Your wallet is not connected to {0}.</0><1/><2>Switch to {1}</2><3>Add {2}</3>"
+msgstr "<0>Ví của bạn chưa được kết nối với {0}.</0><1/><2>Chuyển sang {1}</2><3>Thêm {2}</3>"
 
 #: src/components/Exchange/SwapBox.js
 msgid "A snapshot of the USD value of your {0} collateral is taken when the position is opened."
@@ -121,15 +121,15 @@ msgstr "HIỆN CÓ"
 #: src/pages/Ecosystem/Ecosystem.js
 #: src/pages/Ecosystem/Ecosystem.js
 msgid "About"
-msgstr "About"
+msgstr "Về chúng tôi"
 
 #: src/components/Exchange/ConfirmationBox.js
 msgid "Accept confirmation of trigger orders"
-msgstr "Accept confirmation of trigger orders"
+msgstr "Chấp nhận xác nhận lệnh kích hoạt"
 
 #: src/components/Exchange/ConfirmationBox.js
 msgid "Accept minimum and {action}"
-msgstr "Accept minimum and {action}"
+msgstr "Chấp nhận tối thiểu và {action}"
 
 #: src/components/Exchange/OrdersToa.js
 msgid "Accept terms to enable orders"
@@ -142,7 +142,7 @@ msgstr "Accept that orders are not guaranteed to execute and trigger orders may 
 #: src/pages/Actions/Actions.js
 #: src/pages/OrdersOverview/OrdersOverview.js
 msgid "Account"
-msgstr "Account"
+msgstr "Tài khoản"
 
 #: src/pages/Actions/Actions.js
 msgid "Actions"
@@ -159,27 +159,27 @@ msgstr "Active Referral Code"
 #: src/pages/Dashboard/AssetDropdown.js
 #: src/pages/Dashboard/AssetDropdown.js
 msgid "Add to Metamask"
-msgstr "Add to Metamask"
+msgstr "Thêm vào Metamask"
 
 #: src/components/Referrals/JoinReferralCode.js
 msgid "Adding referral code failed."
-msgstr "Adding referral code failed."
+msgstr "Thêm mã giới thiệu không thành công."
 
 #: src/components/Referrals/JoinReferralCode.js
 msgid "Adding..."
-msgstr "Adding..."
+msgstr "Đang thêm..."
 
 #: src/pages/Stake/StakeV2.js
 msgid "Additional reserve required"
-msgstr "Additional reserve required"
+msgstr "Yêu cầu dự trữ bổ sung"
 
 #: src/components/Exchange/OrdersToa.js
 msgid "Additionally, trigger orders are market orders and are not guaranteed to settle at the trigger price."
-msgstr "Additionally, trigger orders are market orders and are not guaranteed to settle at the trigger price."
+msgstr "Ngoài ra, các lệnh kích hoạt là các lệnh thị trường và không được đảm bảo sẽ thanh toán ở mức giá kích hoạt."
 
 #: src/pages/Referrals/Referrals.js
 msgid "Affiliates"
-msgstr "Affiliates"
+msgstr "Chi nhánh"
 
 #: src/pages/ClaimEsGmx/ClaimEsGmx.js
 msgid "After claiming you will be able to vest a maximum of {0} esGMX at a ratio of {1} {stakingToken} to 1 esGMX."
@@ -207,7 +207,7 @@ msgstr "Allow up to 1% slippage"
 #: src/components/Exchange/ConfirmationBox.js
 #: src/components/Exchange/PositionSeller.js
 msgid "Allowed Slippage"
-msgstr "Allowed Slippage"
+msgstr "Trượt giá cho phép"
 
 #: src/components/ModalViews/RedirectModal.js
 msgid "Alternative links can be found in the <0>docs</0>.<1/><2/>By clicking Agree you accept the <3>T&Cs</3> and <4>Referral T&Cs</4>.<5/><6/>"
@@ -409,7 +409,7 @@ msgstr "Borrow Fee"
 #: src/components/Exchange/PositionsList.js
 #: src/components/Exchange/PositionsList.js
 msgid "Borrow Fee / Day"
-msgstr "Borrow Fee / Day"
+msgstr "Phí vay / ngày"
 
 #: src/components/Exchange/PositionSeller.js
 #: src/components/Exchange/TradeHistory.js
@@ -449,25 +449,25 @@ msgstr "Mua OAP"
 
 #: src/pages/BuyGlp/BuyGlp.js
 msgid "Buy OAP Icon"
-msgstr "Buy OAP Icon"
+msgstr "Mua OAP Icon"
 
 #: src/pages/BuyGMX/BuyGMX.js
 #: src/pages/BuyGMX/BuyGMX.js
 #: src/pages/Stake/StakeV2.js
 msgid "Buy OPEN"
-msgstr "Buy OPEN"
+msgstr "Mua OPEN"
 
 #: src/pages/BuyGMX/BuyGMX.js
 msgid "Buy OPEN Bonds"
-msgstr "Buy OPEN Bonds"
+msgstr "Mua OPEN Bonds"
 
 #: src/pages/Buy/Buy.js
 msgid "Buy OPEN or OAP"
-msgstr "Buy OPEN or OAP"
+msgstr "Mua OPEN hoặc OAP"
 
 #: src/components/Glp/GlpSwap.js
 msgid "Buy failed."
-msgstr "Buy failed."
+msgstr "Mua thất bại."
 
 #: src/components/TokenCard/TokenCard.js
 #: src/components/TokenCard/TokenCard.js
@@ -477,7 +477,7 @@ msgstr "Buy on Arbitrum"
 #: src/components/TokenCard/TokenCard.js
 #: src/components/TokenCard/TokenCard.js
 msgid "Buy on BSC"
-msgstr "Buy on BSC"
+msgstr "Mua trên BSC"
 
 #: src/components/Glp/GlpSwap.js
 msgid "Buy submitted."
@@ -486,7 +486,7 @@ msgstr "Buy submitted."
 #: src/components/Glp/GlpSwap.js
 #: src/components/Glp/GlpSwap.js
 msgid "Buy with {0}"
-msgstr "Buy with {0}"
+msgstr "Mua với {0}"
 
 #: src/components/Exchange/NoLiquidityErrorModal.tsx
 msgid "Buy {swapTokenSymbol} on 1inch"
@@ -494,7 +494,7 @@ msgstr "Buy {swapTokenSymbol} on 1inch"
 
 #: src/components/Glp/GlpSwap.js
 msgid "Buying..."
-msgstr "Buying..."
+msgstr "Đang nua..."
 
 #: src/pages/OrdersOverview/OrdersOverview.js
 msgid "Can't execute because of an error"
@@ -551,7 +551,7 @@ msgstr "Checking code..."
 #: src/pages/Stake/StakeV2.js
 #: src/pages/Stake/StakeV2.js
 msgid "Claim"
-msgstr "Claim"
+msgstr "Nhận"
 
 #: src/pages/Stake/StakeV2.js
 #: src/pages/Stake/StakeV2.js
@@ -713,7 +713,7 @@ msgstr "Complete Transfer"
 #: src/pages/Stake/StakeV2.js
 #: src/pages/Stake/StakeV2.js
 msgid "Compound"
-msgstr "Compound"
+msgstr "Cài đặt thưởng"
 
 #: src/pages/Stake/StakeV2.js
 msgid "Compound Rewards"
@@ -1024,7 +1024,7 @@ msgstr "Diff"
 
 #: src/App/App.js
 msgid "Disable order validations"
-msgstr "Disable order validations"
+msgstr "Tắt trật tự xác nhận"
 
 #: src/components/AddressDropdown/AddressDropdown.js
 msgid "Disconnect"
@@ -1032,7 +1032,7 @@ msgstr "Ngắt kết nối"
 
 #: src/App/App.js
 msgid "Display PnL after fees"
-msgstr "Display PnL after fees"
+msgstr "Hiển thị PnL phía sau phí"
 
 #: src/pages/Dashboard/DashboardV2.js
 msgid "Distribution"
@@ -1053,7 +1053,7 @@ msgstr "ETH is needed on Arbitrum to purchase OPEN."
 #: src/components/Header/AppHeaderLinks.tsx
 #: src/pages/Stake/StakeV2.js
 msgid "Earn"
-msgstr "Kiếm"
+msgstr "Nhận thêm"
 
 #: src/components/Header/AppHeaderLinks.tsx
 msgid "Ecosystem"
@@ -1166,7 +1166,7 @@ msgstr "Enter Price"
 #: src/pages/BeginAccountTransfer/BeginAccountTransfer.js
 #: src/pages/NftWallet/NftWallet.js
 msgid "Enter Receiver Address"
-msgstr "Enter Receiver Address"
+msgstr "Xác nhận địa chỉ ví nhận"
 
 #: src/components/Referrals/JoinReferralCode.js
 #: src/components/Referrals/JoinReferralCode.js
@@ -1219,7 +1219,7 @@ msgstr "Enter new Price"
 #: src/components/Exchange/SwapBox.js
 #: src/components/Exchange/SwapBox.js
 msgid "Entry Price"
-msgstr "Entry Price"
+msgstr "Giá vào"
 
 #: src/pages/Stake/StakeV2.js
 #: src/pages/Stake/StakeV2.js
@@ -1279,15 +1279,15 @@ msgstr "Fees are high to swap from {0} to {1}."
 
 #: src/components/Exchange/ConfirmationBox.js
 msgid "Fees are high to swap from {0} to {1}. <0/>{2} is needed for collateral."
-msgstr "Fees are high to swap from {0} to {1}. <0/>{2} is needed for collateral."
+msgstr "Phí chuyển đổi từ {0} sang {1} rất cao. <0/>{2} là cần thiết để thế chấp."
 
 #: src/pages/Ecosystem/Ecosystem.js
 msgid "Fees generated by OPEN"
-msgstr "Fees generated by OPEN"
+msgstr "Phí do OPEN tạo ra"
 
 #: src/components/Glp/GlpSwap.js
 msgid "Fees may vary depending on which asset you sell OAP for. <0/>Enter the amount of OAP you want to redeem in the order form, then check here to compare fees."
-msgstr "Fees may vary depending on which asset you sell OAP for. <0/>Enter the amount of OAP you want to redeem in the order form, then check here to compare fees."
+msgstr "Các khoản phí có thể khác nhau tùy thuộc vào loại tài sản mà bạn bán OAP. <0/>Nhập số tiền OAP bạn muốn quy đổi trong biểu mẫu đặt hàng, sau đó kiểm tra tại đây để so sánh các khoản phí."
 
 #: src/components/Glp/GlpSwap.js
 msgid "Fees may vary depending on which asset you use to buy OAP. <0/>Enter the amount of OAP you want to purchase in the order form, then check here to compare fees."
@@ -1295,7 +1295,7 @@ msgstr "Lệ phí có thể thay đổi tùy thuộc vào tài sản bạn sử 
 
 #: src/pages/Dashboard/DashboardV2.js
 msgid "Fees since"
-msgstr "Fees since"
+msgstr "Lệ phí kể từ"
 
 #: src/components/Glp/GlpSwap.js
 #: src/components/Glp/GlpSwap.js
@@ -1306,19 +1306,19 @@ msgstr "Lệ phí sẽ được hiển thị khi bạn đã nhập một số ti
 
 #: src/components/Exchange/SwapBox.js
 msgid "Fetching token info..."
-msgstr "Fetching token info..."
+msgstr "Đang tải thông tin token..."
 
 #: src/pages/Ecosystem/Ecosystem.js
 msgid "Financial reports and protocol analytics"
-msgstr "Financial reports and protocol analytics"
+msgstr "Báo cáo tài chính và phân tích giao thức"
 
 #: src/pages/Dashboard/DashboardV2.js
 msgid "Floor Price Fund"
-msgstr "Floor Price Fund"
+msgstr "Quỹ giá sàn"
 
 #: src/components/Exchange/ConfirmationBox.js
 msgid "Forfeit profit"
-msgstr "Forfeit profit"
+msgstr "Lợi nhuận bị mất"
 
 #: src/components/Exchange/ConfirmationBox.js
 msgid "Forfeit profit and Short"
@@ -1490,7 +1490,7 @@ msgstr "Inc."
 
 #: src/App/App.js
 msgid "Include PnL in leverage display"
-msgstr "Include PnL in leverage display"
+msgstr "Bao gồm PnL trong màn hình đòn bẩy"
 
 #: src/pages/CompleteAccountTransfer/CompleteAccountTransfer.js
 msgid "Incorrect Account"
@@ -1828,11 +1828,11 @@ msgstr "Mark"
 #: src/components/Exchange/PositionsList.js
 #: src/components/Exchange/PositionsList.js
 msgid "Mark Price"
-msgstr "Mark Price"
+msgstr "Giá đánh dấu"
 
 #: src/components/Exchange/OrderEditor.js
 msgid "Mark Price:"
-msgstr "Mark Price:"
+msgstr "Giá đánh dấu:"
 
 #: src/components/Exchange/OrderEditor.js
 #: src/components/Exchange/PositionSeller.js
@@ -2053,17 +2053,17 @@ msgstr "NFT Wallet"
 #: src/components/Exchange/PositionsList.js
 #: src/components/Exchange/PositionsList.js
 msgid "Net Value"
-msgstr "Net Value"
+msgstr "Tài sản ròng"
 
 #: src/components/Exchange/PositionsList.js
 #: src/components/Exchange/PositionsList.js
 msgid "Net Value: Initial Collateral - Borrow Fee + PnL"
-msgstr "Net Value: Initial Collateral - Borrow Fee + PnL"
+msgstr "Tài sản ròng: Tài sản thế chấp ban đầu - Phí vay + PnL"
 
 #: src/components/Exchange/PositionsList.js
 #: src/components/Exchange/PositionsList.js
 msgid "Net Value: Initial Collateral - Fees + PnL"
-msgstr "Net Value: Initial Collateral - Fees + PnL"
+msgstr "Tài sản ròng: Tài sản thế chấp ban đầu - Phí vay + PnL"
 
 #: src/components/Exchange/ConfirmationBox.js
 #: src/components/Exchange/PositionEditor.js
@@ -2246,12 +2246,12 @@ msgstr "Order updated!"
 #: src/pages/Actions/Actions.js
 #: src/pages/Exchange/Exchange.js
 msgid "Orders"
-msgstr "Orders"
+msgstr "Thứ tự"
 
 #: src/components/Exchange/PositionsList.js
 #: src/pages/Exchange/Exchange.js
 msgid "Orders ({0})"
-msgstr "Orders ({0})"
+msgstr "Thứ tự ({0})"
 
 #: src/pages/Exchange/Exchange.js
 msgid "Orders cancelled."
@@ -2259,7 +2259,7 @@ msgstr "Orders cancelled."
 
 #: src/pages/Dashboard/DashboardV2.js
 msgid "Overview"
-msgstr "Overview"
+msgstr "Tổng quan"
 
 #: src/pages/Dashboard/DashboardV2.js
 msgid "POOL"
@@ -2318,7 +2318,7 @@ msgstr "Please input a referral code to benefit from fee discounts."
 
 #: src/pages/BeginAccountTransfer/BeginAccountTransfer.js
 msgid "Please only use this for full account transfers.<0/>This will transfer all your OPEN, esGMX, OAP and Multiplier Points to your new account.<1/>Transfers are only supported if the receiving account has not staked OPEN or OAP tokens before.<2/>Transfers are one-way, you will not be able to transfer staked tokens back to the sending account."
-msgstr "Please only use this for full account transfers.<0/>This will transfer all your OPEN, esGMX, OAP and Multiplier Points to your new account.<1/>Transfers are only supported if the receiving account has not staked OPEN or OAP tokens before.<2/>Transfers are one-way, you will not be able to transfer staked tokens back to the sending account."
+msgstr "Vui lòng chỉ sử dụng điều này để chuyển toàn bộ số dư tài khoản.<0/>Điều này sẽ chuyển tất cả các OPEN, esGMX, OAP và Multiplier Points của bạn vào tài khoản mới.<1/>Chuyển khoản chỉ được hỗ trợ nếu tài khoản nhận chưa từng đặt cọc OPEN hoặc OAP trước đó.<2/>Chuyển khoản là một chiều, bạn sẽ không thể chuyển các token đã đặt cọc trở lại tài khoản gửi."
 
 #: src/components/Migration/Migration.js
 msgid "Please read the <0>Medium post</0> before migrating."
@@ -2354,7 +2354,7 @@ msgstr "Số lượng trong Pool"
 
 #: src/components/Exchange/PositionsList.js
 msgid "Position"
-msgstr "Position"
+msgstr "Vị thế"
 
 #: src/components/Exchange/SwapBox.js
 msgid "Position Fee (0.1% of position size)"
@@ -2446,7 +2446,7 @@ msgstr "Price on Arbitrum"
 #: src/pages/Dashboard/DashboardV2.js
 #: src/pages/Stake/StakeV2.js
 msgid "Price on BSC"
-msgstr "Price on BSC"
+msgstr "Giá trên BSC"
 
 #: src/pages/Actions/Actions.js
 msgid "Profit"
@@ -2485,7 +2485,7 @@ msgstr "Purchase Insurance"
 #: src/components/TokenCard/TokenCard.js
 #: src/components/TokenCard/TokenCard.js
 msgid "Read more"
-msgstr "Read more"
+msgstr "Chi tiết"
 
 #: src/components/Referrals/TradersStats.js
 msgid "Rebates Distribution History"
@@ -2518,15 +2518,15 @@ msgstr "Nhận"
 #: src/pages/BeginAccountTransfer/BeginAccountTransfer.js
 #: src/pages/NftWallet/NftWallet.js
 msgid "Receiver Address"
-msgstr "Receiver Address"
+msgstr "Địa chị tài khoản nhận"
 
 #: src/pages/BeginAccountTransfer/BeginAccountTransfer.js
 msgid "Receiver has not staked OAP tokens before"
-msgstr "Receiver has not staked OAP tokens before"
+msgstr "Người nhận chưa đặt cọc OAP trước đây"
 
 #: src/pages/BeginAccountTransfer/BeginAccountTransfer.js
 msgid "Receiver has not staked OPEN tokens before"
-msgstr "Receiver has not staked OPEN tokens before"
+msgstr "Người nhận chưa đặt cọc OPEN trước đây"
 
 #: src/components/Glp/GlpSwap.js
 msgid "Redemption time not yet reached"
@@ -2642,7 +2642,7 @@ msgstr "Returns calculator for OPEN and OAP"
 #: src/pages/Stake/StakeV2.js
 #: src/pages/Stake/StakeV2.js
 msgid "Rewards"
-msgstr "Rewards"
+msgstr "Phần thưởng"
 
 #: src/components/Referrals/AffiliatesStats.js
 msgid "Rewards Distribution History"
@@ -2658,11 +2658,11 @@ msgstr "Same as current active code"
 
 #: src/App/App.js
 msgid "Save"
-msgstr "Save"
+msgstr "Lưu"
 
 #: src/pages/Home/Home.js
 msgid "Save on Costs"
-msgstr "Save on Costs"
+msgstr "Tiết kiệm chi phí"
 
 #: src/components/Glp/GlpSwap.js
 msgid "Save on Fees"
@@ -2727,11 +2727,11 @@ msgstr "Selling..."
 
 #: src/pages/BeginAccountTransfer/BeginAccountTransfer.js
 msgid "Sender has withdrawn all tokens from OAP Vesting Vault"
-msgstr "Sender has withdrawn all tokens from OAP Vesting Vault"
+msgstr "Người gửi đã rút tất cả các tokens từ OAP Vault Vesting"
 
 #: src/pages/BeginAccountTransfer/BeginAccountTransfer.js
 msgid "Sender has withdrawn all tokens from OPEN Vesting Vault"
-msgstr "Sender has withdrawn all tokens from OPEN Vesting Vault"
+msgstr "Người gửi đã rút tất cả các tokens từ OPEN Vault Vesting"
 
 #: src/App/App.js
 #: src/components/Header/AppHeaderLinks.tsx
@@ -2742,7 +2742,7 @@ msgstr "Cài đặt"
 
 #: src/components/Exchange/PositionsList.js
 msgid "Share"
-msgstr "Share"
+msgstr "Chia sẻ"
 
 #: src/components/Exchange/PositionDropdown.js
 #: src/components/Exchange/PositionShare.js
@@ -2829,23 +2829,23 @@ msgstr "Tỷ lệ phần trăm stablecoin"
 #: src/pages/Stake/StakeV2.js
 #: src/pages/Stake/StakeV2.js
 msgid "Stake"
-msgstr "Stake"
+msgstr "Đặt cọc"
 
 #: src/pages/Stake/StakeV2.js
 msgid "Stake <0>OAP</0> to earn rewards."
-msgstr "Stake <0>OAP</0> để kiếm phần thưởng."
+msgstr "Đặt cọc <0>OAP</0> để kiếm phần thưởng."
 
 #: src/pages/Stake/StakeV2.js
 msgid "Stake OPEN"
-msgstr "Stake OPEN"
+msgstr "Đặt cọc OPEN"
 
 #: src/pages/Stake/StakeV2.js
 msgid "Stake OPEN Rewards"
-msgstr "Stake OPEN Rewards"
+msgstr "Đặt cọc phần thưởng OPEN"
 
 #: src/pages/Stake/StakeV2.js
 msgid "Stake Multiplier Points"
-msgstr "Stake Multiplier Points"
+msgstr "Đặt cọc Multiplier Points"
 
 #: src/pages/Stake/StakeV2.js
 msgid "Stake esGMX"
@@ -2883,7 +2883,7 @@ msgstr "Stake submitted! <0>View status.</0>"
 #: src/pages/Stake/StakeV2.js
 #: src/pages/Stake/StakeV2.js
 msgid "Staked"
-msgstr "Staked"
+msgstr "Đã cọc"
 
 #: src/pages/Stake/StakeV2.js
 msgid "Staked Multiplier Points"
@@ -3228,7 +3228,7 @@ msgstr "Total Rebates"
 
 #: src/pages/Stake/StakeV2.js
 msgid "Total Rewards"
-msgstr "Total Rewards"
+msgstr "Tổng phần thưởng"
 
 #: src/pages/Dashboard/DashboardV2.js
 #: src/pages/Dashboard/DashboardV2.js
@@ -3241,11 +3241,11 @@ msgstr "Total Rewards"
 #: src/pages/Stake/StakeV2.js
 #: src/pages/Stake/StakeV2.js
 msgid "Total Staked"
-msgstr "Tổng số đặt cọc"
+msgstr "Tổng đặt cọc"
 
 #: src/pages/Dashboard/DashboardV2.js
 msgid "Total Stats"
-msgstr "Total Stats"
+msgstr "Tổng thống kê"
 
 #: src/components/Glp/GlpSwap.js
 #: src/pages/Stake/StakeV1.js
@@ -3254,7 +3254,7 @@ msgstr "Total Stats"
 #: src/pages/Stake/StakeV2.js
 #: src/pages/Stake/StakeV2.js
 msgid "Total Supply"
-msgstr "Total Supply"
+msgstr "Tổng cung"
 
 #: src/components/Referrals/AffiliatesStats.js
 msgid "Total Traders Referred"
@@ -3294,7 +3294,7 @@ msgstr "Tổng giá trị tokens trong OLP pool ({chainName})"
 
 #: src/components/StatsTooltip/StatsTooltip.tsx
 msgid "Total:"
-msgstr "Total:"
+msgstr "Tổng:"
 
 #: src/components/Header/AppHeaderUser.tsx
 #: src/components/Header/AppHeaderUser.tsx
@@ -3319,7 +3319,7 @@ msgstr "Traders Referred"
 
 #: src/pages/Exchange/Exchange.js
 msgid "Trades"
-msgstr "Trades"
+msgstr "Giao dịch"
 
 #: src/components/Exchange/SwapBox.js
 msgid "Trading guide"
@@ -3361,7 +3361,7 @@ msgstr "Transfer AVAX"
 #: src/pages/BeginAccountTransfer/BeginAccountTransfer.js
 #: src/pages/Stake/StakeV2.js
 msgid "Transfer Account"
-msgstr "Transfer Account"
+msgstr "Tài khoản chuyển nhượng"
 
 #: src/pages/BuyGMX/BuyGMX.js
 msgid "Transfer ETH"
@@ -3432,7 +3432,7 @@ msgstr "Txn failed. <0>View</0>"
 #: src/components/Exchange/OrdersList.js
 #: src/pages/OrdersOverview/OrdersOverview.js
 msgid "Type"
-msgstr "Type"
+msgstr "Loại"
 
 #: src/pages/Dashboard/DashboardV1.js
 msgid "USDG Debt"
@@ -3452,7 +3452,7 @@ msgstr "UTILIZATION"
 #: src/pages/Stake/StakeV2.js
 #: src/pages/Stake/StakeV2.js
 msgid "Unstake"
-msgstr "Unstake"
+msgstr "Rút cọc"
 
 #: src/pages/Stake/StakeV2.js
 msgid "Unstake OPEN"
@@ -3519,7 +3519,7 @@ msgstr "Use the \"Compound\" button to stake your Multiplier Points."
 #: src/components/Exchange/PositionsList.js
 #: src/components/Exchange/PositionsList.js
 msgid "Use the Edit Collateral icon to deposit or withdraw collateral."
-msgstr "Use the Edit Collateral icon to deposit or withdraw collateral."
+msgstr "Sử dụng biểu tượng Chỉnh sửa thế chấp để gửi hoặc rút tài sản thế chấp."
 
 #: src/components/Exchange/SwapBox.js
 msgid "Useful Links"
@@ -3737,7 +3737,7 @@ msgstr "You are earning {0}% more {nativeTokenSymbol} rewards using {1} Staked M
 
 #: src/pages/Stake/StakeV2.js
 msgid "You are earning {nativeTokenSymbol} rewards with {0} tokens.<0/>Tokens: {amountStr}."
-msgstr "You are earning {nativeTokenSymbol} rewards with {0} tokens.<0/>Tokens: {amountStr}."
+msgstr "Bạn đang nhận được phần thưởng {nativeTokenSymbol} với {0} tokens.<0/>Tokens: {amountStr}."
 
 #: src/components/ModalViews/RedirectModal.js
 msgid "You are leaving OPEN.io and will be redirected to a third party, independent website."
@@ -3855,7 +3855,7 @@ msgstr "account"
 
 #: src/pages/PositionsOverview/PositionsOverview.js
 msgid "collateral"
-msgstr "collateral"
+msgstr "tài sản thế chấp"
 
 #: src/components/Exchange/PositionEditor.js
 msgid "deposit"
@@ -3883,7 +3883,7 @@ msgstr "size"
 
 #: src/pages/Dashboard/DashboardV2.js
 msgid "staked"
-msgstr "staked"
+msgstr "đã cọc"
 
 #: src/pages/PositionsOverview/PositionsOverview.js
 msgid "time to liq"
