@@ -683,7 +683,7 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
   const nativeTokenAddress = getContract(chainId, "NATIVE_TOKEN");
   const openAddress = getContract(chainId, "OPEN");
   const esGmxAddress = getContract(chainId, "ES_GMX");
-  const bnGmxAddress = getContract(chainId, "BN_GMX");
+  // const bnGmxAddress = getContract(chainId, "BN_GMX");
   const glpAddress = getContract(chainId, "OAP");
   const stakedGmxTrackerAddress = getContract(chainId, "StakedGmxTracker");
   const bonusGmxTrackerAddress = getContract(chainId, "BonusGmxTracker");
@@ -708,14 +708,7 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
   const wrappedTokenSymbol = getConstant(chainId, "wrappedTokenSymbol");
 
   const walletTokens = [openAddress, esGmxAddress, glpAddress, stakedGmxTrackerAddress];
-  const depositTokens = [
-    openAddress,
-    esGmxAddress,
-    stakedGmxTrackerAddress,
-    bonusGmxTrackerAddress,
-    bnGmxAddress,
-    glpAddress,
-  ];
+  const depositTokens = [openAddress, esGmxAddress, stakedGmxTrackerAddress, bonusGmxTrackerAddress, glpAddress];
   const rewardTrackersForDepositBalances = [
     stakedGmxTrackerAddress,
     stakedGmxTrackerAddress,
