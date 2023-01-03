@@ -14,6 +14,9 @@ const DEFAULT_VALUES = [
   BigNumber.from("0"),
   BigNumber.from("0"),
   BigNumber.from("0"),
+  BigNumber.from("0"),
+  BigNumber.from("0"),
+  BigNumber.from("0"),
 ];
 
 function useOpenStakingInfo(chainId: number) {
@@ -28,7 +31,16 @@ function useOpenStakingInfo(chainId: number) {
     }
   );
 
-  const [totalPooledOpen, totalShares, myShares, totalOpenStaked, currentOpen] = stakingInfo ?? DEFAULT_VALUES;
+  const [
+    totalPooledOpen,
+    totalShares,
+    myShares,
+    totalOpenStaked,
+    currentOpen,
+    lastStakeTimestamp,
+    unstakingFee,
+    unstakingThreshold,
+  ] = stakingInfo ?? DEFAULT_VALUES;
 
   const { openPrice } = useOpenPrice(chainId, {}, true);
 
@@ -53,6 +65,18 @@ function useOpenStakingInfo(chainId: number) {
     return currentOpen.mul(openPrice).div(expandDecimals(1, 18));
   }, [openPrice, currentOpen]);
 
+  const timeleftToUnstake = useMemo(() => {
+    if (!lastStakeTimestamp || !unstakingThreshold) {
+      return 0;
+    }
+    const timeCanUnstake = lastStakeTimestamp.add(unstakingThreshold).toNumber();
+    const now = Math.floor(new Date().getTime() / 1000);
+    if (now >= timeCanUnstake) {
+      return 0;
+    }
+    return timeCanUnstake - now;
+  }, [lastStakeTimestamp, unstakingThreshold]);
+
   return {
     totalPooledOpen,
     totalShares,
@@ -62,6 +86,8 @@ function useOpenStakingInfo(chainId: number) {
     totalStaked: totalOpenStaked,
     currentOpen,
     currentOpenInUsd,
+    unstakingFee,
+    timeleftToUnstake,
   };
 }
 

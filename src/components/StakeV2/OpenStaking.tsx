@@ -8,6 +8,7 @@ import { useChainId } from "lib/chains";
 import { PRECISION, USD_DECIMALS } from "lib/legacy";
 import { expandDecimals, formatAmount, formatKeyAmount } from "lib/numbers";
 import { useMemo } from "react";
+import Countdown from "react-countdown";
 import { Link } from "react-router-dom";
 type Props = {
   gmxPrice: any;
@@ -38,6 +39,7 @@ function OpenStaking(props: Props) {
     myShares,
     currentOpen,
     currentOpenInUsd,
+    timeleftToUnstake,
   } = useOpenStakingInfo(chainId);
 
   const apr = useMemo(() => {
@@ -66,6 +68,8 @@ function OpenStaking(props: Props) {
 
     return myShares.mul(10000).div(totalShares);
   }, [myShares, totalShares]);
+
+  const unstakeCountdown = Date.now() + timeleftToUnstake * 1000;
   return (
     <div className="App-card StakeV2-gmx-card">
       <div className="App-card-title">OPEN</div>
@@ -100,11 +104,22 @@ function OpenStaking(props: Props) {
             {formatAmount(openBalanceUsd, 18, 2, true)})
           </div>
         </div>
+        <div className="App-card-row">
+          <div className="label">
+            <Trans>Your stOPEN</Trans>
+          </div>
+          <div className="value">{`${formatAmount(myShares, 18, 2, true)} stOPEN (${formatAmount(
+            percentageOfShare,
+            2,
+            4,
+            true
+          )}%)`}</div>
+        </div>
 
         <div className="App-card-divider"></div>
         <div className="App-card-row">
           <div className="label">
-            <Trans>Staked</Trans>
+            <Trans>Staked OPEN</Trans>
           </div>
           <div className="value">
             {formatAmount(totalStaked, 18, 2, true)} OPEN ($
@@ -114,25 +129,14 @@ function OpenStaking(props: Props) {
 
         <div className="App-card-row">
           <div className="label">
-            <Trans>Shares</Trans>
-          </div>
-          <div className="value">{`${formatAmount(myShares, 18, 2, true)} shares (${formatAmount(
-            percentageOfShare,
-            2,
-            4,
-            true
-          )}%)`}</div>
-        </div>
-
-        <div className="App-card-row">
-          <div className="label">
-            <Trans>Current</Trans>
+            <Trans>Current OPEN</Trans>
           </div>
           <div className="value">
             {formatAmount(currentOpen, 18, 2, true)} OPEN ($
             {formatAmount(currentOpenInUsd, 18, 2, true)})
           </div>
         </div>
+
         <div className="App-card-row">
           <div className="label">
             <Trans>APR</Trans>
@@ -160,11 +164,11 @@ function OpenStaking(props: Props) {
 
         <div className="App-card-row">
           <div className="label">
-            <Trans>Total Shares</Trans>
+            <Trans>Total stOPEN</Trans>
           </div>
           <div className="value">
             {!totalShares && "..."}
-            {totalShares && `${formatAmount(totalShares, 18, 0, true)} shares`}
+            {totalShares && `${formatAmount(totalShares, 18, 0, true)} stOPEN`}
           </div>
         </div>
 
@@ -183,6 +187,16 @@ function OpenStaking(props: Props) {
               )})`}
           </div>
         </div>
+
+        <div className="App-card-divider" />
+        <div className="App-card-row">
+          <div className="label">
+            <Trans>Time to unstake</Trans>
+          </div>
+          <div className="value">
+            <Countdown date={unstakeCountdown} />
+          </div>
+        </div>
         <div className="App-card-divider" />
         <div className="App-card-options">
           <a
@@ -199,7 +213,7 @@ function OpenStaking(props: Props) {
             </button>
           )}
           {active && (
-            <button className="App-button-option App-card-option" onClick={onUnstaking}>
+            <button className="App-button-option App-card-option" onClick={onUnstaking} disabled={!!timeleftToUnstake}>
               <Trans>Unstake</Trans>
             </button>
           )}

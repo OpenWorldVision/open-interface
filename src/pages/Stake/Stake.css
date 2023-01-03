@@ -12,7 +12,7 @@
 }
 
 .StakeModal .Modal-content {
-  width: 31rem;
+  width: 32rem;
 }
 .StakeModal .Modal-body {
   font-size: 1.5rem;
@@ -25,7 +25,7 @@
 
 @media (max-width: 800px) {
   .StakeModal .Modal-content {
-    width: auto;
+    width: 80%;
   }
   .Stake-cards {
     grid-template-columns: 1fr;

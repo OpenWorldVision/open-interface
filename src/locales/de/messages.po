@@ -14,12 +14,16 @@ msgstr ""
 "Plural-Forms: \n"
 
 #: src/pages/Dashboard/DashboardV2.js
-msgid "01 Sep 2021"
+#~ msgid "01 Sep 2021"
+#~ msgstr ""
+
+#: src/pages/Dashboard/DashboardV2.js
+msgid "05 Jan 2022"
 msgstr ""
 
 #: src/pages/Dashboard/DashboardV2.js
-msgid "06 Jan 2022"
-msgstr ""
+#~ msgid "06 Jan 2022"
+#~ msgstr ""
 
 #: src/components/Exchange/ExchangeTVChart.js
 msgid "24h Change"
@@ -34,8 +38,8 @@ msgid "24h Low"
 msgstr ""
 
 #: src/pages/Dashboard/DashboardV2.js
-msgid "24h Volume"
-msgstr ""
+#~ msgid "24h Volume"
+#~ msgstr ""
 
 #: src/components/Exchange/PositionSeller.js
 msgid "<0/>Profit price: {0} ${1}. This rule applies for the next {2}, until {3}."
@@ -86,17 +90,16 @@ msgid "A snapshot of the USD value of your {0} collateral is taken when the posi
 msgstr ""
 
 #: src/components/Glp/GlpSwap.js
+#: src/components/StakeV2/OpenStaking.tsx
 #: src/pages/Stake/StakeV1.js
 #: src/pages/Stake/StakeV1.js
 #: src/pages/Stake/StakeV1.js
 #: src/pages/Stake/StakeV1.js
-#: src/pages/Stake/StakeV2.js
-#: src/pages/Stake/StakeV2.js
 #: src/pages/Stake/StakeV2.js
 msgid "APR"
 msgstr ""
 
-#: src/pages/Stake/StakeV2.js
+#: src/components/StakeV2/OpenStaking.tsx
 #: src/pages/Stake/StakeV2.js
 msgid "APRs are updated weekly on Wednesday and will depend on the fees collected for the week."
 msgstr ""
@@ -111,11 +114,6 @@ msgid "AVAILABLE"
 msgstr ""
 
 #: src/components/Header/AppHeaderLinks.tsx
-#: src/pages/Ecosystem/Ecosystem.js
-#: src/pages/Ecosystem/Ecosystem.js
-#: src/pages/Ecosystem/Ecosystem.js
-#: src/pages/Ecosystem/Ecosystem.js
-#: src/pages/Ecosystem/Ecosystem.js
 msgid "About"
 msgstr ""
 
@@ -231,8 +229,8 @@ msgid "An aggregate of high-quality price feeds determine when liquidations occu
 msgstr ""
 
 #: src/pages/Ecosystem/Ecosystem.js
-msgid "Announcement"
-msgstr ""
+#~ msgid "Announcement"
+#~ msgstr ""
 
 #: src/domain/tokens/approveTokens.tsx
 msgid "Approval failed"
@@ -258,8 +256,8 @@ msgstr ""
 msgid "Approve {0}"
 msgstr ""
 
+#: src/components/StakeV2/StakeModal.tsx
 #: src/pages/Stake/StakeV1.js
-#: src/pages/Stake/StakeV2.js
 msgid "Approve {stakingTokenSymbol}"
 msgstr ""
 
@@ -273,8 +271,8 @@ msgstr ""
 msgid "Approving {0}..."
 msgstr ""
 
+#: src/components/StakeV2/StakeModal.tsx
 #: src/pages/Stake/StakeV1.js
-#: src/pages/Stake/StakeV2.js
 msgid "Approving {stakingTokenSymbol}..."
 msgstr ""
 
@@ -285,10 +283,9 @@ msgstr ""
 
 #: src/components/TokenCard/TokenCard.js
 #: src/components/TokenCard/TokenCard.js
-msgid "Arbitrum APR:"
-msgstr ""
+#~ msgid "Arbitrum APR:"
+#~ msgstr ""
 
-#: src/pages/Dashboard/DashboardV2.js
 #: src/pages/Dashboard/DashboardV2.js
 msgid "Arbitrum Icon"
 msgstr ""
@@ -302,7 +299,11 @@ msgid "Assets Under Management"
 msgstr ""
 
 #: src/pages/Dashboard/DashboardV2.js
-msgid "Assets Under Management: OPEN staked (All chains) + OAP pool (${chainName})"
+#~ msgid "Assets Under Management: OPEN staked (All chains) + OAP pool (${chainName})"
+#~ msgstr ""
+
+#: src/pages/Dashboard/DashboardV2.js
+msgid "Assets Under Management: OPEN staked (All chains) + OAP pool ({chainName})"
 msgstr ""
 
 #: src/components/Glp/GlpSwap.js
@@ -335,22 +336,32 @@ msgid "Available:"
 msgstr ""
 
 #: src/pages/BuyGMX/BuyGMX.js
-msgid "BSC"
+msgid "Avalanche"
 msgstr ""
 
-#: src/components/TokenCard/TokenCard.js
-#: src/components/TokenCard/TokenCard.js
-msgid "BSC APR:"
-msgstr ""
-
+#: src/components/Glp/GlpSwap.js
 #: src/pages/Dashboard/DashboardV2.js
 #: src/pages/Dashboard/DashboardV2.js
-msgid "BSC Icon"
+msgid "Avalanche Icon"
 msgstr ""
 
 #: src/pages/BuyGMX/BuyGMX.js
 msgid "BNB is needed on BSC to purchase OPEN."
 msgstr ""
+
+#: src/pages/BuyGMX/BuyGMX.js
+#~ msgid "BSC"
+#~ msgstr ""
+
+#: src/components/TokenCard/TokenCard.js
+#: src/components/TokenCard/TokenCard.js
+#~ msgid "BSC APR:"
+#~ msgstr ""
+
+#: src/pages/Dashboard/DashboardV2.js
+#: src/pages/Dashboard/DashboardV2.js
+#~ msgid "BSC Icon"
+#~ msgstr ""
 
 #: src/components/Exchange/SwapBox.js
 msgid "Balance"
@@ -386,8 +397,8 @@ msgid "Bonus Tokens"
 msgstr ""
 
 #: src/pages/Stake/StakeV2.js
-msgid "Boost Percentage"
-msgstr ""
+#~ msgid "Boost Percentage"
+#~ msgstr ""
 
 #: src/pages/Stake/StakeV2.js
 msgid "Boost your rewards with Multiplier Points. <0>More info</0>."
@@ -439,6 +450,7 @@ msgstr ""
 #: src/components/Glp/GlpSwap.js
 #: src/components/Glp/GlpSwap.js
 #: src/components/Glp/GlpSwap.js
+#: src/pages/Buy/Buy.js
 #: src/pages/Stake/StakeV2.js
 msgid "Buy OAP"
 msgstr ""
@@ -447,9 +459,9 @@ msgstr ""
 msgid "Buy OAP Icon"
 msgstr ""
 
+#: src/components/StakeV2/OpenStaking.tsx
 #: src/pages/BuyGMX/BuyGMX.js
 #: src/pages/BuyGMX/BuyGMX.js
-#: src/pages/Stake/StakeV2.js
 msgid "Buy OPEN"
 msgstr ""
 
@@ -458,19 +470,13 @@ msgid "Buy OPEN Bonds"
 msgstr ""
 
 #: src/pages/Buy/Buy.js
-msgid "Buy OPEN or OAP"
-msgstr ""
+#~ msgid "Buy OPEN or OAP"
+#~ msgstr ""
 
 #: src/components/Glp/GlpSwap.js
 msgid "Buy failed."
 msgstr ""
 
-#: src/components/TokenCard/TokenCard.js
-#: src/components/TokenCard/TokenCard.js
-msgid "Buy on BSC"
-msgstr ""
-
-#: src/components/TokenCard/TokenCard.js
 #: src/components/TokenCard/TokenCard.js
 msgid "Buy on BSC"
 msgstr ""
@@ -544,8 +550,6 @@ msgstr ""
 #: src/pages/Stake/StakeV1.js
 #: src/pages/Stake/StakeV1.js
 #: src/pages/Stake/StakeV2.js
-#: src/pages/Stake/StakeV2.js
-#: src/pages/Stake/StakeV2.js
 msgid "Claim"
 msgstr ""
 
@@ -600,8 +604,8 @@ msgstr ""
 
 #: src/pages/Stake/StakeV2.js
 #: src/pages/Stake/StakeV2.js
-msgid "Claimable"
-msgstr ""
+#~ msgid "Claimable"
+#~ msgstr ""
 
 #: src/pages/ClaimEsGmx/ClaimEsGmx.js
 #: src/pages/Stake/StakeV2.js
@@ -686,16 +690,16 @@ msgid "Collateral In"
 msgstr ""
 
 #: src/pages/Ecosystem/Ecosystem.js
-msgid "Community Projects"
-msgstr ""
+#~ msgid "Community Projects"
+#~ msgstr ""
 
 #: src/pages/Ecosystem/Ecosystem.js
 msgid "Community curated tweet collection"
 msgstr ""
 
 #: src/pages/Ecosystem/Ecosystem.js
-msgid "Community-led Telegram groups."
-msgstr ""
+#~ msgid "Community-led Telegram groups."
+#~ msgstr ""
 
 #: src/pages/CompleteAccountTransfer/CompleteAccountTransfer.js
 msgid "Complete Account Transfer"
@@ -705,8 +709,6 @@ msgstr ""
 msgid "Complete Transfer"
 msgstr ""
 
-#: src/pages/Stake/StakeV2.js
-#: src/pages/Stake/StakeV2.js
 #: src/pages/Stake/StakeV2.js
 msgid "Compound"
 msgstr ""
@@ -763,10 +765,6 @@ msgstr ""
 #: src/pages/Stake/StakeV1.js
 #: src/pages/Stake/StakeV1.js
 #: src/pages/Stake/StakeV1.js
-#: src/pages/Stake/StakeV2.js
-#: src/pages/Stake/StakeV2.js
-#: src/pages/Stake/StakeV2.js
-#: src/pages/Stake/StakeV2.js
 msgid "Connect Wallet"
 msgstr ""
 
@@ -780,8 +778,8 @@ msgid "Continue"
 msgstr ""
 
 #: src/pages/Stake/StakeV2.js
-msgid "Convert esOPEN tokens to OPEN tokens.<0/>Please read the <1>vesting details</1> before using the vaults."
-msgstr ""
+#~ msgid "Convert esOPEN tokens to OPEN tokens.<0/>Please read the <1>vesting details</1> before using the vaults."
+#~ msgstr ""
 
 #: src/pages/Stake/StakeV2.js
 #: src/pages/Stake/StakeV2.js
@@ -866,7 +864,11 @@ msgstr ""
 
 #: src/pages/Ecosystem/Ecosystem.js
 #: src/pages/Ecosystem/Ecosystem.js
-msgid "Creator"
+#~ msgid "Creator"
+#~ msgstr ""
+
+#: src/components/StakeV2/OpenStaking.tsx
+msgid "Current OPEN"
 msgstr ""
 
 #: src/components/Glp/GlpSwap.js
@@ -906,8 +908,8 @@ msgid "Dashboard for OPEN referral stats"
 msgstr ""
 
 #: src/pages/Ecosystem/Ecosystem.js
-msgid "Dashboards"
-msgstr ""
+#~ msgid "Dashboards"
+#~ msgstr ""
 
 #: src/components/Referrals/AffiliatesStats.js
 #: src/components/Referrals/TradersStats.js
@@ -966,8 +968,6 @@ msgstr ""
 #: src/components/Exchange/PositionEditor.js
 #: src/components/Exchange/PositionEditor.js
 #: src/components/Exchange/PositionEditor.js
-#: src/pages/Stake/StakeV2.js
-#: src/pages/Stake/StakeV2.js
 #: src/pages/Stake/StakeV2.js
 #: src/pages/Stake/StakeV2.js
 msgid "Deposit"
@@ -1052,8 +1052,8 @@ msgid "Earn"
 msgstr ""
 
 #: src/components/Header/AppHeaderLinks.tsx
-msgid "Ecosystem"
-msgstr ""
+#~ msgid "Ecosystem"
+#~ msgstr ""
 
 #: src/components/Exchange/OrdersList.js
 #: src/components/Exchange/OrdersList.js
@@ -1190,11 +1190,11 @@ msgstr ""
 #: src/components/Glp/GlpSwap.js
 #: src/components/Glp/GlpSwap.js
 #: src/components/Migration/Migration.js
+#: src/components/StakeV2/StakeModal.tsx
+#: src/components/StakeV2/UnstakeModal.tsx
 #: src/pages/ClaimEsGmx/ClaimEsGmx.js
 #: src/pages/Stake/StakeV1.js
 #: src/pages/Stake/StakeV1.js
-#: src/pages/Stake/StakeV2.js
-#: src/pages/Stake/StakeV2.js
 #: src/pages/Stake/StakeV2.js
 msgid "Enter an amount"
 msgstr ""
@@ -1219,8 +1219,8 @@ msgstr ""
 
 #: src/pages/Stake/StakeV2.js
 #: src/pages/Stake/StakeV2.js
-msgid "Escrowed OPEN"
-msgstr ""
+#~ msgid "Escrowed OPEN"
+#~ msgstr ""
 
 #: src/components/Glp/GlpSwap.js
 msgid "Escrowed OPEN APR"
@@ -1309,8 +1309,8 @@ msgid "Financial reports and protocol analytics"
 msgstr ""
 
 #: src/pages/Dashboard/DashboardV2.js
-msgid "Floor Price Fund"
-msgstr ""
+#~ msgid "Floor Price Fund"
+#~ msgstr ""
 
 #: src/components/Exchange/ConfirmationBox.js
 msgid "Forfeit profit"
@@ -1331,117 +1331,6 @@ msgstr ""
 
 #: src/pages/Ecosystem/Ecosystem.js
 msgid "GBC NFTs APR tracker and rewards"
-msgstr ""
-
-#: src/pages/Dashboard/DashboardV2.js
-msgid "OAP Index Composition"
-msgstr ""
-
-#: src/pages/Dashboard/DashboardV2.js
-msgid "OAP Pool"
-msgstr ""
-
-#: src/pages/Stake/StakeV2.js
-#: src/pages/Stake/StakeV2.js
-msgid "OAP Vault"
-msgstr ""
-
-#: src/components/Glp/GlpSwap.js
-msgid "OAP buy disabled, pending {0} upgrade"
-msgstr ""
-
-#: src/components/TokenCard/TokenCard.js
-msgid "OAP is the liquidity provider token. Accrues 70% of the platform's generated fees."
-msgstr ""
-
-#: src/components/Glp/GlpSwap.js
-msgid "OAP sell disabled, pending {0} upgrade"
-msgstr ""
-
-#: src/pages/Ecosystem/Ecosystem.js
-msgid "OPEN Announcements and Updates"
-msgstr ""
-
-#: src/pages/Ecosystem/Ecosystem.js
-msgid "OPEN Blueberry NFTs"
-msgstr ""
-
-#: src/pages/Ecosystem/Ecosystem.js
-msgid "OPEN Governance Page"
-msgstr ""
-
-#: src/pages/Ecosystem/Ecosystem.js
-msgid "OPEN Pages"
-msgstr ""
-
-#: src/pages/Ecosystem/Ecosystem.js
-msgid "OPEN Perpetuals Data"
-msgstr ""
-
-#: src/pages/Ecosystem/Ecosystem.js
-msgid "OPEN Proposals Voting page"
-msgstr ""
-
-#: src/pages/Ecosystem/Ecosystem.js
-msgid "OPEN Stats Page"
-msgstr ""
-
-#: src/pages/Stake/StakeV2.js
-#: src/pages/Stake/StakeV2.js
-msgid "OPEN Vault"
-msgstr ""
-
-#: src/pages/Ecosystem/Ecosystem.js
-msgid "OPEN Weekly Updates"
-msgstr ""
-
-#: src/pages/BuyGMX/BuyGMX.js
-msgid "OPEN bonds can be bought on Olympus Pro with a discount and a small vesting period:"
-msgstr ""
-
-#: src/pages/Ecosystem/Ecosystem.js
-msgid "OPEN community discussion"
-msgstr ""
-
-#: src/pages/Ecosystem/Ecosystem.js
-msgid "OPEN dashboards and analytics."
-msgstr ""
-
-#: src/pages/Ecosystem/Ecosystem.js
-msgid "OPEN ecosystem pages."
-msgstr ""
-
-#: src/pages/Ecosystem/Ecosystem.js
-msgid "OPEN explorer for stats and traders"
-msgstr ""
-
-#: src/pages/Ecosystem/Ecosystem.js
-msgid "OPEN fundamentals"
-msgstr ""
-
-#: src/pages/Home/Home.js
-msgid "OPEN is currently live on BSC."
-msgstr ""
-
-#: src/pages/Jobs/Jobs.js
-msgid "OPEN is not actively looking for new hires at the moment. However, if you think you can contribute to the project, please email <0>jobs@gmx.io</0>."
-msgstr ""
-
-#: src/components/TokenCard/TokenCard.js
-msgid "OPEN is the utility and governance token. Accrues 30% of the platform's generated fees."
-msgstr ""
-
-#: src/pages/Ecosystem/Ecosystem.js
-msgid "OPEN staking calculator"
-msgstr ""
-
-#: src/pages/Ecosystem/Ecosystem.js
-msgid "OPEN staking rewards updates and insights"
-msgstr ""
-
-#: src/pages/Stake/StakeV2.js
-#: src/pages/Stake/StakeV2.js
-msgid "OPEN transfers not yet enabled"
 msgstr ""
 
 #: src/components/Referrals/AddAffiliateCode.js
@@ -1473,8 +1362,12 @@ msgid "I am aware of the trigger orders"
 msgstr ""
 
 #: src/components/Exchange/SwapBox.js
-msgid "If you have an existing position, the position will be closed at {0} USD.<0/><1/>This exit price will change with the price of the asset.<2/><3/><4>More Info</4>"
+msgid "If you have an existing position, the position will be closed at {0} USD.<0/><1/>This exit price will change with the price of the asset."
 msgstr ""
+
+#: src/components/Exchange/SwapBox.js
+#~ msgid "If you have an existing position, the position will be closed at {0} USD.<0/><1/>This exit price will change with the price of the asset.<2/><3/><4>More Info</4>"
+#~ msgstr ""
 
 #: src/components/Exchange/PositionShare.js
 msgid "Image generation error, please refresh and try again."
@@ -1486,6 +1379,10 @@ msgstr ""
 
 #: src/App/App.js
 msgid "Include PnL in leverage display"
+msgstr ""
+
+#: src/components/ModalIncomingFeature/ModalIncomingFeature.js
+msgid "Incoming feature..."
 msgstr ""
 
 #: src/pages/CompleteAccountTransfer/CompleteAccountTransfer.js
@@ -1537,8 +1434,8 @@ msgid "Initial collateral"
 msgstr ""
 
 #: src/components/Exchange/PositionSeller.js
-msgid "Insufficient Available Liquidity to swap to {0}:"
-msgstr ""
+#~ msgid "Insufficient Available Liquidity to swap to {0}:"
+#~ msgstr ""
 
 #: src/components/Glp/GlpSwap.js
 msgid "Insufficient OAP balance"
@@ -1634,8 +1531,8 @@ msgid "Launch Exchange"
 msgstr ""
 
 #: src/components/Exchange/SwapBox.js
-msgid "Leaderboard"
-msgstr ""
+#~ msgid "Leaderboard"
+#~ msgstr ""
 
 #: src/pages/Ecosystem/Ecosystem.js
 msgid "Leaderboard for OPEN traders"
@@ -1695,8 +1592,8 @@ msgstr ""
 #: src/pages/Ecosystem/Ecosystem.js
 #: src/pages/Ecosystem/Ecosystem.js
 #: src/pages/Ecosystem/Ecosystem.js
-msgid "Link"
-msgstr ""
+#~ msgid "Link"
+#~ msgstr ""
 
 #: src/components/Exchange/PositionShare.js
 msgid "Link copied to clipboard."
@@ -1773,8 +1670,8 @@ msgstr ""
 
 #: src/pages/Dashboard/DashboardV2.js
 #: src/pages/Dashboard/DashboardV2.js
-msgid "Long Positions"
-msgstr ""
+#~ msgid "Long Positions"
+#~ msgstr ""
 
 #: src/pages/Dashboard/DashboardV1.js
 msgid "Long positions: {0} USD, Short positions: {1} USD, {volumeLabel} volume: {2} USD"
@@ -1842,7 +1739,6 @@ msgstr ""
 #: src/pages/Dashboard/DashboardV1.js
 #: src/pages/Dashboard/DashboardV1.js
 #: src/pages/Dashboard/DashboardV2.js
-#: src/pages/Dashboard/DashboardV2.js
 msgid "Market Cap"
 msgstr ""
 
@@ -1859,10 +1755,10 @@ msgid "Max Pool Capacity"
 msgstr ""
 
 #: src/components/Migration/Migration.js
+#: src/components/StakeV2/StakeModal.tsx
+#: src/components/StakeV2/UnstakeModal.tsx
 #: src/pages/Stake/StakeV1.js
 #: src/pages/Stake/StakeV1.js
-#: src/pages/Stake/StakeV2.js
-#: src/pages/Stake/StakeV2.js
 #: src/pages/Stake/StakeV2.js
 msgid "Max amount exceeded"
 msgstr ""
@@ -1904,7 +1800,6 @@ msgstr ""
 msgid "Max {0} Capacity"
 msgstr ""
 
-#: src/components/Exchange/PositionSeller.js
 #: src/components/Exchange/SwapBox.js
 msgid "Max {0} in"
 msgstr ""
@@ -1917,7 +1812,6 @@ msgstr ""
 msgid "Max {0} long exceeded"
 msgstr ""
 
-#: src/components/Exchange/PositionSeller.js
 #: src/components/Exchange/SwapBox.js
 msgid "Max {0} out"
 msgstr ""
@@ -1931,10 +1825,9 @@ msgid "Max {0} short exceeded"
 msgstr ""
 
 #: src/components/Migration/Migration.js
+#: src/components/StakeV2/StakeModal.tsx
 #: src/pages/Stake/StakeV1.js
 #: src/pages/Stake/StakeV1.js
-#: src/pages/Stake/StakeV2.js
-#: src/pages/Stake/StakeV2.js
 #: src/pages/Stake/StakeV2.js
 msgid "Max: {0}"
 msgstr ""
@@ -2011,16 +1904,16 @@ msgstr ""
 
 #: src/components/Exchange/SwapBox.js
 #: src/pages/Dashboard/DashboardV2.js
-msgid "More Info"
-msgstr ""
+#~ msgid "More Info"
+#~ msgstr ""
 
 #: src/components/NetworkDropdown/NetworkDropdown.js
 msgid "More Options"
 msgstr ""
 
 #: src/pages/Stake/StakeV2.js
-msgid "Multiplier Points"
-msgstr ""
+#~ msgid "Multiplier Points"
+#~ msgstr ""
 
 #: src/pages/Stake/StakeV2.js
 msgid "Multiplier Points APR"
@@ -2127,6 +2020,115 @@ msgstr ""
 msgid "Note that there is a minimum holding time of 15 minutes after a purchase.<0/>View <1>staking</1> page."
 msgstr ""
 
+#: src/pages/Dashboard/DashboardV2.js
+msgid "OAP Index Composition"
+msgstr ""
+
+#: src/pages/Dashboard/DashboardV2.js
+msgid "OAP Pool"
+msgstr ""
+
+#: src/pages/Stake/StakeV2.js
+msgid "OAP Vault"
+msgstr ""
+
+#: src/components/Glp/GlpSwap.js
+msgid "OAP buy disabled, pending {0} upgrade"
+msgstr ""
+
+#: src/components/TokenCard/TokenCard.js
+msgid "OAP is the liquidity provider token. Accrues 70% of the platform's generated fees."
+msgstr ""
+
+#: src/components/Glp/GlpSwap.js
+msgid "OAP sell disabled, pending {0} upgrade"
+msgstr ""
+
+#: src/pages/Ecosystem/Ecosystem.js
+msgid "OPEN Announcements and Updates"
+msgstr ""
+
+#: src/pages/Ecosystem/Ecosystem.js
+msgid "OPEN Blueberry NFTs"
+msgstr ""
+
+#: src/pages/Ecosystem/Ecosystem.js
+msgid "OPEN Governance Page"
+msgstr ""
+
+#: src/pages/Ecosystem/Ecosystem.js
+#~ msgid "OPEN Pages"
+#~ msgstr ""
+
+#: src/pages/Ecosystem/Ecosystem.js
+msgid "OPEN Perpetuals Data"
+msgstr ""
+
+#: src/pages/Ecosystem/Ecosystem.js
+msgid "OPEN Proposals Voting page"
+msgstr ""
+
+#: src/pages/Ecosystem/Ecosystem.js
+msgid "OPEN Stats Page"
+msgstr ""
+
+#: src/pages/Stake/StakeV2.js
+msgid "OPEN Vault"
+msgstr ""
+
+#: src/pages/Ecosystem/Ecosystem.js
+msgid "OPEN Weekly Updates"
+msgstr ""
+
+#: src/pages/BuyGMX/BuyGMX.js
+msgid "OPEN bonds can be bought on Olympus Pro with a discount and a small vesting period:"
+msgstr ""
+
+#: src/pages/Ecosystem/Ecosystem.js
+msgid "OPEN community discussion"
+msgstr ""
+
+#: src/pages/Ecosystem/Ecosystem.js
+#~ msgid "OPEN dashboards and analytics."
+#~ msgstr ""
+
+#: src/pages/Ecosystem/Ecosystem.js
+#~ msgid "OPEN ecosystem pages."
+#~ msgstr ""
+
+#: src/pages/Ecosystem/Ecosystem.js
+msgid "OPEN explorer for stats and traders"
+msgstr ""
+
+#: src/pages/Ecosystem/Ecosystem.js
+msgid "OPEN fundamentals"
+msgstr ""
+
+#: src/pages/Home/Home.js
+msgid "OPEN is currently live on BSC."
+msgstr ""
+
+#: src/pages/Jobs/Jobs.js
+msgid "OPEN is not actively looking for new hires at the moment. However, if you think you can contribute to the project, please email <0>jobs@gmx.io</0>."
+msgstr ""
+
+#: src/components/TokenCard/TokenCard.js
+#~ msgid "OPEN is the utility and governance token. Accrues 30% of the platform's generated fees."
+#~ msgstr ""
+
+#: src/pages/Ecosystem/Ecosystem.js
+msgid "OPEN staking calculator"
+msgstr ""
+
+#: src/pages/Ecosystem/Ecosystem.js
+msgid "OPEN staking rewards updates and insights"
+msgstr ""
+
+#: src/pages/Stake/StakeV2.js
+#: src/pages/Stake/StakeV2.js
+msgid "OPEN transfers not yet enabled"
+msgstr ""
+
 #: src/pages/BuyGMX/BuyGMX.js
 msgid "Olympus Pro"
 msgstr ""
@@ -2157,6 +2159,11 @@ msgstr ""
 msgid "Open in Explorer"
 msgstr ""
 
+#: src/pages/Dashboard/AssetDropdown.js
+#: src/pages/Dashboard/AssetDropdown.js
+msgid "Open in Harmony"
+msgstr ""
+
 #: src/pages/Home/Home.js
 msgid "Open positions through a simple swap interface. Conveniently swap from any supported asset into the position of your choice."
 msgstr ""
@@ -2171,6 +2178,10 @@ msgstr ""
 
 #: src/components/Exchange/PositionsList.js
 msgid "Opening..."
+msgstr ""
+
+#: src/components/ModalIncomingFeature/ModalIncomingFeature.js
+msgid "Opps!"
 msgstr ""
 
 #: src/pages/Ecosystem/Ecosystem.js
@@ -2281,8 +2292,8 @@ msgid "Partially Liquidated"
 msgstr ""
 
 #: src/pages/Ecosystem/Ecosystem.js
-msgid "Partnerships and Integrations"
-msgstr ""
+#~ msgid "Partnerships and Integrations"
+#~ msgstr ""
 
 #: src/components/Exchange/ConfirmationBox.js
 #: src/components/Exchange/ConfirmationBox.js
@@ -2302,8 +2313,12 @@ msgid "Pay: {0} USD"
 msgstr ""
 
 #: src/pages/Dashboard/DashboardV2.js
-msgid "Platform and OAP index tokens."
+msgid "Platform and OAP index tokens"
 msgstr ""
+
+#: src/pages/Dashboard/DashboardV2.js
+#~ msgid "Platform and OAP index tokens."
+#~ msgstr ""
 
 #: src/components/Referrals/JoinReferralCode.js
 msgid "Please input a referral code to benefit from fee discounts."
@@ -2384,6 +2399,7 @@ msgstr ""
 #: src/components/Exchange/SwapBox.js
 #: src/components/Glp/GlpSwap.js
 #: src/components/Glp/GlpSwap.js
+#: src/components/StakeV2/OpenStaking.tsx
 #: src/pages/Dashboard/DashboardV1.js
 #: src/pages/Dashboard/DashboardV1.js
 #: src/pages/Dashboard/DashboardV1.js
@@ -2391,8 +2407,6 @@ msgstr ""
 #: src/pages/Dashboard/DashboardV2.js
 #: src/pages/Dashboard/DashboardV2.js
 #: src/pages/OrdersOverview/OrdersOverview.js
-#: src/pages/Stake/StakeV2.js
-#: src/pages/Stake/StakeV2.js
 #: src/pages/Stake/StakeV2.js
 msgid "Price"
 msgstr ""
@@ -2431,13 +2445,8 @@ msgstr ""
 msgid "Price is below Mark Price"
 msgstr ""
 
+#: src/components/StakeV2/OpenStaking.tsx
 #: src/pages/Dashboard/DashboardV2.js
-#: src/pages/Stake/StakeV2.js
-msgid "price on BSC"
-msgstr ""
-
-#: src/pages/Dashboard/DashboardV2.js
-#: src/pages/Stake/StakeV2.js
 msgid "Price on BSC"
 msgstr ""
 
@@ -2450,12 +2459,12 @@ msgid "Profit price: {0} ${1}. This rule applies for the next {2}, until {3}."
 msgstr ""
 
 #: src/pages/Ecosystem/Ecosystem.js
-msgid "Projects developed by the OPEN community."
-msgstr ""
+#~ msgid "Projects developed by the OPEN community."
+#~ msgstr ""
 
 #: src/pages/Ecosystem/Ecosystem.js
-msgid "Projects integrated with OPEN."
-msgstr ""
+#~ msgid "Projects integrated with OPEN."
+#~ msgstr ""
 
 #: src/pages/Ecosystem/Ecosystem.js
 #: src/pages/Ecosystem/Ecosystem.js
@@ -2466,16 +2475,15 @@ msgstr ""
 msgid "Purchase <0>OAP tokens</0> to earn {nativeTokenSymbol} fees from swaps and leverages trading."
 msgstr ""
 
+#: src/pages/Stake/StakeV2.js
+msgid "Purchase Insurance"
+msgstr ""
+
 #: src/pages/BuyGMX/BuyGMX.js
 #: src/pages/BuyGMX/BuyGMX.js
 msgid "Purchase OPEN"
 msgstr ""
 
-#: src/pages/Stake/StakeV2.js
-msgid "Purchase Insurance"
-msgstr ""
-
-#: src/components/TokenCard/TokenCard.js
 #: src/components/TokenCard/TokenCard.js
 msgid "Read more"
 msgstr ""
@@ -2573,7 +2581,6 @@ msgstr ""
 msgid "Referral code updated!"
 msgstr ""
 
-#: src/components/Header/AppHeaderLinks.tsx
 #: src/pages/Referrals/Referrals.js
 msgid "Referrals"
 msgstr ""
@@ -2620,8 +2627,8 @@ msgstr ""
 
 #: src/pages/Stake/StakeV2.js
 #: src/pages/Stake/StakeV2.js
-msgid "Reserved for Vesting"
-msgstr ""
+#~ msgid "Reserved for Vesting"
+#~ msgstr ""
 
 #: src/pages/Ecosystem/Ecosystem.js
 msgid "Returns calculator for OPEN and OAP"
@@ -2632,7 +2639,6 @@ msgstr ""
 #: src/pages/Stake/StakeV1.js
 #: src/pages/Stake/StakeV1.js
 #: src/pages/Stake/StakeV1.js
-#: src/pages/Stake/StakeV2.js
 #: src/pages/Stake/StakeV2.js
 msgid "Rewards"
 msgstr ""
@@ -2737,7 +2743,6 @@ msgstr ""
 msgid "Share"
 msgstr ""
 
-#: src/components/Exchange/PositionDropdown.js
 #: src/components/Exchange/PositionShare.js
 msgid "Share Position"
 msgstr ""
@@ -2775,8 +2780,8 @@ msgstr ""
 
 #: src/pages/Dashboard/DashboardV2.js
 #: src/pages/Dashboard/DashboardV2.js
-msgid "Short Positions"
-msgstr ""
+#~ msgid "Short Positions"
+#~ msgstr ""
 
 #: src/components/Exchange/SwapBox.js
 msgid "Short {0}"
@@ -2802,8 +2807,8 @@ msgid "Slippage should be less than 5%"
 msgstr ""
 
 #: src/components/Exchange/SwapBox.js
-msgid "Speed up page loading"
-msgstr ""
+#~ msgid "Speed up page loading"
+#~ msgstr ""
 
 #: src/components/Exchange/ConfirmationBox.js
 #: src/components/Exchange/ConfirmationBox.js
@@ -2814,18 +2819,25 @@ msgstr ""
 msgid "Stablecoin Percentage"
 msgstr ""
 
+#: src/components/StakeV2/OpenStaking.tsx
+#: src/components/StakeV2/StakeModal.tsx
+#: src/components/StakeV2/StakeModal.tsx
 #: src/pages/Stake/StakeV1.js
 #: src/pages/Stake/StakeV1.js
 #: src/pages/Stake/StakeV1.js
-#: src/pages/Stake/StakeV2.js
-#: src/pages/Stake/StakeV2.js
-#: src/pages/Stake/StakeV2.js
-#: src/pages/Stake/StakeV2.js
 msgid "Stake"
 msgstr ""
 
 #: src/pages/Stake/StakeV2.js
-msgid "Stake <0>OPEN</0> and <1>OAP</1> to earn rewards."
+msgid "Stake <0>OAP</0> to earn rewards."
+msgstr ""
+
+#: src/pages/Stake/StakeV2.js
+#~ msgid "Stake <0>OPEN</0> and <1>OAP</1> to earn rewards."
+#~ msgstr ""
+
+#: src/pages/Stake/StakeV2.js
+msgid "Stake Multiplier Points"
 msgstr ""
 
 #: src/pages/Stake/StakeV2.js
@@ -2834,10 +2846,6 @@ msgstr ""
 
 #: src/pages/Stake/StakeV2.js
 msgid "Stake OPEN Rewards"
-msgstr ""
-
-#: src/pages/Stake/StakeV2.js
-msgid "Stake Multiplier Points"
 msgstr ""
 
 #: src/pages/Stake/StakeV2.js
@@ -2852,11 +2860,11 @@ msgstr ""
 msgid "Stake failed"
 msgstr ""
 
-#: src/pages/Stake/StakeV2.js
+#: src/components/StakeV2/StakeModal.tsx
 msgid "Stake failed."
 msgstr ""
 
-#: src/pages/Stake/StakeV2.js
+#: src/components/StakeV2/StakeModal.tsx
 msgid "Stake submitted!"
 msgstr ""
 
@@ -2865,30 +2873,30 @@ msgid "Stake submitted! <0>View status.</0>"
 msgstr ""
 
 #: src/components/Glp/GlpSwap.js
-#: src/pages/Dashboard/DashboardV2.js
 #: src/pages/Stake/StakeV1.js
 #: src/pages/Stake/StakeV1.js
 #: src/pages/Stake/StakeV1.js
 #: src/pages/Stake/StakeV1.js
 #: src/pages/Stake/StakeV1.js
-#: src/pages/Stake/StakeV2.js
-#: src/pages/Stake/StakeV2.js
-#: src/pages/Stake/StakeV2.js
 #: src/pages/Stake/StakeV2.js
 msgid "Staked"
 msgstr ""
 
 #: src/pages/Stake/StakeV2.js
-msgid "Staked Multiplier Points"
+#~ msgid "Staked Multiplier Points"
+#~ msgstr ""
+
+#: src/components/StakeV2/OpenStaking.tsx
+msgid "Staked OPEN"
 msgstr ""
 
 #: src/pages/Stake/StakeV2.js
 #: src/pages/Stake/StakeV2.js
-msgid "Staked Tokens"
-msgstr ""
+#~ msgid "Staked Tokens"
+#~ msgstr ""
 
+#: src/components/StakeV2/StakeModal.tsx
 #: src/pages/Stake/StakeV1.js
-#: src/pages/Stake/StakeV2.js
 msgid "Staking..."
 msgstr ""
 
@@ -2907,8 +2915,6 @@ msgstr ""
 #: src/pages/Dashboard/DashboardV1.js
 #: src/pages/Dashboard/DashboardV1.js
 #: src/pages/Dashboard/DashboardV1.js
-#: src/pages/Dashboard/DashboardV2.js
-#: src/pages/Dashboard/DashboardV2.js
 msgid "Supply"
 msgstr ""
 
@@ -3036,8 +3042,8 @@ msgid "Telegram Group (Portuguese)"
 msgstr ""
 
 #: src/pages/Ecosystem/Ecosystem.js
-msgid "Telegram Groups"
-msgstr ""
+#~ msgid "Telegram Groups"
+#~ msgstr ""
 
 #: src/pages/Ecosystem/Ecosystem.js
 msgid "Telegram bot for OPEN position updates"
@@ -3056,8 +3062,8 @@ msgid "The <0>OPEN migration</0> is in progress, please migrate your GMT, xGMT, 
 msgstr ""
 
 #: src/pages/Stake/StakeV2.js
-msgid "The Boosted APR is from your staked Multiplier Points."
-msgstr ""
+#~ msgid "The Boosted APR is from your staked Multiplier Points."
+#~ msgstr ""
 
 #: src/pages/Stake/StakeV1.js
 msgid "The Gambit protocol is in beta, please read the <0>staking details</0>before participating."
@@ -3088,8 +3094,12 @@ msgid "The order will only execute if the price conditions are met and there is 
 msgstr ""
 
 #: src/components/Exchange/SwapBox.js
-msgid "The position will be opened at {0} USD with a max slippage of {1}%.<0/><1/>The slippage amount can be configured under Settings, found by clicking on your address at the top right of the page after connecting your wallet.<2/><3/><4>More Info</4>"
+msgid "The position will be opened at {0} USD with a max slippage of {1}%.<0/><1/>The slippage amount can be configured under Settings, found by clicking on your address at the top right of the page after connecting your wallet."
 msgstr ""
+
+#: src/components/Exchange/SwapBox.js
+#~ msgid "The position will be opened at {0} USD with a max slippage of {1}%.<0/><1/>The slippage amount can be configured under Settings, found by clicking on your address at the top right of the page after connecting your wallet.<2/><3/><4>More Info</4>"
+#~ msgstr ""
 
 #: src/components/Exchange/OrdersList.js
 msgid "The price that orders can be executed at may differ slightly from the chart price, as market orders update oracle prices, while limit/trigger orders do not."
@@ -3177,8 +3187,12 @@ msgid "To purchase OPEN on <0>Arbitrum</0>, please change your network."
 msgstr ""
 
 #: src/pages/BuyGMX/BuyGMX.js
-msgid "To purchase OPEN on <0>BSC</0>, please change your network."
+msgid "To purchase OPEN on <0>Avalanche</0>, please change your network."
 msgstr ""
+
+#: src/pages/BuyGMX/BuyGMX.js
+#~ msgid "To purchase OPEN on <0>BSC</0>, please change your network."
+#~ msgstr ""
 
 #: src/components/Glp/GlpSwap.js
 msgid "To reduce fees, select a different asset to pay with."
@@ -3193,8 +3207,8 @@ msgid "Tokens"
 msgstr ""
 
 #: src/pages/Stake/StakeV2.js
-msgid "Total"
-msgstr ""
+#~ msgid "Total"
+#~ msgstr ""
 
 #: src/components/Migration/Migration.js
 msgid "Total Assets Migrated"
@@ -3206,11 +3220,15 @@ msgstr ""
 
 #: src/pages/Dashboard/DashboardV2.js
 #: src/pages/Dashboard/DashboardV2.js
-msgid "Total Fees"
-msgstr ""
+#~ msgid "Total Fees"
+#~ msgstr ""
 
 #: src/pages/Dashboard/DashboardV1.js
 msgid "Total Fees Distributed"
+msgstr ""
+
+#: src/components/StakeV2/OpenStaking.tsx
+msgid "Total Pooled OPEN"
 msgstr ""
 
 #: src/components/Referrals/AffiliatesStats.js
@@ -3220,8 +3238,8 @@ msgid "Total Rebates"
 msgstr ""
 
 #: src/pages/Stake/StakeV2.js
-msgid "Total Rewards"
-msgstr ""
+#~ msgid "Total Rewards"
+#~ msgstr ""
 
 #: src/pages/Dashboard/DashboardV2.js
 #: src/pages/Dashboard/DashboardV2.js
@@ -3230,21 +3248,17 @@ msgstr ""
 #: src/pages/Stake/StakeV1.js
 #: src/pages/Stake/StakeV1.js
 #: src/pages/Stake/StakeV1.js
-#: src/pages/Stake/StakeV2.js
-#: src/pages/Stake/StakeV2.js
 #: src/pages/Stake/StakeV2.js
 msgid "Total Staked"
 msgstr ""
 
 #: src/pages/Dashboard/DashboardV2.js
-msgid "Total Stats"
-msgstr ""
+#~ msgid "Total Stats"
+#~ msgstr ""
 
 #: src/components/Glp/GlpSwap.js
 #: src/pages/Stake/StakeV1.js
 #: src/pages/Stake/StakeV1.js
-#: src/pages/Stake/StakeV2.js
-#: src/pages/Stake/StakeV2.js
 #: src/pages/Stake/StakeV2.js
 msgid "Total Supply"
 msgstr ""
@@ -3264,8 +3278,6 @@ msgid "Total Users"
 msgstr ""
 
 #: src/components/Referrals/AffiliatesStats.js
-#: src/pages/Dashboard/DashboardV2.js
-#: src/pages/Dashboard/DashboardV2.js
 msgid "Total Volume"
 msgstr ""
 
@@ -3279,6 +3291,10 @@ msgstr ""
 
 #: src/pages/Dashboard/DashboardV1.js
 msgid "Total fees earned since {0}: {1} USD<0/>Fee assets: {feeText}"
+msgstr ""
+
+#: src/components/StakeV2/OpenStaking.tsx
+msgid "Total stOPEN"
 msgstr ""
 
 #: src/pages/Dashboard/DashboardV2.js
@@ -3315,8 +3331,8 @@ msgid "Trades"
 msgstr ""
 
 #: src/components/Exchange/SwapBox.js
-msgid "Trading guide"
-msgstr ""
+#~ msgid "Trading guide"
+#~ msgstr ""
 
 #: src/pages/NftWallet/NftWallet.js
 msgid "Tranferring..."
@@ -3352,7 +3368,6 @@ msgid "Transfer AVAX"
 msgstr ""
 
 #: src/pages/BeginAccountTransfer/BeginAccountTransfer.js
-#: src/pages/Stake/StakeV2.js
 msgid "Transfer Account"
 msgstr ""
 
@@ -3435,23 +3450,25 @@ msgstr ""
 msgid "UTILIZATION"
 msgstr ""
 
+#: src/components/StakeV2/OpenStaking.tsx
+#: src/components/StakeV2/UnstakeModal.tsx
 #: src/pages/Stake/StakeV1.js
 #: src/pages/Stake/StakeV1.js
 #: src/pages/Stake/StakeV1.js
 #: src/pages/Stake/StakeV1.js
 #: src/pages/Stake/StakeV1.js
-#: src/pages/Stake/StakeV2.js
-#: src/pages/Stake/StakeV2.js
-#: src/pages/Stake/StakeV2.js
-#: src/pages/Stake/StakeV2.js
 msgid "Unstake"
+msgstr ""
+
+#: src/components/StakeV2/UnstakeModal.tsx
+msgid "Unstake All"
 msgstr ""
 
 #: src/pages/Stake/StakeV2.js
 msgid "Unstake OPEN"
 msgstr ""
 
-#: src/pages/Stake/StakeV2.js
+#: src/components/StakeV2/UnstakeModal.tsx
 msgid "Unstake completed!"
 msgstr ""
 
@@ -3463,11 +3480,11 @@ msgstr ""
 msgid "Unstake failed"
 msgstr ""
 
-#: src/pages/Stake/StakeV2.js
+#: src/components/StakeV2/UnstakeModal.tsx
 msgid "Unstake failed."
 msgstr ""
 
-#: src/pages/Stake/StakeV2.js
+#: src/components/StakeV2/UnstakeModal.tsx
 msgid "Unstake submitted!"
 msgstr ""
 
@@ -3475,8 +3492,8 @@ msgstr ""
 msgid "Unstake submitted! <0>View status.</0>"
 msgstr ""
 
+#: src/components/StakeV2/UnstakeModal.tsx
 #: src/pages/Stake/StakeV1.js
-#: src/pages/Stake/StakeV2.js
 msgid "Unstaking..."
 msgstr ""
 
@@ -3506,8 +3523,8 @@ msgid "Use the \"Close\" button to reduce your position size, or to set stop-los
 msgstr ""
 
 #: src/pages/Stake/StakeV2.js
-msgid "Use the \"Compound\" button to stake your Multiplier Points."
-msgstr ""
+#~ msgid "Use the \"Compound\" button to stake your Multiplier Points."
+#~ msgstr ""
 
 #: src/components/Exchange/PositionsList.js
 #: src/components/Exchange/PositionsList.js
@@ -3515,8 +3532,8 @@ msgid "Use the Edit Collateral icon to deposit or withdraw collateral."
 msgstr ""
 
 #: src/components/Exchange/SwapBox.js
-msgid "Useful Links"
-msgstr ""
+#~ msgid "Useful Links"
+#~ msgstr ""
 
 #: src/pages/BuyGMX/BuyGMX.js
 msgid "Using the BSC or Synapse bridges, you can also transfer any other supported cryptocurrency, and receive free AVAX to pay for the network's fees."
@@ -3536,21 +3553,15 @@ msgid "Vault Capacity for your Account:"
 msgstr ""
 
 #: src/pages/Stake/StakeV2.js
-msgid "Vest"
-msgstr ""
+#~ msgid "Vest"
+#~ msgstr ""
 
+#: src/pages/ClaimEsGmx/ClaimEsGmx.js
 #: src/pages/ClaimEsGmx/ClaimEsGmx.js
 msgid "Vest with OAP on BSC"
 msgstr ""
 
 #: src/pages/ClaimEsGmx/ClaimEsGmx.js
-msgid "Vest with OAP on BSC"
-msgstr ""
-
-#: src/pages/ClaimEsGmx/ClaimEsGmx.js
-msgid "Vest with OPEN on BSC"
-msgstr ""
-
 #: src/pages/ClaimEsGmx/ClaimEsGmx.js
 msgid "Vest with OPEN on BSC"
 msgstr ""
@@ -3565,8 +3576,8 @@ msgstr ""
 
 #: src/pages/Stake/StakeV2.js
 #: src/pages/Stake/StakeV2.js
-msgid "Vesting Status"
-msgstr ""
+#~ msgid "Vesting Status"
+#~ msgstr ""
 
 #: src/App/App.js
 #: src/pages/Exchange/Exchange.js
@@ -3583,7 +3594,6 @@ msgid "View status."
 msgstr ""
 
 #: src/pages/Dashboard/DashboardV1.js
-#: src/pages/Dashboard/DashboardV2.js
 msgid "Volume"
 msgstr ""
 
@@ -3621,13 +3631,12 @@ msgstr ""
 #: src/components/Glp/GlpSwap.js
 #: src/components/Glp/GlpSwap.js
 #: src/components/Migration/Migration.js
+#: src/components/StakeV2/OpenStaking.tsx
 #: src/pages/Stake/StakeV1.js
 #: src/pages/Stake/StakeV1.js
 #: src/pages/Stake/StakeV1.js
 #: src/pages/Stake/StakeV1.js
 #: src/pages/Stake/StakeV1.js
-#: src/pages/Stake/StakeV2.js
-#: src/pages/Stake/StakeV2.js
 #: src/pages/Stake/StakeV2.js
 #: src/pages/Stake/StakeV2.js
 msgid "Wallet"
@@ -3663,8 +3672,6 @@ msgstr ""
 #: src/components/Exchange/PositionEditor.js
 #: src/components/Exchange/PositionEditor.js
 #: src/components/Exchange/PositionEditor.js
-#: src/pages/Stake/StakeV2.js
-#: src/pages/Stake/StakeV2.js
 msgid "Withdraw"
 msgstr ""
 
@@ -3725,8 +3732,8 @@ msgid "Yield simulator for OPEN"
 msgstr ""
 
 #: src/pages/Stake/StakeV2.js
-msgid "You are earning {0}% more {nativeTokenSymbol} rewards using {1} Staked Multiplier Points."
-msgstr ""
+#~ msgid "You are earning {0}% more {nativeTokenSymbol} rewards using {1} Staked Multiplier Points."
+#~ msgstr ""
 
 #: src/pages/Stake/StakeV2.js
 msgid "You are earning {nativeTokenSymbol} rewards with {0} tokens.<0/>Tokens: {amountStr}."
@@ -3737,8 +3744,12 @@ msgid "You are leaving OPEN.io and will be redirected to a third party, independ
 msgstr ""
 
 #: src/pages/BuyGMX/BuyGMX.js
-msgid "You can buy AVAX directly on <0>BSC</0> using Banxa:"
+msgid "You can buy AVAX directly on <0>Avalanche</0> using Banxa:"
 msgstr ""
+
+#: src/pages/BuyGMX/BuyGMX.js
+#~ msgid "You can buy AVAX directly on <0>BSC</0> using Banxa:"
+#~ msgstr ""
 
 #: src/pages/BuyGMX/BuyGMX.js
 msgid "You can buy ETH directly on <0>Arbitrum</0> using Banxa:"
@@ -3830,6 +3841,10 @@ msgstr ""
 msgid "Your position's collateral after deducting fees."
 msgstr ""
 
+#: src/components/StakeV2/OpenStaking.tsx
+msgid "Your stOPEN"
+msgstr ""
+
 #: src/pages/CompleteAccountTransfer/CompleteAccountTransfer.js
 msgid "Your transfer has been completed."
 msgstr ""
@@ -3870,6 +3885,11 @@ msgstr ""
 msgid "not staked"
 msgstr ""
 
+#: src/pages/Dashboard/DashboardV2.js
+#: src/pages/Stake/StakeV2.js
+#~ msgid "price on BSC"
+#~ msgstr ""
+
 #: src/pages/PositionsOverview/PositionsOverview.js
 msgid "size"
 msgstr ""
@@ -3898,6 +3918,10 @@ msgstr ""
 msgid "{0, select, true {Long} false {Short}} {1} market selected"
 msgstr ""
 
+#: src/components/StakeV2/UnstakeModal.tsx
+msgid "{0}"
+msgstr ""
+
 #: src/domain/tokens/approveTokens.tsx
 msgid "{0} Approved!"
 msgstr ""
@@ -3924,8 +3948,8 @@ msgstr ""
 
 #: src/pages/Stake/StakeV2.js
 #: src/pages/Stake/StakeV2.js
-msgid "{0} OPEN tokens can be claimed, use the options under the Total Rewards section to claim them."
-msgstr ""
+#~ msgid "{0} OPEN tokens can be claimed, use the options under the Total Rewards section to claim them."
+#~ msgstr ""
 
 #: src/components/Exchange/NoLiquidityErrorModal.tsx
 msgid "{0} Pool Capacity Reached"
@@ -3979,8 +4003,8 @@ msgstr ""
 
 #: src/pages/Stake/StakeV2.js
 #: src/pages/Stake/StakeV2.js
-msgid "{0} tokens have been converted to OPEN from the {1} esOPEN deposited for vesting."
-msgstr ""
+#~ msgid "{0} tokens have been converted to OPEN from the {1} esOPEN deposited for vesting."
+#~ msgstr ""
 
 #: src/components/Exchange/TradeHistory.js
 msgid "{0} {1} {longOrShortText}, -{2} USD, {3} Price: ${4} USD"
@@ -4012,8 +4036,12 @@ msgid ""
 msgstr ""
 
 #: src/pages/Dashboard/DashboardV2.js
-msgid "{chainName} Total Stats start from {totalStatsStartDate}.<0/> For detailed stats:"
+msgid "{chainName} Total Stats start from {totalStatsStartDate}"
 msgstr ""
+
+#: src/pages/Dashboard/DashboardV2.js
+#~ msgid "{chainName} Total Stats start from {totalStatsStartDate}.<0/> For detailed stats:"
+#~ msgstr ""
 
 #: src/components/Exchange/ConfirmationBox.js
 msgid "{existingTriggerOrderLength, plural, one {You have an active trigger order that could impact this position.} other {You have # active trigger orders that could impact this position.}}"
@@ -4032,12 +4060,8 @@ msgid "{swapOption, select, LONG {Longing} SHORT {Shorting}} {0} not supported"
 msgstr ""
 
 #: src/components/StatsTooltip/StatsTooltip.tsx
-msgid "{title} on BSC:"
-msgstr ""
-
-#: src/components/StatsTooltip/StatsTooltip.tsx
-msgid "{title} on BSC:"
-msgstr ""
+#~ msgid "{title} on BSC:"
+#~ msgstr ""
 
 #: src/pages/Dashboard/DashboardV1.js
 msgid "{volumeLabel} Volume"

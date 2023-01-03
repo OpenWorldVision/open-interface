@@ -685,42 +685,42 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
   const esGmxAddress = getContract(chainId, "ES_GMX");
   // const bnGmxAddress = getContract(chainId, "BN_GMX");
   const glpAddress = getContract(chainId, "OAP");
-  const stakedGmxTrackerAddress = getContract(chainId, "StakedGmxTracker");
-  const bonusGmxTrackerAddress = getContract(chainId, "BonusGmxTracker");
-  const feeGmxTrackerAddress = getContract(chainId, "FeeGmxTracker");
+  // const stakedGmxTrackerAddress = getContract(chainId, "StakedGmxTracker");
+  // const bonusGmxTrackerAddress = getContract(chainId, "BonusGmxTracker");
+  // const feeGmxTrackerAddress = getContract(chainId, "FeeGmxTracker");
 
   const stakedGlpTrackerAddress = getContract(chainId, "StakedGlpTracker");
   const feeGlpTrackerAddress = getContract(chainId, "FeeGlpTracker");
 
   const glpManagerAddress = getContract(chainId, "GlpManager");
 
-  const stakedGmxDistributorAddress = getContract(chainId, "StakedGmxDistributor");
+  // const stakedGmxDistributorAddress = getContract(chainId, "StakedGmxDistributor");
   const stakedGlpDistributorAddress = getContract(chainId, "StakedGlpDistributor");
 
-  const gmxVesterAddress = getContract(chainId, "GmxVester");
+  // const gmxVesterAddress = getContract(chainId, "GmxVester");
   const glpVesterAddress = getContract(chainId, "GlpVester");
 
-  const vesterAddresses = [gmxVesterAddress, glpVesterAddress];
+  const vesterAddresses = [glpVesterAddress];
 
-  const excludedEsGmxAccounts = [stakedGmxDistributorAddress, stakedGlpDistributorAddress];
+  const excludedEsGmxAccounts = [stakedGlpDistributorAddress];
 
   const nativeTokenSymbol = getConstant(chainId, "nativeTokenSymbol");
   const wrappedTokenSymbol = getConstant(chainId, "wrappedTokenSymbol");
 
-  const walletTokens = [openAddress, esGmxAddress, glpAddress, stakedGmxTrackerAddress];
-  const depositTokens = [openAddress, esGmxAddress, stakedGmxTrackerAddress, bonusGmxTrackerAddress, glpAddress];
+  const walletTokens = [openAddress, esGmxAddress, glpAddress];
+  const depositTokens = [openAddress, esGmxAddress, glpAddress];
   const rewardTrackersForDepositBalances = [
-    stakedGmxTrackerAddress,
-    stakedGmxTrackerAddress,
-    bonusGmxTrackerAddress,
-    feeGmxTrackerAddress,
-    feeGmxTrackerAddress,
+    // stakedGmxTrackerAddress,
+    // stakedGmxTrackerAddress,
+    // bonusGmxTrackerAddress,
+    // feeGmxTrackerAddress,
+    // feeGmxTrackerAddress,
     feeGlpTrackerAddress,
   ];
   const rewardTrackersForStakingInfo = [
-    stakedGmxTrackerAddress,
-    bonusGmxTrackerAddress,
-    feeGmxTrackerAddress,
+    // stakedGmxTrackerAddress,
+    // bonusGmxTrackerAddress,
+    // feeGmxTrackerAddress,
     stakedGlpTrackerAddress,
     feeGlpTrackerAddress,
   ];
@@ -758,12 +758,14 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
     }
   );
 
-  const { data: stakedGmxSupply } = useSWR(
-    [`StakeV2:stakedGmxSupply:${active}`, chainId, openAddress, "balanceOf", stakedGmxTrackerAddress],
-    {
-      fetcher: contractFetcher(library, Token),
-    }
-  );
+  // const { data: stakedGmxSupply } = useSWR(
+  //   [`StakeV2:stakedGmxSupply:${active}`, chainId, openAddress, "balanceOf", stakedGmxTrackerAddress],
+  //   {
+  //     fetcher: contractFetcher(library, Token),
+  //   }
+  // );
+
+  const stakedGmxSupply = bigNumberify("0");
 
   const { data: aums } = useSWR([`StakeV2:getAums:${active}`, chainId, glpManagerAddress, "getAums"], {
     fetcher: contractFetcher(library, GlpManager),
@@ -889,7 +891,7 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
     setStakeValue("");
     setStakingTokenSymbol("OPEN");
     setStakingTokenAddress(openAddress);
-    setStakingFarmAddress(stakedGmxTrackerAddress);
+    // setStakingFarmAddress(stakedGmxTrackerAddress);
     setStakeMethodName("stakeGmx");
   };
 
@@ -922,7 +924,7 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
     setVesterDepositReserveAmount(vestingData.gmxVester.pairAmount);
     setVesterDepositMaxReserveAmount(totalRewardTokens);
     setVesterDepositValue("");
-    setVesterDepositAddress(gmxVesterAddress);
+    // setVesterDepositAddress(gmxVesterAddress);
   };
 
   const showGlpVesterDepositModal = () => {
@@ -954,7 +956,7 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
 
     setIsVesterWithdrawModalVisible(true);
     setVesterWithdrawTitle(t`Withdraw from OPEN Vault`);
-    setVesterWithdrawAddress(gmxVesterAddress);
+    // setVesterWithdrawAddress(gmxVesterAddress);
   };
 
   const showGlpVesterWithdrawModal = () => {
