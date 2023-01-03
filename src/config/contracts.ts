@@ -86,6 +86,7 @@ const CONTRACTS = {
     FastPriceFeed: "0x3Dc7da2F42bad3a2388Eb8A0e928A166E615daFa",
     VaultPriceFeed: "0x2Ced5a663606592C4e5EF095584D7576682b20F1",
     PancakePair: "0x0D352Ea95cDb52294742A32123f50bE474163038",
+    PancakePair2: "0xFea1510Bd3EA668a4d14f7F1d95F7AB4ECAA66ed", // OPEN-WBNB pair
   },
   [TESTNET]: {
     // bsc testnet
