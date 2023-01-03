@@ -201,7 +201,7 @@ msgstr "Agree"
 #: src/components/Exchange/ConfirmationBox.js
 #: src/components/Exchange/PositionSeller.js
 msgid "Allow up to 1% slippage"
-msgstr "Allow up to 1% slippage"
+msgstr "Cho phép trượt tới 1%"
 
 #: src/App/App.js
 #: src/components/Exchange/ConfirmationBox.js
@@ -318,7 +318,7 @@ msgstr "Available"
 #: src/components/Exchange/SwapBox.js
 #: src/components/Exchange/SwapBox.js
 msgid "Available Liquidity"
-msgstr "Available Liquidity"
+msgstr "Thanh khoản khả dụng"
 
 #: src/components/Glp/GlpSwap.js
 #: src/components/Glp/GlpSwap.js
@@ -358,17 +358,17 @@ msgstr "Avax is needed on BSC to purchase OPEN."
 
 #: src/components/Exchange/SwapBox.js
 msgid "Balance"
-msgstr "Balance"
+msgstr "Còn lại"
 
 #: src/components/Glp/GlpSwap.js
 #: src/components/Glp/GlpSwap.js
 #: src/components/Glp/GlpSwap.js
 msgid "Balance:"
-msgstr "Balance:"
+msgstr "Còn lại:"
 
 #: src/components/Exchange/SwapBox.js
 msgid "Balance: {0}"
-msgstr "Balance: {0}"
+msgstr "Còn lại: {0}"
 
 #: src/pages/BuyGMX/BuyGMX.js
 #: src/pages/BuyGMX/BuyGMX.js
@@ -404,7 +404,7 @@ msgstr "Boost your rewards with Multiplier Points. <0>More info</0>."
 #: src/components/Exchange/PositionsList.js
 #: src/components/Exchange/SwapBox.js
 msgid "Borrow Fee"
-msgstr "Borrow Fee"
+msgstr "Phí vay"
 
 #: src/components/Exchange/PositionsList.js
 #: src/components/Exchange/PositionsList.js
@@ -414,7 +414,7 @@ msgstr "Phí vay / ngày"
 #: src/components/Exchange/PositionSeller.js
 #: src/components/Exchange/TradeHistory.js
 msgid "Borrow fee"
-msgstr "Borrow fee"
+msgstr "Phí vay"
 
 #: src/components/Header/AppHeaderLinks.tsx
 msgid "Buy"
@@ -529,7 +529,7 @@ msgstr "Cancel submitted."
 
 #: src/pages/Exchange/Exchange.js
 msgid "Chart positions"
-msgstr "Chart positions"
+msgstr "Vị trí biểu đồ"
 
 #: src/components/Glp/GlpSwap.js
 #: src/components/Glp/GlpSwap.js
@@ -621,11 +621,11 @@ msgstr "Click on a row to select the position's market, then use the swap box to
 #: src/components/Exchange/PositionsList.js
 #: src/components/Exchange/PositionsList.js
 msgid "Close"
-msgstr "Close"
+msgstr "Đóng"
 
 #: src/components/Exchange/PositionSeller.js
 msgid "Close failed."
-msgstr "Close failed."
+msgstr "Đóng không thành công."
 
 #: src/components/Exchange/PositionSeller.js
 msgid "Close submitted!"
@@ -637,23 +637,23 @@ msgstr "Close to execution price"
 
 #: src/components/Exchange/PositionSeller.js
 msgid "Close without profit"
-msgstr "Close without profit"
+msgstr "Đóng mà không có lợi nhuận"
 
 #: src/components/Exchange/PositionSeller.js
 msgid "Close {longOrShortText} {0}"
-msgstr "Close {longOrShortText} {0}"
+msgstr "Đóng {longOrShortText} {0}"
 
 #: src/components/Exchange/PositionSeller.js
 msgid "Close: {convertedAmountFormatted} {0}"
-msgstr "Close: {convertedAmountFormatted} {0}"
+msgstr "Đóng: {convertedAmountFormatted} {0}"
 
 #: src/components/Exchange/PositionSeller.js
 msgid "Closing fee"
-msgstr "Closing fee"
+msgstr "Đang đóng phí"
 
 #: src/components/Exchange/PositionSeller.js
 msgid "Closing..."
-msgstr "Closing..."
+msgstr "Đang đóng..."
 
 #: src/components/Referrals/AddAffiliateCode.js
 msgid "Code already taken"
@@ -675,19 +675,22 @@ msgstr "Coinbase Wallet not detected."
 #: src/components/Exchange/PositionsList.js
 #: src/components/Exchange/PositionsList.js
 msgid "Collateral"
-msgstr "Collateral"
+msgstr "Tài sản thế chấp"
 
 #: src/components/Exchange/PositionSeller.js
 msgid "Collateral ({0})"
-msgstr "Collateral ({0})"
+msgstr "Tài sản thế chấp ({0})"
 
 #: src/components/Exchange/ConfirmationBox.js
 #: src/components/Exchange/ConfirmationBox.js
 #: src/components/Exchange/SwapBox.js
 #: src/components/Exchange/SwapBox.js
 #: src/components/Exchange/SwapBox.js
+msgid "Leverage slider"
+msgstr "Thanh trượt đòn bẩy"
+
 msgid "Collateral In"
-msgstr "Collateral In"
+msgstr "Tài sản thế chấp"
 
 #: src/pages/Ecosystem/Ecosystem.js
 msgid "Community Projects"
@@ -753,7 +756,7 @@ msgstr "Confirm Swap"
 
 #: src/components/Header/AppHeaderUser.tsx
 msgid "Connect"
-msgstr "Connect"
+msgstr "Kết nối"
 
 #: src/App/App.js
 #: src/components/Exchange/SwapBox.js
@@ -772,16 +775,16 @@ msgstr "Connect"
 #: src/pages/Stake/StakeV2.js
 #: src/pages/Stake/StakeV2.js
 msgid "Connect Wallet"
-msgstr "Connect Wallet"
+msgstr "Kết nối ví"
 
 #: src/lib/wallets/index.js
 msgid "Connected to {0}"
-msgstr "Connected to {0}"
+msgstr "Kết nối với {0}"
 
 #: src/pages/BeginAccountTransfer/BeginAccountTransfer.js
 #: src/pages/CompleteAccountTransfer/CompleteAccountTransfer.js
 msgid "Continue"
-msgstr "Continue"
+msgstr "Tiếp tục"
 
 #: src/pages/Stake/StakeV2.js
 msgid "Convert esGMX tokens to OPEN tokens.<0/>Please read the <1>vesting details</1> before using the vaults."
@@ -794,11 +797,11 @@ msgstr "Convert {wrappedTokenSymbol} to {nativeTokenSymbol}"
 
 #: src/components/Exchange/PositionShare.js
 msgid "Copy"
-msgstr "Copy"
+msgstr "Sao chép"
 
 #: src/components/AddressDropdown/AddressDropdown.js
 msgid "Copy Address"
-msgstr "Copy Address"
+msgstr "Sao chép địa chỉ ví"
 
 #: src/pages/Dashboard/DashboardV1.js
 #: src/pages/Dashboard/DashboardV1.js
@@ -836,24 +839,24 @@ msgstr "Could not increase {tokenSymbol} {longOrShortText} within the allowed sl
 #: src/pages/Stake/StakeV1.js
 #: src/pages/Stake/StakeV1.js
 msgid "Create"
-msgstr "Create"
+msgstr "Tạo"
 
 #: src/components/Exchange/ConfirmationBox.js
 #: src/components/Exchange/PositionSeller.js
 msgid "Create Order"
-msgstr "Create Order"
+msgstr "Tạo Order"
 
 #: src/components/Referrals/AffiliatesStats.js
 msgid "Create Referral Code"
-msgstr "Create Referral Code"
+msgstr "Tạo mã giới thiệu"
 
 #: src/components/Exchange/SwapBox.js
 msgid "Create {0} Order"
-msgstr "Create {0} Order"
+msgstr "Tạo {0} Order"
 
 #: src/pages/OrdersOverview/OrdersOverview.js
 msgid "Created"
-msgstr "Created"
+msgstr "Đã tạo"
 
 #: src/components/Exchange/SwapBox.js
 msgid "Created limit order for {0} {1}: {2} USD!"
@@ -862,11 +865,11 @@ msgstr "Created limit order for {0} {1}: {2} USD!"
 #: src/components/Exchange/ConfirmationBox.js
 #: src/components/Exchange/PositionSeller.js
 msgid "Creating Order..."
-msgstr "Creating Order..."
+msgstr "Đang tạo Order..."
 
 #: src/components/Referrals/AddAffiliateCode.js
 msgid "Creating..."
-msgstr "Creating..."
+msgstr "Đang tạo..."
 
 #: src/pages/Ecosystem/Ecosystem.js
 #: src/pages/Ecosystem/Ecosystem.js
@@ -975,7 +978,7 @@ msgstr "Decreased {tokenSymbol} {longOrShortText}, -{0} USD."
 #: src/pages/Stake/StakeV2.js
 #: src/pages/Stake/StakeV2.js
 msgid "Deposit"
-msgstr "Deposit"
+msgstr "Tiền gửi"
 
 #: src/components/Exchange/PositionEditor.js
 msgid "Deposit disabled, pending {0} upgrade"
@@ -1063,25 +1066,25 @@ msgstr "Ecosystem"
 #: src/components/Exchange/OrdersList.js
 #: src/components/Exchange/OrdersList.js
 msgid "Edit"
-msgstr "Edit"
+msgstr "Chỉnh sửa"
 
 #: src/components/Exchange/PositionDropdown.js
 #: src/components/Exchange/PositionsList.js
 msgid "Edit Collateral"
-msgstr "Edit Collateral"
+msgstr "Chỉnh sửa tài sản thế chấp"
 
 #: src/components/Referrals/TradersStats.js
 msgid "Edit Referral Code"
-msgstr "Edit Referral Code"
+msgstr "Chỉnh sửa mã giới thiệu"
 
 #: src/components/Exchange/OrderEditor.js
 #: src/components/Exchange/OrderEditor.js
 msgid "Edit order"
-msgstr "Edit order"
+msgstr "Chỉnh sửa order"
 
 #: src/components/Exchange/PositionEditor.js
 msgid "Edit {longOrShortText} {0}"
-msgstr "Edit {longOrShortText} {0}"
+msgstr "Chỉnh sửa {longOrShortText} {0}"
 
 #: src/components/Exchange/PositionEditor.js
 #: src/components/Exchange/PositionSeller.js
@@ -1201,7 +1204,7 @@ msgstr "Enter a price"
 #: src/pages/Stake/StakeV2.js
 #: src/pages/Stake/StakeV2.js
 msgid "Enter an amount"
-msgstr "Enter an amount"
+msgstr "Nhập số tiền"
 
 #: src/pages/Home/Home.js
 msgid "Enter and exit positions with minimal spread and zero price impact. Get the optimal price without incurring additional costs."
@@ -1246,19 +1249,19 @@ msgstr "Execute Order: {0, select, Increase {Increase} Decrease {Decrease}} {1} 
 #: src/components/Exchange/ConfirmationBox.js
 #: src/components/Exchange/PositionEditor.js
 msgid "Execution Fee"
-msgstr "Execution Fee"
+msgstr "Phí thực hiện"
 
 #: src/components/Exchange/PositionSeller.js
 msgid "Execution fee"
-msgstr "Execution fee"
+msgstr "Phí thực hiện"
 
 #: src/components/Exchange/SwapBox.js
 msgid "Exit Price"
-msgstr "Exit Price"
+msgstr "Giá ra"
 
 #: src/components/Glp/GlpSwap.js
 msgid "FEES"
-msgstr "Phí"
+msgstr "PHÍ"
 
 #: src/components/Exchange/ConfirmationBox.js
 #: src/components/Exchange/ConfirmationBox.js
@@ -1275,7 +1278,7 @@ msgstr "Phí"
 
 #: src/components/Exchange/ConfirmationBox.js
 msgid "Fees are high to swap from {0} to {1}."
-msgstr "Fees are high to swap from {0} to {1}."
+msgstr "Phí chuyển đổi cao từ {0} sang {1}."
 
 #: src/components/Exchange/ConfirmationBox.js
 msgid "Fees are high to swap from {0} to {1}. <0/>{2} is needed for collateral."
@@ -1477,8 +1480,8 @@ msgid "I am aware of the trigger orders"
 msgstr "I am aware of the trigger orders"
 
 #: src/components/Exchange/SwapBox.js
-msgid "If you have an existing position, the position will be closed at {0} USD.<0/><1/>This exit price will change with the price of the asset.<2/><3/><4>More Info</4>"
-msgstr "If you have an existing position, the position will be closed at {0} USD.<0/><1/>This exit price will change with the price of the asset.<2/><3/><4>More Info</4>"
+msgid "If you have an existing position, the position will be closed at {0} USD.<0/><1/>This exit price will change with the price of the asset."
+msgstr "Nếu bạn hiện có một vị thế, vị thế sẽ được đóng ở mức {0} USD.<0/><1/>Giá thoát này sẽ thay đổi theo giá của tài sản."
 
 #: src/components/Exchange/PositionShare.js
 msgid "Image generation error, please refresh and try again."
@@ -1555,7 +1558,7 @@ msgstr "Insufficient OAP balance"
 #: src/components/Exchange/SwapBox.js
 #: src/components/Glp/GlpSwap.js
 msgid "Insufficient liquidity"
-msgstr "Insufficient liquidity"
+msgstr "Thanh khoản không đủ"
 
 #: src/components/Exchange/SwapBox.js
 #: src/components/Exchange/SwapBox.js
@@ -1575,7 +1578,7 @@ msgstr "Insufficient staked tokens"
 #: src/components/Exchange/SwapBox.js
 #: src/components/Glp/GlpSwap.js
 msgid "Insufficient {0} balance"
-msgstr "Insufficient {0} balance"
+msgstr "Số dư {0} không đủ"
 
 #: src/pages/NftWallet/NftWallet.js
 msgid "Invalid NFT Address"
@@ -1623,7 +1626,7 @@ msgstr "Jobs"
 
 #: src/components/Exchange/PositionSeller.js
 msgid "Keep leverage at {0}x"
-msgstr "Keep leverage at {0}x"
+msgstr "Giữ đòn bẩy ở mức {0}x"
 
 #: src/components/NetworkDropdown/NetworkDropdown.js
 msgid "Language"
@@ -1669,7 +1672,7 @@ msgstr "Leftover position below 10 USD"
 #: src/components/Exchange/SwapBox.js
 #: src/components/Exchange/SwapBox.js
 msgid "Leverage"
-msgstr "Leverage"
+msgstr "Tận dụng"
 
 #: src/components/Exchange/SwapBox.js
 msgid "Leverage disabled, pending {0} upgrade"
@@ -1679,7 +1682,7 @@ msgstr "Leverage disabled, pending {0} upgrade"
 #: src/components/Exchange/OrdersList.js
 #: src/components/Exchange/SwapBox.js
 msgid "Limit"
-msgstr "Limit"
+msgstr "Giới hạn"
 
 #: src/components/Exchange/ConfirmationBox.js
 #: src/components/Exchange/ConfirmationBox.js
@@ -1843,7 +1846,7 @@ msgstr "Mark: {0}"
 #: src/components/Exchange/PositionSeller.js
 #: src/components/Exchange/SwapBox.js
 msgid "Market"
-msgstr "Market"
+msgstr "Thị trường"
 
 #: src/pages/Dashboard/DashboardV1.js
 #: src/pages/Dashboard/DashboardV1.js
@@ -1851,7 +1854,7 @@ msgstr "Market"
 #: src/pages/Dashboard/DashboardV2.js
 #: src/pages/Dashboard/DashboardV2.js
 msgid "Market Cap"
-msgstr "Market Cap"
+msgstr "Vốn hóa thị trường"
 
 #: src/pages/Stake/StakeV2.js
 msgid "Max Capacity"
@@ -2023,7 +2026,7 @@ msgstr "More Info"
 
 #: src/components/NetworkDropdown/NetworkDropdown.js
 msgid "More Options"
-msgstr "More Options"
+msgstr "Lựa chọn khác"
 
 #: src/pages/Stake/StakeV2.js
 msgid "Multiplier Points"
@@ -2298,15 +2301,15 @@ msgstr "Partnerships and Integrations"
 #: src/components/Glp/GlpSwap.js
 #: src/components/Glp/GlpSwap.js
 msgid "Pay"
-msgstr "Trả"
+msgstr "Thanh toán"
 
 #: src/components/Exchange/ConfirmationBox.js
 msgid "Pay Amount"
-msgstr "Số tiền trả"
+msgstr "Số tiền thanh toán"
 
 #: src/components/Exchange/SwapBox.js
 msgid "Pay: {0} USD"
-msgstr "Trả: {0} USD"
+msgstr "Thanh toán: {0} USD"
 
 #: src/pages/Dashboard/DashboardV2.js
 msgid "Platform and OAP index tokens."
@@ -2367,11 +2370,11 @@ msgstr "Position close disabled, pending {0} upgrade"
 #: src/pages/Actions/Actions.js
 #: src/pages/Exchange/Exchange.js
 msgid "Positions"
-msgstr "Positions"
+msgstr "Vị thế"
 
 #: src/pages/Exchange/Exchange.js
 msgid "Positions ({0})"
-msgstr "Positions ({0})"
+msgstr "Vị thế ({0})"
 
 #: src/components/Exchange/TradeHistory.js
 msgid "Prev"
@@ -2675,15 +2678,15 @@ msgstr "Search Token"
 #: src/components/NetworkDropdown/LanguagePopupHome.js
 #: src/components/NetworkDropdown/NetworkDropdown.js
 msgid "Select Language"
-msgstr "Select Language"
+msgstr "Chọn ngôn ngữ"
 
 #: src/components/Exchange/PositionDropdown.js
 msgid "Select Market"
-msgstr "Select Market"
+msgstr "Chọn thị trường"
 
 #: src/pages/ClaimEsGmx/ClaimEsGmx.js
 msgid "Select an option"
-msgstr "Select an option"
+msgstr "Chọn một tùy chọn"
 
 #: src/components/Exchange/SwapBox.js
 #: src/components/Exchange/SwapBox.js
@@ -2710,12 +2713,12 @@ msgstr "Bán OAP"
 
 #: src/components/Glp/GlpSwap.js
 msgid "Sell failed."
-msgstr "Sell failed."
+msgstr "Bán thất bại."
 
 #: src/components/Glp/GlpSwap.js
 #: src/components/Glp/GlpSwap.js
 msgid "Sell for {0}"
-msgstr "Sell for {0}"
+msgstr "Bán cho {0}"
 
 #: src/components/Glp/GlpSwap.js
 msgid "Sell submitted!"
@@ -2723,7 +2726,7 @@ msgstr "Sell submitted!"
 
 #: src/components/Glp/GlpSwap.js
 msgid "Selling..."
-msgstr "Selling..."
+msgstr "Đang bán..."
 
 #: src/pages/BeginAccountTransfer/BeginAccountTransfer.js
 msgid "Sender has withdrawn all tokens from OAP Vesting Vault"
@@ -3095,8 +3098,8 @@ msgid "The order will only execute if the price conditions are met and there is 
 msgstr "The order will only execute if the price conditions are met and there is sufficient liquidity"
 
 #: src/components/Exchange/SwapBox.js
-msgid "The position will be opened at {0} USD with a max slippage of {1}%.<0/><1/>The slippage amount can be configured under Settings, found by clicking on your address at the top right of the page after connecting your wallet.<2/><3/><4>More Info</4>"
-msgstr "Vị trí sẽ được mở ở mức {0} USD với độ trượt tối đa là {1}%.<0/><1/>Số lượng trượt có thể được cấu hình trong Cài đặt, được tìm thấy bằng cách nhấp vào biểu tượng mạng của bạn ở phía trên bên phải của trang sau khi kết nối Ví của bạn.<2/><3/><4>Xem thêm</4>"
+msgid "The position will be opened at {0} USD with a max slippage of {1}%.<0/><1/>The slippage amount can be configured under Settings, found by clicking on your address at the top right of the page after connecting your wallet."
+msgstr "Vị trí sẽ được mở ở mức {0} USD với độ trượt tối đa là {1}%.<0/><1/>Số lượng trượt có thể được cấu hình trong Cài đặt, được tìm thấy bằng cách nhấp vào biểu tượng mạng của bạn ở phía trên bên phải của trang sau khi kết nối Ví của bạn."
 
 #: src/components/Exchange/OrdersList.js
 msgid "The price that orders can be executed at may differ slightly from the chart price, as market orders update oracle prices, while limit/trigger orders do not."
@@ -3399,15 +3402,15 @@ msgstr "Transferring"
 #: src/components/Exchange/PositionSeller.js
 #: src/components/Exchange/SwapBox.js
 msgid "Trigger"
-msgstr "Trigger"
+msgstr "Kích hoạt"
 
 #: src/components/Exchange/PositionSeller.js
 msgid "Trigger Price"
-msgstr "Trigger Price"
+msgstr "Giá kích hoạt"
 
 #: src/components/Exchange/PositionSeller.js
 msgid "Trigger order disabled, pending {0} upgrade"
-msgstr "Trigger order disabled, pending {0} upgrade"
+msgstr "Lệnh kích hoạt đã bị vô hiệu hóa, đang chờ nâng cấp {0}"
 
 #: src/components/Exchange/TradeHistory.js
 msgid "Try increasing the \"Allowed Slippage\", under the Settings menu on the top right"
@@ -3673,23 +3676,23 @@ msgstr "Khi đóng vị trí, bạn có thể chọn mã thông báo nào bạn 
 #: src/pages/Stake/StakeV2.js
 #: src/pages/Stake/StakeV2.js
 msgid "Withdraw"
-msgstr "Withdraw"
+msgstr "Rút tiền"
 
 #: src/components/Exchange/PositionEditor.js
 msgid "Withdraw disabled, pending {0} upgrade"
-msgstr "Withdraw disabled, pending {0} upgrade"
+msgstr "Rút tiền bị vô hiệu hóa, nâng cấp {0} đang chờ xử lý"
 
 #: src/pages/Stake/StakeV2.js
 msgid "Withdraw failed."
-msgstr "Withdraw failed."
+msgstr "Rút tiền không thành công."
 
 #: src/pages/Stake/StakeV2.js
 msgid "Withdraw from OAP Vault"
-msgstr "Withdraw from OAP Vault"
+msgstr "Rút tiền từ OAP Vault"
 
 #: src/pages/Stake/StakeV2.js
 msgid "Withdraw from OPEN Vault"
-msgstr "Withdraw from OPEN Vault"
+msgstr "Rút tiền từ OPEN Vault"
 
 #: src/pages/Stake/StakeV2.js
 msgid "Withdraw submitted."
@@ -3697,11 +3700,11 @@ msgstr "Withdraw submitted."
 
 #: src/components/Exchange/TradeHistory.js
 msgid "Withdraw {0} USD from {1} {longOrShortText}"
-msgstr "Withdraw {0} USD from {1} {longOrShortText}"
+msgstr "Rút {0} USD từ {1} {longOrShortText}"
 
 #: src/components/Exchange/PositionEditor.js
 msgid "Withdrawal failed."
-msgstr "Withdrawal failed."
+msgstr "Rút tiền không thành công."
 
 #: src/components/Exchange/PositionEditor.js
 msgid "Withdrawal submitted."
@@ -3709,7 +3712,7 @@ msgstr "Withdrawal submitted."
 
 #: src/components/Exchange/PositionEditor.js
 msgid "Withdrawing..."
-msgstr "Withdrawing..."
+msgstr "Đang rút tiền..."
 
 #: src/pages/Stake/StakeV2.js
 msgid "Withdrawn!"
@@ -3717,7 +3720,7 @@ msgstr "Withdrawn!"
 
 #: src/pages/Exchange/Exchange.js
 msgid "Withdrew {0} USD from {tokenSymbol} {longOrShortText}."
-msgstr "Withdrew {0} USD from {tokenSymbol} {longOrShortText}."
+msgstr "Đã rút {0} USD từ {tokenSymbol} {longOrShortText}."
 
 #: src/pages/Ecosystem/Ecosystem.js
 msgid "Yield Optimizer on BSC"
@@ -3758,7 +3761,7 @@ msgstr "Bạn có thể thay đổi mã thông báo \"tài sản thế chấp\" 
 #: src/components/Exchange/ConfirmationBox.js
 #: src/components/Exchange/PositionSeller.js
 msgid "You can change this in the settings menu on the top right of the page.<0/><1/>Note that a low allowed slippage, e.g. less than 0.5%, may result in failed orders if prices are volatile."
-msgstr "You can change this in the settings menu on the top right of the page.<0/><1/>Note that a low allowed slippage, e.g. less than 0.5%, may result in failed orders if prices are volatile."
+msgstr "Bạn có thể thay đổi điều này trong menu cài đặt ở trên cùng bên phải của trang.<0/><1/>Lưu ý rằng mức trượt giá thấp được phép, ví dụ: dưới 0,5%, có thể dẫn đến các đơn đặt hàng không thành công nếu giá biến động."
 
 #: src/pages/ClaimEsGmx/ClaimEsGmx.js
 msgid "You can check your claim history <0>here</0>."
@@ -4058,3 +4061,7 @@ msgstr "{title} on BSC:"
 #: src/pages/Dashboard/DashboardV1.js
 msgid "{volumeLabel} Volume"
 msgstr "{volumeLabel} Volume"
+
+
+msgid "Incoming feature..."
+msgstr "Tính năng đang phát triển..."

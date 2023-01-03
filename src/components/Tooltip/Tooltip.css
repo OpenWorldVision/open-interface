@@ -111,7 +111,7 @@
 
 .Tooltip-row > span.label {
   margin-right: 0.5rem;
-  color: #ffffff;
+  color: #ffffff !important;
 }
 .Tooltip-row > .Tooltip-row-value {
   color: white;

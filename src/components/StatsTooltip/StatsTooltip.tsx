@@ -45,7 +45,7 @@ export default function StatsTooltip({
           {!showDollar && symbol && " " + symbol}
         </span>
       </p> */}
-      <div className="Tooltip-divider" />
+      {/* <div className="Tooltip-divider" /> */}
       <p className="Tooltip-row">
         <span className="label">
           <Trans>Total:</Trans>

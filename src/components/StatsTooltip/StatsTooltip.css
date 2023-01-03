@@ -23,6 +23,7 @@
 .Tooltip-row-values li {
   padding: 0.25rem 0 0 0;
   text-align: right;
+  color: white;
 }
 
 .Tooltip-number {
