@@ -707,8 +707,21 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
   const nativeTokenSymbol = getConstant(chainId, "nativeTokenSymbol");
   const wrappedTokenSymbol = getConstant(chainId, "wrappedTokenSymbol");
 
-  const walletTokens = [openAddress, esGmxAddress, glpAddress];
-  const depositTokens = [openAddress, esGmxAddress, glpAddress];
+  const walletTokens = [
+    openAddress,
+    esGmxAddress,
+    glpAddress,
+    // stakedGmxTrackerAddress
+  ];
+
+  const depositTokens = [
+    // openAddress,
+    // esGmxAddress,
+    // stakedGmxTrackerAddress,
+    // bonusGmxTrackerAddress,
+    // bnGmxAddress,
+    glpAddress,
+  ];
   const rewardTrackersForDepositBalances = [
     // stakedGmxTrackerAddress,
     // stakedGmxTrackerAddress,

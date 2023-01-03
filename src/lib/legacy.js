@@ -1132,11 +1132,11 @@ export function getDepositBalanceData(depositBalances) {
   }
 
   const keys = [
-    "gmxInStakedGmx",
-    "esGmxInStakedGmx",
-    "stakedGmxInBonusGmx",
-    "bonusGmxInFeeGmx",
-    "bnGmxInFeeGmx",
+    // "gmxInStakedGmx",
+    // "esGmxInStakedGmx",
+    // "stakedGmxInBonusGmx",
+    // "bonusGmxInFeeGmx",
+    // "bnGmxInFeeGmx",
     "glpInStakedGlp",
   ];
   const data = {};
@@ -1187,7 +1187,7 @@ export function getStakingData(stakingInfo) {
     return;
   }
 
-  const keys = ["stakedGmxTracker", "bonusGmxTracker", "feeGmxTracker", "stakedGlpTracker", "feeGlpTracker"];
+  const keys = ["stakedGlpTracker", "feeGlpTracker"];
   const data = {};
   const propsLength = 5;
 
@@ -1231,7 +1231,7 @@ export function getProcessedData(
   ) {
     return {};
   }
-
+  console.log(depositBalanceData, stakingData);
   const data = {};
 
   data.gmxBalance = balanceData.gmx;
@@ -1305,35 +1305,34 @@ export function getProcessedData(
       : bigNumberify(0);
 
   data.glpSupplyUsd = supplyData.glp.mul(data.glpPrice).div(expandDecimals(1, 18));
-  console.log(depositBalanceData);
   data.glpBalance = depositBalanceData.glpInStakedGlp;
-  // data.glpBalanceUsd = depositBalanceData.glpInStakedGlp.mul(data.glpPrice).div(expandDecimals(1, GLP_DECIMALS));
+  data.glpBalanceUsd = depositBalanceData.glpInStakedGlp.mul(data.glpPrice).div(expandDecimals(1, GLP_DECIMALS));
 
-  // data.stakedGlpTrackerRewards = stakingData.stakedGlpTracker.claimable;
-  // data.stakedGlpTrackerRewardsUsd = stakingData.stakedGlpTracker.claimable.mul(gmxPrice).div(expandDecimals(1, 18));
+  data.stakedGlpTrackerRewards = stakingData.stakedGlpTracker.claimable;
+  data.stakedGlpTrackerRewardsUsd = stakingData.stakedGlpTracker.claimable.mul(gmxPrice).div(expandDecimals(1, 18));
 
-  // data.feeGlpTrackerRewards = stakingData.feeGlpTracker.claimable;
-  // data.feeGlpTrackerRewardsUsd = stakingData.feeGlpTracker.claimable.mul(nativeTokenPrice).div(expandDecimals(1, 18));
+  data.feeGlpTrackerRewards = stakingData.feeGlpTracker.claimable;
+  data.feeGlpTrackerRewardsUsd = stakingData.feeGlpTracker.claimable.mul(nativeTokenPrice).div(expandDecimals(1, 18));
 
-  // data.stakedGlpTrackerAnnualRewardsUsd = stakingData.stakedGlpTracker.tokensPerInterval
-  //   .mul(SECONDS_PER_YEAR)
-  //   .mul(gmxPrice)
-  //   .div(expandDecimals(1, 18));
-  // data.glpAprForEsGmx =
-  //   data.glpSupplyUsd && data.glpSupplyUsd.gt(0)
-  //     ? data.stakedGlpTrackerAnnualRewardsUsd.mul(BASIS_POINTS_DIVISOR).div(data.glpSupplyUsd)
-  //     : bigNumberify(0);
-  // data.feeGlpTrackerAnnualRewardsUsd = stakingData.feeGlpTracker.tokensPerInterval
-  //   .mul(SECONDS_PER_YEAR)
-  //   .mul(nativeTokenPrice)
-  //   .div(expandDecimals(1, 18));
-  // data.glpAprForNativeToken =
-  //   data.glpSupplyUsd && data.glpSupplyUsd.gt(0)
-  //     ? data.feeGlpTrackerAnnualRewardsUsd.mul(BASIS_POINTS_DIVISOR).div(data.glpSupplyUsd)
-  //     : bigNumberify(0);
-  // data.glpAprTotal = data.glpAprForNativeToken.add(data.glpAprForEsGmx);
+  data.stakedGlpTrackerAnnualRewardsUsd = stakingData.stakedGlpTracker.tokensPerInterval
+    .mul(SECONDS_PER_YEAR)
+    .mul(gmxPrice)
+    .div(expandDecimals(1, 18));
+  data.glpAprForEsGmx =
+    data.glpSupplyUsd && data.glpSupplyUsd.gt(0)
+      ? data.stakedGlpTrackerAnnualRewardsUsd.mul(BASIS_POINTS_DIVISOR).div(data.glpSupplyUsd)
+      : bigNumberify(0);
+  data.feeGlpTrackerAnnualRewardsUsd = stakingData.feeGlpTracker.tokensPerInterval
+    .mul(SECONDS_PER_YEAR)
+    .mul(nativeTokenPrice)
+    .div(expandDecimals(1, 18));
+  data.glpAprForNativeToken =
+    data.glpSupplyUsd && data.glpSupplyUsd.gt(0)
+      ? data.feeGlpTrackerAnnualRewardsUsd.mul(BASIS_POINTS_DIVISOR).div(data.glpSupplyUsd)
+      : bigNumberify(0);
+  data.glpAprTotal = data.glpAprForNativeToken.add(data.glpAprForEsGmx);
 
-  // data.totalGlpRewardsUsd = data.stakedGlpTrackerRewardsUsd.add(data.feeGlpTrackerRewardsUsd);
+  data.totalGlpRewardsUsd = data.stakedGlpTrackerRewardsUsd.add(data.feeGlpTrackerRewardsUsd);
 
   // data.totalEsGmxRewards = data.stakedGmxTrackerRewards.add(data.stakedGlpTrackerRewards);
   // data.totalEsGmxRewardsUsd = data.stakedGmxTrackerRewardsUsd.add(data.stakedGlpTrackerRewardsUsd);
