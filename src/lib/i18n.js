@@ -6,7 +6,7 @@ import { isDevelopment } from "./legacy";
 // uses BCP-47 codes from https://unicode-org.github.io/cldr-staging/charts/latest/supplemental/language_plural_rules.html
 export const locales = {
   en: "English",
-  vi: "Tiếng Việt",
+  vi: "Vietnamese",
   // es: "Spanish",
   // zh: "Chinese",
   // ko: "Korean",
