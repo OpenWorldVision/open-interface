@@ -392,7 +392,7 @@ function FullApp() {
     }, 2 * 1000);
     return () => clearInterval(interval);
   }, [library, pendingTxns, chainId]);
-  console.log(chainId);
+
   const vaultAddress = getContract(chainId, "Vault");
   const positionRouterAddress = getContract(chainId, "PositionRouter");
 
