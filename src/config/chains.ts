@@ -13,7 +13,7 @@ export const ARBITRUM = 42161;
 export const DEFAULT_CHAIN_ID = TESTNET;
 export const CHAIN_ID = DEFAULT_CHAIN_ID;
 
-export const SUPPORTED_CHAIN_IDS = [TESTNET, MAINNET];
+export const SUPPORTED_CHAIN_IDS = [MAINNET, TESTNET];
 
 if (isDevelopment()) {
   SUPPORTED_CHAIN_IDS.push(ARBITRUM_TESTNET);
@@ -23,6 +23,7 @@ export const IS_NETWORK_DISABLED = {
   [ARBITRUM]: false,
   [AVALANCHE]: false,
   [TESTNET]: false,
+  [MAINNET]: false,
 };
 
 export const CHAIN_NAMES_MAP = {
@@ -50,10 +51,10 @@ export const HIGH_EXECUTION_FEES_MAP = {
 const constants = {
   [MAINNET]: {
     nativeTokenSymbol: "BNB",
-    wrappedTokenSymbol: "TBNB",
+    wrappedTokenSymbol: "WBNB",
     defaultCollateralSymbol: "BUSD",
     defaultFlagOrdersEnabled: false,
-    positionReaderPropsLength: 8,
+    positionReaderPropsLength: 9,
     v2: false,
     SWAP_ORDER_EXECUTION_GAS_FEE: parseEther("0.0003"),
     INCREASE_ORDER_EXECUTION_GAS_FEE: parseEther("0.0003"),

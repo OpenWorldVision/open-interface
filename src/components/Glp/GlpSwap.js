@@ -822,11 +822,11 @@ export default function GlpSwap(props) {
                           value={`${formatAmount(feeGlpTrackerApr, 2, 2, false)}%`}
                           showDollar={false}
                         />
-                        <StatsTooltipRow
+                        {/* <StatsTooltipRow
                           label={t`Escrowed OPEN APR`}
                           value={`${formatAmount(stakedGlpTrackerApr, 2, 2, false)}%`}
                           showDollar={false}
-                        />
+                        /> */}
                       </>
                     );
                   }}

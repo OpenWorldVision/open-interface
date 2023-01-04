@@ -1,33 +1,21 @@
 import { t, Trans } from "@lingui/macro";
 import Modal from "components/Modal/Modal";
-import { ethers } from "ethers";
+import { BigNumber, ethers } from "ethers";
 import { callContract } from "lib/contracts";
-import { formatAmount, formatAmountFree, parseValue } from "lib/numbers";
-import React, { useState } from "react";
+import { bigNumberify, formatAmount, formatAmountFree, parseValue } from "lib/numbers";
+import React, { useCallback, useMemo, useState } from "react";
 import useOpenStakingInfo from "domain/hooks/useOpenStakingInfo";
 import OpenStaking from "abis/OpenStaking.json";
 import { getContract } from "config/contracts";
 
 function UnstakeModal(props) {
-  const { isVisible, setIsVisible, chainId, title, value, setValue, library, unstakingTokenSymbol, setPendingTxns } =
-    props;
-  const { totalStaked } = useOpenStakingInfo(chainId);
+  const { isVisible, setIsVisible, chainId, title, library, setPendingTxns } = props;
+  const { totalStaked, unstakingFee, currentOpen } = useOpenStakingInfo(chainId);
 
   const openStakingAddress = getContract(chainId, "OpenStaking");
   const [isUnstaking, setIsUnstaking] = useState(false);
 
-  let amount = parseValue(value, 18);
-
-  const getError = () => {
-    if (!amount) {
-      return t`Enter an amount`;
-    }
-    if (amount.gt(totalStaked)) {
-      return t`Max amount exceeded`;
-    }
-  };
-
-  const onClickPrimary = () => {
+  const handleUnstakeAll = useCallback(() => {
     setIsUnstaking(true);
     const contract = new ethers.Contract(openStakingAddress, OpenStaking.abi, library.getSigner());
     callContract(chainId, contract, "unstake", [], {
@@ -42,63 +30,58 @@ function UnstakeModal(props) {
       .finally(() => {
         setIsUnstaking(false);
       });
-  };
-
-  const isPrimaryEnabled = () => {
-    const error = getError();
-    if (error) {
-      return false;
-    }
-    if (isUnstaking) {
-      return false;
-    }
-    return true;
-  };
+  }, [chainId, library, openStakingAddress, setIsVisible, setPendingTxns]);
 
   const getPrimaryText = () => {
-    const error = getError();
-    if (error) {
-      return error;
-    }
     if (isUnstaking) {
       return t`Unstaking...`;
     }
-    return t`Unstake`;
+    return t`Unstake All`;
   };
+  const totalReceive = useMemo(() => {
+    if (!unstakingFee || !currentOpen) {
+      return bigNumberify("0");
+    }
+
+    return currentOpen.sub(currentOpen.mul(unstakingFee).div(BigNumber.from("10000")));
+  }, [currentOpen, unstakingFee]);
 
   return (
     <div className="StakeModal">
       <Modal isVisible={isVisible} setIsVisible={setIsVisible} label={title}>
         <div className="Exchange-swap-section">
-          <div className="Exchange-swap-section-top">
-            <div className="muted">
-              <div className="Exchange-swap-usd">
-                <Trans>Unstake</Trans>
-              </div>
+          <div className="App-card-row card-row-mt2">
+            <div className="label">
+              <Trans>Unstake</Trans>
             </div>
-            <div
-              className="muted align-right clickable"
-              onClick={() => setValue(formatAmountFree(totalStaked, 18, 18))}
-            >
-              <Trans>Max: {formatAmount(totalStaked, 18, 2, true)}</Trans>
+            <div className="value">
+              {!totalStaked && "..."}
+              {formatAmount(totalStaked, 18, 2, true)} OPEN
             </div>
           </div>
-          <div className="Exchange-swap-section-bottom">
-            <div>
-              <input
-                type="number"
-                placeholder="0.0"
-                className="Exchange-swap-input"
-                value={value}
-                onChange={(e) => setValue(e.target.value)}
-              />
+          <div className="App-card-row card-row-mt2">
+            <div className="label">
+              <Trans>Staking fee</Trans>
             </div>
-            <div className="PositionEditor-token-symbol">{unstakingTokenSymbol}</div>
+            <div className="value">
+              {!unstakingFee && "..."}
+              {unstakingFee && `${formatAmount(unstakingFee, 2, 2, true)} %`}
+            </div>
+          </div>
+          <div className="App-card-divider"></div>
+          <div className="App-card-row card-row-mt2">
+            <div className="label">
+              <Trans>You'll receive </Trans>
+            </div>
+            <div className="value">
+              {!totalReceive && "..."}
+              {totalReceive && `${formatAmount(totalReceive, 18, 2, true)} OPEN`}
+            </div>
           </div>
         </div>
 
         <div className="Exchange-swap-button-container">
-          <button className="App-cta Exchange-swap-button" onClick={onClickPrimary} disabled={!isPrimaryEnabled()}>
+          <button className="App-cta Exchange-swap-button" onClick={handleUnstakeAll}>
             {getPrimaryText()}
           </button>
         </div>

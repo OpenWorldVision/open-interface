@@ -6,7 +6,7 @@ import useSWR from "swr";
 import { PieChart, Pie, Cell, Tooltip } from "recharts";
 import TooltipComponent from "components/Tooltip/Tooltip";
 
-import { ethers } from "ethers";
+import { BigNumber, ethers } from "ethers";
 
 import {
   USD_DECIMALS,
@@ -18,8 +18,17 @@ import {
   importImage,
   arrayURLFetcher,
 } from "lib/legacy";
-import { useTotalGmxInLiquidity, useGmxPrice, useTotalGmxStaked, useTotalGmxSupply } from "domain/legacy";
+import {
+  useTotalGmxInLiquidity,
+  useGmxPrice,
+  useTotalGmxStaked,
+  useTotalGmxSupply,
+  useTotalOpenInLiquidity,
+  useTotalOpenSupply,
+  useTotalOpenBurned,
+} from "domain/legacy";
 import useFeesSummary from "domain/useFeesSummary";
+import useOpenStakingInfo from "domain/hooks/useOpenStakingInfo";
 
 import { getContract } from "config/contracts";
 
@@ -53,6 +62,7 @@ import { bigNumberify, expandDecimals, formatAmount, formatKeyAmount, numberWith
 import { useChainId } from "lib/chains";
 import { formatDate } from "lib/dates";
 import { hexToRgba } from "hex-and-rgba/esm";
+import { useOpenPrice } from "domain/hooks/useOpenPrice";
 const ACTIVE_CHAIN_IDS = [ARBITRUM, AVALANCHE];
 
 const { AddressZero } = ethers.constants;
@@ -136,6 +146,7 @@ export default function DashboardV2() {
   const totalVolume = useTotalVolume();
 
   const chainName = getChainName(chainId);
+  // const { totalStaked } = useOpenStakingInfo(chainId);
 
   const { data: positionStats } = useSWR(
     ACTIVE_CHAIN_IDS.map((chainId) => getServerUrl(chainId, "/position_stats")),
@@ -151,7 +162,7 @@ export default function DashboardV2() {
     }
   );
 
-  let { total: totalGmxSupply } = useTotalGmxSupply();
+  let { total: totalOpenSupply } = useTotalOpenSupply();
 
   const currentVolumeInfo = getVolumeInfo(hourlyVolumes);
 
@@ -258,24 +269,19 @@ export default function DashboardV2() {
       { total: 0 }
     );
 
-  const { gmxPrice, gmxPriceFromArbitrum, gmxPriceFromAvalanche } = useGmxPrice(
-    chainId,
-    { arbitrum: chainId === ARBITRUM ? library : undefined },
-    active
-  );
-
-  let { total: totalGmxInLiquidity } = useTotalGmxInLiquidity(chainId, active);
-
-  let { avax: avaxStakedGmx, arbitrum: arbitrumStakedGmx, total: totalStakedGmx } = useTotalGmxStaked();
-
+  const { openPriceFromBsc } = useOpenPrice(chainId, undefined, active);
+  let { total: totalOpenInLiquidity } = useTotalOpenInLiquidity(chainId, active);
+  let { avax: avaxStakedGmx, arbitrum: arbitrumStakedGmx, total } = useTotalGmxStaked();
+  const totalStakedGmx = BigNumber.from("0");
+  const { total: totalOpenBurned } = useTotalOpenBurned();
   let gmxMarketCap;
-  if (gmxPrice && totalGmxSupply) {
-    gmxMarketCap = gmxPrice.mul(totalGmxSupply).div(expandDecimals(1, GMX_DECIMALS));
+  if (openPriceFromBsc && totalOpenSupply) {
+    gmxMarketCap = openPriceFromBsc.mul(totalOpenSupply).div(expandDecimals(1, GMX_DECIMALS));
   }
 
   let stakedGmxSupplyUsd;
-  if (gmxPrice && totalStakedGmx) {
-    stakedGmxSupplyUsd = totalStakedGmx.mul(gmxPrice).div(expandDecimals(1, GMX_DECIMALS));
+  if (openPriceFromBsc && totalStakedGmx) {
+    stakedGmxSupplyUsd = totalStakedGmx.mul(openPriceFromBsc).div(expandDecimals(1, GMX_DECIMALS));
   }
 
   let aum;
@@ -296,8 +302,8 @@ export default function DashboardV2() {
   }
 
   let tvl;
-  if (glpMarketCap && gmxPrice && totalStakedGmx) {
-    tvl = glpMarketCap.add(gmxPrice.mul(totalStakedGmx).div(expandDecimals(1, GMX_DECIMALS)));
+  if (glpMarketCap && openPriceFromBsc && totalStakedGmx) {
+    tvl = glpMarketCap.add(openPriceFromBsc.mul(totalStakedGmx).div(expandDecimals(1, GMX_DECIMALS)));
   }
 
   const ethFloorPriceFund = expandDecimals(350 + 148 + 384, 18);
@@ -404,14 +410,18 @@ export default function DashboardV2() {
 
   let stakedPercent = 0;
 
-  if (totalGmxSupply && !totalGmxSupply.isZero() && !totalStakedGmx.isZero()) {
-    stakedPercent = totalStakedGmx.mul(100).div(totalGmxSupply).toNumber();
+  if (totalOpenSupply && !totalOpenSupply.isZero() && !totalStakedGmx.isZero()) {
+    stakedPercent = totalStakedGmx.mul(100).div(totalOpenSupply).toNumber();
   }
 
   let liquidityPercent = 0;
 
-  if (totalGmxSupply && !totalGmxSupply.isZero() && totalGmxInLiquidity) {
-    liquidityPercent = totalGmxInLiquidity.mul(100).div(totalGmxSupply).toNumber();
+  if (totalOpenSupply && !totalOpenSupply.isZero() && totalOpenInLiquidity) {
+    liquidityPercent = totalOpenInLiquidity.mul(100).div(totalOpenSupply).toNumber();
+  }
+  let burnedPercent;
+  if (totalOpenBurned) {
+    burnedPercent = totalOpenBurned.mul(100).div(totalOpenSupply).toNumber();
   }
 
   let notStakedPercent = 100 - stakedPercent - liquidityPercent;
@@ -432,9 +442,14 @@ export default function DashboardV2() {
       value: notStakedPercent,
       color: "#5c0af5",
     },
+    {
+      name: `burned`,
+      value: burnedPercent,
+      color: "#5b5b5b",
+    },
   ];
 
-  const totalStatsStartDate = t`09 Dec 2022`;
+  const totalStatsStartDate = t`05 Jan 2022`;
 
   let stableGlp = 0;
   let totalGlp = 0;
@@ -650,13 +665,13 @@ export default function DashboardV2() {
                 ) : null}
               </div>
             </div>
-            <div className="App-card">
+            {/* <div className="App-card">
               <div className="App-card-title">
                 <Trans>Total Stats</Trans>
               </div>
               <div className="App-card-divider"></div>
               <div className="App-card-content">
-                {/* <div className="App-card-row">
+                <div className="App-card-row">
                   <div className="label">
                     <Trans>Total Fees</Trans>
                   </div>
@@ -690,7 +705,7 @@ export default function DashboardV2() {
                       )}
                     />
                   </div>
-                </div> */}
+                </div>
                 <div className="App-card-row">
                   <div className="label">
                     <Trans>Floor Price Fund</Trans>
@@ -698,7 +713,7 @@ export default function DashboardV2() {
                   <div>${formatAmount(totalFloorPriceFundUsd, 30, 0, true)}</div>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
           <div className="Tab-title-section">
             <div className="Page-title">
@@ -734,17 +749,17 @@ export default function DashboardV2() {
                         <Trans>Price</Trans>
                       </div>
                       <div>
-                        {!gmxPrice && "..."}
-                        {gmxPrice && (
+                        {!openPriceFromBsc && "..."}
+                        {openPriceFromBsc && (
                           <TooltipComponent
                             position="right-bottom"
                             className="nowrap"
-                            handle={"$" + formatAmount(gmxPrice, USD_DECIMALS, 2, true)}
+                            handle={"$" + formatAmount(openPriceFromBsc, 18, 4, true)}
                             renderContent={() => (
                               <>
                                 <StatsTooltipRow
                                   label={t`Price on BSC`}
-                                  value={formatAmount(gmxPriceFromArbitrum, USD_DECIMALS, 2, true)}
+                                  value={formatAmount(openPriceFromBsc, 18, 4, true)}
                                   showDollar={true}
                                 />
                               </>
@@ -763,7 +778,8 @@ export default function DashboardV2() {
                       <div className="label">
                         <Trans>Total Staked</Trans>
                       </div>
-                      <div>
+                      <div>{`$${formatAmount(stakedGmxSupplyUsd, USD_DECIMALS, 0, true)}`}</div>
+                      {/* <div>
                         <TooltipComponent
                           position="right-bottom"
                           className="nowrap"
@@ -779,14 +795,14 @@ export default function DashboardV2() {
                             />
                           )}
                         />
-                      </div>
+                      </div> */}
                     </div>
-                    {/* <div className="App-card-row">
+                    <div className="App-card-row">
                       <div className="label">
                         <Trans>Market Cap</Trans>
                       </div>
                       <div>${formatAmount(gmxMarketCap, USD_DECIMALS, 0, true)}</div>
-                    </div> */}
+                    </div>
                   </div>
                 </div>
                 <div className="stats-piechart" onMouseLeave={onGMXDistributionChartLeave}>
@@ -808,7 +824,6 @@ export default function DashboardV2() {
                         onMouseLeave={onGMXDistributionChartLeave}
                       >
                         {gmxDistributionData.map((entry, index) => {
-                          console.log("\u001B[36m -> file: DashboardV2.js:822 -> entry", entry);
                           return (
                             <Cell
                               key={`cell-${index}`}

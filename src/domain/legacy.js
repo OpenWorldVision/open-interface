@@ -1,4 +1,4 @@
-import { ethers } from "ethers";
+import { BigNumber, ethers } from "ethers";
 import { gql } from "@apollo/client";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { Token as UniToken } from "@uniswap/sdk-core";
@@ -502,6 +502,12 @@ export function useTotalGmxSupply() {
   };
 }
 
+export function useTotalOpenSupply() {
+  return {
+    total: bigNumberify(expandDecimals("100000000", 18)),
+  };
+}
+
 export function useTotalGmxStaked() {
   const stakedGmxTrackerAddressArbitrum = getContract(ARBITRUM, "StakedGmxTracker");
   const stakedGmxTrackerAddressAvax = getContract(AVALANCHE, "StakedGmxTracker");
@@ -545,6 +551,72 @@ export function useTotalGmxStaked() {
     avax: stakedGmxSupplyAvax,
     arbitrum: stakedGmxSupplyArbitrum,
     total: totalStakedGmx.current,
+    mutate,
+  };
+}
+
+export function useTotalOpenBurned() {
+  const burnAddress1 = "0x6666666666666666666666666666666666666666";
+  const burnAddress2 = "0x8888888888888888888888888888888888888888";
+
+  const { data: burnedAmount1 } = useSWR(
+    [`StakeV2:burnedAmount:${MAINNET}`, MAINNET, getContract(MAINNET, "OPEN"), "balanceOf", burnAddress1],
+    {
+      fetcher: contractFetcher(undefined, Token),
+    }
+  );
+
+  const { data: burnedAmount2 } = useSWR(
+    [`StakeV2:burnedAmount:${MAINNET}`, MAINNET, getContract(MAINNET, "OPEN"), "balanceOf", burnAddress2],
+    {
+      fetcher: contractFetcher(undefined, Token),
+    }
+  );
+
+  const total = useMemo(() => {
+    if (!burnedAmount1 || !burnedAmount2) {
+      return BigNumber.from("0");
+    }
+    return bigNumberify(burnedAmount1).add(burnedAmount2);
+  }, [burnedAmount1, burnedAmount2]);
+
+  return { total };
+}
+
+export function useTotalOpenInLiquidity() {
+  let busdPoolAddressInBSC = getContract(MAINNET, "PancakePair");
+
+  let wbnbPoolAddressInBSC = getContract(MAINNET, "PancakePair2");
+  // let poolAddressAvax = getContract(AVALANCHE, "TraderJoeGmxAvaxPool");
+  let totalOPEN = useRef(bigNumberify(0));
+
+  const { data: openInLiquidityOnBscBUSD, mutate: mutateOpenInLiquidityOnBsc } = useSWR(
+    [`StakeV2:openInLiquidity:${MAINNET}`, MAINNET, getContract(MAINNET, "OPEN"), "balanceOf", busdPoolAddressInBSC],
+    {
+      fetcher: contractFetcher(undefined, Token),
+    }
+  );
+
+  const { data: openInLiquidityOnBscWBNB, mutate: mutateOpenInLiquidityOnBscWBNB } = useSWR(
+    [`StakeV2:openInLiquidity:${MAINNET}`, MAINNET, getContract(MAINNET, "OPEN"), "balanceOf", wbnbPoolAddressInBSC],
+    {
+      fetcher: contractFetcher(undefined, Token),
+    }
+  );
+
+  const mutate = useCallback(() => {
+    mutateOpenInLiquidityOnBsc();
+    mutateOpenInLiquidityOnBscWBNB();
+  }, [mutateOpenInLiquidityOnBsc, mutateOpenInLiquidityOnBscWBNB]);
+
+  if (openInLiquidityOnBscBUSD && openInLiquidityOnBscWBNB) {
+    let total = bigNumberify(openInLiquidityOnBscBUSD).add(openInLiquidityOnBscWBNB);
+    totalOPEN.current = total;
+  }
+  return {
+    // avax: gmxInLiquidityOnAvax,
+    // arbitrum: gmxInLiquidityOnArbitrum,
+    total: totalOPEN.current,
     mutate,
   };
 }
@@ -613,8 +685,6 @@ function useGmxPriceFromAvalanche() {
 
   return { data: gmxPrice, mutate };
 }
-
-
 
 function useGmxPriceFromArbitrum(library, active) {
   const poolAddress = getContract(ARBITRUM, "UniswapGmxEthPool");

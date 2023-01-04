@@ -591,6 +591,10 @@ button.App-connect-wallet:hover {
   text-align: right;
 }
 
+.card-row-mt2 {
+  margin: 10px 0;
+}
+
 .App-card-options {
   padding: unset;
   margin: -0.62rem;
@@ -1036,10 +1040,14 @@ button.App-button {
 }
 
 .Toastify__toast--success {
-  background: transparent linear-gradient(90deg, #19836c 0%, #177c66 100%) 0% 0% no-repeat padding-box;
+  background: transparent linear-gradient(90deg, #375BD2 0%, #375BD2 100%) 0% 0% no-repeat padding-box;
   color: white;
   box-shadow: 0px 0.3rem 0.6rem #0000005c;
   border-radius: 0.4rem;
+
+  a {
+    color: white;
+  }
 }
 
 .Toastify__close-button {
