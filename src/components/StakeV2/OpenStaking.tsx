@@ -1,6 +1,7 @@
 import { t, Trans } from "@lingui/macro";
 import StatsTooltipRow from "components/StatsTooltip/StatsTooltipRow";
 import Tooltip from "components/Tooltip/Tooltip";
+import { MAINNET } from "config/chains";
 import { useOpenPrice } from "domain/hooks/useOpenPrice";
 import useOpenStakingInfo from "domain/hooks/useOpenStakingInfo";
 import { BigNumber } from "ethers";
@@ -70,6 +71,11 @@ function OpenStaking(props: Props) {
   }, [myShares, totalShares]);
 
   const unstakeCountdown = Date.now() + timeleftToUnstake * 1000;
+
+  // Release in mainnet soon
+  if (chainId === MAINNET) {
+    return null;
+  }
   return (
     <div className="App-card StakeV2-gmx-card">
       <div className="App-card-title">OPEN</div>

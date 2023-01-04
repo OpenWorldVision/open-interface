@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from "react";
+import { useState, useCallback } from "react";
 import { Link } from "react-router-dom";
 import { Trans, t } from "@lingui/macro";
 import { useWeb3React } from "@web3-react/core";
@@ -13,14 +13,12 @@ import ReaderV2 from "abis/ReaderV2.json";
 import Vester from "abis/Vester.json";
 import RewardRouter from "abis/RewardRouter.json";
 import RewardReader from "abis/RewardReader.json";
-import Token from "abis/Token.json";
 import GlpManager from "abis/GlpManager.json";
 
 import { ethers } from "ethers";
 import {
   GLP_DECIMALS,
   USD_DECIMALS,
-  BASIS_POINTS_DIVISOR,
   PLACEHOLDER_ACCOUNT,
   getBalanceAndSupplyData,
   getDepositBalanceData,
@@ -30,7 +28,7 @@ import {
   getPageTitle,
 } from "lib/legacy";
 import { useGmxPrice, useTotalGmxStaked, useTotalGmxSupply } from "domain/legacy";
-import { ARBITRUM, getChainName, getConstant } from "config/chains";
+import { ARBITRUM, getChainName, getConstant, MAINNET } from "config/chains";
 
 import useSWR from "swr";
 
@@ -38,13 +36,11 @@ import { getContract } from "config/contracts";
 
 import "./StakeV2.css";
 import SEO from "components/Common/SEO";
-import StatsTooltip from "components/StatsTooltip/StatsTooltip";
 import StatsTooltipRow from "components/StatsTooltip/StatsTooltipRow";
 import { getServerUrl } from "config/backend";
 import { callContract, contractFetcher } from "lib/contracts";
 import { useLocalStorageSerializeKey } from "lib/localStorage";
 import { helperToast } from "lib/helperToast";
-import { approveTokens } from "domain/tokens";
 import { bigNumberify, expandDecimals, formatAmount, formatAmountFree, formatKeyAmount, parseValue } from "lib/numbers";
 import { useChainId } from "lib/chains";
 import UnstakeModal from "components/StakeV2/UnstakeModal";
@@ -314,198 +310,6 @@ function VesterWithdrawModal(props) {
           <button className="App-cta Exchange-swap-button" onClick={onClickPrimary} disabled={isWithdrawing}>
             {!isWithdrawing && "Confirm Withdraw"}
             {isWithdrawing && "Confirming..."}
-          </button>
-        </div>
-      </Modal>
-    </div>
-  );
-}
-
-function CompoundModal(props) {
-  const {
-    isVisible,
-    setIsVisible,
-    rewardRouterAddress,
-    active,
-    account,
-    library,
-    chainId,
-    setPendingTxns,
-    totalVesterRewards,
-    nativeTokenSymbol,
-    wrappedTokenSymbol,
-  } = props;
-  const [isCompounding, setIsCompounding] = useState(false);
-  const [shouldClaimGmx, setShouldClaimGmx] = useLocalStorageSerializeKey(
-    [chainId, "StakeV2-compound-should-claim-gmx"],
-    true
-  );
-  const [shouldStakeGmx, setShouldStakeGmx] = useLocalStorageSerializeKey(
-    [chainId, "StakeV2-compound-should-stake-gmx"],
-    true
-  );
-  const [shouldClaimEsGmx, setShouldClaimEsGmx] = useLocalStorageSerializeKey(
-    [chainId, "StakeV2-compound-should-claim-es-gmx"],
-    true
-  );
-  const [shouldStakeEsGmx, setShouldStakeEsGmx] = useLocalStorageSerializeKey(
-    [chainId, "StakeV2-compound-should-stake-es-gmx"],
-    true
-  );
-  const [shouldStakeMultiplierPoints, setShouldStakeMultiplierPoints] = useState(true);
-  const [shouldClaimWeth, setShouldClaimWeth] = useLocalStorageSerializeKey(
-    [chainId, "StakeV2-compound-should-claim-weth"],
-    true
-  );
-  const [shouldConvertWeth, setShouldConvertWeth] = useLocalStorageSerializeKey(
-    [chainId, "StakeV2-compound-should-convert-weth"],
-    true
-  );
-
-  const gmxAddress = getContract(chainId, "OPEN");
-  const stakedGmxTrackerAddress = getContract(chainId, "StakedGmxTracker");
-
-  const [isApproving, setIsApproving] = useState(false);
-
-  const { data: tokenAllowance } = useSWR(
-    active && [active, chainId, gmxAddress, "allowance", account, stakedGmxTrackerAddress],
-    {
-      fetcher: contractFetcher(library, Token),
-    }
-  );
-
-  const needApproval = shouldStakeGmx && tokenAllowance && totalVesterRewards && totalVesterRewards.gt(tokenAllowance);
-
-  const isPrimaryEnabled = () => {
-    return !isCompounding && !isApproving && !isCompounding;
-  };
-
-  const getPrimaryText = () => {
-    if (isApproving) {
-      return t`Approving OPEN...`;
-    }
-    if (needApproval) {
-      return t`Approve OPEN`;
-    }
-    if (isCompounding) {
-      return t`Compounding...`;
-    }
-    return t`Compound`;
-  };
-
-  const onClickPrimary = () => {
-    if (needApproval) {
-      approveTokens({
-        setIsApproving,
-        library,
-        tokenAddress: gmxAddress,
-        spender: stakedGmxTrackerAddress,
-        chainId,
-      });
-      return;
-    }
-
-    setIsCompounding(true);
-
-    const contract = new ethers.Contract(rewardRouterAddress, RewardRouter.abi, library.getSigner());
-    callContract(
-      chainId,
-      contract,
-      "handleRewards",
-      [
-        shouldClaimGmx || shouldStakeGmx,
-        shouldStakeGmx,
-        shouldClaimEsGmx || shouldStakeEsGmx,
-        shouldStakeEsGmx,
-        shouldStakeMultiplierPoints,
-        shouldClaimWeth || shouldConvertWeth,
-        shouldConvertWeth,
-      ],
-      {
-        sentMsg: t`Compound submitted!`,
-        failMsg: t`Compound failed.`,
-        successMsg: t`Compound completed!`,
-        setPendingTxns,
-      }
-    )
-      .then(async (res) => {
-        setIsVisible(false);
-      })
-      .finally(() => {
-        setIsCompounding(false);
-      });
-  };
-
-  const toggleShouldStakeGmx = (value) => {
-    if (value) {
-      setShouldClaimGmx(true);
-    }
-    setShouldStakeGmx(value);
-  };
-
-  const toggleShouldStakeEsGmx = (value) => {
-    if (value) {
-      setShouldClaimEsGmx(true);
-    }
-    setShouldStakeEsGmx(value);
-  };
-
-  const toggleConvertWeth = (value) => {
-    if (value) {
-      setShouldClaimWeth(true);
-    }
-    setShouldConvertWeth(value);
-  };
-
-  return (
-    <div className="StakeModal">
-      <Modal isVisible={isVisible} setIsVisible={setIsVisible} label={t`Compound Rewards`}>
-        <div className="CompoundModal-menu">
-          <div>
-            <Checkbox
-              isChecked={shouldStakeMultiplierPoints}
-              setIsChecked={setShouldStakeMultiplierPoints}
-              disabled={true}
-            >
-              <Trans>Stake Multiplier Points</Trans>
-            </Checkbox>
-          </div>
-          <div>
-            <Checkbox isChecked={shouldClaimGmx} setIsChecked={setShouldClaimGmx} disabled={shouldStakeGmx}>
-              <Trans>Claim OPEN Rewards</Trans>
-            </Checkbox>
-          </div>
-          <div>
-            <Checkbox isChecked={shouldStakeGmx} setIsChecked={toggleShouldStakeGmx}>
-              <Trans>Stake OPEN Rewards</Trans>
-            </Checkbox>
-          </div>
-          <div>
-            <Checkbox isChecked={shouldClaimEsGmx} setIsChecked={setShouldClaimEsGmx} disabled={shouldStakeEsGmx}>
-              <Trans>Claim esOPEN Rewards</Trans>
-            </Checkbox>
-          </div>
-          <div>
-            <Checkbox isChecked={shouldStakeEsGmx} setIsChecked={toggleShouldStakeEsGmx}>
-              <Trans>Stake esOPEN Rewards</Trans>
-            </Checkbox>
-          </div>
-          <div>
-            <Checkbox isChecked={shouldClaimWeth} setIsChecked={setShouldClaimWeth} disabled={shouldConvertWeth}>
-              <Trans>Claim {wrappedTokenSymbol} Rewards</Trans>
-            </Checkbox>
-          </div>
-          <div>
-            <Checkbox isChecked={shouldConvertWeth} setIsChecked={toggleConvertWeth}>
-              <Trans>
-                Convert {wrappedTokenSymbol} to {nativeTokenSymbol}
-              </Trans>
-            </Checkbox>
-          </div>
-        </div>
-        <div className="Exchange-swap-button-container">
-          <button className="App-cta Exchange-swap-button" onClick={onClickPrimary} disabled={!isPrimaryEnabled()}>
-            {getPrimaryText()}
           </button>
         </div>
       </Modal>
@@ -798,12 +602,12 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
     }
   );
 
-  const { data: vestingInfo } = useSWR(
-    [`StakeV2:vestingInfo:${active}`, chainId, readerAddress, "getVestingInfo", account || PLACEHOLDER_ACCOUNT],
-    {
-      fetcher: contractFetcher(library, ReaderV2, [vesterAddresses]),
-    }
-  );
+  // const { data: vestingInfo } = useSWR(
+  //   [`StakeV2:vestingInfo:${active}`, chainId, readerAddress, "getVestingInfo", account || PLACEHOLDER_ACCOUNT],
+  //   {
+  //     fetcher: contractFetcher(library, ReaderV2, [vesterAddresses]),
+  //   }
+  // );
 
   const { gmxPrice } = useGmxPrice(chainId, { arbitrum: chainId === ARBITRUM ? library : undefined }, active);
 
@@ -811,9 +615,9 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
 
   let { avax: avaxGmxStaked, arbitrum: arbitrumGmxStaked, total: totalGmxStaked } = useTotalGmxStaked();
 
-  const gmxSupplyUrl = getServerUrl(chainId, "/gmx_supply");
-  const { data: gmxSupply } = useSWR([gmxSupplyUrl], {
-    fetcher: (...args) => fetch(...args).then((res) => res.text()),
+  const gmxSupplyUrl = getServerUrl(chainId, "/open_supply");
+  const { data: openSupply } = useSWR([gmxSupplyUrl], {
+    fetcher: (...args) => fetch(...args).then((res) => res.json()),
   });
 
   const isGmxTransferEnabled = true;
@@ -831,19 +635,19 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
   const { balanceData, supplyData } = getBalanceAndSupplyData(walletBalances);
   const depositBalanceData = getDepositBalanceData(depositBalances);
   const stakingData = getStakingData(stakingInfo);
-  const vestingData = getVestingData(vestingInfo);
+  // const vestingData = getVestingData(vestingInfo);
 
   const processedData = getProcessedData(
     balanceData,
     supplyData,
     depositBalanceData,
     stakingData,
-    vestingData,
+    {},
     aum,
     nativeTokenPrice,
     stakedGmxSupply,
     gmxPrice,
-    gmxSupply
+    openSupply?.supply
   );
 
   let hasMultiplierPoints = false;
@@ -877,20 +681,20 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
   }
 
   let maxUnstakeableGmx = bigNumberify(0);
-  if (
-    totalRewardTokens &&
-    vestingData &&
-    vestingData.gmxVesterPairAmount &&
-    multiplierPointsAmount &&
-    processedData.bonusGmxInFeeGmx
-  ) {
-    const availableTokens = totalRewardTokens.sub(vestingData.gmxVesterPairAmount);
-    const stakedTokens = processedData.bonusGmxInFeeGmx;
-    const divisor = multiplierPointsAmount.add(stakedTokens);
-    if (divisor.gt(0)) {
-      maxUnstakeableGmx = availableTokens.mul(stakedTokens).div(divisor);
-    }
-  }
+  // if (
+  //   totalRewardTokens &&
+  //   vestingData &&
+  //   vestingData.gmxVesterPairAmount &&
+  //   multiplierPointsAmount &&
+  //   processedData.bonusGmxInFeeGmx
+  // ) {
+  //   const availableTokens = totalRewardTokens.sub(vestingData.gmxVesterPairAmount);
+  //   const stakedTokens = processedData.bonusGmxInFeeGmx;
+  //   const divisor = multiplierPointsAmount.add(stakedTokens);
+  //   if (divisor.gt(0)) {
+  //     maxUnstakeableGmx = availableTokens.mul(stakedTokens).div(divisor);
+  //   }
+  // }
 
   const showStakeOpenModal = () => {
     if (!isGmxTransferEnabled) {
@@ -919,69 +723,69 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
     setStakeMethodName("stakeEsGmx");
   };
 
-  const showGmxVesterDepositModal = () => {
-    let remainingVestableAmount = vestingData.gmxVester.maxVestableAmount.sub(vestingData.gmxVester.vestedAmount);
-    if (processedData.esGmxBalance.lt(remainingVestableAmount)) {
-      remainingVestableAmount = processedData.esGmxBalance;
-    }
+  // const showGmxVesterDepositModal = () => {
+  //   let remainingVestableAmount = vestingData.gmxVester.maxVestableAmount.sub(vestingData.gmxVester.vestedAmount);
+  //   if (processedData.esGmxBalance.lt(remainingVestableAmount)) {
+  //     remainingVestableAmount = processedData.esGmxBalance;
+  //   }
 
-    setIsVesterDepositModalVisible(true);
-    setVesterDepositTitle(t`OPEN Vault`);
-    setVesterDepositStakeTokenLabel("staked OPEN + esOPEN + Multiplier Points");
-    setVesterDepositMaxAmount(remainingVestableAmount);
-    setVesterDepositBalance(processedData.esGmxBalance);
-    setVesterDepositEscrowedBalance(vestingData.gmxVester.escrowedBalance);
-    setVesterDepositVestedAmount(vestingData.gmxVester.vestedAmount);
-    setVesterDepositMaxVestableAmount(vestingData.gmxVester.maxVestableAmount);
-    setVesterDepositAverageStakedAmount(vestingData.gmxVester.averageStakedAmount);
-    setVesterDepositReserveAmount(vestingData.gmxVester.pairAmount);
-    setVesterDepositMaxReserveAmount(totalRewardTokens);
-    setVesterDepositValue("");
-    // setVesterDepositAddress(gmxVesterAddress);
-  };
+  //   setIsVesterDepositModalVisible(true);
+  //   setVesterDepositTitle(t`OPEN Vault`);
+  //   setVesterDepositStakeTokenLabel("staked OPEN + esOPEN + Multiplier Points");
+  //   setVesterDepositMaxAmount(remainingVestableAmount);
+  //   setVesterDepositBalance(processedData.esGmxBalance);
+  //   setVesterDepositEscrowedBalance(vestingData.gmxVester.escrowedBalance);
+  //   setVesterDepositVestedAmount(vestingData.gmxVester.vestedAmount);
+  //   setVesterDepositMaxVestableAmount(vestingData.gmxVester.maxVestableAmount);
+  //   setVesterDepositAverageStakedAmount(vestingData.gmxVester.averageStakedAmount);
+  //   setVesterDepositReserveAmount(vestingData.gmxVester.pairAmount);
+  //   setVesterDepositMaxReserveAmount(totalRewardTokens);
+  //   setVesterDepositValue("");
+  //   // setVesterDepositAddress(gmxVesterAddress);
+  // };
 
-  const showGlpVesterDepositModal = () => {
-    let remainingVestableAmount = vestingData.glpVester.maxVestableAmount.sub(vestingData.glpVester.vestedAmount);
-    if (processedData.esGmxBalance.lt(remainingVestableAmount)) {
-      remainingVestableAmount = processedData.esGmxBalance;
-    }
+  // const showGlpVesterDepositModal = () => {
+  //   let remainingVestableAmount = vestingData.glpVester.maxVestableAmount.sub(vestingData.glpVester.vestedAmount);
+  //   if (processedData.esGmxBalance.lt(remainingVestableAmount)) {
+  //     remainingVestableAmount = processedData.esGmxBalance;
+  //   }
 
-    setIsVesterDepositModalVisible(true);
-    setVesterDepositTitle(t`OAP Vault`);
-    setVesterDepositStakeTokenLabel("staked OAP");
-    setVesterDepositMaxAmount(remainingVestableAmount);
-    setVesterDepositBalance(processedData.esGmxBalance);
-    setVesterDepositEscrowedBalance(vestingData.glpVester.escrowedBalance);
-    setVesterDepositVestedAmount(vestingData.glpVester.vestedAmount);
-    setVesterDepositMaxVestableAmount(vestingData.glpVester.maxVestableAmount);
-    setVesterDepositAverageStakedAmount(vestingData.glpVester.averageStakedAmount);
-    setVesterDepositReserveAmount(vestingData.glpVester.pairAmount);
-    setVesterDepositMaxReserveAmount(processedData.glpBalance);
-    setVesterDepositValue("");
-    setVesterDepositAddress(glpVesterAddress);
-  };
+  //   setIsVesterDepositModalVisible(true);
+  //   setVesterDepositTitle(t`OAP Vault`);
+  //   setVesterDepositStakeTokenLabel("staked OAP");
+  //   setVesterDepositMaxAmount(remainingVestableAmount);
+  //   setVesterDepositBalance(processedData.esGmxBalance);
+  //   setVesterDepositEscrowedBalance(vestingData.glpVester.escrowedBalance);
+  //   setVesterDepositVestedAmount(vestingData.glpVester.vestedAmount);
+  //   setVesterDepositMaxVestableAmount(vestingData.glpVester.maxVestableAmount);
+  //   setVesterDepositAverageStakedAmount(vestingData.glpVester.averageStakedAmount);
+  //   setVesterDepositReserveAmount(vestingData.glpVester.pairAmount);
+  //   setVesterDepositMaxReserveAmount(processedData.glpBalance);
+  //   setVesterDepositValue("");
+  //   setVesterDepositAddress(glpVesterAddress);
+  // };
 
-  const showGmxVesterWithdrawModal = () => {
-    if (!vestingData || !vestingData.gmxVesterVestedAmount || vestingData.gmxVesterVestedAmount.eq(0)) {
-      helperToast.error(t`You have not deposited any tokens for vesting.`);
-      return;
-    }
+  // const showGmxVesterWithdrawModal = () => {
+  //   if (!vestingData || !vestingData.gmxVesterVestedAmount || vestingData.gmxVesterVestedAmount.eq(0)) {
+  //     helperToast.error(t`You have not deposited any tokens for vesting.`);
+  //     return;
+  //   }
 
-    setIsVesterWithdrawModalVisible(true);
-    setVesterWithdrawTitle(t`Withdraw from OPEN Vault`);
-    // setVesterWithdrawAddress(gmxVesterAddress);
-  };
+  //   setIsVesterWithdrawModalVisible(true);
+  //   setVesterWithdrawTitle(t`Withdraw from OPEN Vault`);
+  //   // setVesterWithdrawAddress(gmxVesterAddress);
+  // };
 
-  const showGlpVesterWithdrawModal = () => {
-    if (!vestingData || !vestingData.glpVesterVestedAmount || vestingData.glpVesterVestedAmount.eq(0)) {
-      helperToast.error(t`You have not deposited any tokens for vesting.`);
-      return;
-    }
+  // const showGlpVesterWithdrawModal = () => {
+  //   if (!vestingData || !vestingData.glpVesterVestedAmount || vestingData.glpVesterVestedAmount.eq(0)) {
+  //     helperToast.error(t`You have not deposited any tokens for vesting.`);
+  //     return;
+  //   }
 
-    setIsVesterWithdrawModalVisible(true);
-    setVesterWithdrawTitle(t`Withdraw from OAP Vault`);
-    setVesterWithdrawAddress(glpVesterAddress);
-  };
+  //   setIsVesterWithdrawModalVisible(true);
+  //   setVesterWithdrawTitle(t`Withdraw from OAP Vault`);
+  //   setVesterWithdrawAddress(glpVesterAddress);
+  // };
 
   const showUnstakeOpenModal = () => {
     if (!isGmxTransferEnabled) {
@@ -991,41 +795,41 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
     setIsUnstakeModalVisible(true);
     setUnstakeModalTitle(t`Unstake OPEN`);
     let maxAmount = processedData.gmxInStakedGmx;
-    if (
-      processedData.gmxInStakedGmx &&
-      vestingData &&
-      vestingData.gmxVesterPairAmount.gt(0) &&
-      maxUnstakeableGmx &&
-      maxUnstakeableGmx.lt(processedData.gmxInStakedGmx)
-    ) {
-      maxAmount = maxUnstakeableGmx;
-    }
+    // if (
+    //   processedData.gmxInStakedGmx &&
+    //   vestingData &&
+    //   vestingData.gmxVesterPairAmount.gt(0) &&
+    //   maxUnstakeableGmx &&
+    //   maxUnstakeableGmx.lt(processedData.gmxInStakedGmx)
+    // ) {
+    //   maxAmount = maxUnstakeableGmx;
+    // }
     setUnstakeModalMaxAmount(maxAmount);
-    setUnstakeModalReservedAmount(vestingData.gmxVesterPairAmount);
+    // setUnstakeModalReservedAmount(vestingData.gmxVesterPairAmount);
     setUnstakeValue("");
     setUnstakingTokenSymbol("OPEN");
     setUnstakeMethodName("unstakeGmx");
   };
 
-  const showUnstakeEsGmxModal = () => {
-    setIsUnstakeModalVisible(true);
-    setUnstakeModalTitle(t`Unstake esOPEN`);
-    let maxAmount = processedData.esGmxInStakedGmx;
-    if (
-      processedData.esGmxInStakedGmx &&
-      vestingData &&
-      vestingData.gmxVesterPairAmount.gt(0) &&
-      maxUnstakeableGmx &&
-      maxUnstakeableGmx.lt(processedData.esGmxInStakedGmx)
-    ) {
-      maxAmount = maxUnstakeableGmx;
-    }
-    setUnstakeModalMaxAmount(maxAmount);
-    setUnstakeModalReservedAmount(vestingData.gmxVesterPairAmount);
-    setUnstakeValue("");
-    setUnstakingTokenSymbol("esOPEN");
-    setUnstakeMethodName("unstakeEsGmx");
-  };
+  // const showUnstakeEsGmxModal = () => {
+  //   setIsUnstakeModalVisible(true);
+  //   setUnstakeModalTitle(t`Unstake esOPEN`);
+  //   let maxAmount = processedData.esGmxInStakedGmx;
+  //   if (
+  //     processedData.esGmxInStakedGmx &&
+  //     vestingData &&
+  //     vestingData.gmxVesterPairAmount.gt(0) &&
+  //     maxUnstakeableGmx &&
+  //     maxUnstakeableGmx.lt(processedData.esGmxInStakedGmx)
+  //   ) {
+  //     maxAmount = maxUnstakeableGmx;
+  //   }
+  //   setUnstakeModalMaxAmount(maxAmount);
+  //   setUnstakeModalReservedAmount(vestingData.gmxVesterPairAmount);
+  //   setUnstakeValue("");
+  //   setUnstakingTokenSymbol("esOPEN");
+  //   setUnstakeMethodName("unstakeEsGmx");
+  // };
 
   const renderMultiplierPointsLabel = useCallback(() => {
     return t`Multiplier Points APR`;
@@ -1104,23 +908,25 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
         nativeTokenSymbol={nativeTokenSymbol}
         wrappedTokenSymbol={wrappedTokenSymbol}
       />
-      <UnstakeModal
-        setPendingTxns={setPendingTxns}
-        isVisible={isUnstakeModalVisible}
-        setIsVisible={setIsUnstakeModalVisible}
-        chainId={chainId}
-        title={unstakeModalTitle}
-        maxAmount={unstakeModalMaxAmount}
-        reservedAmount={unstakeModalReservedAmount}
-        value={unstakeValue}
-        setValue={setUnstakeValue}
-        library={library}
-        unstakingTokenSymbol={unstakingTokenSymbol}
-        rewardRouterAddress={rewardRouterAddress}
-        unstakeMethodName={unstakeMethodName}
-        multiplierPointsAmount={multiplierPointsAmount}
-        bonusGmxInFeeGmx={bonusGmxInFeeGmx}
-      />
+      {chainId !== MAINNET && (
+        <UnstakeModal
+          setPendingTxns={setPendingTxns}
+          isVisible={isUnstakeModalVisible}
+          setIsVisible={setIsUnstakeModalVisible}
+          chainId={chainId}
+          title={unstakeModalTitle}
+          maxAmount={unstakeModalMaxAmount}
+          reservedAmount={unstakeModalReservedAmount}
+          value={unstakeValue}
+          setValue={setUnstakeValue}
+          library={library}
+          unstakingTokenSymbol={unstakingTokenSymbol}
+          rewardRouterAddress={rewardRouterAddress}
+          unstakeMethodName={unstakeMethodName}
+          multiplierPointsAmount={multiplierPointsAmount}
+          bonusGmxInFeeGmx={bonusGmxInFeeGmx}
+        />
+      )}
       <VesterDepositModal
         isVisible={isVesterDepositModalVisible}
         setIsVisible={setIsVesterDepositModalVisible}
@@ -1150,7 +956,7 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
         library={library}
         setPendingTxns={setPendingTxns}
       />
-      <CompoundModal
+      {/* <CompoundModal
         active={active}
         account={account}
         setPendingTxns={setPendingTxns}
@@ -1162,7 +968,7 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
         nativeTokenSymbol={nativeTokenSymbol}
         library={library}
         chainId={chainId}
-      />
+      /> */}
       <ClaimModal
         active={active}
         account={account}
@@ -1200,12 +1006,14 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
       </div>
       <div className="StakeV2-content">
         <div className="StakeV2-cards">
-          <OpenStaking
-            processedData={processedData}
-            active
-            onStaking={showStakeOpenModal}
-            onUnstaking={showUnstakeOpenModal}
-          />
+          {chainId !== MAINNET && (
+            <OpenStaking
+              processedData={processedData}
+              active
+              onStaking={showStakeOpenModal}
+              onUnstaking={showUnstakeOpenModal}
+            />
+          )}
           {/* <div className="App-card primary StakeV2-gmx-card StakeV2-total-rewards-card">
             <div className="App-card-title">
               <Trans>Total Rewards</Trans>

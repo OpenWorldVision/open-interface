@@ -5,7 +5,7 @@ export const GMX_STATS_API_URL = "http://api.openworld.vision:8080/api/v1/gmx/st
 const BACKEND_URLS = {
   default: "https://gmx-server-mainnet.uw.r.appspot.com",
 
-  [MAINNET]: "https://gambit-server-staging.uc.r.appspot.com",
+  [MAINNET]: "https://api.openworld.vision/api/v1/open",
   [ARBITRUM_TESTNET]: "https://gambit-server-devnet.uc.r.appspot.com",
   [ARBITRUM]: "https://gmx-server-mainnet.uw.r.appspot.com",
   [AVALANCHE]: "https://gmx-avax-server.uc.r.appspot.com",
