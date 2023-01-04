@@ -12,6 +12,7 @@ export const TOKENS: { [chainId: number]: Token[] } = {
       address: "0x7130d2A12B9BCbFAe4f2634d864A1Ee1Ce3Ead9c",
       coingeckoUrl: "https://www.coingecko.com/en/coins/binance-bitcoin",
       imageUrl: "https://assets.coingecko.com/coins/images/14108/small/Binance-bitcoin.png",
+      isShortable: true,
     },
     {
       name: "Ethereum",
@@ -20,6 +21,7 @@ export const TOKENS: { [chainId: number]: Token[] } = {
       address: "0x2170Ed0880ac9A755fd29B2688956BD959F933F8",
       coingeckoUrl: "https://www.coingecko.com/en/coins/ethereum",
       imageUrl: "https://assets.coingecko.com/coins/images/279/small/ethereum.png",
+      isShortable: true,
     },
     {
       name: "Binance Coin",
@@ -29,6 +31,7 @@ export const TOKENS: { [chainId: number]: Token[] } = {
       coingeckoUrl: "https://www.coingecko.com/en/coins/binance-coin",
       imageUrl: "https://assets.coingecko.com/coins/images/825/small/binance-coin-logo.png",
       isNative: true,
+      isShortable: true,
     },
     {
       name: "Wrapped Binance Coin",
@@ -39,6 +42,7 @@ export const TOKENS: { [chainId: number]: Token[] } = {
       coingeckoUrl: "https://www.coingecko.com/en/coins/binance-coin",
       imageUrl: "https://assets.coingecko.com/coins/images/825/small/binance-coin-logo.png",
       baseSymbol: "BNB",
+      isShortable: true,
     },
     // {
     //   name: "USD Gambit",
