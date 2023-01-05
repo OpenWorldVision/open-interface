@@ -40,6 +40,7 @@ import Footer from "components/Footer/Footer";
 import "./DashboardV2.css";
 
 import logoGMX from "img/logo_GMX.svg";
+import logoOAP from "img/logo_oap.svg";
 import bnbIcon from "img/ic_binance_logo.svg";
 import glp40Icon from "img/ic_glp_40.svg";
 import avalanche16Icon from "img/ic_avalanche_16.svg";
@@ -532,7 +533,7 @@ export default function DashboardV2() {
             </div>
             <div className="Page-description">
               <Trans>
-                {chainName} Total Stats start from {totalStatsStartDate}
+                {chainName} Total Stats start from {totalStatsStartDate}.<br /> For detailed stats:
               </Trans>
             </div>
           </div>
@@ -721,7 +722,7 @@ export default function DashboardV2() {
               {chainId === ARBITRUM && <img src={arbitrum24Icon} alt="arbitrum24Icon" />}
             </div>
             <div className="Page-description">
-              <Trans>Platform and OAP index tokens</Trans>
+              <Trans>Platform and OAP index tokens.</Trans>
             </div>
           </div>
           <div className="DashboardV2-token-cards">
@@ -854,7 +855,7 @@ export default function DashboardV2() {
                   <div className="App-card-title">
                     <div className="App-card-title-mark">
                       <div className="App-card-title-mark-icon">
-                        <img src={logoGMX} alt="glp40Icon" />
+                        <img src={logoOAP} alt="oap40Icon" style={{ width: 40, height: 40 }} />
                         <img
                           src={bnbIcon}
                           alt={t`Avalanche Icon`}

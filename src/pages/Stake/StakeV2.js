@@ -991,10 +991,6 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
           <div className="Page-description">
             <Trans>
               Stake{" "}
-              {/* <a href="https://wiki.openworld.vision/tokenomics" target="_blank" rel="noopener noreferrer">
-                OPEN
-              </a>{" "}
-              and{" "} */}
               <a href="https://wiki.openworld.vision/tokenomics" target="_blank" rel="noopener noreferrer">
                 OAP
               </a>{" "}

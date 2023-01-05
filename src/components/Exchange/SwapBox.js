@@ -2049,7 +2049,9 @@ export default function SwapBox(props) {
           <div className="Exchange-leverage-box">
             <div className="Exchange-leverage-slider-settings">
               <Checkbox isChecked={isLeverageSliderEnabled} setIsChecked={setIsLeverageSliderEnabled}>
-                <span>Leverage slider</span>
+                <span>
+                  <Trans>Leverage slider</Trans>
+                </span>
               </Checkbox>
             </div>
             {isLeverageSliderEnabled && (

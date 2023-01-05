@@ -15,6 +15,7 @@ import { ARBITRUM, AVALANCHE, TESTNET } from "config/chains";
 import { switchNetwork } from "lib/wallets";
 import { useChainId } from "lib/chains";
 import ExternalLink from "components/ExternalLink/ExternalLink";
+import logoOAP from "img/logo_oap.svg";
 
 export default function TokenCard({ showRedirectModal, redirectPopupTimestamp }) {
   const isHome = isHomeSite();
@@ -62,7 +63,7 @@ export default function TokenCard({ showRedirectModal, redirectPopupTimestamp })
     <div className="Home-token-card-options">
       <div className="Home-token-card-option">
         <div className="Home-token-card-option-icon">
-          <img src={logoGMX} alt="glpBigIcon" /> OAP
+          <img src={logoOAP} alt="buyOAPIcon" style={{ width: 40, height: 40 }} /> OAP
         </div>
         <div className="Home-token-card-option-info">
           <div className="Home-token-card-option-title">

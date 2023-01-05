@@ -254,7 +254,9 @@ function NetworkModalContent({ networkOptions, onNetworkSelect, selectorLabel, s
         >
           <div className="menu-item-group">
             <img className="network-option-img" src={language24Icon} alt="Select Language" />
-            <span className="network-option-img-label">Language</span>
+            <span className="network-option-img-label">
+              <Trans>Language</Trans>
+            </span>
           </div>
         </div>
         <div
