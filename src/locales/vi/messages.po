@@ -1056,7 +1056,7 @@ msgstr "ETH is needed on Arbitrum to purchase OPEN."
 #: src/components/Header/AppHeaderLinks.tsx
 #: src/pages/Stake/StakeV2.js
 msgid "Earn"
-msgstr "Nhận thêm"
+msgstr "Đặt cọc"
 
 #: src/components/Header/AppHeaderLinks.tsx
 msgid "Ecosystem"
@@ -2836,7 +2836,7 @@ msgstr "Đặt cọc"
 
 #: src/pages/Stake/StakeV2.js
 msgid "Stake <0>OAP</0> to earn rewards."
-msgstr "Đặt cọc <0>OAP</0> để kiếm phần thưởng."
+msgstr "Đặt cọc <0>OAP</0> để nhận phần thưởng."
 
 #: src/pages/Stake/StakeV2.js
 msgid "Stake OPEN"
