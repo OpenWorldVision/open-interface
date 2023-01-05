@@ -40,6 +40,7 @@ import {
   USD_DECIMALS,
   USDG_ADDRESS,
   USDG_DECIMALS,
+  MAX_ALLOWED_LEVERAGE,
 } from "lib/legacy";
 import { ARBITRUM, AVALANCHE, getChainName, getConstant, IS_NETWORK_DISABLED, isSupportedChain } from "config/chains";
 import * as Api from "domain/legacy";
@@ -874,6 +875,7 @@ export default function SwapBox(props) {
     }
 
     const fromTokenInfo = getTokenInfo(infoTokens, fromTokenAddress);
+
     if (
       !savedShouldDisableValidationForTesting &&
       fromTokenInfo &&
@@ -899,8 +901,8 @@ export default function SwapBox(props) {
       return [t`Min leverage: 1.1x`];
     }
 
-    if (leverage && leverage.gt(30.5 * BASIS_POINTS_DIVISOR)) {
-      return [t`Max leverage: 30.5x`];
+    if (leverage && leverage.gt(MAX_ALLOWED_LEVERAGE)) {
+      return [t`Max leverage: ${(MAX_ALLOWED_LEVERAGE / BASIS_POINTS_DIVISOR).toFixed(1)}x`];
     }
 
     if (!isMarketOrder && entryMarkPrice && triggerPriceUsd && !savedShouldDisableValidationForTesting) {
@@ -975,6 +977,7 @@ export default function SwapBox(props) {
     }
 
     if (isShort) {
+      console.log(fromTokenAddress, shortCollateralAddress);
       let stableTokenAmount = bigNumberify(0);
       if (fromTokenAddress !== shortCollateralAddress && fromAmount && fromAmount.gt(0)) {
         const { amount: nextToAmount } = getNextToAmount(
@@ -1045,6 +1048,7 @@ export default function SwapBox(props) {
       }
 
       stableTokenAmount = stableTokenAmount.add(sizeTokens);
+      console.log("stableTokenAmount", stableTokenAmount.toString());
       if (stableTokenAmount.gt(shortCollateralToken.availableAmount)) {
         return [t`Insufficient liquidity, change "Collateral In"`];
       }
@@ -1771,6 +1775,10 @@ export default function SwapBox(props) {
     20: "20x",
     25: "25x",
     30: "30x",
+    35: "35x",
+    40: "40x",
+    45: "45x",
+    50: "50x",
   };
 
   if (!fromToken || !toToken) {
@@ -2053,7 +2061,7 @@ export default function SwapBox(props) {
               >
                 <Slider
                   min={1.1}
-                  max={30.5}
+                  max={MAX_ALLOWED_LEVERAGE / BASIS_POINTS_DIVISOR}
                   step={0.1}
                   marks={leverageMarks}
                   handle={leverageSliderHandle}

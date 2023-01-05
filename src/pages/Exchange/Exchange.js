@@ -218,7 +218,6 @@ export function getPositions(
         const priceDelta = position.averagePrice.gt(position.markPrice)
           ? position.averagePrice.sub(position.markPrice)
           : position.markPrice.sub(position.averagePrice);
-        console.log(position);
         position.pendingDelta = position.size.mul(priceDelta).div(position.averagePrice);
 
         position.delta = position.pendingDelta;

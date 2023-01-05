@@ -76,6 +76,7 @@ export const REFERRAL_CODE_QUERY_PARAM = "ref";
 export const MAX_REFERRAL_CODE_LENGTH = 20;
 
 export const MIN_PROFIT_BIPS = 0;
+export const MAX_ALLOWED_LEVERAGE = 50 * BASIS_POINTS_DIVISOR;
 
 export function deserialize(data) {
   for (const [key, value] of Object.entries(data)) {
