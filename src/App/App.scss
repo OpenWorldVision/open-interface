@@ -535,6 +535,7 @@ button.App-connect-wallet:hover {
 
 .App-card {
   border-radius: 0.8rem;
+  box-sizing: border-box;
 }
 
 .App-card > div:first-child {
@@ -569,11 +570,19 @@ button.App-connect-wallet:hover {
   margin-bottom: 1.5rem;
 }
 
+.App-card-content-container {
+  display: flex;
+  background: var(--cardBackgroundColor);
+  border-bottom-left-radius: 0.8rem;
+  border-bottom-right-radius: 0.8rem;
+}
+
 .App-card-content {
-  display: grid;
-  grid-row-gap: 0.8rem;
+  flex: 1;
   padding: 1.5rem 1.25rem;
   background: var(--cardBackgroundColor);
+  border-bottom-left-radius: 0.8rem;
+  border-bottom-right-radius: 0.8rem;
 }
 
 .App-card-row {
@@ -583,6 +592,10 @@ button.App-connect-wallet:hover {
   padding: unset;
   color: var(--textColor2);
   font-weight: 500;
+  margin-top: 0.8rem;
+}
+.App-card-content > *:first-child {
+  margin-top: 0;
 }
 
 .App-card-row.inner {

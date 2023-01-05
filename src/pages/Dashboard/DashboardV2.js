@@ -729,7 +729,7 @@ export default function DashboardV2() {
           <div className="DashboardV2-token-cards">
             <div className="stats-wrapper stats-wrapper--gmx">
               <div className="App-card">
-                <div className="stats-block">
+                <div className="App-card-header">
                   <div className="App-card-title">
                     <div className="App-card-title-mark">
                       <div className="App-card-title-mark-icon">
@@ -744,6 +744,8 @@ export default function DashboardV2() {
                       </div>
                     </div>
                   </div>
+                </div>
+                <div className="App-card-content-container">
                   <div className="App-card-content">
                     <div className="App-card-row">
                       <div className="label">
@@ -769,34 +771,11 @@ export default function DashboardV2() {
                         )}
                       </div>
                     </div>
-                    {/* <div className="App-card-row">
-                      <div className="label">
-                        <Trans>Supply</Trans>
-                      </div>
-                      <div>{formatAmount(totalGmxSupply, GMX_DECIMALS, 0, true)} OPEN</div>
-                    </div> */}
                     <div className="App-card-row">
                       <div className="label">
                         <Trans>Total Staked</Trans>
                       </div>
                       <div>{`$${formatAmount(stakedGmxSupplyUsd, USD_DECIMALS, 0, true)}`}</div>
-                      {/* <div>
-                        <TooltipComponent
-                          position="right-bottom"
-                          className="nowrap"
-                          handle={`$${formatAmount(stakedGmxSupplyUsd, USD_DECIMALS, 0, true)}`}
-                          renderContent={() => (
-                            <StatsTooltip
-                              title={t`Staked`}
-                              arbitrumValue={arbitrumStakedGmx}
-                              avaxValue={avaxStakedGmx}
-                              total={totalStakedGmx}
-                              decimalsForConversion={GMX_DECIMALS}
-                              showDollar={false}
-                            />
-                          )}
-                        />
-                      </div> */}
                     </div>
                     <div className="App-card-row">
                       <div className="label">
@@ -805,53 +784,53 @@ export default function DashboardV2() {
                       <div>${formatAmount(gmxMarketCap, USD_DECIMALS, 0, true)}</div>
                     </div>
                   </div>
-                </div>
-                <div className="stats-piechart" onMouseLeave={onGMXDistributionChartLeave}>
-                  {gmxDistributionData.length > 0 && (
-                    <PieChart width={210} height={210}>
-                      <Pie
-                        data={gmxDistributionData}
-                        cx={100}
-                        cy={100}
-                        innerRadius={73}
-                        outerRadius={80}
-                        fill="#8884d8"
-                        dataKey="value"
-                        startAngle={90}
-                        endAngle={-270}
-                        paddingAngle={2}
-                        onMouseEnter={onGMXDistributionChartEnter}
-                        onMouseOut={onGMXDistributionChartLeave}
-                        onMouseLeave={onGMXDistributionChartLeave}
-                      >
-                        {gmxDistributionData.map((entry, index) => {
-                          return (
-                            <Cell
-                              key={`cell-${index}`}
-                              fill={entry.color}
-                              style={{
-                                filter:
-                                  gmxActiveIndex === index
-                                    ? `drop-shadow(0px 0px 6px ${hexToRgba(entry.color, 0.7)})`
-                                    : "none",
-                                cursor: "pointer",
-                              }}
-                              stroke={entry.color}
-                              strokeWidth={gmxActiveIndex === index ? 1 : 1}
-                            />
-                          );
-                        })}
-                      </Pie>
-                      <text x={"50%"} y={"50%"} fill="#375BD2" textAnchor="middle" dominantBaseline="middle">
-                        <Trans>Distribution</Trans>
-                      </text>
-                      <Tooltip content={<CustomTooltip />} />
-                    </PieChart>
-                  )}
+                  <div className="stats-piechart" onMouseLeave={onGMXDistributionChartLeave}>
+                    {gmxDistributionData.length > 0 && (
+                      <PieChart width={210} height={210}>
+                        <Pie
+                          data={gmxDistributionData}
+                          cx={100}
+                          cy={100}
+                          innerRadius={73}
+                          outerRadius={80}
+                          fill="#8884d8"
+                          dataKey="value"
+                          startAngle={90}
+                          endAngle={-270}
+                          paddingAngle={2}
+                          onMouseEnter={onGMXDistributionChartEnter}
+                          onMouseOut={onGMXDistributionChartLeave}
+                          onMouseLeave={onGMXDistributionChartLeave}
+                        >
+                          {gmxDistributionData.map((entry, index) => {
+                            return (
+                              <Cell
+                                key={`cell-${index}`}
+                                fill={entry.color}
+                                style={{
+                                  filter:
+                                    gmxActiveIndex === index
+                                      ? `drop-shadow(0px 0px 6px ${hexToRgba(entry.color, 0.7)})`
+                                      : "none",
+                                  cursor: "pointer",
+                                }}
+                                stroke={entry.color}
+                                strokeWidth={gmxActiveIndex === index ? 1 : 1}
+                              />
+                            );
+                          })}
+                        </Pie>
+                        <text x={"50%"} y={"50%"} fill="#375BD2" textAnchor="middle" dominantBaseline="middle">
+                          <Trans>Distribution</Trans>
+                        </text>
+                        <Tooltip content={<CustomTooltip />} />
+                      </PieChart>
+                    )}
+                  </div>
                 </div>
               </div>
               <div className="App-card">
-                <div className="stats-block">
+                <div className="App-card-header">
                   <div className="App-card-title">
                     <div className="App-card-title-mark">
                       <div className="App-card-title-mark-icon">
@@ -866,6 +845,9 @@ export default function DashboardV2() {
                       </div>
                     </div>
                   </div>
+                </div>
+
+                <div className="App-card-content-container">
                   <div className="App-card-content">
                     <div className="App-card-row">
                       <div className="label">
@@ -898,47 +880,48 @@ export default function DashboardV2() {
                       <div>{stablePercentage}%</div>
                     </div>
                   </div>
-                </div>
-                <div className="stats-piechart" onMouseOut={onGLPPoolChartLeave}>
-                  {glpPool.length > 0 && (
-                    <PieChart width={210} height={210}>
-                      <Pie
-                        data={glpPool}
-                        cx={100}
-                        cy={100}
-                        innerRadius={73}
-                        outerRadius={80}
-                        fill="#8884d8"
-                        dataKey="value"
-                        startAngle={90}
-                        endAngle={-270}
-                        onMouseEnter={onGLPPoolChartEnter}
-                        onMouseOut={onGLPPoolChartLeave}
-                        onMouseLeave={onGLPPoolChartLeave}
-                        paddingAngle={2}
-                      >
-                        {glpPool.map((entry, index) => (
-                          <Cell
-                            key={`cell-${index}`}
-                            fill={GLP_POOL_COLORS[entry.name]}
-                            style={{
-                              filter:
-                                glpActiveIndex === index
-                                  ? `drop-shadow(0px 0px 6px ${hexToRgba(GLP_POOL_COLORS[entry.name], 0.7)})`
-                                  : "none",
-                              cursor: "pointer",
-                            }}
-                            stroke={GLP_POOL_COLORS[entry.name]}
-                            strokeWidth={glpActiveIndex === index ? 1 : 1}
-                          />
-                        ))}
-                      </Pie>
-                      <text x={"50%"} y={"50%"} fill="#375BD2" textAnchor="middle" dominantBaseline="middle">
-                        OAP Pool
-                      </text>
-                      <Tooltip content={<CustomTooltip />} />
-                    </PieChart>
-                  )}
+
+                  <div className="stats-piechart" onMouseOut={onGLPPoolChartLeave}>
+                    {glpPool.length > 0 && (
+                      <PieChart width={210} height={210}>
+                        <Pie
+                          data={glpPool}
+                          cx={100}
+                          cy={100}
+                          innerRadius={73}
+                          outerRadius={80}
+                          fill="#8884d8"
+                          dataKey="value"
+                          startAngle={90}
+                          endAngle={-270}
+                          onMouseEnter={onGLPPoolChartEnter}
+                          onMouseOut={onGLPPoolChartLeave}
+                          onMouseLeave={onGLPPoolChartLeave}
+                          paddingAngle={2}
+                        >
+                          {glpPool.map((entry, index) => (
+                            <Cell
+                              key={`cell-${index}`}
+                              fill={GLP_POOL_COLORS[entry.name]}
+                              style={{
+                                filter:
+                                  glpActiveIndex === index
+                                    ? `drop-shadow(0px 0px 6px ${hexToRgba(GLP_POOL_COLORS[entry.name], 0.7)})`
+                                    : "none",
+                                cursor: "pointer",
+                              }}
+                              stroke={GLP_POOL_COLORS[entry.name]}
+                              strokeWidth={glpActiveIndex === index ? 1 : 1}
+                            />
+                          ))}
+                        </Pie>
+                        <text x={"50%"} y={"50%"} fill="#375BD2" textAnchor="middle" dominantBaseline="middle">
+                          OAP Pool
+                        </text>
+                        <Tooltip content={<CustomTooltip />} />
+                      </PieChart>
+                    )}
+                  </div>
                 </div>
               </div>
             </div>

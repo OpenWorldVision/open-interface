@@ -14,10 +14,6 @@
 }
 
 .token-table-wrapper {
-  border: 1px solid #1e2136;
-  border-radius: 0.4rem;
-  background: #17182c;
-  padding: 0 1.5rem;
   text-align: left;
 }
 
@@ -49,7 +45,6 @@
 
 .stats-wrapper .App-card {
   width: 100%;
-  display: flex;
 }
 
 .stats-block {
@@ -171,9 +166,9 @@
   }
 
   .stats-piechart {
-    width: 100%;
+    /* width: 100%;
     display: flex;
     justify-content: center;
-    margin: 0;
+    margin: 0; */
   }
 }

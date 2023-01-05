@@ -28,6 +28,7 @@ body {
   --cardHeaderBackgroundColor: #375BD2;
   --cardTitleBackgroundColor: #375BD2;
   --cardBackgroundColor: #DFE7FB;
+  --footerBackgroundColor: #375BD2;
 }
 body.dark-theme {
   /* color */
@@ -40,6 +41,7 @@ body.dark-theme {
   --cardHeaderBackgroundColor: #04091C80;
   --cardTitleBackgroundColor: #04091C;
   --cardBackgroundColor: #04091C;
+  --footerBackgroundColor: #1A2B6B;
 }
 
 code {
