@@ -3,6 +3,7 @@
   overflow: hidden;
   min-height: 100%;
   font-size: 1.5rem;
+  background: #F2F6FF;
 }
 
 .App-header-backdrop {
@@ -401,7 +402,6 @@ button.App-connect-wallet:hover {
 .App-card-divider {
   height: 1px;
   background: #DFE7FB;
-  margin: 1.05rem -1.5rem;
 }
 
 .App-box-solid {
@@ -534,23 +534,20 @@ button.App-connect-wallet:hover {
 }
 
 .App-card {
-  padding: 1.5rem 1.5rem 1.86rem;
   border: 1px solid #DFE7FB;
-  border-radius: 0.4rem;
-  font-size: 13px;
+  border-radius: 0.8rem;
   background-color: #F9F9F9;
 }
 
 .App-card-title {
-  font-size: 1.6rem;
-  line-height: 2.1rem;
-  font-weight: 500;
-  letter-spacing: 0px;
-  color: #375BD2;
-  margin-bottom: 1.5rem;
+  color: #FFFFFF;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  background: #375BD2;
+  border-radius: 0.8rem 0.8rem 0 0;
+  padding: 0.938rem 1.5rem;
+  font-weight: 700;
 }
 
 .App-card-title-small {
@@ -561,6 +558,8 @@ button.App-connect-wallet:hover {
 .App-card-content {
   display: grid;
   grid-row-gap: 0.8rem;
+  padding: 1.5rem 1.25rem;
+  background: #DFE7FB;
 }
 
 .App-card-row {
@@ -568,7 +567,8 @@ button.App-connect-wallet:hover {
   grid-template-columns: 1fr auto;
   grid-column-gap: 1.5rem;
   padding: unset;
-  color: #6D7380;
+  color: #1A2B6B;
+  font-weight: 500;
 }
 
 .App-card-row.inner {
@@ -581,7 +581,7 @@ button.App-connect-wallet:hover {
   top: 2px;
 }
 .App-card-row .label {
-  color:#6D7380;
+  color:#1A2B6B;
 }
 .App-card-row .value {
   color:#273852;
