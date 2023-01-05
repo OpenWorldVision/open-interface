@@ -39,8 +39,8 @@ import Footer from "components/Footer/Footer";
 
 import "./DashboardV2.css";
 
-import logoGMX from "img/logo_GMX.svg";
-import logoOAP from "img/logo_oap.svg";
+import logoOPENWhite from "img/logo_open_white.svg";
+import logoOAPWhite from "img/logo_oap_white.svg";
 import bnbIcon from "img/ic_binance_logo.svg";
 import glp40Icon from "img/ic_glp_40.svg";
 import avalanche16Icon from "img/ic_avalanche_16.svg";
@@ -541,10 +541,11 @@ export default function DashboardV2() {
         <div className="DashboardV2-content">
           <div className="DashboardV2-cards">
             <div className="App-card">
-              <div className="App-card-title">
-                <Trans>Overview</Trans>
+              <div className="App-card-header">
+                <div className="App-card-title">
+                  <Trans>Overview</Trans>
+                </div>
               </div>
-              <div className="App-card-divider"></div>
               <div className="App-card-content">
                 <div className="App-card-row">
                   <div className="label">
@@ -732,7 +733,7 @@ export default function DashboardV2() {
                   <div className="App-card-title">
                     <div className="App-card-title-mark">
                       <div className="App-card-title-mark-icon">
-                        <img src={logoGMX} alt="OPEN Token Icon" />
+                        <img src={logoOPENWhite} alt="OPEN Token Icon" />
                       </div>
                       <div className="App-card-title-mark-info">
                         <div className="App-card-title-mark-title">OPEN</div>
@@ -743,7 +744,6 @@ export default function DashboardV2() {
                       </div>
                     </div>
                   </div>
-                  <div className="App-card-divider"></div>
                   <div className="App-card-content">
                     <div className="App-card-row">
                       <div className="label">
@@ -855,13 +855,7 @@ export default function DashboardV2() {
                   <div className="App-card-title">
                     <div className="App-card-title-mark">
                       <div className="App-card-title-mark-icon">
-                        <img src={logoOAP} alt="oap40Icon" style={{ width: 40, height: 40 }} />
-                        <img
-                          src={bnbIcon}
-                          alt={t`Avalanche Icon`}
-                          className="selected-network-symbol"
-                          style={{ backgroundColor: "#F9F9F9", padding: 2, width: 18 }}
-                        />
+                        <img src={logoOAPWhite} alt="oap40Icon" />
                       </div>
                       <div className="App-card-title-mark-info">
                         <div className="App-card-title-mark-title">OAP</div>
@@ -872,7 +866,6 @@ export default function DashboardV2() {
                       </div>
                     </div>
                   </div>
-                  <div className="App-card-divider"></div>
                   <div className="App-card-content">
                     <div className="App-card-row">
                       <div className="label">
@@ -955,7 +948,6 @@ export default function DashboardV2() {
                 {chainId === AVALANCHE && <img src={avalanche16Icon} alt={t`Avalanche Icon`} />}
                 {chainId === ARBITRUM && <img src={arbitrum16Icon} alt={t`Arbitrum Icon`} />}
               </div>
-              <div className="App-card-divider"></div>
               <table className="token-table">
                 <thead>
                   <tr>
@@ -1071,7 +1063,6 @@ export default function DashboardV2() {
                         </div>
                       </div>
                     </div>
-                    <div className="App-card-divider"></div>
                     <div className="App-card-content">
                       <div className="App-card-row">
                         <div className="label">

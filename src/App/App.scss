@@ -158,7 +158,7 @@
   position: relative;
   // border: 1px solid #1e2136;
   // border-radius: 0.4rem;
-  background: #F9F9F9;
+  // background: #F9F9F9;
   font-size: 1.5rem;
 }
 
@@ -495,7 +495,7 @@ button.App-connect-wallet:hover {
 
 .Page-description {
   /* opacity: 0.7; */
-  color: #6D7380;
+  color: var(--textColor3);
   line-height: 2.15rem;
   font-size: 1.5rem;
 }
@@ -534,20 +534,34 @@ button.App-connect-wallet:hover {
 }
 
 .App-card {
-  border: 1px solid #DFE7FB;
   border-radius: 0.8rem;
-  background-color: #F9F9F9;
+}
+
+.App-card > div:first-child {
+  border-top-left-radius: 0.8rem;
+  border-top-right-radius: 0.8rem;
+}
+
+.App-card > div:last-child {
+  border-bottom-left-radius: 0.8rem;
+  border-bottom-right-radius: 0.8rem;
+}
+
+.App-card-header {
+  background: var(--cardHeaderBackgroundColor);
+  display: flex;
 }
 
 .App-card-title {
-  color: #FFFFFF;
+  color: var(--textColor);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #375BD2;
-  border-radius: 0.8rem 0.8rem 0 0;
   padding: 0.938rem 1.5rem;
   font-weight: 700;
+  background: var(--cardTitleBackgroundColor);
+  border-top-left-radius: 0.8rem;
+  border-top-right-radius: 0.8rem;
 }
 
 .App-card-title-small {
@@ -559,7 +573,7 @@ button.App-connect-wallet:hover {
   display: grid;
   grid-row-gap: 0.8rem;
   padding: 1.5rem 1.25rem;
-  background: #DFE7FB;
+  background: var(--cardBackgroundColor);
 }
 
 .App-card-row {
@@ -567,7 +581,7 @@ button.App-connect-wallet:hover {
   grid-template-columns: 1fr auto;
   grid-column-gap: 1.5rem;
   padding: unset;
-  color: #1A2B6B;
+  color: var(--textColor2);
   font-weight: 500;
 }
 
@@ -581,10 +595,10 @@ button.App-connect-wallet:hover {
   top: 2px;
 }
 .App-card-row .label {
-  color:#1A2B6B;
+  color: var(--textColor2);
 }
 .App-card-row .value {
-  color:#273852;
+  color: var(--textColor2);
 }
 
 .App-card-row > div:last-child {
@@ -643,24 +657,22 @@ color: #F1F2F2;
 
 .App-header .a:hover,
 .App-header a:hover {
-  color: #1A2B6B;
+  color: var(--textHeaderActive);
 }
 
 .App-header-container-left .a,
 .App-header-container-left a {
   padding: 1.8rem 1.7rem;
   display: block;
-  color: #1A2B6B;
   font-size: 1.5rem;
   line-height: 1.8rem;
   font-weight: 700;
-  opacity: 0.8;
+  color: var(--textHeaderInactive);
 }
 
 .App-header-container-left .a.active,
 .App-header-container-left a.active {
-  color: #1A2B6B ;
-  // background-color: #DFE7FB;
+  color: var(--textHeaderActive);
 }
 
 .Toastify {

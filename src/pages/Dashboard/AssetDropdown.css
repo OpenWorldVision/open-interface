@@ -12,11 +12,15 @@
   align-items: center;
 }
 
+.dropdown-arrow-container {
+  position: absolute;
+  top: 1rem;
+  margin: 0 0.2rem 0 0.2rem;
+}
+
 .dropdown-arrow {
-  margin-left: 0.8rem;
   cursor: pointer;
-  color: white;
-  opacity: 0.8;
+  color: var(--textColor);
 }
 .dropdown-arrow:hover {
   opacity: 1;

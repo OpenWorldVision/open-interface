@@ -17,13 +17,29 @@ body {
   -webkit-font-smoothing: subpixel-antialiased;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  
+
   /* color */
-  --backgroundColor: '#F2F6FF'
+  --backgroundColor: #F2F6FF;
+  --textColor: #FFFFFF;
+  --textColor2: #1A2B6B;
+  --textColor3: #657290;
+  --textHeaderActive: #375BD2;
+  --textHeaderInactive: #375BD280;
+  --cardHeaderBackgroundColor: #375BD2;
+  --cardTitleBackgroundColor: #375BD2;
+  --cardBackgroundColor: #DFE7FB;
 }
 body.dark-theme {
   /* color */
   --backgroundColor: linear-gradient(180deg, #0A112B 0%, #0A1127 100%);
+  --textColor: #FFFFFF;
+  --textColor2: #657290;
+  --textColor3: #657290;
+  --textHeaderActive: #FFFFFF;
+  --textHeaderInactive: #FFFFFF80;
+  --cardHeaderBackgroundColor: #04091C80;
+  --cardTitleBackgroundColor: #04091C;
+  --cardBackgroundColor: #04091C;
 }
 
 code {

@@ -79,6 +79,8 @@
   position: relative;
   margin-right: 0.8rem;
   display: flex;
+  width: 3.1rem;
+  height: 3.1rem;
 }
 
 .App-card-title-mark-icon .selected-network-symbol {
@@ -91,21 +93,25 @@
 
 .App-card-title-mark {
   display: flex;
+  align-items: center;
+}
+
+.App-card-title-mark-info {
+  margin-left: 0.8rem;
 }
 
 .App-card-title-mark .App-card-title-mark-title {
-  font-size: 1.6rem;
-  line-height: 2.1rem;
+  font-size: 1.3rem;
   letter-spacing: 0px;
-  color: #375BD2;
-  font-weight: 500;
+  color: var(--textColor);
+  font-weight: 700;
 }
 
 .App-card-title-mark .App-card-title-mark-subtitle {
-  font-size: 1.2rem;
-  line-height: 1.5rem;
+  font-size: 1rem;
   letter-spacing: 0px;
-  color: #a9a9b0;
+  color: var(--textColor);
+  font-weight: 500;
 }
 
 .GlpSwap-token-list {

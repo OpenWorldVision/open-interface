@@ -25,9 +25,9 @@ function AssetDropdown({ assetSymbol, assetInfo }) {
     }[chainId] || [];
 
   return (
-    <Menu>
+    <Menu as="div" className="dropdown-arrow-container">
       <Menu.Button as="div" className="dropdown-arrow center-both">
-        <FiChevronDown size={20} color={"#375BD2"} />
+        <FiChevronDown />
       </Menu.Button>
       <Menu.Items as="div" className="asset-menu-items">
         <Menu.Item>
