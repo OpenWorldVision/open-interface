@@ -165,7 +165,7 @@ export default function PositionSeller(props) {
     allowedSlippage = DEFAULT_HIGHER_SLIPPAGE_AMOUNT;
   }
 
-  const ORDER_OPTIONS = [MARKET, STOP];
+  const ORDER_OPTIONS = [MARKET];
   const ORDER_OPTION_LABELS = {
     [MARKET]: t`Market`,
     [STOP]: t`Trigger`,
