@@ -40,6 +40,7 @@ export function AppHeaderUser({
   const { chainId } = useChainId();
   const { active, account } = useWeb3React();
   const showConnectionOptions = !isHomeSite();
+  const [isDarkTheme, setIsDarkTheme] = useState(false);
 
   const networkOptions = [
     {
@@ -92,7 +93,6 @@ export function AppHeaderUser({
             <Trans>Trade</Trans>
           </HeaderLink>
         </div>
-
         {showConnectionOptions ? (
           <>
             <ConnectWalletButton onClick={() => setWalletModalVisible(true)}>
@@ -109,6 +109,15 @@ export function AppHeaderUser({
         ) : (
           <LanguagePopupHome />
         )}
+        <button
+          style={{ marginLeft: "1.5rem" }}
+          onClick={() => {
+            setIsDarkTheme((prev) => !prev);
+            document.body.classList.toggle("dark-theme");
+          }}
+        >
+          {isDarkTheme ? "dark" : "light"}
+        </button>
       </div>
     );
   }
@@ -138,13 +147,13 @@ export function AppHeaderUser({
               disconnectAccountAndCloseSettings={disconnectAccountAndCloseSettings}
             />
           </div>
-          <NetworkDropdown
+          {/* <NetworkDropdown
             small={small}
             networkOptions={networkOptions}
             selectorLabel={selectorLabel}
             onNetworkSelect={onNetworkSelect}
             openSettings={openSettings}
-          />
+          /> */}
         </>
       ) : (
         <LanguagePopupHome />

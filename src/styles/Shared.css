@@ -17,6 +17,13 @@ body {
   -webkit-font-smoothing: subpixel-antialiased;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  
+  /* color */
+  --backgroundColor: '#F2F6FF'
+}
+body.dark-theme {
+  /* color */
+  --backgroundColor: linear-gradient(180deg, #0A112B 0%, #0A1127 100%);
 }
 
 code {
