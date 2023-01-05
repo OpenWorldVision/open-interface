@@ -789,7 +789,7 @@ export const Exchange = forwardRef((props, ref) => {
   const ORDERS = "Orders";
   const TRADES = "Trades";
 
-  const LIST_SECTIONS = [POSITIONS, flagOrdersEnabled && ORDERS, TRADES].filter(Boolean);
+  const LIST_SECTIONS = [POSITIONS, flagOrdersEnabled && ORDERS].filter(Boolean);
   let [listSection, setListSection] = useLocalStorageByChainId(chainId, "List-section-v2", LIST_SECTIONS[0]);
   const LIST_SECTIONS_LABELS = {
     [ORDERS]: orders.length ? t`Orders (${orders.length})` : t`Orders`,

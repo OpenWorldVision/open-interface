@@ -424,7 +424,7 @@ export default function DashboardV2() {
     burnedPercent = totalOpenBurned.mul(100).div(totalOpenSupply).toNumber();
   }
 
-  let notStakedPercent = 100 - stakedPercent - liquidityPercent;
+  let notStakedPercent = 100 - stakedPercent - liquidityPercent - burnedPercent;
 
   let gmxDistributionData = [
     {
