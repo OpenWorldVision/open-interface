@@ -21,21 +21,21 @@ export default function TokenCard({ showRedirectModal, redirectPopupTimestamp })
   const { chainId } = useChainId();
   const { active } = useWeb3React();
 
-  const changeNetwork = useCallback(
-    (network) => {
-      if (network === chainId) {
-        return;
-      }
-      if (!active) {
-        setTimeout(() => {
-          return switchNetwork(network, active);
-        }, 500);
-      } else {
-        return switchNetwork(network, active);
-      }
-    },
-    [chainId, active]
-  );
+  // const changeNetwork = useCallback(
+  //   (network) => {
+  //     if (network === chainId) {
+  //       return;
+  //     }
+  //     if (!active) {
+  //       setTimeout(() => {
+  //         return switchNetwork(network, active);
+  //       }, 500);
+  //     } else {
+  //       return switchNetwork(network, active);
+  //     }
+  //   },
+  //   [chainId, active]
+  // );
 
   const BuyLink = ({ className, to, children, network }) => {
     if (isHome && showRedirectModal) {
@@ -52,7 +52,7 @@ export default function TokenCard({ showRedirectModal, redirectPopupTimestamp })
     }
 
     return (
-      <Link to={to} className={className} onClick={() => changeNetwork(network)}>
+      <Link to={to} className={className}>
         {children}
       </Link>
     );
