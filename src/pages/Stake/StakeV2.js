@@ -1002,14 +1002,13 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
       </div>
       <div className="StakeV2-content">
         <div className="StakeV2-cards">
-          {chainId !== MAINNET && (
-            <OpenStaking
-              processedData={processedData}
-              active
-              onStaking={showStakeOpenModal}
-              onUnstaking={showUnstakeOpenModal}
-            />
-          )}
+          <OpenStaking
+            processedData={processedData}
+            active
+            onStaking={showStakeOpenModal}
+            onUnstaking={showUnstakeOpenModal}
+          />
+
           {/* <div className="App-card primary StakeV2-gmx-card StakeV2-total-rewards-card">
             <div className="App-card-title">
               <Trans>Total Rewards</Trans>
