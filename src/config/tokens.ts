@@ -384,6 +384,22 @@ export const ADDITIONAL_TOKENS: { [chainId: number]: Token[] } = {
 };
 
 export const PLATFORM_TOKENS: { [chainId: number]: { [symbol: string]: Token } } = {
+  [MAINNET]: {
+    OPEN: {
+      name: "OPEN",
+      symbol: "OPEN",
+      decimals: 18,
+      address: "0x27a339d9b59b21390d7209b78a839868e319301b",
+      imageUrl: "https://assets.coingecko.com/coins/images/19416/small/open-world-icon-logo-favicon.png?1648527433",
+    },
+    OAP: {
+      name: "OPEN LP",
+      symbol: "OAP",
+      decimals: 18,
+      address: "0x6D9A7B767354cc8c1F658b1b1B547aF218eb3C57", // address of fsGLP token because user only holds fsGLP
+      imageUrl: "https://assets.coingecko.com/coins/images/19416/small/open-world-icon-logo-favicon.png?1648527433",
+    },
+  },
   [TESTNET]: {
     OPEN: {
       name: "OPEN",
