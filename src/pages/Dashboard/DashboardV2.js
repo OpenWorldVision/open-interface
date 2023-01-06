@@ -272,8 +272,8 @@ export default function DashboardV2() {
 
   const { openPriceFromBsc } = useOpenPrice(chainId, undefined, active);
   let { total: totalOpenInLiquidity } = useTotalOpenInLiquidity(chainId, active);
-  const { totalStaked } = useOpenStakingInfo(chainId);
-  const totalStakedOpen = totalStaked;
+  const { totalPooledOpen } = useOpenStakingInfo(chainId);
+  const totalStakedOpen = totalPooledOpen;
 
   const { total: totalOpenBurned } = useTotalOpenBurned();
   let gmxMarketCap;
@@ -780,7 +780,7 @@ export default function DashboardV2() {
                       <div className="label">
                         <Trans>Total Staked</Trans>
                       </div>
-                      <div>{`$${formatAmount(stakedOpenSupplyUsd, USD_DECIMALS, 0, true)}`}</div>
+                      <div>{`$${formatAmount(stakedOpenSupplyUsd, 18, 0, true)}`}</div>
                       {/* <div>
                         <TooltipComponent
                           position="right-bottom"
@@ -803,7 +803,7 @@ export default function DashboardV2() {
                       <div className="label">
                         <Trans>Market Cap</Trans>
                       </div>
-                      <div>${formatAmount(gmxMarketCap, USD_DECIMALS, 0, true)}</div>
+                      <div>${formatAmount(gmxMarketCap, 18, 0, true)}</div>
                     </div>
                   </div>
                 </div>
