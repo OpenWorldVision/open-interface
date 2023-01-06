@@ -22,7 +22,6 @@ const DEFAULT_VALUES = [
 function useOpenStakingInfo(chainId: number) {
   const { library, account } = useWeb3React();
   const openStakingAddress = getContract(chainId, "OpenStaking");
-
   const { data: stakingInfo } = useSWR<BigNumber[]>(
     ["OpenStaking", chainId, openStakingAddress, "getStakeInfo", account],
     {
