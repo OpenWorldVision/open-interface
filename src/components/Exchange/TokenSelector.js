@@ -32,7 +32,7 @@ export default function TokenSelector(props) {
     disableBodyScrollLock,
   } = props;
 
-  const visibleTokens = tokens.filter((t) => t.symbol === "BTC" || t.symbol === "BNB" || t.symbol === "BUSD");
+  const visibleTokens = tokens;
 
   const onSelectToken = (token) => {
     setIsModalVisible(false);
