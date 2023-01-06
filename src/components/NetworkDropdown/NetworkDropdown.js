@@ -100,9 +100,6 @@ function NavIcons({ selectorLabel }) {
         <img className="network-dropdown-icon" src={bnbIcon} alt={selectorLabel} />
       </button>
       <div className="network-dropdown-seperator" />
-      <button className={cx("btn-primary small transparent")}>
-        <FontAwesomeIcon icon={faGripHorizontal} color={"#375BD2"} />
-      </button>
     </>
   );
 }

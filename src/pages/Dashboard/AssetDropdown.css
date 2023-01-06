@@ -13,12 +13,13 @@
 }
 
 .dropdown-arrow-container {
-  margin: 0 0 1rem 0.5rem;
+  margin: 0 0 0 0.5rem;
 }
 
 .dropdown-arrow {
   cursor: pointer;
   color: var(--textColor);
+  font-size: 1.6rem;
 }
 .dropdown-arrow:hover {
   opacity: 1;

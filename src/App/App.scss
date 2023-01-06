@@ -292,7 +292,11 @@
   line-height: 2.1rem;
   font-weight: normal;
   letter-spacing: 0px;
-  color: #375BD2;
+  color: var(--textColor6);
+}
+
+.token-symbol-wrapper .App-card-title-info > div .dropdown-arrow-container .dropdown-arrow {
+  color: var(--textColor6);
 }
 
 .App-card-info-subtitle {
@@ -300,7 +304,7 @@
   line-height: 1.5rem;
   font-weight: normal;
   letter-spacing: 0px;
-  color: #6D7380;
+  color: var(--textColor6);
 }
 
 .App-card-title-iconlist {
@@ -385,7 +389,6 @@ button.App-connect-wallet:hover {
 }
 
 .App-header-user-address {
-  border: 1px solid #ffffff29;
   height: 3.6rem;
   border-radius: 0.4rem;
   display: inline-flex;
@@ -833,12 +836,12 @@ color: #F1F2F2;
 
 a.App-cta,
 button.App-cta {
-  background: #375BD2;
+  background: var(--buttonLightBackground) !important;
+  color: var(--textColor5) !important;
   font-size: 1.4rem;
   line-height: 2rem;
   font-weight: 700;
   letter-spacing: 0px;
-  color: #ffffff;
   box-sizing: border-box;
   position: relative;
   min-height: 3.6rem;
@@ -1266,7 +1269,7 @@ button.App-button {
 }
 
 .Tab-title-section {
-  padding: 3.1rem 0 0;
+  padding: 4.65rem 0 0;
   margin-bottom: 2.4rem;
 }
 

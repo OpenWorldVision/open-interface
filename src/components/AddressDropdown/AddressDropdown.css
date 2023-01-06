@@ -5,8 +5,8 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  color: #375BD2 !important;
-  background-color: #DFE7FB !important;
+  /* color: #375BD2 !important;
+  background-color: #DFE7FB !important; */
 }
 
 .user-address {

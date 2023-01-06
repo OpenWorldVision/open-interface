@@ -1,12 +1,10 @@
 .App-header-network {
   position: relative;
-  margin-left: 2.4rem;
-  border: 1px solid var(--dark-blue-border);
   height: 3.6rem;
   display: inline-flex;
   align-items: center;
-  color: #375BD2;
-  background: #DFE7FB;
+  color: var(--textColor5);
+  background: var(--buttonLightBackground);
   border-radius: 18px;
 }
 
@@ -15,7 +13,7 @@
 }
 
 .network-dropdown {
-  display: inline-flex;
+  margin: auto;
 }
 .network-dropdown-items {
   min-width: 17rem;
@@ -31,7 +29,6 @@
   border-bottom: 1px solid #ffffff29;
 }
 .network-dropdown:hover {
-  background: var(--dark-blue-hover);
   cursor: pointer;
 }
 
@@ -190,9 +187,6 @@
 }
 
 @media (max-width: 1033px) {
-  .App-header-network {
-    margin-left: 1.6rem;
-  }
   .App-header-language {
     margin-left: 0;
   }
@@ -209,9 +203,6 @@
   }
 }
 @media (max-width: 450px) {
-  .App-header-network {
-    margin-left: 0.6rem;
-  }
   .App-header-language {
     margin-left: 0;
   }

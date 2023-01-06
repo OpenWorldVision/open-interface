@@ -19,6 +19,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMoneyBillTransfer } from "@fortawesome/free-solid-svg-icons";
 import Modal from "components/Modal/Modal";
 import ModalIncomingFeature from "components/ModalIncomingFeature/ModalIncomingFeature";
+import SwitchThemeButton from "components/Common/SwitchThemeButton";
+import Switch from "react-switch";
+import { IS_DARK_THEME } from "config/localStorage";
 
 type Props = {
   openSettings: () => void;
@@ -40,7 +43,7 @@ export function AppHeaderUser({
   const { chainId } = useChainId();
   const { active, account } = useWeb3React();
   const showConnectionOptions = !isHomeSite();
-  const [isDarkTheme, setIsDarkTheme] = useState(false);
+  const [isDarkTheme, setIsDarkTheme] = useState(JSON.parse(localStorage.getItem(IS_DARK_THEME) || `false`));
 
   const networkOptions = [
     {
@@ -62,6 +65,12 @@ export function AppHeaderUser({
       setWalletModalVisible(false);
     }
   }, [active, setWalletModalVisible]);
+
+  useEffect(() => {
+    if (isDarkTheme) {
+      document.body.classList.add("dark-theme");
+    }
+  }, []);
 
   const onNetworkSelect = useCallback(
     (option) => {
@@ -94,10 +103,11 @@ export function AppHeaderUser({
           </HeaderLink>
         </div>
         {showConnectionOptions ? (
-          <>
+          <div className="connect-wallet">
             <ConnectWalletButton onClick={() => setWalletModalVisible(true)}>
               {small ? <Trans>Connect</Trans> : <Trans>Connect Wallet</Trans>}
             </ConnectWalletButton>
+            <div className="connect-wallet-divider" />
             <NetworkDropdown
               small={small}
               networkOptions={networkOptions}
@@ -105,19 +115,35 @@ export function AppHeaderUser({
               onNetworkSelect={onNetworkSelect}
               openSettings={openSettings}
             />
-          </>
+          </div>
         ) : (
           <LanguagePopupHome />
         )}
-        <button
-          style={{ marginLeft: "1.5rem" }}
+        <SwitchThemeButton
+          small={small}
           onClick={() => {
             setIsDarkTheme((prev) => !prev);
             document.body.classList.toggle("dark-theme");
           }}
+          isDarkTheme={isDarkTheme}
         >
-          {isDarkTheme ? "dark" : "light"}
-        </button>
+          <Switch
+            onChange={() => {
+              setIsDarkTheme((prev) => !prev);
+              document.body.classList.toggle("dark-theme");
+            }}
+            checked={!isDarkTheme}
+            uncheckedIcon={false}
+            checkedIcon={false}
+            width={33}
+            height={22}
+            handleDiameter={15}
+            className={"switch"}
+            offColor={"#0F1A44"}
+            onColor={"#375BD2"}
+            onHandleColor={!isDarkTheme ? "#FFFFFF80" : "##FFFFFF"}
+          />
+        </SwitchThemeButton>
       </div>
     );
   }
@@ -158,6 +184,39 @@ export function AppHeaderUser({
       ) : (
         <LanguagePopupHome />
       )}
+      <SwitchThemeButton
+        small={small}
+        onClick={() => {
+          setIsDarkTheme((prev) => {
+            const newState = !prev;
+            localStorage.setItem(IS_DARK_THEME, `${newState}`);
+            return newState;
+          });
+          document.body.classList.toggle("dark-theme");
+        }}
+        isDarkTheme={isDarkTheme}
+      >
+        <Switch
+          onChange={() => {
+            setIsDarkTheme((prev) => {
+              const newState = !prev;
+              localStorage.setItem(IS_DARK_THEME, `${newState}`);
+              return newState;
+            });
+            document.body.classList.toggle("dark-theme");
+          }}
+          checked={!isDarkTheme}
+          uncheckedIcon={false}
+          checkedIcon={false}
+          width={33}
+          height={22}
+          handleDiameter={15}
+          className={"switch"}
+          offColor={"#0F1A44"}
+          onColor={"#375BD2"}
+          onHandleColor={!isDarkTheme ? "#FFFFFF80" : "##FFFFFF"}
+        />
+      </SwitchThemeButton>
     </div>
   );
 }

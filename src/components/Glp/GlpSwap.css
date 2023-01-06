@@ -93,10 +93,10 @@
 
 .App-card-title-mark {
   display: flex;
-  align-items: center;
 }
 
 .App-card-title-mark-info {
+  margin: auto;
   margin-left: 0.8rem;
 }
 
@@ -176,7 +176,6 @@
 .token-table td,
 .token-table th {
   padding: 1.1625rem;
-  color:#6D7380 !important;
 }
 
 .token-table td:nth-child(2),
@@ -201,7 +200,7 @@
 
 .token-table td {
   letter-spacing: 0.25px;
-  color: #ffffffde;
+  color: var(--textColor2);
 }
 
 .token-table th:first-child,
@@ -220,7 +219,7 @@
 .token-table th {
   font-weight: normal;
   letter-spacing: 0.25px;
-  color: #a9a9b0;
+  color: var(--textColor3);
   text-transform: uppercase;
 }
 
