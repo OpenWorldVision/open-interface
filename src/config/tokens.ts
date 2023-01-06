@@ -454,7 +454,7 @@ export const ICONLINKS = {
       harmony: "https://explorer.harmony.one/address/0x27a339d9b59b21390d7209b78a839868e319301b",
     },
     OAP: {
-      arbitrum: "https://testnet.bscscan.com/address/0x8530E5595C07F4075d00a25515E416487a07D6d3",
+      arbitrum: "https://bscscan.com/address/0x150bb59460E35084ab847629Cf3EcDC543e5Bf97",
     },
   },
   [ARBITRUM_TESTNET]: {
