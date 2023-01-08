@@ -25,6 +25,8 @@ export function getServerBaseUrl(chainId: number) {
   return BACKEND_URLS[chainId] || BACKEND_URLS.default;
 }
 
+export const KEEPER_BOT_API = "https://keeper-bot.openworld.vision";
+
 export function getServerUrl(chainId: number, path: string) {
   return `${getServerBaseUrl(chainId)}${path}`;
 }

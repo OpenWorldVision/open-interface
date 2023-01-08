@@ -55,7 +55,7 @@ import useTotalVolume from "domain/useTotalVolume";
 import StatsTooltip from "components/StatsTooltip/StatsTooltip";
 import StatsTooltipRow from "components/StatsTooltip/StatsTooltipRow";
 import { ARBITRUM, AVALANCHE, getChainName } from "config/chains";
-import { getServerUrl } from "config/backend";
+import { getServerUrl, KEEPER_BOT_API } from "config/backend";
 import { contractFetcher } from "lib/contracts";
 import { useInfoTokens } from "domain/tokens";
 import { getTokenBySymbol, getWhitelistedTokens, GLP_POOL_COLORS } from "config/tokens";
@@ -303,10 +303,25 @@ export default function DashboardV2() {
     oapMarketCap = oapPrice.mul(oapSupply).div(expandDecimals(1, GLP_DECIMALS));
   }
 
-  let tvl;
-  if (oapMarketCap && openPriceFromBsc && totalStakedOpen) {
-    tvl = oapMarketCap.add(stakedOpenSupplyUsd.mul(expandDecimals(1, 12))); // Because open price was decimal 18 so we'll add 10^12 to decimal 30
-  }
+  const { data: aumData } = useSWR(`${KEEPER_BOT_API}/api/v1/tvl/`, {
+    fetcher: (...args) =>
+      fetch(...args).then((res) => {
+        return res.json();
+      }),
+
+    refreshInterval: 500,
+    refreshWhenHidden: true,
+  });
+
+  const { data: totalStakedData } = useSWR(`${KEEPER_BOT_API}/api/v1/total_staked`, {
+    fetcher: (...args) =>
+      fetch(...args).then((res) => {
+        return res.json();
+      }),
+
+    refreshInterval: 500,
+    refreshWhenHidden: true,
+  });
 
   const ethFloorPriceFund = expandDecimals(350 + 148 + 384, 18);
   const glpFloorPriceFund = expandDecimals(660001, 18);
@@ -553,7 +568,7 @@ export default function DashboardV2() {
                   </div>
                   <div>
                     <TooltipComponent
-                      handle={`$${formatAmount(tvl, USD_DECIMALS, 0, true)}`}
+                      handle={`$${formatAmount(aumData?.tvl, USD_DECIMALS, 0, true)}`}
                       position="right-bottom"
                       renderContent={() => (
                         <span>{t`Assets Under Management: OPEN staked (All chains) + OAP pool (${chainName})`}</span>
@@ -780,7 +795,7 @@ export default function DashboardV2() {
                       <div className="label">
                         <Trans>Total Staked</Trans>
                       </div>
-                      <div>{`$${formatAmount(stakedOpenSupplyUsd, 18, 0, true)}`}</div>
+                      <div>{`$${formatAmount(totalStakedData?.totalStakedInUsd, 30, 0, true)}`}</div>
                       {/* <div>
                         <TooltipComponent
                           position="right-bottom"
