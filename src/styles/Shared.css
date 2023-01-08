@@ -41,7 +41,7 @@ body {
   --buttonDarkBackground: #375bd2;
   --dividerColor: #adbdef;
   --tooltipBackgroundColor: #dfe7fb;
-  --filterImage: invert(30%) sepia(92%) saturate(924%) hue-rotate(200deg) brightness(98%) contrast(96%);
+  --logoUrl: url('/src/img/logo_GMX.svg');
 }
 body.dark-theme {
   /* color */
@@ -67,7 +67,7 @@ body.dark-theme {
   --buttonDarkBackground: #dfe7fb;
   --dividerColor: #0f1a44;
   --tooltipBackgroundColor: #1a2b6b;
-  --filterImage: invert(16%) sepia(13%) saturate(7483%) hue-rotate(209deg) brightness(94%) contrast(99%);
+  --logoUrl: url('/src/img/logo_open_white.svg');
 }
 
 code {

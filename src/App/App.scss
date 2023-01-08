@@ -1334,7 +1334,7 @@ button.App-button {
 
   .App-header-link-main img {
     height: 2.1rem;
-    content: url('/img/logo_open_white.svg');
+    content: var(--logoUrl);
   }
 
   .App-header.large {
@@ -1483,7 +1483,7 @@ button.App-button {
   .App-card-content-container {
     display: grid;
   }
-  
+
 }
 
 .walletconnect-modal__mobile__toggle a {
