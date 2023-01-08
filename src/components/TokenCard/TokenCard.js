@@ -80,7 +80,7 @@ export default function TokenCard({ showRedirectModal, redirectPopupTimestamp })
               href="https://wiki.openworld.vision/tokenomics"
               target="_blank"
               rel="noreferrer"
-              className="default-btn read-more"
+              className="default-btn-light  read-more"
             >
               <Trans>Read more</Trans>
             </a>
