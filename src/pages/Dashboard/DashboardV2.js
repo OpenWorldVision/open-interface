@@ -64,6 +64,7 @@ import { useChainId } from "lib/chains";
 import { formatDate } from "lib/dates";
 import { hexToRgba } from "hex-and-rgba/esm";
 import { useOpenPrice } from "domain/hooks/useOpenPrice";
+import fetch from "unfetch";
 const ACTIVE_CHAIN_IDS = [ARBITRUM, AVALANCHE];
 
 const { AddressZero } = ethers.constants;
@@ -145,6 +146,11 @@ export default function DashboardV2() {
   const { active, library } = useWeb3React();
   const { chainId } = useChainId();
   const totalVolume = useTotalVolume();
+  const { data: tvlData } = useSWR(
+    "https://api.openworld.vision:7070/api/v1/tvl",
+    (...args) => fetch(...args).then((res) => res.json()),
+    { refreshInterval: 10000 }
+  );
 
   const chainName = getChainName(chainId);
   // const { totalStaked } = useOpenStakingInfo(chainId);
@@ -553,7 +559,7 @@ export default function DashboardV2() {
                   </div>
                   <div>
                     <TooltipComponent
-                      handle={`$${formatAmount(tvl, USD_DECIMALS, 0, true)}`}
+                      handle={`$${formatAmount(tvlData?.tvl, USD_DECIMALS, 0, true)}`}
                       position="right-bottom"
                       renderContent={() => (
                         <span>{t`Assets Under Management: OPEN staked (All chains) + OAP pool (${chainName})`}</span>

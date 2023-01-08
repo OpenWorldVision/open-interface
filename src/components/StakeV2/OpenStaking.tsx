@@ -73,7 +73,7 @@ function OpenStaking(props: Props) {
   const unstakeCountdown = Date.now() + timeleftToUnstake * 1000;
 
   // Release in mainnet soon
-
+  console.log("timeleftToUnstake", timeleftToUnstake);
   return (
     <div className="App-card StakeV2-gmx-card">
       <div className="App-card-title">OPEN</div>

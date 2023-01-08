@@ -788,10 +788,12 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
   // };
 
   const showUnstakeOpenModal = () => {
+    console.log("ok");
     if (!isGmxTransferEnabled) {
       helperToast.error(t`OPEN transfers not yet enabled`);
       return;
     }
+    console.log("ok2");
     setIsUnstakeModalVisible(true);
     setUnstakeModalTitle(t`Unstake OPEN`);
     let maxAmount = processedData.gmxInStakedGmx;
@@ -908,25 +910,25 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
         nativeTokenSymbol={nativeTokenSymbol}
         wrappedTokenSymbol={wrappedTokenSymbol}
       />
-      {chainId !== MAINNET && (
-        <UnstakeModal
-          setPendingTxns={setPendingTxns}
-          isVisible={isUnstakeModalVisible}
-          setIsVisible={setIsUnstakeModalVisible}
-          chainId={chainId}
-          title={unstakeModalTitle}
-          maxAmount={unstakeModalMaxAmount}
-          reservedAmount={unstakeModalReservedAmount}
-          value={unstakeValue}
-          setValue={setUnstakeValue}
-          library={library}
-          unstakingTokenSymbol={unstakingTokenSymbol}
-          rewardRouterAddress={rewardRouterAddress}
-          unstakeMethodName={unstakeMethodName}
-          multiplierPointsAmount={multiplierPointsAmount}
-          bonusGmxInFeeGmx={bonusGmxInFeeGmx}
-        />
-      )}
+
+      <UnstakeModal
+        setPendingTxns={setPendingTxns}
+        isVisible={isUnstakeModalVisible}
+        setIsVisible={setIsUnstakeModalVisible}
+        chainId={chainId}
+        title={unstakeModalTitle}
+        maxAmount={unstakeModalMaxAmount}
+        reservedAmount={unstakeModalReservedAmount}
+        value={unstakeValue}
+        setValue={setUnstakeValue}
+        library={library}
+        unstakingTokenSymbol={unstakingTokenSymbol}
+        rewardRouterAddress={rewardRouterAddress}
+        unstakeMethodName={unstakeMethodName}
+        multiplierPointsAmount={multiplierPointsAmount}
+        bonusGmxInFeeGmx={bonusGmxInFeeGmx}
+      />
+
       <VesterDepositModal
         isVisible={isVesterDepositModalVisible}
         setIsVisible={setIsVesterDepositModalVisible}
