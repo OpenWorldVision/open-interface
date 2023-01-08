@@ -88,7 +88,7 @@ a.btn {
   border-radius: 18px;
   color: var(--textColor5);
   min-height: 3.6rem;
-  display: flex ;
+  display: flex;
 }
 .connect-wallet span {
   font-weight: 700 !important;
@@ -109,11 +109,10 @@ a.btn {
   margin-left: 0.8rem;
 }
 
-
 @media (max-width: 450px) {
-  .connect-wallet {
+  /* .connect-wallet {
     padding: 0.5rem 0.8rem;
-  }
+  } */
 }
 @media (max-width: 350px) {
   .connect-wallet .btn-image {

@@ -1,3 +1,20 @@
+.page-layout {
+  background: var(--backgroundColor);
+}
+
+.App-card-divider {
+  margin: 10px 0;
+  background: var(--textColor11);
+}
+
+.App-card-option {
+  background: var(--footerBackgroundColor);
+}
+
+.Page-title {
+  color: var(--textColor10);
+}
+
 .StakeV2 .Page-title-section {
   position: relative;
   z-index: 2;
