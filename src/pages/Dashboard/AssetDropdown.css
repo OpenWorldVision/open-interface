@@ -3,7 +3,7 @@
   border-radius: 0.4rem;
   outline: none;
   z-index: 100;
-  background: #375BD2;
+  background: var(--tooltipBackgroundColor);
 }
 
 .center-both {
@@ -29,15 +29,11 @@
   display: flex;
   align-items: center;
   cursor: pointer;
-  color: #ffffff;
+  color: var(--textColor7);
   text-decoration: none;
   padding: 0.85rem 0.8rem;
 }
-.asset-item:hover {
-  background: var(--dark-blue-hover);
-  color: white;
-  border-radius: 0.4rem;
-}
+
 .asset-item p {
   margin: 0;
   margin-left: 0.5rem;

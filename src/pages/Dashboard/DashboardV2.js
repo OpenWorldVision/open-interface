@@ -371,7 +371,7 @@ export default function DashboardV2() {
               />
               <br />
               {currentWeightBps.lt(targetWeightBps) && (
-                <div className="text-white">
+                <div className="">
                   <Trans>
                     {tokenInfo.symbol} is below its target weight.
                     <br />
@@ -389,7 +389,7 @@ export default function DashboardV2() {
                 </div>
               )}
               {currentWeightBps.gt(targetWeightBps) && (
-                <div className="text-white">
+                <div className="">
                   <Trans>
                     {tokenInfo.symbol} is above its target weight.
                     <br />

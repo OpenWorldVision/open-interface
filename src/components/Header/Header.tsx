@@ -94,8 +94,8 @@ export function Header({
         <div className="App-header large">
           <div className="App-header-container-left">
             <Link className="App-header-link-main" to="/">
-              <img src={logoImg} className="big" alt="OPEN Logo" />
-              <img src={logoSmallImg} className="small" alt="OPEN Logo" />
+              <img src={logoImg} className="big App-header-logo" alt="OPEN Logo" />
+              <img src={logoSmallImg} className="small App-header-logo" alt="OPEN Logo" />
             </Link>
             <AppHeaderLinks redirectPopupTimestamp={redirectPopupTimestamp} showRedirectModal={showRedirectModal} />
           </div>
@@ -121,8 +121,8 @@ export function Header({
                 {isDrawerVisible && <FaTimes className="App-header-menu-icon" color={"#375BD2"} />}
               </div>
               <div className="App-header-link-main clickable" onClick={() => setIsDrawerVisible(!isDrawerVisible)}>
-                <img src={logoImg} className="big" alt="OPEN Logo" />
-                <img src={logoSmallImg} className="small" alt="OPEN Logo" />
+                <img src={logoImg} className="big App-header-logo" alt="OPEN Logo" />
+                <img src={logoSmallImg} className="small App-header-logo" alt="OPEN Logo" />
               </div>
             </div>
             <div className="App-header-container-right">

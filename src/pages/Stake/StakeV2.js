@@ -194,7 +194,7 @@ function VesterDepositModal(props) {
                   renderContent={() => {
                     return (
                       <div>
-                        <p className="text-white">
+                        <p className="">
                           <Trans>Vault Capacity for your Account:</Trans>
                         </p>
                         <StatsTooltipRow

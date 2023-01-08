@@ -29,7 +29,7 @@ export function AppHeaderLinks({
       {small && (
         <div className="App-header-links-header">
           <Link className="App-header-link-main" to="/">
-            <img src={logoImg} alt="OPEN Logo" />
+            <img src={logoImg} alt="OPEN Logo" className="App-header-logo" />
           </Link>
           <div
             className="App-header-menu-icon-block mobile-cross-menu"
