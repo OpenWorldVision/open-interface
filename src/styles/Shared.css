@@ -74,13 +74,13 @@ code {
 
 * {
   box-sizing: border-box;
-  font-family: "Relative", sans-serif;
+  font-family: "Montserrat", sans-serif;
   /* letter-spacing: 0.5px; */
   /* font-variant-numeric: tabular-nums; */
 }
 
 input {
-  font-family: "RelativeNumber";
+  font-family: "Montserrat";
 }
 
 ::-webkit-scrollbar {
