@@ -494,6 +494,7 @@ button.App-connect-wallet:hover {
   margin-bottom: 0.8rem;
   font-weight: bold;
   color: #375BD2;
+  //  color: var(--textColor10);
 }
 
 .Page-description {
@@ -900,7 +901,7 @@ button.App-button-option {
   display: inline-flex !important;
   align-items: center;
   border: none;
-  background: #375BD2;
+  // background: #375BD2;
   border-radius: 18px;
 }
 
