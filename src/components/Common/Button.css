@@ -112,7 +112,10 @@ a.btn {
 
 @media (max-width: 450px) {
   .connect-wallet {
-    padding: 0.5rem 0.8rem;
+    min-width: 3.6rem;
+    margin: auto;
+    margin-left: 0.5rem;
+    
   }
 }
 @media (max-width: 350px) {

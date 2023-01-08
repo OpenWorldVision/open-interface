@@ -164,11 +164,10 @@
     flex-wrap: wrap;
     padding-bottom: 0;
   }
-
-  .stats-piechart {
-    /* width: 100%;
-    display: flex;
-    justify-content: center;
-    margin: 0; */
+  
+  @media (max-width: 450px) {
+    .stats-piechart {
+      margin: auto;
+    }
   }
 }
