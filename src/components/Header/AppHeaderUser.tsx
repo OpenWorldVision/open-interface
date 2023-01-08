@@ -167,11 +167,21 @@ export function AppHeaderUser({
       {showConnectionOptions ? (
         <>
           <div className="App-header-user-address">
-            <AddressDropdown
-              account={account}
-              accountUrl={accountUrl}
-              disconnectAccountAndCloseSettings={disconnectAccountAndCloseSettings}
-            />
+            <div className="connect-wallet">
+              <AddressDropdown
+                account={account}
+                accountUrl={accountUrl}
+                disconnectAccountAndCloseSettings={disconnectAccountAndCloseSettings}
+              />
+              <div className="connect-wallet-divider" />
+              <NetworkDropdown
+                small={small}
+                networkOptions={networkOptions}
+                selectorLabel={selectorLabel}
+                onNetworkSelect={onNetworkSelect}
+                openSettings={openSettings}
+              />
+            </div>
           </div>
           {/* <NetworkDropdown
             small={small}

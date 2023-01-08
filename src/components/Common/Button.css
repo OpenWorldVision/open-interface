@@ -111,10 +111,11 @@ a.btn {
 
 @media (max-width: 450px) {
   .connect-wallet {
-    min-width: 3.6rem;
-    margin: auto;
+    /* width: 3.6rem; */
     margin-left: 0.5rem;
-    
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
 @media (max-width: 350px) {

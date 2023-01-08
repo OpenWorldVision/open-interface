@@ -97,7 +97,9 @@
   margin-bottom: 0;
 }
 
-.network-option img {
+.network-option img,
+.network-option svg
+ {
   width: 2.5rem;
   margin-right: 1.5rem;
 }
