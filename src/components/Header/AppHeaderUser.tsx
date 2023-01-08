@@ -136,7 +136,7 @@ export function AppHeaderUser({
             uncheckedIcon={false}
             checkedIcon={false}
             width={33}
-            height={22}
+            height={20}
             handleDiameter={15}
             className={"switch"}
             offColor={"#0F1A44"}

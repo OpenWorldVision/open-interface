@@ -285,9 +285,6 @@
 .ExchangeChart {
   position: relative;
   height: 49.6rem;
-  background: #F9F9F9;
-  border: 1px solid #DFE7FB;
-  box-shadow: inset 0px 0px 4px #DFE7FB;
   border-radius: 18px;
   overflow: hidden;
 }
@@ -304,12 +301,12 @@
 }
 
 .ExchangeChart-additional-info{
-  color: #3D4556;
+  color: var(--textColor13);
 }
 
 .ExchangeChart-info-label {
   font-size: 1.25rem;
-  color: #3D455690;
+  color: var(--textColor12);
 }
 
 .ExchangeChart-top-inner {
@@ -343,7 +340,7 @@
   position: relative;
   padding: 0.9rem 0.31rem;
   z-index: 2;
-  background-color: #DFE7FB;
+  background: var(--chartHeaderBackgroundColor);
   border-radius: 18px 18px 0px 0px;
   }
 

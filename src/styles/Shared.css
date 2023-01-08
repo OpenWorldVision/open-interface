@@ -31,6 +31,8 @@ body {
   --textColor9: #f1f2f2;
   --textColor10: #1a2b6b;
   --textColor11: #dfe7fb;
+  --textColor12: #B5B7BF;
+  --textColor13: #3D4556;
   --textHeaderActive: #375bd2;
   --textHeaderInactive: #375bd280;
   --cardHeaderBackgroundColor: #375bd2;
@@ -42,21 +44,24 @@ body {
   --dividerColor: #adbdef;
   --tooltipBackgroundColor: #dfe7fb;
   --logoUrl: url('/src/img/logo_GMX.svg');
+  --chartHeaderBackgroundColor: #DFE7FBB2;
 }
 body.dark-theme {
   /* color */
   --backgroundColor: linear-gradient(180deg, #0a112b 0%, #0a1127 100%);
   --textColor: #ffffff;
-  --textColor2: #657290;
-  --textColor3: #657290;
+  --textColor2: #AAB5D1;
+  --textColor3: #AAB5D1;
   --textColor4: #1a2b6b;
   --textColor5: #dfe7fb;
   --textColor6: #ffffff;
   --textColor7: #ffffff;
-  --textColor8: #657290;
+  --textColor8: #AAB5D1;
   --textColor9: #f1f2f2;
   --textColor10: #ffffff;
   --textColor11: rgba(255, 255, 255, 0.1);
+  --textColor12: #B5B7BF;
+  --textColor13: #3D4556;
   --textHeaderActive: #ffffff;
   --textHeaderInactive: #ffffff80;
   --cardHeaderBackgroundColor: #04091c80;
@@ -68,6 +73,7 @@ body.dark-theme {
   --dividerColor: #0f1a44;
   --tooltipBackgroundColor: #1a2b6b;
   --logoUrl: url('/src/img/logo_open_white.svg');
+  --chartHeaderBackgroundColor: #04091C;
 }
 
 code {

@@ -865,14 +865,13 @@ button.App-cta {
 a.App-cta.transparent,
 button.App-cta.transparent {
   box-shadow: none;
-  background: none;
+  background: none !important;
   opacity: 1;
   border-radius: 18px;
 }
 
 a.App-cta.transparent:hover,
 button.App-cta.transparent:hover:enabled {
-  color: white;
   box-shadow: none;
   background: none;
 }
