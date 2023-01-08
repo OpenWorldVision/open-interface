@@ -19,14 +19,17 @@ body {
   -moz-osx-font-smoothing: grayscale;
 
   /* color */
-  --backgroundColor: #F2F6FF;
-  --textColor: #FFFFFF;
-  --textColor2: #1A2B6B;
+  --backgroundColor: #f2f6ff;
+  --textColor: #ffffff;
+  --textColor2: #1a2b6b;
   --textColor3: #657290;
   --textColor4: #DFE7FB;
   --textColor5: #375BD2;
   --textColor6: #1A2B6B;
   --textColor7: #375BD2;
+  --textColor8: #375bd2;
+  --textColor9: #f1f2f2;
+  --textColor10: #1a2b6b;
   --textHeaderActive: #375BD2;
   --textHeaderInactive: #375BD280;
   --cardHeaderBackgroundColor: #375BD2;
@@ -41,14 +44,17 @@ body {
 }
 body.dark-theme {
   /* color */
-  --backgroundColor: linear-gradient(180deg, #0A112B 0%, #0A1127 100%);
-  --textColor: #FFFFFF;
+  --backgroundColor: linear-gradient(180deg, #0a112b 0%, #0a1127 100%);
+  --textColor: #ffffff;
   --textColor2: #657290;
   --textColor3: #657290;
   --textColor4: #1A2B6B;
   --textColor5: #DFE7FB;
   --textColor6: #FFFFFF;
   --textColor7: #FFFFFF;
+  --textColor8: #657290;
+  --textColor9: #f1f2f2;
+  --textColor10: #ffffff;
   --textHeaderActive: #FFFFFF;
   --textHeaderInactive: #FFFFFF80;
   --cardHeaderBackgroundColor: #04091C80;
@@ -108,14 +114,14 @@ input {
   --avax-red: #e84143;
   --arbitrum-blue: #28a0f0;
   --border-radius-sm: 0.4rem;
-  --error-red: #E8636B;
+  --error-red: #e8636b;
 }
 
 a {
-  color: #6D7380;
+  color: #6d7380;
 }
 a:hover {
-  color: #375BD2;
+  color: #375bd2;
 }
 
 .Card-title {
@@ -135,7 +141,7 @@ input[type="number"] {
 
 input {
   font-size: 2rem;
-  color: #1A2B6B;
+  color: #1a2b6b;
   outline: none;
   background: none;
   border: none;
@@ -143,7 +149,6 @@ input {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-
 }
 
 input::placeholder {
@@ -252,13 +257,13 @@ a.plain {
 }
 
 .default-btn {
-  background: var(--buttonDarkBackground);
+  background: var(--footerBackgroundColor);
   border-radius: 4px;
   font-size: 1.4rem;
   line-height: 2rem;
   font-weight: 700;
   letter-spacing: 0px;
-  color: var(--textColor4) !important;
+  color: var(--textColor9) !important;
   padding-left: 1.6rem;
   padding-right: 1.6rem;
   /* padding: 9px 16px!important; */
@@ -273,6 +278,29 @@ a.plain {
   border: none;
   appearance: none;
   border-radius: 18px;
+}
+
+.default-btn-light {
+  color: var(--textColor8);
+  border-radius: 4px;
+  font-size: 1.4rem;
+  line-height: 2rem;
+  font-weight: 700;
+  letter-spacing: 0px;
+  padding-left: 1.6rem;
+  padding-right: 1.6rem;
+  text-decoration: none;
+  box-sizing: border-box;
+  position: relative;
+  min-height: 3.6rem;
+  display: inline-flex !important;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  border: none;
+  appearance: none;
+  border-radius: 18px;
+  border: 3px solid var(--textColor8);
 }
 
 /* .default-btn:hover {
