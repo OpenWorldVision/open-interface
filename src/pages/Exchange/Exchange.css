@@ -600,7 +600,7 @@ table.Exchange-list th {
   grid-template-columns: auto auto;
   font-size: 1.4rem;
   margin-bottom: 0.465rem;
-  color: #6D7380
+  color: var(--textColor6)
 }
 
 .Exchange-info-row.top-line {
@@ -883,17 +883,16 @@ input.Exchange-swap-input.small {
 }
 
 .Exchange-swap-button-container {
-  background: #F9F9F9;
-  border: 2px solid #375BD2;
+  /* background: #F9F9F9; */
+  /* border: 2px solid #375BD2; */
   border-radius: 18px;
   overflow: hidden;
 }
 .Exchange-swap-button-container button.App-cta {
-  background: #F9F9F9;
-  /* border: 2px solid #375BD2; */
   border-radius: 18px;
   overflow: hidden;
-  color:#375BD2;
+  background: var(--buttonDarkBackground) !important;
+  color: var(--textColor4) !important;
 }
 
 .Exchange-swap-button {

@@ -23,7 +23,7 @@ export default function SwitchThemeButton({ children, onClick, className, small,
   }
   return (
     <div className={classNames} style={{ cursor: "auto" }}>
-      <FontAwesomeIcon icon={faSun} />
+      {isDarkTheme ? <FontAwesomeIcon icon={faMoon} /> : <FontAwesomeIcon icon={faSun} />}
       {children}
     </div>
   );

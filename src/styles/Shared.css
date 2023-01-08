@@ -26,6 +26,7 @@ body {
   --textColor4: #DFE7FB;
   --textColor5: #375BD2;
   --textColor6: #1A2B6B;
+  --textColor7: #375BD2;
   --textHeaderActive: #375BD2;
   --textHeaderInactive: #375BD280;
   --cardHeaderBackgroundColor: #375BD2;
@@ -35,6 +36,8 @@ body {
   --buttonLightBackground: #DFE7FB;
   --buttonDarkBackground: #375BD2;
   --dividerColor: #ADBDEF;
+  --tooltipBackgroundColor: #DFE7FB;
+  --filterImage: invert(30%) sepia(92%) saturate(924%) hue-rotate(200deg) brightness(98%) contrast(96%);
 }
 body.dark-theme {
   /* color */
@@ -45,6 +48,7 @@ body.dark-theme {
   --textColor4: #1A2B6B;
   --textColor5: #DFE7FB;
   --textColor6: #FFFFFF;
+  --textColor7: #FFFFFF;
   --textHeaderActive: #FFFFFF;
   --textHeaderInactive: #FFFFFF80;
   --cardHeaderBackgroundColor: #04091C80;
@@ -54,6 +58,8 @@ body.dark-theme {
   --buttonLightBackground: #1A2B6B;
   --buttonDarkBackground: #DFE7FB;
   --dividerColor: #0F1A44;
+  --tooltipBackgroundColor: #1A2B6B;
+  --filterImage: invert(16%) sepia(13%) saturate(7483%) hue-rotate(209deg) brightness(94%) contrast(99%);
 }
 
 code {

@@ -11,9 +11,9 @@
   letter-spacing: 0.4px;
   min-width: 25rem;
   text-align: left;
-  background: #375BD2;
   z-index: 1000;
-  color: #ffffff;
+  color: var(--textColor7);
+  background: var(--tooltipBackgroundColor);
 }
 .Tooltip-popup a{
   color: #ffffff;

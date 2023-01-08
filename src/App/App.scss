@@ -660,8 +660,7 @@ button.App-connect-wallet:hover {
   display: inline-block;
   cursor: pointer;
   font-weight: 700;
-
-color: #F1F2F2;
+  color: var(--textColor7);
 }
 
 .App-header .a.active,
@@ -729,7 +728,7 @@ color: #F1F2F2;
 }
 
 .Exchange-settings-row .Checkbox .Checkbox-icon-wrapper .App-icon.Checkbox-icon.inactive{
- color: #6D7380;
+ color: var(--textColor6);
 }
 
 .App-background-side-1 {
@@ -949,6 +948,8 @@ button.App-button-option:disabled {
 
 .App-settings .App-cta {
   margin-top: 1.5rem;
+  background: var(--buttonDarkBackground) !important;
+  color: var(--textColor4) !important;
 }
 
 .App-slippage-tolerance-input-container {
@@ -956,11 +957,11 @@ button.App-button-option:disabled {
 }
 
 .App-slippage-tolerance-input {
-  border: 1px solid #6D7380;
+  border: 1px solid var(--textColor6);
   margin-top: 0.8rem;
   margin-bottom: 0.8rem;
   width: 100%;
-  color: #6D7380;
+  color: var(--textColor6);
 }
 
 .App-slippage-tolerance-input-percent {

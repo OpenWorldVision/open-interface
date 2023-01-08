@@ -26,7 +26,8 @@
   width: 100%;
   transform-origin: top right;
   border-radius: 0.4rem;
-  background-color: #375BD2;
+  color: var(--textColor7);
+  background: var(--tooltipBackgroundColor);
   list-style: none;
   cursor: pointer;
   outline: none;
@@ -36,11 +37,13 @@
   display: flex !important;
   align-items: center;
   font-size: 1.5rem;
-  color: #ffffff;
+  color: var(--textColor7);
   padding-bottom: 1.5rem;
   font-size: 1.4rem;
   padding: 0.85rem 0.8rem;
+  font-weight: 700;
 }
+
 .menu-item:hover {
   opacity: 1;
 }

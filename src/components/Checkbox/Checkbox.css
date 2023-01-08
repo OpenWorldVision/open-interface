@@ -34,5 +34,5 @@
   display: inline-block;
   vertical-align: middle;
   font-size: 1.5rem;
-  color: #3D4556;
+  color: var(--textColor6);
 }
