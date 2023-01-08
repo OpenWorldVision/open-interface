@@ -303,6 +303,19 @@ export default function DashboardV2() {
     oapMarketCap = oapPrice.mul(oapSupply).div(expandDecimals(1, GLP_DECIMALS));
   }
 
+  const { data: indexPrices } = useSWR("https://api.openworld.vision:7070/api/v1/tvl/", {
+    fetcher: (...args) =>
+      fetch(...args)
+        .then((res) => {
+          return res.json();
+        })
+        .catch((error) => {
+          console.log("error la gi", error);
+        }),
+    refreshInterval: 500,
+    refreshWhenHidden: true,
+  });
+
   let tvl;
   if (oapMarketCap && openPriceFromBsc && totalStakedOpen) {
     tvl = oapMarketCap.add(stakedOpenSupplyUsd.mul(expandDecimals(1, 12))); // Because open price was decimal 18 so we'll add 10^12 to decimal 30
@@ -553,7 +566,7 @@ export default function DashboardV2() {
                   </div>
                   <div>
                     <TooltipComponent
-                      handle={`$${formatAmount(tvl, USD_DECIMALS, 0, true)}`}
+                      handle={`$${formatAmount(indexPrices?.tvl, USD_DECIMALS, 0, true)}`}
                       position="right-bottom"
                       renderContent={() => (
                         <span>{t`Assets Under Management: OPEN staked (All chains) + OAP pool (${chainName})`}</span>
