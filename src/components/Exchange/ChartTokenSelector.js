@@ -36,27 +36,25 @@ export default function ChartTokenSelector(props) {
       <Menu.Button as="div" disabled={isSwap}>
         <button className={cx("App-cta small transparent chart-token-selector", { "default-cursor": isSwap })}>
           <span className="chart-token-selector--current">{value.symbol} / USD</span>
-          {/* {!isSwap && <FaChevronDown />} */}
+          {!isSwap && <FaChevronDown color="#1A2B6B" />}
         </button>
       </Menu.Button>
       <div className="chart-token-menu">
         <Menu.Items as="div" className="menu-items chart-token-menu-items">
-          {options
-            .filter((item) => item.symbol !== "ETH")
-            .map((option, index) => (
-              <Menu.Item key={index}>
-                <div
-                  className="menu-item"
-                  onClick={() => {
-                    onSelect(option);
-                  }}
-                >
-                  <span style={{ marginLeft: 5 }} className="token-label">
-                    {option.symbol} / USD
-                  </span>
-                </div>
-              </Menu.Item>
-            ))}
+          {options.map((option, index) => (
+            <Menu.Item key={index}>
+              <div
+                className="menu-item"
+                onClick={() => {
+                  onSelect(option);
+                }}
+              >
+                <span style={{ marginLeft: 5 }} className="token-label">
+                  {option.symbol} / USD
+                </span>
+              </div>
+            </Menu.Item>
+          ))}
         </Menu.Items>
       </div>
     </Menu>
