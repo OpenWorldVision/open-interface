@@ -303,13 +303,13 @@ export default function DashboardV2() {
     oapMarketCap = oapPrice.mul(oapSupply).div(expandDecimals(1, GLP_DECIMALS));
   }
 
-  const { data: aumData } = useSWR(`${KEEPER_BOT_API}/api/v1/tvl/`, {
+  const { data: aumData } = useSWR(`${KEEPER_BOT_API}/api/v1/tvl`, {
     fetcher: (...args) =>
       fetch(...args).then((res) => {
         return res.json();
       }),
 
-    refreshInterval: 500,
+    refreshInterval: 5000,
     refreshWhenHidden: true,
   });
 
@@ -319,7 +319,7 @@ export default function DashboardV2() {
         return res.json();
       }),
 
-    refreshInterval: 500,
+    refreshInterval: 5000,
     refreshWhenHidden: true,
   });
 
@@ -426,9 +426,8 @@ export default function DashboardV2() {
   };
 
   let stakedPercent = 0;
-
-  if (totalOpenSupply && !totalOpenSupply.isZero() && !totalStakedOpen.isZero()) {
-    stakedPercent = totalStakedOpen.mul(100).div(totalOpenSupply).toNumber();
+  if (totalOpenSupply && !totalOpenSupply.isZero() && totalStakedData?.totalStaked) {
+    stakedPercent = BigNumber.from(totalStakedData.totalStaked).mul(100).div(totalOpenSupply).toNumber();
   }
 
   let liquidityPercent = 0;
