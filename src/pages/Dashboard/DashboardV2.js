@@ -47,6 +47,7 @@ import avalanche16Icon from "img/ic_avalanche_16.svg";
 import arbitrum16Icon from "img/ic_arbitrum_16.svg";
 import arbitrum24Icon from "img/ic_arbitrum_24.svg";
 import avalanche24Icon from "img/ic_avalanche_24.svg";
+import bsc24Icon from "img/ic_bnb_24.svg";
 
 import AssetDropdown from "./AssetDropdown";
 import ExternalLink from "components/ExternalLink/ExternalLink";
@@ -54,7 +55,7 @@ import SEO from "components/Common/SEO";
 import useTotalVolume from "domain/useTotalVolume";
 import StatsTooltip from "components/StatsTooltip/StatsTooltip";
 import StatsTooltipRow from "components/StatsTooltip/StatsTooltipRow";
-import { ARBITRUM, AVALANCHE, getChainName } from "config/chains";
+import { ARBITRUM, AVALANCHE, getChainName, MAINNET } from "config/chains";
 import { getServerUrl, KEEPER_BOT_API } from "config/backend";
 import { contractFetcher } from "lib/contracts";
 import { useInfoTokens } from "domain/tokens";
@@ -564,27 +565,29 @@ export default function DashboardV2() {
               <div className="App-card-content">
                 <div className="App-card-row">
                   <div className="label">
-                    <Trans>AUM</Trans>
+                    <Trans>TVL</Trans>
                   </div>
                   <div>
                     <TooltipComponent
                       handle={`$${formatAmount(aumData?.tvl, USD_DECIMALS, 0, true)}`}
                       position="right-bottom"
                       renderContent={() => (
-                        <span>{t`Assets Under Management: OPEN staked (All chains) + OAP pool (${chainName})`}</span>
+                        <span>{t`Assets Under Management: OPEN staked (All chains) + OAP - OpenWorld Assets Pool (${chainName})`}</span>
                       )}
                     />
                   </div>
                 </div>
                 <div className="App-card-row">
                   <div className="label">
-                    <Trans>OAP Pool</Trans>
+                    <Trans>OAP - OpenWorld Assets Pool</Trans>
                   </div>
                   <div>
                     <TooltipComponent
                       handle={`$${formatAmount(aum, USD_DECIMALS, 0, true)}`}
                       position="right-bottom"
-                      renderContent={() => <span>{t`Total value of tokens in OAP pool (${chainName})`}</span>}
+                      renderContent={() => (
+                        <span>{t`Total value of tokens in OpenWorld Assets Pool (${chainName})`}</span>
+                      )}
                     />
                   </div>
                 </div>
