@@ -1167,7 +1167,7 @@ button.App-button {
 }
 
 .App-slider .rc-slider-rail {
-  background: #DFE7FB;
+  background: var(--sliderColor);
 }
 
 .App-slider .rc-slider-track {
@@ -1180,8 +1180,8 @@ button.App-button {
   width: 10px;
   height: 10px;
 
-  background: #F9F9F9;
-  border: 2px solid #DFE7FB;
+  background: var(--sliderColor);
+  border: 3px solid #375BD2;
   border-radius: 3px;
   transform: rotate(45deg);
 }
@@ -1190,8 +1190,8 @@ button.App-button {
   box-sizing: border-box;
   width: 10px;
   height: 10px;
-  background: #375BD2;
-  border: 2px solid #F9F9F9;
+  background: #DFE7FB;
+  border: 2px solid #375BD2;
   border-radius: 3px;
   transform: rotate(45deg);
 }
@@ -1200,7 +1200,7 @@ button.App-button {
   box-sizing: border-box;
   width: 16px;
   height: 16px;
-  background: #F9F9F9;
+  background: var(--sliderColor);
   border: 3px solid #375BD2;
   border-radius: 4px;
   transform: rotate(45deg) translateX(-50%) translateY(40%) !important;

@@ -35,14 +35,17 @@ body {
   --textColor13: #3D4556;
   --textColor14: #F9F9F9;
   --textColor15: #1A2B6B;
+  --textColor100: #0F1943;
   --textHeaderActive: #375bd2;
   --textHeaderInactive: #375bd280;
   --cardHeaderBackgroundColor: #375bd2;
+  --cardHeaderBackgroundColor2: #DFE7FBB2;
   --cardTitleBackgroundColor: #375bd2;
   --cardBackgroundColor: #dfe7fb;
   --footerBackgroundColor: #375bd2;
   --buttonLightBackground: #dfe7fb;
   --buttonDarkBackground: #375bd2;
+  --buttonDarkBackground2: #375bd2;
   --dividerColor: #adbdef;
   --tooltipBackgroundColor: #dfe7fb;
   --logoUrl: url('/src/img/logo_GMX.svg');
@@ -51,6 +54,8 @@ body {
   --boxBackgroundColor: #EBF0FF;
   --maxButtonColor: #375BD2;
   --inputColor: #6D7380;
+  --dividerColor: rgba(109, 115, 128, 0.5);
+  --sliderColor: #BDC9E7;
 }
 body.dark-theme {
   /* color */
@@ -70,14 +75,17 @@ body.dark-theme {
   --textColor13: #3D4556;
   --textColor14: #375BD2;
   --textColor15: #375BD2;
+  --textColor100: #DFE7FB;
   --textHeaderActive: #ffffff;
   --textHeaderInactive: #ffffff80;
   --cardHeaderBackgroundColor: #04091c80;
+  --cardHeaderBackgroundColor2: #04091c80;
   --cardTitleBackgroundColor: #04091c;
   --cardBackgroundColor: #04091c;
   --footerBackgroundColor: #1a2b6b;
   --buttonLightBackground: #1a2b6b;
   --buttonDarkBackground: #dfe7fb;
+  --buttonDarkBackground2: #0F1943;
   --dividerColor: #0f1a44;
   --tooltipBackgroundColor: #1a2b6b;
   --logoUrl: url('/src/img/logo_open_white.svg');
@@ -86,6 +94,8 @@ body.dark-theme {
   --boxBackgroundColor: #070E27;
   --maxButtonColor: #1A2B6B;
   --inputColor: #657290;
+  --dividerColor: rgba(255, 255, 255, 0.1);
+  --sliderColor: #070E27;
 }
 
 code {

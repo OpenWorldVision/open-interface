@@ -27,7 +27,7 @@
 }
 
 .Checkbox-icon.inactive {
-  color: #3D4556;
+  color: var(--textColor6);
 }
 
 .Checkbox-label {
