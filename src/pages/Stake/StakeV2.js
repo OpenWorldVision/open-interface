@@ -908,25 +908,25 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
         nativeTokenSymbol={nativeTokenSymbol}
         wrappedTokenSymbol={wrappedTokenSymbol}
       />
-      {chainId !== MAINNET && (
-        <UnstakeModal
-          setPendingTxns={setPendingTxns}
-          isVisible={isUnstakeModalVisible}
-          setIsVisible={setIsUnstakeModalVisible}
-          chainId={chainId}
-          title={unstakeModalTitle}
-          maxAmount={unstakeModalMaxAmount}
-          reservedAmount={unstakeModalReservedAmount}
-          value={unstakeValue}
-          setValue={setUnstakeValue}
-          library={library}
-          unstakingTokenSymbol={unstakingTokenSymbol}
-          rewardRouterAddress={rewardRouterAddress}
-          unstakeMethodName={unstakeMethodName}
-          multiplierPointsAmount={multiplierPointsAmount}
-          bonusGmxInFeeGmx={bonusGmxInFeeGmx}
-        />
-      )}
+
+      <UnstakeModal
+        setPendingTxns={setPendingTxns}
+        isVisible={isUnstakeModalVisible}
+        setIsVisible={setIsUnstakeModalVisible}
+        chainId={chainId}
+        title={unstakeModalTitle}
+        maxAmount={unstakeModalMaxAmount}
+        reservedAmount={unstakeModalReservedAmount}
+        value={unstakeValue}
+        setValue={setUnstakeValue}
+        library={library}
+        unstakingTokenSymbol={unstakingTokenSymbol}
+        rewardRouterAddress={rewardRouterAddress}
+        unstakeMethodName={unstakeMethodName}
+        multiplierPointsAmount={multiplierPointsAmount}
+        bonusGmxInFeeGmx={bonusGmxInFeeGmx}
+      />
+
       <VesterDepositModal
         isVisible={isVesterDepositModalVisible}
         setIsVisible={setIsVesterDepositModalVisible}
