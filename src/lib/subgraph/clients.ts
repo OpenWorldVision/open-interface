@@ -3,6 +3,7 @@ import { SUBGRAPH_URLS } from "config/subgraph";
 import { ARBITRUM, ARBITRUM_TESTNET, AVALANCHE, TESTNET } from "config/chains";
 
 export const chainlinkClient = createClient(SUBGRAPH_URLS.common.chainLink);
+export const owChainlinkClient = createClient(SUBGRAPH_URLS.common.owChainLink);
 
 export const arbitrumGraphClient = createClient(SUBGRAPH_URLS[ARBITRUM].stats);
 export const arbitrumReferralsGraphClient = createClient(SUBGRAPH_URLS[ARBITRUM].referrals);
