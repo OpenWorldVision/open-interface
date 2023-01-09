@@ -33,6 +33,8 @@ body {
   --textColor11: #dfe7fb;
   --textColor12: #B5B7BF;
   --textColor13: #3D4556;
+  --textColor14: #F9F9F9;
+  --textColor15: #1A2B6B;
   --textHeaderActive: #375bd2;
   --textHeaderInactive: #375bd280;
   --cardHeaderBackgroundColor: #375bd2;
@@ -45,6 +47,10 @@ body {
   --tooltipBackgroundColor: #dfe7fb;
   --logoUrl: url('/src/img/logo_GMX.svg');
   --chartHeaderBackgroundColor: #DFE7FBB2;
+  --boxBackgroundColor2: #DFE7FB;
+  --boxBackgroundColor: #EBF0FF;
+  --maxButtonColor: #375BD2;
+  --inputColor: #6D7380;
 }
 body.dark-theme {
   /* color */
@@ -62,6 +68,8 @@ body.dark-theme {
   --textColor11: rgba(255, 255, 255, 0.1);
   --textColor12: #B5B7BF;
   --textColor13: #3D4556;
+  --textColor14: #375BD2;
+  --textColor15: #375BD2;
   --textHeaderActive: #ffffff;
   --textHeaderInactive: #ffffff80;
   --cardHeaderBackgroundColor: #04091c80;
@@ -74,6 +82,10 @@ body.dark-theme {
   --tooltipBackgroundColor: #1a2b6b;
   --logoUrl: url('/src/img/logo_open_white.svg');
   --chartHeaderBackgroundColor: #04091C;
+  --boxBackgroundColor2: #04091C;
+  --boxBackgroundColor: #070E27;
+  --maxButtonColor: #1A2B6B;
+  --inputColor: #657290;
 }
 
 code {
@@ -149,7 +161,7 @@ input[type="number"] {
 
 input {
   font-size: 2rem;
-  color: #1a2b6b;
+  color: var(--inputColor);
   outline: none;
   background: none;
   border: none;

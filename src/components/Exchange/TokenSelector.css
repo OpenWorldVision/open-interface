@@ -58,8 +58,9 @@
   margin-left: 0.6rem;
   font-size: 2.325rem;
   margin-top: -0.465rem;
-  background: #F9F9F9;
+  background: #375BD2;
   border-radius: 4px;
+  color: #F9F9F9;
 }
 
 .TokenSelector-token-row {
@@ -110,7 +111,6 @@
 .TokenSelector-token-row input {
   padding: 0.8rem;
   width: 100%;
-  color: #375BD2;
 }
 
 .TokenSelector-token-row .Token-text {
