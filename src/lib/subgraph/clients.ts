@@ -11,6 +11,7 @@ export const nissohGraphClient = createClient(SUBGRAPH_URLS[ARBITRUM].nissohVaul
 
 export const avalancheGraphClient = createClient(SUBGRAPH_URLS[AVALANCHE].stats);
 export const avalancheReferralsGraphClient = createClient(SUBGRAPH_URLS[AVALANCHE].referrals);
+export const bscReferralsGraphClient = createClient(SUBGRAPH_URLS[TESTNET].referrals);
 
 export function getGmxGraphClient(chainId: number) {
   if (chainId === ARBITRUM) {
