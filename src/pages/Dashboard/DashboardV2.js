@@ -147,7 +147,7 @@ export default function DashboardV2() {
   const { chainId } = useChainId();
   const totalVolume = useTotalVolume();
 
-  const chainName = getChainName(chainId);
+  const chainName = getChainName(chainId) || "BSC";
   // const { totalStaked } = useOpenStakingInfo(chainId);
 
   const { data: positionStats } = useSWR(
