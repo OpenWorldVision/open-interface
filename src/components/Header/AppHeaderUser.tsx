@@ -99,7 +99,7 @@ export function AppHeaderUser({
             showRedirectModal={showRedirectModal}
           >
             <FontAwesomeIcon icon={faMoneyBillTransfer} style={{ marginRight: 8 }} />
-            <Trans>Trade</Trans>
+            {small ? null : <Trans>Trade</Trans>}
           </HeaderLink>
         </div>
         {showConnectionOptions ? (
