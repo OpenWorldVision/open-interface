@@ -349,7 +349,7 @@
   bottom: 0;
   left: 0;
   right: 0;
-  top: 5.4rem;
+  top: 4.5rem;
   z-index: 1;
 }
 .ExchangeChart-bottom-controls {
@@ -359,14 +359,14 @@
   width: 4.65rem;
   padding: 0.8rem 0;
   border: 0;
-  background: #1a2b6b90;
+  background: var(--tabInactiveColor);
   color: #ffffff;
 }
 .ExchangeChart-bottom-controls .Tab .Tab-option.active {
-  background: #1a2b6b;
+  background: var(--tabActiveColor);
 }
 .ExchangeChart-bottom-controls .Tab .Tab-option:hover {
-  background: #1a2b6bb3;
+  background: var(--tabActiveColor);
 }
 .ExchangeChart-bottom-controls .Tab {
   border: 0;

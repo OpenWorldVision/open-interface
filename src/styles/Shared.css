@@ -58,6 +58,8 @@ body {
   --inputColor: #6d7380;
   --dividerColor: rgba(109, 115, 128, 0.5);
   --sliderColor: #bdc9e7;
+  --tabInactiveColor: #375BD280;
+  --tabActiveColor: #375BD2;
 }
 body.dark-theme {
   /* color */
@@ -100,6 +102,8 @@ body.dark-theme {
   --inputColor: #657290;
   --dividerColor: rgba(255, 255, 255, 0.1);
   --sliderColor: #070e27;
+  --tabInactiveColor: #1A2B6B80;
+  --tabActiveColor: #1A2B6B;
 }
 
 code {

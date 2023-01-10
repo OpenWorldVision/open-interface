@@ -27,10 +27,10 @@
   background: var(--footerBackgroundColor);
 }
 .Tab.block .Tab-option:first-child {
-  border-width: 0 1px 0 0;
+  border-width: 0;
 }
 .Tab.block .Tab-option:last-child {
-  border-width: 0 0 0 1px;
+  border-width: 0;
 }
 .Tab.block .Tab-option:hover {
   color: rgba(255, 255, 255, 1);

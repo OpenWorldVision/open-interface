@@ -72,7 +72,7 @@ const getChartOptions = (width, height) => ({
   width,
   height,
   layout: {
-    backgroundColor: "#F9F9F9",
+    backgroundColor: "#EDF2FE",
     textColor: "#7F8080",
     fontFamily: "Montserrat",
   },
@@ -85,12 +85,60 @@ const getChartOptions = (width, height) => ({
   grid: {
     vertLines: {
       visible: true,
-      color: "#DFE7FB",
+      color: "#6D738033",
       style: 2,
     },
     horzLines: {
       visible: true,
-      color: "#DFE7FB",
+      color: "#6D738033",
+      style: 2,
+    },
+  },
+  // https://github.com/tradingview/lightweight-charts/blob/master/docs/time-scale.md#time-scale
+  timeScale: {
+    rightOffset: 5,
+    borderVisible: false,
+    barSpacing: 5,
+    timeVisible: true,
+    fixLeftEdge: true,
+  },
+  // https://github.com/tradingview/lightweight-charts/blob/master/docs/customization.md#price-axis
+  priceScale: {
+    borderVisible: false,
+  },
+  crosshair: {
+    // horzLine: {
+    //   color: "#aaa",
+    // },
+    // vertLine: {
+    //   color: "#aaa",
+    // },
+    mode: 0,
+  },
+});
+const getChartDarkOptions = (width, height) => ({
+  width,
+  height,
+  layout: {
+    backgroundColor: "#04091C",
+    textColor: "#7F8080",
+    fontFamily: "Montserrat",
+  },
+  localization: {
+    // https://github.com/tradingview/lightweight-charts/blob/master/docs/customization.md#time-format
+    timeFormatter: (businessDayOrTimestamp) => {
+      return formatDateTime(businessDayOrTimestamp - timezoneOffset);
+    },
+  },
+  grid: {
+    vertLines: {
+      visible: true,
+      color: "#FFFFFF0D",
+      style: 2,
+    },
+    horzLines: {
+      visible: true,
+      color: "#FFFFFF0D",
       style: 2,
     },
   },
@@ -146,6 +194,38 @@ export default function ExchangeTVChart(props) {
     maxPrice: null,
     minPrice: null,
   });
+
+  const [isDarkTheme, setIsDarkTheme] = useState(false);
+
+  const onThemeChange = (callback) => {
+    var element = document.getElementsByTagName("BODY")[0];
+    callback(element.className === "dark-theme");
+    const observer = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+        if (mutation.type === "attributes" && mutation.attributeName === "class") {
+          callback(mutation.target.classList.contains("dark-theme"));
+        }
+      });
+    });
+    observer.observe(element, { attributes: true });
+    return observer.disconnect;
+  };
+
+  useEffect(() => {
+    const subTheme = onThemeChange(setIsDarkTheme);
+    return subTheme;
+  }, []);
+
+  useEffect(() => {
+    if (currentChart) {
+      currentChart.applyOptions(
+        isDarkTheme
+          ? getChartDarkOptions(chartRef.current.offsetWidth, chartRef.current.offsetHeight)
+          : getChartOptions(chartRef.current.offsetWidth, chartRef.current.offsetHeight)
+      );
+    }
+  }, [currentChart, isDarkTheme]);
+
   useEffect(() => {
     const tmp = getChartToken(swapOption, fromToken, toToken, chainId);
     setChartToken(tmp);
@@ -229,7 +309,9 @@ export default function ExchangeTVChart(props) {
 
     const chart = createChart(
       chartRef.current,
-      getChartOptions(chartRef.current.offsetWidth, chartRef.current.offsetHeight)
+      isDarkTheme
+        ? getChartDarkOptions(chartRef.current.offsetWidth, chartRef.current.offsetHeight)
+        : getChartOptions(chartRef.current.offsetWidth, chartRef.current.offsetHeight)
     );
 
     chart.subscribeCrosshairMove(onCrosshairMove);
@@ -238,7 +320,7 @@ export default function ExchangeTVChart(props) {
 
     setCurrentChart(chart);
     setCurrentSeries(series);
-  }, [ref, priceData, currentChart, onCrosshairMove]);
+  }, [ref, priceData, currentChart, onCrosshairMove, isDarkTheme]);
 
   useEffect(() => {
     const interval = setInterval(() => {
