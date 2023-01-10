@@ -395,7 +395,6 @@ export function useCodeOwner(library, chainId, account, code) {
 export async function validateReferralCodeExists(referralCode, chainId) {
   try {
     const referralCodeBytes32 = encodeReferralCode(referralCode);
-    console.log("meo to", referralCodeBytes32);
     const referralCodeOwner = await getReferralCodeOwner(chainId, referralCodeBytes32);
     return !isAddressZero(referralCodeOwner);
   } catch (error) {
