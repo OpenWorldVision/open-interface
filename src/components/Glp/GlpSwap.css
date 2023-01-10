@@ -59,8 +59,9 @@
 }
 
 .GlpSwap-stats-card .App-card-row .label {
-  color: #6D7380;
+  color: #6d7380;
   opacity: 1;
+  font-weight: bold;
 }
 
 .GlpSwap-content .GlpSwap-box {
@@ -115,9 +116,9 @@
 }
 
 .GlpSwap-token-list {
-  border: 1px solid #DFE7FB;
+  border: 1px solid #dfe7fb;
   border-radius: 4px;
-  background: #F9F9F9;
+  background: #f9f9f9;
   padding: 1.5rem;
   /* padding-top: ; */
   text-align: left;
@@ -176,7 +177,6 @@
 .token-table td,
 .token-table th {
   padding: 1.1625rem;
-
 }
 
 .token-table td:nth-child(2),
@@ -218,7 +218,7 @@
 }
 
 .token-table th {
-  font-weight: normal;
+  font-weight: bold;
   letter-spacing: 0.25px;
   color: var(--textColor3);
   text-transform: uppercase;
@@ -256,7 +256,7 @@
   top: -2.2rem;
   border-radius: 3.1rem;
   user-select: none;
-  background: #375BD2;
+  background: #375bd2;
   cursor: pointer;
   opacity: 0.85;
 }

@@ -79,7 +79,7 @@ function OpenStaking(props: Props) {
   return (
     <div className="App-card StakeV2-gmx-card">
       <div className="App-card-title">OPEN</div>
-      <div className="App-card-divider"></div>
+      {/* <div className="App-card-divider"></div> */}
       <div className="App-card-content">
         <div className="App-card-row">
           <div className="label">

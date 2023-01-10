@@ -15,6 +15,10 @@
   color: var(--textColor10);
 }
 
+.App-card-row .label {
+  font-weight: bold;
+}
+
 .StakeV2 .Page-title-section {
   position: relative;
   z-index: 2;

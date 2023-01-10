@@ -63,7 +63,7 @@ export default function TokenCard({ showRedirectModal, redirectPopupTimestamp })
     <div className="Home-token-card-options">
       <div className="Home-token-card-option">
         <div className="Home-token-card-option-icon">
-          <img src={logoOAP} alt="buyOAPIcon" style={{ width: 40, height: 40 }} /> OAP
+          <img src={logoOAP} alt="buyOAPIcon" style={{ width: 30, height: 30 }} /> OAP
         </div>
         <div className="Home-token-card-option-info">
           <div className="Home-token-card-option-title">

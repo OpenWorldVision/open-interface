@@ -1095,7 +1095,6 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
           </div> */}
           <div className="App-card StakeV2-gmx-card">
             <div className="App-card-title">OAP ({chainName})</div>
-            {/* <div className="App-card-divider"></div> */}
             <div className="App-card-content">
               <div className="App-card-row">
                 <div className="label">
@@ -1241,7 +1240,6 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
             <div className="App-card-title">
               <Trans>Escrowed OPEN</Trans>
             </div>
-            <div className="App-card-divider"></div>
             <div className="App-card-content">
               <div className="App-card-row">
                 <div className="label">
