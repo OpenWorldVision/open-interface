@@ -10,7 +10,7 @@ export const ARBITRUM_TESTNET = 421611;
 export const ARBITRUM = 42161;
 
 // TODO take it from web3
-export const DEFAULT_CHAIN_ID = MAINNET;
+export const DEFAULT_CHAIN_ID = TESTNET;
 export const CHAIN_ID = DEFAULT_CHAIN_ID;
 
 export const SUPPORTED_CHAIN_IDS = [MAINNET, TESTNET];
@@ -122,14 +122,6 @@ export const ARBITRUM_RPC_PROVIDERS = [getDefaultArbitrumRpcUrl()];
 export const AVALANCHE_RPC_PROVIDERS = ["https://api.avax.network/ext/bc/C/rpc"]; // BSC MAINNET
 
 // BSC TESTNET
-// const RPC_PROVIDERS = [
-//   "https://data-seed-prebsc-1-s1.binance.org:8545",
-//   "https://data-seed-prebsc-2-s1.binance.org:8545",
-//   "https://data-seed-prebsc-1-s2.binance.org:8545",
-//   "https://data-seed-prebsc-2-s2.binance.org:8545",
-//   "https://data-seed-prebsc-1-s3.binance.org:8545",
-//   "https://data-seed-prebsc-2-s3.binance.org:8545"
-// ]
 
 export const BSC_RPC_PROVIDERS = [
   "https://bsc-dataseed.binance.org",
@@ -147,10 +139,20 @@ export const BSC_RPC_PROVIDERS = [
   "https://bsc-dataseed4.binance.org",
 ];
 
+export const TESTNET_RPC_PROVIDERS = [
+  "https://data-seed-prebsc-1-s1.binance.org:8545",
+  "https://data-seed-prebsc-2-s1.binance.org:8545",
+  "https://data-seed-prebsc-1-s2.binance.org:8545",
+  "https://data-seed-prebsc-2-s2.binance.org:8545",
+  "https://data-seed-prebsc-1-s3.binance.org:8545",
+  "https://data-seed-prebsc-2-s3.binance.org:8545",
+];
+
 export const RPC_PROVIDERS = {
   [MAINNET]: BSC_RPC_PROVIDERS,
   [ARBITRUM]: ARBITRUM_RPC_PROVIDERS,
   [AVALANCHE]: AVALANCHE_RPC_PROVIDERS,
+  [TESTNET]: TESTNET_RPC_PROVIDERS,
 };
 
 export const FALLBACK_PROVIDERS = {
