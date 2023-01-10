@@ -18,6 +18,6 @@ export const SUBGRAPH_URLS = {
   },
   [TESTNET]: {
     stats: "https://graphiql.openworld.vision/subgraphs/name/nnphuong1997/open-bsc-stats",
-    referrals: "https://graphiql.openworld.vision/subgraphs/name/nnphuong1997/open-bsc-referrals",
+    referrals: "https://graphiql.openworld.vision/subgraphs/name/nnphuong1997/open-bsc-referrals3",
   },
 };
