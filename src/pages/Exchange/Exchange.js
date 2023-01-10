@@ -918,7 +918,6 @@ export const Exchange = forwardRef((props, ref) => {
   };
 
   const renderChart = () => {
-    console.log("render chart: ", infoTokens);
     return (
       <ExchangeTVChart
         fromTokenAddress={fromTokenAddress}
