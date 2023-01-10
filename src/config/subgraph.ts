@@ -1,4 +1,4 @@
-import { ARBITRUM, AVALANCHE } from "./chains";
+import { ARBITRUM, AVALANCHE, TESTNET } from "./chains";
 
 export const SUBGRAPH_URLS = {
   [ARBITRUM]: {
@@ -14,5 +14,9 @@ export const SUBGRAPH_URLS = {
 
   common: {
     chainLink: "https://api.thegraph.com/subgraphs/name/deividask/chainlink",
+  },
+  [TESTNET]: {
+    stats: "https://graphiql.openworld.vision/subgraphs/name/nnphuong1997/open-bsc-stats",
+    referrals: "https://graphiql.openworld.vision/subgraphs/name/nnphuong1997/open-bsc-referrals",
   },
 };

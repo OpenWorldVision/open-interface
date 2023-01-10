@@ -7,8 +7,12 @@ import ReferralStorage from "abis/ReferralStorage.json";
 import { MAX_REFERRAL_CODE_LENGTH, isAddressZero, isHashZero } from "lib/legacy";
 import { getContract } from "config/contracts";
 import { REGEX_VERIFY_BYTES32 } from "components/Referrals/referralsHelper";
-import { ARBITRUM, AVALANCHE, TESTNET } from "config/chains";
-import { arbitrumReferralsGraphClient, avalancheReferralsGraphClient } from "lib/subgraph/clients";
+import { ARBITRUM, AVALANCHE, MAINNET, TESTNET } from "config/chains";
+import {
+  arbitrumReferralsGraphClient,
+  avalancheReferralsGraphClient,
+  bscReferralsGraphClient,
+} from "lib/subgraph/clients";
 import { callContract, contractFetcher } from "lib/contracts";
 import { helperToast } from "lib/helperToast";
 import { REFERRAL_CODE_KEY } from "config/localStorage";
@@ -25,7 +29,9 @@ function getGraphClient(chainId) {
   } else if (chainId === AVALANCHE) {
     return avalancheReferralsGraphClient;
   } else if (chainId === TESTNET) {
-    return null;
+    return bscReferralsGraphClient;
+  } else if (chainId === MAINNET) {
+    return bscReferralsGraphClient;
   }
   throw new Error(`Unsupported chain ${chainId}`);
 }
@@ -130,6 +136,7 @@ export function useReferralsData(chainId, account) {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const ownerOnOtherChain = useUserCodesOnAllChain(account);
+
   useEffect(() => {
     if (!chainId || !account) {
       setLoading(false);
@@ -192,6 +199,12 @@ export function useReferralsData(chainId, account) {
       }
     `;
     setLoading(true);
+
+    console.log("query ne,", query);
+    console.log("var 1", [DISTRIBUTION_TYPE_REBATES, DISTRIBUTION_TYPE_DISCOUNT]);
+    console.log("var 2", account);
+    console.log("var 3", startOfDayTimestamp);
+    console.log("var 4", account && `total:0:${account.toLowerCase()}`);
 
     getGraphClient(chainId)
       .query({
@@ -380,9 +393,14 @@ export function useCodeOwner(library, chainId, account, code) {
 }
 
 export async function validateReferralCodeExists(referralCode, chainId) {
-  const referralCodeBytes32 = encodeReferralCode(referralCode);
-  const referralCodeOwner = await getReferralCodeOwner(chainId, referralCodeBytes32);
-  return !isAddressZero(referralCodeOwner);
+  try {
+    const referralCodeBytes32 = encodeReferralCode(referralCode);
+    console.log("meo to", referralCodeBytes32);
+    const referralCodeOwner = await getReferralCodeOwner(chainId, referralCodeBytes32);
+    return !isAddressZero(referralCodeOwner);
+  } catch (error) {
+    console.log("error", error);
+  }
 }
 
 export function useAffiliateCodes(chainId, account) {
