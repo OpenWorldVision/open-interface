@@ -869,21 +869,26 @@ input.Exchange-swap-input {
   width: 100%;
   padding-right: 2rem;
 }
+
+input.Exchange-swap-input::placeholder {
+  /* color: var(--textColor2); */
+  color: var(--inputColor);
+}
+
 input.Exchange-swap-input.small {
   max-width: 14.725rem;
 }
 
 .Exchange-swap-button-container {
-  /* background: #F9F9F9; */
-  /* border: 2px solid #375BD2; */
   border-radius: 18px;
   overflow: hidden;
 }
 .Exchange-swap-button-container button.App-cta {
   border-radius: 18px;
   overflow: hidden;
-  background: var(--buttonDarkBackground) !important;
-  color: var(--textColor4) !important;
+  background: var(--footerBackgroundColor) !important;
+  /* color: var(--textColor4) !important; */
+  color: #ffffff !important;
 }
 
 .Exchange-swap-button {

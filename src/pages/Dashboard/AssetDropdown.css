@@ -18,7 +18,7 @@
 
 .dropdown-arrow {
   cursor: pointer;
-  color: var(--textColor);
+  color: var(--textColor6);
   font-size: 1.6rem;
 }
 .dropdown-arrow:hover {

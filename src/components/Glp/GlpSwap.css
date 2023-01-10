@@ -116,10 +116,10 @@
 }
 
 .GlpSwap-token-list {
-  border: 1px solid #dfe7fb;
+  /* border: 1px solid #dfe7fb; */
   border-radius: 4px;
   background: #f9f9f9;
-  padding: 1.5rem;
+  /* padding: 1.5rem; */
   /* padding-top: ; */
   text-align: left;
 }
@@ -227,6 +227,7 @@
 .token-table .action-btn {
   width: 100%;
   justify-content: center;
+  background: var(--footerBackgroundColor);
 }
 .cap-reached {
   margin-left: 0.8rem;

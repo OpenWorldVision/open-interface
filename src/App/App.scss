@@ -1068,10 +1068,12 @@ button.App-button {
 }
 
 .Toastify__toast--success {
-  background: transparent linear-gradient(90deg, #375BD2 0%, #375BD2 100%) 0% 0% no-repeat padding-box;
+  // background: transparent linear-gradient(90deg, #375BD2 0%, #375BD2 100%) 0% 0% no-repeat padding-box;
+  background: var(--footerBackgroundColor) ;
   color: white;
   box-shadow: 0px 0.3rem 0.6rem #0000005c;
-  border-radius: 0.4rem;
+  border-radius:18px;
+  border: 1px white solid;
 
   a {
     color: white;
