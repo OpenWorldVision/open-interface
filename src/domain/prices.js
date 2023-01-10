@@ -14,7 +14,7 @@ const BigNumber = ethers.BigNumber;
 // Ethereum network, Chainlink Aggregator contracts
 const FEED_ID_MAP = {
   BTC_USD: "0x178ba789e24a1d51e9ea3cb1db3b52917963d71d",
-  ETH_USD: "0x37bc7498f4ff12c19678ee8fe19d713b87f6a9e6",
+  ETH_USD: "0xfc3069296a691250ffdf21fe51340fdd415a76ed",
   BNB_USD: "0x137924d7c36816e0dcaf016eb617cc2c92c05782",
   LINK_USD: "0xdfd03bfc3465107ce570a0397b247f546a42d0fa",
   UNI_USD: "0x68577f915131087199fe48913d8b416b3984fd38",
@@ -168,23 +168,34 @@ function getChainlinkChartPricesFromGraph(tokenSymbol, period) {
     throw new Error(`undefined marketName ${marketName}`);
   }
 
-  const PER_CHUNK = 1000;
-  const CHUNKS_TOTAL = 6;
+  const ENTRY_TIMESTAMP = 1672803300; // Block 24500000
+  const INTERVAL_TIMESTAMP = 2000;
+
+  const MAX_CHART_LENGTH = 2592000; // 30 days
+  const now = Math.floor(new Date().getTime() / 1000);
+
+  let entryTime = now - ENTRY_TIMESTAMP > MAX_CHART_LENGTH ? now - MAX_CHART_LENGTH : ENTRY_TIMESTAMP;
+  let lastTime = ENTRY_TIMESTAMP + INTERVAL_TIMESTAMP;
+
   const requests = [];
-  for (let i = 0; i < CHUNKS_TOTAL; i++) {
+
+  while (entryTime < lastTime && lastTime < now) {
     const query = gql(`{
       rounds(
-        first: ${PER_CHUNK},
-        skip: ${i * PER_CHUNK},
         orderBy: unixTimestamp,
         orderDirection: desc,
-        where: {feed: "${feedId}"}
+        where: {feed: "${feedId}", unixTimestamp_gte: ${entryTime}, unixTimestamp_lt: ${lastTime}}
       ) {
         unixTimestamp,
         value
       }
     }`);
-    if (marketName === "BNB_USD" || marketName === "BTC_USD") {
+    entryTime = lastTime;
+    lastTime = lastTime + INTERVAL_TIMESTAMP;
+    if (lastTime > now) {
+      lastTime = now;
+    }
+    if (marketName === "BNB_USD" || marketName === "BTC_USD" || marketName === "ETH_USD") {
       requests.push(owChainlinkClient.query({ query }));
     } else {
       requests.push(chainlinkClient.query({ query }));
