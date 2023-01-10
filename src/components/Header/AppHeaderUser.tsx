@@ -98,8 +98,12 @@ export function AppHeaderUser({
             redirectPopupTimestamp={redirectPopupTimestamp}
             showRedirectModal={showRedirectModal}
           >
-            <FontAwesomeIcon icon={faMoneyBillTransfer} style={{ marginRight: 8 }} />
-            {small ? null : <Trans>Trade</Trans>}
+            <FontAwesomeIcon icon={faMoneyBillTransfer} />
+            {small ? null : (
+              <div style={{ marginLeft: 8 }}>
+                <Trans>Trade</Trans>
+              </div>
+            )}
           </HeaderLink>
         </div>
         {showConnectionOptions ? (
