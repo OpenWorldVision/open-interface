@@ -25,13 +25,12 @@
 
 .Exchange-list-tab-container .Tab.inline .Tab-option {
   margin-right: 0;
-  color: #3d4556;
   padding: 1.5rem;
   opacity: 1;
   color: var(--textHeaderInactive);
+  font-weight: 700;
 }
-.Exchange-list-tab-container .Tab.inline .Tab-option.active {
-  color: #ffffff;
+.Exchange-list-tab-container .Tab.inline .Tab-option.active{
   font-weight: 700;
   background: var(--cardBackgroundColor);
   color: var(--textColor8);
@@ -51,8 +50,8 @@
   border-radius: 0px 0px 18px 18px;
 }
 .Exchange-empty-positions-list-note {
-  padding-bottom: 0.465rem;
-  color: #6d7380;
+  padding:0.1rem 0.6rem;
+  color:var(--textColor100);
 }
 
 .position-loading-icon {
@@ -481,8 +480,8 @@
 
 .Exchange-list {
   width: 100%;
-  background: #f9f9f9;
-  border-radius: 18px;
+  background: var(--boxBackgroundColor2);
+  border-radius: 0 0 18px 18px;
 }
 .PositionsList {
   /* border: 1px solid #DFE7FB; */

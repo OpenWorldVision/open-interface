@@ -105,7 +105,7 @@ export function AppHeaderUser({
         {showConnectionOptions ? (
           <div className="connect-wallet">
             <ConnectWalletButton onClick={() => setWalletModalVisible(true)}>
-              {small ? <Trans>Connect</Trans> : <Trans>Connect Wallet</Trans>}
+              {small ? null : <Trans>Connect Wallet</Trans>}
             </ConnectWalletButton>
             <div className="connect-wallet-divider" />
             <NetworkDropdown
@@ -154,13 +154,12 @@ export function AppHeaderUser({
     <div className="App-header-user">
       <div className="App-header-trade-link">
         <HeaderLink
-          className="default-btn"
+          className="default-btn btn-trade"
           to="/trade"
           redirectPopupTimestamp={redirectPopupTimestamp}
           showRedirectModal={showRedirectModal}
         >
-          <FontAwesomeIcon icon={faMoneyBillTransfer} style={{ marginRight: 8 }} />
-          <Trans>Trade</Trans>
+          <FontAwesomeIcon icon={faMoneyBillTransfer} />
         </HeaderLink>
       </div>
 

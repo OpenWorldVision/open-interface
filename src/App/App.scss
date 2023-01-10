@@ -898,7 +898,7 @@ button.App-button-option {
   display: inline-flex !important;
   align-items: center;
   border: none;
-  // background: #375BD2;
+  background: var(--buttonDarkBackground2);
   border-radius: 18px;
 }
 
@@ -1430,7 +1430,11 @@ button.App-button {
     margin-right: 0.6rem;
   }
   .App-header-trade-link a {
-    padding: 0 0.8rem;
+    padding: 0;
+  }
+  .btn-trade {
+    width: 6rem;
+    justify-content: center;
   }
 
   .App-header-user-netowork {
@@ -1480,7 +1484,9 @@ button.App-button {
   .App-card-content-container {
     display: grid;
   }
-
+  .App-card-options {
+    margin: -0.5rem 0.8rem;
+  }
 }
 
 .walletconnect-modal__mobile__toggle a {
