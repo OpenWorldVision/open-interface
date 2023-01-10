@@ -676,8 +676,9 @@ table.Exchange-list th {
 }
 
 .Exchange-swap-box-inner div .Exchange-swap-option-tabs.Tab.block div:nth-child(1) {
-  background: #f9f9f9;
+  background: #01a789;
   color: #01a789;
+  color: #ffffff;
 }
 .Exchange-swap-box-inner div .Exchange-swap-option-tabs.Tab.block div:nth-child(1):hover {
   background: #01a789;
@@ -688,8 +689,9 @@ table.Exchange-list th {
   color: #ffffff;
 }
 .Exchange-swap-box-inner div .Exchange-swap-option-tabs.Tab.block div:nth-child(2) {
-  background: #f9f9f9;
+  background: #e8636b;
   color: #e8636b;
+  color: #ffffff;
 }
 .Exchange-swap-box-inner div .Exchange-swap-option-tabs.Tab.block div:nth-child(2):hover {
   background: #e8636b;
@@ -799,7 +801,6 @@ table.Exchange-list th {
 
 .Exchange-swap-option-tabs.Tab.block .Tab-option-icon {
   margin-top: -0.155rem;
-  transform: scale(0.75);
   vertical-align: middle;
   margin-right: 0.8rem;
 }
@@ -887,7 +888,18 @@ input.Exchange-swap-input.small {
   border-radius: 18px;
   overflow: hidden;
   background: var(--footerBackgroundColor) !important;
-  /* color: var(--textColor4) !important; */
+  color: #ffffff !important;
+}
+.Modal-body .Exchange-swap-button-container button.App-cta {
+  background: var(--buttonDarkBackground2) !important;
+  color: #ffffff !important;
+}
+.Exchange-swap-button-container button.App-cta.long {
+  background: #01A789 !important;
+  color: #ffffff !important;
+}
+.Exchange-swap-button-container button.App-cta.short {
+  background: #E8636B !important;
   color: #ffffff !important;
 }
 
@@ -1048,6 +1060,7 @@ table.Exchange-list-small td {
   display: inline-flex;
   align-items: center;
   opacity: 1;
+  color: var(--textColor100);
 }
 
 @media (max-width: 1500px) {

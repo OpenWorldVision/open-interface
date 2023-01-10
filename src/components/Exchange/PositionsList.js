@@ -681,7 +681,6 @@ export default function PositionsList(props) {
                       <FontAwesomeIcon
                         icon={faPenToSquare}
                         fontSize={16}
-                        color={"#3D4556"}
                         style={{
                           marginLeft: 8,
                         }}

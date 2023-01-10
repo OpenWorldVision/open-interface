@@ -646,6 +646,7 @@ button.App-connect-wallet:hover {
   display: inline-block;
   height: 2.15rem;
   vertical-align: middle;
+  content: var(--logoUrl);
 }
 
 .App-header-link-main img.small {
@@ -1280,6 +1281,11 @@ button.App-button {
   align-items: center;
 }
 
+@media (max-width: 1300px) {
+  .App-card-options {
+    margin: -0.5rem 0.8rem;
+  }
+}
 @media (max-width: 1033px) {
   .long-connect-btn {
     display: none !important;
@@ -1333,7 +1339,6 @@ button.App-button {
 
   .App-header-link-main img {
     height: 2.1rem;
-    content: var(--logoUrl);
   }
 
   .App-header.large {
@@ -1395,6 +1400,7 @@ button.App-button {
   .App-card-long-content {
     grid-template-columns: 1fr 1fr;
   }
+  
 }
 
 @media (max-width: 600px) {
@@ -1425,6 +1431,7 @@ button.App-button {
   .header-connect-btn {
     margin-right: 0.4rem;
   }
+ 
 }
 
 @media (max-width: 450px) {
@@ -1486,9 +1493,7 @@ button.App-button {
   .App-card-content-container {
     display: grid;
   }
-  .App-card-options {
-    margin: -0.5rem 0.8rem;
-  }
+ 
 }
 
 .walletconnect-modal__mobile__toggle a {

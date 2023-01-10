@@ -48,7 +48,7 @@
   color: #ffffff;
   font-weight: 700;
 }
-.Tab.block .Tab-option.active img {
+.Tab.block .Tab-option img {
   filter: brightness(0) invert(1);
 }
 

@@ -186,7 +186,8 @@ input {
 }
 
 input::placeholder {
-  color: rgba(26, 43, 107, 0.5);
+  color: var(--inputColor);
+  opacity: 0.6;
 }
 
 button {
