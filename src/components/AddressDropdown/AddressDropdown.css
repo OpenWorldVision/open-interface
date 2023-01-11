@@ -32,6 +32,9 @@
   cursor: pointer;
   outline: none;
   z-index: 1000;
+  box-shadow: 0px 7px 30px -19px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 0px 7px 30px -19px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 7px 30px -19px rgba(0,0,0,0.75);
 }
 .menu-item {
   display: flex !important;
@@ -41,7 +44,7 @@
   padding-bottom: 1.5rem;
   font-size: 1.4rem;
   padding: 0.85rem 0.8rem;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .menu-item:hover {

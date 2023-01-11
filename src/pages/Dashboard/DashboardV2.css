@@ -72,6 +72,11 @@
   cursor: pointer;
 }
 
+.App-card .App-card-divider {
+  margin: 0 10px;
+  background-color: var(--dividerColor);
+}
+
 .stats-label-color {
   width: 0.4rem;
   height: 100%;

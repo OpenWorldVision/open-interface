@@ -19,6 +19,9 @@
   min-width: 17rem;
   padding-bottom: 0.8rem;
   background: var(--tooltipBackgroundColor);
+  box-shadow: 0px 7px 30px -19px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 0px 7px 30px -19px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 7px 30px -19px rgba(0,0,0,0.75);
 }
 .network-dropdown-items:last-child {
   padding-bottom: 0;
@@ -84,7 +87,9 @@
 .network-option {
   cursor: pointer;
   background: var(--tooltipBackgroundColor);
-  border: 1px solid var(--dark-blue-border);
+  box-shadow: 0px 7px 30px -19px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 0px 7px 30px -19px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 7px 30px -19px rgba(0,0,0,0.75);
   border-radius: 0.4rem;
   padding: 0.8rem 1.5rem;
   display: flex;
