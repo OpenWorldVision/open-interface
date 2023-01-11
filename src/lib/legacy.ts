@@ -1,6 +1,7 @@
+// @ts-nocheck
 import { useEffect, useState } from "react";
 import { useWeb3React } from "@web3-react/core";
-import { ethers } from "ethers";
+import { BigNumber, ethers } from "ethers";
 import { getContract } from "config/contracts";
 import useSWR from "swr";
 
@@ -9,7 +10,7 @@ import OrderBook from "abis/OrderBook.json";
 
 import { CHAIN_ID, getExplorerUrl } from "config/chains";
 import { getServerBaseUrl } from "config/backend";
-import { getMostAbundantStableToken } from "domain/tokens";
+import { getMostAbundantStableToken, Token } from "domain/tokens";
 import { getTokenInfo } from "domain/tokens/utils";
 import { getProvider } from "./rpc";
 import { bigNumberify, expandDecimals, formatAmount } from "./numbers";
@@ -47,7 +48,7 @@ export const STABLE_TAX_BASIS_POINTS = 5;
 export const MINT_BURN_FEE_BASIS_POINTS = 25;
 export const SWAP_FEE_BASIS_POINTS = 30;
 export const STABLE_SWAP_FEE_BASIS_POINTS = 1;
-export const MARGIN_FEE_BASIS_POINTS = 10;
+export const MARGIN_FEE_BASIS_POINTS = 5;
 
 export const LIQUIDATION_FEE = expandDecimals(5, USD_DECIMALS);
 
@@ -79,7 +80,7 @@ export const MIN_PROFIT_BIPS = 0;
 export const MAX_ALLOWED_LEVERAGE = 50 * BASIS_POINTS_DIVISOR;
 
 export function deserialize(data) {
-  for (const [key, value] of Object.entries(data)) {
+  for (const [key, value] of Object.entries(data) as any) {
     if (value._type === "BigNumber") {
       data[key] = bigNumberify(value.value);
     }
@@ -139,7 +140,7 @@ export function shouldInvertTriggerRatio(tokenA, tokenB) {
   return false;
 }
 
-export function getExchangeRateDisplay(rate, tokenA, tokenB, opts = {}) {
+export function getExchangeRateDisplay(rate, tokenA, tokenB, opts: { omitSymbols?: boolean } = {}) {
   if (!rate || !tokenA || !tokenB) return "...";
   if (shouldInvertTriggerRatio(tokenA, tokenB)) {
     [tokenA, tokenB] = [tokenB, tokenA];
@@ -180,12 +181,12 @@ export function getTargetUsdgAmount(token, usdgSupply, totalTokenWeights) {
 
 export function getFeeBasisPoints(
   token,
-  usdgDelta,
-  feeBasisPoints,
-  taxBasisPoints,
-  increment,
-  usdgSupply,
-  totalTokenWeights
+  usdgDelta: BigNumber,
+  feeBasisPoints: number,
+  taxBasisPoints: number,
+  increment: boolean,
+  usdgSupply: BigNumber,
+  totalTokenWeights: BigNumber
 ) {
   if (!token || !token.usdgAmount || !usdgSupply || !totalTokenWeights) {
     return 0;
@@ -285,7 +286,14 @@ export function getSellGlpFromAmount(toAmount, swapTokenAddress, infoTokens, glp
   return { amount: glpAmount, feeBasisPoints };
 }
 
-export function getBuyGlpFromAmount(toAmount, fromTokenAddress, infoTokens, glpPrice, usdgSupply, totalTokenWeights) {
+export function getBuyGlpFromAmount(
+  toAmount,
+  fromTokenAddress,
+  infoTokens,
+  glpPrice,
+  usdgSupply,
+  totalTokenWeights: BigNumber
+) {
   const defaultValue = { amount: bigNumberify(0) };
   if (!toAmount || !fromTokenAddress || !infoTokens || !glpPrice || !usdgSupply || !totalTokenWeights) {
     return defaultValue;
@@ -489,7 +497,7 @@ export function getNextToAmount(
 
   const adjustDecimals = adjustForDecimalsFactory(toToken.decimals - fromToken.decimals);
 
-  let toAmountBasedOnRatio = bigNumberify(0);
+  let toAmountBasedOnRatio = bigNumberify(0)!;
   if (ratio && !ratio.isZero()) {
     toAmountBasedOnRatio = fromAmount.mul(PRECISION).div(ratio);
   }
@@ -513,6 +521,7 @@ export function getNextToAmount(
   }
 
   if (fromTokenAddress === USDG_ADDRESS) {
+    // @ts-ignore
     const redemptionValue = toToken.redemptionAmount
       .mul(toTokenPriceUsd || toTokenMaxPrice)
       .div(expandDecimals(1, toToken.decimals));
