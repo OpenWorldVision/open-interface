@@ -13,8 +13,8 @@ const BigNumber = ethers.BigNumber;
 
 // Ethereum network, Chainlink Aggregator contracts
 const FEED_ID_MAP = {
-  BTC_USD: "0x178ba789e24a1d51e9ea3cb1db3b52917963d71d",
-  ETH_USD: "0xfc3069296a691250ffdf21fe51340fdd415a76ed",
+  BTC_USD: "0xae74faa92cb67a95ebcab07358bc222e33a34da7",
+  ETH_USD: "0x37bc7498f4ff12c19678ee8fe19d713b87f6a9e6",
   BNB_USD: "0x137924d7c36816e0dcaf016eb617cc2c92c05782",
   LINK_USD: "0xdfd03bfc3465107ce570a0397b247f546a42d0fa",
   UNI_USD: "0x68577f915131087199fe48913d8b416b3984fd38",
@@ -195,7 +195,7 @@ function getChainlinkChartPricesFromGraph(tokenSymbol, period) {
     if (lastTime > now) {
       lastTime = now;
     }
-    if (marketName === "BNB_USD" || marketName === "BTC_USD" || marketName === "ETH_USD") {
+    if (marketName === "BNB_USD") {
       requests.push(owChainlinkClient.query({ query }));
     } else {
       requests.push(chainlinkClient.query({ query }));
