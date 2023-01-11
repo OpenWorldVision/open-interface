@@ -389,7 +389,6 @@ export default function SwapBox(props) {
 
   const fromUsdMin = getUsd(fromAmount, fromTokenAddress, false, infoTokens);
   const toUsdMax = getUsd(toAmount, toTokenAddress, true, infoTokens, orderOption, triggerPriceUsd);
-
   const indexTokenAddress = toTokenAddress === AddressZero ? nativeTokenAddress : toTokenAddress;
   const collateralTokenAddress = isLong ? indexTokenAddress : shortCollateralAddress;
   const collateralToken = getToken(chainId, collateralTokenAddress);
@@ -977,7 +976,6 @@ export default function SwapBox(props) {
     }
 
     if (isShort) {
-      console.log(fromTokenAddress, shortCollateralAddress);
       let stableTokenAmount = bigNumberify(0);
       if (fromTokenAddress !== shortCollateralAddress && fromAmount && fromAmount.gt(0)) {
         const { amount: nextToAmount } = getNextToAmount(
@@ -1048,7 +1046,6 @@ export default function SwapBox(props) {
       }
 
       stableTokenAmount = stableTokenAmount.add(sizeTokens);
-      console.log("stableTokenAmount", stableTokenAmount.toString());
       if (stableTokenAmount.gt(shortCollateralToken.availableAmount)) {
         return [t`Insufficient liquidity, change "Collateral In"`];
       }
@@ -1766,7 +1763,6 @@ export default function SwapBox(props) {
     }
     feeBps = feeBasisPoints;
   }
-
   const leverageMarks = {
     2: "2x",
     5: "5x",
@@ -2190,7 +2186,7 @@ export default function SwapBox(props) {
                           )}
                           <div>
                             <StatsTooltipRow
-                              label={t`Position Fee (0.1% of position size)`}
+                              label={t`Position Fee (0.05% of position size)`}
                               value={formatAmount(positionFee, USD_DECIMALS, 2, true)}
                             />
                           </div>
