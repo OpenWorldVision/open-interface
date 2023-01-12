@@ -2360,8 +2360,8 @@ msgid "Position"
 msgstr "Vị thế"
 
 #: src/components/Exchange/SwapBox.js
-msgid "Position Fee (0.1% of position size)"
-msgstr "Position Fee (0.1% of position size)"
+msgid "Position Fee (0.05% of position size)"
+msgstr "Position Fee (0.05% of position size)"
 
 #: src/components/Exchange/PositionSeller.js
 msgid "Position close disabled, pending {0} upgrade"
