@@ -56,6 +56,7 @@ function AffiliatesStats({
   const tierId = referrerTierInfo?.tierId;
   let referrerRebates = bigNumberify(0);
   if (cumulativeStats && cumulativeStats.totalRebateUsd && cumulativeStats.discountUsd) {
+    console.log("memmeme", cumulativeStats.totalRebateUsd);
     referrerRebates = cumulativeStats.totalRebateUsd.sub(cumulativeStats.discountUsd);
   }
   return (
