@@ -1,13 +1,13 @@
 .PositionDropdown-dots-icon {
   font-size: 1rem;
   border: none;
-  color: #3D4556;
+  color: #ffffff;
   display: inline-flex;
   align-items: center;
   margin-top: 0.3rem;
   background: rgba(255, 255, 255, 0);
   border-radius: 2rem;
-  background: #DFE7FB;
+  background: var(--buttonDarkBackground2);
   border-radius: 4px;
   padding: 0.8rem 1.4rem;
 }

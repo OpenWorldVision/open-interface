@@ -1,12 +1,10 @@
 .App-header-network {
   position: relative;
-  margin-left: 2.4rem;
-  border: 1px solid var(--dark-blue-border);
   height: 3.6rem;
   display: inline-flex;
   align-items: center;
-  color: #375BD2;
-  background: #DFE7FB;
+  color: var(--textColor5);
+  background: var(--buttonLightBackground);
   border-radius: 18px;
 }
 
@@ -15,12 +13,15 @@
 }
 
 .network-dropdown {
-  display: inline-flex;
+  margin: auto;
 }
 .network-dropdown-items {
   min-width: 17rem;
   padding-bottom: 0.8rem;
-  background-color: #375BD2;
+  background: var(--tooltipBackgroundColor);
+  box-shadow: 0px 7px 30px -19px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 0px 7px 30px -19px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 7px 30px -19px rgba(0,0,0,0.75);
 }
 .network-dropdown-items:last-child {
   padding-bottom: 0;
@@ -31,7 +32,6 @@
   border-bottom: 1px solid #ffffff29;
 }
 .network-dropdown:hover {
-  background: var(--dark-blue-hover);
   cursor: pointer;
 }
 
@@ -72,7 +72,7 @@
   align-items: center;
   padding: 0.8rem;
   justify-content: space-between;
-  background: #375BD2;
+  background: var(--tooltipBackgroundColor);
 }
 .network-dropdown-menu-item:hover {
 }
@@ -86,8 +86,10 @@
 }
 .network-option {
   cursor: pointer;
-  background: #DFE5E5;
-  border: 1px solid var(--dark-blue-border);
+  background: var(--tooltipBackgroundColor);
+  box-shadow: 0px 7px 30px -19px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 0px 7px 30px -19px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 7px 30px -19px rgba(0,0,0,0.75);
   border-radius: 0.4rem;
   padding: 0.8rem 1.5rem;
   display: flex;
@@ -100,7 +102,9 @@
   margin-bottom: 0;
 }
 
-.network-option img {
+.network-option img,
+.network-option svg
+ {
   width: 2.5rem;
   margin-right: 1.5rem;
 }
@@ -108,18 +112,18 @@
 .network-option span {
   font-size: 1.5rem;
   letter-spacing: 0.29px;
-  color: #fff;
+  color: var(--textColor7);
 }
 
 .network-option-img-label {
   font-size: 1.6rem;
   line-height: 2rem;
   letter-spacing: 0.29px;
-  color: #fff;
+  color: var(--textColor7);
 }
 
 .dropdown-label {
-  color: #ffffff;
+  color: var(--textColor7);
   padding: 0.8rem;
   font-size: 1.25rem;
   font-weight: 600;
@@ -132,12 +136,12 @@
 }
 
 .language-modal-item {
-  border: 1px solid var(--dark-blue-border);
+  border: 1px solid var(--textColor3);
   cursor: pointer;
 }
 
 .language-modal-item.active {
-  border: 1px solid #a1a3c4;
+  border: 1px solid var(--textColor2);
 }
 
 .menu-item-icon {
@@ -155,13 +159,14 @@
 
 .network-dropdown-item-label {
   margin-left: 0.8rem;
-  color: #ffffff;
+  color: var(--textColor7);
 }
 
 .network-dropdown-list {
   display: grid;
   grid-template-columns: 1fr;
-  background: #F9F9F9;
+  color: var(--textColor7);
+  background: var(--tooltipBackgroundColor);
 }
 
 .menu-item:hover .menu-item-label {
@@ -190,9 +195,6 @@
 }
 
 @media (max-width: 1033px) {
-  .App-header-network {
-    margin-left: 1.6rem;
-  }
   .App-header-language {
     margin-left: 0;
   }
@@ -200,18 +202,24 @@
     background: #DFE5E5;
   }
   .network-option {
-    background: #375BD2;
+    background: var(--buttonDarkBackground);
+    color: var(--textColor4);
     border-radius: 32px;
     padding: 0.4rem;
   }
   .network-dropdown-label {
-    color: #375BD2;
+    color: var(--textColor6);
+  }
+  .dropdown-label,
+  .network-option span,
+  .network-option-img-label,
+  .network-dropdown-item-label,
+  .network-dropdown-list
+   {
+    color: var(--textColor4);
   }
 }
 @media (max-width: 450px) {
-  .App-header-network {
-    margin-left: 0.6rem;
-  }
   .App-header-language {
     margin-left: 0;
   }

@@ -12,3 +12,4 @@ export const DISABLE_ORDER_VALIDATION_KEY = "disable-order-validation";
 export const SHOULD_SHOW_POSITION_LINES_KEY = "Exchange-swap-should-show-position-lines";
 export const REFERRAL_CODE_KEY = "OPEN-referralCode";
 export const REFERRALS_SELECTED_TAB_KEY = "Referrals-selected-tab";
+export const IS_DARK_THEME = "is-dark-theme";
