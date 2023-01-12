@@ -39,7 +39,7 @@ import RewardRouter from "abis/RewardRouter.json";
 import Token from "abis/Token.json";
 
 import glp24Icon from "img/ic_gmx_24.svg";
-import logoOAP from "img/logo_oap.svg";
+import logoOAP from "img/logo_oap_white.svg";
 import arrowIcon from "img/ic_convert_down.svg";
 
 import avalanche16Icon from "img/ic_avalanche_16.svg";
@@ -739,13 +739,13 @@ export default function GlpSwap(props) {
           <div className="App-card-title">
             <div className="App-card-title-mark">
               <div className="App-card-title-mark-icon">
-                <img src={logoOAP} alt="oap40Icon" style={{ width: 40, height: 40 }} />
-                <img
+                <img src={logoOAP} alt="oap40Icon" style={{ width: 30, height: 30 }} />
+                {/* <img
                   src={bnbIcon}
                   alt={t`Avalanche Icon`}
                   className="selected-network-symbol"
                   style={{ backgroundColor: "#F9F9F9", padding: 2, width: 18 }}
-                />
+                /> */}
               </div>
               <div className="App-card-title-mark-info">
                 <div className="App-card-title-mark-title">OAP</div>
@@ -1335,7 +1335,7 @@ export default function GlpSwap(props) {
                     <AssetDropdown assetSymbol={token.symbol} assetInfo={token} />
                   </div>
                 </div>
-                <div className="App-card-divider" />
+                {/* <div className="App-card-divider" /> */}
                 <div className="App-card-content">
                   <div className="App-card-row">
                     <div className="label">
@@ -1423,7 +1423,7 @@ export default function GlpSwap(props) {
                     </div>
                     <div>{renderFees()}</div>
                   </div>
-                  <div className="App-card-divider"></div>
+                  {/* <div className="App-card-divider"></div> */}
                   <div className="App-card-options">
                     {isBuying && (
                       <button className="App-button-option App-card-option" onClick={() => selectToken(token)}>

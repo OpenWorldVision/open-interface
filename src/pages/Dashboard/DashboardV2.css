@@ -73,7 +73,7 @@
 }
 
 .App-card .App-card-divider {
-  margin: 0 10px;
+  margin: 0;
   background-color: var(--dividerColor);
 }
 
@@ -123,11 +123,12 @@
 .mobile-token-card {
   display: flex;
   align-items: center;
+  margin-bottom: 10px;
 }
 
 .token-symbol-text {
   line-height: 1;
-  color: var(--textColor);
+  color: var(--textColor5);
   font-weight: 500;
 }
 
@@ -169,7 +170,7 @@
     flex-wrap: wrap;
     padding-bottom: 0;
   }
-  
+
   @media (max-width: 450px) {
     .stats-piechart {
       margin: auto;

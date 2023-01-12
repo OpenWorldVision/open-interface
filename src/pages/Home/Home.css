@@ -247,6 +247,7 @@
 
 .Home-token-card-option-icon img {
   margin-right: 0.8rem;
+  content: var(--logoOAP);
 }
 
 .Home-token-card-option-title {
@@ -477,7 +478,7 @@
     margin-right: 0;
   }
   .Home-token-card-option-title {
-    font-size: 10px;
+    font-size: 14px;
     margin-left: 5em;
   }
 }

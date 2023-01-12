@@ -1283,7 +1283,7 @@ button.App-button {
 
 @media (max-width: 1300px) {
   .App-card-options {
-    margin: 0rem 0.8rem;
+    margin-top: 1px;
   }
 }
 @media (max-width: 1033px) {
@@ -1400,7 +1400,7 @@ button.App-button {
   .App-card-long-content {
     grid-template-columns: 1fr 1fr;
   }
-  
+
 }
 
 @media (max-width: 600px) {
@@ -1431,7 +1431,7 @@ button.App-button {
   .header-connect-btn {
     margin-right: 0.4rem;
   }
- 
+
 }
 
 @media (max-width: 450px) {
@@ -1493,7 +1493,7 @@ button.App-button {
   .App-card-content-container {
     display: grid;
   }
- 
+
 }
 
 .walletconnect-modal__mobile__toggle a {

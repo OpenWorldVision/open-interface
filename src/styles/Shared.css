@@ -51,6 +51,7 @@ body {
   --dividerColor: #adbdef;
   --tooltipBackgroundColor: #dfe7fb;
   --logoUrl: url("/src/img/logo_GMX.svg");
+  --logoOAP: url("/src/img/logo_oap.svg");
   --chartHeaderBackgroundColor: #dfe7fbb2;
   --boxBackgroundColor2: #dfe7fb;
   --boxBackgroundColor: #ebf0ff;
@@ -58,8 +59,8 @@ body {
   --inputColor: #6d7380;
   --dividerColor: rgba(109, 115, 128, 0.5);
   --sliderColor: #bdc9e7;
-  --tabInactiveColor: #375BD280;
-  --tabActiveColor: #375BD2;
+  --tabInactiveColor: #375bd280;
+  --tabActiveColor: #375bd2;
 }
 body.dark-theme {
   /* color */
@@ -95,6 +96,7 @@ body.dark-theme {
   --dividerColor: #0f1a44;
   --tooltipBackgroundColor: #1a2b6b;
   --logoUrl: url("/src/img/logo_open_white.svg");
+  --logoOAP: url("/src/img/logo_oap_white.svg");
   --chartHeaderBackgroundColor: #04091c;
   --boxBackgroundColor2: #04091c;
   --boxBackgroundColor: #070e27;
@@ -102,8 +104,8 @@ body.dark-theme {
   --inputColor: #657290;
   --dividerColor: rgba(255, 255, 255, 0.1);
   --sliderColor: #070e27;
-  --tabInactiveColor: #1A2B6B80;
-  --tabActiveColor: #1A2B6B;
+  --tabInactiveColor: #1a2b6b80;
+  --tabActiveColor: #1a2b6b;
 }
 
 code {
