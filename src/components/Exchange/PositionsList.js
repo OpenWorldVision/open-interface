@@ -450,7 +450,7 @@ export default function PositionsList(props) {
                     >
                       <Trans>Edit Collateral</Trans>
                     </button>
-                    <button
+                    {/* <button
                       className="Exchange-list-action App-button-option App-card-option"
                       onClick={() => {
                         setPositionToShare(position);
@@ -459,7 +459,7 @@ export default function PositionsList(props) {
                       disabled={position.size.eq(0)}
                     >
                       <Trans>Share</Trans>
-                    </button>
+                    </button> */}
                   </div>
                 </div>
               );
