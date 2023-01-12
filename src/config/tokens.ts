@@ -384,6 +384,23 @@ export const ADDITIONAL_TOKENS: { [chainId: number]: Token[] } = {
 };
 
 export const PLATFORM_TOKENS: { [chainId: number]: { [symbol: string]: Token } } = {
+  [MAINNET]: {
+    OPEN: {
+      name: "OPEN",
+      symbol: "OPEN",
+      decimals: 18,
+      address: "0x27a339d9b59b21390d7209b78a839868e319301b",
+      imageUrl: "https://assets.coingecko.com/coins/images/19416/small/open-transparent.png?1671958979",
+    },
+    OAP: {
+      name: "OPEN LP",
+      symbol: "OAP",
+      decimals: 18,
+      address: "0x6D9A7B767354cc8c1F658b1b1B547aF218eb3C57", // address of fsGLP token because user only holds fsGLP
+      imageUrl:
+        "https://raw.githubusercontent.com/OpenWorldVision/brand-assets/main/open-brand-assets/OAP-icon-logo-png.png",
+    },
+  },
   [TESTNET]: {
     OPEN: {
       name: "OPEN",
@@ -454,7 +471,7 @@ export const ICONLINKS = {
       harmony: "https://explorer.harmony.one/address/0x27a339d9b59b21390d7209b78a839868e319301b",
     },
     OAP: {
-      arbitrum: "https://testnet.bscscan.com/address/0x8530E5595C07F4075d00a25515E416487a07D6d3",
+      arbitrum: "https://bscscan.com/address/0x150bb59460E35084ab847629Cf3EcDC543e5Bf97",
     },
   },
   [ARBITRUM_TESTNET]: {

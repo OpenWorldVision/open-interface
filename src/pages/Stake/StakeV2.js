@@ -908,25 +908,25 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
         nativeTokenSymbol={nativeTokenSymbol}
         wrappedTokenSymbol={wrappedTokenSymbol}
       />
-      {chainId !== MAINNET && (
-        <UnstakeModal
-          setPendingTxns={setPendingTxns}
-          isVisible={isUnstakeModalVisible}
-          setIsVisible={setIsUnstakeModalVisible}
-          chainId={chainId}
-          title={unstakeModalTitle}
-          maxAmount={unstakeModalMaxAmount}
-          reservedAmount={unstakeModalReservedAmount}
-          value={unstakeValue}
-          setValue={setUnstakeValue}
-          library={library}
-          unstakingTokenSymbol={unstakingTokenSymbol}
-          rewardRouterAddress={rewardRouterAddress}
-          unstakeMethodName={unstakeMethodName}
-          multiplierPointsAmount={multiplierPointsAmount}
-          bonusGmxInFeeGmx={bonusGmxInFeeGmx}
-        />
-      )}
+
+      <UnstakeModal
+        setPendingTxns={setPendingTxns}
+        isVisible={isUnstakeModalVisible}
+        setIsVisible={setIsUnstakeModalVisible}
+        chainId={chainId}
+        title={unstakeModalTitle}
+        maxAmount={unstakeModalMaxAmount}
+        reservedAmount={unstakeModalReservedAmount}
+        value={unstakeValue}
+        setValue={setUnstakeValue}
+        library={library}
+        unstakingTokenSymbol={unstakingTokenSymbol}
+        rewardRouterAddress={rewardRouterAddress}
+        unstakeMethodName={unstakeMethodName}
+        multiplierPointsAmount={multiplierPointsAmount}
+        bonusGmxInFeeGmx={bonusGmxInFeeGmx}
+      />
+
       <VesterDepositModal
         isVisible={isVesterDepositModalVisible}
         setIsVisible={setIsVesterDepositModalVisible}
@@ -1002,14 +1002,13 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
       </div>
       <div className="StakeV2-content">
         <div className="StakeV2-cards">
-          {chainId !== MAINNET && (
-            <OpenStaking
-              processedData={processedData}
-              active
-              onStaking={showStakeOpenModal}
-              onUnstaking={showUnstakeOpenModal}
-            />
-          )}
+          <OpenStaking
+            processedData={processedData}
+            active
+            onStaking={showStakeOpenModal}
+            onUnstaking={showUnstakeOpenModal}
+          />
+
           {/* <div className="App-card primary StakeV2-gmx-card StakeV2-total-rewards-card">
             <div className="App-card-title">
               <Trans>Total Rewards</Trans>

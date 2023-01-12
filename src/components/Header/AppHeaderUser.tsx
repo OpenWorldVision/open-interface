@@ -100,7 +100,7 @@ export function AppHeaderUser({
           >
             <FontAwesomeIcon icon={faMoneyBillTransfer} />
             {small ? null : (
-              <div style={{ marginLeft: 8 }}>
+              <div style={{ marginLeft: 8, fontWeight: 700 }}>
                 <Trans>Trade</Trans>
               </div>
             )}
@@ -165,7 +165,7 @@ export function AppHeaderUser({
         >
           <FontAwesomeIcon icon={faMoneyBillTransfer} />
           {small ? null : (
-            <div style={{ marginLeft: 8 }}>
+            <div style={{ marginLeft: 8, fontWeight: 700 }}>
               <Trans>Trade</Trans>
             </div>
           )}

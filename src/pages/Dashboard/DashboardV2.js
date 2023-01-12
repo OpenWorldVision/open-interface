@@ -272,17 +272,18 @@ export default function DashboardV2() {
 
   const { openPriceFromBsc } = useOpenPrice(chainId, undefined, active);
   let { total: totalOpenInLiquidity } = useTotalOpenInLiquidity(chainId, active);
-  let { avax: avaxStakedGmx, arbitrum: arbitrumStakedGmx, total } = useTotalGmxStaked();
-  const totalStakedGmx = BigNumber.from("0");
+  const { totalStaked } = useOpenStakingInfo(chainId);
+  const totalStakedOpen = totalStaked;
+
   const { total: totalOpenBurned } = useTotalOpenBurned();
   let gmxMarketCap;
   if (openPriceFromBsc && totalOpenSupply) {
     gmxMarketCap = openPriceFromBsc.mul(totalOpenSupply).div(expandDecimals(1, GMX_DECIMALS));
   }
 
-  let stakedGmxSupplyUsd;
-  if (openPriceFromBsc && totalStakedGmx) {
-    stakedGmxSupplyUsd = totalStakedGmx.mul(openPriceFromBsc).div(expandDecimals(1, GMX_DECIMALS));
+  let stakedOpenSupplyUsd;
+  if (openPriceFromBsc && totalStakedOpen) {
+    stakedOpenSupplyUsd = totalStakedOpen.mul(openPriceFromBsc).div(expandDecimals(1, GMX_DECIMALS));
   }
 
   let aum;
@@ -290,21 +291,21 @@ export default function DashboardV2() {
     aum = aums[0].add(aums[1]).div(2);
   }
 
-  let glpPrice;
-  let glpSupply;
-  let glpMarketCap;
+  let oapPrice;
+  let oapSupply;
+  let oapMarketCap;
   if (aum && totalSupplies && totalSupplies[3]) {
-    glpSupply = totalSupplies[3];
-    glpPrice =
-      aum && aum.gt(0) && glpSupply.gt(0)
-        ? aum.mul(expandDecimals(1, GLP_DECIMALS)).div(glpSupply)
+    oapSupply = totalSupplies[3];
+    oapPrice =
+      aum && aum.gt(0) && oapSupply.gt(0)
+        ? aum.mul(expandDecimals(1, GLP_DECIMALS)).div(oapSupply)
         : expandDecimals(1, USD_DECIMALS);
-    glpMarketCap = glpPrice.mul(glpSupply).div(expandDecimals(1, GLP_DECIMALS));
+    oapMarketCap = oapPrice.mul(oapSupply).div(expandDecimals(1, GLP_DECIMALS));
   }
 
   let tvl;
-  if (glpMarketCap && openPriceFromBsc && totalStakedGmx) {
-    tvl = glpMarketCap.add(openPriceFromBsc.mul(totalStakedGmx).div(expandDecimals(1, GMX_DECIMALS)));
+  if (oapMarketCap && openPriceFromBsc && totalStakedOpen) {
+    tvl = oapMarketCap.add(stakedOpenSupplyUsd.mul(expandDecimals(1, 12))); // Because open price was decimal 18 so we'll add 10^12 to decimal 30
   }
 
   const ethFloorPriceFund = expandDecimals(350 + 148 + 384, 18);
@@ -313,9 +314,9 @@ export default function DashboardV2() {
 
   let totalFloorPriceFundUsd;
 
-  if (eth && eth.contractMinPrice && glpPrice) {
+  if (eth && eth.contractMinPrice && oapPrice) {
     const ethFloorPriceFundUsd = ethFloorPriceFund.mul(eth.contractMinPrice).div(expandDecimals(1, eth.decimals));
-    const glpFloorPriceFundUsd = glpFloorPriceFund.mul(glpPrice).div(expandDecimals(1, 18));
+    const glpFloorPriceFundUsd = glpFloorPriceFund.mul(oapPrice).div(expandDecimals(1, 18));
 
     totalFloorPriceFundUsd = ethFloorPriceFundUsd.add(glpFloorPriceFundUsd).add(usdcFloorPriceFund);
   }
@@ -411,8 +412,8 @@ export default function DashboardV2() {
 
   let stakedPercent = 0;
 
-  if (totalOpenSupply && !totalOpenSupply.isZero() && !totalStakedGmx.isZero()) {
-    stakedPercent = totalStakedGmx.mul(100).div(totalOpenSupply).toNumber();
+  if (totalOpenSupply && !totalOpenSupply.isZero() && !totalStakedOpen.isZero()) {
+    stakedPercent = totalStakedOpen.mul(100).div(totalOpenSupply).toNumber();
   }
 
   let liquidityPercent = 0;
@@ -775,7 +776,7 @@ export default function DashboardV2() {
                       <div className="label">
                         <Trans>Total Staked</Trans>
                       </div>
-                      <div>{`$${formatAmount(stakedGmxSupplyUsd, USD_DECIMALS, 0, true)}`}</div>
+                      <div>{`$${formatAmount(stakedOpenSupplyUsd, USD_DECIMALS, 0, true)}`}</div>
                     </div>
                     <div className="App-card-row">
                       <div className="label">
@@ -846,14 +847,13 @@ export default function DashboardV2() {
                     </div>
                   </div>
                 </div>
-
                 <div className="App-card-content-container">
                   <div className="App-card-content">
                     <div className="App-card-row">
                       <div className="label">
                         <Trans>Price</Trans>
                       </div>
-                      <div>${formatAmount(glpPrice, USD_DECIMALS, 3, true)}</div>
+                      <div>${formatAmount(oapPrice, USD_DECIMALS, 3, true)}</div>
                     </div>
                     {/* <div className="App-card-row">
                       <div className="label">
@@ -865,7 +865,7 @@ export default function DashboardV2() {
                       <div className="label">
                         <Trans>Total Staked</Trans>
                       </div>
-                      <div>${formatAmount(glpMarketCap, USD_DECIMALS, 0, true)}</div>
+                      <div>${formatAmount(oapMarketCap, USD_DECIMALS, 0, true)}</div>
                     </div>
                     {/* <div className="App-card-row">
                       <div className="label">
@@ -880,7 +880,6 @@ export default function DashboardV2() {
                       <div>{stablePercentage}%</div>
                     </div>
                   </div>
-
                   <div className="stats-piechart" onMouseOut={onGLPPoolChartLeave}>
                     {glpPool.length > 0 && (
                       <PieChart width={210} height={210}>
