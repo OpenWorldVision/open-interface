@@ -5,6 +5,12 @@
   border-bottom-right-radius: 0.8rem;
 }
 
+.App-card .App-card-divider-2 {
+  margin: 0;
+  height: 1px;
+  background-color: var(--dividerColor);
+}
+
 .Tab-title {
   letter-spacing: 0px;
   color: #ffffff;

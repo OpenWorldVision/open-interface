@@ -15,7 +15,7 @@
   align-items: center;
   border-radius: 0.4rem;
   /* padding: 0.5rem 0; */
-  color: #1a2b6b;
+  /* color: #1a2b6b; */
   min-width: 4.65rem;
   font-size: 1.9rem;
   line-height: 2.5rem;
@@ -38,7 +38,7 @@
 } */
 
 .buy-input .TokenSelector-caret {
-  margin: 0;
+  margin-left: 5px;
   margin-right: -0.5rem;
 }
 
