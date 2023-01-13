@@ -21,7 +21,7 @@ import Modal from "components/Modal/Modal";
 import ModalIncomingFeature from "components/ModalIncomingFeature/ModalIncomingFeature";
 import SwitchThemeButton from "components/Common/SwitchThemeButton";
 import Switch from "react-switch";
-import { IS_DARK_THEME } from "config/localStorage";
+import { IS_LIGHT_THEME } from "config/localStorage";
 
 type Props = {
   openSettings: () => void;
@@ -43,8 +43,7 @@ export function AppHeaderUser({
   const { chainId } = useChainId();
   const { active, account } = useWeb3React();
   const showConnectionOptions = !isHomeSite();
-  const [isDarkTheme, setIsDarkTheme] = useState(JSON.parse(localStorage.getItem(IS_DARK_THEME) || `false`));
-
+  const [isDarkTheme, setIsDarkTheme] = useState(!JSON.parse(localStorage.getItem(IS_LIGHT_THEME) || `false`));
   const networkOptions = [
     {
       label: getChainName(TESTNET),
@@ -126,14 +125,22 @@ export function AppHeaderUser({
         <SwitchThemeButton
           small={small}
           onClick={() => {
-            setIsDarkTheme((prev) => !prev);
+            setIsDarkTheme((prev) => {
+              const newState = !prev;
+              localStorage.setItem(IS_LIGHT_THEME, `${prev}`);
+              return newState;
+            });
             document.body.classList.toggle("dark-theme");
           }}
           isDarkTheme={isDarkTheme}
         >
           <Switch
             onChange={() => {
-              setIsDarkTheme((prev) => !prev);
+              setIsDarkTheme((prev) => {
+                const newState = !prev;
+                localStorage.setItem(IS_LIGHT_THEME, `${prev}`);
+                return newState;
+              });
               document.body.classList.toggle("dark-theme");
             }}
             checked={!isDarkTheme}
@@ -207,7 +214,7 @@ export function AppHeaderUser({
         onClick={() => {
           setIsDarkTheme((prev) => {
             const newState = !prev;
-            localStorage.setItem(IS_DARK_THEME, `${newState}`);
+            localStorage.setItem(IS_LIGHT_THEME, `${prev}`);
             return newState;
           });
           document.body.classList.toggle("dark-theme");
@@ -218,7 +225,7 @@ export function AppHeaderUser({
           onChange={() => {
             setIsDarkTheme((prev) => {
               const newState = !prev;
-              localStorage.setItem(IS_DARK_THEME, `${newState}`);
+              localStorage.setItem(IS_LIGHT_THEME, `${prev}`);
               return newState;
             });
             document.body.classList.toggle("dark-theme");
