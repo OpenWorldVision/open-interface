@@ -4,9 +4,9 @@
   font-size: 1.4rem;
   border-radius: 3px;
   overflow: hidden;
-  color: #375BD2;
-  background: #ffffff;
-  border: 2px solid #375BD2;
+  color: #ffffff;
+  /* background: var(--footerBackgroundColor); */
+  /* border: 2px solid var(--footerBackgroundColor); */
   box-shadow: inset 0px 0px 30px 5px rgba(255, 255, 255, 0.01);
 }
 
@@ -21,19 +21,20 @@
   padding-left: 1.5rem;
   padding-right: 1.5rem;
   cursor: pointer;
-  border: 2px solid #375BD2;
+  border: 2px solid var(--footerBackgroundColor);
   border-width: 0 1px 0 1px;
   font-weight: 700;
+  background: var(--footerBackgroundColor);
 }
 .Tab.block .Tab-option:first-child {
-  border-width: 0 1px 0 0;
+  border-width: 0;
 }
 .Tab.block .Tab-option:last-child {
-  border-width: 0 0 0 1px;
+  border-width: 0;
 }
 .Tab.block .Tab-option:hover {
   color: rgba(255, 255, 255, 1);
-  background: #375BD290;
+  background: #375bd290;
   opacity: 1;
 }
 .Tab.block .Tab-option:hover img {
@@ -42,11 +43,12 @@
 .Tab.block .Tab-option.active {
   opacity: 1;
   pointer-events: none;
-  background: #375BD2;
-  color: rgba(255, 255, 255, 1);
+  /* background: #375bd2; */
+  /* color: rgba(255, 255, 255, 1); */
+  color: #ffffff;
   font-weight: 700;
 }
-.Tab.block .Tab-option.active img {
+.Tab.block .Tab-option img {
   filter: brightness(0) invert(1);
 }
 

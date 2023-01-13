@@ -27,12 +27,12 @@
 }
 
 .Checkbox-icon.inactive {
-  color: #3D4556;
+  color: var(--textColor6);
 }
 
 .Checkbox-label {
   display: inline-block;
   vertical-align: middle;
   font-size: 1.5rem;
-  color: #3D4556;
+  color: var(--textColor6);
 }

@@ -194,7 +194,7 @@ function VesterDepositModal(props) {
                   renderContent={() => {
                     return (
                       <div>
-                        <p className="text-white">
+                        <p className="">
                           <Trans>Vault Capacity for your Account:</Trans>
                         </p>
                         <StatsTooltipRow
@@ -886,7 +886,7 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
   }
 
   return (
-    <div className="default-container page-layout" style={{ background: "#f2f4f6" }}>
+    <div className="default-container page-layout">
       <StakeModal
         isVisible={isStakeModalVisible}
         setIsVisible={setIsStakeModalVisible}
@@ -1094,8 +1094,8 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
           </div> */}
           <div className="App-card StakeV2-gmx-card">
             <div className="App-card-title">OAP ({chainName})</div>
-            <div className="App-card-divider"></div>
             <div className="App-card-content">
+              {/* <div className="App-card-divider"></div> */}
               <div className="App-card-row">
                 <div className="label">
                   <Trans>Price</Trans>
@@ -1240,7 +1240,6 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
             <div className="App-card-title">
               <Trans>Escrowed OPEN</Trans>
             </div>
-            <div className="App-card-divider"></div>
             <div className="App-card-content">
               <div className="App-card-row">
                 <div className="label">

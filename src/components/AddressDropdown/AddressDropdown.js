@@ -9,6 +9,8 @@ import disconnect from "img/ic_sign_out_16.svg";
 import { FaChevronDown } from "react-icons/fa";
 import Davatar from "@davatar/react";
 import { helperToast } from "lib/helperToast";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowUpRightFromSquare, faCopy, faRightFromBracket } from "@fortawesome/free-solid-svg-icons";
 
 function AddressDropdown({ account, accountUrl, disconnectAccountAndCloseSettings }) {
   const useBreakpoint = createBreakpoint({ L: 600, M: 550, S: 400 });
@@ -37,7 +39,7 @@ function AddressDropdown({ account, accountUrl, disconnectAccountAndCloseSetting
                 helperToast.success("Address copied to your clipboard");
               }}
             >
-              <img src={copy} alt="Copy user address" />
+              <FontAwesomeIcon icon={faCopy} />
               <p>
                 <Trans>Copy Address</Trans>
               </p>
@@ -45,7 +47,7 @@ function AddressDropdown({ account, accountUrl, disconnectAccountAndCloseSetting
           </Menu.Item>
           <Menu.Item>
             <a href={accountUrl} target="_blank" rel="noopener noreferrer" className="menu-item">
-              <img src={externalLink} alt="Open address in explorer" />
+              <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
               <p>
                 <Trans>View in Explorer</Trans>
               </p>
@@ -53,7 +55,7 @@ function AddressDropdown({ account, accountUrl, disconnectAccountAndCloseSetting
           </Menu.Item>
           <Menu.Item>
             <div className="menu-item" onClick={disconnectAccountAndCloseSettings}>
-              <img src={disconnect} alt="Disconnect the wallet" />
+              <FontAwesomeIcon icon={faRightFromBracket} />
               <p>
                 <Trans>Disconnect</Trans>
               </p>

@@ -48,7 +48,7 @@ function TradersStats({ referralsData, traderTier, chainId, userReferralCodeStri
                     handle={t`Tier ${getTierIdDisplay(traderTier)} (${tierDiscountInfo[traderTier]}% discount)`}
                     position="right-bottom"
                     renderContent={() => (
-                      <p className="text-white">
+                      <p className="">
                         <Trans>
                           You will receive a {tierDiscountInfo[traderTier]}% discount on your opening and closing fees,
                           this discount will be airdropped to your account every Wednesday

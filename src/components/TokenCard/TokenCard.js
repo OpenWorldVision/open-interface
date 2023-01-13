@@ -16,6 +16,7 @@ import { switchNetwork } from "lib/wallets";
 import { useChainId } from "lib/chains";
 import ExternalLink from "components/ExternalLink/ExternalLink";
 import logoOAP from "img/logo_oap.svg";
+import logoOAPWhite from "img/logo_oap_white.svg";
 
 export default function TokenCard({ showRedirectModal, redirectPopupTimestamp }) {
   const isHome = isHomeSite();
@@ -63,7 +64,7 @@ export default function TokenCard({ showRedirectModal, redirectPopupTimestamp })
     <div className="Home-token-card-options">
       <div className="Home-token-card-option">
         <div className="Home-token-card-option-icon">
-          <img src={logoOAP} alt="buyOAPIcon" style={{ width: 40, height: 40 }} /> OAP
+          <img src={logoOAPWhite} alt="buyOAPIcon" style={{ width: 30, height: 30 }} /> OAP
         </div>
         <div className="Home-token-card-option-info">
           <div className="Home-token-card-option-title">
@@ -80,7 +81,7 @@ export default function TokenCard({ showRedirectModal, redirectPopupTimestamp })
               href="https://wiki.openworld.vision/tokenomics"
               target="_blank"
               rel="noreferrer"
-              className="default-btn read-more"
+              className="default-btn-light  read-more"
             >
               <Trans>Read more</Trans>
             </a>

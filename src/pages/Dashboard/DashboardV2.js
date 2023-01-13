@@ -39,15 +39,14 @@ import Footer from "components/Footer/Footer";
 
 import "./DashboardV2.css";
 
-import logoGMX from "img/logo_GMX.svg";
-import logoOAP from "img/logo_oap.svg";
+import logoOPENWhite from "img/logo_open_white.svg";
+import logoOAPWhite from "img/logo_oap_white.svg";
 import bnbIcon from "img/ic_binance_logo.svg";
 import glp40Icon from "img/ic_glp_40.svg";
 import avalanche16Icon from "img/ic_avalanche_16.svg";
 import arbitrum16Icon from "img/ic_arbitrum_16.svg";
 import arbitrum24Icon from "img/ic_arbitrum_24.svg";
 import avalanche24Icon from "img/ic_avalanche_24.svg";
-import bsc24Icon from "img/ic_bnb_24.svg";
 
 import AssetDropdown from "./AssetDropdown";
 import ExternalLink from "components/ExternalLink/ExternalLink";
@@ -55,8 +54,8 @@ import SEO from "components/Common/SEO";
 import useTotalVolume from "domain/useTotalVolume";
 import StatsTooltip from "components/StatsTooltip/StatsTooltip";
 import StatsTooltipRow from "components/StatsTooltip/StatsTooltipRow";
-import { ARBITRUM, AVALANCHE, getChainName, MAINNET } from "config/chains";
-import { getServerUrl, KEEPER_BOT_API } from "config/backend";
+import { ARBITRUM, AVALANCHE, getChainName } from "config/chains";
+import { getServerUrl } from "config/backend";
 import { contractFetcher } from "lib/contracts";
 import { useInfoTokens } from "domain/tokens";
 import { getTokenBySymbol, getWhitelistedTokens, GLP_POOL_COLORS } from "config/tokens";
@@ -273,8 +272,8 @@ export default function DashboardV2() {
 
   const { openPriceFromBsc } = useOpenPrice(chainId, undefined, active);
   let { total: totalOpenInLiquidity } = useTotalOpenInLiquidity(chainId, active);
-  const { totalPooledOpen } = useOpenStakingInfo(chainId);
-  const totalStakedOpen = totalPooledOpen;
+  const { totalStaked } = useOpenStakingInfo(chainId);
+  const totalStakedOpen = totalStaked;
 
   const { total: totalOpenBurned } = useTotalOpenBurned();
   let gmxMarketCap;
@@ -304,25 +303,10 @@ export default function DashboardV2() {
     oapMarketCap = oapPrice.mul(oapSupply).div(expandDecimals(1, GLP_DECIMALS));
   }
 
-  const { data: aumData } = useSWR(`${KEEPER_BOT_API}/api/v1/tvl`, {
-    fetcher: (...args) =>
-      fetch(...args).then((res) => {
-        return res.json();
-      }),
-
-    refreshInterval: 5000,
-    refreshWhenHidden: true,
-  });
-
-  const { data: totalStakedData } = useSWR(`${KEEPER_BOT_API}/api/v1/total_staked`, {
-    fetcher: (...args) =>
-      fetch(...args).then((res) => {
-        return res.json();
-      }),
-
-    refreshInterval: 5000,
-    refreshWhenHidden: true,
-  });
+  let tvl;
+  if (oapMarketCap && openPriceFromBsc && totalStakedOpen) {
+    tvl = oapMarketCap.add(stakedOpenSupplyUsd.mul(expandDecimals(1, 12))); // Because open price was decimal 18 so we'll add 10^12 to decimal 30
+  }
 
   const ethFloorPriceFund = expandDecimals(350 + 148 + 384, 18);
   const glpFloorPriceFund = expandDecimals(660001, 18);
@@ -388,7 +372,7 @@ export default function DashboardV2() {
               />
               <br />
               {currentWeightBps.lt(targetWeightBps) && (
-                <div className="text-white">
+                <div className="">
                   <Trans>
                     {tokenInfo.symbol} is below its target weight.
                     <br />
@@ -406,7 +390,7 @@ export default function DashboardV2() {
                 </div>
               )}
               {currentWeightBps.gt(targetWeightBps) && (
-                <div className="text-white">
+                <div className="">
                   <Trans>
                     {tokenInfo.symbol} is above its target weight.
                     <br />
@@ -427,8 +411,9 @@ export default function DashboardV2() {
   };
 
   let stakedPercent = 0;
-  if (totalOpenSupply && !totalOpenSupply.isZero() && totalStakedData?.totalStaked) {
-    stakedPercent = BigNumber.from(totalStakedData.totalStaked).mul(100).div(totalOpenSupply).toNumber();
+
+  if (totalOpenSupply && !totalOpenSupply.isZero() && !totalStakedOpen.isZero()) {
+    stakedPercent = totalStakedOpen.mul(100).div(totalOpenSupply).toNumber();
   }
 
   let liquidityPercent = 0;
@@ -557,36 +542,35 @@ export default function DashboardV2() {
         <div className="DashboardV2-content">
           <div className="DashboardV2-cards">
             <div className="App-card">
-              <div className="App-card-title">
-                <Trans>Overview</Trans>
+              <div className="App-card-header">
+                <div className="App-card-title">
+                  <Trans>Overview</Trans>
+                </div>
               </div>
-              <div className="App-card-divider"></div>
               <div className="App-card-content">
                 <div className="App-card-row">
                   <div className="label">
-                    <Trans>TVL</Trans>
+                    <Trans>AUM</Trans>
                   </div>
                   <div>
                     <TooltipComponent
-                      handle={`$${formatAmount(aumData?.tvl, USD_DECIMALS, 0, true)}`}
+                      handle={`$${formatAmount(tvl, USD_DECIMALS, 0, true)}`}
                       position="right-bottom"
                       renderContent={() => (
-                        <span>{t`Assets Under Management: OPEN staked (All chains) + OAP - OpenWorld Assets Pool (${chainName})`}</span>
+                        <span>{t`Assets Under Management: OPEN staked (All chains) + OAP pool (${chainName})`}</span>
                       )}
                     />
                   </div>
                 </div>
                 <div className="App-card-row">
                   <div className="label">
-                    <Trans>OAP - OpenWorld Assets Pool</Trans>
+                    <Trans>OAP Pool</Trans>
                   </div>
                   <div>
                     <TooltipComponent
                       handle={`$${formatAmount(aum, USD_DECIMALS, 0, true)}`}
                       position="right-bottom"
-                      renderContent={() => (
-                        <span>{t`Total value of tokens in OpenWorld Assets Pool (${chainName})`}</span>
-                      )}
+                      renderContent={() => <span>{t`Total value of tokens in OAP pool (${chainName})`}</span>}
                     />
                   </div>
                 </div>
@@ -746,11 +730,11 @@ export default function DashboardV2() {
           <div className="DashboardV2-token-cards">
             <div className="stats-wrapper stats-wrapper--gmx">
               <div className="App-card">
-                <div className="stats-block">
+                <div className="App-card-header">
                   <div className="App-card-title">
                     <div className="App-card-title-mark">
                       <div className="App-card-title-mark-icon">
-                        <img src={logoGMX} alt="OPEN Token Icon" />
+                        <img src={logoOPENWhite} alt="OPEN Token Icon" />
                       </div>
                       <div className="App-card-title-mark-info">
                         <div className="App-card-title-mark-title">OPEN</div>
@@ -761,7 +745,8 @@ export default function DashboardV2() {
                       </div>
                     </div>
                   </div>
-                  <div className="App-card-divider"></div>
+                </div>
+                <div className="App-card-content-container">
                   <div className="App-card-content">
                     <div className="App-card-row">
                       <div className="label">
@@ -787,99 +772,70 @@ export default function DashboardV2() {
                         )}
                       </div>
                     </div>
-                    {/* <div className="App-card-row">
-                      <div className="label">
-                        <Trans>Supply</Trans>
-                      </div>
-                      <div>{formatAmount(totalGmxSupply, GMX_DECIMALS, 0, true)} OPEN</div>
-                    </div> */}
                     <div className="App-card-row">
                       <div className="label">
                         <Trans>Total Staked</Trans>
                       </div>
-                      <div>{`$${formatAmount(totalStakedData?.totalStakedInUsd, 30, 0, true)}`}</div>
-                      {/* <div>
-                        <TooltipComponent
-                          position="right-bottom"
-                          className="nowrap"
-                          handle={`$${formatAmount(stakedGmxSupplyUsd, USD_DECIMALS, 0, true)}`}
-                          renderContent={() => (
-                            <StatsTooltip
-                              title={t`Staked`}
-                              arbitrumValue={arbitrumStakedGmx}
-                              avaxValue={avaxStakedGmx}
-                              total={totalStakedGmx}
-                              decimalsForConversion={GMX_DECIMALS}
-                              showDollar={false}
-                            />
-                          )}
-                        />
-                      </div> */}
+                      <div>{`$${formatAmount(stakedOpenSupplyUsd, USD_DECIMALS, 0, true)}`}</div>
                     </div>
                     <div className="App-card-row">
                       <div className="label">
                         <Trans>Market Cap</Trans>
                       </div>
-                      <div>${formatAmount(gmxMarketCap, 18, 0, true)}</div>
+                      <div>${formatAmount(gmxMarketCap, USD_DECIMALS, 0, true)}</div>
                     </div>
                   </div>
-                </div>
-                <div className="stats-piechart" onMouseLeave={onGMXDistributionChartLeave}>
-                  {gmxDistributionData.length > 0 && (
-                    <PieChart width={210} height={210}>
-                      <Pie
-                        data={gmxDistributionData}
-                        cx={100}
-                        cy={100}
-                        innerRadius={73}
-                        outerRadius={80}
-                        fill="#8884d8"
-                        dataKey="value"
-                        startAngle={90}
-                        endAngle={-270}
-                        paddingAngle={2}
-                        onMouseEnter={onGMXDistributionChartEnter}
-                        onMouseOut={onGMXDistributionChartLeave}
-                        onMouseLeave={onGMXDistributionChartLeave}
-                      >
-                        {gmxDistributionData.map((entry, index) => {
-                          return (
-                            <Cell
-                              key={`cell-${index}`}
-                              fill={entry.color}
-                              style={{
-                                filter:
-                                  gmxActiveIndex === index
-                                    ? `drop-shadow(0px 0px 6px ${hexToRgba(entry.color, 0.7)})`
-                                    : "none",
-                                cursor: "pointer",
-                              }}
-                              stroke={entry.color}
-                              strokeWidth={gmxActiveIndex === index ? 1 : 1}
-                            />
-                          );
-                        })}
-                      </Pie>
-                      <text x={"50%"} y={"50%"} fill="#375BD2" textAnchor="middle" dominantBaseline="middle">
-                        <Trans>Distribution</Trans>
-                      </text>
-                      <Tooltip content={<CustomTooltip />} />
-                    </PieChart>
-                  )}
+                  <div className="stats-piechart" onMouseLeave={onGMXDistributionChartLeave}>
+                    {gmxDistributionData.length > 0 && (
+                      <PieChart width={210} height={210}>
+                        <Pie
+                          data={gmxDistributionData}
+                          cx={100}
+                          cy={100}
+                          innerRadius={73}
+                          outerRadius={80}
+                          fill="#8884d8"
+                          dataKey="value"
+                          startAngle={90}
+                          endAngle={-270}
+                          paddingAngle={2}
+                          onMouseEnter={onGMXDistributionChartEnter}
+                          onMouseOut={onGMXDistributionChartLeave}
+                          onMouseLeave={onGMXDistributionChartLeave}
+                        >
+                          {gmxDistributionData.map((entry, index) => {
+                            return (
+                              <Cell
+                                key={`cell-${index}`}
+                                fill={entry.color}
+                                style={{
+                                  filter:
+                                    gmxActiveIndex === index
+                                      ? `drop-shadow(0px 0px 6px ${hexToRgba(entry.color, 0.7)})`
+                                      : "none",
+                                  cursor: "pointer",
+                                }}
+                                stroke={entry.color}
+                                strokeWidth={gmxActiveIndex === index ? 1 : 1}
+                              />
+                            );
+                          })}
+                        </Pie>
+                        <text x={"50%"} y={"50%"} fill="#375BD2" textAnchor="middle" dominantBaseline="middle">
+                          <Trans>Distribution</Trans>
+                        </text>
+                        <Tooltip content={<CustomTooltip />} />
+                      </PieChart>
+                    )}
+                  </div>
                 </div>
               </div>
               <div className="App-card">
-                <div className="stats-block">
+                <div className="App-card-header">
                   <div className="App-card-title">
                     <div className="App-card-title-mark">
                       <div className="App-card-title-mark-icon">
-                        <img src={logoOAP} alt="oap40Icon" style={{ width: 40, height: 40 }} />
-                        <img
-                          src={bnbIcon}
-                          alt={t`Avalanche Icon`}
-                          className="selected-network-symbol"
-                          style={{ backgroundColor: "#F9F9F9", padding: 2, width: 18 }}
-                        />
+                        <img src={logoOAPWhite} alt="oap40Icon" />
                       </div>
                       <div className="App-card-title-mark-info">
                         <div className="App-card-title-mark-title">OAP</div>
@@ -890,7 +846,8 @@ export default function DashboardV2() {
                       </div>
                     </div>
                   </div>
-                  <div className="App-card-divider"></div>
+                </div>
+                <div className="App-card-content-container">
                   <div className="App-card-content">
                     <div className="App-card-row">
                       <div className="label">
@@ -923,47 +880,47 @@ export default function DashboardV2() {
                       <div>{stablePercentage}%</div>
                     </div>
                   </div>
-                </div>
-                <div className="stats-piechart" onMouseOut={onGLPPoolChartLeave}>
-                  {glpPool.length > 0 && (
-                    <PieChart width={210} height={210}>
-                      <Pie
-                        data={glpPool}
-                        cx={100}
-                        cy={100}
-                        innerRadius={73}
-                        outerRadius={80}
-                        fill="#8884d8"
-                        dataKey="value"
-                        startAngle={90}
-                        endAngle={-270}
-                        onMouseEnter={onGLPPoolChartEnter}
-                        onMouseOut={onGLPPoolChartLeave}
-                        onMouseLeave={onGLPPoolChartLeave}
-                        paddingAngle={2}
-                      >
-                        {glpPool.map((entry, index) => (
-                          <Cell
-                            key={`cell-${index}`}
-                            fill={GLP_POOL_COLORS[entry.name]}
-                            style={{
-                              filter:
-                                glpActiveIndex === index
-                                  ? `drop-shadow(0px 0px 6px ${hexToRgba(GLP_POOL_COLORS[entry.name], 0.7)})`
-                                  : "none",
-                              cursor: "pointer",
-                            }}
-                            stroke={GLP_POOL_COLORS[entry.name]}
-                            strokeWidth={glpActiveIndex === index ? 1 : 1}
-                          />
-                        ))}
-                      </Pie>
-                      <text x={"50%"} y={"50%"} fill="#375BD2" textAnchor="middle" dominantBaseline="middle">
-                        OAP Pool
-                      </text>
-                      <Tooltip content={<CustomTooltip />} />
-                    </PieChart>
-                  )}
+                  <div className="stats-piechart" onMouseOut={onGLPPoolChartLeave}>
+                    {glpPool.length > 0 && (
+                      <PieChart width={210} height={210}>
+                        <Pie
+                          data={glpPool}
+                          cx={100}
+                          cy={100}
+                          innerRadius={73}
+                          outerRadius={80}
+                          fill="#8884d8"
+                          dataKey="value"
+                          startAngle={90}
+                          endAngle={-270}
+                          onMouseEnter={onGLPPoolChartEnter}
+                          onMouseOut={onGLPPoolChartLeave}
+                          onMouseLeave={onGLPPoolChartLeave}
+                          paddingAngle={2}
+                        >
+                          {glpPool.map((entry, index) => (
+                            <Cell
+                              key={`cell-${index}`}
+                              fill={GLP_POOL_COLORS[entry.name]}
+                              style={{
+                                filter:
+                                  glpActiveIndex === index
+                                    ? `drop-shadow(0px 0px 6px ${hexToRgba(GLP_POOL_COLORS[entry.name], 0.7)})`
+                                    : "none",
+                                cursor: "pointer",
+                              }}
+                              stroke={GLP_POOL_COLORS[entry.name]}
+                              strokeWidth={glpActiveIndex === index ? 1 : 1}
+                            />
+                          ))}
+                        </Pie>
+                        <text x={"50%"} y={"50%"} fill="#375BD2" textAnchor="middle" dominantBaseline="middle">
+                          OAP Pool
+                        </text>
+                        <Tooltip content={<CustomTooltip />} />
+                      </PieChart>
+                    )}
+                  </div>
                 </div>
               </div>
             </div>
@@ -973,7 +930,6 @@ export default function DashboardV2() {
                 {chainId === AVALANCHE && <img src={avalanche16Icon} alt={t`Avalanche Icon`} />}
                 {chainId === ARBITRUM && <img src={arbitrum16Icon} alt={t`Arbitrum Icon`} />}
               </div>
-              <div className="App-card-divider"></div>
               <table className="token-table">
                 <thead>
                   <tr>
@@ -1089,7 +1045,7 @@ export default function DashboardV2() {
                         </div>
                       </div>
                     </div>
-                    <div className="App-card-divider"></div>
+                    <div className="App-card-divider no-margin"></div>
                     <div className="App-card-content">
                       <div className="App-card-row">
                         <div className="label">

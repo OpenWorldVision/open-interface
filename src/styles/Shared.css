@@ -17,6 +17,97 @@ body {
   -webkit-font-smoothing: subpixel-antialiased;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  /* color */
+  --backgroundColor: #f2f6ff;
+  --textColor: #ffffff;
+  --textColor2: #1a2b6b;
+  --textColor3: #657290;
+  --textColor4: #dfe7fb;
+  --textColor5: #375bd2;
+  --textColor6: #1a2b6b;
+  --textColor7: #375bd2;
+  --textColor8: #375bd2;
+  --textColor9: #f1f2f2;
+  --textColor10: #1a2b6b;
+  --textColor11: #dfe7fb;
+  --textColor12: #b5b7bf;
+  --textColor13: #3d4556;
+  --textColor14: #f9f9f9;
+  --textColor15: #1a2b6b;
+  --textColor16: #ffffff;
+  --textColor100: #0f1943;
+  --textColor20: #1a2b6b;
+  --textHeaderActive: #375bd2;
+  --textHeaderInactive: #375bd280;
+  --cardHeaderBackgroundColor: #375bd2;
+  --cardHeaderBackgroundColor2: #dfe7fbb2;
+  --cardTitleBackgroundColor: #375bd2;
+  --cardBackgroundColor: #dfe7fb;
+  --footerBackgroundColor: #375bd2;
+  --buttonLightBackground: #dfe7fb;
+  --buttonDarkBackground: #375bd2;
+  --buttonDarkBackground2: #375bd2;
+  --dividerColor: #adbdef;
+  --tooltipBackgroundColor: #dfe7fb;
+  --logoUrl: url("/src/img/logo_GMX.svg");
+  --logoOAP: url("/src/img/logo_oap.svg");
+  --chartHeaderBackgroundColor: #dfe7fbb2;
+  --boxBackgroundColor2: #dfe7fb;
+  --boxBackgroundColor: #ebf0ff;
+  --maxButtonColor: #375bd2;
+  --inputColor: #6d7380;
+  --dividerColor: rgba(109, 115, 128, 0.5);
+  --sliderColor: #bdc9e7;
+  --tabInactiveColor: #375bd280;
+  --tabActiveColor: #375bd2;
+  --chartBackgroundColor: '#EDF2FE';
+}
+body.dark-theme {
+  /* color */
+  --backgroundColor: linear-gradient(180deg, #0a112b 0%, #0a1127 100%);
+  --textColor: #ffffff;
+  --textColor2: #aab5d1;
+  --textColor3: #aab5d1;
+  --textColor4: #1a2b6b;
+  --textColor5: #dfe7fb;
+  --textColor6: #ffffff;
+  --textColor7: #ffffff;
+  --textColor8: #aab5d1;
+  --textColor9: #f1f2f2;
+  --textColor10: #ffffff;
+  --textColor11: rgba(255, 255, 255, 0.1);
+  --textColor12: #b5b7bf;
+  --textColor13: #3d4556;
+  --textColor14: #375bd2;
+  --textColor15: #375bd2;
+  --textColor16: #375bd2;
+  --textColor20: #657290;
+  --textColor100: #dfe7fb;
+  --textHeaderActive: #ffffff;
+  --textHeaderInactive: #ffffff80;
+  --cardHeaderBackgroundColor: #04091c80;
+  --cardHeaderBackgroundColor2: #04091c80;
+  --cardTitleBackgroundColor: #04091c;
+  --cardBackgroundColor: #04091c;
+  --footerBackgroundColor: #1a2b6b;
+  --buttonLightBackground: #1a2b6b;
+  --buttonDarkBackground: #dfe7fb;
+  --buttonDarkBackground2: #0f1943;
+  --dividerColor: #0f1a44;
+  --tooltipBackgroundColor: #1a2b6b;
+  --logoUrl: url("/src/img/logo_open_white.svg");
+  --logoOAP: url("/src/img/logo_oap_white.svg");
+  --chartHeaderBackgroundColor: #04091c;
+  --boxBackgroundColor2: #04091c;
+  --boxBackgroundColor: #070e27;
+  --maxButtonColor: #1a2b6b;
+  --inputColor: #657290;
+  --dividerColor: rgba(255, 255, 255, 0.1);
+  --sliderColor: #070e27;
+  --tabInactiveColor: #1a2b6b80;
+  --tabActiveColor: #1a2b6b;
+  --chartBackgroundColor: '#04091C';
 }
 
 code {
@@ -25,13 +116,13 @@ code {
 
 * {
   box-sizing: border-box;
-  font-family: "Relative", sans-serif;
+  font-family: "Montserrat", sans-serif;
   /* letter-spacing: 0.5px; */
   /* font-variant-numeric: tabular-nums; */
 }
 
 input {
-  font-family: "RelativeNumber";
+  font-family: "Montserrat";
 }
 
 ::-webkit-scrollbar {
@@ -65,14 +156,14 @@ input {
   --avax-red: #e84143;
   --arbitrum-blue: #28a0f0;
   --border-radius-sm: 0.4rem;
-  --error-red: #E8636B;
+  --error-red: #e8636b;
 }
 
 a {
-  color: #6D7380;
+  color: #6d7380;
 }
 a:hover {
-  color: #375BD2;
+  color: #375bd2;
 }
 
 .Card-title {
@@ -92,7 +183,7 @@ input[type="number"] {
 
 input {
   font-size: 2rem;
-  color: #1A2B6B;
+  color: var(--inputColor);
   outline: none;
   background: none;
   border: none;
@@ -100,11 +191,11 @@ input {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-
 }
 
 input::placeholder {
-  color: rgba(26, 43, 107, 0.5);
+  color: var(--inputColor);
+  opacity: 0.6;
 }
 
 button {
@@ -209,13 +300,13 @@ a.plain {
 }
 
 .default-btn {
-  background: #375BD2;
+  background: var(--footerBackgroundColor);
   border-radius: 4px;
   font-size: 1.4rem;
   line-height: 2rem;
   font-weight: 700;
   letter-spacing: 0px;
-  color: #ffffff !important;
+  color: var(--textColor9) !important;
   padding-left: 1.6rem;
   padding-right: 1.6rem;
   /* padding: 9px 16px!important; */
@@ -230,6 +321,29 @@ a.plain {
   border: none;
   appearance: none;
   border-radius: 18px;
+}
+
+.default-btn-light {
+  color: var(--textColor8);
+  border-radius: 4px;
+  font-size: 1.4rem;
+  line-height: 2rem;
+  font-weight: 700;
+  letter-spacing: 0px;
+  padding-left: 1.6rem;
+  padding-right: 1.6rem;
+  text-decoration: none;
+  box-sizing: border-box;
+  position: relative;
+  min-height: 3.6rem;
+  display: inline-flex !important;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  border: none;
+  appearance: none;
+  border-radius: 18px;
+  border: 3px solid var(--textColor8);
 }
 
 /* .default-btn:hover {

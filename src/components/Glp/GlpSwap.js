@@ -39,7 +39,7 @@ import RewardRouter from "abis/RewardRouter.json";
 import Token from "abis/Token.json";
 
 import glp24Icon from "img/ic_gmx_24.svg";
-import logoOAP from "img/logo_oap.svg";
+import logoOAP from "img/logo_oap_white.svg";
 import arrowIcon from "img/ic_convert_down.svg";
 
 import avalanche16Icon from "img/ic_avalanche_16.svg";
@@ -739,13 +739,13 @@ export default function GlpSwap(props) {
           <div className="App-card-title">
             <div className="App-card-title-mark">
               <div className="App-card-title-mark-icon">
-                <img src={logoOAP} alt="oap40Icon" style={{ width: 40, height: 40 }} />
-                <img
+                <img src={logoOAP} alt="oap40Icon" style={{ width: 30, height: 30 }} />
+                {/* <img
                   src={bnbIcon}
                   alt={t`Avalanche Icon`}
                   className="selected-network-symbol"
                   style={{ backgroundColor: "#F9F9F9", padding: 2, width: 18 }}
-                />
+                /> */}
               </div>
               <div className="App-card-title-mark-info">
                 <div className="App-card-title-mark-title">OAP</div>
@@ -756,7 +756,7 @@ export default function GlpSwap(props) {
               </div>
             </div>
           </div>
-          <div className="App-card-divider" />
+          <div className="App-card-divider-2" />
           <div className="App-card-content">
             <div className="App-card-row">
               <div className="label">
@@ -783,7 +783,7 @@ export default function GlpSwap(props) {
               </div>
             </div>
           </div>
-          <div className="App-card-divider" />
+          <div className="App-card-divider-2" />
           <div className="App-card-content">
             {!isBuying && (
               <div className="App-card-row">
@@ -973,13 +973,13 @@ export default function GlpSwap(props) {
                     renderContent={() => {
                       if (!feeBasisPoints) {
                         return (
-                          <div className="text-white">
+                          <div className="">
                             <Trans>Fees will be shown once you have entered an amount in the order form.</Trans>
                           </div>
                         );
                       }
                       return (
-                        <div className="text-white">
+                        <div className="">
                           {feeBasisPoints > 50 && <Trans>To reduce fees, select a different asset to pay with.</Trans>}
                           <Trans>Check the "Save on Fees" section below to get the lowest fee percentages.</Trans>
                         </div>
@@ -994,13 +994,13 @@ export default function GlpSwap(props) {
                     renderContent={() => {
                       if (!feeBasisPoints) {
                         return (
-                          <div className="text-white">
+                          <div className="">
                             <Trans>Fees will be shown once you have entered an amount in the order form.</Trans>
                           </div>
                         );
                       }
                       return (
-                        <div className="text-white">
+                        <div className="">
                           {feeBasisPoints > 50 && <Trans>To reduce fees, select a different asset to receive.</Trans>}
                           <Trans>Check the "Save on Fees" section below to get the lowest fee percentages.</Trans>
                         </div>
@@ -1057,7 +1057,7 @@ export default function GlpSwap(props) {
                     tooltipIconPosition="right"
                     position="right-bottom text-none"
                     renderContent={() => (
-                      <p className="text-white">
+                      <p className="">
                         <Trans>Available amount to deposit into OAP.</Trans>
                       </p>
                     )}
@@ -1069,7 +1069,7 @@ export default function GlpSwap(props) {
                     position="center-bottom text-none"
                     renderContent={() => {
                       return (
-                        <p className="text-white">
+                        <p className="">
                           <Trans>
                             Available amount to withdraw from OAP. Funds not utilized by current open positions.
                           </Trans>
@@ -1089,7 +1089,7 @@ export default function GlpSwap(props) {
                   position="right-bottom text-none"
                   renderContent={() => {
                     return (
-                      <div className="text-white">
+                      <div className="">
                         <Trans>Fees will be shown once you have entered an amount in the order form.</Trans>
                       </div>
                     );
@@ -1160,7 +1160,7 @@ export default function GlpSwap(props) {
                         handle="NA"
                         position="right-bottom"
                         renderContent={() => (
-                          <div className="text-white">
+                          <div className="">
                             <Trans>
                               Max pool capacity reached for {tokenInfo.symbol}
                               <br />
@@ -1335,7 +1335,7 @@ export default function GlpSwap(props) {
                     <AssetDropdown assetSymbol={token.symbol} assetInfo={token} />
                   </div>
                 </div>
-                <div className="App-card-divider" />
+                {/* <div className="App-card-divider" /> */}
                 <div className="App-card-content">
                   <div className="App-card-row">
                     <div className="label">
@@ -1349,7 +1349,7 @@ export default function GlpSwap(props) {
                         handle="Available"
                         position="left-bottom"
                         renderContent={() => (
-                          <p className="text-white">
+                          <p className="">
                             <Trans>Available amount to deposit into OAP.</Trans>
                           </p>
                         )}
@@ -1372,7 +1372,7 @@ export default function GlpSwap(props) {
                           position="left-bottom"
                           renderContent={() => {
                             return (
-                              <p className="text-white">
+                              <p className="">
                                 <Trans>
                                   Available amount to withdraw from OAP. Funds not utilized by current open positions.
                                 </Trans>
@@ -1414,7 +1414,7 @@ export default function GlpSwap(props) {
                         <Tooltip
                           handle="Fees"
                           renderContent={() => (
-                            <p className="text-white">
+                            <p className="">
                               <Trans>Fees will be shown once you have entered an amount in the order form.</Trans>
                             </p>
                           )}
@@ -1423,7 +1423,7 @@ export default function GlpSwap(props) {
                     </div>
                     <div>{renderFees()}</div>
                   </div>
-                  <div className="App-card-divider"></div>
+                  {/* <div className="App-card-divider"></div> */}
                   <div className="App-card-options">
                     {isBuying && (
                       <button className="App-button-option App-card-option" onClick={() => selectToken(token)}>

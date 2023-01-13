@@ -17,9 +17,12 @@ import { LANGUAGE_LOCALSTORAGE_KEY } from "config/localStorage";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faDotCircle,
+  faEarthAsia,
+  faGear,
   faGripHorizontal,
   faGripLinesVertical,
   faGripVertical,
+  faLanguage,
   faList12,
   faListDots,
   faPersonDotsFromLine,
@@ -100,9 +103,6 @@ function NavIcons({ selectorLabel }) {
         <img className="network-dropdown-icon" src={bnbIcon} alt={selectorLabel} />
       </button>
       <div className="network-dropdown-seperator" />
-      <button className={cx("btn-primary small transparent")}>
-        <FontAwesomeIcon icon={faGripHorizontal} color={"#375BD2"} />
-      </button>
     </>
   );
 }
@@ -130,7 +130,7 @@ function DesktopDropdown({ setActiveModal, selectorLabel, networkOptions, onNetw
             <div className="network-dropdown-menu-item menu-item" onClick={openSettings}>
               <div className="menu-item-group">
                 <div className="menu-item-icon">
-                  <img className="network-dropdown-icon" src={settingsIcon} alt="" />
+                  <FontAwesomeIcon icon={faGear} fontSize={18} />
                 </div>
                 <span className="network-dropdown-item-label">
                   <Trans>Settings</Trans>
@@ -145,7 +145,7 @@ function DesktopDropdown({ setActiveModal, selectorLabel, networkOptions, onNetw
             >
               <div className="menu-item-group">
                 <div className="menu-item-icon">
-                  <img className="network-dropdown-icon" src={language24Icon} alt="" />
+                  <FontAwesomeIcon icon={faEarthAsia} fontSize={18} />
                 </div>
                 <span className="network-dropdown-item-label">
                   <Trans>Language</Trans>
@@ -253,7 +253,9 @@ function NetworkModalContent({ networkOptions, onNetworkSelect, selectorLabel, s
           }}
         >
           <div className="menu-item-group">
-            <img className="network-option-img" src={language24Icon} alt="Select Language" />
+            <div className="network-option-img">
+              <FontAwesomeIcon icon={faEarthAsia} fontSize={18} style={{ marginLeft: 4 }} />
+            </div>
             <span className="network-option-img-label">
               <Trans>Language</Trans>
             </span>
@@ -267,7 +269,9 @@ function NetworkModalContent({ networkOptions, onNetworkSelect, selectorLabel, s
           }}
         >
           <div className="menu-item-group">
-            <img className="network-option-img" src={settingsIcon} alt="" />
+            <div className="network-option-img">
+              <FontAwesomeIcon icon={faGear} fontSize={18} style={{ marginLeft: 4 }} />
+            </div>
             <span className="network-option-img-label">
               <Trans>Settings</Trans>
             </span>

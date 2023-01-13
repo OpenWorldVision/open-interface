@@ -19,6 +19,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMoneyBillTransfer } from "@fortawesome/free-solid-svg-icons";
 import Modal from "components/Modal/Modal";
 import ModalIncomingFeature from "components/ModalIncomingFeature/ModalIncomingFeature";
+import SwitchThemeButton from "components/Common/SwitchThemeButton";
+import Switch from "react-switch";
+import { IS_LIGHT_THEME } from "config/localStorage";
 
 type Props = {
   openSettings: () => void;
@@ -40,7 +43,7 @@ export function AppHeaderUser({
   const { chainId } = useChainId();
   const { active, account } = useWeb3React();
   const showConnectionOptions = !isHomeSite();
-
+  const [isDarkTheme, setIsDarkTheme] = useState(!JSON.parse(localStorage.getItem(IS_LIGHT_THEME) || `false`));
   const networkOptions = [
     {
       label: getChainName(TESTNET),
@@ -61,6 +64,12 @@ export function AppHeaderUser({
       setWalletModalVisible(false);
     }
   }, [active, setWalletModalVisible]);
+
+  useEffect(() => {
+    if (isDarkTheme) {
+      document.body.classList.add("dark-theme");
+    }
+  }, []);
 
   const onNetworkSelect = useCallback(
     (option) => {
@@ -88,16 +97,20 @@ export function AppHeaderUser({
             redirectPopupTimestamp={redirectPopupTimestamp}
             showRedirectModal={showRedirectModal}
           >
-            <FontAwesomeIcon icon={faMoneyBillTransfer} style={{ marginRight: 8 }} />
-            <Trans>Trade</Trans>
+            <FontAwesomeIcon icon={faMoneyBillTransfer} />
+            {small ? null : (
+              <div style={{ marginLeft: 8, fontWeight: 700 }}>
+                <Trans>Trade</Trans>
+              </div>
+            )}
           </HeaderLink>
         </div>
-
         {showConnectionOptions ? (
-          <>
+          <div className="connect-wallet">
             <ConnectWalletButton onClick={() => setWalletModalVisible(true)}>
-              {small ? <Trans>Connect</Trans> : <Trans>Connect Wallet</Trans>}
+              {small ? null : <Trans>Connect Wallet</Trans>}
             </ConnectWalletButton>
+            <div className="connect-wallet-divider" />
             <NetworkDropdown
               small={small}
               networkOptions={networkOptions}
@@ -105,10 +118,43 @@ export function AppHeaderUser({
               onNetworkSelect={onNetworkSelect}
               openSettings={openSettings}
             />
-          </>
+          </div>
         ) : (
           <LanguagePopupHome />
         )}
+        <SwitchThemeButton
+          small={small}
+          onClick={() => {
+            setIsDarkTheme((prev) => {
+              const newState = !prev;
+              localStorage.setItem(IS_LIGHT_THEME, `${prev}`);
+              return newState;
+            });
+            document.body.classList.toggle("dark-theme");
+          }}
+          isDarkTheme={isDarkTheme}
+        >
+          <Switch
+            onChange={() => {
+              setIsDarkTheme((prev) => {
+                const newState = !prev;
+                localStorage.setItem(IS_LIGHT_THEME, `${prev}`);
+                return newState;
+              });
+              document.body.classList.toggle("dark-theme");
+            }}
+            checked={!isDarkTheme}
+            uncheckedIcon={false}
+            checkedIcon={false}
+            width={33}
+            height={20}
+            handleDiameter={15}
+            className={"switch"}
+            offColor={"#0F1A44"}
+            onColor={"#375BD2"}
+            onHandleColor={!isDarkTheme ? "#FFFFFF80" : "##FFFFFF"}
+          />
+        </SwitchThemeButton>
       </div>
     );
   }
@@ -119,36 +165,83 @@ export function AppHeaderUser({
     <div className="App-header-user">
       <div className="App-header-trade-link">
         <HeaderLink
-          className="default-btn"
+          className="default-btn btn-trade"
           to="/trade"
           redirectPopupTimestamp={redirectPopupTimestamp}
           showRedirectModal={showRedirectModal}
         >
-          <FontAwesomeIcon icon={faMoneyBillTransfer} style={{ marginRight: 8 }} />
-          <Trans>Trade</Trans>
+          <FontAwesomeIcon icon={faMoneyBillTransfer} />
+          {small ? null : (
+            <div style={{ marginLeft: 8, fontWeight: 700 }}>
+              <Trans>Trade</Trans>
+            </div>
+          )}
         </HeaderLink>
       </div>
 
       {showConnectionOptions ? (
         <>
           <div className="App-header-user-address">
-            <AddressDropdown
-              account={account}
-              accountUrl={accountUrl}
-              disconnectAccountAndCloseSettings={disconnectAccountAndCloseSettings}
-            />
+            <div className="connect-wallet">
+              <AddressDropdown
+                account={account}
+                accountUrl={accountUrl}
+                disconnectAccountAndCloseSettings={disconnectAccountAndCloseSettings}
+              />
+              <div className="connect-wallet-divider" />
+              <NetworkDropdown
+                small={small}
+                networkOptions={networkOptions}
+                selectorLabel={selectorLabel}
+                onNetworkSelect={onNetworkSelect}
+                openSettings={openSettings}
+              />
+            </div>
           </div>
-          <NetworkDropdown
+          {/* <NetworkDropdown
             small={small}
             networkOptions={networkOptions}
             selectorLabel={selectorLabel}
             onNetworkSelect={onNetworkSelect}
             openSettings={openSettings}
-          />
+          /> */}
         </>
       ) : (
         <LanguagePopupHome />
       )}
+      <SwitchThemeButton
+        small={small}
+        onClick={() => {
+          setIsDarkTheme((prev) => {
+            const newState = !prev;
+            localStorage.setItem(IS_LIGHT_THEME, `${prev}`);
+            return newState;
+          });
+          document.body.classList.toggle("dark-theme");
+        }}
+        isDarkTheme={isDarkTheme}
+      >
+        <Switch
+          onChange={() => {
+            setIsDarkTheme((prev) => {
+              const newState = !prev;
+              localStorage.setItem(IS_LIGHT_THEME, `${prev}`);
+              return newState;
+            });
+            document.body.classList.toggle("dark-theme");
+          }}
+          checked={!isDarkTheme}
+          uncheckedIcon={false}
+          checkedIcon={false}
+          width={33}
+          height={22}
+          handleDiameter={15}
+          className={"switch"}
+          offColor={"#0F1A44"}
+          onColor={"#375BD2"}
+          onHandleColor={!isDarkTheme ? "#FFFFFF80" : "##FFFFFF"}
+        />
+      </SwitchThemeButton>
     </div>
   );
 }
