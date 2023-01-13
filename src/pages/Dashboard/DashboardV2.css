@@ -72,8 +72,8 @@
   cursor: pointer;
 }
 
-.App-card .App-card-divider {
-  /* margin: 0; */
+.App-card .App-card-divider.no-margin {
+  margin: 0 !important;
   background-color: var(--dividerColor);
 }
 

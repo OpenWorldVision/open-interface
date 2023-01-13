@@ -1045,7 +1045,7 @@ export default function DashboardV2() {
                         </div>
                       </div>
                     </div>
-                    <div className="App-card-divider"></div>
+                    <div className="App-card-divider no-margin"></div>
                     <div className="App-card-content">
                       <div className="App-card-row">
                         <div className="label">

@@ -15,6 +15,7 @@ import { formatAmount, numberWithCommas } from "lib/numbers";
 import { getToken, getTokens } from "config/tokens";
 import { formatDateTime } from "lib/dates";
 import { t, Trans } from "@lingui/macro";
+import { FiChevronDown } from "react-icons/fi";
 
 const PRICE_LINE_TEXT_WIDTH = 15;
 

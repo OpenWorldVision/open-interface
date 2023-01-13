@@ -61,6 +61,7 @@ body {
   --sliderColor: #bdc9e7;
   --tabInactiveColor: #375bd280;
   --tabActiveColor: #375bd2;
+  --chartBackgroundColor: '#EDF2FE';
 }
 body.dark-theme {
   /* color */
@@ -106,6 +107,7 @@ body.dark-theme {
   --sliderColor: #070e27;
   --tabInactiveColor: #1a2b6b80;
   --tabActiveColor: #1a2b6b;
+  --chartBackgroundColor: '#04091C';
 }
 
 code {
