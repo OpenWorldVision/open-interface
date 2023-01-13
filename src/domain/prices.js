@@ -181,7 +181,7 @@ function getChainlinkChartPricesFromGraph(tokenSymbol, period) {
 
   while (entryTime < lastTime && lastTime < now) {
     const query = gql(`{
-      rounds(
+      roundFeeds(
         orderBy: unixTimestamp,
         orderDirection: desc,
         where: {feed: "${feedId}", unixTimestamp_gte: ${entryTime}, unixTimestamp_lt: ${lastTime}}
@@ -207,7 +207,7 @@ function getChainlinkChartPricesFromGraph(tokenSymbol, period) {
       let prices = [];
       const uniqTs = new Set();
       chunks.forEach((chunk) => {
-        chunk.data.rounds.forEach((item) => {
+        chunk.data.roundFeeds.forEach((item) => {
           if (uniqTs.has(item.unixTimestamp)) {
             return;
           }
