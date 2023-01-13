@@ -54,8 +54,8 @@ import SEO from "components/Common/SEO";
 import useTotalVolume from "domain/useTotalVolume";
 import StatsTooltip from "components/StatsTooltip/StatsTooltip";
 import StatsTooltipRow from "components/StatsTooltip/StatsTooltipRow";
-import { ARBITRUM, AVALANCHE, getChainName } from "config/chains";
-import { getServerUrl } from "config/backend";
+import { ARBITRUM, AVALANCHE, getChainName, MAINNET } from "config/chains";
+import { getServerUrl, KEEPER_BOT_API } from "config/backend";
 import { contractFetcher } from "lib/contracts";
 import { useInfoTokens } from "domain/tokens";
 import { getTokenBySymbol, getWhitelistedTokens, GLP_POOL_COLORS } from "config/tokens";
@@ -272,8 +272,8 @@ export default function DashboardV2() {
 
   const { openPriceFromBsc } = useOpenPrice(chainId, undefined, active);
   let { total: totalOpenInLiquidity } = useTotalOpenInLiquidity(chainId, active);
-  const { totalStaked } = useOpenStakingInfo(chainId);
-  const totalStakedOpen = totalStaked;
+  const { totalPooledOpen } = useOpenStakingInfo(chainId);
+  const totalStakedOpen = totalPooledOpen;
 
   const { total: totalOpenBurned } = useTotalOpenBurned();
   let gmxMarketCap;
@@ -303,10 +303,25 @@ export default function DashboardV2() {
     oapMarketCap = oapPrice.mul(oapSupply).div(expandDecimals(1, GLP_DECIMALS));
   }
 
-  let tvl;
-  if (oapMarketCap && openPriceFromBsc && totalStakedOpen) {
-    tvl = oapMarketCap.add(stakedOpenSupplyUsd.mul(expandDecimals(1, 12))); // Because open price was decimal 18 so we'll add 10^12 to decimal 30
-  }
+  const { data: aumData } = useSWR(`${KEEPER_BOT_API}/api/v1/tvl`, {
+    fetcher: (...args) =>
+      fetch(...args).then((res) => {
+        return res.json();
+      }),
+
+    refreshInterval: 5000,
+    refreshWhenHidden: true,
+  });
+
+  const { data: totalStakedData } = useSWR(`${KEEPER_BOT_API}/api/v1/total_staked`, {
+    fetcher: (...args) =>
+      fetch(...args).then((res) => {
+        return res.json();
+      }),
+
+    refreshInterval: 5000,
+    refreshWhenHidden: true,
+  });
 
   const ethFloorPriceFund = expandDecimals(350 + 148 + 384, 18);
   const glpFloorPriceFund = expandDecimals(660001, 18);
@@ -411,9 +426,8 @@ export default function DashboardV2() {
   };
 
   let stakedPercent = 0;
-
-  if (totalOpenSupply && !totalOpenSupply.isZero() && !totalStakedOpen.isZero()) {
-    stakedPercent = totalStakedOpen.mul(100).div(totalOpenSupply).toNumber();
+  if (totalOpenSupply && !totalOpenSupply.isZero() && totalStakedData?.totalStaked) {
+    stakedPercent = BigNumber.from(totalStakedData.totalStaked).mul(100).div(totalOpenSupply).toNumber();
   }
 
   let liquidityPercent = 0;
@@ -550,27 +564,29 @@ export default function DashboardV2() {
               <div className="App-card-content">
                 <div className="App-card-row">
                   <div className="label">
-                    <Trans>AUM</Trans>
+                    <Trans>TVL</Trans>
                   </div>
                   <div>
                     <TooltipComponent
-                      handle={`$${formatAmount(tvl, USD_DECIMALS, 0, true)}`}
+                      handle={`$${formatAmount(aumData?.tvl, USD_DECIMALS, 0, true)}`}
                       position="right-bottom"
                       renderContent={() => (
-                        <span>{t`Assets Under Management: OPEN staked (All chains) + OAP pool (${chainName})`}</span>
+                        <span>{t`Assets Under Management: OPEN staked (All chains) + OAP - OpenWorld Assets Pool (${chainName})`}</span>
                       )}
                     />
                   </div>
                 </div>
                 <div className="App-card-row">
                   <div className="label">
-                    <Trans>OAP Pool</Trans>
+                    <Trans>OAP - OpenWorld Assets Pool</Trans>
                   </div>
                   <div>
                     <TooltipComponent
                       handle={`$${formatAmount(aum, USD_DECIMALS, 0, true)}`}
                       position="right-bottom"
-                      renderContent={() => <span>{t`Total value of tokens in OAP pool (${chainName})`}</span>}
+                      renderContent={() => (
+                        <span>{t`Total value of tokens in OpenWorld Assets Pool (${chainName})`}</span>
+                      )}
                     />
                   </div>
                 </div>
@@ -776,13 +792,13 @@ export default function DashboardV2() {
                       <div className="label">
                         <Trans>Total Staked</Trans>
                       </div>
-                      <div>{`$${formatAmount(stakedOpenSupplyUsd, USD_DECIMALS, 0, true)}`}</div>
+                      <div>{`$${formatAmount(totalStakedData?.totalStakedInUsd, 30, 0, true)}`}</div>
                     </div>
                     <div className="App-card-row">
                       <div className="label">
                         <Trans>Market Cap</Trans>
                       </div>
-                      <div>${formatAmount(gmxMarketCap, USD_DECIMALS, 0, true)}</div>
+                      <div>${formatAmount(gmxMarketCap, 18, 0, true)}</div>
                     </div>
                   </div>
                   <div className="stats-piechart" onMouseLeave={onGMXDistributionChartLeave}>
