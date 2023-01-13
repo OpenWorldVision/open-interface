@@ -81,7 +81,7 @@ a.btn {
   /* background: var(--dark-blue-hover); */
 }
 .btn-primary:active {
-  background: var(--dark-blue-active);
+  /* background: var(--dark-blue-active); */
 }
 .connect-wallet {
   background: var(--buttonLightBackground);
