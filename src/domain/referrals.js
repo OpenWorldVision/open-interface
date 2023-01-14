@@ -12,6 +12,7 @@ import {
   arbitrumReferralsGraphClient,
   avalancheReferralsGraphClient,
   bscReferralsGraphClient,
+  bscTestnetReferralsGraphClient,
 } from "lib/subgraph/clients";
 import { callContract, contractFetcher } from "lib/contracts";
 import { helperToast } from "lib/helperToast";
@@ -29,7 +30,7 @@ function getGraphClient(chainId) {
   } else if (chainId === AVALANCHE) {
     return avalancheReferralsGraphClient;
   } else if (chainId === TESTNET) {
-    return bscReferralsGraphClient;
+    return bscTestnetReferralsGraphClient;
   } else if (chainId === MAINNET) {
     return bscReferralsGraphClient;
   }
