@@ -16,7 +16,7 @@ export const SUBGRAPH_URLS = {
     chainLink: "https://api.thegraph.com/subgraphs/name/deividask/chainlink",
   },
   [TESTNET]: {
-    stats: "https://graphiql.openworld.vision/subgraphs/name/nnphuong1997/open-bsc-stats",
-    referrals: "https://graphiql.openworld.vision/subgraphs/name/nnphuong1997/open-bsc-referrals6",
+    stats: "https://graphiql.openworld.vision/subgraphs/name/nnphuong1997/open-bsc-stats2/graphql",
+    referrals: "https://api.thegraph.com/subgraphs/name/nnphuong9718/open-bsc-referrals-mainnet/",
   },
 };
