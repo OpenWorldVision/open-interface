@@ -88,6 +88,7 @@ const CONTRACTS = {
     PancakePair: "0x0D352Ea95cDb52294742A32123f50bE474163038",
     PancakePair2: "0xFea1510Bd3EA668a4d14f7F1d95F7AB4ECAA66ed", // OPEN-WBNB pair
     OpenStaking: "0x214cEc9402F81622Ee97837Ced73C43f4f7f4a89",
+    OapRewardRouter: "0x0a27866A7943E90d3c65A60151ecfB0f79212BbA",
   },
   [TESTNET]: {
     // bsc testnet

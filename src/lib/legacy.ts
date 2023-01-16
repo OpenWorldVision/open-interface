@@ -1351,10 +1351,10 @@ export function getProcessedData(
   // data.totalVesterRewards = data.gmxVesterRewards.add(data.glpVesterRewards);
   // data.totalVesterRewardsUsd = data.totalVesterRewards.mul(gmxPrice).div(expandDecimals(1, 18));
 
-  // data.totalNativeTokenRewards = data.feeGmxTrackerRewards.add(data.feeGlpTrackerRewards);
-  // data.totalNativeTokenRewardsUsd = data.feeGmxTrackerRewardsUsd.add(data.feeGlpTrackerRewardsUsd);
+  data.totalNativeTokenRewards = data.feeGlpTrackerRewards;
+  data.totalNativeTokenRewardsUsd = data.feeGlpTrackerRewardsUsd;
 
-  // data.totalRewardsUsd = data.totalEsGmxRewardsUsd.add(data.totalNativeTokenRewardsUsd).add(data.totalVesterRewardsUsd);
+  data.totalRewardsUsd = data.totalNativeTokenRewardsUsd;
 
   return data;
 }
