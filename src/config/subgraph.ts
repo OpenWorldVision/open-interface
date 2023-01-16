@@ -14,5 +14,6 @@ export const SUBGRAPH_URLS = {
 
   common: {
     chainLink: "https://api.thegraph.com/subgraphs/name/deividask/chainlink",
+    owChainLink: "https://api.thegraph.com/subgraphs/name/nntam2013/chainlink_pricefeed_bnb_2",
   },
 };

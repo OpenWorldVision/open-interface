@@ -331,11 +331,11 @@ function ClaimModal(props) {
   const [isClaiming, setIsClaiming] = useState(false);
   const [shouldClaimGmx, setShouldClaimGmx] = useLocalStorageSerializeKey(
     [chainId, "StakeV2-claim-should-claim-gmx"],
-    true
+    false
   );
   const [shouldClaimEsGmx, setShouldClaimEsGmx] = useLocalStorageSerializeKey(
     [chainId, "StakeV2-claim-should-claim-es-gmx"],
-    true
+    false
   );
   const [shouldClaimWeth, setShouldClaimWeth] = useLocalStorageSerializeKey(
     [chainId, "StakeV2-claim-should-claim-weth"],
@@ -359,16 +359,15 @@ function ClaimModal(props) {
 
   const onClickPrimary = () => {
     setIsClaiming(true);
-
     const contract = new ethers.Contract(rewardRouterAddress, RewardRouter.abi, library.getSigner());
     callContract(
       chainId,
       contract,
       "handleRewards",
       [
-        shouldClaimGmx,
+        false,
         false, // shouldStakeGmx
-        shouldClaimEsGmx,
+        false,
         false, // shouldStakeEsGmx
         false, // shouldStakeMultiplierPoints
         shouldClaimWeth,
@@ -400,16 +399,16 @@ function ClaimModal(props) {
     <div className="StakeModal">
       <Modal isVisible={isVisible} setIsVisible={setIsVisible} label={t`Claim Rewards`}>
         <div className="CompoundModal-menu">
-          <div>
+          {/* <div>
             <Checkbox isChecked={shouldClaimGmx} setIsChecked={setShouldClaimGmx}>
               <Trans>Claim OPEN Rewards</Trans>
             </Checkbox>
-          </div>
-          <div>
+          </div> */}
+          {/* <div>
             <Checkbox isChecked={shouldClaimEsGmx} setIsChecked={setShouldClaimEsGmx}>
               <Trans>Claim esOPEN Rewards</Trans>
             </Checkbox>
-          </div>
+          </div> */}
           <div>
             <Checkbox isChecked={shouldClaimWeth} setIsChecked={setShouldClaimWeth} disabled={shouldConvertWeth}>
               <Trans>Claim {wrappedTokenSymbol} Rewards</Trans>
@@ -480,6 +479,7 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
   const [isClaimModalVisible, setIsClaimModalVisible] = useState(false);
 
   const rewardRouterAddress = getContract(chainId, "RewardRouter");
+  const oapRewardRouterAddress = getContract(chainId, "OapRewardRouter");
   const rewardReaderAddress = getContract(chainId, "RewardReader");
   const readerAddress = getContract(chainId, "Reader");
 
@@ -975,7 +975,7 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
         setPendingTxns={setPendingTxns}
         isVisible={isClaimModalVisible}
         setIsVisible={setIsClaimModalVisible}
-        rewardRouterAddress={rewardRouterAddress}
+        rewardRouterAddress={oapRewardRouterAddress}
         totalVesterRewards={processedData.totalVesterRewards}
         wrappedTokenSymbol={wrappedTokenSymbol}
         nativeTokenSymbol={nativeTokenSymbol}
@@ -1009,7 +1009,7 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
             onUnstaking={showUnstakeOpenModal}
           />
 
-          {/* <div className="App-card primary StakeV2-gmx-card StakeV2-total-rewards-card">
+          <div className="App-card primary StakeV2-gmx-card StakeV2-total-rewards-card">
             <div className="App-card-title">
               <Trans>Total Rewards</Trans>
             </div>
@@ -1024,14 +1024,14 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
                   {formatKeyAmount(processedData, "totalNativeTokenRewardsUsd", USD_DECIMALS, 2, true)})
                 </div>
               </div>
-              <div className="App-card-row">
+              {/* <div className="App-card-row">
                 <div className="label">OPEN</div>
                 <div>
                   {formatKeyAmount(processedData, "totalVesterRewards", 18, 4, true)} ($
                   {formatKeyAmount(processedData, "totalVesterRewardsUsd", USD_DECIMALS, 2, true)})
                 </div>
-              </div>
-              <div className="App-card-row">
+              </div> */}
+              {/* <div className="App-card-row">
                 <div className="label">
                   <Trans>Escrowed OPEN</Trans>
                 </div>
@@ -1039,7 +1039,7 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
                   {formatKeyAmount(processedData, "totalEsGmxRewards", 18, 4, true)} ($
                   {formatKeyAmount(processedData, "totalEsGmxRewardsUsd", USD_DECIMALS, 2, true)})
                 </div>
-              </div>
+              </div> */}
 
               <div className="App-card-row">
                 <div className="label">
@@ -1050,11 +1050,11 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
               <div className="App-card-bottom-placeholder">
                 <div className="App-card-divider"></div>
                 <div className="App-card-options">
-                  {active && (
+                  {/* {active && (
                     <button className="App-button-option App-card-option">
                       <Trans>Compound</Trans>
                     </button>
-                  )}
+                  )} */}
                   {active && (
                     <button className="App-button-option App-card-option">
                       <Trans>Claim</Trans>
@@ -1070,14 +1070,14 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
               <div className="App-card-bottom">
                 <div className="App-card-divider"></div>
                 <div className="App-card-options">
-                  {active && (
+                  {/* {active && (
                     <button
                       className="App-button-option App-card-option"
                       onClick={() => setIsCompoundModalVisible(true)}
                     >
                       <Trans>Compound</Trans>
                     </button>
-                  )}
+                  )} */}
                   {active && (
                     <button className="App-button-option App-card-option" onClick={() => setIsClaimModalVisible(true)}>
                       <Trans>Claim</Trans>
@@ -1091,7 +1091,7 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
                 </div>
               </div>
             </div>
-          </div> */}
+          </div>
           <div className="App-card StakeV2-gmx-card">
             <div className="App-card-title">OAP ({chainName})</div>
             <div className="App-card-content">
@@ -1137,15 +1137,15 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
                             value={`${formatKeyAmount(processedData, "glpAprForNativeToken", 2, 2, true)}%`}
                             showDollar={false}
                           />
-                          <StatsTooltipRow
+                          {/* <StatsTooltipRow
                             label="Escrowed OPEN APR"
                             value={`${formatKeyAmount(processedData, "glpAprForEsGmx", 2, 2, true)}%`}
                             showDollar={false}
-                          />
+                          /> */}
                           <br />
 
                           <Trans>
-                            APRs are updated weekly on Wednesday and will depend on the fees collected for the week.
+                            APRs are updated weekly on Monday and will depend on the fees collected for the week.
                           </Trans>
                         </>
                       );
@@ -1174,7 +1174,7 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
                             )} ($${formatKeyAmount(processedData, "feeGlpTrackerRewardsUsd", USD_DECIMALS, 2, true)})`}
                             showDollar={false}
                           />
-                          <StatsTooltipRow
+                          {/* <StatsTooltipRow
                             label="Escrowed OPEN"
                             value={`${formatKeyAmount(
                               processedData,
@@ -1189,7 +1189,7 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
                               true
                             )})`}
                             showDollar={false}
-                          />
+                          /> */}
                         </>
                       );
                     }}
