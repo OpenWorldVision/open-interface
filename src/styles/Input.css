@@ -13,7 +13,7 @@
 }
 
 .text-input {
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid var(--inputColor);
   font-size: 1.5rem;
   width: 100%;
   color: white;

@@ -30,7 +30,7 @@
   color: var(--textHeaderInactive);
   font-weight: 700;
 }
-.Exchange-list-tab-container .Tab.inline .Tab-option.active{
+.Exchange-list-tab-container .Tab.inline .Tab-option.active {
   font-weight: 700;
   background: var(--cardBackgroundColor);
   color: var(--textColor8);
@@ -50,8 +50,8 @@
   border-radius: 0px 0px 18px 18px;
 }
 .Exchange-empty-positions-list-note {
-  padding:0.1rem 0.6rem;
-  color:var(--textColor100);
+  padding: 0.1rem 0.6rem;
+  color: var(--textColor100);
 }
 
 .position-loading-icon {
@@ -896,17 +896,18 @@ input.Exchange-swap-input.small {
   color: #ffffff !important;
 }
 .Exchange-swap-button-container button.App-cta.long {
-  background: #01A789 !important;
+  background: #01a789 !important;
   color: #ffffff !important;
 }
 .Exchange-swap-button-container button.App-cta.short {
-  background: #E8636B !important;
+  background: #e8636b !important;
   color: #ffffff !important;
 }
 
 .Exchange-swap-button {
   display: block;
   width: 100%;
+  background-color: var(--boxBackgroundColor2);
 }
 
 .Exchange-swap-ball-container {
@@ -1089,7 +1090,7 @@ table.Exchange-list-small td {
   }
   .ExchangeChart.tv .ExchangeChart-bottom-header {
     display: block;
-    top: 4.5rem
+    top: 4.5rem;
   }
 
   .ExchangeChart.tv .ExchangeChart-bottom-stats {

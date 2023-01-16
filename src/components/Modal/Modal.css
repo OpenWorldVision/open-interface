@@ -33,13 +33,14 @@
   max-width: 100%;
   max-height: 90vh;
   overflow: auto;
-  background: var(--tooltipBackgroundColor);
+  background: var(--modalContentBackground);
   border-radius: 4px;
 }
 
 .divider {
   border-bottom: 1px solid #ffffff29;
   margin-bottom: 1.5rem;
+  background-color: var(--inputColor);
 }
 
 .Modal.non-scrollable .Modal-content {
@@ -56,9 +57,9 @@
   margin: 1.5rem;
   color: var(--textColor6);
 }
-.CheckBox .Checkbox-icon-wrapper .Checkbox-icon.inactive  {
+.CheckBox .Checkbox-icon-wrapper .Checkbox-icon.inactive {
   margin: 1.5rem;
-  color: #375BD2;
+  color: #375bd2;
 }
 .Modal-body::-webkit-scrollbar {
   width: 0.6rem;
