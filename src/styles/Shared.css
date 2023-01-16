@@ -61,7 +61,10 @@ body {
   --sliderColor: #bdc9e7;
   --tabInactiveColor: #375bd280;
   --tabActiveColor: #375bd2;
-  --chartBackgroundColor: '#EDF2FE';
+  --chartBackgroundColor: #edf2fe;
+  --referralBoxBackgroundColor: #375bd2;
+  --modalContentBackground: #dfe7fb;
+  --modalButtonBackground: #375bd2;
 }
 body.dark-theme {
   /* color */
@@ -107,7 +110,10 @@ body.dark-theme {
   --sliderColor: #070e27;
   --tabInactiveColor: #1a2b6b80;
   --tabActiveColor: #1a2b6b;
-  --chartBackgroundColor: '#04091C';
+  --chartBackgroundColor: #04091c;
+  --referralBoxBackgroundColor: #0f1943;
+  --modalContentBackground: #04091c;
+  --modalButtonBackground: #1a2b6b;
 }
 
 code {
@@ -160,7 +166,7 @@ input {
 }
 
 a {
-  color: #6d7380;
+  color: var(--textColor);
 }
 a:hover {
   color: #375bd2;
@@ -541,4 +547,5 @@ button.btn-link:hover .logout-icon {
 }
 .default-cursor.App-cta {
   cursor: default;
+  background-color: #03d1cf;
 }
