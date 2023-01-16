@@ -1137,15 +1137,15 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
                             value={`${formatKeyAmount(processedData, "glpAprForNativeToken", 2, 2, true)}%`}
                             showDollar={false}
                           />
-                          <StatsTooltipRow
+                          {/* <StatsTooltipRow
                             label="Escrowed OPEN APR"
                             value={`${formatKeyAmount(processedData, "glpAprForEsGmx", 2, 2, true)}%`}
                             showDollar={false}
-                          />
+                          /> */}
                           <br />
 
                           <Trans>
-                            APRs are updated weekly on Wednesday and will depend on the fees collected for the week.
+                            APRs are updated weekly on Monday and will depend on the fees collected for the week.
                           </Trans>
                         </>
                       );
@@ -1174,7 +1174,7 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
                             )} ($${formatKeyAmount(processedData, "feeGlpTrackerRewardsUsd", USD_DECIMALS, 2, true)})`}
                             showDollar={false}
                           />
-                          <StatsTooltipRow
+                          {/* <StatsTooltipRow
                             label="Escrowed OPEN"
                             value={`${formatKeyAmount(
                               processedData,
@@ -1189,7 +1189,7 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
                               true
                             )})`}
                             showDollar={false}
-                          />
+                          /> */}
                         </>
                       );
                     }}

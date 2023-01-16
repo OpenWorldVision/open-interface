@@ -44,16 +44,12 @@ function OpenStaking(props: Props) {
   } = useOpenStakingInfo(chainId);
 
   const apr = useMemo(() => {
-    if (!currentOpen || !totalStaked || currentOpen.eq("0") || totalStaked.eq("0")) {
+    if (!totalPooledOpen || !totalShares || totalPooledOpen.eq("0") || totalShares.eq("0")) {
       return BigNumber.from("0");
     }
-    return currentOpen
-      .mul(PRECISION)
-      .div(totalStaked)
-      .sub(PRECISION)
-      .div(BigNumber.from("7"))
-      .mul(BigNumber.from("100"));
-  }, [currentOpen, totalStaked]);
+
+    return totalPooledOpen.sub(totalShares).mul(BigNumber.from("52")).mul(expandDecimals(1, 20)).div(totalShares);
+  }, [totalPooledOpen, totalShares]);
 
   const openBalanceUsd = useMemo(() => {
     if (!openPrice || !processedData.gmxBalance) {
@@ -78,7 +74,7 @@ function OpenStaking(props: Props) {
     <div className="App-card StakeV2-gmx-card">
       <div className="App-card-title">OPEN</div>
       <div className="App-card-content">
-      {/* <div className="App-card-divider"></div> */}
+        {/* <div className="App-card-divider"></div> */}
         <div className="App-card-row">
           <div className="label">
             <Trans>Price</Trans>
@@ -147,7 +143,7 @@ function OpenStaking(props: Props) {
           </div>
           <div className="value" style={{ color: "#53BA95" }}>
             <Tooltip
-              handle={`${formatAmount(apr, 30, 2, true)}%`}
+              handle={`${formatAmount(apr, 18, 2, true)}%`}
               position="right-bottom"
               renderContent={() => {
                 return (
