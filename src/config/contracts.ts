@@ -168,6 +168,7 @@ const CONTRACTS = {
     FastPriceFeed: "0xAE11B05Bf243b234F850E745327B06CAf08af4Cb",
     VaultPriceFeed: "0xeaE0398FBD233f8b50bCC3Ba9e81F92598B77dd0",
     OpenStaking: "0x52c0bf0C0bF20377A478d7DD88B9c08358D9f1Fd",
+    OapRewardRouter: "0xdb49dE9C4812A36b724dcd82F7a3433bAd01b9D5",
   },
   [ARBITRUM_TESTNET]: {
     // arbitrum testnet
