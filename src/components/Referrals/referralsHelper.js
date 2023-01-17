@@ -136,7 +136,10 @@ export function getReferralCodeTradeUrl(referralCode) {
 }
 
 export function getTwitterShareUrl(referralCode) {
-  const message = ["Trying out trading on @OPEN, up to 50x leverage on $BTC, $ETH, $BNB 📈", "For fee discounts use:"];
+  const message = [
+    "Trying out trading on @OpenWorldVision, up to 50x leverage on $BTC, $ETH, $BNB 📈",
+    "For fee discounts use:",
+  ];
   const shareURL = getReferralCodeTradeUrl(referralCode);
 
   return getTwitterIntentURL(message, shareURL);
