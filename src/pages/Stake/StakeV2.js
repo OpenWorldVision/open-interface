@@ -1125,7 +1125,7 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
                 <div className="label">
                   <Trans>APR</Trans>
                 </div>
-                <div>
+                <div style={{ color: "#53BA95" }}>
                   <Tooltip
                     handle={`${formatKeyAmount(processedData, "glpAprTotal", 2, 2, true)}%`}
                     position="right-bottom"
