@@ -314,6 +314,14 @@ msgstr "Assets Under Management"
 msgid "Assets Under Management: OPEN staked (All chains) + OAP pool ({chainName})"
 msgstr "Assets Under Management: OPEN staked (All chains) + OAP pool ({chainName})"
 
+#: src/pages/Dashboard/DashboardV2.js
+msgid "Total value of tokens in OpenWorld Assets Pool ({chainName})"
+msgstr "Total value of tokens in OpenWorld Assets Pool ({chainName})"
+
+#: src/pages/Dashboard/DashboardV2.js
+msgid "Assets Under Management: OPEN staked (All chains) + OAP - OpenWorld Assets Pool ({chainName})"
+msgstr "Assets Under Management: OPEN staked (All chains) + OAP - OpenWorld Assets Pool ({chainName})"
+
 #: src/components/Glp/GlpSwap.js
 msgid "Available"
 msgstr "Available"
