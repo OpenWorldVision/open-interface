@@ -3302,8 +3302,8 @@ msgid "Total stOPEN"
 msgstr ""
 
 #: src/pages/Dashboard/DashboardV2.js
-msgid "Total value of tokens in OAP pool ({chainName})"
-msgstr "OAP池中的代币总值({chainName})"
+msgid "Total value of tokens in OpenWorld Assets Pool ({chainName})"
+msgstr "OpenWorld Assets Pool池中的代币总值({chainName})"
 
 #: src/components/StatsTooltip/StatsTooltip.tsx
 msgid "Total:"

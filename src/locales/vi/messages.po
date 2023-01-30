@@ -3292,8 +3292,8 @@ msgid "Total fees earned since {0}: {1} USD<0/>Fee assets: {feeText}"
 msgstr "Total fees earned since {0}: {1} USD<0/>Fee assets: {feeText}"
 
 #: src/pages/Dashboard/DashboardV2.js
-msgid "Total value of tokens in OAP pool ({chainName})"
-msgstr "Tổng giá trị tokens trong OLP pool ({chainName})"
+msgid "Total value of tokens in OpenWorld Assets Pool ({chainName})"
+msgstr "Tổng giá trị tokens trong OpenWorld Assets Pool pool ({chainName})"
 
 #: src/components/StatsTooltip/StatsTooltip.tsx
 msgid "Total:"

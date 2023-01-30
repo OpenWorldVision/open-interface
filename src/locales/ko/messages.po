@@ -3302,8 +3302,8 @@ msgid "Total stOPEN"
 msgstr ""
 
 #: src/pages/Dashboard/DashboardV2.js
-msgid "Total value of tokens in OAP pool ({chainName})"
-msgstr "OAP 풀 ({chainName})의 토큰 총액"
+msgid "Total value of tokens in OpenWorld Assets Pool ({chainName})"
+msgstr "OpenWorld Assets Pool 풀 ({chainName})의 토큰 총액"
 
 #: src/components/StatsTooltip/StatsTooltip.tsx
 msgid "Total:"

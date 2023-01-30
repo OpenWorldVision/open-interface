@@ -144,7 +144,6 @@ function getCurrentFeesUsd(tokenAddresses, fees, infoTokens) {
 export default function DashboardV2() {
   const { active, library } = useWeb3React();
   const { chainId } = useChainId();
-  const totalVolume = useTotalVolume();
 
   const chainName = getChainName(chainId) || "BSC";
   // const { totalStaked } = useOpenStakingInfo(chainId);

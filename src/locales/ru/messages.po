@@ -3302,7 +3302,7 @@ msgid "Total stOPEN"
 msgstr ""
 
 #: src/pages/Dashboard/DashboardV2.js
-msgid "Total value of tokens in OAP pool ({chainName})"
+msgid "Total value of tokens in OpenWorld Assets Pool ({chainName})"
 msgstr ""
 
 #: src/components/StatsTooltip/StatsTooltip.tsx
