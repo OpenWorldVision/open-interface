@@ -4167,8 +4167,8 @@ msgid "{chainName} Total Stats start from {totalStatsStartDate}"
 msgstr "{chainName} Total Stats start from {totalStatsStartDate}"
 
 #: src/pages/Dashboard/DashboardV2.js
-#~ msgid "{chainName} Total Stats start from {totalStatsStartDate}.<0/> For detailed stats:"
-#~ msgstr "{chainName} Total Stats start from {totalStatsStartDate}.<0/> For detailed stats:"
+#~ msgid "{chainName} Total Stats start from {totalStatsStartDate}."
+#~ msgstr "{chainName} Total Stats start from {totalStatsStartDate}."
 
 #: src/components/Exchange/ConfirmationBox.js
 msgid "{existingTriggerOrderLength, plural, one {You have an active trigger order that could impact this position.} other {You have # active trigger orders that could impact this position.}}"

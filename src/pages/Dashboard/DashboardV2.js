@@ -547,7 +547,7 @@ export default function DashboardV2() {
             </div>
             <div className="Page-description">
               <Trans>
-                {chainName} Total Stats start from {totalStatsStartDate}.<br /> For detailed stats:
+                {chainName} Total Stats start from {totalStatsStartDate}.
               </Trans>
             </div>
           </div>

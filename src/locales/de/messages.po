@@ -4040,7 +4040,7 @@ msgid "{chainName} Total Stats start from {totalStatsStartDate}"
 msgstr ""
 
 #: src/pages/Dashboard/DashboardV2.js
-#~ msgid "{chainName} Total Stats start from {totalStatsStartDate}.<0/> For detailed stats:"
+#~ msgid "{chainName} Total Stats start from {totalStatsStartDate}."
 #~ msgstr ""
 
 #: src/components/Exchange/ConfirmationBox.js

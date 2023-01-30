@@ -4044,7 +4044,7 @@ msgid "{chainName} Total Stats start from {totalStatsStartDate}"
 msgstr ""
 
 #: src/pages/Dashboard/DashboardV2.js
-#~ msgid "{chainName} Total Stats start from {totalStatsStartDate}.<0/> For detailed stats:"
+#~ msgid "{chainName} Total Stats start from {totalStatsStartDate}."
 #~ msgstr "{chainName}总统计数据从{totalStatsStartDate}开始。<0/>详细统计数据："
 
 #: src/components/Exchange/ConfirmationBox.js

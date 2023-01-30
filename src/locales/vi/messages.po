@@ -4031,8 +4031,8 @@ msgstr ""
 "{2} Price: {3} USD"
 
 #: src/pages/Dashboard/DashboardV2.js
-msgid "{chainName} Total Stats start from {totalStatsStartDate}.<0/> For detailed stats:"
-msgstr "Tổng số liệu thống kê của {chainName} bắt đầu từ {totalStatsStartDate}.<0/> Số liệu thống kê chi tiết:"
+msgid "{chainName} Total Stats start from {totalStatsStartDate}."
+msgstr "Tổng số liệu thống kê của {chainName} bắt đầu từ {totalStatsStartDate}."
 
 #: src/components/Exchange/ConfirmationBox.js
 msgid "{existingTriggerOrderLength, plural, one {You have an active trigger order that could impact this position.} other {You have # active trigger orders that could impact this position.}}"
