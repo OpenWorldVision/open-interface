@@ -149,9 +149,8 @@ function OpenStaking(props: Props) {
                 return (
                   <>
                     <div>
-                      <br />
                       <Trans>
-                        APRs are updated weekly on Wednesday and will depend on the fees collected for the week.
+                        APRs cd weekly on Monday and will depend on the fees collected for the week.
                       </Trans>
                     </div>
                   </>

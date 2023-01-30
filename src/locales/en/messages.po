@@ -105,8 +105,8 @@ msgstr "APR"
 
 #: src/components/StakeV2/OpenStaking.tsx
 #: src/pages/Stake/StakeV2.js
-msgid "APRs are updated weekly on Wednesday and will depend on the fees collected for the week."
-msgstr "APRs are updated weekly on Wednesday and will depend on the fees collected for the week."
+msgid "APRs are updated weekly on Monday and will depend on the fees collected for the week."
+msgstr "APRs are updated weekly on Monday and will depend on the fees collected for the week."
 
 #: src/pages/Dashboard/DashboardV2.js
 msgid "AUM"
