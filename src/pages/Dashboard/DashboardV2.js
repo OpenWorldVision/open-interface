@@ -445,22 +445,22 @@ export default function DashboardV2() {
     {
       name: t`staked`,
       value: stakedPercent,
-      color: "#4353fa",
+      color: "#375BD2",
     },
     {
       name: t`in liquidity`,
       value: liquidityPercent,
-      color: "#0598fa",
+      color: "#6C87E0",
     },
     {
       name: t`not staked`,
       value: notStakedPercent,
-      color: "#5c0af5",
+      color: "#1A2B6B",
     },
     {
       name: `burned`,
       value: burnedPercent,
-      color: "#5b5b5b",
+      color: "#F95473",
     },
   ];
 
