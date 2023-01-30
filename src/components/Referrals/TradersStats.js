@@ -51,7 +51,7 @@ function TradersStats({ referralsData, traderTier, chainId, userReferralCodeStri
                       <p className="">
                         <Trans>
                           You will receive a {tierDiscountInfo[traderTier]}% discount on your opening and closing fees,
-                          this discount will be airdropped to your account every Wednesday
+                          this discount will be airdropped to your account every Monday
                         </Trans>
                       </p>
                     )}

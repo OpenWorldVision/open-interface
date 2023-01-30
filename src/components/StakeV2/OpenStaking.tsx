@@ -47,8 +47,15 @@ function OpenStaking(props: Props) {
     if (!totalPooledOpen || !totalShares || totalPooledOpen.eq("0") || totalShares.eq("0")) {
       return BigNumber.from("0");
     }
+    const START_DATE = 1672963200;
 
-    return totalPooledOpen.sub(totalShares).mul(BigNumber.from("52")).mul(expandDecimals(1, 20)).div(totalShares);
+    const WEEK_IN_SECONDS = 7 * 24 * 60 * 60;
+
+    const now = Math.floor(new Date().getTime() / 1000);
+    const diff = now - START_DATE;
+    const tokensPerInterval = totalPooledOpen.div(BigNumber.from(diff));
+
+    return tokensPerInterval.mul(WEEK_IN_SECONDS).mul(expandDecimals(1, 20)).div(totalShares);
   }, [totalPooledOpen, totalShares]);
 
   const openBalanceUsd = useMemo(() => {
@@ -151,7 +158,7 @@ function OpenStaking(props: Props) {
                     <div>
                       <br />
                       <Trans>
-                        APRs are updated weekly on Wednesday and will depend on the fees collected for the week.
+                        APRs are updated weekly on Monday and will depend on the fees collected for the week.
                       </Trans>
                     </div>
                   </>
@@ -189,15 +196,20 @@ function OpenStaking(props: Props) {
         </div>
 
         <div className="App-card-divider" />
-        <div className="App-card-row">
-          <div className="label">
-            <Trans>Time to unstake</Trans>
-          </div>
-          <div className="value">
-            <Countdown date={unstakeCountdown} />
-          </div>
-        </div>
-        <div className="App-card-divider" />
+        {timeleftToUnstake !== 0 && (
+          <>
+            <div className="App-card-row">
+              <div className="label">
+                <Trans>Time to unstake</Trans>
+              </div>
+              <div className="value">
+                <Countdown date={unstakeCountdown} />
+              </div>
+            </div>
+            <div className="App-card-divider" />
+          </>
+        )}
+
         <div className="App-card-options">
           <a
             className="App-button-option App-card-option"

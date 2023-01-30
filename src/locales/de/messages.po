@@ -101,7 +101,7 @@ msgstr ""
 
 #: src/components/StakeV2/OpenStaking.tsx
 #: src/pages/Stake/StakeV2.js
-msgid "APRs are updated weekly on Wednesday and will depend on the fees collected for the week."
+msgid "APRs are updated weekly on Monday and will depend on the fees collected for the week."
 msgstr ""
 
 #: src/pages/Dashboard/DashboardV2.js
@@ -3822,7 +3822,7 @@ msgid "You will need to be on this page to accept the transfer, <0>click here</0
 msgstr ""
 
 #: src/components/Referrals/TradersStats.js
-msgid "You will receive a {0}% discount on your opening and closing fees, this discount will be airdropped to your account every Wednesday"
+msgid "You will receive a {0}% discount on your opening and closing fees, this discount will be airdropped to your account every Monday"
 msgstr ""
 
 #: src/components/Exchange/OrdersList.js
