@@ -13,9 +13,10 @@ import avaxIcon from "img/ic_avalanche_24.svg";
 import checkedIcon from "img/ic_checked.svg";
 import { importImage } from "lib/legacy";
 import { defaultLocale, dynamicActivate, isTestLanguage, locales } from "lib/i18n";
-import { LANGUAGE_LOCALSTORAGE_KEY } from "config/localStorage";
+import { LANGUAGE_LOCALSTORAGE_KEY, SELECTED_NETWORK_LOCAL_STORAGE_KEY } from "config/localStorage";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
+  faCheck,
   faDotCircle,
   faEarthAsia,
   faGear,
@@ -28,6 +29,7 @@ import {
   faPersonDotsFromLine,
 } from "@fortawesome/free-solid-svg-icons";
 import ModalIncomingFeature from "components/ModalIncomingFeature/ModalIncomingFeature";
+import { useChainId } from "lib/chains";
 
 const LANGUAGE_MODAL_KEY = "LANGUAGE";
 const NETWORK_MODAL_KEY = "NETWORK";
@@ -160,11 +162,13 @@ function DesktopDropdown({ setActiveModal, selectorLabel, networkOptions, onNetw
 }
 
 function NetworkMenuItems({ networkOptions, selectorLabel, onNetworkSelect }) {
+  const { chainId } = useChainId();
   async function handleNetworkSelect(option) {
     await onNetworkSelect(option);
   }
   return networkOptions.map((network) => {
     const networkIcon = importImage(network.icon);
+    const isActive = chainId === network.value;
     return (
       <Menu.Item key={network.value}>
         <div
@@ -180,6 +184,11 @@ function NetworkMenuItems({ networkOptions, selectorLabel, onNetworkSelect }) {
           <div className="network-dropdown-menu-item-img">
             <div className={cx("active-dot", { [selectorLabel]: selectorLabel === network.label })} />
           </div>
+          {isActive && (
+            <div className="network-dropdown-menu-item-img">
+              <FontAwesomeIcon icon={faCheck} />
+            </div>
+          )}
         </div>
       </Menu.Item>
     );
@@ -209,17 +218,20 @@ function LanguageModalContent({ currentLanguage }) {
           <span className="network-dropdown-item-label menu-item-label">{locales[item]}</span>
         </div>
         <div className="network-dropdown-menu-item-img">
-          {currentLanguage.current === item && <img src={checkedIcon} alt={locales[item]} />}
+          {currentLanguage.current === item && <FontAwesomeIcon icon={faCheck} fontSize={16} />}
         </div>
       </div>
     );
   });
 }
 function NetworkModalContent({ networkOptions, onNetworkSelect, selectorLabel, setActiveModal, openSettings }) {
+  const { chainId } = useChainId();
+
   async function handleNetworkSelect(option) {
     setActiveModal(false);
     await onNetworkSelect(option);
   }
+
   return (
     <div className="network-dropdown-items">
       <div className="network-dropdown-list">
@@ -229,6 +241,7 @@ function NetworkModalContent({ networkOptions, onNetworkSelect, selectorLabel, s
 
         {networkOptions.map((network) => {
           const networkIcon = importImage(network.icon);
+          const isActive = chainId === network.value;
           return (
             <div
               className="network-option"
@@ -240,6 +253,11 @@ function NetworkModalContent({ networkOptions, onNetworkSelect, selectorLabel, s
                 <span>{network.label}</span>
               </div>
               <div className={cx("active-dot", { [selectorLabel]: selectorLabel === network.label })} />
+              {isActive && (
+                <div className="network-dropdown-menu-item-img">
+                  <FontAwesomeIcon icon={faCheck} fontSize={16} style={{ marginRight: 8 }} />
+                </div>
+              )}
             </div>
           );
         })}

@@ -212,10 +212,14 @@
   .dropdown-label,
   .network-option span,
   .network-option-img-label,
-  .network-dropdown-item-label,
   .network-dropdown-list
    {
     color: var(--textColor4);
+  }
+  .network-dropdown-list,
+  .network-dropdown-items {
+    background: var(--modalContentBackground);
+    box-shadow: none;
   }
 }
 @media (max-width: 450px) {

@@ -1328,11 +1328,13 @@ export default function GlpSwap(props) {
             // const tokenImage = importImage("ic_" + token.symbol.toLowerCase() + "_24.svg");
             return (
               <div className="App-card" key={token.symbol}>
-                <div className="mobile-token-card">
-                  {/* <img src={tokenImage} alt={token.symbol} width="20px" /> */}
-                  <div className="token-symbol-text">{token.symbol}</div>
-                  <div>
-                    <AssetDropdown assetSymbol={token.symbol} assetInfo={token} />
+                <div className="App-card-title">
+                  <div className="mobile-token-card">
+                    {/* <img src={tokenImage} alt={token.symbol} width="20px" /> */}
+                    <div className="token-symbol-text">{token.symbol}</div>
+                    <div>
+                      <AssetDropdown assetSymbol={token.symbol} assetInfo={token} />
+                    </div>
                   </div>
                 </div>
                 {/* <div className="App-card-divider" /> */}
@@ -1423,7 +1425,7 @@ export default function GlpSwap(props) {
                     </div>
                     <div>{renderFees()}</div>
                   </div>
-                  {/* <div className="App-card-divider"></div> */}
+                  <div className="App-card-divider"></div>
                   <div className="App-card-options">
                     {isBuying && (
                       <button className="App-button-option App-card-option" onClick={() => selectToken(token)}>

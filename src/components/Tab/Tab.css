@@ -43,8 +43,6 @@
 .Tab.block .Tab-option.active {
   opacity: 1;
   pointer-events: none;
-  /* background: #375bd2; */
-  /* color: rgba(255, 255, 255, 1); */
   color: #ffffff;
   font-weight: 700;
 }
@@ -70,4 +68,10 @@
 .Tab.inline .Tab-option.active {
   opacity: 1;
   pointer-events: none;
+}
+
+@media (max-width: 450px) {
+  .Tab.block .Tab-option:hover {
+    background: var(--footerBackgroundColor);
+  }
 }

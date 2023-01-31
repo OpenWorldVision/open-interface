@@ -277,7 +277,7 @@
 .Home-token-card-option-action > .buy a:first-child,
 .Home-token-card-option-action > .buy .a:first-child {
   margin-right: 1.5rem;
-  background: #1A2B6B;
+  background: var(--buttonDarkBackground2);
 }
 
 /* .Home-token-card-option-action .read-more {

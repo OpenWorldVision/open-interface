@@ -29,6 +29,7 @@ import { bigNumberify, formatAmount } from "lib/numbers";
 import { AiOutlineEdit } from "react-icons/ai";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { fa0, faMagicWandSparkles, faPenToSquare } from "@fortawesome/free-solid-svg-icons";
+import './PositionsList.css';
 
 const getOrdersForPosition = (account, position, orders, nativeTokenAddress) => {
   if (!orders || orders.length === 0) {
@@ -435,22 +436,23 @@ export default function PositionsList(props) {
                     </div>
                   </div>
                   <div className="App-card-divider"></div>
-                  <div className="App-card-options">
-                    <button
-                      className="App-button-option App-card-option"
-                      disabled={position.size.eq(0)}
-                      onClick={() => sellPosition(position)}
-                    >
-                      <Trans>Close</Trans>
-                    </button>
-                    <button
-                      className="App-button-option App-card-option"
-                      disabled={position.size.eq(0)}
-                      onClick={() => editPosition(position)}
-                    >
-                      <Trans>Edit Collateral</Trans>
-                    </button>
-                    {/* <button
+                  <div className="App-card-content-button">
+                    <div className="App-card-options">
+                      <button
+                        className="App-button-option App-card-option"
+                        disabled={position.size.eq(0)}
+                        onClick={() => sellPosition(position)}
+                      >
+                        <Trans>Close</Trans>
+                      </button>
+                      <button
+                        className="App-button-option App-card-option"
+                        disabled={position.size.eq(0)}
+                        onClick={() => editPosition(position)}
+                      >
+                        <Trans>Edit Collateral</Trans>
+                      </button>
+                      {/* <button
                       className="Exchange-list-action App-button-option App-card-option"
                       onClick={() => {
                         setPositionToShare(position);
@@ -460,6 +462,7 @@ export default function PositionsList(props) {
                     >
                       <Trans>Share</Trans>
                     </button> */}
+                    </div>
                   </div>
                 </div>
               );

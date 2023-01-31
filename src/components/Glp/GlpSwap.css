@@ -275,6 +275,10 @@
 .AppOrder-ball:hover {
   opacity: 1;
 }
+.StakeV2-cards .App-card-content,
+.GlpSwap-token-list .App-card-content {
+  padding-bottom: 0.25rem !important;
+}
 
 @media (max-width: 900px) {
   .GlpSwap-content {

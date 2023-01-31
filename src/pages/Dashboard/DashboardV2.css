@@ -153,6 +153,13 @@
   .token-table-wrapper {
     display: none;
   }
+  .token-symbol-text {
+    color: var(--textColor);
+    font-weight: 700;
+  }
+  .dropdown-arrow {
+    color: var(--textColor) !important;
+  }
 }
 
 @media (max-width: 900px) {

@@ -17,7 +17,6 @@ import { switchNetwork } from "lib/wallets";
 import { useChainId } from "lib/chains";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMoneyBillTransfer } from "@fortawesome/free-solid-svg-icons";
-import Modal from "components/Modal/Modal";
 import ModalIncomingFeature from "components/ModalIncomingFeature/ModalIncomingFeature";
 import SwitchThemeButton from "components/Common/SwitchThemeButton";
 import Switch from "react-switch";
@@ -30,6 +29,7 @@ type Props = {
   disconnectAccountAndCloseSettings: () => void;
   redirectPopupTimestamp: number;
   showRedirectModal: (to: string) => void;
+  onlyIcon?:boolean
 };
 
 export function AppHeaderUser({
@@ -39,6 +39,7 @@ export function AppHeaderUser({
   disconnectAccountAndCloseSettings,
   redirectPopupTimestamp,
   showRedirectModal,
+  onlyIcon: mobile
 }: Props) {
   const { chainId } = useChainId();
   const { active, account } = useWeb3React();
@@ -98,7 +99,7 @@ export function AppHeaderUser({
             showRedirectModal={showRedirectModal}
           >
             <FontAwesomeIcon icon={faMoneyBillTransfer} />
-            {small ? null : (
+            {mobile ? null : (
               <div style={{ marginLeft: 8, fontWeight: 700 }}>
                 <Trans>Trade</Trans>
               </div>
@@ -108,7 +109,7 @@ export function AppHeaderUser({
         {showConnectionOptions ? (
           <div className="connect-wallet">
             <ConnectWalletButton onClick={() => setWalletModalVisible(true)}>
-              {small ? null : <Trans>Connect Wallet</Trans>}
+              {mobile ? null : <Trans>Connect Wallet</Trans>}
             </ConnectWalletButton>
             <div className="connect-wallet-divider" />
             <NetworkDropdown
@@ -123,7 +124,7 @@ export function AppHeaderUser({
           <LanguagePopupHome />
         )}
         <SwitchThemeButton
-          small={small}
+          small={mobile}
           onClick={() => {
             setIsDarkTheme((prev) => {
               const newState = !prev;
@@ -171,7 +172,7 @@ export function AppHeaderUser({
           showRedirectModal={showRedirectModal}
         >
           <FontAwesomeIcon icon={faMoneyBillTransfer} />
-          {small ? null : (
+          {mobile ? null : (
             <div style={{ marginLeft: 8, fontWeight: 700 }}>
               <Trans>Trade</Trans>
             </div>
@@ -210,7 +211,7 @@ export function AppHeaderUser({
         <LanguagePopupHome />
       )}
       <SwitchThemeButton
-        small={small}
+        small={mobile}
         onClick={() => {
           setIsDarkTheme((prev) => {
             const newState = !prev;
