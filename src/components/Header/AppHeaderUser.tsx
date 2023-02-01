@@ -29,7 +29,7 @@ type Props = {
   disconnectAccountAndCloseSettings: () => void;
   redirectPopupTimestamp: number;
   showRedirectModal: (to: string) => void;
-  onlyIcon?:boolean
+  onlyIcon?: boolean;
 };
 
 export function AppHeaderUser({
@@ -39,7 +39,7 @@ export function AppHeaderUser({
   disconnectAccountAndCloseSettings,
   redirectPopupTimestamp,
   showRedirectModal,
-  onlyIcon: mobile
+  onlyIcon: mobile,
 }: Props) {
   const { chainId } = useChainId();
   const { active, account } = useWeb3React();
@@ -61,7 +61,7 @@ export function AppHeaderUser({
     {
       label: getChainName(HARMONY),
       value: HARMONY,
-      icon: "ic_bsc.svg",
+      icon: "harmony.jpeg",
       color: "#264f79",
     },
   ];
