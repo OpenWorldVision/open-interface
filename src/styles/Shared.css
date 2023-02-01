@@ -65,6 +65,7 @@ body {
   --referralBoxBackgroundColor: #375bd2;
   --modalContentBackground: #dfe7fb;
   --modalButtonBackground: #375bd2;
+  --modalHeaderBackground: #bdc9e7;
 }
 body.dark-theme {
   /* color */
@@ -112,8 +113,9 @@ body.dark-theme {
   --tabActiveColor: #1a2b6b;
   --chartBackgroundColor: #04091c;
   --referralBoxBackgroundColor: #0f1943;
-  --modalContentBackground: #04091c;
+  --modalContentBackground: #0f1943;
   --modalButtonBackground: #1a2b6b;
+  --modalHeaderBackground: #04091c80;
 }
 
 code {
