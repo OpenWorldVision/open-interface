@@ -59,13 +59,13 @@ body {
   --inputColor: #6d7380;
   --dividerColor: rgba(109, 115, 128, 0.5);
   --sliderColor: #bdc9e7;
-  --tabInactiveColor: #375bd280;
+  --tabInactiveColor: #c;
   --tabActiveColor: #375bd2;
   --chartBackgroundColor: #edf2fe;
   --referralBoxBackgroundColor: #375bd2;
-  --modalContentBackground: #dfe7fb;
+  --modalContentBackground: #D8E1FB;
   --modalButtonBackground: #375bd2;
-  --modalHeaderBackground: #bdc9e7;
+  --modalHeaderBackground: #adbdef50;
 }
 body.dark-theme {
   /* color */
