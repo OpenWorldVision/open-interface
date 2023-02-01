@@ -21,6 +21,7 @@ import {
   AVALANCHE,
   getConstant,
   getHighExecutionFee,
+  HARMONY,
   MAINNET,
   TESTNET,
 } from "config/chains";
@@ -394,7 +395,7 @@ export function useMinExecutionFee(library, active, chainId, infoTokens) {
   }
 
   // multiplier for BSC is just the average gas usage
-  if (chainId === AVALANCHE || chainId === MAINNET) {
+  if (chainId === AVALANCHE || chainId === MAINNET || chainId === HARMONY) {
     multiplier = 700000;
   }
 
