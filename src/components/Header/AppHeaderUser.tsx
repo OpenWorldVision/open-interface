@@ -12,7 +12,7 @@ import cx from "classnames";
 import { t, Trans } from "@lingui/macro";
 import NetworkDropdown from "../NetworkDropdown/NetworkDropdown";
 import LanguagePopupHome from "../NetworkDropdown/LanguagePopupHome";
-import { ARBITRUM, ARBITRUM_TESTNET, AVALANCHE, getChainName, MAINNET, TESTNET } from "config/chains";
+import { ARBITRUM, ARBITRUM_TESTNET, AVALANCHE, getChainName, HARMONY, MAINNET, TESTNET } from "config/chains";
 import { switchNetwork } from "lib/wallets";
 import { useChainId } from "lib/chains";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -55,6 +55,12 @@ export function AppHeaderUser({
     {
       label: getChainName(MAINNET),
       value: MAINNET,
+      icon: "ic_bsc.svg",
+      color: "#264f79",
+    },
+    {
+      label: getChainName(HARMONY),
+      value: HARMONY,
       icon: "ic_bsc.svg",
       color: "#264f79",
     },

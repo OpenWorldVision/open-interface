@@ -1,6 +1,6 @@
 import { ethers } from "ethers";
 import { getContract } from "./contracts";
-import { ARBITRUM, ARBITRUM_TESTNET, AVALANCHE, MAINNET, TESTNET } from "./chains";
+import { ARBITRUM, ARBITRUM_TESTNET, AVALANCHE, HARMONY, MAINNET, TESTNET } from "./chains";
 import { Token } from "domain/tokens";
 
 export const TOKENS: { [chainId: number]: Token[] } = {
@@ -334,6 +334,46 @@ export const TOKENS: { [chainId: number]: Token[] } = {
       imageUrl: "https://assets.coingecko.com/coins/images/16786/small/mimlogopng.png",
     },
   ],
+  [HARMONY]: [
+    {
+      name: "Bitcoin (BTCB)",
+      symbol: "BTC",
+      decimals: 18,
+      address: "0x3095c7557bcb296ccc6e363de01b760ba031f2d9",
+      coingeckoUrl: "https://www.coingecko.com/en/coins/binance-bitcoin",
+      imageUrl: "https://assets.coingecko.com/coins/images/14108/small/Binance-bitcoin.png",
+      isShortable: true,
+    },
+    {
+      name: "Ethereum",
+      symbol: "ETH",
+      decimals: 18,
+      address: "0x6983d1e6def3690c4d616b13597a09e6193ea013",
+      coingeckoUrl: "https://www.coingecko.com/en/coins/ethereum",
+      imageUrl: "https://assets.coingecko.com/coins/images/279/small/ethereum.png",
+      isShortable: true,
+    },
+    {
+      name: "One",
+      symbol: "ONE",
+      decimals: 18,
+      address: getContract(HARMONY, "NATIVE_TOKEN"),
+      coingeckoUrl: "https://www.coingecko.com/en/coins/binance-coin",
+      imageUrl: "https://assets.coingecko.com/coins/images/825/small/binance-coin-logo.png",
+      isNative: true,
+      isShortable: true,
+    },
+
+    {
+      name: "USDC",
+      symbol: "USDC",
+      decimals: 18,
+      address: "0x985458e523db3d53125813ed68c274899e9dfab4",
+      isStable: true,
+      coingeckoUrl: "https://www.coingecko.com/en/coins/binance-usd",
+      imageUrl: "https://assets.coingecko.com/coins/images/9576/small/BUSD.png",
+    },
+  ],
 };
 
 export const ADDITIONAL_TOKENS: { [chainId: number]: Token[] } = {
@@ -451,6 +491,23 @@ export const PLATFORM_TOKENS: { [chainId: number]: { [symbol: string]: Token } }
       imageUrl: "https://github.com/OpenWorldVision/gmx-assets/blob/main/OPEN-Assets/PNG/GLP_LOGO%20ONLY.png?raw=true",
     },
   },
+  [HARMONY]: {
+    OPEN: {
+      name: "OPEN",
+      symbol: "OPEN",
+      decimals: 18,
+      address: getContract(HARMONY, "OPEN"),
+      imageUrl: "https://assets.coingecko.com/coins/images/18323/small/arbit.png?1631532468",
+    },
+    OAP: {
+      name: "OPEN LP",
+      symbol: "OAP",
+      decimals: 18,
+      address: "0x93746Ae82a533A986F287f3a54E3c2f83da43661", // address of fsGLP token because user only holds fsGLP
+      imageUrl:
+        "https://raw.githubusercontent.com/OpenWorldVision/brand-assets/main/open-brand-assets/OAP-icon-logo-png.png",
+    },
+  },
 };
 
 export const ICONLINKS = {
@@ -563,6 +620,16 @@ export const ICONLINKS = {
       avalanche: "https://snowtrace.io/address/0xa7d7079b0fead91f3e65f86e8915cb59c1a4c664",
     },
   },
+  [HARMONY]: {
+    OPEN: {
+      coingecko: "https://www.coingecko.com/en/coins/openworld",
+      arbitrum: "https://bscscan.com/address/0x27a339d9b59b21390d7209b78a839868e319301b",
+      harmony: "https://explorer.harmony.one/address/0x27a339d9b59b21390d7209b78a839868e319301b",
+    },
+    OAP: {
+      arbitrum: "https://bscscan.com/address/0x150bb59460E35084ab847629Cf3EcDC543e5Bf97",
+    },
+  },
 };
 
 export const GLP_POOL_COLORS = {
@@ -587,7 +654,7 @@ export const TOKENS_BY_SYMBOL_MAP: { [chainId: number]: { [symbol: string]: Toke
 export const WRAPPED_TOKENS_MAP: { [chainId: number]: Token } = {};
 export const NATIVE_TOKENS_MAP: { [chainId: number]: Token } = {};
 
-const CHAIN_IDS = [MAINNET, TESTNET, ARBITRUM, ARBITRUM_TESTNET, AVALANCHE];
+const CHAIN_IDS = [MAINNET, TESTNET, ARBITRUM, ARBITRUM_TESTNET, AVALANCHE, HARMONY];
 
 for (let j = 0; j < CHAIN_IDS.length; j++) {
   const chainId = CHAIN_IDS[j];
@@ -654,8 +721,8 @@ export function getTokenBySymbol(chainId: number, symbol: string) {
 
 export function getWhitelistedTokens(chainId: number) {
   // Only test BTC in testnet
-  if (chainId === 97) {
-    return TOKENS[chainId].filter((token) => token.symbol !== "USDG");
+  if (chainId === HARMONY) {
+    return TOKENS[chainId].filter((token) => token.symbol !== "USDC");
   }
   return TOKENS[chainId].filter((token) => token.symbol !== "USDG");
 }
