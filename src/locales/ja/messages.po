@@ -3826,7 +3826,7 @@ msgid "You will need to be on this page to accept the transfer, <0>click here</0
 msgstr "移転を受け入れるにはこのページを開く必要があります。必要に応じて、このページへのリンクをコピーしておいてください。<0>click here</0>"
 
 #: src/components/Referrals/TradersStats.js
-msgid "You will receive a {0}% discount on your opening and closing fees, this discount will be airdropped to your account every Wednesday"
+msgid "You will receive a {0}% discount on your opening and closing fees, this discount will be airdropped to your account every Monday"
 msgstr "あなたはオープン手数料、クローズ手数料で{0}%の割り引きを受けられますが、この割り引き分は毎週水曜日にあなたはのアカウントにエアドロップされます。"
 
 #: src/components/Exchange/OrdersList.js
