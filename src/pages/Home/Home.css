@@ -273,15 +273,11 @@
   display: flex;
   justify-content: space-between;
 }
-.Home-token-card-option-action > .buy a .Home-token-card-option-action > .buy .a {
-  background: #375bd2;
-  border-radius: 18px;
-  font-weight: 700;
-}
 
 .Home-token-card-option-action > .buy a:first-child,
 .Home-token-card-option-action > .buy .a:first-child {
   margin-right: 1.5rem;
+  background: var(--buttonDarkBackground2);
 }
 
 /* .Home-token-card-option-action .read-more {

@@ -103,7 +103,7 @@ msgstr "APR"
 #: src/pages/Stake/StakeV2.js
 #: src/pages/Stake/StakeV2.js
 msgid "APRs are updated weekly on Monday and will depend on the fees collected for the week."
-msgstr "APR được cập nhật hàng tuần vào thứ Tư và sẽ phụ thuộc vào các khoản phí được thu thập cho cả tuần."
+msgstr "APR được cập nhật hàng tuần vào thứ Hai và sẽ phụ thuộc vào các khoản phí được thu thập cho cả tuần."
 
 #: src/pages/Dashboard/DashboardV2.js
 msgid "AUM"
@@ -3292,8 +3292,8 @@ msgid "Total fees earned since {0}: {1} USD<0/>Fee assets: {feeText}"
 msgstr "Total fees earned since {0}: {1} USD<0/>Fee assets: {feeText}"
 
 #: src/pages/Dashboard/DashboardV2.js
-msgid "Total value of tokens in OAP pool ({chainName})"
-msgstr "Tổng giá trị tokens trong OLP pool ({chainName})"
+msgid "Total value of tokens in OpenWorld Assets Pool ({chainName})"
+msgstr "Tổng giá trị tokens trong OpenWorld Assets Pool pool ({chainName})"
 
 #: src/components/StatsTooltip/StatsTooltip.tsx
 msgid "Total:"
@@ -4031,8 +4031,8 @@ msgstr ""
 "{2} Price: {3} USD"
 
 #: src/pages/Dashboard/DashboardV2.js
-msgid "{chainName} Total Stats start from {totalStatsStartDate}.<0/> For detailed stats:"
-msgstr "Tổng số liệu thống kê của {chainName} bắt đầu từ {totalStatsStartDate}.<0/> Số liệu thống kê chi tiết:"
+msgid "{chainName} Total Stats start from {totalStatsStartDate}."
+msgstr "Tổng số liệu thống kê của {chainName} bắt đầu từ {totalStatsStartDate}."
 
 #: src/components/Exchange/ConfirmationBox.js
 msgid "{existingTriggerOrderLength, plural, one {You have an active trigger order that could impact this position.} other {You have # active trigger orders that could impact this position.}}"

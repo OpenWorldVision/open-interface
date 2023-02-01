@@ -8,6 +8,7 @@
 
 .App-card .App-card-divider {
   margin: 10px 0 !important;
+  background-color: var(--dividerColor);
 }
 
 .App-card-divider {

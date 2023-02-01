@@ -144,7 +144,6 @@ function getCurrentFeesUsd(tokenAddresses, fees, infoTokens) {
 export default function DashboardV2() {
   const { active, library } = useWeb3React();
   const { chainId } = useChainId();
-  const totalVolume = useTotalVolume();
 
   const chainName = getChainName(chainId) || "BSC";
   // const { totalStaked } = useOpenStakingInfo(chainId);
@@ -446,22 +445,22 @@ export default function DashboardV2() {
     {
       name: t`staked`,
       value: stakedPercent,
-      color: "#4353fa",
+      color: "#375BD2",
     },
     {
       name: t`in liquidity`,
       value: liquidityPercent,
-      color: "#0598fa",
+      color: "#6C87E0",
     },
     {
       name: t`not staked`,
       value: notStakedPercent,
-      color: "#5c0af5",
+      color: "#1A2B6B",
     },
     {
       name: `burned`,
       value: burnedPercent,
-      color: "#5b5b5b",
+      color: "#F95473",
     },
   ];
 
@@ -548,7 +547,7 @@ export default function DashboardV2() {
             </div>
             <div className="Page-description">
               <Trans>
-                {chainName} Total Stats start from {totalStatsStartDate}.<br /> For detailed stats:
+                {chainName} Total Stats start from {totalStatsStartDate}.
               </Trans>
             </div>
           </div>

@@ -314,6 +314,14 @@ msgstr "Assets Under Management"
 msgid "Assets Under Management: OPEN staked (All chains) + OAP pool ({chainName})"
 msgstr "Assets Under Management: OPEN staked (All chains) + OAP pool ({chainName})"
 
+#: src/pages/Dashboard/DashboardV2.js
+msgid "Total value of tokens in OpenWorld Assets Pool ({chainName})"
+msgstr "Total value of tokens in OpenWorld Assets Pool ({chainName})"
+
+#: src/pages/Dashboard/DashboardV2.js
+msgid "Assets Under Management: OPEN staked (All chains) + OAP - OpenWorld Assets Pool ({chainName})"
+msgstr "Assets Under Management: OPEN staked (All chains) + OAP - OpenWorld Assets Pool ({chainName})"
+
 #: src/components/Glp/GlpSwap.js
 msgid "Available"
 msgstr "Available"
@@ -4159,8 +4167,8 @@ msgid "{chainName} Total Stats start from {totalStatsStartDate}"
 msgstr "{chainName} Total Stats start from {totalStatsStartDate}"
 
 #: src/pages/Dashboard/DashboardV2.js
-#~ msgid "{chainName} Total Stats start from {totalStatsStartDate}.<0/> For detailed stats:"
-#~ msgstr "{chainName} Total Stats start from {totalStatsStartDate}.<0/> For detailed stats:"
+#~ msgid "{chainName} Total Stats start from {totalStatsStartDate}."
+#~ msgstr "{chainName} Total Stats start from {totalStatsStartDate}."
 
 #: src/components/Exchange/ConfirmationBox.js
 msgid "{existingTriggerOrderLength, plural, one {You have an active trigger order that could impact this position.} other {You have # active trigger orders that could impact this position.}}"

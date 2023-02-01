@@ -1013,7 +1013,7 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
             <div className="App-card-title">
               <Trans>Total Rewards</Trans>
             </div>
-            <div className="App-card-divider"></div>
+            <div className="App-card-divider no-margin" style={{ height: 0 }}></div>
             <div className="App-card-content">
               <div className="App-card-row">
                 <div className="label">
@@ -1047,30 +1047,10 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
                 </div>
                 <div>${formatKeyAmount(processedData, "totalRewardsUsd", USD_DECIMALS, 2, true)}</div>
               </div>
-              <div className="App-card-bottom-placeholder">
-                <div className="App-card-divider"></div>
-                <div className="App-card-options">
-                  {/* {active && (
-                    <button className="App-button-option App-card-option">
-                      <Trans>Compound</Trans>
-                    </button>
-                  )} */}
-                  {active && (
-                    <button className="App-button-option App-card-option">
-                      <Trans>Claim</Trans>
-                    </button>
-                  )}
-                  {!active && (
-                    <button className="App-button-option App-card-option" onClick={() => connectWallet()}>
-                      Connect Wallet
-                    </button>
-                  )}
-                </div>
-              </div>
-              <div className="App-card-bottom">
-                <div className="App-card-divider"></div>
-                <div className="App-card-options">
-                  {/* {active && (
+
+              <div className="App-card-divider"></div>
+              <div className="App-card-options">
+                {/* {active && (
                     <button
                       className="App-button-option App-card-option"
                       onClick={() => setIsCompoundModalVisible(true)}
@@ -1078,17 +1058,16 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
                       <Trans>Compound</Trans>
                     </button>
                   )} */}
-                  {active && (
-                    <button className="App-button-option App-card-option" onClick={() => setIsClaimModalVisible(true)}>
-                      <Trans>Claim</Trans>
-                    </button>
-                  )}
-                  {!active && (
-                    <button className="App-button-option App-card-option" onClick={() => connectWallet()}>
-                      <Trans>Connect Wallet</Trans>
-                    </button>
-                  )}
-                </div>
+                {active && (
+                  <button className="App-button-option App-card-option" onClick={() => setIsClaimModalVisible(true)}>
+                    <Trans>Claim</Trans>
+                  </button>
+                )}
+                {!active && (
+                  <button className="App-button-option App-card-option" onClick={() => connectWallet()}>
+                    <Trans>Connect Wallet</Trans>
+                  </button>
+                )}
               </div>
             </div>
           </div>

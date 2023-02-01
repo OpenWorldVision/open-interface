@@ -946,7 +946,8 @@ button.App-button-option:disabled {
   font-size: 1.5rem;
 }
 
-.App-settings .App-cta {
+.App-settings .App-cta,
+.App-cta.Confirmation-box-button {
   margin-top: 1.5rem;
   background: var(--buttonDarkBackground) !important;
   color: var(--textColor4) !important;

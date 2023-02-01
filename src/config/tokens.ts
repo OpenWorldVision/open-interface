@@ -566,9 +566,9 @@ export const ICONLINKS = {
 };
 
 export const GLP_POOL_COLORS = {
-  ETH: "#6062a6",
-  BTC: "#F7931A",
-  WBTC: "#F7931A",
+  ETH: "#375BD2",
+  BTC: "#FEA235",
+  WBTC: "#FEA235",
   USDC: "#2775CA",
   "USDC.e": "#2A5ADA",
   USDT: "#67B18A",
@@ -578,6 +578,8 @@ export const GLP_POOL_COLORS = {
   UNI: "#E9167C",
   AVAX: "#E84142",
   LINK: "#3256D6",
+  BUSD: "#1A2B6B",
+  BNB: "#F95473",
 };
 
 export const TOKENS_MAP: { [chainId: number]: { [address: string]: Token } } = {};

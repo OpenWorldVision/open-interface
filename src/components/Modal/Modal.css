@@ -51,7 +51,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 1.5rem;
+  padding: 1.5rem;
+  background: var(--modalHeaderBackground);
 }
 .Modal-body {
   margin: 1.5rem;
