@@ -51,7 +51,7 @@ import "./GlpSwap.css";
 import AssetDropdown from "pages/Dashboard/AssetDropdown";
 import SwapErrorModal from "./SwapErrorModal";
 import StatsTooltipRow from "../StatsTooltip/StatsTooltipRow";
-import { ARBITRUM, getChainName, IS_NETWORK_DISABLED } from "config/chains";
+import { ARBITRUM, getChainName, HARMONY, IS_NETWORK_DISABLED } from "config/chains";
 import { callContract, contractFetcher } from "lib/contracts";
 import { approveTokens, useInfoTokens } from "domain/tokens";
 import { useLocalStorageByChainId } from "lib/localStorage";
@@ -693,8 +693,8 @@ export default function GlpSwap(props) {
     feePercentageText += "%";
   }
 
-  const wrappedTokenSymbol = getWrappedToken(chainId).symbol;
-  const nativeTokenSymbol = getNativeToken(chainId).symbol;
+  const wrappedTokenSymbol = getWrappedToken(chainId)?.symbol;
+  const nativeTokenSymbol = getNativeToken(chainId)?.symbol;
 
   const onSwapOptionChange = (opt) => {
     if (opt === t`Sell OAP`) {

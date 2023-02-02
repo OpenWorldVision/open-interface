@@ -164,7 +164,6 @@ export const TESTNET_RPC_PROVIDERS = [
 ];
 
 export const HARMONY_RPC_PROVIDERS = [
-  "https://harmony-0-rpc.gateway.pokt.network",
   "https://api.s0.t.hmny.io",
   "https://api.harmony.one",
   "https://a.api.s0.t.hmny.io",
@@ -181,6 +180,7 @@ export const RPC_PROVIDERS = {
 export const FALLBACK_PROVIDERS = {
   [ARBITRUM]: [getAlchemyHttpUrl()],
   [AVALANCHE]: ["https://avax-mainnet.gateway.pokt.network/v1/lb/626f37766c499d003aada23b"],
+  [HARMONY]: ["https://api.s0.t.hmny.io"],
 };
 
 export const NETWORK_METADATA = {

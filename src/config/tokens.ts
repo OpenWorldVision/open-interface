@@ -338,7 +338,7 @@ export const TOKENS: { [chainId: number]: Token[] } = {
     {
       name: "Bitcoin (BTCB)",
       symbol: "BTC",
-      decimals: 18,
+      decimals: 8,
       address: "0x3095c7557bcb296ccc6e363de01b760ba031f2d9",
       coingeckoUrl: "https://www.coingecko.com/en/coins/binance-bitcoin",
       imageUrl: "https://assets.coingecko.com/coins/images/14108/small/Binance-bitcoin.png",
@@ -354,12 +354,22 @@ export const TOKENS: { [chainId: number]: Token[] } = {
       isShortable: true,
     },
     {
+      name: "WONE",
+      symbol: "WONE",
+      decimals: 18,
+      address: getContract(HARMONY, "NATIVE_TOKEN"),
+      coingeckoUrl: "https://www.coingecko.com/en/coins/wrapped-one",
+      imageUrl: "https://assets.coingecko.com/coins/images/4344/small/Y88JAze.png?1565065793",
+      isWrapped: true,
+    },
+
+    {
       name: "One",
       symbol: "ONE",
       decimals: 18,
-      address: getContract(HARMONY, "NATIVE_TOKEN"),
-      coingeckoUrl: "https://www.coingecko.com/en/coins/binance-coin",
-      imageUrl: "https://assets.coingecko.com/coins/images/825/small/binance-coin-logo.png",
+      address: ethers.constants.AddressZero,
+      coingeckoUrl: "https://www.coingecko.com/en/coins/harmony",
+      imageUrl: "https://assets.coingecko.com/coins/images/4344/small/Y88JAze.png?1565065793",
       isNative: true,
       isShortable: true,
     },
@@ -367,11 +377,11 @@ export const TOKENS: { [chainId: number]: Token[] } = {
     {
       name: "USDC",
       symbol: "USDC",
-      decimals: 18,
+      decimals: 6,
       address: "0x985458e523db3d53125813ed68c274899e9dfab4",
       isStable: true,
-      coingeckoUrl: "https://www.coingecko.com/en/coins/binance-usd",
-      imageUrl: "https://assets.coingecko.com/coins/images/9576/small/BUSD.png",
+      coingeckoUrl: "https://www.coingecko.com/en/coins/usd-coin",
+      imageUrl: "https://assets.coingecko.com/coins/images/6319/small/USD_Coin_icon.png?1547042389",
     },
   ],
 };
@@ -721,9 +731,7 @@ export function getTokenBySymbol(chainId: number, symbol: string) {
 
 export function getWhitelistedTokens(chainId: number) {
   // Only test BTC in testnet
-  if (chainId === HARMONY) {
-    return TOKENS[chainId].filter((token) => token.symbol !== "USDC");
-  }
+
   return TOKENS[chainId].filter((token) => token.symbol !== "USDG");
 }
 
