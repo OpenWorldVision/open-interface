@@ -1,13 +1,14 @@
 import { ethers } from "ethers";
 import { Web3Provider } from "@ethersproject/providers";
-import { getFallbackProvider, getProvider } from "../rpc";
+import { getFallbackProvider, getHarmonyProvider, getProvider } from "../rpc";
+import { HARMONY } from "config/chains";
 
 export const contractFetcher =
   <T>(library: Web3Provider, contractInfo: any, additionalArgs?: any[]) =>
   (...args: any): Promise<T> => {
     // eslint-disable-next-line
     const [id, chainId, arg0, arg1, ...params] = args;
-    const provider = getProvider(library, chainId);
+    const provider = chainId === HARMONY ? getHarmonyProvider() : getProvider(library, chainId);
 
     const method = ethers.utils.isAddress(arg0) ? arg1 : arg0;
 

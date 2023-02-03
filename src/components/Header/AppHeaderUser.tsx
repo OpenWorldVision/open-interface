@@ -12,7 +12,7 @@ import cx from "classnames";
 import { t, Trans } from "@lingui/macro";
 import NetworkDropdown from "../NetworkDropdown/NetworkDropdown";
 import LanguagePopupHome from "../NetworkDropdown/LanguagePopupHome";
-import { ARBITRUM, ARBITRUM_TESTNET, AVALANCHE, getChainName, MAINNET, TESTNET } from "config/chains";
+import { ARBITRUM, ARBITRUM_TESTNET, AVALANCHE, getChainName, HARMONY, MAINNET, TESTNET } from "config/chains";
 import { switchNetwork } from "lib/wallets";
 import { useChainId } from "lib/chains";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -29,7 +29,7 @@ type Props = {
   disconnectAccountAndCloseSettings: () => void;
   redirectPopupTimestamp: number;
   showRedirectModal: (to: string) => void;
-  onlyIcon?:boolean
+  onlyIcon?: boolean;
 };
 
 export function AppHeaderUser({
@@ -39,7 +39,7 @@ export function AppHeaderUser({
   disconnectAccountAndCloseSettings,
   redirectPopupTimestamp,
   showRedirectModal,
-  onlyIcon: mobile
+  onlyIcon: mobile,
 }: Props) {
   const { chainId } = useChainId();
   const { active, account } = useWeb3React();
@@ -56,6 +56,12 @@ export function AppHeaderUser({
       label: getChainName(MAINNET),
       value: MAINNET,
       icon: "ic_bsc.svg",
+      color: "#264f79",
+    },
+    {
+      label: getChainName(HARMONY),
+      value: HARMONY,
+      icon: "harmony.jpeg",
       color: "#264f79",
     },
   ];

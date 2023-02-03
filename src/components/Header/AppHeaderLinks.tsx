@@ -8,6 +8,8 @@ import "./Header.css";
 import { isHomeSite } from "lib/legacy";
 import ExternalLink from "components/ExternalLink/ExternalLink";
 import logoImg from "img/logo_GMX.svg";
+import { useChainId } from "lib/chains";
+import { HARMONY } from "config/chains";
 
 type Props = {
   small?: boolean;
@@ -24,6 +26,7 @@ export function AppHeaderLinks({
   redirectPopupTimestamp,
   showRedirectModal,
 }: Props) {
+  const { chainId } = useChainId();
   return (
     <div className="App-header-links">
       {small && (
@@ -58,15 +61,17 @@ export function AppHeaderLinks({
           <Trans>Buy</Trans>
         </HeaderLink>
       </div>
-      <div className="App-header-link-container">
-        <HeaderLink
-          to="/referrals"
-          redirectPopupTimestamp={redirectPopupTimestamp}
-          showRedirectModal={showRedirectModal}
-        >
-          <Trans>Referrals</Trans>
-        </HeaderLink>
-      </div>
+      {chainId !== HARMONY ? (
+        <div className="App-header-link-container">
+          <HeaderLink
+            to="/referrals"
+            redirectPopupTimestamp={redirectPopupTimestamp}
+            showRedirectModal={showRedirectModal}
+          >
+            <Trans>Referrals</Trans>
+          </HeaderLink>
+        </div>
+      ) : null}
       {/* <div className="App-header-link-container">
         <HeaderLink
           to="/ecosystem"

@@ -1,4 +1,4 @@
-import { FALLBACK_PROVIDERS, RPC_PROVIDERS } from "config/chains";
+import { FALLBACK_PROVIDERS, HARMONY_RPC_PROVIDERS, RPC_PROVIDERS } from "config/chains";
 import _ from "lodash";
 import { ethers } from "ethers";
 import { Web3ReactContextInterface } from "@web3-react/core/dist/types";
@@ -35,4 +35,9 @@ export function getFallbackProvider(chainId: number) {
     // @ts-ignore incorrect Network param types
     { chainId }
   );
+}
+
+export function getHarmonyProvider() {
+  const provider = new ethers.providers.JsonRpcProvider("https://api.s0.t.hmny.io");
+  return provider;
 }

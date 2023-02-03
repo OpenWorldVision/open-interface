@@ -8,12 +8,13 @@ export const AVALANCHE = 43114;
 export const TESTNET = 97;
 export const ARBITRUM_TESTNET = 421611;
 export const ARBITRUM = 42161;
+export const HARMONY = 1666600000;
 
 // TODO take it from web3
 export const DEFAULT_CHAIN_ID = MAINNET;
 export const CHAIN_ID = DEFAULT_CHAIN_ID;
 
-export const SUPPORTED_CHAIN_IDS = [MAINNET, TESTNET];
+export const SUPPORTED_CHAIN_IDS = [MAINNET, TESTNET, HARMONY];
 
 if (isDevelopment()) {
   SUPPORTED_CHAIN_IDS.push(ARBITRUM_TESTNET);
@@ -24,6 +25,7 @@ export const IS_NETWORK_DISABLED = {
   [AVALANCHE]: false,
   [TESTNET]: false,
   [MAINNET]: false,
+  [HARMONY]: false,
 };
 
 export const CHAIN_NAMES_MAP = {
@@ -32,6 +34,7 @@ export const CHAIN_NAMES_MAP = {
   [ARBITRUM_TESTNET]: "ArbRinkeby",
   [ARBITRUM]: "Arbitrum",
   [AVALANCHE]: "Avalanche",
+  [HARMONY]: "Harmony",
 };
 
 export const GAS_PRICE_ADJUSTMENT_MAP = {
@@ -114,6 +117,18 @@ const constants = {
     // contract requires that execution fee be strictly greater than instead of gte
     DECREASE_ORDER_EXECUTION_GAS_FEE: parseEther("0.0100001"),
   },
+  [HARMONY]: {
+    nativeTokenSymbol: "ONE",
+    wrappedTokenSymbol: "WONE",
+    defaultCollateralSymbol: "USDC",
+    defaultFlagOrdersEnabled: false,
+    positionReaderPropsLength: 9,
+    v2: false,
+    SWAP_ORDER_EXECUTION_GAS_FEE: parseEther("0.3"),
+    INCREASE_ORDER_EXECUTION_GAS_FEE: parseEther("0.3"),
+    // contract requires that execution fee be strictly greater than inste
+    DECREASE_ORDER_EXECUTION_GAS_FEE: parseEther("0.300001"),
+  },
 };
 
 const ALCHEMY_WHITELISTED_DOMAINS = ["gmx.io", "app.gmx.io"];
@@ -148,16 +163,24 @@ export const TESTNET_RPC_PROVIDERS = [
   "https://data-seed-prebsc-1-s3.binance.org:8545",
 ];
 
+export const HARMONY_RPC_PROVIDERS = [
+  "https://api.s0.t.hmny.io",
+  "https://api.harmony.one",
+  "https://a.api.s0.t.hmny.io",
+];
+
 export const RPC_PROVIDERS = {
   [MAINNET]: BSC_RPC_PROVIDERS,
   [ARBITRUM]: ARBITRUM_RPC_PROVIDERS,
   [AVALANCHE]: AVALANCHE_RPC_PROVIDERS,
   [TESTNET]: TESTNET_RPC_PROVIDERS,
+  [HARMONY]: HARMONY_RPC_PROVIDERS,
 };
 
 export const FALLBACK_PROVIDERS = {
   [ARBITRUM]: [getAlchemyHttpUrl()],
   [AVALANCHE]: ["https://avax-mainnet.gateway.pokt.network/v1/lb/626f37766c499d003aada23b"],
+  [HARMONY]: ["https://api.s0.t.hmny.io"],
 };
 
 export const NETWORK_METADATA = {
@@ -216,6 +239,17 @@ export const NETWORK_METADATA = {
     rpcUrls: AVALANCHE_RPC_PROVIDERS,
     blockExplorerUrls: [getExplorerUrl(AVALANCHE)],
   },
+  [HARMONY]: {
+    chainId: `0x${HARMONY.toString(16)}`,
+    chainName: "Harmony",
+    nativeCurrency: {
+      name: "ONE",
+      symbol: "ONE",
+      decimals: 18,
+    },
+    rpcUrls: HARMONY_RPC_PROVIDERS,
+    blockExplorerUrls: ["https://explorer.harmony.one/"],
+  },
 };
 
 export const getConstant = (chainId: number, key: string) => {
@@ -267,6 +301,8 @@ export function getExplorerUrl(chainId) {
     return "https://arbiscan.io/";
   } else if (chainId === AVALANCHE) {
     return "https://snowtrace.io/";
+  } else if (chainId === HARMONY) {
+    return "https://explorer.harmony.one/";
   }
   return "https://etherscan.io/";
 }

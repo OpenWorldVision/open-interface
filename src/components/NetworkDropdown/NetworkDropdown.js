@@ -1,35 +1,18 @@
-import React, { useRef, useState } from "react";
+import { faCheck, faEarthAsia, faGear } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Menu } from "@headlessui/react";
-import ModalWithPortal from "../Modal/ModalWithPortal";
 import { t, Trans } from "@lingui/macro";
 import cx from "classnames";
-import { HiDotsVertical } from "react-icons/hi";
-import "./NetworkDropdown.css";
-import language24Icon from "img/ic_language24.svg";
-import settingsIcon from "img/ic_settings_16.svg";
-import arbitrumIcon from "img/ic_arbitrum_24.svg";
+import { CHAIN_NAMES_MAP, HARMONY } from "config/chains";
+import { LANGUAGE_LOCALSTORAGE_KEY } from "config/localStorage";
 import bnbIcon from "img/ic_binance_logo.svg";
-import avaxIcon from "img/ic_avalanche_24.svg";
-import checkedIcon from "img/ic_checked.svg";
-import { importImage } from "lib/legacy";
-import { defaultLocale, dynamicActivate, isTestLanguage, locales } from "lib/i18n";
-import { LANGUAGE_LOCALSTORAGE_KEY, SELECTED_NETWORK_LOCAL_STORAGE_KEY } from "config/localStorage";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faCheck,
-  faDotCircle,
-  faEarthAsia,
-  faGear,
-  faGripHorizontal,
-  faGripLinesVertical,
-  faGripVertical,
-  faLanguage,
-  faList12,
-  faListDots,
-  faPersonDotsFromLine,
-} from "@fortawesome/free-solid-svg-icons";
-import ModalIncomingFeature from "components/ModalIncomingFeature/ModalIncomingFeature";
+import harmonyIcon from "img/harmony.jpeg";
 import { useChainId } from "lib/chains";
+import { defaultLocale, dynamicActivate, isTestLanguage, locales } from "lib/i18n";
+import { importImage } from "lib/legacy";
+import { useRef, useState } from "react";
+import ModalWithPortal from "../Modal/ModalWithPortal";
+import "./NetworkDropdown.css";
 
 const LANGUAGE_MODAL_KEY = "LANGUAGE";
 const NETWORK_MODAL_KEY = "NETWORK";
@@ -99,10 +82,20 @@ export default function NetworkDropdown(props) {
   );
 }
 function NavIcons({ selectorLabel }) {
+  let icon = bnbIcon;
+  switch (selectorLabel) {
+    case CHAIN_NAMES_MAP[HARMONY]: {
+      icon = harmonyIcon;
+      break;
+    }
+    default: {
+      break;
+    }
+  }
   return (
     <>
       <button className={cx("btn-primary small transparent")}>
-        <img className="network-dropdown-icon" src={bnbIcon} alt={selectorLabel} />
+        <img className="network-dropdown-icon" src={icon} alt={selectorLabel} />
       </button>
       <div className="network-dropdown-seperator" />
     </>

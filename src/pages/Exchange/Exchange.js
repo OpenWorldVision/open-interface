@@ -21,7 +21,7 @@ import {
   getPageTitle,
   CHART_PERIODS,
 } from "lib/legacy";
-import { getConstant, getExplorerUrl } from "config/chains";
+import { getConstant, getExplorerUrl, HARMONY } from "config/chains";
 import { approvePlugin, useMinExecutionFee, cancelMultipleOrders } from "domain/legacy";
 
 import { getContract } from "config/contracts";
@@ -178,13 +178,13 @@ export function getPositions(
       collateral: positionData[i * propsLength + 1],
       averagePrice: positionData[i * propsLength + 2],
       entryFundingRate: positionData[i * propsLength + 3],
-      cumulativeFundingRate: collateralToken.cumulativeFundingRate,
+      cumulativeFundingRate: collateralToken?.cumulativeFundingRate,
       hasRealisedProfit: positionData[i * propsLength + 4].eq(1),
       realisedPnl: positionData[i * propsLength + 5],
       lastIncreasedTime: positionData[i * propsLength + 6].toNumber(),
       hasProfit: positionData[i * propsLength + 7].eq(1),
       delta: positionData[i * propsLength + 8],
-      markPrice: isLong[i] ? indexToken.minPrice : indexToken.maxPrice,
+      markPrice: isLong[i] ? indexToken?.minPrice : indexToken?.maxPrice,
     };
 
     if (
@@ -412,16 +412,16 @@ export const Exchange = forwardRef((props, ref) => {
   const defaultTokenSelection = useMemo(
     () => ({
       [SWAP]: {
-        from: AddressZero,
+        from: chainId === HARMONY ? getTokenBySymbol(chainId, "BTC").address : AddressZero,
         to: getTokenBySymbol(chainId, defaultCollateralSymbol).address,
       },
       [LONG]: {
-        from: AddressZero,
-        to: AddressZero,
+        from: chainId === HARMONY ? getTokenBySymbol(chainId, "BTC").address : AddressZero,
+        to: chainId === HARMONY ? getTokenBySymbol(chainId, "BTC").address : AddressZero,
       },
       [SHORT]: {
         from: getTokenBySymbol(chainId, defaultCollateralSymbol).address,
-        to: AddressZero,
+        to: chainId === HARMONY ? getTokenBySymbol(chainId, "BTC").address : AddressZero,
       },
     }),
     [chainId, defaultCollateralSymbol]
