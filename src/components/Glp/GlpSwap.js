@@ -1041,7 +1041,7 @@ export default function GlpSwap(props) {
       </div>
       <div className="GlpSwap-token-list">
         {/* <div className="GlpSwap-token-list-content"> */}
-        <table className="token-table">
+        <table className="token-table buy">
           <thead>
             <tr>
               <th>

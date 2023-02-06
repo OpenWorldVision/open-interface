@@ -1,8 +1,8 @@
 .GlpSwap-content {
   display: flex;
   justify-content: space-between;
-  border-bottom-left-radius: 0.8rem;
-  border-bottom-right-radius: 0.8rem;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
 }
 
 .App-card .App-card-divider-2 {
@@ -120,18 +120,14 @@
 }
 
 .App-card-title-mark .App-card-title-mark-subtitle {
-  font-size: 1rem;
-  letter-spacing: 0px;
-  color: var(--textColor);
   font-weight: 500;
+  font-size: 10px;
+  line-height: 12px;
+  color: var(--textColor);
 }
 
 .GlpSwap-token-list {
-  /* border: 1px solid #dfe7fb; */
-  border-radius: 4px;
-  background: #f9f9f9;
-  /* padding: 1.5rem; */
-  /* padding-top: ; */
+  border-radius: 20px;
   text-align: left;
 }
 
@@ -177,8 +173,10 @@
   width: calc(100%);
   border-spacing: 0;
   white-space: nowrap;
-  font-size: 1.5rem;
   background: var(--cardBackgroundColor);
+}
+.token-table.buy {
+  border-radius: 20px;
 }
 
 .token-grid {
@@ -213,6 +211,9 @@
 .token-table td {
   letter-spacing: 0.25px;
   color: var(--textColor2);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
 }
 
 .token-table th:first-child,
@@ -229,8 +230,9 @@
 }
 
 .token-table th {
-  font-weight: bold;
-  letter-spacing: 0.25px;
+  font-weight: 800;
+  font-size: 14px;
+  line-height: 17px;
   color: var(--textColor3);
   text-transform: uppercase;
 }

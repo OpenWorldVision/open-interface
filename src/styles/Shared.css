@@ -310,8 +310,8 @@ a.plain {
 .default-btn {
   background: var(--footerBackgroundColor);
   border-radius: 4px;
-  font-size: 1.4rem;
-  line-height: 2rem;
+  font-size: 14px;
+  line-height: 17px;
   font-weight: 700;
   letter-spacing: 0px;
   color: var(--textColor9) !important;
@@ -334,8 +334,9 @@ a.plain {
 .default-btn-light {
   color: var(--textColor8);
   border-radius: 4px;
-  font-size: 1.4rem;
-  line-height: 2rem;
+  font-size: 14px;
+  line-height: 17px;
+  font-weight: 700;
   font-weight: 700;
   letter-spacing: 0px;
   padding-left: 1.6rem;
@@ -514,8 +515,8 @@ button.btn-link:hover .logout-icon {
   min-height: calc(100vh - 62px);
   display: flex;
   flex-direction: column;
-  padding-bottom: calc(4.65rem + 20rem);
-  padding-top: 4.65rem;
+  padding-bottom: calc(90px + 20rem);
+  padding-top: 80px;
 }
 
 .d-flex {

@@ -288,9 +288,9 @@
 }
 
 .App-card-info-title {
-  font-size: 1.6rem;
-  line-height: 2.1rem;
-  font-weight: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 17px;
   letter-spacing: 0px;
   color: var(--textColor6);
 }
@@ -300,9 +300,9 @@
 }
 
 .App-card-info-subtitle {
-  font-size: 1.2rem;
-  line-height: 1.5rem;
-  font-weight: normal;
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 12px;
   letter-spacing: 0px;
   color: var(--textColor6);
 }
@@ -430,7 +430,7 @@ button.App-connect-wallet:hover {
 
 .section-title-block {
   display: flex;
-  margin-bottom: 2.325rem;
+  margin-bottom: 20px;
   max-width: 58.4rem;
   width: 100%;
 }
@@ -489,16 +489,16 @@ button.App-connect-wallet:hover {
 }
 
 .Page-title {
-  font-size: 3.4rem;
-  margin-bottom: 0.8rem;
+  font-size: 20px;
+  line-height: 24px;
   color: #375BD2;
   font-weight: 800;
 }
 
 .Page-description {
   color: var(--textColor3);
-  line-height: 2.15rem;
-  font-size: 1.5rem;
+  font-size: 14px;
+  line-height: 17px;
   font-weight: 500;
 }
 
@@ -536,18 +536,18 @@ button.App-connect-wallet:hover {
 }
 
 .App-card {
-  border-radius: 0.8rem;
+  border-radius: 20px;
   box-sizing: border-box;
 }
 
 .App-card > div:first-child {
-  border-top-left-radius: 0.8rem;
-  border-top-right-radius: 0.8rem;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
 }
 
 .App-card > div:last-child {
-  border-bottom-left-radius: 0.8rem;
-  border-bottom-right-radius: 0.8rem;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
 }
 
 .App-card-header {
@@ -562,9 +562,11 @@ button.App-connect-wallet:hover {
   justify-content: space-between;
   padding: 0.938rem 1.5rem;
   font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
   background: var(--cardTitleBackgroundColor);
-  border-top-left-radius: 0.8rem;
-  border-top-right-radius: 0.8rem;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
 }
 
 .App-card-title-small {
@@ -575,16 +577,14 @@ button.App-connect-wallet:hover {
 .App-card-content-container {
   display: flex;
   background: var(--cardBackgroundColor);
-  border-bottom-left-radius: 0.8rem;
-  border-bottom-right-radius: 0.8rem;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
 }
 
 .App-card-content {
   flex: 1;
-  padding: 1.5rem 1.25rem;
+  padding: 24px 20px;
   background: var(--cardBackgroundColor);
-  border-bottom-left-radius: 0.8rem;
-  border-bottom-right-radius: 0.8rem;
 }
 
 .App-card-row {
@@ -594,7 +594,9 @@ button.App-connect-wallet:hover {
   padding: unset;
   color: var(--textColor2);
   font-weight: 500;
-  margin-top: 0.8rem;
+  margin-top: 8px;
+  font-size: 14px;
+  line-height: 17px;
 }
 .App-card-content > *:first-child {
   margin-top: 0;
@@ -611,6 +613,8 @@ button.App-connect-wallet:hover {
 }
 .App-card-row .label {
   color: var(--textColor2);
+  font-size: 14px;
+  line-height: 17px;
 }
 .App-card-row .value {
   color: var(--textColor2);
@@ -626,7 +630,7 @@ button.App-connect-wallet:hover {
 
 .App-card-options {
   padding: unset;
-  margin: 10px -0.62rem;
+  // margin: 10px -0.62rem;
 }
 
 .App-card-option {
@@ -636,15 +640,15 @@ button.App-connect-wallet:hover {
 .App-header a.App-header-link-main,
 .App-header .App-header-link-main {
   font-size: 1.7rem;
-  padding: 1.5rem;
+  padding: 20px;
   margin-left: -1.5rem;
   display: flex;
-  margin-right: 1.2rem;
+  margin-right: 20px;
 }
 
 .App-header-link-main img {
   display: inline-block;
-  height: 2.15rem;
+  height: 32px;
   vertical-align: middle;
   content: var(--logoUrl);
 }
@@ -677,18 +681,19 @@ button.App-connect-wallet:hover {
 
 .App-header-container-left .a,
 .App-header-container-left a {
-  padding: 1.8rem 1.7rem;
+  padding: 8px;
   display: block;
   color: rgba(55, 91, 210, 0.7);
-  font-size: 1.5rem;
-  line-height: 1.8rem;
-  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  font-weight: 500;
   color: var(--textHeaderInactive);
 }
 
 .App-header-container-left .a.active,
 .App-header-container-left a.active {
   color: var(--textHeaderActive);
+  font-weight: 700;
 }
 
 .Toastify {
@@ -885,21 +890,21 @@ a.App-button-option,
 button.App-button-option {
   cursor: pointer;
   border-radius: 4px;
-  font-size: 1.4rem;
-  line-height: 2rem;
-  font-weight: 700;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
   letter-spacing: 0px;
   color: white;
-  padding-left: 16px;
-  padding-right: 16px;
+  padding-left: 12px;
+  padding-right: 12px;
   text-decoration: none;
   box-sizing: border-box;
   position: relative;
-  min-height: 36px;
+  min-height: 25px;
   display: inline-flex !important;
   align-items: center;
   border: none;
-  background: var(--buttonDarkBackground2);
+  background: var(--footerBackgroundColor);
   border-radius: 18px;
 }
 
@@ -1274,7 +1279,7 @@ button.App-button {
 
 .Tab-title-section {
   padding: 4.65rem 0 0;
-  margin-bottom: 2.4rem;
+  margin-bottom: 20px;
 }
 
 .Home-language-menu {
@@ -1339,7 +1344,7 @@ button.App-button {
   }
 
   .App-header-link-main img {
-    height: 2.1rem;
+    height: 28px;
   }
 
   .App-header.large {

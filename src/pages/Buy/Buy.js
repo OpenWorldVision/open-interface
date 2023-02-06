@@ -18,7 +18,7 @@ export default function BuyGMXGLP() {
             </div>
             <div className="section-title-content">
               <div className="Page-title">
-                <Trans>Buy OAP</Trans>
+                <Trans>Buy OPEN or OAP</Trans>
               </div>
             </div>
           </div>

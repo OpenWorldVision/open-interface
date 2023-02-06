@@ -452,7 +452,7 @@ msgstr "Comprar ETH"
 #: src/components/Glp/GlpSwap.js
 #: src/pages/Buy/Buy.js
 #: src/pages/Stake/StakeV2.js
-msgid "Buy OAP"
+msgid "Buy OPEN or OAP"
 msgstr "Comprar OAP"
 
 #: src/pages/BuyGlp/BuyGlp.js
@@ -1839,7 +1839,7 @@ msgstr ""
 
 #: src/components/Footer/Footer.js
 #: src/components/Footer/Footer.js
-msgid "Media Kit"
+msgid "Open Media Kit"
 msgstr "Kit de Medios"
 
 #: src/App/App.js

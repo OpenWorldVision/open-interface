@@ -472,8 +472,8 @@ msgstr "Buy ETH"
 #: src/components/Glp/GlpSwap.js
 #: src/pages/Buy/Buy.js
 #: src/pages/Stake/StakeV2.js
-msgid "Buy OAP"
-msgstr "Buy OAP"
+msgid "Buy OPEN or OAP"
+msgstr "Buy OPEN or OAP"
 
 #: src/pages/BuyGlp/BuyGlp.js
 msgid "Buy OAP Icon"
