@@ -224,6 +224,18 @@
   grid-column-gap: 1.5rem;
 }
 
+.Home-token-card-option-background{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
 .Home-token-card-option {
   position: relative;
   padding: 2.325rem;

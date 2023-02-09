@@ -11,6 +11,7 @@ import { getNativeToken } from "config/tokens";
 import { useChainId } from "lib/chains";
 import ExternalLink from "components/ExternalLink/ExternalLink";
 import { t } from "@lingui/macro";
+import icCoin from "img/ic_coin.svg";
 
 export default function BuyGlp(props) {
   const { chainId } = useChainId();
@@ -28,7 +29,7 @@ export default function BuyGlp(props) {
     <div className="default-container page-layout">
       <div className="section-title-block">
         <div className="section-title-icon">
-          <img src={buyGLPIcon} alt={t`Buy OAP Icon`} />
+          <img src={icCoin} alt="icCoin" />
         </div>
         <div className="section-title-content">
           <div className="Page-title">

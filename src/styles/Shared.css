@@ -59,11 +59,11 @@ body {
   --inputColor: #6d7380;
   --dividerColor: rgba(109, 115, 128, 0.5);
   --sliderColor: #bdc9e7;
-  --tabInactiveColor: #c;
+  --tabInactiveColor: #375bd280;
   --tabActiveColor: #375bd2;
   --chartBackgroundColor: #edf2fe;
   --referralBoxBackgroundColor: #375bd2;
-  --modalContentBackground: #D8E1FB;
+  --modalContentBackground: #d8e1fb;
   --modalButtonBackground: #375bd2;
   --modalHeaderBackground: #adbdef50;
 }

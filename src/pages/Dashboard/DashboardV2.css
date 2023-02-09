@@ -126,7 +126,6 @@
 .mobile-token-card {
   display: flex;
   align-items: center;
-  margin-bottom: 10px;
 }
 
 .token-symbol-text {

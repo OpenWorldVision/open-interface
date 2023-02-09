@@ -50,7 +50,8 @@
   border-radius: 0px 0px 18px 18px;
 }
 .Exchange-empty-positions-list-note {
-  padding: 0.1rem 0.6rem;
+  padding-top: 2rem;
+  padding-left: 2rem;
   color: var(--textColor100);
 }
 
@@ -290,9 +291,10 @@
 }
 
 .ExchangeChart-main-price {
-  font-size: 2rem;
-  color: #01a789;
   font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+  color: #01a789;
 }
 
 .ExchangeChart-title {
@@ -306,7 +308,7 @@
 }
 
 .ExchangeChart-info-label {
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   color: var(--textColor12);
 }
 
@@ -362,6 +364,7 @@
   border: 0;
   background: var(--tabInactiveColor);
   color: #ffffff;
+  font-size: 1.2rem;
 }
 .ExchangeChart-bottom-controls .Tab .Tab-option.active {
   background: var(--tabActiveColor);
@@ -488,6 +491,14 @@
   /* border: 1px solid #DFE7FB; */
   border-radius: 0 0 18px 18px;
 }
+.PositionsList .Exchange-list.small .App-card-content {
+  padding-top: 0;
+}
+.PositionsList .Exchange-list.small .App-card-title {
+  background: transparent;
+  color: var(--textColor5);
+}
+
 .Position-list-order {
   white-space: nowrap;
   margin-top: 8px;
@@ -533,7 +544,6 @@ button.Exchange-list-action {
 table.Exchange-list {
   border-collapse: collapse;
   border-radius: 0px 0px 18px 18px;
-  /* overflow: hidden; */
 }
 
 table.Exchange-list th,
@@ -560,6 +570,8 @@ table.Exchange-list tr {
 
 table.Exchange-list tr:last-child {
   border-bottom: none;
+  border-radius: 0px 0px 18px 18px;
+  background: transparent;
 }
 
 table.Exchange-list tr:hover {
@@ -803,13 +815,13 @@ table.Exchange-list th {
 .Exchange-swap-option-tabs.Tab.block .Tab-option-icon {
   margin-top: -0.155rem;
   vertical-align: middle;
-  margin-right: 0.8rem;
+  margin-right: 10px;
 }
 
 .Exchange-swap-section-top {
   display: grid;
   grid-template-columns: auto auto;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   padding-bottom: 1.25rem;
   color: var(--textColor15);
   font-weight: 700;
@@ -856,7 +868,9 @@ table.Exchange-list th {
 } */
 
 .Exchange-swap-section-bottom .TokenSelector-box {
-  font-size: 2.1rem;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;
 }
 
 .Exchange-leverage-box .TokenSelector-caret {
@@ -867,7 +881,7 @@ table.Exchange-list th {
 input.Exchange-swap-input {
   padding: 0;
   max-width: 100%;
-  font-size: 2.325rem;
+  font-size: 2rem;
   width: 100%;
   padding-right: 2rem;
 }

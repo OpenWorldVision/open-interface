@@ -46,6 +46,7 @@ import { useChainId } from "lib/chains";
 import UnstakeModal from "components/StakeV2/UnstakeModal";
 import StakeModal from "components/StakeV2/StakeModal";
 import OpenStaking from "components/StakeV2/OpenStaking";
+import icPig from "img/ic_pig.svg";
 
 const { AddressZero } = ethers.constants;
 
@@ -984,6 +985,7 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
       />
       <div className="section-title-block">
         <div className="section-title-icon"></div>
+        <img className="Page-icon" src={icPig} alt="icPig" />
         <div className="section-title-content">
           <div className="Page-title">
             <Trans>Earn</Trans>

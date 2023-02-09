@@ -17,6 +17,7 @@ import { useChainId } from "lib/chains";
 import ExternalLink from "components/ExternalLink/ExternalLink";
 import logoOAP from "img/logo_oap.svg";
 import logoOAPWhite from "img/logo_oap_white.svg";
+import bgBuyOAP from "img/bg_buy_oap.svg";
 
 export default function TokenCard({ showRedirectModal, redirectPopupTimestamp }) {
   const isHome = isHomeSite();
@@ -63,6 +64,9 @@ export default function TokenCard({ showRedirectModal, redirectPopupTimestamp })
   return (
     <div className="Home-token-card-options">
       <div className="Home-token-card-option">
+        <div className="Home-token-card-option-background">
+          <img src={bgBuyOAP} alt="buyOAPIcon" style={{ height: "100%" }} />
+        </div>
         <div className="Home-token-card-option-icon">
           <img src={logoOAPWhite} alt="buyOAPIcon" style={{ width: 30, height: 30 }} /> OAP
         </div>

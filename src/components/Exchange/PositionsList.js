@@ -29,7 +29,7 @@ import { bigNumberify, formatAmount } from "lib/numbers";
 import { AiOutlineEdit } from "react-icons/ai";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { fa0, faMagicWandSparkles, faPenToSquare } from "@fortawesome/free-solid-svg-icons";
-import './PositionsList.css';
+import "./PositionsList.css";
 
 const getOrdersForPosition = (account, position, orders, nativeTokenAddress) => {
   if (!orders || orders.length === 0) {
@@ -230,7 +230,7 @@ export default function PositionsList(props) {
                 <Trans>No open positions</Trans>
               </div>
             )}
-            {positions.map((position) => {
+            {positions.map((position, i) => {
               const positionOrders = getOrdersForPosition(account, position, orders, nativeTokenAddress);
               const liquidationPrice = getLiquidationPrice(position);
               const hasPositionProfit = position[showPnlAfterFees ? "hasProfitAfterFees" : "hasProfit"];
@@ -247,10 +247,10 @@ export default function PositionsList(props) {
 
               return (
                 <div key={position.key} className="App-card">
+                  {i > 0 ? <div className="App-card-divider" /> : null}
                   <div className="App-card-title">
                     <span className="Exchange-list-title">{position.indexToken.symbol}</span>
                   </div>
-                  <div className="App-card-divider" />
                   <div className="App-card-content">
                     <div className="App-card-row">
                       <div className="label">
@@ -413,9 +413,6 @@ export default function PositionsList(props) {
                         })}
                       </div>
                     </div>
-                  </div>
-                  <div className="App-card-divider" />
-                  <div className="App-card-content">
                     <div className="App-card-row">
                       <div className="label">
                         <Trans>Mark Price</Trans>
@@ -435,7 +432,6 @@ export default function PositionsList(props) {
                       <div>${formatAmount(liquidationPrice, USD_DECIMALS, 2, true)}</div>
                     </div>
                   </div>
-                  <div className="App-card-divider"></div>
                   <div className="App-card-content-button">
                     <div className="App-card-options">
                       <button

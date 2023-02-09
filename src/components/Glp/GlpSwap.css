@@ -182,6 +182,13 @@
 .token-grid {
   display: none;
 }
+.token-grid-container {
+  display: none;
+}
+.token-grid-container .App-card-title img,
+.token-table-wrapper .App-card-title img {
+  filter: brightness(0) invert(1);
+}
 
 .token-table td,
 .token-table th {
@@ -338,7 +345,38 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 1.5rem;
-    margin-top: 0.8rem;
+    margin: 20px;
+  }
+  .token-grid-container {
+    display: flex;
+    flex-direction: column;
+    background: var(--boxBackgroundColor2);
+    border-radius: 20px;
+  }
+  .token-grid-container .App-card-title {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    justify-content: flex-start;
+  }
+  .token-grid-container .token-grid .App-card-title,
+  .token-grid-container .token-grid .App-card-content {
+    background: var(--boxBackgroundColor);
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+  }
+  .token-grid-container .token-grid .App-card-content {
+    padding-top: 0;
+  }
+  .token-grid-container .token-grid .token-symbol-text {
+    color: var(--textColor2);
+  }
+  .token-grid-container .token-grid .dropdown-arrow {
+    color: var(--textColor2) !important;
+  }
+  .token-grid-container .App-card-title img {
+    margin-left: 10px;
   }
 }
 @media (max-width: 510px) {
@@ -346,6 +384,8 @@
     display: grid;
     grid-template-columns: 1fr;
     grid-gap: 1.5rem;
-    margin-top: 0.8rem;
+  }
+  .token-grid-container .App-card-title img {
+    display: none;
   }
 }
