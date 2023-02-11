@@ -234,6 +234,7 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  border-radius: 20px;
 }
 
 .Home-token-card-option {

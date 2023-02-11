@@ -1512,6 +1512,10 @@ button.App-button {
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
   }
+  .App-card-content.no-border {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
   .App-card-content-container {
     flex-direction: column-reverse;
   }

@@ -50,8 +50,6 @@
   border-radius: 0px 0px 18px 18px;
 }
 .Exchange-empty-positions-list-note {
-  padding-top: 2rem;
-  padding-left: 2rem;
   color: var(--textColor100);
 }
 
@@ -1092,6 +1090,10 @@ table.Exchange-list-small td {
 
   .Exchange-list.small {
     display: table;
+  }
+  .Exchange-empty-positions-list-note {
+    padding-top: 2rem;
+    padding-left: 2rem;
   }
 }
 

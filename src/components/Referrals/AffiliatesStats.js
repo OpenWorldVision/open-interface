@@ -86,7 +86,7 @@ function AffiliatesStats({
           label={t`Create Referral Code`}
           onAfterOpen={() => addNewModalRef.current?.focus()}
         >
-          <div className="edit-referral-modal">
+          <div className="edit-referral-modal App-settings">
             <AffiliateCodeForm
               handleCreateReferralCode={handleCreateReferralCode}
               recentlyAddedCodes={recentlyAddedCodes}

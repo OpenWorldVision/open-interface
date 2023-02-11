@@ -757,7 +757,7 @@ export default function GlpSwap(props) {
             </div>
           </div>
           <div className="App-card-divider-2" />
-          <div className="App-card-content">
+          <div className="App-card-content no-border">
             <div className="App-card-row">
               <div className="label">
                 <Trans>Price</Trans>

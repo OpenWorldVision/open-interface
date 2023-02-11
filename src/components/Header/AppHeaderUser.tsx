@@ -6,7 +6,7 @@ import { HeaderLink } from "./HeaderLink";
 import connectWalletImg from "img/ic_wallet_24.svg";
 
 import "./Header.css";
-import { isHomeSite, getAccountUrl } from "lib/legacy";
+import { isHomeSite, getAccountUrl, isLocal } from "lib/legacy";
 import { isDevelopment } from "lib/legacy";
 import cx from "classnames";
 import { t, Trans } from "@lingui/macro";
@@ -47,12 +47,6 @@ export function AppHeaderUser({
   const [isDarkTheme, setIsDarkTheme] = useState(!JSON.parse(localStorage.getItem(IS_LIGHT_THEME) || `false`));
   const networkOptions = [
     {
-      label: getChainName(TESTNET),
-      value: TESTNET,
-      icon: "ic_bsc.svg",
-      color: "#264f79",
-    },
-    {
       label: getChainName(MAINNET),
       value: MAINNET,
       icon: "ic_bsc.svg",
@@ -65,6 +59,14 @@ export function AppHeaderUser({
       color: "#264f79",
     },
   ];
+  if (isLocal()) {
+    networkOptions.push({
+      label: getChainName(TESTNET),
+      value: TESTNET,
+      icon: "ic_bsc.svg",
+      color: "#264f79",
+    });
+  }
 
   useEffect(() => {
     if (active) {
