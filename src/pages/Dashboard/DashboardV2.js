@@ -46,6 +46,7 @@ import glp40Icon from "img/ic_glp_40.svg";
 import avalanche16Icon from "img/ic_avalanche_16.svg";
 import arbitrum16Icon from "img/ic_arbitrum_16.svg";
 import arbitrum24Icon from "img/ic_arbitrum_24.svg";
+import icBscCircle from "img/ic_bsc_circle.svg";
 import avalanche24Icon from "img/ic_avalanche_24.svg";
 
 import AssetDropdown from "./AssetDropdown";
@@ -544,6 +545,7 @@ export default function DashboardV2() {
             <div className="Page-title">
               <Trans>Stats</Trans> {chainId === AVALANCHE && <img src={avalanche24Icon} alt="avalanche24Icon" />}
               {chainId === ARBITRUM && <img src={arbitrum24Icon} alt="arbitrum24Icon" />}
+              {chainId === MAINNET && <img src={icBscCircle} alt="bscIcon" />}
             </div>
             <div className="Page-description">
               <Trans>
@@ -737,6 +739,7 @@ export default function DashboardV2() {
             <div className="Page-title">
               <Trans>Tokens</Trans> {chainId === AVALANCHE && <img src={avalanche24Icon} alt="avalanche24Icon" />}
               {chainId === ARBITRUM && <img src={arbitrum24Icon} alt="arbitrum24Icon" />}
+              {chainId === MAINNET && <img src={icBscCircle} alt="bscIcon" />}
             </div>
             <div className="Page-description">
               <Trans>Platform and OAP index tokens.</Trans>
@@ -944,6 +947,7 @@ export default function DashboardV2() {
                 <Trans>OAP Index Composition</Trans>{" "}
                 {chainId === AVALANCHE && <img src={avalanche16Icon} alt={t`Avalanche Icon`} />}
                 {chainId === ARBITRUM && <img src={arbitrum16Icon} alt={t`Arbitrum Icon`} />}
+                {chainId === MAINNET && <img src={icBscCircle} alt="bscIcon" />}
               </div>
               <table className="token-table">
                 <thead>
@@ -1036,89 +1040,96 @@ export default function DashboardV2() {
                 </tbody>
               </table>
             </div>
-            <div className="token-grid">
-              {visibleTokens.map((token) => {
-                const tokenInfo = infoTokens[token.address];
-                let utilization = bigNumberify(0);
-                if (tokenInfo && tokenInfo.reservedAmount && tokenInfo.poolAmount && tokenInfo.poolAmount.gt(0)) {
-                  utilization = tokenInfo.reservedAmount.mul(BASIS_POINTS_DIVISOR).div(tokenInfo.poolAmount);
-                }
-                let maxUsdgAmount = DEFAULT_MAX_USDG_AMOUNT;
-                if (tokenInfo.maxUsdgAmount && tokenInfo.maxUsdgAmount.gt(0)) {
-                  maxUsdgAmount = tokenInfo.maxUsdgAmount;
-                }
+            <div className="token-grid-container">
+              <div className="App-card-title">
+                <Trans>OAP Index Composition</Trans>{" "}
+                {chainId === AVALANCHE && <img src={avalanche16Icon} alt={t`Avalanche Icon`} />}
+                {chainId === ARBITRUM && <img src={arbitrum16Icon} alt={t`Arbitrum Icon`} />}
+                {chainId === MAINNET && <img src={icBscCircle} alt="bscIcon" />}
+              </div>
+              <div className="token-grid">
+                {visibleTokens.map((token) => {
+                  const tokenInfo = infoTokens[token.address];
+                  let utilization = bigNumberify(0);
+                  if (tokenInfo && tokenInfo.reservedAmount && tokenInfo.poolAmount && tokenInfo.poolAmount.gt(0)) {
+                    utilization = tokenInfo.reservedAmount.mul(BASIS_POINTS_DIVISOR).div(tokenInfo.poolAmount);
+                  }
+                  let maxUsdgAmount = DEFAULT_MAX_USDG_AMOUNT;
+                  if (tokenInfo.maxUsdgAmount && tokenInfo.maxUsdgAmount.gt(0)) {
+                    maxUsdgAmount = tokenInfo.maxUsdgAmount;
+                  }
 
-                // const tokenImage = importImage("ic_" + token.symbol.toLowerCase() + "_24.svg");
-                return (
-                  <div className="App-card" key={token.symbol}>
-                    <div className="App-card-title">
-                      <div className="mobile-token-card">
-                        {/* <img src={tokenImage} alt={token.symbol} width="20px" /> */}
-                        <div className="token-symbol-text">{token.symbol}</div>
-                        <div>
-                          <AssetDropdown assetSymbol={token.symbol} assetInfo={token} />
+                  // const tokenImage = importImage("ic_" + token.symbol.toLowerCase() + "_24.svg");
+                  return (
+                    <div className="App-card" key={token.symbol}>
+                      <div className="App-card-title">
+                        <div className="mobile-token-card">
+                          {/* <img src={tokenImage} alt={token.symbol} width="20px" /> */}
+                          <div className="token-symbol-text">{token.symbol}</div>
+                          <div>
+                            <AssetDropdown assetSymbol={token.symbol} assetInfo={token} />
+                          </div>
+                        </div>
+                      </div>
+                      <div className="App-card-content">
+                        <div className="App-card-row">
+                          <div className="label">
+                            <Trans>Price</Trans>
+                          </div>
+                          <div>${formatKeyAmount(tokenInfo, "minPrice", USD_DECIMALS, 2, true)}</div>
+                        </div>
+                        <div className="App-card-row">
+                          <div className="label">
+                            <Trans>Pool</Trans>
+                          </div>
+                          <div>
+                            <TooltipComponent
+                              handle={`$${formatKeyAmount(tokenInfo, "managedUsd", USD_DECIMALS, 0, true)}`}
+                              position="right-bottom"
+                              renderContent={() => {
+                                return (
+                                  <>
+                                    <StatsTooltipRow
+                                      label={t`Pool Amount`}
+                                      value={`${formatKeyAmount(tokenInfo, "managedAmount", token.decimals, 0, true)} ${
+                                        token.symbol
+                                      }`}
+                                      showDollar={false}
+                                    />
+                                    <StatsTooltipRow
+                                      label={t`Target Min Amount`}
+                                      value={`${formatKeyAmount(tokenInfo, "bufferAmount", token.decimals, 0, true)} ${
+                                        token.symbol
+                                      }`}
+                                      showDollar={false}
+                                    />
+                                    <StatsTooltipRow
+                                      label={t`Max ${tokenInfo.symbol} Capacity`}
+                                      value={formatAmount(maxUsdgAmount, 18, 0, true)}
+                                    />
+                                  </>
+                                );
+                              }}
+                            />
+                          </div>
+                        </div>
+                        <div className="App-card-row">
+                          <div className="label">
+                            <Trans>Weight</Trans>
+                          </div>
+                          <div>{getWeightText(tokenInfo)}</div>
+                        </div>
+                        <div className="App-card-row">
+                          <div className="label">
+                            <Trans>Utilization</Trans>
+                          </div>
+                          <div>{formatAmount(utilization, 2, 2, false)}%</div>
                         </div>
                       </div>
                     </div>
-                    <div className="App-card-divider no-margin"></div>
-                    <div className="App-card-content">
-                      <div className="App-card-row">
-                        <div className="label">
-                          <Trans>Price</Trans>
-                        </div>
-                        <div>${formatKeyAmount(tokenInfo, "minPrice", USD_DECIMALS, 2, true)}</div>
-                      </div>
-                      <div className="App-card-row">
-                        <div className="label">
-                          <Trans>Pool</Trans>
-                        </div>
-                        <div>
-                          <TooltipComponent
-                            handle={`$${formatKeyAmount(tokenInfo, "managedUsd", USD_DECIMALS, 0, true)}`}
-                            position="right-bottom"
-                            renderContent={() => {
-                              return (
-                                <>
-                                  <StatsTooltipRow
-                                    label={t`Pool Amount`}
-                                    value={`${formatKeyAmount(tokenInfo, "managedAmount", token.decimals, 0, true)} ${
-                                      token.symbol
-                                    }`}
-                                    showDollar={false}
-                                  />
-                                  <StatsTooltipRow
-                                    label={t`Target Min Amount`}
-                                    value={`${formatKeyAmount(tokenInfo, "bufferAmount", token.decimals, 0, true)} ${
-                                      token.symbol
-                                    }`}
-                                    showDollar={false}
-                                  />
-                                  <StatsTooltipRow
-                                    label={t`Max ${tokenInfo.symbol} Capacity`}
-                                    value={formatAmount(maxUsdgAmount, 18, 0, true)}
-                                  />
-                                </>
-                              );
-                            }}
-                          />
-                        </div>
-                      </div>
-                      <div className="App-card-row">
-                        <div className="label">
-                          <Trans>Weight</Trans>
-                        </div>
-                        <div>{getWeightText(tokenInfo)}</div>
-                      </div>
-                      <div className="App-card-row">
-                        <div className="label">
-                          <Trans>Utilization</Trans>
-                        </div>
-                        <div>{formatAmount(utilization, 2, 2, false)}%</div>
-                      </div>
-                    </div>
-                  </div>
-                );
-              })}
+                  );
+                })}
+              </div>
             </div>
           </div>
         </div>

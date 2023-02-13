@@ -68,7 +68,7 @@ function TradersStats({ referralsData, traderTier, chainId, userReferralCodeStri
           label={t`Edit Referral Code`}
           onAfterOpen={() => editModalRef.current?.focus()}
         >
-          <div className="edit-referral-modal">
+          <div className="edit-referral-modal App-settings">
             <ReferralCodeForm
               userReferralCodeString={userReferralCodeString}
               setPendingTxns={setPendingTxns}

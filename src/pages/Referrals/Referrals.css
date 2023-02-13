@@ -45,11 +45,15 @@
 }
 
 .referral-card .card-action input {
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 1);
+  color: rgba(255, 255, 255, 1);
   font-size: 1.5rem;
   width: 100%;
   box-sizing: border-box;
   margin-right: 1.5rem;
+}
+.referral-card .card-action input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
 }
 .referral-body-container .list {
   margin-top: 3.1rem;
@@ -79,7 +83,7 @@
 }
 .active-referral-code .tier span {
   font-size: 1.3175rem;
-  color: #a9a9b0;
+  color: #ffffff;
   margin-right: 0.775rem;
 }
 .active-referral-code .tier a {
@@ -133,7 +137,7 @@
   margin: 0;
 }
 .referral-table-header .sub-title {
-  color: #a9a9b0;
+  color: #ffffff;
   font-size: 1.4rem;
   margin-left: 0.775rem;
 }
@@ -234,7 +238,7 @@
 .referral-table th {
   font-weight: normal;
   letter-spacing: 0.25px;
-  color: #a9a9b0;
+  color: #ffffff;
   text-transform: uppercase;
 }
 .referral-table th,

@@ -444,7 +444,7 @@ msgstr "Buy ETH"
 #: src/components/Glp/GlpSwap.js
 #: src/components/Glp/GlpSwap.js
 #: src/pages/Stake/StakeV2.js
-msgid "Buy OAP"
+msgid "Buy OPEN or OAP"
 msgstr "Mua OAP"
 
 #: src/pages/BuyGlp/BuyGlp.js
@@ -1956,8 +1956,8 @@ msgstr "Max: {maxAmountFormatted}"
 
 #: src/components/Footer/Footer.js
 #: src/components/Footer/Footer.js
-msgid "Media Kit"
-msgstr "Media Kit"
+msgid "Open Media Kit"
+msgstr "Open Media Kit"
 
 #: src/App/App.js
 msgid "MetaMask"

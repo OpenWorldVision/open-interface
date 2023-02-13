@@ -140,7 +140,7 @@ export function ReferralCodeForm({
         disabled={isSubmitting}
         type="text"
         placeholder="Enter referral code"
-        className="text-input mb-sm"
+        className="App-slippage-tolerance-input mb-sm"
         value={referralCode}
         onChange={({ target }) => {
           const { value } = target;

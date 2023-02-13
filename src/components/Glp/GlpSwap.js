@@ -757,7 +757,7 @@ export default function GlpSwap(props) {
             </div>
           </div>
           <div className="App-card-divider-2" />
-          <div className="App-card-content">
+          <div className="App-card-content no-border">
             <div className="App-card-row">
               <div className="label">
                 <Trans>Price</Trans>
@@ -1041,7 +1041,7 @@ export default function GlpSwap(props) {
       </div>
       <div className="GlpSwap-token-list">
         {/* <div className="GlpSwap-token-list-content"> */}
-        <table className="token-table">
+        <table className="token-table buy">
           <thead>
             <tr>
               <th>

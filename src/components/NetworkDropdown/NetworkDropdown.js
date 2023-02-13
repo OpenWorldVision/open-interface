@@ -242,7 +242,7 @@ function NetworkModalContent({ networkOptions, onNetworkSelect, selectorLabel, s
               key={network.value}
             >
               <div className="menu-item-group">
-                <img src={networkIcon} alt={network.label} style={{ width: 24, height: 24, marginLeft: 4 }} />
+                <img src={networkIcon} alt={network.label} style={{ width: 24, height: 24, marginLeft: 4, borderRadius: 24/2 }} />
                 <span>{network.label}</span>
               </div>
               <div className={cx("active-dot", { [selectorLabel]: selectorLabel === network.label })} />
