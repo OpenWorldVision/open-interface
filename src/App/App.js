@@ -70,7 +70,7 @@ import { I18nProvider } from "@lingui/react";
 import { Trans, t } from "@lingui/macro";
 import { defaultLocale, dynamicActivate } from "lib/i18n";
 import { Header } from "components/Header/Header";
-import { ARBITRUM, AVALANCHE, getAlchemyWsUrl, getExplorerUrl, MAINNET } from "config/chains";
+import { ARBITRUM, AVALANCHE, getAlchemyWsUrl, getExplorerUrl, HARMONY, MAINNET } from "config/chains";
 import { useLocalStorageSerializeKey } from "lib/localStorage";
 import { helperToast } from "lib/helperToast";
 import {
@@ -257,12 +257,7 @@ function FullApp() {
       );
       return false;
     }
-    connect({
-      autoSelect: {
-        label: "MetaMask",
-        disableModals: true,
-      },
-    });
+
     attemptActivateWallet("MetaMask");
   };
   const activateCoinBase = () => {
@@ -287,18 +282,22 @@ function FullApp() {
       );
       return false;
     }
-    connect({
-      autoSelect: {
-        label: "CoinBase",
-        disableModals: true,
-      },
-    });
+
     attemptActivateWallet("CoinBase");
   };
 
-  const attemptActivateWallet = (providerName) => {
+  const attemptActivateWallet = async (providerName) => {
     localStorage.setItem(SHOULD_EAGER_CONNECT_LOCALSTORAGE_KEY, true);
     localStorage.setItem(CURRENT_PROVIDER_LOCALSTORAGE_KEY, providerName);
+    if (chainId !== HARMONY) {
+      await connect({
+        autoSelect: {
+          label: providerName,
+          disableModals: true,
+        },
+      });
+    }
+
     activateInjectedProvider(providerName);
     connectInjectedWallet();
   };
