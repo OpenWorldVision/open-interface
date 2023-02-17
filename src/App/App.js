@@ -297,7 +297,6 @@ function FullApp() {
   };
 
   const attemptActivateWallet = (providerName) => {
-    console.log("co run day k");
     localStorage.setItem(SHOULD_EAGER_CONNECT_LOCALSTORAGE_KEY, true);
     localStorage.setItem(CURRENT_PROVIDER_LOCALSTORAGE_KEY, providerName);
     activateInjectedProvider(providerName);
