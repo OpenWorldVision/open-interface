@@ -100,6 +100,28 @@ import ExternalLink from "components/ExternalLink/ExternalLink";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faMoon, faRocket } from "@fortawesome/free-solid-svg-icons";
 import ModalIncomingFeature from "components/ModalIncomingFeature/ModalIncomingFeature";
+import { init, useConnectWallet } from "@web3-onboard/react";
+import injectedModule from "@web3-onboard/injected-wallets";
+const injected = injectedModule();
+init({
+  wallets: [injected],
+  chains: [
+    {
+      id: "0x56",
+      token: "BNB",
+      label: "Binance Smart Chain",
+      rpcUrl: "https://bsc-dataseed.binance.org/",
+    },
+  ],
+  accountCenter: {
+    desktop: {
+      enabled: false,
+    },
+    mobile: {
+      enabled: false,
+    },
+  },
+});
 
 library.add(faMoon, faRocket);
 
@@ -145,6 +167,7 @@ function getWsProvider(active, chainId) {
 }
 
 function FullApp() {
+  const [{ wallet, connecting }, connect, disconnect] = useConnectWallet();
   const isHome = isHomeSite();
   const exchangeRef = useRef();
   const { connector, library, deactivate, activate, active } = useWeb3React();
@@ -158,7 +181,7 @@ function FullApp() {
       setActivatingConnector(undefined);
     }
   }, [activatingConnector, connector, chainId]);
-  const triedEager = useEagerConnect(setActivatingConnector);
+  const triedEager = useEagerConnect(setActivatingConnector, connect);
   useInactiveListener(!triedEager || !!activatingConnector);
 
   const query = useRouteQuery();
@@ -185,13 +208,19 @@ function FullApp() {
     }
   }, [query, history, location]);
 
-  const disconnectAccount = useCallback(() => {
-    // only works with WalletConnect
-    clearWalletConnectData();
-    // force clear localStorage connection for MM/CB Wallet (Brave legacy)
-    clearWalletLinkData();
-    deactivate();
-  }, [deactivate]);
+  const disconnectAccount = useCallback(async () => {
+    try {
+      // only works with WalletConnect
+
+      clearWalletConnectData();
+      // force clear localStorage connection for MM/CB Wallet (Brave legacy)
+      clearWalletLinkData();
+      deactivate();
+      await disconnect(wallet);
+    } catch (error) {
+      console.log("error disconnect", error);
+    }
+  }, [deactivate, disconnect, wallet]);
 
   const disconnectAccountAndCloseSettings = () => {
     disconnectAccount();
@@ -228,6 +257,12 @@ function FullApp() {
       );
       return false;
     }
+    connect({
+      autoSelect: {
+        label: "MetaMask",
+        disableModals: true,
+      },
+    });
     attemptActivateWallet("MetaMask");
   };
   const activateCoinBase = () => {
@@ -252,10 +287,17 @@ function FullApp() {
       );
       return false;
     }
+    connect({
+      autoSelect: {
+        label: "CoinBase",
+        disableModals: true,
+      },
+    });
     attemptActivateWallet("CoinBase");
   };
 
   const attemptActivateWallet = (providerName) => {
+    console.log("co run day k");
     localStorage.setItem(SHOULD_EAGER_CONNECT_LOCALSTORAGE_KEY, true);
     localStorage.setItem(CURRENT_PROVIDER_LOCALSTORAGE_KEY, providerName);
     activateInjectedProvider(providerName);
