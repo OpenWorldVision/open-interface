@@ -91,6 +91,7 @@ import { getToken, getTokenBySymbol, getTokens, getWhitelistedTokens, TOKENS } f
 import ExternalLink from "components/ExternalLink/ExternalLink";
 import ModalIncomingFeature from "components/ModalIncomingFeature/ModalIncomingFeature";
 import { Widget } from "@kyberswap/widgets";
+import KyberSwap from "components/KyberSwap/KyberSwap";
 
 const SWAP_ICONS = {
   [LONG]: longImg,
@@ -1883,14 +1884,7 @@ export default function SwapBox(props) {
             />
           )}
         </div>
-        {isSwap && (
-          <Widget
-            theme={darkTheme}
-            tokenList={[]}
-            provider={ethersProvider}
-            defaultTokenOut={getTokenBySymbol(chainId, "BUSD").address}
-          />
-        )}
+        {isSwap && <KyberSwap chainId={chainId} />}
         {showFromAndToSection && !isSwap && (
           <React.Fragment>
             <div className="Exchange-swap-section highlight">
