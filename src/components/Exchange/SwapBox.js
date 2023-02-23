@@ -8,6 +8,7 @@ import "./SwapBox.css";
 import cx from "classnames";
 import useSWR from "swr";
 import { ethers } from "ethers";
+import { useWallets, useConnectWallet } from "@web3-onboard/react";
 
 import { IoMdSwap } from "react-icons/io";
 import { BsArrowRight } from "react-icons/bs";
@@ -36,13 +37,22 @@ import {
   STOP,
   SWAP,
   SWAP_OPTIONS,
+  SWAP_OPTIONS_HARMONY,
   SWAP_ORDER_OPTIONS,
   USD_DECIMALS,
   USDG_ADDRESS,
   USDG_DECIMALS,
   MAX_ALLOWED_LEVERAGE,
 } from "lib/legacy";
-import { ARBITRUM, AVALANCHE, getChainName, getConstant, IS_NETWORK_DISABLED, isSupportedChain } from "config/chains";
+import {
+  ARBITRUM,
+  AVALANCHE,
+  getChainName,
+  getConstant,
+  IS_NETWORK_DISABLED,
+  isSupportedChain,
+  HARMONY,
+} from "config/chains";
 import * as Api from "domain/legacy";
 import { getContract } from "config/contracts";
 
@@ -77,10 +87,11 @@ import { helperToast } from "lib/helperToast";
 import { getTokenInfo, getUsd } from "domain/tokens/utils";
 import { usePrevious } from "lib/usePrevious";
 import { bigNumberify, expandDecimals, formatAmount, formatAmountFree, parseValue } from "lib/numbers";
-import { getToken, getTokenBySymbol, getTokens, getWhitelistedTokens } from "config/tokens";
+import { getToken, getTokenBySymbol, getTokens, getWhitelistedTokens, TOKENS } from "config/tokens";
 import ExternalLink from "components/ExternalLink/ExternalLink";
-import Modal from "components/Modal/Modal";
 import ModalIncomingFeature from "components/ModalIncomingFeature/ModalIncomingFeature";
+import { Widget } from "@kyberswap/widgets";
+import KyberSwap from "components/KyberSwap/KyberSwap";
 
 const SWAP_ICONS = {
   [LONG]: longImg,
@@ -89,6 +100,24 @@ const SWAP_ICONS = {
 };
 
 const { AddressZero } = ethers.constants;
+
+const darkTheme = {
+  text: "#FFFFFF",
+  subText: "#A9A9A9",
+  primary: "#1C1C1C",
+  dialog: "#313131",
+  secondary: "#0F0F0F",
+  interactive: "#292929",
+  stroke: "#505050",
+  accent: "#28E0B9",
+  success: "#189470",
+  warning: "#FF9901",
+  error: "#FF537B",
+  fontFamily: "Work Sans",
+  borderRadius: "16px",
+  buttonRadius: "999px",
+  boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.04)",
+};
 
 const leverageSliderHandle = (props) => {
   const { value, dragging, index, ...restProps } = props;
@@ -169,6 +198,14 @@ export default function SwapBox(props) {
     minExecutionFeeUSD,
     minExecutionFeeErrorMessage,
   } = props;
+
+  const [{ wallet, connecting }] = useConnectWallet();
+
+  let ethersProvider;
+
+  if (wallet) {
+    ethersProvider = new ethers.providers.Web3Provider(wallet.provider, "any");
+  }
 
   const [fromValue, setFromValue] = useState("");
   const [toValue, setToValue] = useState("");
@@ -1830,13 +1867,13 @@ export default function SwapBox(props) {
         <div>
           <Tab
             icons={SWAP_ICONS}
-            options={SWAP_OPTIONS}
+            options={chainId === HARMONY ? SWAP_OPTIONS_HARMONY : SWAP_OPTIONS}
             optionLabels={SWAP_LABELS}
             option={swapOption}
             onChange={onSwapOptionChange}
             className="Exchange-swap-option-tabs"
           />
-          {flagOrdersEnabled && (
+          {flagOrdersEnabled && !isSwap && (
             <Tab
               options={orderOptions}
               optionLabels={orderOptionLabels}
@@ -1847,7 +1884,8 @@ export default function SwapBox(props) {
             />
           )}
         </div>
-        {showFromAndToSection && (
+        {isSwap && <KyberSwap chainId={chainId} />}
+        {showFromAndToSection && !isSwap && (
           <React.Fragment>
             <div className="Exchange-swap-section highlight">
               <div className="Exchange-swap-section-top">
@@ -2026,7 +2064,7 @@ export default function SwapBox(props) {
             </div>
           </div>
         )}
-        {isSwap && (
+        {/* {isSwap && (
           <div className="Exchange-swap-box-info">
             <ExchangeInfoRow label={t`Fees`}>
               <div>
@@ -2040,7 +2078,7 @@ export default function SwapBox(props) {
               </div>
             </ExchangeInfoRow>
           </div>
-        )}
+        )} */}
         {(isLong || isShort) && !isStopOrder && (
           <div className="Exchange-leverage-box">
             <div className="Exchange-leverage-slider-settings">
@@ -2215,17 +2253,19 @@ export default function SwapBox(props) {
             </Trans>
           </div>
         )}
-        <div className="Exchange-swap-button-container">
-          <button
-            className={cx("App-cta Exchange-swap-button", isLong && "long", isShort && "short")}
-            onClick={onClickPrimary}
-            disabled={!isPrimaryEnabled()}
-          >
-            {getPrimaryText()}
-          </button>
-        </div>
+        {!isSwap && (
+          <div className="Exchange-swap-button-container">
+            <button
+              className={cx("App-cta Exchange-swap-button", isLong && "long", isShort && "short")}
+              onClick={onClickPrimary}
+              disabled={!isPrimaryEnabled()}
+            >
+              {getPrimaryText()}
+            </button>
+          </div>
+        )}
       </div>
-      {isSwap && (
+      {/* {isSwap && (
         <div className="Exchange-swap-market-box App-box App-box-border">
           <div className="Exchange-swap-market-box-title">
             <Trans>Swap</Trans>
@@ -2285,7 +2325,7 @@ export default function SwapBox(props) {
             </ExchangeInfoRow>
           )}
         </div>
-      )}
+      )} */}
       {(isLong || isShort) && (
         <div className="Exchange-swap-market-box App-box App-box-border">
           <div className="Exchange-swap-market-box-title">

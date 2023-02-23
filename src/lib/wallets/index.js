@@ -100,7 +100,7 @@ export function clearWalletLinkData() {
     .map((x) => localStorage.removeItem(x));
 }
 
-export function useEagerConnect(setActivatingConnector) {
+export function useEagerConnect(setActivatingConnector, connectFunction) {
   const { activate, active } = useWeb3React();
   const [tried, setTried] = useState(false);
 
@@ -152,6 +152,12 @@ export function useEagerConnect(setActivatingConnector) {
         }
         const authorized = await connector.isAuthorized();
         if (authorized) {
+          connectFunction({
+            autoSelect: {
+              label: currentProviderName,
+              disableModals: true,
+            },
+          });
           setActivatingConnector(connector);
           await activate(connector, undefined, true);
         }
