@@ -4,29 +4,13 @@ import { ethers } from "ethers";
 import { Widget } from "@kyberswap/widgets";
 import { getTokenBySymbol } from "config/tokens";
 import "./KyberSwap.css";
-
-const darkTheme = {
-  text: "#FFFFFF",
-  subText: "#A9A9A9",
-  primary: "#1C1C1C",
-  dialog: "#313131",
-  secondary: "#0F0F0F",
-  interactive: "#292929",
-  stroke: "#505050",
-  accent: "#657290",
-  success: "#189470",
-  warning: "#FF9901",
-  error: "#FF537B",
-  fontFamily: "Work Sans",
-  borderRadius: "16px",
-  buttonRadius: "999px",
-  boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.04)",
-};
+import { getContract } from "config/contracts";
 
 const KyberSwap = memo((props) => {
   const { chainId } = props;
 
   const [{ wallet }] = useConnectWallet();
+  const feeSwapAddress = getContract(chainId, "FeeSwap");
 
   let ethersProvider;
 
@@ -37,11 +21,14 @@ const KyberSwap = memo((props) => {
   return (
     <div className="kyber-custom">
       <Widget
-        theme={darkTheme}
-        tokenList={[]}
         provider={ethersProvider}
         defaultTokenOut={getTokenBySymbol(chainId, "BUSD").address}
-        width={100}
+        feeSetting={{
+          feeAmount: 100,
+          isInBps: true,
+          chargeFeeBy: "currency_in",
+          feeReceiver: feeSwapAddress,
+        }}
       />
     </div>
   );

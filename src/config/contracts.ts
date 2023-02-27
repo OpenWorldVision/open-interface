@@ -89,6 +89,7 @@ const CONTRACTS = {
     PancakePair2: "0xFea1510Bd3EA668a4d14f7F1d95F7AB4ECAA66ed", // OPEN-WBNB pair
     OpenStaking: "0x214cEc9402F81622Ee97837Ced73C43f4f7f4a89",
     OapRewardRouter: "0x0a27866A7943E90d3c65A60151ecfB0f79212BbA",
+    FeeSwap: "0x62b03139c01eE27f5CF046391D3c7AB4498cD363",
   },
   [TESTNET]: {
     // bsc testnet
@@ -169,6 +170,7 @@ const CONTRACTS = {
     VaultPriceFeed: "0xeaE0398FBD233f8b50bCC3Ba9e81F92598B77dd0",
     OpenStaking: "0x52c0bf0C0bF20377A478d7DD88B9c08358D9f1Fd",
     OapRewardRouter: "0xdb49dE9C4812A36b724dcd82F7a3433bAd01b9D5",
+    FeeSwap: "0xE94bC997f8Ad62f29683BA6dd1cE7d3B8C5fd315",
   },
   [ARBITRUM_TESTNET]: {
     // arbitrum testnet
