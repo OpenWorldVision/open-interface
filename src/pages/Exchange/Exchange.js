@@ -20,6 +20,7 @@ import {
   useAccountOrders,
   getPageTitle,
   CHART_PERIODS,
+  BUY,
 } from "lib/legacy";
 import { getConstant, getExplorerUrl, HARMONY } from "config/chains";
 import { approvePlugin, useMinExecutionFee, cancelMultipleOrders } from "domain/legacy";
@@ -423,13 +424,17 @@ export const Exchange = forwardRef((props, ref) => {
         from: getTokenBySymbol(chainId, defaultCollateralSymbol).address,
         to: chainId === HARMONY ? getTokenBySymbol(chainId, "BTC").address : AddressZero,
       },
+      [BUY]: {
+        from: chainId === HARMONY ? getTokenBySymbol(chainId, "BTC").address : AddressZero,
+        to: getTokenBySymbol(chainId, defaultCollateralSymbol).address,
+      },
     }),
     [chainId, defaultCollateralSymbol]
   );
 
   const [tokenSelection, setTokenSelection] = useLocalStorageByChainId(
     chainId,
-    "Exchange-token-selection-v2",
+    "Exchange-token-selection-v3",
     defaultTokenSelection
   );
 
