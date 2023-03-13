@@ -199,14 +199,6 @@ export default function SwapBox(props) {
     minExecutionFeeErrorMessage,
   } = props;
 
-  const [{ wallet, connecting }] = useConnectWallet();
-
-  let ethersProvider;
-
-  if (wallet) {
-    ethersProvider = new ethers.providers.Web3Provider(wallet.provider, "any");
-  }
-
   const [fromValue, setFromValue] = useState("");
   const [toValue, setToValue] = useState("");
   const [anchorOnFromAmount, setAnchorOnFromAmount] = useState(true);

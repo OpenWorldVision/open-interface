@@ -1,67 +1,62 @@
-import React, { useState, useEffect } from "react";
-import { useHistory } from "react-router-dom";
-import { Trans, t } from "@lingui/macro";
+import { t, Trans } from "@lingui/macro";
 import { useWeb3React } from "@web3-react/core";
-import useSWR from "swr";
-import { ethers } from "ethers";
-import Tab from "../Tab/Tab";
 import cx from "classnames";
 import { getContract } from "config/contracts";
+import { BigNumber, ethers } from "ethers";
 import {
-  getBuyGlpToAmount,
+  adjustForDecimals,
+  BASIS_POINTS_DIVISOR,
   getBuyGlpFromAmount,
+  getBuyGlpToAmount,
   getSellGlpFromAmount,
   getSellGlpToAmount,
-  adjustForDecimals,
-  GLP_DECIMALS,
-  USD_DECIMALS,
-  BASIS_POINTS_DIVISOR,
   GLP_COOLDOWN_DURATION,
+  GLP_DECIMALS,
+  PLACEHOLDER_ACCOUNT,
   SECONDS_PER_YEAR,
   USDG_DECIMALS,
-  PLACEHOLDER_ACCOUNT,
-  importImage,
+  USD_DECIMALS,
 } from "lib/legacy";
+import { useEffect, useState } from "react";
+import { useHistory } from "react-router-dom";
+import useSWR from "swr";
+import Tab from "../Tab/Tab";
 
 import { useGmxPrice } from "domain/legacy";
 
-import TokenSelector from "../Exchange/TokenSelector";
 import BuyInputSection from "../BuyInputSection/BuyInputSection";
+import TokenSelector from "../Exchange/TokenSelector";
 import Tooltip from "../Tooltip/Tooltip";
 
+import GlpManager from "abis/GlpManager.json";
+import OapRouter from "abis/OapRouter.json";
 import ReaderV2 from "abis/ReaderV2.json";
 import RewardReader from "abis/RewardReader.json";
-import VaultV2 from "abis/VaultV2.json";
-import GlpManager from "abis/GlpManager.json";
-import RewardTracker from "abis/RewardTracker.json";
-import Vester from "abis/Vester.json";
 import RewardRouter from "abis/RewardRouter.json";
+import RewardTracker from "abis/RewardTracker.json";
 import Token from "abis/Token.json";
+import VaultV2 from "abis/VaultV2.json";
+import Vester from "abis/Vester.json";
 
 import glp24Icon from "img/ic_gmx_24.svg";
 import logoOAP from "img/logo_oap_white.svg";
-import arrowIcon from "img/ic_convert_down.svg";
 
-import avalanche16Icon from "img/ic_avalanche_16.svg";
-import arbitrum16Icon from "img/ic_arbitrum_16.svg";
-
-import bnbIcon from "img/ic_binance_logo.svg";
-
-import "./GlpSwap.css";
-import AssetDropdown from "pages/Dashboard/AssetDropdown";
-import SwapErrorModal from "./SwapErrorModal";
-import StatsTooltipRow from "../StatsTooltip/StatsTooltipRow";
-import { ARBITRUM, getChainName, HARMONY, IS_NETWORK_DISABLED } from "config/chains";
-import { callContract, contractFetcher } from "lib/contracts";
-import { approveTokens, useInfoTokens } from "domain/tokens";
-import { useLocalStorageByChainId } from "lib/localStorage";
-import { helperToast } from "lib/helperToast";
-import { getTokenInfo, getUsd } from "domain/tokens/utils";
-import { bigNumberify, expandDecimals, formatAmount, formatAmountFree, formatKeyAmount, parseValue } from "lib/numbers";
-import { getNativeToken, getToken, getTokens, getWhitelistedTokens, getWrappedToken } from "config/tokens";
-import { useChainId } from "lib/chains";
 import ExternalLink from "components/ExternalLink/ExternalLink";
+import { ARBITRUM, getChainName, IS_NETWORK_DISABLED } from "config/chains";
+import { getNativeToken, getToken, getTokens, getWhitelistedTokens, getWrappedToken } from "config/tokens";
+import { approveTokens, useInfoTokens } from "domain/tokens";
+import { getTokenInfo, getUsd } from "domain/tokens/utils";
+import { parseEther } from "ethers/lib/utils";
+import { useChainId } from "lib/chains";
+import { callContract, contractFetcher } from "lib/contracts";
+import { helperToast } from "lib/helperToast";
+import { useLocalStorageByChainId } from "lib/localStorage";
+import { bigNumberify, expandDecimals, formatAmount, formatAmountFree, formatKeyAmount, parseValue } from "lib/numbers";
+import AssetDropdown from "pages/Dashboard/AssetDropdown";
 import { IoMdSwap } from "react-icons/io";
+import StatsTooltipRow from "../StatsTooltip/StatsTooltipRow";
+import "./GlpSwap.css";
+import SwapErrorModal from "./SwapErrorModal";
 
 const { AddressZero } = ethers.constants;
 
@@ -145,6 +140,7 @@ export default function GlpSwap(props) {
   const usdgAddress = getContract(chainId, "USDG");
   const glpManagerAddress = getContract(chainId, "GlpManager");
   const rewardRouterAddress = getContract(chainId, "RewardRouter");
+  const oapRouterAddress = getContract(chainId, "OAPRouter");
   const tokensForBalanceAndSupplyQuery = [stakedGlpTrackerAddress, usdgAddress];
 
   const tokenAddresses = tokens.map((token) => token.address);
@@ -186,6 +182,14 @@ export default function GlpSwap(props) {
       fetcher: contractFetcher(library, Token),
     }
   );
+
+  const { data: tokenAllowanceOap } = useSWR(
+    [active, chainId, tokenAllowanceAddress, "allowance", account || PLACEHOLDER_ACCOUNT, oapRouterAddress],
+    {
+      fetcher: contractFetcher(library, Token),
+    }
+  );
+  console.log("wtf", tokenAllowanceOap);
 
   const { data: lastPurchaseTime } = useSWR(
     [`GlpSwap:lastPurchaseTime:${active}`, chainId, glpManagerAddress, "lastAddedAt", account || PLACEHOLDER_ACCOUNT],
@@ -279,7 +283,11 @@ export default function GlpSwap(props) {
   const glpAmount = parseValue(glpValue, GLP_DECIMALS);
 
   const needApproval =
-    isBuying && swapTokenAddress !== AddressZero && tokenAllowance && swapAmount && swapAmount.gt(tokenAllowance);
+    isBuying &&
+    swapTokenAddress !== AddressZero &&
+    tokenAllowance &&
+    swapAmount &&
+    (swapAmount.gt(tokenAllowance) || swapAmount.gt(tokenAllowanceOap));
 
   const swapUsdMin = getUsd(swapAmount, swapTokenAddress, false, infoTokens);
   const glpUsdMax = glpAmount && glpPrice ? glpAmount.mul(glpPrice).div(expandDecimals(1, GLP_DECIMALS)) : undefined;
@@ -580,19 +588,79 @@ export default function GlpSwap(props) {
       infoTokens,
       getTokenInfo,
     });
+    approveTokens({
+      setIsApproving,
+      library,
+      tokenAddress: swapToken.address,
+      spender: oapRouterAddress,
+      chainId: chainId,
+      onApproveSubmitted: () => {
+        setIsWaitingForApproval(true);
+      },
+      infoTokens,
+      getTokenInfo,
+    });
   };
 
   const buyGlp = () => {
-    setIsSubmitting(true);
+    // setIsSubmitting(true);
 
-    const minGlp = glpAmount.mul(BASIS_POINTS_DIVISOR - savedSlippageAmount).div(BASIS_POINTS_DIVISOR);
+    const minGlp = glpAmount.mul(BASIS_POINTS_DIVISOR - savedSlippageAmount).div(BASIS_POINTS_DIVISOR * 2);
 
-    const contract = new ethers.Contract(rewardRouterAddress, RewardRouter.abi, library.getSigner());
-    const method = swapTokenAddress === AddressZero ? "mintAndStakeOapETH" : "mintAndStakeOap";
-    const params = swapTokenAddress === AddressZero ? [0, minGlp] : [swapTokenAddress, swapAmount, 0, minGlp];
+    const contractOapRouter = new ethers.Contract(oapRouterAddress, OapRouter.abi, library.getSigner());
+    const contractRewardRouter = new ethers.Contract(rewardRouterAddress, RewardRouter.abi, library.getSigner());
+    const method = swapTokenAddress === AddressZero ? "swapAndStakeETH" : "swapAndStake";
+    const methodRewardRouter = swapTokenAddress === AddressZero ? "mintAndStakeOapETH" : "mintAndStakeOap";
+
     const value = swapTokenAddress === AddressZero ? swapAmount : 0;
+    let adjustedUsdgSupply = bigNumberify(0);
+    for (let i = 0; i < tokenList.length; i++) {
+      const token = tokenList[i];
+      const tokenInfo = infoTokens[token.address];
+      if (tokenInfo && tokenInfo.usdgAmount) {
+        adjustedUsdgSupply = adjustedUsdgSupply.add(tokenInfo.usdgAmount);
+      }
+    }
+    let minWeightToken = infoTokens[visibleTokens[0].address];
 
-    callContract(chainId, contract, method, params, {
+    let minWeight = infoTokens[visibleTokens[0].address].usdgAmount.mul(BASIS_POINTS_DIVISOR).div(adjustedUsdgSupply);
+    visibleTokens.forEach((token) => {
+      // console.log("hahaha", formatEther(infoTokens[token?.address].weight));
+      const currentWeightBps = infoTokens[token?.address].usdgAmount.mul(BASIS_POINTS_DIVISOR).div(adjustedUsdgSupply);
+
+      if (currentWeightBps < minWeight) {
+        minWeightToken = token;
+      }
+    });
+
+    if (minWeightToken.address === swapTokenAddress) {
+      const params =
+        swapTokenAddress === AddressZero ? [0, minGlp] : [swapTokenAddress, swapAmount.toString(), "0", "0"];
+      callContract(chainId, contractRewardRouter, methodRewardRouter, params, {
+        value,
+        sentMsg: t`Buy submitted.`,
+        failMsg: t`Buy failed.`,
+        successMsg: t`${formatAmount(glpAmount, 18, 4, true)} OAP bought with ${formatAmount(
+          swapAmount,
+          swapTokenInfo.decimals,
+          4,
+          true
+        )} ${swapTokenInfo.symbol}!`,
+        setPendingTxns,
+      })
+        .then(async () => {})
+        .finally(() => {
+          setIsSubmitting(false);
+        });
+      return;
+    }
+
+    const params =
+      swapTokenAddress === AddressZero
+        ? [minWeightToken.address, minGlp, 0, 0]
+        : [swapTokenAddress, "0x612777Eea37a44F7a95E3B101C39e1E2695fa6C2", parseEther(swapValue).toString(), 0, 0, 0];
+
+    callContract(chainId, contractOapRouter, method, params, {
       value,
       sentMsg: t`Buy submitted.`,
       failMsg: t`Buy failed.`,
@@ -1190,9 +1258,7 @@ export default function GlpSwap(props) {
                 <tr key={token.symbol}>
                   <td>
                     <div className="App-card-title-info">
-                      <div className="App-card-title-info-icon">
-                        {/* <img src={tokenImage} alt={token.symbol} width="40px" /> */}
-                      </div>
+                      <div className="App-card-title-info-icon"></div>
                       <div className="App-card-title-info-text">
                         <div className="App-card-info-title">{token.name}</div>
                         <div className="App-card-info-subtitle">{token.symbol}</div>
@@ -1325,7 +1391,6 @@ export default function GlpSwap(props) {
                   return "";
               }
             }
-            // const tokenImage = importImage("ic_" + token.symbol.toLowerCase() + "_24.svg");
             return (
               <div className="App-card" key={token.symbol}>
                 <div className="App-card-title">
@@ -1337,7 +1402,6 @@ export default function GlpSwap(props) {
                     </div>
                   </div>
                 </div>
-                {/* <div className="App-card-divider" /> */}
                 <div className="App-card-content">
                   <div className="App-card-row">
                     <div className="label">

@@ -73,11 +73,6 @@ export async function callContract(
 
     const [message, type, errorData] = extractError(e);
 
-    console.log("message", message);
-    console.log("========");
-    console.log("type", type);
-    console.log("========");
-    console.log("error data", errorData);
     switch (type) {
       case NOT_ENOUGH_FUNDS:
         failMsg = (
