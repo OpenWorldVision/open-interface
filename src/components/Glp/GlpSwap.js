@@ -42,8 +42,15 @@ import glp24Icon from "img/ic_gmx_24.svg";
 import logoOAP from "img/logo_oap_white.svg";
 
 import ExternalLink from "components/ExternalLink/ExternalLink";
-import { ARBITRUM, getChainName, IS_NETWORK_DISABLED } from "config/chains";
-import { getNativeToken, getToken, getTokens, getWhitelistedTokens, getWrappedToken } from "config/tokens";
+import { ARBITRUM, getChainName, IS_NETWORK_DISABLED, TESTNET } from "config/chains";
+import {
+  getNativeToken,
+  getToken,
+  getTokenBySymbol,
+  getTokens,
+  getWhitelistedTokens,
+  getWrappedToken,
+} from "config/tokens";
 import { approveTokens, useInfoTokens } from "domain/tokens";
 import { getTokenInfo, getUsd } from "domain/tokens/utils";
 import { parseEther } from "ethers/lib/utils";
@@ -189,7 +196,6 @@ export default function GlpSwap(props) {
       fetcher: contractFetcher(library, Token),
     }
   );
-  console.log("wtf", tokenAllowanceOap);
 
   const { data: lastPurchaseTime } = useSWR(
     [`GlpSwap:lastPurchaseTime:${active}`, chainId, glpManagerAddress, "lastAddedAt", account || PLACEHOLDER_ACCOUNT],
@@ -282,12 +288,18 @@ export default function GlpSwap(props) {
   const swapAmount = parseValue(swapValue, swapToken && swapToken.decimals);
   const glpAmount = parseValue(glpValue, GLP_DECIMALS);
 
-  const needApproval =
-    isBuying &&
-    swapTokenAddress !== AddressZero &&
-    tokenAllowance &&
-    swapAmount &&
-    (swapAmount.gt(tokenAllowance) || swapAmount.gt(tokenAllowanceOap));
+  let needApproval = false;
+  if (swapTokenAddress === AddressZero) {
+    needApproval =
+      isBuying && tokenAllowance && swapAmount && (swapAmount.gt(tokenAllowance) || swapAmount.gt(tokenAllowanceOap));
+  } else {
+    needApproval =
+      isBuying &&
+      swapTokenAddress !== AddressZero &&
+      tokenAllowance &&
+      swapAmount &&
+      (swapAmount.gt(tokenAllowance) || swapAmount.gt(tokenAllowanceOap));
+  }
 
   const swapUsdMin = getUsd(swapAmount, swapTokenAddress, false, infoTokens);
   const glpUsdMax = glpAmount && glpPrice ? glpAmount.mul(glpPrice).div(expandDecimals(1, GLP_DECIMALS)) : undefined;
@@ -576,6 +588,32 @@ export default function GlpSwap(props) {
   };
 
   const approveFromToken = () => {
+    if (swapToken.address === AddressZero) {
+      approveTokens({
+        setIsApproving,
+        library,
+        tokenAddress: getTokenBySymbol(chainId, "WBNB").address,
+        spender: glpManagerAddress,
+        chainId: chainId,
+        onApproveSubmitted: () => {
+          setIsWaitingForApproval(true);
+        },
+        infoTokens,
+        getTokenInfo,
+      });
+      approveTokens({
+        setIsApproving,
+        library,
+        tokenAddress: getTokenBySymbol(chainId, "WBNB").address,
+        spender: oapRouterAddress,
+        chainId: chainId,
+        onApproveSubmitted: () => {
+          setIsWaitingForApproval(true);
+        },
+        infoTokens,
+        getTokenInfo,
+      });
+    }
     approveTokens({
       setIsApproving,
       library,
@@ -603,9 +641,13 @@ export default function GlpSwap(props) {
   };
 
   const buyGlp = () => {
-    // setIsSubmitting(true);
-
-    const minGlp = glpAmount.mul(BASIS_POINTS_DIVISOR - savedSlippageAmount).div(BASIS_POINTS_DIVISOR * 2);
+    setIsSubmitting(true);
+    let minGlp = 0;
+    if (chainId === TESTNET) {
+      minGlp = glpAmount.mul(BASIS_POINTS_DIVISOR - savedSlippageAmount).div(BASIS_POINTS_DIVISOR * 2);
+    } else {
+      minGlp = glpAmount.mul(BASIS_POINTS_DIVISOR - savedSlippageAmount).div(BASIS_POINTS_DIVISOR);
+    }
 
     const contractOapRouter = new ethers.Contract(oapRouterAddress, OapRouter.abi, library.getSigner());
     const contractRewardRouter = new ethers.Contract(rewardRouterAddress, RewardRouter.abi, library.getSigner());
@@ -634,8 +676,7 @@ export default function GlpSwap(props) {
     });
 
     if (minWeightToken.address === swapTokenAddress) {
-      const params =
-        swapTokenAddress === AddressZero ? [0, minGlp] : [swapTokenAddress, swapAmount.toString(), "0", "0"];
+      const params = [swapTokenAddress, swapAmount.toString(), "0", "0"];
       callContract(chainId, contractRewardRouter, methodRewardRouter, params, {
         value,
         sentMsg: t`Buy submitted.`,
@@ -654,11 +695,10 @@ export default function GlpSwap(props) {
         });
       return;
     }
-
     const params =
       swapTokenAddress === AddressZero
         ? [minWeightToken.address, minGlp, 0, 0]
-        : [swapTokenAddress, "0x612777Eea37a44F7a95E3B101C39e1E2695fa6C2", parseEther(swapValue).toString(), 0, 0, 0];
+        : [swapTokenAddress, minWeightToken.address, parseEther(swapValue).toString(), 0, 0, 0];
 
     callContract(chainId, contractOapRouter, method, params, {
       value,
