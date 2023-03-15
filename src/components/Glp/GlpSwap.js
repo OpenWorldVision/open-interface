@@ -695,9 +695,10 @@ export default function GlpSwap(props) {
         });
       return;
     }
+    let _minGlp = chainId === TESTNET ? 0 : minGlp;
     const params =
       swapTokenAddress === AddressZero
-        ? [minWeightToken.address, minGlp, 0, 0]
+        ? [minWeightToken.address, _minGlp, 0, 0]
         : [swapTokenAddress, minWeightToken.address, parseEther(swapValue).toString(), 0, 0, 0];
 
     callContract(chainId, contractOapRouter, method, params, {
