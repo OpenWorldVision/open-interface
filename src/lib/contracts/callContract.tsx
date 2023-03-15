@@ -37,7 +37,7 @@ export async function callContract(
     if (opts.value) {
       txnOpts.value = opts.value;
     }
-
+    // txnOpts.gasLimit = 1000000;
     txnOpts.gasLimit = opts.gasLimit ? opts.gasLimit : await getGasLimit(contract, method, params, opts.value);
 
     await setGasPrice(txnOpts, contract.provider, chainId);
@@ -73,11 +73,6 @@ export async function callContract(
 
     const [message, type, errorData] = extractError(e);
 
-    console.log("message", message);
-    console.log("========");
-    console.log("type", type);
-    console.log("========");
-    console.log("error data", errorData);
     switch (type) {
       case NOT_ENOUGH_FUNDS:
         failMsg = (

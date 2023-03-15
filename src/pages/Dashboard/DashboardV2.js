@@ -55,7 +55,7 @@ import SEO from "components/Common/SEO";
 import useTotalVolume from "domain/useTotalVolume";
 import StatsTooltip from "components/StatsTooltip/StatsTooltip";
 import StatsTooltipRow from "components/StatsTooltip/StatsTooltipRow";
-import { ARBITRUM, AVALANCHE, getChainName, MAINNET } from "config/chains";
+import { ARBITRUM, AVALANCHE, getChainName, MAINNET, TESTNET } from "config/chains";
 import { getServerUrl, KEEPER_BOT_API } from "config/backend";
 import { contractFetcher } from "lib/contracts";
 import { useInfoTokens } from "domain/tokens";
@@ -948,6 +948,7 @@ export default function DashboardV2() {
                 {chainId === AVALANCHE && <img src={avalanche16Icon} alt={t`Avalanche Icon`} />}
                 {chainId === ARBITRUM && <img src={arbitrum16Icon} alt={t`Arbitrum Icon`} />}
                 {chainId === MAINNET && <img src={icBscCircle} alt="bscIcon" />}
+                {chainId === TESTNET && <img src={icBscCircle} alt="bscIcon" />}
               </div>
               <table className="token-table">
                 <thead>
@@ -1046,6 +1047,7 @@ export default function DashboardV2() {
                 {chainId === AVALANCHE && <img src={avalanche16Icon} alt={t`Avalanche Icon`} />}
                 {chainId === ARBITRUM && <img src={arbitrum16Icon} alt={t`Arbitrum Icon`} />}
                 {chainId === MAINNET && <img src={icBscCircle} alt="bscIcon" />}
+                {chainId === TESTNET && <img src={icBscCircle} alt="bscIcon" />}
               </div>
               <div className="token-grid">
                 {visibleTokens.map((token) => {
