@@ -48,6 +48,7 @@ body {
   --buttonLightBackground: #dfe7fb;
   --buttonDarkBackground: #375bd2;
   --buttonDarkBackground2: #375bd2;
+  --buttonDarkBackground3: #375bd2;
   --dividerColor: #adbdef;
   --tooltipBackgroundColor: #dfe7fb;
   --logoUrl: url("/src/img/logo_GMX.svg");
@@ -98,6 +99,7 @@ body.dark-theme {
   --buttonLightBackground: #1a2b6b;
   --buttonDarkBackground: #dfe7fb;
   --buttonDarkBackground2: #0f1943;
+  --buttonDarkBackground3: #1a2b6b;
   --dividerColor: #0f1a44;
   --tooltipBackgroundColor: #1a2b6b;
   --logoUrl: url("/src/img/logo_open_white.svg");

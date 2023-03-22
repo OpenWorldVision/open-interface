@@ -2401,7 +2401,7 @@ export default function SwapBox(props) {
                       {!hasZeroBorrowFee && (
                         <div>
                           <Trans>
-                            The borrow fee is calculated as (assets borrowed) / (total assets in pool) * 0.01% per hour.
+                            The borrow fee is calculated as (assets borrowed) / (total assets in pool) * 0.02% per hour.
                           </Trans>
                           <br />
                           <br />

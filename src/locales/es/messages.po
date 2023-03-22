@@ -3078,7 +3078,7 @@ msgid "The address of the esOPEN (IOU) token is {esGmxIouAddress}."
 msgstr "La dirección del token esOPEN (IOU) es {esGmxIouAddress}."
 
 #: src/components/Exchange/SwapBox.js
-msgid "The borrow fee is calculated as (assets borrowed) / (total assets in pool) * 0.01% per hour."
+msgid "The borrow fee is calculated as (assets borrowed) / (total assets in pool) * 0.02% per hour."
 msgstr ""
 
 #: src/pages/ClaimEsGmx/ClaimEsGmx.js
