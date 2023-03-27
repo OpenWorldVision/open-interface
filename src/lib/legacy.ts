@@ -1389,8 +1389,8 @@ export function getHomeUrl() {
 }
 
 export function getAppBaseUrl() {
-  if (isLocal()) {
-    return "http://localhost:3011/#";
+  if (isDevelopment()) {
+    return window.location.origin + "/#";
   }
 
   return "https://app.openworld.vision/#";

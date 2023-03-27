@@ -386,6 +386,9 @@ function FullApp() {
     setRedirectModalVisible(true);
     setSelectedToPage(to);
   };
+  const hideRedirectModal = () => {
+    setRedirectModalVisible(false);
+  };
 
   useEffect(() => {
     const checkPendingTxns = async () => {
@@ -587,6 +590,12 @@ function FullApp() {
               <Route exact path="/complete_account_transfer/:sender/:receiver">
                 <CompleteAccountTransfer setPendingTxns={setPendingTxns} />
               </Route>
+              <Route exact path="/referral-terms">
+                <ReferralTerms />
+              </Route>
+              <Route exact path="/terms-and-conditions">
+                <TermsAndConditions />
+              </Route>
               <Route path="*">
                 <PageNotFound />
               </Route>
@@ -614,6 +623,8 @@ function FullApp() {
         setShouldHideRedirectModal={setShouldHideRedirectModal}
         shouldHideRedirectModal={shouldHideRedirectModal}
         removeRedirectPopupTimestamp={removeRedirectPopupTimestamp}
+        selectedToPage={selectedToPage}
+        hideRedirectModal={hideRedirectModal}
       />
       <ModalIncomingFeature />
       <Modal

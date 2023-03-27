@@ -3,6 +3,8 @@ import Modal from "../Modal/Modal";
 import Checkbox from "../Checkbox/Checkbox";
 import { t, Trans } from "@lingui/macro";
 import ExternalLink from "components/ExternalLink/ExternalLink";
+import { getAppBaseUrl } from "lib/legacy";
+import { NavLink } from "react-router-dom";
 
 export function RedirectPopupModal({
   redirectModalVisible,
@@ -12,12 +14,18 @@ export function RedirectPopupModal({
   setShouldHideRedirectModal,
   shouldHideRedirectModal,
   removeRedirectPopupTimestamp,
+  selectedToPage,
+  hideRedirectModal,
 }) {
   const onClickAgree = () => {
+    if (hideRedirectModal) {
+      hideRedirectModal();
+    }
     if (shouldHideRedirectModal) {
       setRedirectPopupTimestamp(Date.now());
     }
   };
+  const baseUrl = getAppBaseUrl();
 
   return (
     <Modal
@@ -41,10 +49,9 @@ export function RedirectPopupModal({
         <ExternalLink href="https://wiki.openworld.vision/app-links">docs</ExternalLink>.
         <br />
         <br />
-        By clicking Agree you accept the <ExternalLink href="https://gmx.io/#/terms-and-conditions">
+        By clicking Agree you accept the <ExternalLink href={baseUrl + "/terms-and-conditions"}>
           T&Cs
-        </ExternalLink>{" "}
-        and <ExternalLink href="https://gmx.io/#/referral-terms">Referral T&Cs</ExternalLink>.
+        </ExternalLink> and <ExternalLink href={baseUrl + "/referral-terms"}>Referral T&Cs</ExternalLink>.
         <br />
         <br />
       </Trans>
@@ -53,9 +60,9 @@ export function RedirectPopupModal({
           <Trans>Don't show this message again for 30 days.</Trans>
         </Checkbox>
       </div>
-      <ExternalLink href={appRedirectUrl} className="App-cta Exchange-swap-button" onClick={() => onClickAgree()}>
+      <NavLink to={selectedToPage} className="App-cta Exchange-swap-button" onClick={() => onClickAgree()}>
         <Trans>Agree</Trans>
-      </ExternalLink>
+      </NavLink>
     </Modal>
   );
 }
