@@ -9,7 +9,7 @@ export default function TermsAndConditions() {
     <SEO title={getPageTitle("Terms and Conditions")}>
       <div className="default-container Page page-layout">
         <div>
-          <div className="Page-title-section">
+          <div className="Page-title-section center">
             <div className="Page-title">OPEN</div>
             <div className="Page-description">Terms and Conditions</div>
             <div className="Page-description">Last modified: March 27, 2023</div>

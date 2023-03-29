@@ -34,9 +34,6 @@ export function RedirectPopupModal({
       setIsVisible={setRedirectModalVisible}
       label={t`Launch App`}
     >
-      <Trans>You are leaving OPEN.io and will be redirected to a third party, independent website.</Trans>
-      <br />
-      <br />
       <Trans>
         The website is a community deployed and maintained instance of the open source{" "}
         <ExternalLink href="https://github.com/OpenWorldVision/gmx-interface">OPEN front end</ExternalLink>, hosted and

@@ -37,3 +37,6 @@
 .Page-title-section{
   padding-left: 0;
 }
+.Page-title{
+  display: block;
+}
