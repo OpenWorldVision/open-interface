@@ -20,6 +20,9 @@
   margin-bottom: 1.5rem;
   color: var(--textColor2);
 }
+.body-text a{
+  color: var(--textColor2);
+}
 
 .body-title {
   font-weight: 500;
