@@ -28,9 +28,9 @@ export function HeaderLink({
   showRedirectModal,
 }: Props) {
   const isOnHomePage = window.location.pathname === "/";
-  const isHome = isHomeSite();
+  const isToTradePage = to === "/trade";
 
-  if (isHome && !(isHomeLink && !isOnHomePage)) {
+  if (isToTradePage && !(isHomeLink && !isOnHomePage)) {
     if (shouldShowRedirectModal(redirectPopupTimestamp)) {
       return (
         <div className={cx("a", className, { active: isHomeLink })} onClick={() => showRedirectModal(to)}>
@@ -38,11 +38,10 @@ export function HeaderLink({
         </div>
       );
     } else {
-      const baseUrl = getAppBaseUrl();
       return (
-        <a className={cx("a", className, { active: isHomeLink })} href={baseUrl + to}>
+        <NavLink activeClassName="active" className={cx(className)} exact={exact} to={to}>
           {children}
-        </a>
+        </NavLink>
       );
     }
   }

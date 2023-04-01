@@ -3,6 +3,7 @@ import Footer from "components/Footer/Footer";
 import SEO from "components/Common/SEO";
 import { getPageTitle } from "lib/legacy";
 import "./TermsAndConditions.css";
+import ExternalLink from "components/ExternalLink/ExternalLink";
 
 export default function TermsAndConditions() {
   return (
@@ -11,42 +12,50 @@ export default function TermsAndConditions() {
         <div>
           <div className="Page-title-section center">
             <div className="Page-title">OPEN</div>
-            <div className="Page-subtitle">Terms and Conditions</div>
-            <div className="Page-description">Last modified: August 1st, 2022</div>
+            <div className="Page-description">Terms and Conditions</div>
+            <div className="Page-description">Last modified: March 27, 2023</div>
           </div>
           <div className="content">
             <div className="section">
               <p className="body-text">
-                Welcome to OPEN.io ("we," "us," or "our"), the informational resource for OPEN Protocol, as defined
-                below.
+                Welcome to <ExternalLink href="https://openworld.vision/">OPEN</ExternalLink> ("we," "us," or "our"),
+                the informational resource for OPEN Protocol, as defined below.
               </p>
               <p className="body-text">
-                OPEN.io provides information and resources about the fundamentals of the decentralized non-custodial
-                protocol called the OPEN Protocol (the "OPEN Protocol," "Protocol," or "OPEN DApp"). OPEN.io is not an
-                available access point to the OPEN Protocol.
+                <ExternalLink href="https://openworld.vision/">OPEN</ExternalLink> provides information and resources
+                about the fundamentals of the decentralized non-custodial protocol called the OPEN Protocol (the "OPEN
+                Protocol," "Protocol," or "OPEN DApp").
+                <ExternalLink href="https://openworld.vision/">OPEN</ExternalLink> is not an available access point to
+                the OPEN Protocol.
               </p>
               <p className="body-text">
                 These Terms and Conditions and any other documents incorporated herein by reference (collectively, these
                 "Terms") to you or the company or other legal entity you represent ("you" or "your") explains the terms
-                and conditions by which you may access OPEN.io ("the Site") and app.OPEN.io ("the Interface"). Please do
-                not use the Site or Interface if you disagree with any of these Terms.
+                and conditions by which you may access{" "}
+                <ExternalLink href="https://openworld.vision/">OPEN</ExternalLink> ("the Site") and{" "}
+                <ExternalLink href="https://openworld.vision/">OPEN</ExternalLink> ("the Interface"). Please do not use
+                the Site or Interface if you disagree with any of these Terms.
               </p>
             </div>
             <div className="section">
               <h3 className="body-title">1. USE OF THE SITE AND THE INTERFACE</h3>
-              <p className="body-text">The OPEN.io site is for informational purposes only.</p>
               <p className="body-text">
-                OPEN.io is not part of any transaction on the blockchain networks underlying the OPEN Protocol; we do
-                not have possession, custody, or control over any crypto assets appearing on the Interface; and we do
-                not have possession, custody, or control over any user's funds. Further, we do not store, send, or
-                receive any crypto assets. You understand that when you interact with any OPEN Protocol smart contracts,
-                you always retain control over your crypto assets. We do not have access to your private keys.
+                The <ExternalLink href="https://openworld.vision/">OPEN</ExternalLink> site is for informational
+                purposes only.
+              </p>
+              <p className="body-text">
+                <ExternalLink href="https://openworld.vision/">OPEN</ExternalLink> is not part of any transaction on the
+                blockchain networks underlying the OPEN Protocol; we do not have possession, custody, or control over
+                any crypto assets appearing on the Interface; and we do not have possession, custody, or control over
+                any user's funds. Further, we do not store, send, or receive any crypto assets. You understand that when
+                you interact with any OPEN Protocol smart contracts, you always retain control over your crypto assets.
+                We do not have access to your private keys.
               </p>
               <ul className="list-style-none">
                 <li>
                   <p className="body-text">
-                    1.1. As a condition to accessing or using the Site or Interface, you represent and warrant to
-                    OPEN.io the following:
+                    1.1. As a condition to accessing or using the Site or Interface, you represent and warrant to{" "}
+                    <ExternalLink href="https://openworld.vision/">OPEN</ExternalLink> the following:
                   </p>
                   <ul className="list-style-none">
                     <li>
@@ -103,8 +112,9 @@ export default function TermsAndConditions() {
                         transaction, activity, event or other matter, including any rule, letter, order, judgment,
                         directive or other requirements, guidance, or guideline issued by any domestic or foreign
                         federal, provincial or state, municipal, local or other governmental, regulatory, judicial or
-                        administrative authority having jurisdiction over OPEN.io or you as otherwise duly enacted,
-                        enforceable by law, the common law or equity (collectively, "Applicable Laws"); or (b)
+                        administrative authority having jurisdiction over{" "}
+                        <ExternalLink href="https://openworld.vision/">OPEN</ExternalLink> or you as otherwise duly
+                        enacted, enforceable by law, the common law or equity (collectively, "Applicable Laws"); or (b)
                         contribute to or facilitate any illegal activity.
                       </p>
                     </li>
@@ -122,8 +132,10 @@ export default function TermsAndConditions() {
                       <p className="body-text">
                         1.2.1. From time to time, the Site or the Interface may be inaccessible or inoperable for any
                         reason, including, but not limited to: (a) equipment malfunctions; (b) periodic maintenance
-                        procedures or repairs that OPEN.io or any of its suppliers or contractors may undertake from
-                        time to time; (c) causes beyond OPEN.io's control or that OPEN.io could not reasonably foresee;
+                        procedures or repairs that <ExternalLink href="https://openworld.vision/">OPEN</ExternalLink> or
+                        any of its suppliers or contractors may undertake from time to time; (c) causes beyond
+                        openworld.vision's control or that{" "}
+                        <ExternalLink href="https://openworld.vision/">OPEN</ExternalLink> could not reasonably foresee;
                         (d) disruptions and temporary or permanent unavailability of underlying blockchain
                         infrastructure; or (e) unavailability of third-party service providers or external partners for
                         any reason;
@@ -148,11 +160,14 @@ export default function TermsAndConditions() {
                       <p className="body-text">
                         1.2.4. The pricing information provided on the Site or the Interface does not represent an
                         offer, a solicitation of an offer, or any advice regarding, or recommendation to enter into, a
-                        transaction with OPEN.io;
+                        transaction with openworld.vision;
                       </p>
                     </li>
                     <li>
-                      <p className="body-text">1.2.5. OPEN.io does not act as a broker or advisor for you;</p>
+                      <p className="body-text">
+                        1.2.5. <ExternalLink href="https://openworld.vision/">OPEN</ExternalLink> does not act as a
+                        broker or advisor for you;
+                      </p>
                     </li>
                     <li>
                       <p className="body-text">
@@ -192,7 +207,8 @@ export default function TermsAndConditions() {
               <p className="body-text">
                 You are required to pay all fees for transactions involving certain blockchain networks. These fees may
                 include gas costs and all other fees reflected on the Interface at your use, including trading-related
-                fees. OPEN.io does not receive fees for any blockchain transactions or using the Site or the Interface.
+                fees. <ExternalLink href="https://openworld.vision/">OPEN</ExternalLink> does not receive fees for any
+                blockchain transactions or using the Site or the Interface.
               </p>
             </div>
             <div className="section">
@@ -212,20 +228,22 @@ export default function TermsAndConditions() {
               <ul className="list-style-none">
                 <li>
                   <p className="body-text">
-                    4.1. OPEN.io own all rights, names, logos, and other marks used on the Site and the Interface,
-                    including, without limitation, any copyrights in and to any content, code, data, or other materials
-                    that you may access or use on or through the Site or the Interface; however, the code for the OPEN
-                    Protocol and the Interface (app.OPEN.io) deployed on IPFS is open-sourced. Except as expressly set
-                    forth herein, your use of or access to the Site or the Interface does not grant you any ownership or
-                    other rights therein.
+                    4.1. <ExternalLink href="https://openworld.vision/">OPEN</ExternalLink> own all rights, names,
+                    logos, and other marks used on the Site and the Interface, including, without limitation, any
+                    copyrights in and to any content, code, data, or other materials that you may access or use on or
+                    through the Site or the Interface; however, the code for the OPEN Protocol and the Interface
+                    (app.openworld.vision) deployed on IPFS is open-sourced. Except as expressly set forth herein, your
+                    use of or access to the Site or the Interface does not grant you any ownership or other rights
+                    therein.
                   </p>
                 </li>
                 <li>
                   <p className="body-text">
-                    4.2. OPEN.io may use and share your comments, bug reports, ideas, or other feedback that you may
-                    provide, including suggestions about how we might improve. You agree that OPEN.io is free to use or
-                    not use any feedback we receive from you as we see fit, including copying and sharing such feedback
-                    with third parties, without any obligation to you.
+                    4.2. <ExternalLink href="https://openworld.vision/">OPEN</ExternalLink> may use and share your
+                    comments, bug reports, ideas, or other feedback that you may provide, including suggestions about
+                    how we might improve. You agree that openworld.vision is free to use or not use any feedback we
+                    receive from you as we see fit, including copying and sharing such feedback with third parties,
+                    without any obligation to you.
                   </p>
                 </li>
               </ul>
@@ -235,23 +253,26 @@ export default function TermsAndConditions() {
               <ul className="list-style-none">
                 <li>
                   <p className="body-text">
-                    5.1. OPEN.io reserve the right, at our sole discretion, from time to time and with or without prior
-                    notice to you, to modify, suspend or disable (temporarily or permanently) the Site or our subdomain
-                    to the Interface, in whole or in part, for any reason whatsoever, including, without limitation.
-                    Upon termination of your access, your right to use the Site or the Interface from our subdomain will
-                    immediately cease. However, it would still be accessible via a third party since we do not host or
-                    own its code. OPEN.io will not be liable for any losses suffered by you resulting from any
-                    modification to the Site or the Interface or from any modification, suspension, or termination, for
-                    any reason, of your access to all or any portion of the Site or the Interface.
+                    5.1. <ExternalLink href="https://openworld.vision/">OPEN</ExternalLink> reserve the right, at our
+                    sole discretion, from time to time and with or without prior notice to you, to modify, suspend or
+                    disable (temporarily or permanently) the Site or our subdomain to the Interface, in whole or in
+                    part, for any reason whatsoever, including, without limitation. Upon termination of your access,
+                    your right to use the Site or the Interface from our subdomain will immediately cease. However, it
+                    would still be accessible via a third party since we do not host or own its code.{" "}
+                    <ExternalLink href="https://openworld.vision/">OPEN</ExternalLink> will not be liable for any losses
+                    suffered by you resulting from any modification to the Site or the Interface or from any
+                    modification, suspension, or termination, for any reason, of your access to all or any portion of
+                    the Site or the Interface.
                   </p>
                 </li>
                 <li>
                   <p className="body-text">
-                    5.2. OPEN.io may revise these Terms from time to time. We will notify you by updating the date at
-                    the top of the Terms and maintaining a current version. The most current version of the Terms will
-                    always be at https://wiki.openworld.vision. All modifications will be effective when they are
-                    posted. By continuing to access or use the Site or the Interface after those revisions become
-                    effective, you agree to be bound by the revised Terms.
+                    5.2. <ExternalLink href="https://openworld.vision/">OPEN</ExternalLink> may revise these Terms from
+                    time to time. We will notify you by updating the date at the top of the Terms and maintaining a
+                    current version. The most current version of the Terms will always be at
+                    https://wiki.openworld.vision. All modifications will be effective when they are posted. By
+                    continuing to access or use the Site or the Interface after those revisions become effective, you
+                    agree to be bound by the revised Terms.
                   </p>
                 </li>
               </ul>
@@ -262,16 +283,17 @@ export default function TermsAndConditions() {
                 <li>
                   <p className="body-text">
                     6.1. The use of technology related to blockchain, smart contracts, and cryptocurrencies, among
-                    others, entails a risk that by accessing transactions, you are assuming. OPEN.io does not own or
-                    control any underlying software through which blockchain networks are formed. The software
-                    underlying blockchain networks are open-source so anyone can use, copy, modify, and distribute it.
-                    By using the Interface, you acknowledge and agree:
+                    others, entails a risk that by accessing transactions, you are assuming.{" "}
+                    <ExternalLink href="https://openworld.vision/">OPEN</ExternalLink> does not own or control any
+                    underlying software through which blockchain networks are formed. The software underlying blockchain
+                    networks are open-source so anyone can use, copy, modify, and distribute it. By using the Interface,
+                    you acknowledge and agree:
                   </p>
                   <ul className="list-style-none">
                     <li>
                       <p className="body-text">
-                        6.1.1. That OPEN.io is not responsible for the operation of the open-source software and
-                        networks underlying the Interface;
+                        6.1.1. That <ExternalLink href="https://openworld.vision/">OPEN</ExternalLink> is not
+                        responsible for the operation of the open-source software and networks underlying the Interface;
                       </p>
                     </li>
                     <li>
@@ -286,24 +308,28 @@ export default function TermsAndConditions() {
                         those commonly referred to as "forks," which may materially affect the Interface. You are
                         responsible for securing your private key(s). We do not have access to your private key(s);
                         losing control of your private key(s) will permanently and irreversibly deny you access to any
-                        blockchain-based network. Neither OPEN.io nor any other person or entity will be able to
-                        retrieve or protect your digital assets. If your private key(s) are lost, you will not be able
-                        to transfer your digital assets to any blockchain address or wallet. If this occurs, you will
-                        not be able to realize any value or utility from the digital assets you may hold.
+                        blockchain-based network. Neither{" "}
+                        <ExternalLink href="https://openworld.vision/">OPEN</ExternalLink> nor any other person or
+                        entity will be able to retrieve or protect your digital assets. If your private key(s) are lost,
+                        you will not be able to transfer your digital assets to any blockchain address or wallet. If
+                        this occurs, you will not be able to realize any value or utility from the digital assets you
+                        may hold.
                       </p>
                     </li>
                   </ul>
                 </li>
                 <li>
                   <p className="body-text">
-                    6.2. OPEN.io is not responsible for the content of any third party, including, but not limited to,
-                    information, materials, products, or services that OPEN.io does not own or control. In addition,
-                    third parties may offer promotions related to your access and use of the Interface. OPEN.io does not
-                    endorse or assume any responsibility for such resources or promotions. Suppose you access any such
-                    resources or participate in any such promotions. In that case, you do so at your own risk and
-                    understand that these Terms do not apply to your dealings or relationships with any third parties.
-                    You expressly relieve OPEN.io of all liability arising from using such resources or participating in
-                    such promotions.
+                    6.2. <ExternalLink href="https://openworld.vision/">OPEN</ExternalLink> is not responsible for the
+                    content of any third party, including, but not limited to, information, materials, products, or
+                    services that <ExternalLink href="https://openworld.vision/">OPEN</ExternalLink> does not own or
+                    control. In addition, third parties may offer promotions related to your access and use of the
+                    Interface. <ExternalLink href="https://openworld.vision/">OPEN</ExternalLink> does not endorse or
+                    assume any responsibility for such resources or promotions. Suppose you access any such resources or
+                    participate in any such promotions. In that case, you do so at your own risk and understand that
+                    these Terms do not apply to your dealings or relationships with any third parties. You expressly
+                    relieve <ExternalLink href="https://openworld.vision/">OPEN</ExternalLink> of all liability arising
+                    from using such resources or participating in such promotions.
                   </p>
                 </li>
                 <li>
@@ -330,11 +356,12 @@ export default function TermsAndConditions() {
                 </li>
                 <li>
                   <p className="body-text">
-                    6.6. You hereby assume and agree that OPEN.io will have no responsibility or liability for the risks
-                    in Section 9. You hereby irrevocably waive, release and discharge all claims, whether known or
-                    unknown to you, against OPEN.io, its affiliates, and their respective shareholders, members,
-                    directors, officers, employees, agents, representatives, suppliers, and contractors related to any
-                    of the risks set forth in this Section 6.
+                    6.6. You hereby assume and agree that{" "}
+                    <ExternalLink href="https://openworld.vision/">OPEN</ExternalLink> will have no responsibility or
+                    liability for the risks in Section 9. You hereby irrevocably waive, release and discharge all
+                    claims, whether known or unknown to you, against openworld.vision, its affiliates, and their
+                    respective shareholders, members, directors, officers, employees, agents, representatives,
+                    suppliers, and contractors related to any of the risks set forth in this Section 6.
                   </p>
                 </li>
               </ul>
@@ -359,7 +386,7 @@ export default function TermsAndConditions() {
                     <li>
                       <p className="body-text">
                         7.1.2. Engage in transactions involving items that infringe or violate any copyright, trademark,
-                        right of publicity, privacy, or any other proprietary right of OPEN.io;
+                        right of publicity, privacy, or any other proprietary right of openworld.vision;
                       </p>
                     </li>
                     <li>
@@ -390,8 +417,8 @@ export default function TermsAndConditions() {
                     </li>
                     <li>
                       <p className="body-text">
-                        7.1.6. Harass, abuse, or harm another person or entity, including OPEN.io's collaborator and
-                        service providers;
+                        7.1.6. Harass, abuse, or harm another person or entity, including openworld.vision's
+                        collaborator and service providers;
                       </p>
                     </li>
                     <li>
@@ -414,11 +441,12 @@ export default function TermsAndConditions() {
             <div className="section">
               <h3 className="body-title">8. DISCLOSURES; DISCLAIMERS</h3>
               <p className="body-text">
-                OPEN.io is an informational site for the OPEN Protocol. OPEN.io does not operate an exchange platform or
-                offer trade execution or clearing services and has no oversight, involvement, or control concerning your
-                transactions using the Interface. All transactions between users of the Interface are executed
-                peer-to-peer directly between the users' blockchain addresses through a third-party developed
-                open-source smart contract.
+                <ExternalLink href="https://openworld.vision/">OPEN</ExternalLink> is an informational site for the OPEN
+                Protocol. <ExternalLink href="https://openworld.vision/">OPEN</ExternalLink> does not operate an
+                exchange platform or offer trade execution or clearing services and has no oversight, involvement, or
+                control concerning your transactions using the Interface. All transactions between users of the
+                Interface are executed peer-to-peer directly between the users' blockchain addresses through a
+                third-party developed open-source smart contract.
               </p>
               <p className="body-text">
                 You are responsible for complying with all Applicable Laws that govern your Perpetual Contracts. As a
@@ -427,41 +455,44 @@ export default function TermsAndConditions() {
                 Contracts using the Interface.
               </p>
               <p className="body-text">
-                You understand that OPEN.io is not registered or licensed by any regulatory agency or authority. No such
-                agency or authority has reviewed or approved the use of the Site or the Interface.
+                You understand that <ExternalLink href="https://openworld.vision/">OPEN</ExternalLink> is not registered
+                or licensed by any regulatory agency or authority. No such agency or authority has reviewed or approved
+                the use of the Site or the Interface.
               </p>
               <p className="body-text">
-                You agree that the Site and the Interface are provided on an "AS IS" and "AS AVAILABLE" basis. OPEN.io
-                makes no guarantees of any kind or connection with the Site or the Interface.
+                You agree that the Site and the Interface are provided on an "AS IS" and "AS AVAILABLE" basis.{" "}
+                <ExternalLink href="https://openworld.vision/">OPEN</ExternalLink> makes no guarantees of any kind or
+                connection with the Site or the Interface.
               </p>
             </div>
             <div className="section">
               <h3 className="body-title">9. LIMITATION OF LIABILITY</h3>
               <p className="body-text">
-                In no event shall OPEN.io, its affiliates, its suppliers and contractors, and its affiliates',
+                In no event shall openworld.vision, its affiliates, its suppliers and contractors, and its affiliates',
                 suppliers' and contractors' respective stockholders, members, directors, officers, managers, employees,
                 attorneys, agents, representatives, suppliers, and contractors shall be liable for any direct, indirect,
                 incidental, special, punitive, consequential or similar damages or liabilities whatsoever (including,
                 without limitation, damages for loss of fiat, assets, data, information, revenue, opportunities, use,
                 goodwill, profits or other business or financial benefit) arising out of or in connection with the Site
-                or the Interface, or other item provided by or on behalf of OPEN.io, whether under contract, tort
-                (including negligence), civil liability, statute, strict liability, breach of warranties, or under any
-                other theory of liability, and whether or not we have been advised of, knew of or should have known of
-                the possibility of such damages and notwithstanding any failure of the essential purpose of these Terms
-                or any limited remedy hereunder nor is OPEN.io in any way responsible for the execution or settlement of
-                transactions between users of the Interface.
+                or the Interface, or other item provided by or on behalf of openworld.vision, whether under contract,
+                tort (including negligence), civil liability, statute, strict liability, breach of warranties, or under
+                any other theory of liability, and whether or not we have been advised of, knew of or should have known
+                of the possibility of such damages and notwithstanding any failure of the essential purpose of these
+                Terms or any limited remedy hereunder nor is{" "}
+                <ExternalLink href="https://openworld.vision/">OPEN</ExternalLink> in any way responsible for the
+                execution or settlement of transactions between users of the Interface.
               </p>
               <p className="body-text">
-                In no event shall OPEN.io's aggregate liability arising out of or in connection with the Site or
-                Interface exceed one thousand Singapore Dollars (1,000.00 SGD).
+                In no event shall openworld.vision's aggregate liability arising out of or in connection with the Site
+                or Interface exceed one thousand Singapore Dollars (1,000.00 SGD).
               </p>
             </div>
             <div className="section">
               <h3 className="body-title">10. INDEMNIFICATION</h3>
               <p className="body-text">
-                You will defend, indemnify, and hold harmless OPEN.io, its affiliates, members, member, managers,
-                employees, attorneys, representatives, suppliers, and contractors from any claim, demand, lawsuit,
-                action, proceeding, investigation, liability, damage, loss, cost or expense, including without
+                You will defend, indemnify, and hold harmless openworld.vision, its affiliates, members, member,
+                managers, employees, attorneys, representatives, suppliers, and contractors from any claim, demand,
+                lawsuit, action, proceeding, investigation, liability, damage, loss, cost or expense, including without
                 limitation reasonable attorneys' fees, arising out of or relating to (a) your use of or conduct in
                 connection with the Site or the Interface (b) your violation of these Terms; or (c) your misuse of the
                 Site or the Interface, or any smart contract and/or script related thereto; (d) your violation of any
@@ -477,13 +508,16 @@ export default function TermsAndConditions() {
             <div className="section">
               <h3 className="body-title">11. DISPUTE RESOLUTION & ARBITRATION</h3>
               <p className="body-text">
-                OPEN.io will use its best efforts to resolve potential disputes through informal, good faith
-                negotiations. If a potential dispute arises, you must contact us by sending a written notice of your
-                claim ("Notice") to OPEN.io on any of our official channels. The notice must (a) describe the nature and
-                basis of the claim and (b) set forth the specific relief sought. Our notice to you will be similar in
-                form to that described above. If you and OPEN.io cannot reach an agreement to resolve the claim within
-                sixty (60) days of your email, then you and OPEN.io agree to resolve the potential dispute according to
-                the process set forth below.
+                <ExternalLink href="https://openworld.vision/">OPEN</ExternalLink> will use its best efforts to resolve
+                potential disputes through informal, good faith negotiations. If a potential dispute arises, you must
+                contact us by sending a written notice of your claim ("Notice") to{" "}
+                <ExternalLink href="https://openworld.vision/">OPEN</ExternalLink> on any of our official channels. The
+                notice must (a) describe the nature and basis of the claim and (b) set forth the specific relief sought.
+                Our notice to you will be similar in form to that described above. If you and{" "}
+                <ExternalLink href="https://openworld.vision/">OPEN</ExternalLink> cannot reach an agreement to resolve
+                the claim within sixty (60) days of your email, then you and{" "}
+                <ExternalLink href="https://openworld.vision/">OPEN</ExternalLink> agree to resolve the potential
+                dispute according to the process set forth below.
               </p>
               <p className="body-text">
                 Any claim or controversy arising out of or relating to the Site, the Interface, or these Terms, or any
@@ -498,8 +532,9 @@ export default function TermsAndConditions() {
               </p>
               <p className="body-text">
                 Any claim arising out of or related to these Terms or the Site or the Interface must be filed within one
-                year after such claim arose; otherwise, the claim is permanently barred, which means that you and
-                OPEN.io will not have the right to assert the claim.
+                year after such claim arose; otherwise, the claim is permanently barred, which means that you and{" "}
+                <ExternalLink href="https://openworld.vision/">OPEN</ExternalLink> will not have the right to assert the
+                claim.
               </p>
             </div>
             <div className="section">
@@ -515,10 +550,11 @@ export default function TermsAndConditions() {
               <ul className="list-style-none">
                 <li>
                   <p className="body-text">
-                    13.1. Any right or remedy of OPEN.io set forth in these Terms is in addition to, and not in lieu of,
-                    any other right or remedy whether described in these Terms, under Applicable Law, at law, or in
-                    equity. The failure or delay of OPEN.io in exercising any right, power, or privilege under these
-                    Terms shall not operate as a waiver thereof.
+                    13.1. Any right or remedy of <ExternalLink href="https://openworld.vision/">OPEN</ExternalLink> set
+                    forth in these Terms is in addition to, and not in lieu of, any other right or remedy whether
+                    described in these Terms, under Applicable Law, at law, or in equity. The failure or delay of{" "}
+                    <ExternalLink href="https://openworld.vision/">OPEN</ExternalLink> in exercising any right, power,
+                    or privilege under these Terms shall not operate as a waiver thereof.
                   </p>
                 </li>
                 <li>
@@ -536,12 +572,12 @@ export default function TermsAndConditions() {
                 </li>
                 <li>
                   <p className="body-text">
-                    13.4. OPEN.io will have no responsibility or liability for any failure or delay in performance of
-                    the Site or the Interface, or any loss or damage that you may incur, due to any circumstance or
-                    event beyond our control, including without limitation any flood, extraordinary weather conditions,
-                    earthquake, or other act of God, fire, war, insurrection, riot, labor dispute, accident, any law,
-                    order regulation, direction, action or request of the government, communications, power failure, or
-                    equipment or software malfunction.
+                    13.4. <ExternalLink href="https://openworld.vision/">OPEN</ExternalLink> will have no responsibility
+                    or liability for any failure or delay in performance of the Site or the Interface, or any loss or
+                    damage that you may incur, due to any circumstance or event beyond our control, including without
+                    limitation any flood, extraordinary weather conditions, earthquake, or other act of God, fire, war,
+                    insurrection, riot, labor dispute, accident, any law, order regulation, direction, action or request
+                    of the government, communications, power failure, or equipment or software malfunction.
                   </p>
                 </li>
                 <li>
@@ -555,7 +591,8 @@ export default function TermsAndConditions() {
                 </li>
                 <li>
                   <p className="body-text">
-                    13.6. These Terms contain the entire agreement between you and OPEN.io and supersede all prior and
+                    13.6. These Terms contain the entire agreement between you and{" "}
+                    <ExternalLink href="https://openworld.vision/">OPEN</ExternalLink> and supersede all prior and
                     contemporaneous understandings between the parties regarding the Interface and the Site or the
                     Interface.
                   </p>
@@ -578,8 +615,8 @@ export default function TermsAndConditions() {
             <div className="section">
               <h3 className="body-title">CONTACT INFORMATION</h3>
               <p className="body-text">
-                If you have any questions about these Terms, the Site, or the Interface, please get in touch with
-                OPEN.io on any of our official channels.
+                If you have any questions about these Terms, the Site, or the Interface, please get in touch with{" "}
+                <ExternalLink href="https://openworld.vision/">OPEN</ExternalLink> on any of our official channels.
               </p>
             </div>
           </div>

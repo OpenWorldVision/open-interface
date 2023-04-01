@@ -55,7 +55,7 @@ export default function Footer({ showRedirectModal, redirectPopupTimestamp }) {
           })}
         </div>
         <div className="Footer-links">
-          {footerLinks[isHome ? "home" : "app"].map(({ external, text, link, isAppLink }) => {
+          {footerLinks["home"].map(({ external, text, link, isAppLink }) => {
             if (external) {
               return (
                 <a key={text} target="_blank" href={link} className="Footer-link" rel="noopener noreferrer">
