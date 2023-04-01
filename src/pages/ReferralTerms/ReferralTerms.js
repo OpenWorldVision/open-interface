@@ -152,9 +152,9 @@ export default function ReferralTerms() {
               <p className="body-text">
                 <ExternalLink href="https://openworld.vision/">OPEN</ExternalLink> may revise these Terms from time to
                 time. We will notify you by updating the date at the top of the Terms and maintaining a current version.
-                The most current version of the Terms will always be at https://gmx.io/referral-terms. All modifications
-                will be effective when they are posted. By using the Referral Program after those revisions become
-                effective, you agree to be bound by the revised Terms.
+                The most current version of the Terms will always be at https://app.openworld.vision/#/referral-terms.
+                All modifications will be effective when they are posted. By using the Referral Program after those
+                revisions become effective, you agree to be bound by the revised Terms.
               </p>
             </div>
             <div className="section">
