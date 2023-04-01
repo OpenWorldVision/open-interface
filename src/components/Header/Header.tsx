@@ -46,13 +46,13 @@ export function Header({
   const [isDrawerVisible, setIsDrawerVisible] = useState(false);
   const [isNativeSelectorModalVisible, setIsNativeSelectorModalVisible] = useState(false);
   const [width, setWidth] = useState(window.innerWidth);
-  
+
   const updateDimensions = () => {
-      setWidth(window.innerWidth);
-  }
+    setWidth(window.innerWidth);
+  };
   useEffect(() => {
-      window.addEventListener("resize", updateDimensions);
-      return () => window.removeEventListener("resize", updateDimensions);
+    window.addEventListener("resize", updateDimensions);
+    return () => window.removeEventListener("resize", updateDimensions);
   }, []);
 
   useEffect(() => {
@@ -66,7 +66,6 @@ export function Header({
       document.body.style.overflow = "unset";
     };
   }, [isDrawerVisible]);
-
 
   return (
     <>

@@ -21,6 +21,7 @@ import ModalIncomingFeature from "components/ModalIncomingFeature/ModalIncomingF
 import SwitchThemeButton from "components/Common/SwitchThemeButton";
 import Switch from "react-switch";
 import { IS_LIGHT_THEME } from "config/localStorage";
+import Modal from "components/Modal/Modal";
 
 type Props = {
   openSettings: () => void;
@@ -41,6 +42,7 @@ export function AppHeaderUser({
   showRedirectModal,
   onlyIcon: mobile,
 }: Props) {
+  const [isVisible, setIsVisible] = useState(true);
   const { chainId } = useChainId();
   const { active, account } = useWeb3React();
   const showConnectionOptions = !isHomeSite();
