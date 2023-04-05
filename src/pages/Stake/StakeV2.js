@@ -614,7 +614,7 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
 
   let { total: totalGmxSupply } = useTotalGmxSupply();
 
-  let { avax: avaxGmxStaked, arbitrum: arbitrumGmxStaked, total: totalGmxStaked } = useTotalGmxStaked();
+  let { avax: avaxGmxStaked, total: totalGmxStaked } = useTotalGmxStaked();
 
   const gmxSupplyUrl = getServerUrl(chainId, "/open_supply");
   const { data: openSupply } = useSWR([gmxSupplyUrl], {
