@@ -37,7 +37,7 @@ import {
   STOP,
   SWAP,
   SWAP_OPTIONS,
-  SWAP_OPTIONS_HARMONY,
+  SWAP_OPTIONS_WITHOUT_SWAP,
   SWAP_ORDER_OPTIONS,
   USD_DECIMALS,
   USDG_ADDRESS,
@@ -1867,7 +1867,7 @@ export default function SwapBox(props) {
         <div>
           <Tab
             icons={SWAP_ICONS}
-            options={chainId === HARMONY ? SWAP_OPTIONS_HARMONY : SWAP_OPTIONS}
+            options={chainId === HARMONY || chainId === ARBITRUM ? SWAP_OPTIONS_WITHOUT_SWAP : SWAP_OPTIONS}
             optionLabels={SWAP_LABELS}
             option={swapOption}
             onChange={onSwapOptionChange}
