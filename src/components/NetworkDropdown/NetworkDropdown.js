@@ -3,10 +3,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Menu } from "@headlessui/react";
 import { t, Trans } from "@lingui/macro";
 import cx from "classnames";
-import { CHAIN_NAMES_MAP, HARMONY } from "config/chains";
+import { ARBITRUM, CHAIN_NAMES_MAP, HARMONY } from "config/chains";
 import { LANGUAGE_LOCALSTORAGE_KEY } from "config/localStorage";
 import bnbIcon from "img/ic_binance_logo.svg";
 import harmonyIcon from "img/harmony.jpeg";
+import arbitrumcon from "img/arbitrum.png";
 import { useChainId } from "lib/chains";
 import { defaultLocale, dynamicActivate, isTestLanguage, locales } from "lib/i18n";
 import { importImage } from "lib/legacy";
@@ -86,6 +87,10 @@ function NavIcons({ selectorLabel }) {
   switch (selectorLabel) {
     case CHAIN_NAMES_MAP[HARMONY]: {
       icon = harmonyIcon;
+      break;
+    }
+    case CHAIN_NAMES_MAP[ARBITRUM]: {
+      icon = arbitrumcon;
       break;
     }
     default: {
@@ -174,9 +179,9 @@ function NetworkMenuItems({ networkOptions, selectorLabel, onNetworkSelect }) {
             </div>
             <span className="network-dropdown-item-label">{network.label}</span>
           </div>
-          <div className="network-dropdown-menu-item-img">
+          {/* <div className="network-dropdown-menu-item-img">
             <div className={cx("active-dot", { [selectorLabel]: selectorLabel === network.label })} />
-          </div>
+          </div> */}
           {isActive && (
             <div className="network-dropdown-menu-item-img">
               <FontAwesomeIcon icon={faCheck} />
@@ -242,10 +247,14 @@ function NetworkModalContent({ networkOptions, onNetworkSelect, selectorLabel, s
               key={network.value}
             >
               <div className="menu-item-group">
-                <img src={networkIcon} alt={network.label} style={{ width: 24, height: 24, marginLeft: 4, borderRadius: 24/2 }} />
+                <img
+                  src={networkIcon}
+                  alt={network.label}
+                  style={{ width: 24, height: 24, marginLeft: 4, borderRadius: 24 / 2 }}
+                />
                 <span>{network.label}</span>
               </div>
-              <div className={cx("active-dot", { [selectorLabel]: selectorLabel === network.label })} />
+              {/* <div className={cx("active-dot", { [selectorLabel]: selectorLabel === network.label })} /> */}
               {isActive && (
                 <div className="network-dropdown-menu-item-img">
                   <FontAwesomeIcon icon={faCheck} fontSize={16} style={{ marginRight: 8 }} />

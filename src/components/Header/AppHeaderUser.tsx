@@ -42,7 +42,6 @@ export function AppHeaderUser({
   showRedirectModal,
   onlyIcon: mobile,
 }: Props) {
-  const [isVisible, setIsVisible] = useState(true);
   const { chainId } = useChainId();
   const { active, account } = useWeb3React();
   const showConnectionOptions = !isHomeSite();
@@ -58,6 +57,12 @@ export function AppHeaderUser({
       label: getChainName(HARMONY),
       value: HARMONY,
       icon: "harmony.jpeg",
+      color: "#264f79",
+    },
+    {
+      label: getChainName(ARBITRUM),
+      value: ARBITRUM,
+      icon: "arbitrum.png",
       color: "#264f79",
     },
   ];

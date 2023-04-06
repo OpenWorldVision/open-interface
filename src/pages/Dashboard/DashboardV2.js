@@ -544,7 +544,6 @@ export default function DashboardV2() {
           <div className="section-title-content">
             <div className="Page-title">
               <Trans>Stats</Trans> {chainId === AVALANCHE && <img src={avalanche24Icon} alt="avalanche24Icon" />}
-              {chainId === ARBITRUM && <img src={arbitrum24Icon} alt="arbitrum24Icon" />}
               {chainId === MAINNET && <img src={icBscCircle} alt="bscIcon" />}
             </div>
             <div className="Page-description">
@@ -738,7 +737,6 @@ export default function DashboardV2() {
           <div className="Tab-title-section">
             <div className="Page-title">
               <Trans>Tokens</Trans> {chainId === AVALANCHE && <img src={avalanche24Icon} alt="avalanche24Icon" />}
-              {chainId === ARBITRUM && <img src={arbitrum24Icon} alt="arbitrum24Icon" />}
               {chainId === MAINNET && <img src={icBscCircle} alt="bscIcon" />}
             </div>
             <div className="Page-description">
@@ -944,10 +942,7 @@ export default function DashboardV2() {
             </div>
             <div className="token-table-wrapper App-card">
               <div className="App-card-title">
-                <Trans>OAP Index Composition</Trans>{" "}
-                {chainId === AVALANCHE && <img src={avalanche16Icon} alt={t`Avalanche Icon`} />}
-                {chainId === ARBITRUM && <img src={arbitrum16Icon} alt={t`Arbitrum Icon`} />}
-                {chainId === MAINNET && <img src={icBscCircle} alt="bscIcon" />}
+                <Trans>OAP Index Composition</Trans> {chainId === MAINNET && <img src={icBscCircle} alt="bscIcon" />}
               </div>
               <table className="token-table">
                 <thead>
@@ -1042,10 +1037,7 @@ export default function DashboardV2() {
             </div>
             <div className="token-grid-container">
               <div className="App-card-title">
-                <Trans>OAP Index Composition</Trans>{" "}
-                {chainId === AVALANCHE && <img src={avalanche16Icon} alt={t`Avalanche Icon`} />}
-                {chainId === ARBITRUM && <img src={arbitrum16Icon} alt={t`Arbitrum Icon`} />}
-                {chainId === MAINNET && <img src={icBscCircle} alt="bscIcon" />}
+                <Trans>OAP Index Composition</Trans> {chainId === MAINNET && <img src={icBscCircle} alt="bscIcon" />}
               </div>
               <div className="token-grid">
                 {visibleTokens.map((token) => {
