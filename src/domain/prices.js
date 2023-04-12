@@ -56,7 +56,18 @@ function fillGaps(prices, periodSeconds) {
   return newPrices;
 }
 
-async function getChartPricesFromStats(chainId, symbol, period) {
+function formatBarInfo(bar) {
+  const { t, o: open, c: close, h: high, l: low } = bar;
+  return {
+    time: t + timezoneOffset,
+    open,
+    close,
+    high,
+    low,
+  };
+}
+
+export async function getChartPricesFromStats(chainId, symbol, period) {
   if (["WBTC", "WETH", "WAVAX"].includes(symbol)) {
     symbol = symbol.substr(1);
   } else if (symbol === "BTC.b") {
@@ -94,7 +105,7 @@ async function getChartPricesFromStats(chainId, symbol, period) {
   }
   const json = await res.json();
   let prices = json?.prices;
-  if (!prices || prices.length < 10) {
+  if (!prices || prices.length < 1) {
     throw new Error(`not enough prices data: ${prices?.length}`);
   }
 
@@ -109,13 +120,7 @@ async function getChartPricesFromStats(chainId, symbol, period) {
     );
   }
 
-  prices = prices.map(({ t, o: open, c: close, h: high, l: low }) => ({
-    time: t + timezoneOffset,
-    open,
-    close,
-    high,
-    low,
-  }));
+  prices = prices.map(formatBarInfo);
   return prices;
 }
 
@@ -216,11 +221,12 @@ export function useChartPrices(chainId, symbol, isStable, period, currentAverage
   let { data: prices, mutate: updatePrices } = useSWR(swrKey, {
     fetcher: async (...args) => {
       try {
-        return await getChainlinkChartPricesFromGraph(symbol, period);
+        return await getChartPricesFromStats(chainId, symbol, period);
       } catch (ex) {
         console.warn(ex);
         console.warn("Switching to graph chainlink data");
         try {
+          return await getChainlinkChartPricesFromGraph(symbol, period);
         } catch (ex2) {
           console.warn("getChainlinkChartPricesFromGraph failed");
           console.warn(ex2);
