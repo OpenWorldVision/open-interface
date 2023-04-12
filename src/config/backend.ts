@@ -1,6 +1,6 @@
 import { ARBITRUM, ARBITRUM_TESTNET, AVALANCHE, MAINNET } from "./chains";
 
-export const GMX_STATS_API_URL = "http://api.openworld.vision:8080/api/v1/gmx/stats";
+export const GMX_STATS_API_URL = "https://gmx-stats-jpixb.ondigitalocean.app/api";
 
 const BACKEND_URLS = {
   default: "https://gmx-server-mainnet.uw.r.appspot.com",
