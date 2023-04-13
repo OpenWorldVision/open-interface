@@ -1,7 +1,7 @@
 import { t, Trans } from "@lingui/macro";
 import StatsTooltipRow from "components/StatsTooltip/StatsTooltipRow";
 import Tooltip from "components/Tooltip/Tooltip";
-import { MAINNET } from "config/chains";
+import { ARBITRUM, MAINNET } from "config/chains";
 import { useOpenPrice } from "domain/hooks/useOpenPrice";
 import useOpenStakingInfo from "domain/hooks/useOpenStakingInfo";
 import { BigNumber } from "ethers";
@@ -212,7 +212,11 @@ function OpenStaking(props: Props) {
         <div className="App-card-options">
           <a
             className="App-button-option App-card-option"
-            href="https://pancakeswap.finance/swap?outputCurrency=0x27a339d9B59b21390d7209b78a839868E319301B"
+            href={
+              chainId === ARBITRUM
+                ? "https://app.uniswap.org/#/swap?inputCurrency=ETH&outputCurrency=0x58cb98a966f62aa6f2190eb3aa03132a0c3de3d5"
+                : "https://pancakeswap.finance/swap?outputCurrency=0x27a339d9B59b21390d7209b78a839868E319301B"
+            }
             target="_blank"
             rel="noreferrer"
           >

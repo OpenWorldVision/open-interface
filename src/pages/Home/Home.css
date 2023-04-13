@@ -258,11 +258,15 @@
   height: 3.1rem;
 }
 
-.Home-token-card-option-icon img {
+.Home-token-card-option-icon img.buy-oap-icon {
   margin-right: 0.8rem;
   content: var(--logoOAP);
 }
 
+.Home-token-card-option-icon img.buy-open-icon {
+  margin-right: 0.8rem;
+  content: var(--logoUrl);
+}
 .Home-token-card-option-title {
   font-weight: 700;
   font-size: 14px;
@@ -272,6 +276,7 @@
   margin-top: 2.325rem;
   font-weight: 700;
   letter-spacing: 0.05em;
+  position: relative;
 }
 
 .Home-token-card-option-apr {
