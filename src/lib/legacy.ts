@@ -1246,7 +1246,6 @@ export function getProcessedData(
 
   data.gmxBalance = balanceData.gmx;
   // data.gmxBalanceUsd = balanceData.gmx.mul(gmxPrice).div(expandDecimals(1, 18));
-  console.log(gmxSupply);
   data.gmxSupply = bigNumberify(gmxSupply);
 
   data.gmxSupplyUsd = data.gmxSupply.mul(gmxPrice).div(expandDecimals(1, 18));

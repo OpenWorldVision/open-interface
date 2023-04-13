@@ -30,6 +30,7 @@ type Props = {
 function OpenStaking(props: Props) {
   const { chainId } = useChainId();
   const { processedData, active, onStaking, onUnstaking } = props;
+
   const { openPrice } = useOpenPrice(chainId, {}, active);
   const {
     totalPooledOpen,
@@ -74,6 +75,13 @@ function OpenStaking(props: Props) {
   }, [myShares, totalShares]);
 
   const unstakeCountdown = Date.now() + timeleftToUnstake * 1000;
+
+  const buyURL = useMemo(() => {
+    if (chainId === 56) {
+      return "https://pancakeswap.finance/swap?outputCurrency=0x27a339d9B59b21390d7209b78a839868E319301B";
+    }
+    return "https://app.uniswap.org/#/swap?outputCurrency=0x58CB98A966F62aA6F2190eB3AA03132A0c3de3D5&inputCurrency=0xFd086bC7CD5C481DCC9C85ebE478A1C0b69FCbb9";
+  }, [chainId]);
 
   // Release in mainnet soon
 
@@ -210,16 +218,7 @@ function OpenStaking(props: Props) {
         )}
 
         <div className="App-card-options">
-          <a
-            className="App-button-option App-card-option"
-            href={
-              chainId === ARBITRUM
-                ? "https://app.uniswap.org/#/swap?inputCurrency=ETH&outputCurrency=0x58cb98a966f62aa6f2190eb3aa03132a0c3de3d5"
-                : "https://pancakeswap.finance/swap?outputCurrency=0x27a339d9B59b21390d7209b78a839868E319301B"
-            }
-            target="_blank"
-            rel="noreferrer"
-          >
+          <a className="App-button-option App-card-option" href={buyURL} target="_blank" rel="noreferrer">
             <Trans>Buy OPEN</Trans>
           </a>
           {active && (
