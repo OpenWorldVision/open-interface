@@ -48,6 +48,12 @@ export function AppHeaderUser({
   const [isDarkTheme, setIsDarkTheme] = useState(!JSON.parse(localStorage.getItem(IS_LIGHT_THEME) || `false`));
   const networkOptions = [
     {
+      label: getChainName(ARBITRUM),
+      value: ARBITRUM,
+      icon: "arbitrum.png",
+      color: "#264f79",
+    },
+    {
       label: getChainName(MAINNET),
       value: MAINNET,
       icon: "ic_bsc.svg",
@@ -57,12 +63,6 @@ export function AppHeaderUser({
       label: getChainName(HARMONY),
       value: HARMONY,
       icon: "harmony.jpeg",
-      color: "#264f79",
-    },
-    {
-      label: getChainName(ARBITRUM),
-      value: ARBITRUM,
-      icon: "arbitrum.png",
       color: "#264f79",
     },
   ];
