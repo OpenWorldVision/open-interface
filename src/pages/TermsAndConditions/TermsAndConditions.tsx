@@ -621,7 +621,7 @@ export default function TermsAndConditions() {
             </div>
           </div>
         </div>
-        <Footer />
+        <Footer showRedirectModal={false} redirectPopupTimestamp={0} />
       </div>
     </SEO>
   );

@@ -1123,6 +1123,7 @@ export default function GlpSwap(props) {
                 );
                 tokenFeeBps = feeBps;
               }
+              // console.log("info: ", infoTokens);
               const tokenInfo = getTokenInfo(infoTokens, token.address);
               let managedUsd;
               if (tokenInfo && tokenInfo.managedUsd) {
