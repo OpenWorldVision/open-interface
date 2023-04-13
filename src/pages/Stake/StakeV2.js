@@ -47,6 +47,7 @@ import UnstakeModal from "components/StakeV2/UnstakeModal";
 import StakeModal from "components/StakeV2/StakeModal";
 import OpenStaking from "components/StakeV2/OpenStaking";
 import icPig from "img/ic_pig.svg";
+import { parseEther } from "@ethersproject/units";
 
 const { AddressZero } = ethers.constants;
 
@@ -616,10 +617,11 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
 
   let { avax: avaxGmxStaked, total: totalGmxStaked } = useTotalGmxStaked();
 
-  const gmxSupplyUrl = getServerUrl(chainId, "/open_supply");
-  const { data: openSupply } = useSWR([gmxSupplyUrl], {
-    fetcher: (...args) => fetch(...args).then((res) => res.json()),
-  });
+  // const gmxSupplyUrl = getServerUrl(chainId, "/open_supply");
+  // const { data: openSupply } = useSWR([gmxSupplyUrl], {
+  //   fetcher: (...args) => fetch(...args).then((res) => res.json()),
+  // });
+  const openSupply = { supply: parseEther("10000000") };
 
   const isGmxTransferEnabled = true;
 
