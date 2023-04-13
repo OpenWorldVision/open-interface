@@ -256,7 +256,7 @@ const CONTRACTS = {
     SecondaryPriceFeed: "0x8BA9f0841cFA75d7e2c7a316b048b04c98C95cA4",
     FastPriceEvents: "0xbc215Bca8cD21d811504402BAd9Bd6875A5F57b5",
     OapRewardRouter: "0x100810a52cE9d6F4E0AC6BeBcC8B8442C55dA53b",
-    OpenStaking: "0x214cEc9402F81622Ee97837Ced73C43f4f7f4a89",
+    OpenStaking: "0xA93efF204Fd28846b81cE0399cF4FDD504B26FA4",
   },
   [AVALANCHE]: {
     // avalanche
