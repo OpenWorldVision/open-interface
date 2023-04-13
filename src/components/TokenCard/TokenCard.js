@@ -88,7 +88,7 @@ export default function TokenCard({ showRedirectModal, redirectPopupTimestamp })
                 rel="noreferrer"
                 className="default-btn"
               >
-                <Trans>Buy on {getChainName(chainId)}</Trans>
+                Buy on {getChainName(chainId)}
               </a>
             </div>
             <a
@@ -118,7 +118,7 @@ export default function TokenCard({ showRedirectModal, redirectPopupTimestamp })
           <div className="Home-token-card-option-action">
             <div className="buy">
               <BuyLink to="/buy_oap" className="default-btn" network={TESTNET}>
-                <Trans>Buy on {getChainName(chainId)}</Trans>
+                Buy on {getChainName(chainId)}
               </BuyLink>
             </div>
             <a
