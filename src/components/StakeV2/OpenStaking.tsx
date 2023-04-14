@@ -1,7 +1,7 @@
 import { t, Trans } from "@lingui/macro";
 import StatsTooltipRow from "components/StatsTooltip/StatsTooltipRow";
 import Tooltip from "components/Tooltip/Tooltip";
-import { MAINNET } from "config/chains";
+import { ARBITRUM, MAINNET } from "config/chains";
 import { useOpenPrice } from "domain/hooks/useOpenPrice";
 import useOpenStakingInfo from "domain/hooks/useOpenStakingInfo";
 import { BigNumber } from "ethers";
