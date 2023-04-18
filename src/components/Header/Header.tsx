@@ -142,7 +142,7 @@ export function Header({
                 setWalletModalVisible={setWalletModalVisible}
                 redirectPopupTimestamp={redirectPopupTimestamp}
                 showRedirectModal={showRedirectModal}
-                onlyIcon={width <= 650}
+                onlyIcon={width <= 690}
               />
             </div>
           </div>
