@@ -192,6 +192,19 @@ export function AppHeaderUser({
 
   return (
     <div className="App-header-user">
+      <HeaderLink
+        className="default-btn"
+        to="/buy_oap"
+        redirectPopupTimestamp={redirectPopupTimestamp}
+        showRedirectModal={showRedirectModal}
+      >
+        <FontAwesomeIcon icon={faCoins} />
+        {onlyIcon ? null : (
+          <div style={{ marginLeft: 8, fontWeight: 700 }}>
+            <Trans>Buy OAP</Trans>
+          </div>
+        )}
+      </HeaderLink>
       <div className="App-header-trade-link">
         <HeaderLink
           className="default-btn btn-trade"
