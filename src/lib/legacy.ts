@@ -70,8 +70,8 @@ export const LIMIT = "Limit";
 export const STOP = "Stop";
 export const LEVERAGE_ORDER_OPTIONS = [MARKET, LIMIT, STOP];
 export const SWAP_ORDER_OPTIONS = [MARKET, LIMIT];
-export const SWAP_OPTIONS = [LONG, SHORT, SWAP, BUY];
-export const SWAP_OPTIONS_HARMONY = [LONG, SHORT, BUY];
+export const SWAP_OPTIONS = [LONG, SHORT, SWAP];
+export const SWAP_OPTIONS_WITHOUT_SWAP = [LONG, SHORT];
 export const DEFAULT_SLIPPAGE_AMOUNT = 30;
 export const DEFAULT_HIGHER_SLIPPAGE_AMOUNT = 100;
 
@@ -1247,7 +1247,6 @@ export function getProcessedData(
 
   data.gmxBalance = balanceData.gmx;
   // data.gmxBalanceUsd = balanceData.gmx.mul(gmxPrice).div(expandDecimals(1, 18));
-  console.log(gmxSupply);
   data.gmxSupply = bigNumberify(gmxSupply);
 
   data.gmxSupplyUsd = data.gmxSupply.mul(gmxPrice).div(expandDecimals(1, 18));
@@ -1390,8 +1389,8 @@ export function getHomeUrl() {
 }
 
 export function getAppBaseUrl() {
-  if (isLocal()) {
-    return "http://localhost:3011/#";
+  if (isDevelopment()) {
+    return window.location.origin + "/#";
   }
 
   return "https://app.openworld.vision/#";

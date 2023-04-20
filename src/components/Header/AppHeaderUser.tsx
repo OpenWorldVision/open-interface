@@ -16,11 +16,12 @@ import { ARBITRUM, ARBITRUM_TESTNET, AVALANCHE, getChainName, HARMONY, MAINNET, 
 import { switchNetwork } from "lib/wallets";
 import { useChainId } from "lib/chains";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMoneyBillTransfer } from "@fortawesome/free-solid-svg-icons";
+import { faCoins, faMoneyBillTransfer } from "@fortawesome/free-solid-svg-icons";
 import ModalIncomingFeature from "components/ModalIncomingFeature/ModalIncomingFeature";
 import SwitchThemeButton from "components/Common/SwitchThemeButton";
 import Switch from "react-switch";
 import { IS_LIGHT_THEME } from "config/localStorage";
+import Modal from "components/Modal/Modal";
 
 type Props = {
   openSettings: () => void;
@@ -39,13 +40,19 @@ export function AppHeaderUser({
   disconnectAccountAndCloseSettings,
   redirectPopupTimestamp,
   showRedirectModal,
-  onlyIcon: mobile,
+  onlyIcon,
 }: Props) {
   const { chainId } = useChainId();
   const { active, account } = useWeb3React();
   const showConnectionOptions = !isHomeSite();
   const [isDarkTheme, setIsDarkTheme] = useState(!JSON.parse(localStorage.getItem(IS_LIGHT_THEME) || `false`));
   const networkOptions = [
+    {
+      label: getChainName(ARBITRUM),
+      value: ARBITRUM,
+      icon: "arbitrum.png",
+      color: "#264f79",
+    },
     {
       label: getChainName(MAINNET),
       value: MAINNET,
@@ -99,6 +106,19 @@ export function AppHeaderUser({
   if (!active) {
     return (
       <div className="App-header-user">
+        <HeaderLink
+          className="default-btn"
+          to="/buy_oap"
+          redirectPopupTimestamp={redirectPopupTimestamp}
+          showRedirectModal={showRedirectModal}
+        >
+          <FontAwesomeIcon icon={faCoins} />
+          {onlyIcon ? null : (
+            <div style={{ marginLeft: 8, fontWeight: 700 }}>
+              <Trans>Buy OAP</Trans>
+            </div>
+          )}
+        </HeaderLink>
         <div className={cx("App-header-trade-link", { "homepage-header": isHomeSite() })}>
           <HeaderLink
             className="default-btn"
@@ -107,7 +127,7 @@ export function AppHeaderUser({
             showRedirectModal={showRedirectModal}
           >
             <FontAwesomeIcon icon={faMoneyBillTransfer} />
-            {mobile ? null : (
+            {onlyIcon ? null : (
               <div style={{ marginLeft: 8, fontWeight: 700 }}>
                 <Trans>Trade</Trans>
               </div>
@@ -117,7 +137,7 @@ export function AppHeaderUser({
         {showConnectionOptions ? (
           <div className="connect-wallet">
             <ConnectWalletButton onClick={() => setWalletModalVisible(true)}>
-              {mobile ? null : <Trans>Connect Wallet</Trans>}
+              {onlyIcon ? null : <Trans>Connect Wallet</Trans>}
             </ConnectWalletButton>
             <div className="connect-wallet-divider" />
             <NetworkDropdown
@@ -132,7 +152,7 @@ export function AppHeaderUser({
           <LanguagePopupHome />
         )}
         <SwitchThemeButton
-          small={mobile}
+          small={onlyIcon}
           onClick={() => {
             setIsDarkTheme((prev) => {
               const newState = !prev;
@@ -172,6 +192,19 @@ export function AppHeaderUser({
 
   return (
     <div className="App-header-user">
+      <HeaderLink
+        className="default-btn"
+        to="/buy_oap"
+        redirectPopupTimestamp={redirectPopupTimestamp}
+        showRedirectModal={showRedirectModal}
+      >
+        <FontAwesomeIcon icon={faCoins} />
+        {onlyIcon ? null : (
+          <div style={{ marginLeft: 8, fontWeight: 700 }}>
+            <Trans>Buy OAP</Trans>
+          </div>
+        )}
+      </HeaderLink>
       <div className="App-header-trade-link">
         <HeaderLink
           className="default-btn btn-trade"
@@ -180,7 +213,7 @@ export function AppHeaderUser({
           showRedirectModal={showRedirectModal}
         >
           <FontAwesomeIcon icon={faMoneyBillTransfer} />
-          {mobile ? null : (
+          {onlyIcon ? null : (
             <div style={{ marginLeft: 8, fontWeight: 700 }}>
               <Trans>Trade</Trans>
             </div>
@@ -219,7 +252,7 @@ export function AppHeaderUser({
         <LanguagePopupHome />
       )}
       <SwitchThemeButton
-        small={mobile}
+        small={onlyIcon}
         onClick={() => {
           setIsDarkTheme((prev) => {
             const newState = !prev;

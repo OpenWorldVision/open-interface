@@ -11,10 +11,10 @@ export const ARBITRUM = 42161;
 export const HARMONY = 1666600000;
 
 // TODO take it from web3
-export const DEFAULT_CHAIN_ID = MAINNET;
+export const DEFAULT_CHAIN_ID = ARBITRUM;
 export const CHAIN_ID = DEFAULT_CHAIN_ID;
 
-export const SUPPORTED_CHAIN_IDS = [MAINNET, TESTNET, HARMONY];
+export const SUPPORTED_CHAIN_IDS = [MAINNET, TESTNET, HARMONY, ARBITRUM];
 
 if (isDevelopment()) {
   SUPPORTED_CHAIN_IDS.push(ARBITRUM_TESTNET);

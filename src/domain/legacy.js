@@ -510,21 +510,21 @@ export function useTotalOpenSupply() {
 }
 
 export function useTotalGmxStaked() {
-  const stakedGmxTrackerAddressArbitrum = getContract(ARBITRUM, "StakedGmxTracker");
+  // const stakedGmxTrackerAddressArbitrum = getContract(ARBITRUM, "StakedGmxTracker");
   const stakedGmxTrackerAddressAvax = getContract(AVALANCHE, "StakedGmxTracker");
   let totalStakedGmx = useRef(bigNumberify(0));
-  const { data: stakedGmxSupplyArbitrum, mutate: updateStakedGmxSupplyArbitrum } = useSWR(
-    [
-      `StakeV2:stakedGmxSupply:${ARBITRUM}`,
-      ARBITRUM,
-      getContract(ARBITRUM, "OPEN"),
-      "balanceOf",
-      stakedGmxTrackerAddressArbitrum,
-    ],
-    {
-      fetcher: contractFetcher(undefined, Token),
-    }
-  );
+  // const { data: stakedGmxSupplyArbitrum, mutate: updateStakedGmxSupplyArbitrum } = useSWR(
+  //   [
+  //     `StakeV2:stakedGmxSupply:${ARBITRUM}`,
+  //     ARBITRUM,
+  //     getContract(ARBITRUM, "OPEN"),
+  //     "balanceOf",
+  //     stakedGmxTrackerAddressArbitrum,
+  //   ],
+  //   {
+  //     fetcher: contractFetcher(undefined, Token),
+  //   }
+  // );
   const { data: stakedGmxSupplyAvax, mutate: updateStakedGmxSupplyAvax } = useSWR(
     [
       `StakeV2:stakedGmxSupply:${AVALANCHE}`,
@@ -539,18 +539,18 @@ export function useTotalGmxStaked() {
   );
 
   const mutate = useCallback(() => {
-    updateStakedGmxSupplyArbitrum();
+    // updateStakedGmxSupplyArbitrum();
     updateStakedGmxSupplyAvax();
-  }, [updateStakedGmxSupplyArbitrum, updateStakedGmxSupplyAvax]);
+  }, [updateStakedGmxSupplyAvax]);
 
-  if (stakedGmxSupplyArbitrum && stakedGmxSupplyAvax) {
-    let total = bigNumberify(stakedGmxSupplyArbitrum).add(stakedGmxSupplyAvax);
+  if (stakedGmxSupplyAvax) {
+    let total = stakedGmxSupplyAvax;
     totalStakedGmx.current = total;
   }
 
   return {
     avax: stakedGmxSupplyAvax,
-    arbitrum: stakedGmxSupplyArbitrum,
+    // arbitrum: stakedGmxSupplyArbitrum,
     total: totalStakedGmx.current,
     mutate,
   };

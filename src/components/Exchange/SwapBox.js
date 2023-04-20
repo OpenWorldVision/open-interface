@@ -37,7 +37,7 @@ import {
   STOP,
   SWAP,
   SWAP_OPTIONS,
-  SWAP_OPTIONS_HARMONY,
+  SWAP_OPTIONS_WITHOUT_SWAP,
   SWAP_ORDER_OPTIONS,
   USD_DECIMALS,
   USDG_ADDRESS,
@@ -1872,7 +1872,7 @@ export default function SwapBox(props) {
         <div>
           <Tab
             icons={SWAP_ICONS}
-            options={chainId === HARMONY ? SWAP_OPTIONS_HARMONY : SWAP_OPTIONS}
+            options={chainId === HARMONY || chainId === ARBITRUM ? SWAP_OPTIONS_WITHOUT_SWAP : SWAP_OPTIONS}
             optionLabels={SWAP_LABELS}
             option={swapOption}
             onChange={onSwapOptionChange}
@@ -2407,7 +2407,7 @@ export default function SwapBox(props) {
                       {!hasZeroBorrowFee && (
                         <div>
                           <Trans>
-                            The borrow fee is calculated as (assets borrowed) / (total assets in pool) * 0.01% per hour.
+                            The borrow fee is calculated as (assets borrowed) / (total assets in pool) * 0.02% per hour.
                           </Trans>
                           <br />
                           <br />

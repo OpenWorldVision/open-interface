@@ -15,9 +15,18 @@
 .RedirectModal .Modal-body .Checkbox .Checkbox-label {
   margin-left: 0.5rem;
 }
+a.App-cta {
+  background: var(--buttonDarkBackground3) !important;
+    color: #ffffff !important;
+}
+a {
+  color: var(--textColor6);
+}
 
 @media (max-width: 700px) {
   .RedirectModal .Modal-content {
     width: 90vw;
   }
 }
+
+

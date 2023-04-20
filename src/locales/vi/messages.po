@@ -3078,8 +3078,8 @@ msgid "The address of the esGMX (IOU) token is {esGmxIouAddress}."
 msgstr "The address of the esGMX (IOU) token is {esGmxIouAddress}."
 
 #: src/components/Exchange/SwapBox.js
-msgid "The borrow fee is calculated as (assets borrowed) / (total assets in pool) * 0.01% per hour."
-msgstr "Phí vay được tính là (tài sản vay) / (tổng tài sản trong nhóm) * 0.01% mỗi giờ."
+msgid "The borrow fee is calculated as (assets borrowed) / (total assets in pool) * 0.02% per hour."
+msgstr "Phí vay được tính là (tài sản vay) / (tổng tài sản trong nhóm) * 0.02% mỗi giờ."
 
 #: src/pages/ClaimEsGmx/ClaimEsGmx.js
 msgid "The esGMX (IOU) token is transferrable. You can add the token to your wallet and send it to another address to claim if you'd like."
