@@ -70,8 +70,8 @@ export const LIMIT = "Limit";
 export const STOP = "Stop";
 export const LEVERAGE_ORDER_OPTIONS = [MARKET, LIMIT, STOP];
 export const SWAP_ORDER_OPTIONS = [MARKET, LIMIT];
-export const SWAP_OPTIONS = [LONG, SHORT, SWAP];
-export const SWAP_OPTIONS_WITHOUT_SWAP = [LONG, SHORT];
+export const SWAP_OPTIONS = [LONG, SHORT, SWAP, BUY];
+export const SWAP_OPTIONS_WITHOUT_SWAP = [LONG, SHORT, BUY];
 export const DEFAULT_SLIPPAGE_AMOUNT = 30;
 export const DEFAULT_HIGHER_SLIPPAGE_AMOUNT = 100;
 

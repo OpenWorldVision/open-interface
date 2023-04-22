@@ -686,41 +686,60 @@ table.Exchange-list th {
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.05);
 }
 
-.Exchange-swap-box-inner div .Exchange-swap-option-tabs.Tab.block div:nth-child(1) {
+.Exchange-swap-box-inner div .Exchange-swap-option-tabs.Tab.block .Tab-option.Long {
   background: #01a789;
   color: #01a789;
   color: #ffffff;
 }
-.Exchange-swap-box-inner div .Exchange-swap-option-tabs.Tab.block div:nth-child(1):hover {
+.Exchange-swap-box-inner div .Exchange-swap-option-tabs.Tab.block .Tab-option.Long {
   background: #01a789;
   color: #ffffff;
 }
-.Exchange-swap-box-inner div .Exchange-swap-option-tabs.Tab.block div:nth-child(1).active {
+.Exchange-swap-box-inner div .Exchange-swap-option-tabs.Tab.block .Tab-option.Long {
   background: #01a789;
   color: #ffffff;
 }
-.Exchange-swap-box-inner div .Exchange-swap-option-tabs.Tab.block div:nth-child(2) {
+.Exchange-swap-box-inner div .Exchange-swap-option-tabs.Tab.block .Tab-option.Short {
   background: #e8636b;
   color: #e8636b;
   color: #ffffff;
 }
-.Exchange-swap-box-inner div .Exchange-swap-option-tabs.Tab.block div:nth-child(2):hover {
+.Exchange-swap-box-inner div .Exchange-swap-option-tabs.Tab.block .Tab-option.Short:hover {
   background: #e8636b;
   color: #ffffff;
 }
-.Exchange-swap-box-inner div .Exchange-swap-option-tabs.Tab.block div:nth-child(2).active {
+.Exchange-swap-box-inner div .Exchange-swap-option-tabs.Tab.block .Tab-option.Short.active {
   background: #e8636b;
   color: #ffffff;
 }
-.Exchange-swap-box-inner div .Exchange-swap-option-tabs.Tab.block div:nth-child(3):hover {
+.Exchange-swap-box-inner div .Exchange-swap-option-tabs.Tab.block .Tab-option.Swap {
   background: #375bd2;
   color: #ffffff;
 }
-.Exchange-swap-box-inner div .Exchange-swap-option-tabs.Tab.block div:nth-child(3).active {
+.Exchange-swap-box-inner div .Exchange-swap-option-tabs.Tab.block .Tab-option.Swap.active {
   background: #375bd2;
   color: #ffffff;
 }
 
+.Exchange-swap-box-inner div .Exchange-swap-option-tabs.Tab.block .Tab-option.Swap:hover {
+  background: #375bd2;
+  color: #ffffff;
+}
+
+.Exchange-swap-box-inner div .Exchange-swap-option-tabs.Tab.block .Tab-option.Buy {
+  background: #8884d8;
+  color: #ffffff;
+}
+
+.Exchange-swap-box-inner div .Exchange-swap-option-tabs.Tab.block .Tab-option.Buy.active {
+  background: #8884d8;
+  color: #ffffff;
+}
+
+.Exchange-swap-box-inner div .Exchange-swap-option-tabs.Tab.block .Tab-option.Buy:hover {
+  background: #8884d8;
+  color: #ffffff;
+}
 .Exchange-swap-market-box {
   padding: 1.5rem;
   margin-top: 1.25rem;

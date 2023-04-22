@@ -1,5 +1,5 @@
 import { useConnectWallet } from "@web3-onboard/react";
-import { getStablyUrl } from "config/chains";
+import { ARBITRUM, HARMONY, MAINNET, getStablyUrl } from "config/chains";
 import React, { memo } from "react";
 import "./StablyBuy.css";
 
@@ -11,7 +11,8 @@ const StablyBuy = memo((props) => {
   const objParams = {
     asset: "USDS",
     filter: true,
-    network: "bnbchain",
+    network: chainId === HARMONY ? "Harmony" : chainId === ARBITRUM ? "Arbitrum" : "Bnbbeaconchain",
+    integrationID: "openworld-7779b4fe",
   };
   const address = wallet?.accounts?.[0]?.address;
   if (address) {
@@ -22,7 +23,11 @@ const StablyBuy = memo((props) => {
 
   const stablyUrl = getStablyUrl(chainId) + "?" + params;
 
-  return <iframe className="stably-custom" title="StablyBuy" src={stablyUrl} />;
+  return (
+    <div className="stably-custom">
+      <iframe title="StablyBuy" src={stablyUrl} />
+    </div>
+  );
 });
 
 export default StablyBuy;

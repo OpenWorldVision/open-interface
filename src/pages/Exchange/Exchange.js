@@ -455,7 +455,7 @@ export const Exchange = forwardRef((props, ref) => {
     (selectedSwapOption, address) => {
       const newTokenSelection = JSON.parse(JSON.stringify(tokenSelection));
       newTokenSelection[selectedSwapOption].to = address;
-      if (selectedSwapOption === LONG || selectedSwapOption === SHORT) {
+      if (selectedSwapOption === LONG || selectedSwapOption === SHORT || selectedSwapOption === BUY) {
         newTokenSelection[LONG].to = address;
         newTokenSelection[SHORT].to = address;
       }

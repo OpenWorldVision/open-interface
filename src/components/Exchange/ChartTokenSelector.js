@@ -3,7 +3,7 @@ import { Menu } from "@headlessui/react";
 import { FaChevronDown } from "react-icons/fa";
 import cx from "classnames";
 import "./ChartTokenSelector.css";
-import { LONG, SHORT, SWAP } from "lib/legacy";
+import { BUY, LONG, SHORT, SWAP } from "lib/legacy";
 import { getTokens, getWhitelistedTokens } from "config/tokens";
 
 export default function ChartTokenSelector(props) {
@@ -12,6 +12,7 @@ export default function ChartTokenSelector(props) {
   const isLong = swapOption === LONG;
   const isShort = swapOption === SHORT;
   const isSwap = swapOption === SWAP;
+  const isBuy = swapOption === BUY;
 
   let options = getTokens(chainId);
   const whitelistedTokens = getWhitelistedTokens(chainId);
@@ -23,6 +24,9 @@ export default function ChartTokenSelector(props) {
   }
   if (isShort) {
     options = shortableTokens;
+  }
+  if (isBuy) {
+    options = indexTokens;
   }
 
   const onSelect = async (token) => {
