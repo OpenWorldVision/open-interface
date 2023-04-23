@@ -314,3 +314,10 @@ export function getHighExecutionFee(chainId) {
 export function isSupportedChain(chainId) {
   return SUPPORTED_CHAIN_IDS.includes(chainId);
 }
+
+export function getStablyUrl(chainId) {
+  if (chainId === TESTNET) {
+    return "https://ramp-beta.stably.io/";
+  }
+  return "https://ramp.stably.io/";
+}

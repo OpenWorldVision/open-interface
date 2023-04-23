@@ -1,0 +1,10 @@
+.stably-custom {
+    border-radius: 18px;
+        overflow: hidden;
+    }
+    
+    .stably-custom iframe {
+    width: 100%;
+    height: 70rem;
+    border: 0;
+}

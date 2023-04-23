@@ -34,7 +34,6 @@ export function isTestLanguage(locale) {
 
 export async function dynamicActivate(locale) {
   const { messages } = await import(`@lingui/loader!locales/${locale}/messages.po`);
-  console.log("\u001B[36m -> file: i18n.js:37 -> messages", locale, `locales/${locale}/messages.po`, messages);
   if (!isTestLanguage(locale)) {
     localStorage.setItem(LANGUAGE_LOCALSTORAGE_KEY, locale);
   }

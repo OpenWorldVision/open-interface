@@ -56,11 +56,17 @@ export function AppHeaderLinks({
           <Trans>Earn</Trans>
         </HeaderLink>
       </div>
-      <div className="App-header-link-container">
-        <HeaderLink to="/buy_oap" redirectPopupTimestamp={redirectPopupTimestamp} showRedirectModal={showRedirectModal}>
-          <Trans>OAP</Trans>
-        </HeaderLink>
-      </div>
+      {small && (
+        <div className="App-header-link-container">
+          <HeaderLink
+            to="/buy_oap"
+            redirectPopupTimestamp={redirectPopupTimestamp}
+            showRedirectModal={showRedirectModal}
+          >
+            <Trans>OAP</Trans>
+          </HeaderLink>
+        </div>
+      )}
       <div className="App-header-link-container">
         <HeaderLink to="/buy" redirectPopupTimestamp={redirectPopupTimestamp} showRedirectModal={showRedirectModal}>
           <Trans>Buy</Trans>

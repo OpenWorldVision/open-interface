@@ -43,6 +43,7 @@ import {
   USDG_ADDRESS,
   USDG_DECIMALS,
   MAX_ALLOWED_LEVERAGE,
+  BUY,
 } from "lib/legacy";
 import {
   ARBITRUM,
@@ -71,6 +72,7 @@ import WETH from "abis/WETH.json";
 import longImg from "img/long.svg";
 import shortImg from "img/short.svg";
 import swapImg from "img/swap.svg";
+import buyImg from "img/swap.svg";
 
 import { useUserReferralCode } from "domain/referrals";
 import NoLiquidityErrorModal from "./NoLiquidityErrorModal";
@@ -90,13 +92,14 @@ import { bigNumberify, expandDecimals, formatAmount, formatAmountFree, parseValu
 import { getToken, getTokenBySymbol, getTokens, getWhitelistedTokens, TOKENS } from "config/tokens";
 import ExternalLink from "components/ExternalLink/ExternalLink";
 import ModalIncomingFeature from "components/ModalIncomingFeature/ModalIncomingFeature";
-import { Widget } from "@kyberswap/widgets";
 import KyberSwap from "components/KyberSwap/KyberSwap";
+import StablyBuy from "components/StablyBuy/StablyBuy";
 
 const SWAP_ICONS = {
   [LONG]: longImg,
   [SHORT]: shortImg,
   [SWAP]: swapImg,
+  [BUY]: buyImg,
 };
 
 const { AddressZero } = ethers.constants;
@@ -229,10 +232,11 @@ export default function SwapBox(props) {
     "Short-Collateral-Address",
     getTokenBySymbol(chainId, defaultCollateralSymbol).address
   );
+
   const isLong = swapOption === LONG;
   const isShort = swapOption === SHORT;
   const isSwap = swapOption === SWAP;
-
+  const isBuy = swapOption === BUY;
   const getLeaderboardLink = () => {
     if (chainId === ARBITRUM) {
       return "https://www.gmx.house/arbitrum/leaderboard";
@@ -1855,6 +1859,7 @@ export default function SwapBox(props) {
     [LONG]: t`Long`,
     [SHORT]: t`Short`,
     [SWAP]: t`Swap`,
+    [BUY]: t`Buy`,
   };
 
   return (
@@ -1873,7 +1878,7 @@ export default function SwapBox(props) {
             onChange={onSwapOptionChange}
             className="Exchange-swap-option-tabs"
           />
-          {flagOrdersEnabled && !isSwap && (
+          {flagOrdersEnabled && !isSwap && !isBuy && (
             <Tab
               options={orderOptions}
               optionLabels={orderOptionLabels}
@@ -1885,7 +1890,8 @@ export default function SwapBox(props) {
           )}
         </div>
         {isSwap && <KyberSwap chainId={chainId} />}
-        {showFromAndToSection && !isSwap && (
+        {isBuy && <StablyBuy chainId={chainId} />}
+        {showFromAndToSection && !isSwap && !isBuy && (
           <React.Fragment>
             <div className="Exchange-swap-section highlight">
               <div className="Exchange-swap-section-top">
@@ -2253,7 +2259,7 @@ export default function SwapBox(props) {
             </Trans>
           </div>
         )}
-        {!isSwap && (
+        {!isSwap && !isBuy && (
           <div className="Exchange-swap-button-container">
             <button
               className={cx("App-cta Exchange-swap-button", isLong && "long", isShort && "short")}
