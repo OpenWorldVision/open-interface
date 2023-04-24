@@ -425,8 +425,8 @@ export const Exchange = forwardRef((props, ref) => {
         to: chainId === HARMONY ? getTokenBySymbol(chainId, "BTC").address : AddressZero,
       },
       [BUY]: {
-        from: chainId === HARMONY ? getTokenBySymbol(chainId, "BTC").address : AddressZero,
-        to: getTokenBySymbol(chainId, defaultCollateralSymbol).address,
+        from: getTokenBySymbol(chainId, defaultCollateralSymbol).address,
+        to: chainId === HARMONY ? getTokenBySymbol(chainId, "BTC").address : AddressZero,
       },
     }),
     [chainId, defaultCollateralSymbol]
