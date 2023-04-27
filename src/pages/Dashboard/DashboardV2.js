@@ -571,7 +571,7 @@ export default function DashboardV2() {
                       handle={`$${formatAmount(aumData?.tvl, USD_DECIMALS, 0, true)}`}
                       position="right-bottom"
                       renderContent={() => (
-                        <span>{t`Assets Under Management: OPEN staked (All chains) + OAP - OpenWorld Assets Pool (${chainName})`}</span>
+                        <span>{t`Assets Under Management: OPEN staked (All chains) + OAP - OpenWorld Assets Pool (Arbitrum + BSC)`}</span>
                       )}
                     />
                   </div>
@@ -585,7 +585,7 @@ export default function DashboardV2() {
                       handle={`$${formatAmount(aum, USD_DECIMALS, 0, true)}`}
                       position="right-bottom"
                       renderContent={() => (
-                        <span>{t`Total value of tokens in OpenWorld Assets Pool (${chainName})`}</span>
+                        <span>{t`Total value of tokens in OpenWorld Assets Pool (Arbitrum + BSC)`}</span>
                       )}
                     />
                   </div>
