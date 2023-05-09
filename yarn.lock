@@ -3731,22 +3731,24 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@kyberswap/widgets@npm:^0.0.3":
-  version: 0.0.3
-  resolution: "@kyberswap/widgets@npm:0.0.3"
+"@kyberswap/widgets@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "@kyberswap/widgets@npm:1.0.0"
   dependencies:
     "@popperjs/core": ^2.11.6
     "@reach/portal": ^0.18.0
+    eslint-plugin-better-styled-components: ^1.1.2
     ethers: ^5.7.0
     react: ^18.2.0
     react-dom: ^18.2.0
     react-popper: ^2.3.0
     styled-components: ^5.3.5
+    vite-plugin-eslint: ^1.8.1
     vite-plugin-svgr: ^2.2.1
   peerDependencies:
     react: ^16.8.0 || 17.x
     react-dom: ^16.8.0 || 17.x
-  checksum: 909f552ec3da104ec58f9cec208fd0cc9cd79ef8d93b72741c7c247882cbe28072b4ce9627a212e8d0bdd99f83c01b4f28ccfedee33dfd2a20f7f8312a1fc792
+  checksum: 6b0887c90b49d4935ca3b481e9f01d0be9e724193d4e0764234b5f000b3a9366caec64527398e03b4b6ac938005afa223376274bc5ea09b4f4d8b51dcbe714ad
   languageName: node
   linkType: hard
 
@@ -4075,6 +4077,16 @@ __metadata:
   peerDependencies:
     rollup: ^1.20.0||^2.0.0
   checksum: 8be16e27863c219edbb25a4e6ec2fe0e1e451d9e917b6a43cf2ae5bc025a6b8faaa40f82a6e53b66d0de37b58ff472c6c3d57a83037ae635041f8df959d6d9aa
+  languageName: node
+  linkType: hard
+
+"@rollup/pluginutils@npm:^4.2.1":
+  version: 4.2.1
+  resolution: "@rollup/pluginutils@npm:4.2.1"
+  dependencies:
+    estree-walker: ^2.0.1
+    picomatch: ^2.2.2
+  checksum: 6bc41f22b1a0f1efec3043899e4d3b6b1497b3dea4d94292d8f83b4cf07a1073ecbaedd562a22d11913ff7659f459677b01b09e9598a98936e746780ecc93a12
   languageName: node
   linkType: hard
 
@@ -4584,6 +4596,16 @@ __metadata:
     "@types/estree": "*"
     "@types/json-schema": "*"
   checksum: df13991c554954353ce8f3bb03e19da6cc71916889443d68d178d4f858b561ba4cc4a4f291c6eb9eebb7f864b12b9b9313051b3a8dfea3e513dadf3188a77bdf
+  languageName: node
+  linkType: hard
+
+"@types/eslint@npm:^8.4.5":
+  version: 8.37.0
+  resolution: "@types/eslint@npm:8.37.0"
+  dependencies:
+    "@types/estree": "*"
+    "@types/json-schema": "*"
+  checksum: 06d3b3fba12004294591b5c7a52e3cec439472195da54e096076b1f2ddfbb8a445973b9681046dd530a6ac31eca502f635abc1e3ce37d03513089358e6f822ee
   languageName: node
   linkType: hard
 
@@ -9572,6 +9594,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"eslint-plugin-better-styled-components@npm:^1.1.2":
+  version: 1.1.2
+  resolution: "eslint-plugin-better-styled-components@npm:1.1.2"
+  dependencies:
+    postcss: ^7.0.2
+    requireindex: ~1.1.0
+  checksum: c03a7c13b16fc527d70f558469345c04a92773e9e777a2e601ba81dafb133bc44c86c1e7d9794d1f2ea7618b80bc5a554ff01136b311e0f29af88a908c6c36ec
+  languageName: node
+  linkType: hard
+
 "eslint-plugin-flowtype@npm:^5.2.0":
   version: 5.10.0
   resolution: "eslint-plugin-flowtype@npm:5.10.0"
@@ -9877,7 +9909,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"estree-walker@npm:^2, estree-walker@npm:^2.0.2":
+"estree-walker@npm:^2, estree-walker@npm:^2.0.1, estree-walker@npm:^2.0.2":
   version: 2.0.2
   resolution: "estree-walker@npm:2.0.2"
   checksum: 6151e6f9828abe2259e57f5fd3761335bb0d2ebd76dc1a01048ccee22fabcfef3c0859300f6d83ff0d1927849368775ec5a6d265dde2f6de5a1be1721cd94efc
@@ -10804,7 +10836,7 @@ __metadata:
     "@fortawesome/free-solid-svg-icons": ^6.2.1
     "@fortawesome/react-fontawesome": ^0.2.0
     "@headlessui/react": 1.6.1
-    "@kyberswap/widgets": ^0.0.3
+    "@kyberswap/widgets": ^1.0.0
     "@lingui/cli": ^3.13.3
     "@lingui/core": 3.13.3
     "@lingui/loader": 3.14.0
@@ -17595,6 +17627,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"requireindex@npm:~1.1.0":
+  version: 1.1.0
+  resolution: "requireindex@npm:1.1.0"
+  checksum: 397057d97d7f753a3851abf0d6db94c295bd8254536f71f622b896ba08ea8c0d3e3771c8b009a557e6ce602f4245c0588836cdf59c4ce588fff721a7b855d323
+  languageName: node
+  linkType: hard
+
 "requires-port@npm:^1.0.0":
   version: 1.0.0
   resolution: "requires-port@npm:1.0.0"
@@ -17900,6 +17939,20 @@ __metadata:
   bin:
     rollup: dist/bin/rollup
   checksum: 3a02731c20c71321fae647c9c9cab0febee0580c6af029fdcd5dd6f424b8c85119d92c8554c6837327fd323c2458e92d955bbebc90ca6bed87cc626695e7c31f
+  languageName: node
+  linkType: hard
+
+"rollup@npm:^2.77.2":
+  version: 2.79.1
+  resolution: "rollup@npm:2.79.1"
+  dependencies:
+    fsevents: ~2.3.2
+  dependenciesMeta:
+    fsevents:
+      optional: true
+  bin:
+    rollup: dist/bin/rollup
+  checksum: 6a2bf167b3587d4df709b37d149ad0300692cc5deb510f89ac7bdc77c8738c9546ae3de9322b0968e1ed2b0e984571f5f55aae28fa7de4cfcb1bc5402a4e2be6
   languageName: node
   linkType: hard
 
@@ -20264,6 +20317,20 @@ __metadata:
   version: 1.0.4
   resolution: "vendors@npm:1.0.4"
   checksum: 4b16e0bc18dbdd7ac8dd745c776c08f6c73e9a7f620ffd9faf94a3d86a35feaf4c6cb1bbdb304d2381548a30d0abe69b83eeb1b7b1bf5bb33935e64b28812681
+  languageName: node
+  linkType: hard
+
+"vite-plugin-eslint@npm:^1.8.1":
+  version: 1.8.1
+  resolution: "vite-plugin-eslint@npm:1.8.1"
+  dependencies:
+    "@rollup/pluginutils": ^4.2.1
+    "@types/eslint": ^8.4.5
+    rollup: ^2.77.2
+  peerDependencies:
+    eslint: ">=7"
+    vite: ">=2"
+  checksum: 65598893e2063a287a690ae296ba1fc212ee50dbc810d396a6cda44ee60c6f400adb52fc4c4a5ff54a89c11100bbaaf43eada23c9a78654ab1717f097d78176f
   languageName: node
   linkType: hard
 
