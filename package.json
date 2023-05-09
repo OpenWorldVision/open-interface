@@ -11,7 +11,7 @@
     "@fortawesome/free-solid-svg-icons": "^6.2.1",
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@headlessui/react": "1.6.1",
-    "@kyberswap/widgets": "^0.0.3",
+    "@kyberswap/widgets": "^1.0.0",
     "@lingui/core": "3.13.3",
     "@lingui/react": "3.13.3",
     "@testing-library/jest-dom": "5.16.1",

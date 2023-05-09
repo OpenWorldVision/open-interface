@@ -29,6 +29,7 @@ const KyberSwap = memo((props) => {
           chargeFeeBy: "currency_in",
           feeReceiver: feeSwapAddress,
         }}
+        client="openworld"
       />
     </div>
   );
