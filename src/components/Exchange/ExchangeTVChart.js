@@ -16,6 +16,7 @@ import { getToken, getTokens } from "config/tokens";
 import { formatDateTime } from "lib/dates";
 import { t, Trans } from "@lingui/macro";
 import { FiChevronDown } from "react-icons/fi";
+import TradingViewWidget from "components/TradingViewArb/TradingViewArb";
 
 const PRICE_LINE_TEXT_WIDTH = 15;
 
@@ -493,65 +494,75 @@ export default function ExchangeTVChart(props) {
     setToTokenAddress(swapOption, token.address);
   };
 
+  const renderChartArb = () => {
+    return <TradingViewWidget />;
+  };
+
+  const isArbChartView = chartToken?.symbol === "ARB";
+
   return (
-    <div className="ExchangeChart tv " ref={ref}>
-      <div className="ExchangeChart-top App-box App-box-border">
-        <div className="ExchangeChart-top-inner">
-          <div>
-            <div className="ExchangeChart-title">
-              <ChartTokenSelector
-                chainId={chainId}
-                selectedToken={chartToken}
-                swapOption={swapOption}
-                infoTokens={infoTokens}
-                onSelectToken={onSelectToken}
-                className="chart-token-selector"
-              />
-            </div>
-          </div>
-          <div>
-            <div className="ExchangeChart-main-price">
-              {chartToken.maxPrice && formatAmount(chartToken.maxPrice, USD_DECIMALS, 2, true)}
-            </div>
-          </div>
-          <div>
-            <div className="ExchangeChart-info-label">
-              <Trans>24h Change</Trans>
-            </div>
-            <div className={cx({ positive: deltaPercentage > 0, negative: deltaPercentage < 0 })}>
-              {!deltaPercentageStr && "-"}
-              {deltaPercentageStr && deltaPercentageStr}
-            </div>
-          </div>
-          <div className="ExchangeChart-additional-info">
-            <div className="ExchangeChart-info-label">
-              <Trans>24h High</Trans>
+    <>
+      <div className="ExchangeChart tv " ref={ref}>
+        <div className="ExchangeChart-top App-box App-box-border">
+          <div className="ExchangeChart-top-inner">
+            <div>
+              <div className="ExchangeChart-title">
+                <ChartTokenSelector
+                  chainId={chainId}
+                  selectedToken={chartToken}
+                  swapOption={swapOption}
+                  infoTokens={infoTokens}
+                  onSelectToken={onSelectToken}
+                  className="chart-token-selector"
+                />
+              </div>
             </div>
             <div>
-              {!high && "-"}
-              {high && numberWithCommas(high.toFixed(2))}
-            </div>
-          </div>
-          <div className="ExchangeChart-additional-info">
-            <div className="ExchangeChart-info-label">
-              <Trans>24h Low</Trans>
+              <div className="ExchangeChart-main-price">
+                {chartToken.maxPrice && formatAmount(chartToken.maxPrice, USD_DECIMALS, 2, true)}
+              </div>
             </div>
             <div>
-              {!low && "-"}
-              {low && numberWithCommas(low.toFixed(2))}
+              <div className="ExchangeChart-info-label">
+                <Trans>24h Change</Trans>
+              </div>
+              <div className={cx({ positive: deltaPercentage > 0, negative: deltaPercentage < 0 })}>
+                {!deltaPercentageStr && "-"}
+                {deltaPercentageStr && deltaPercentageStr}
+              </div>
+            </div>
+            <div className="ExchangeChart-additional-info">
+              <div className="ExchangeChart-info-label">
+                <Trans>24h High</Trans>
+              </div>
+              <div>
+                {!high && "-"}
+                {high && numberWithCommas(high.toFixed(2))}
+              </div>
+            </div>
+            <div className="ExchangeChart-additional-info">
+              <div className="ExchangeChart-info-label">
+                <Trans>24h Low</Trans>
+              </div>
+              <div>
+                {!low && "-"}
+                {low && numberWithCommas(low.toFixed(2))}
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div className="ExchangeChart-bottom App-box App-box-border">
-        <div className="ExchangeChart-bottom-header">
-          <div className="ExchangeChart-bottom-controls">
-            <Tab options={Object.keys(CHART_PERIODS)} option={period} setOption={setPeriod} />
-          </div>
-          {candleStatsHtml}
+        <div className="ExchangeChart-bottom App-box App-box-border">
+          {!isArbChartView ? (
+            <div className="ExchangeChart-bottom-header">
+              <div className="ExchangeChart-bottom-controls">
+                <Tab options={Object.keys(CHART_PERIODS)} option={period} setOption={setPeriod} />
+              </div>
+              {candleStatsHtml}
+            </div>
+          ) : null}
+          {isArbChartView ? renderChartArb() : <div className="ExchangeChart-bottom-content" ref={chartRef}></div>}
         </div>
-        <div className="ExchangeChart-bottom-content" ref={chartRef}></div>
       </div>
-    </div>
+    </>
   );
 }

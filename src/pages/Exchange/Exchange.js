@@ -54,6 +54,7 @@ import { getToken, getTokenBySymbol, getTokens, getWhitelistedTokens } from "con
 import { useChainId } from "lib/chains";
 import ExternalLink from "components/ExternalLink/ExternalLink";
 import Radio from "components/Radio/Radio";
+import TradingViewWidget from "components/TradingViewArb/TradingViewArb";
 const { AddressZero } = ethers.constants;
 
 const PENDING_POSITION_VALID_DURATION = 600 * 1000;
