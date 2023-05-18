@@ -321,3 +321,28 @@ export function getStablyUrl(chainId) {
   }
   return "https://ramp.stably.io/";
 }
+
+export const getDexListUrl = (chainId) => {
+  switch (chainId) {
+    case ARBITRUM: {
+      return [
+        {
+          title: "UniSwap",
+          url: "https://app.uniswap.org/#/swap?outputCurrency=0x58CB98A966F62aA6F2190eB3AA03132A0c3de3D5&inputCurrency=0xFd086bC7CD5C481DCC9C85ebE478A1C0b69FCbb9",
+        },
+        {
+          title: "ApeSwap",
+          url: "https://apeswap.finance/swap?outputCurrency=0x58CB98A966F62aA6F2190eB3AA03132A0c3de3D5&inputCurrency=0xFd086bC7CD5C481DCC9C85ebE478A1C0b69FCbb9",
+        },
+      ];
+    }
+    default: {
+      return [
+        {
+          title: "PancakeSwap",
+          url: "https://pancakeswap.finance/swap?outputCurrency=0x27a339d9B59b21390d7209b78a839868E319301B",
+        },
+      ];
+    }
+  }
+};

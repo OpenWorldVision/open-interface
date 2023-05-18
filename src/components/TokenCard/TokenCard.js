@@ -1,21 +1,16 @@
-import React, { useCallback, useMemo } from "react";
-import { Link } from "react-router-dom";
 import { Trans } from "@lingui/macro";
-
-import gmxBigIcon from "img/ic_gmx_custom.svg";
-import logoGMX from "img/logo_GMX.svg";
+import { useCallback, useMemo } from "react";
+import { Link } from "react-router-dom";
 
 import { isHomeSite } from "lib/legacy";
 
 import { useWeb3React } from "@web3-react/core";
 
-import APRLabel from "../APRLabel/APRLabel";
-import { HeaderLink } from "../Header/HeaderLink";
-import { ARBITRUM, AVALANCHE, MAINNET, TESTNET, getChainName } from "config/chains";
-import { switchNetwork } from "lib/wallets";
-import { useChainId } from "lib/chains";
+import { TESTNET, getChainName, getDexListUrl } from "config/chains";
 import bgBuyOAP from "img/bg_buy_oap.svg";
 import bgBuyOPEN from "img/bg_buy_open.svg";
+import { useChainId } from "lib/chains";
+import { HeaderLink } from "../Header/HeaderLink";
 
 export default function TokenCard({ showRedirectModal, redirectPopupTimestamp }) {
   const isHome = isHomeSite();
@@ -59,11 +54,14 @@ export default function TokenCard({ showRedirectModal, redirectPopupTimestamp })
     );
   };
 
-  const buyURL = useMemo(() => {
-    if (chainId === 56) {
-      return "https://pancakeswap.finance/swap?outputCurrency=0x27a339d9B59b21390d7209b78a839868E319301B";
-    }
-    return "https://app.uniswap.org/#/swap?outputCurrency=0x58CB98A966F62aA6F2190eB3AA03132A0c3de3D5&inputCurrency=0xFd086bC7CD5C481DCC9C85ebE478A1C0b69FCbb9";
+  const renderButtonBuy = useCallback(() => {
+    return getDexListUrl(chainId).map((item) => {
+      return (
+        <a href={item.url} target="_blank" rel="noreferrer" className="default-btn">
+          {`Buy on ${item.title}`}
+        </a>
+      );
+    });
   }, [chainId]);
 
   return (
@@ -84,11 +82,7 @@ export default function TokenCard({ showRedirectModal, redirectPopupTimestamp })
           </div>
 
           <div className="Home-token-card-option-action">
-            <div className="buy">
-              <a href={buyURL} target="_blank" rel="noreferrer" className="default-btn">
-                Buy on {getChainName(chainId)}
-              </a>
-            </div>
+            <div className="buy">{renderButtonBuy()}</div>
             <a
               href="https://wiki.openworld.vision/buy-token-open-and-oap"
               target="_blank"
