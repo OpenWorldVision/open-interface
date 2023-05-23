@@ -26,7 +26,6 @@ const footerLinks = {
 
 const socialLinks = [
   { link: "https://twitter.com/OpenWorldVision", name: "Twitter", icon: twitterIcon },
-  { link: "https://openworldvision.medium.com/", name: "Medium", icon: mediumIcon },
   { link: "https://github.com/OpenWorldVision", name: "Github", icon: githubIcon },
   { link: "https://t.me/CryptoWarVietnamesegames", name: "Telegram", icon: telegramIcon },
   { link: "https://discord.gg/zS2khZ4F7K", name: "Discord", icon: discordIcon },

@@ -684,6 +684,31 @@ export default function DashboardV2() {
                 ) : null}
               </div>
             </div>
+            <div className="App-card">
+              <div className="App-card-header">
+                <div className="App-card-title">
+                  <img src="noti.webp" alt="" />
+                  <Trans>Migrate</Trans>
+                </div>
+              </div>
+              <div className="App-card-content App-card-button">
+                <div className="App-card-row">
+                  <div className="label">
+                    We encourage OPEN tokenholders from BSC to migrate OPEN to Arbitrum One chain
+                  </div>
+                  <div />
+                </div>
+                <div class="App-card-divider"></div>
+                <div class="App-card-options">
+                  <ExternalLink
+                    href="https://app.multichain.org/#/router?bridgeToken=0x27a339d9b59b21390d7209b78a839868e319301b"
+                    className="App-button-option App-card-option"
+                  >
+                    Migrate
+                  </ExternalLink>
+                </div>
+              </div>
+            </div>
             {/* <div className="App-card">
               <div className="App-card-title">
                 <Trans>Total Stats</Trans>

@@ -582,6 +582,12 @@ button.App-connect-wallet:hover {
   border-top-right-radius: 20px;
 }
 
+.App-card-title img {
+  width: 17px;
+  height: 17px;
+  margin-right: 4px;
+}
+
 .App-card-title-small {
   font-size: 1.7rem;
   margin-bottom: 1.5rem;
@@ -602,6 +608,9 @@ button.App-connect-wallet:hover {
   flex: 1;
   padding: 24px 20px;
   background: var(--cardBackgroundColor);
+}
+.App-card-content.App-card-button {
+  padding-bottom: 0.25rem !important;
 }
 
 .App-card-row {
