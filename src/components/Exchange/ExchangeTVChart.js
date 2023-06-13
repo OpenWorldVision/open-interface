@@ -76,7 +76,7 @@ const getChartOptions = (width, height) => ({
   layout: {
     backgroundColor: "#EDF2FE",
     textColor: "#7F8080",
-    fontFamily: "Montserrat",
+    fontFamily: "DM Sans",
   },
   localization: {
     // https://github.com/tradingview/lightweight-charts/blob/master/docs/customization.md#time-format
@@ -124,7 +124,7 @@ const getChartDarkOptions = (width, height) => ({
   layout: {
     backgroundColor: "#04091C",
     textColor: "#7F8080",
-    fontFamily: "Montserrat",
+    fontFamily: "DM Sans",
   },
   localization: {
     // https://github.com/tradingview/lightweight-charts/blob/master/docs/customization.md#time-format

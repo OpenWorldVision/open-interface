@@ -21,7 +21,7 @@ body {
   /* color */
   --backgroundColor: #f2f6ff;
   --textColor: #ffffff;
-  --textColor2: #1a2b6b;
+  --textColor2: #d2d2d2;
   --textColor3: #657290;
   --textColor4: #dfe7fb;
   --textColor5: #375bd2;
@@ -97,7 +97,7 @@ body.dark-theme {
   --cardBackgroundColor: #04091c;
   --footerBackgroundColor: #1a2b6b;
   --buttonLightBackground: #1a2b6b;
-  --buttonDarkBackground: #dfe7fb;
+  --buttonDarkBackground: #375bd2;
   --buttonDarkBackground2: #0f1943;
   --buttonDarkBackground3: #1a2b6b;
   --dividerColor: #0f1a44;
@@ -126,13 +126,13 @@ code {
 
 * {
   box-sizing: border-box;
-  font-family: "Montserrat", sans-serif;
+  font-family: "DM Sans", "Montserrat", sans-serif;
   /* letter-spacing: 0.5px; */
   /* font-variant-numeric: tabular-nums; */
 }
 
 input {
-  font-family: "Montserrat";
+  font-family: "DM Sans";
 }
 
 ::-webkit-scrollbar {
@@ -310,7 +310,7 @@ a.plain {
 }
 
 .default-btn {
-  background: var(--footerBackgroundColor);
+  background: var(--buttonDarkBackground);
   border-radius: 4px;
   font-size: 14px;
   line-height: 17px;
@@ -330,7 +330,7 @@ a.plain {
   cursor: pointer;
   border: none;
   appearance: none;
-  border-radius: 18px;
+  border-radius: 0.5rem;
 }
 
 .default-btn-light {

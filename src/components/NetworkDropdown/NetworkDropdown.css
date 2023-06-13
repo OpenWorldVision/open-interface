@@ -4,7 +4,7 @@
   display: inline-flex;
   align-items: center;
   color: var(--textColor5);
-  background: var(--buttonLightBackground);
+  background: var(--buttonDarkBackground);
   border-radius: 18px;
 }
 

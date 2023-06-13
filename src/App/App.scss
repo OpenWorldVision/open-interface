@@ -914,13 +914,12 @@ a.App-cta.option {
 a.App-button-option,
 button.App-button-option {
   cursor: pointer;
-  border-radius: 4px;
   font-weight: 500;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   line-height: 1.8rem;
   letter-spacing: 0px;
   color: white;
-  padding: 6px 12px;
+  padding: 8px 20px;
   text-decoration: none;
   box-sizing: border-box;
   position: relative;
@@ -928,8 +927,8 @@ button.App-button-option {
   display: inline-flex !important;
   align-items: center;
   border: none;
-  background: var(--footerBackgroundColor);
-  border-radius: 18px;
+  background: var(--buttonDarkBackground);
+  border-radius: 0.5rem;
 }
 
 // a.App-button-option:hover,
