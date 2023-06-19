@@ -491,10 +491,10 @@ button.App-connect-wallet:hover {
 .Page-title {
   font-size: 20px;
   line-height: 24px;
-  color: #375bd2;
   font-weight: 800;
   align-items: center;
   display: flex;
+  color: var(--textColor7);
 }
 .Page-icon {
   margin-right: 10px;
@@ -583,6 +583,11 @@ button.App-connect-wallet:hover {
 }
 
 .App-card-title img {
+  width: 3.1rem;
+  height: 3.1rem;
+  margin-right: 4px;
+}
+.App-card-title .small-icon {
   width: 17px;
   height: 17px;
   margin-right: 4px;

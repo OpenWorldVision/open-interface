@@ -967,7 +967,8 @@ export default function DashboardV2() {
             </div>
             <div className="token-table-wrapper App-card">
               <div className="App-card-title">
-                <Trans>OAP Index Composition</Trans> {chainId === MAINNET && <img src={icBscCircle} alt="bscIcon" />}
+                <Trans>OAP Index Composition</Trans>{" "}
+                {chainId === MAINNET && <img className="small-icon" src={icBscCircle} alt="bscIcon" />}
               </div>
               <table className="token-table">
                 <thead>
@@ -1000,7 +1001,7 @@ export default function DashboardV2() {
                     if (tokenInfo.maxUsdgAmount && tokenInfo.maxUsdgAmount.gt(0)) {
                       maxUsdgAmount = tokenInfo.maxUsdgAmount;
                     }
-                    // const tokenImage = importImage("ic_" + token.symbol.toLowerCase() + "_40.svg");
+                    const tokenImage = importImage("ic_" + token.symbol.toLowerCase() + "_40.svg");
 
                     return (
                       <tr key={token.symbol}>
@@ -1008,7 +1009,7 @@ export default function DashboardV2() {
                           <div className="token-symbol-wrapper">
                             <div className="App-card-title-info">
                               <div className="App-card-title-info-icon">
-                                {/* <img src={tokenImage} alt={token.symbol} width="40px" /> */}
+                                <img src={tokenImage} alt={token.symbol} width="40px" />
                               </div>
                               <div className="App-card-title-info-text">
                                 <div className="App-card-info-title">{token.name}</div>
@@ -1062,7 +1063,8 @@ export default function DashboardV2() {
             </div>
             <div className="token-grid-container">
               <div className="App-card-title">
-                <Trans>OAP Index Composition</Trans> {chainId === MAINNET && <img src={icBscCircle} alt="bscIcon" />}
+                <Trans>OAP Index Composition</Trans>{" "}
+                {chainId === MAINNET && <img className="small-icon" src={icBscCircle} alt="bscIcon" />}
               </div>
               <div className="token-grid">
                 {visibleTokens.map((token) => {
