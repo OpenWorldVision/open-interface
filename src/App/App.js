@@ -102,6 +102,9 @@ import { faMoon, faRocket } from "@fortawesome/free-solid-svg-icons";
 import ModalIncomingFeature from "components/ModalIncomingFeature/ModalIncomingFeature";
 import { init, useConnectWallet } from "@web3-onboard/react";
 import injectedModule from "@web3-onboard/injected-wallets";
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+
 const injected = injectedModule();
 init({
   wallets: [injected],
@@ -482,6 +485,24 @@ function FullApp() {
       wsPositionRouter.off("CancelDecreasePosition", onCancelDecreasePosition);
     };
   }, [active, chainId, vaultAddress, positionRouterAddress]);
+
+  const configFirebase = useCallback(() => {
+    const firebaseConfig = {
+      apiKey: "AIzaSyCmqOlVNSeqWRLYEKh12utMpxx-oMEAcqs",
+      authDomain: "open-interface.firebaseapp.com",
+      projectId: "open-interface",
+      storageBucket: "open-interface.appspot.com",
+      messagingSenderId: "515389162",
+      appId: "1:515389162:web:54ad1a621062f2877bc993",
+      measurementId: "G-SQHXNNK80X",
+    };
+    const app = initializeApp(firebaseConfig);
+    getAnalytics(app);
+  }, []);
+
+  useEffect(() => {
+    configFirebase();
+  }, [configFirebase]);
 
   return (
     <>
