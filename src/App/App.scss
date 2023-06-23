@@ -28,7 +28,8 @@
   position: relative;
   padding-left: 3.2rem;
   padding-right: 3.2rem;
-  background: transparent 0% 0% no-repeat padding-box;
+  // background: transparent 0% 0% no-repeat padding-box;
+  background: var(--appHeaderBackground) 0% 0% no-repeat padding-box;
   border-bottom: 1px solid #ffffff10;
 }
 
@@ -1387,7 +1388,7 @@ button.App-button {
     position: relative;
     padding-left: 1.6rem;
     padding-right: 1.6rem;
-    background: transparent 0% 0% no-repeat padding-box;
+    background: var(--appHeaderBackground) 0% 0% no-repeat padding-box;
     border-bottom: 1px solid #ffffff10;
   }
 

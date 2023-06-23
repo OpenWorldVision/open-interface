@@ -81,10 +81,13 @@ a.btn {
   /* background: var(--dark-blue-active); */
 }
 .connect-wallet {
-  background: var(--buttonDarkBackground);
+  background: var(--secondaryButtonBackground);
   border-radius: 0.5rem;
   min-height: 3.6rem;
   display: flex;
+}
+.connect-wallet > * {
+  color: var(--secondaryButtonTextColor);
 }
 .connect-wallet span {
   font-weight: 700 !important;

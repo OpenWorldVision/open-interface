@@ -49,6 +49,8 @@ body {
   --buttonDarkBackground: #375bd2;
   --buttonDarkBackground2: #375bd2;
   --buttonDarkBackground3: #375bd2;
+  --secondaryButtonBackground: rgba(243, 243, 243, 1);
+  --secondaryButtonTextColor: #000;
   --dividerColor: #adbdef;
   --tooltipBackgroundColor: #dfe7fb;
   --logoUrl: url("/src/img/logo_GMX.svg");
@@ -67,6 +69,7 @@ body {
   --modalContentBackground: #d8e1fb;
   --modalButtonBackground: #375bd2;
   --modalHeaderBackground: #adbdef50;
+  --appHeaderBackground: #fff;
 }
 body.dark-theme {
   /* color */
@@ -100,6 +103,8 @@ body.dark-theme {
   --buttonDarkBackground: #375bd2;
   --buttonDarkBackground2: #0f1943;
   --buttonDarkBackground3: #1a2b6b;
+  --secondaryButtonBackground: rgba(32, 39, 62, 1);
+  --secondaryButtonTextColor: #ffffff;
   --dividerColor: #0f1a44;
   --tooltipBackgroundColor: #1a2b6b;
   --logoUrl: url("/src/img/logo_open_white.svg");
@@ -118,6 +123,7 @@ body.dark-theme {
   --modalContentBackground: #0f1943;
   --modalButtonBackground: #1a2b6b;
   --modalHeaderBackground: #04091c80;
+  --appHeaderBackground: rgba(4, 9, 30, 1);
 }
 
 code {
