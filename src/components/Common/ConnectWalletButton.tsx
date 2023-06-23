@@ -11,7 +11,7 @@ type Props = {
 };
 
 export default function ConnectWalletButton({ children, onClick, className }: Props) {
-  let classNames = cx("btn btn-primary btn-sm connect-wallet", className);
+  let classNames = cx("btn btn-primary btn-sm", className);
   return (
     <button className={classNames} onClick={onClick}>
       <FontAwesomeIcon icon={faWallet} />

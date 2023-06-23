@@ -52,6 +52,7 @@ body {
   --secondaryButtonBackground: rgba(243, 243, 243, 1);
   --secondaryButtonTextColor: #000;
   --dividerColor: #adbdef;
+  --connectWalletDividerColor: rgba(193, 193, 193, 0.30);
   --tooltipBackgroundColor: #dfe7fb;
   --logoUrl: url("/src/img/logo_GMX.svg");
   --logoOAP: url("/src/img/logo_oap.svg");
@@ -115,6 +116,7 @@ body.dark-theme {
   --maxButtonColor: #1a2b6b;
   --inputColor: #657290;
   --dividerColor: rgba(255, 255, 255, 0.1);
+  --connectWalletDividerColor: #0D1530;
   --sliderColor: #070e27;
   --tabInactiveColor: #1a2b6b80;
   --tabActiveColor: #1a2b6b;
@@ -318,7 +320,7 @@ a.plain {
 .default-btn {
   background: var(--buttonDarkBackground);
   border-radius: 4px;
-  font-size: 14px;
+  font-size: 1.4rem;
   line-height: 17px;
   font-weight: 700;
   letter-spacing: 0px;
