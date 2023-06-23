@@ -557,11 +557,11 @@ export default function DashboardV2() {
           <div className="DashboardV2-cards">
             <div className="App-card">
               <div className="App-card-header">
-                <div className="App-card-title">
+                <div className="App-card-title bottom-line">
                   <Trans>Overview</Trans>
                 </div>
               </div>
-              <div className="App-card-content">
+              <div className="App-card-content bottom-line">
                 <div className="App-card-row">
                   <div className="label">
                     <Trans>TVL</Trans>
@@ -747,7 +747,7 @@ export default function DashboardV2() {
             <div className="stats-wrapper stats-wrapper--gmx">
               <div className="App-card">
                 <div className="App-card-header">
-                  <div className="App-card-title">
+                  <div className="App-card-title bottom-line">
                     <div className="App-card-title-mark">
                       <div className="App-card-title-mark-icon">
                         <img src={logoOPENWhite} alt="OPEN Token Icon" />
@@ -848,7 +848,7 @@ export default function DashboardV2() {
               </div>
               <div className="App-card">
                 <div className="App-card-header">
-                  <div className="App-card-title">
+                  <div className="App-card-title bottom-line">
                     <div className="App-card-title-mark">
                       <div className="App-card-title-mark-icon">
                         <img src={logoOAPWhite} alt="oap40Icon" />
@@ -949,19 +949,19 @@ export default function DashboardV2() {
                 <thead>
                   <tr>
                     <th>
-                      <Trans>TOKEN</Trans>
+                      <Trans>Token</Trans>
                     </th>
                     <th>
-                      <Trans>PRICE</Trans>
+                      <Trans>Price</Trans>
                     </th>
                     <th>
-                      <Trans>POOL</Trans>
+                      <Trans>Pool</Trans>
                     </th>
                     <th>
-                      <Trans>WEIGHT</Trans>
+                      <Trans>Weight</Trans>
                     </th>
                     <th>
-                      <Trans>UTILIZATION</Trans>
+                      <Trans>Utilization</Trans>
                     </th>
                   </tr>
                 </thead>

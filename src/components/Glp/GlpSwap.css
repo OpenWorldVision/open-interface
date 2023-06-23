@@ -238,10 +238,9 @@
 
 .token-table th {
   font-weight: 800;
-  font-size: 14px;
+  font-size: 1.4rem;
   line-height: 17px;
   color: var(--textColor3);
-  text-transform: uppercase;
 }
 
 .token-table .action-btn {

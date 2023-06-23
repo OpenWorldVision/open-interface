@@ -28,7 +28,7 @@
   margin-bottom: 2.4rem;
 }
 .Footer-link {
-  color: #ffffff;
+  color: var(--footerSocialIconColor);
   font-size: 1.5rem;
   line-height: 1.85rem;
   font-weight: normal;
@@ -49,7 +49,7 @@
 }
 
 .Footer-social-link-block .App-social-link img {
-  filter: brightness(0) invert(1);
+  filter: var(--svgSocialColor)
 }
 .Footer-social-link-block .App-social-link:hover img {
   filter: brightness(0) invert(1);
