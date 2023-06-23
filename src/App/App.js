@@ -103,7 +103,8 @@ import ModalIncomingFeature from "components/ModalIncomingFeature/ModalIncomingF
 import { init, useConnectWallet } from "@web3-onboard/react";
 import injectedModule from "@web3-onboard/injected-wallets";
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
+import { initializeAnalytics } from "firebase/analytics";
+
 
 const injected = injectedModule();
 init({
@@ -497,7 +498,7 @@ function FullApp() {
       measurementId: "G-SQHXNNK80X",
     };
     const app = initializeApp(firebaseConfig);
-    getAnalytics(app);
+    initializeAnalytics(app);
   }, []);
 
   useEffect(() => {
