@@ -53,18 +53,6 @@ export function AppHeaderUser({
       icon: "arbitrum.png",
       color: "#264f79",
     },
-    {
-      label: getChainName(MAINNET),
-      value: MAINNET,
-      icon: "ic_bsc.svg",
-      color: "#264f79",
-    },
-    {
-      label: getChainName(HARMONY),
-      value: HARMONY,
-      icon: "harmony.jpeg",
-      color: "#264f79",
-    },
   ];
   if (isLocal()) {
     networkOptions.push({
@@ -180,7 +168,7 @@ export function AppHeaderUser({
             handleDiameter={15}
             className={"switch"}
             offColor={"#0F1A44"}
-            onColor={"#375BD2"}
+            onColor={"#adbdef"}
             onHandleColor={!isDarkTheme ? "#FFFFFF80" : "##FFFFFF"}
           />
         </SwitchThemeButton>
