@@ -83,7 +83,6 @@ a.btn {
 .connect-wallet {
   background: var(--buttonDarkBackground);
   border-radius: 0.5rem;
-  color: var(--textColor5);
   min-height: 3.6rem;
   display: flex;
 }

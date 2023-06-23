@@ -105,6 +105,7 @@ import injectedModule from "@web3-onboard/injected-wallets";
 import { initializeApp } from "firebase/app";
 import { initializeAnalytics } from "firebase/analytics";
 
+
 const injected = injectedModule();
 init({
   wallets: [injected],
