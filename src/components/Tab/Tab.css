@@ -1,12 +1,11 @@
 .Tab.block {
-  display: grid;
-  grid-auto-flow: column;
+  display: flex;
   font-weight: 700;
-  font-size: 12px;
+  font-size: 2rem;
   line-height: 15px;
   border-radius: 3px;
   overflow: hidden;
-  color: #ffffff;
+  color: var(--textColor);
   /* background: var(--footerBackgroundColor); */
   /* border: 2px solid var(--footerBackgroundColor); */
   box-shadow: inset 0px 0px 30px 5px rgba(255, 255, 255, 0.01);
@@ -26,7 +25,6 @@
   border: 2px solid var(--footerBackgroundColor);
   border-width: 0 1px 0 1px;
   font-weight: 700;
-  background: var(--footerBackgroundColor);
 }
 .Tab.block .Tab-option:first-child {
   border-width: 0;
@@ -35,8 +33,8 @@
   border-width: 0;
 }
 .Tab.block .Tab-option:hover {
-  color: rgba(255, 255, 255, 1);
-  background: #375bd290;
+  color: #375bd290;
+  /* background: #375bd290; */
   opacity: 1;
 }
 .Tab.block .Tab-option:hover img {
@@ -45,7 +43,7 @@
 .Tab.block .Tab-option.active {
   opacity: 1;
   pointer-events: none;
-  color: #ffffff;
+  color: var(--textColor);
   font-weight: 700;
 }
 .Tab.block .Tab-option img {
@@ -60,7 +58,7 @@
   cursor: pointer;
   display: inline-block;
   margin-right: 1.5rem;
-  font-size: 1.5rem;
+  font-size: 2rem;
 }
 
 .Tab.inline .Tab-option:hover {

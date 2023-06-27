@@ -327,7 +327,6 @@
   display: block;
   box-shadow: inset 0px 0px 1rem 0.5rem rgba(27, 30, 46, 0.2);
   background: #375bd2;
-  height: 5.1rem;
   width: 26.35rem;
   border: 1px solid var(--dark-blue-border);
   border-radius: 52px;
@@ -586,7 +585,7 @@ button.App-connect-wallet:hover {
 }
 .App-card-title.bottom-line {
   // border-radius: 18px 0px 0px 0px;
-  border-bottom: 2px solid #375BD2;
+  border-bottom: 2px solid #375bd2;
   // background: #FFF;
 }
 .App-card-title img {
@@ -1537,6 +1536,7 @@ button.App-button {
     border-bottom-right-radius: 0;
   }
   .App-card-content-container {
+    background: var(--cardBackgroundColor);
     flex-direction: column-reverse;
   }
 }

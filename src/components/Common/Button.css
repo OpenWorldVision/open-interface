@@ -89,7 +89,7 @@ a.btn {
 background: var(--second-button-light-bg, #F3F3F3); */
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.10);
 }
-.connect-wallet > * {
+.connect-wallet > *:not(svg) {
   color: var(--secondaryButtonTextColor);
 }
 .connect-wallet span {

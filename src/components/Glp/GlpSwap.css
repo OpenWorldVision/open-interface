@@ -57,6 +57,7 @@
 .GlpSwap-content .GlpSwap-stats-card,
 .GlpSwap-content .GlpSwap-box {
   width: 100%;
+  background: var(--boxBackgroundColor);
 }
 
 .GlpSwap-content .GlpSwap-stats-card {
@@ -71,10 +72,12 @@
 }
 
 .GlpSwap-content .GlpSwap-box {
-  max-width: 47.95rem;
-  border-radius: 0.4rem;
+  max-width: 60rem;
+  border-radius: 20px;
   padding: 1.5rem;
   padding-top: 0;
+
+  box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.05);
 }
 
 .GlpSwap-box .Exchange-swap-option-tabs {

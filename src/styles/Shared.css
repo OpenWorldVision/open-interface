@@ -57,9 +57,9 @@ body {
   --logoUrl: url("/src/img/logo_GMX.svg");
   --logoOAP: url("/src/img/logo_oap.svg");
   --chartHeaderBackgroundColor: #dfe7fbb2;
-  --boxBackgroundColor2: #dfe7fb;
-  --boxBackgroundColor: #ebf0ff;
-  --maxButtonColor: #375bd2;
+  --boxBackgroundColor2: #ffffff;
+  --boxBackgroundColor:#ffffff;
+  --maxButtonColor: linear-gradient(to right top, #375bd5, #3062db, #2869e0, #1f70e6, #1277eb);
   --inputColor: #6d7380;
   --dividerColor: rgba(109, 115, 128, 0.5);
   --sliderColor: #bdc9e7;
@@ -67,12 +67,18 @@ body {
   --tabActiveColor: #375bd2;
   --chartBackgroundColor: #edf2fe;
   --referralBoxBackgroundColor: #375bd2;
-  --modalContentBackground: #d8e1fb;
-  --modalButtonBackground: #375bd2;
-  --modalHeaderBackground: #adbdef50;
+  --modalContentBackground: #F8FAFC;
+  --modalButtonBackground: #F8F8F8;
+  --modalButtonText: #000000;
+  --modalHeaderBackground: #F8FAFC;
+  --modalLinkText: #375BD2;
   --appHeaderBackground: #fff;
   --footerSocialIconColor: #000;
   --svgSocialColor: brightness(1) invert(0);
+  --swapBallBgColor: rgb(248 250 252);
+  --swapBallColor: #375bd2;
+  --primaryButtonBackground: linear-gradient(to right top, #375bd5, #3062db, #2869e0, #1f70e6, #1277eb);
+  --newEthSectionBackground: linear-gradient(180deg, #fff 0%, #e0e9ff 100%);
 }
 body.dark-theme {
   /* color */
@@ -124,12 +130,18 @@ body.dark-theme {
   --tabActiveColor: #1a2b6b;
   --chartBackgroundColor: #04091c;
   --referralBoxBackgroundColor: #0f1943;
-  --modalContentBackground: #0f1943;
-  --modalButtonBackground: #1a2b6b;
-  --modalHeaderBackground: #04091c80;
+  --modalContentBackground: #060D25;
+  --modalButtonBackground: #8686861F;
+  --modalButtonText: #FFFFFF;
+  --modalHeaderBackground: #060D25;
+  --modalLinkText:#90BDFF;
   --appHeaderBackground: rgba(4, 9, 30, 1);
   --footerSocialIconColor: #fff;
   --svgSocialColor: brightness(0) invert(1);
+  --swapBallBgColor: #375bd2;
+  --swapBallColor: rgb(248 250 252);
+  --primaryButtonBackground: linear-gradient(to right top, #375bd5, #3062db, #2869e0, #1f70e6, #1277eb);
+  --newEthSectionBackground: #8686861F;
 }
 
 code {
