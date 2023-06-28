@@ -58,7 +58,7 @@
 .GlpSwap-content .GlpSwap-stats-card,
 .GlpSwap-content .GlpSwap-box {
   width: 100%;
-  background: var(--boxBackgroundColor);
+  background: var(--cardBackgroundColor);
 }
 
 .GlpSwap-content .GlpSwap-stats-card {
@@ -89,7 +89,7 @@
   gap: 4px;
 }
 
-.Exchange-swap-option-tabs.Tab.block .Tab-option {
+.GlpSwap-box .Exchange-swap-option-tabs.Tab.block .Tab-option {
   flex: none;
 }
 
@@ -269,7 +269,6 @@
 .token-table .action-btn {
   width: 100%;
   justify-content: center;
-  background: var(--footerBackgroundColor);
 }
 .cap-reached {
   margin-left: 0.8rem;
