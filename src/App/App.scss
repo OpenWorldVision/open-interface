@@ -45,6 +45,8 @@
 
 .App-header.large .App-header-links {
   display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
 }
 
 .App-header.small {
@@ -888,7 +890,7 @@ button.App-cta {
   align-items: center;
   text-align: center;
   cursor: pointer;
-  border-radius: 52px;
+  border-radius: 8px;
 }
 
 // a.App-cta:hover,
@@ -988,7 +990,7 @@ button.App-button-option:disabled {
 .App-cta.Confirmation-box-button {
   margin-top: 1.5rem;
   background: var(--buttonDarkBackground) !important;
-  color: var(--textColor4) !important;
+  color: #ffffff !important;
 }
 
 .App-slippage-tolerance-input-container {
@@ -996,11 +998,12 @@ button.App-button-option:disabled {
 }
 
 .App-slippage-tolerance-input {
-  border: 1px solid var(--textColor6);
+  border: 1px solid var(--borderColor);
   margin-top: 0.8rem;
   margin-bottom: 0.8rem;
   width: 100%;
   color: var(--textColor6);
+  border-radius: 8px;
 }
 
 .App-slippage-tolerance-input-percent {

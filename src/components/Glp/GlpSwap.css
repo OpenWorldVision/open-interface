@@ -159,6 +159,10 @@
   opacity: 1;
 }
 
+.GlpSwap-box .Tab-option.Buy {
+  color: blue;
+}
+
 .GlpSwap-cta {
   margin: 0 auto;
   text-align: center;

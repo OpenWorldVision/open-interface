@@ -224,7 +224,7 @@
   grid-column-gap: 1.5rem;
 }
 
-.Home-token-card-option-background{
+.Home-token-card-option-background {
   position: absolute;
   height: 100%;
   width: 100%;
@@ -342,7 +342,7 @@
 }
 
 .Home-latest-info__value {
-  font-family: "DM Sans";
+  font-family: "Inter";
   color: white;
   font-size: 2.9rem;
   line-height: 3.9rem;

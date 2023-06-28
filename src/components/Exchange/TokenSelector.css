@@ -4,6 +4,15 @@
   max-height: 100vh;
 }
 
+.TokenSelector .Modal .Modal-content .Modal-title-bar {
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.TokenSelector .Modal .Modal-content .divider {
+  background-color: var(--dividerColor);
+}
+
 .TokenSelector-token-name {
   margin-right: 1.5rem;
 }
@@ -58,27 +67,28 @@
   margin-left: 0.6rem;
   font-size: 2.325rem;
   margin-top: -0.465rem;
-  background: #375BD2;
+  /* background: #375BD2; */
   border-radius: 4px;
-  color: #F9F9F9;
+  color: #375bd2;
 }
 
 .TokenSelector-token-row {
   cursor: pointer;
-  border: 1px solid var(--textHeaderInactive);
   position: relative;
   background: transparent;
   border-radius: var(--border-radius-sm);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.8rem;
-  margin-bottom: 0.8rem;
+  padding: 16px 16px;
+  margin-bottom: 1rem;
+  background: var(--cardBackgroundColor);
+  box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.05);
 }
-.TokenSelector-token-row input{
+.TokenSelector-token-row input {
   color: var(--textHeaderActive);
 }
-.TokenSelector-token-row input::placeholder{
+.TokenSelector-token-row input::placeholder {
   color: var(--textHeaderInactive);
 }
 
@@ -97,7 +107,6 @@
   z-index: 10;
 }
 
-
 .TokenSelector-token-row.disabled {
   cursor: not-allowed;
 }
@@ -111,7 +120,7 @@
 }
 
 .TokenSelector-token-row.TokenSelector-token-input-row {
-  padding: 0;
+  padding: 8px;
 }
 
 .TokenSelector-token-row input {
@@ -126,7 +135,8 @@
   letter-spacing: 0px;
 }
 .TokenSelector-token-row:hover {
-  background: rgba(71, 47, 80, 0.1);
+  background: rgba(52, 52, 52, 0.05);
+  border-radius: var(--border-radius-sm);
 }
 
 .TokenSelector.right .Modal {
@@ -135,7 +145,7 @@
 }
 .text-accent {
   color: var(--textHeaderInactive);
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   line-height: 1.5;
   letter-spacing: 0;
 }

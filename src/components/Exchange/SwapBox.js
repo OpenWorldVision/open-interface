@@ -1903,11 +1903,18 @@ export default function SwapBox(props) {
                   )}
                   {!fromUsdMin && t`Pay`}
                 </div>
-                {fromBalance && (
-                  <div className="align-right clickable" onClick={setFromValueToMaximumAvailable}>
-                    <Trans>Balance: {formatAmount(fromBalance, fromToken.decimals, 4, true)}</Trans>
-                  </div>
-                )}
+                <div className="Exchange-swap-max-container">
+                  {fromBalance && (
+                    <div className="align-right clickable" onClick={setFromValueToMaximumAvailable}>
+                      <Trans>Balance: {formatAmount(fromBalance, fromToken.decimals, 4, true)}</Trans>
+                    </div>
+                  )}
+                  {shouldShowMaxButton() && (
+                    <div className="Exchange-swap-max" onClick={setFromValueToMaximumAvailable}>
+                      <Trans>MAX</Trans>
+                    </div>
+                  )}
+                </div>
               </div>
               <div className="Exchange-swap-section-bottom">
                 <div className="Exchange-swap-input-container">
@@ -1919,11 +1926,6 @@ export default function SwapBox(props) {
                     value={fromValue}
                     onChange={onFromValueChange}
                   />
-                  {shouldShowMaxButton() && (
-                    <div className="Exchange-swap-max" onClick={setFromValueToMaximumAvailable}>
-                      <Trans>MAX</Trans>
-                    </div>
-                  )}
                 </div>
                 <div>
                   <TokenSelector
@@ -1959,6 +1961,7 @@ export default function SwapBox(props) {
                     <Trans>Balance</Trans>: {formatAmount(toBalance, toToken.decimals, 4, true)}
                   </div>
                 )}
+
                 {(isLong || isShort) && hasLeverageOption && (
                   <div className=" align-right">
                     <Trans>Leverage</Trans>: {parseFloat(leverageOption).toFixed(2)}x
