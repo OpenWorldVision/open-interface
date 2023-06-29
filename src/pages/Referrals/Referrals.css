@@ -15,6 +15,16 @@
 .referral-tab-container {
   margin: 1.5rem auto 3.1rem auto;
 }
+
+.referral-tab-container .Tab.block {
+  font-size: 2rem;
+}
+
+.referral-tab-container .Tab.block .Tab-option.active {
+  color: #375bd2;
+  opacity: 1 !important;
+}
+
 .referral-card {
   position: relative;
   padding: 2.325rem;

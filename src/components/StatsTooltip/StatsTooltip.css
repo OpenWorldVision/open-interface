@@ -6,7 +6,7 @@
 
 .Tooltip-row > span.label {
   margin-right: 0.5rem;
-  color: white !important;
+  color: var(--textColor) !important;
 }
 .Tooltip-row > .Tooltip-row-value {
   color: var(--textColor7);
@@ -14,7 +14,7 @@
 }
 
 .Tooltip-row-values {
-  color: white !important;
+  color: var(--textColor) !important;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -23,11 +23,11 @@
 .Tooltip-row-values li {
   padding: 0.25rem 0 0 0;
   text-align: right;
-  color: white;
+  color: var(--textColor);
 }
 
 .Tooltip-number {
-  color: white;
+  color: var(--textColor);
 }
 
 @media (max-width: 700px) {

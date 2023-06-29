@@ -14,8 +14,9 @@
       color: var(--modalLinkText);
     }
   }
-  .Modal-content .Modal-body .term-of-use span {
+  .Modal-content .Modal-body .term-of-use a {
     color: var(--modalLinkText);
+    text-decoration: none;
   }
 
   .Modal-content .Modal-body .Wallet-btn {

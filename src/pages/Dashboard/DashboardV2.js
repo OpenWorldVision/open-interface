@@ -749,7 +749,7 @@ export default function DashboardV2() {
                 <div className="App-card-header">
                   <div className="App-card-title bottom-line">
                     <div className="App-card-title-mark">
-                      <div className="App-card-title-mark-icon">
+                      <div className="App-card-title-mark-icon open-logo">
                         <img src={logoOPENWhite} alt="OPEN Token Icon" />
                       </div>
                       <div className="App-card-title-mark-info">
@@ -850,7 +850,7 @@ export default function DashboardV2() {
                 <div className="App-card-header">
                   <div className="App-card-title bottom-line">
                     <div className="App-card-title-mark">
-                      <div className="App-card-title-mark-icon">
+                      <div className="App-card-title-mark-icon oap-logo">
                         <img src={logoOAPWhite} alt="oap40Icon" />
                       </div>
                       <div className="App-card-title-mark-info">
@@ -984,7 +984,7 @@ export default function DashboardV2() {
                           <div className="token-symbol-wrapper">
                             <div className="App-card-title-info">
                               <div className="App-card-title-info-icon">
-                                <img src={tokenImage} alt={token.symbol} width="40px" />
+                                <img src={tokenImage} alt={token.symbol} width="32px" />
                               </div>
                               <div className="App-card-title-info-text">
                                 <div className="App-card-info-title">{token.name}</div>

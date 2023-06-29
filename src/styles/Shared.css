@@ -53,7 +53,7 @@ body {
   --secondaryButtonTextColor: #000;
   --dividerColor: #adbdef;
   --connectWalletDividerColor: rgba(193, 193, 193, 0.3);
-  --tooltipBackgroundColor: #dfe7fb;
+  --tooltipBackgroundColor: #eeeeee;
   --logoUrl: url("/src/img/logo_GMX.svg");
   --logoOAP: url("/src/img/logo_oap.svg");
   --chartHeaderBackgroundColor: #dfe7fbb2;
@@ -89,7 +89,7 @@ body.dark-theme {
   /* color */
   --backgroundColor: linear-gradient(180deg, #0a112b 0%, rgba(6, 13, 37, 1) 100%);
   --textColor: #ffffff;
-  --textColor2: #657290;
+  --textColor2: #ffffff;
   --textColor3: #aab5d1;
   --textColor4: #1a2b6b;
   --textColor5: #dfe7fb;
@@ -120,7 +120,7 @@ body.dark-theme {
   --secondaryButtonBackground: rgba(32, 39, 62, 1);
   --secondaryButtonTextColor: #ffffff;
   --dividerColor: #0f1a44;
-  --tooltipBackgroundColor: #1a2b6b;
+  --tooltipBackgroundColor: #202020;
   --logoUrl: url("/src/img/logo_open_white.svg");
   --logoOAP: url("/src/img/logo_oap_white.svg");
   --chartHeaderBackgroundColor: #04091c;

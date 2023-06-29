@@ -33,8 +33,14 @@ function ConnectWalletModal(props: Props, ref: any) {
         <img src={CheckIcon} alt="Check Icon" />
 
         <div className="term-of-use">
-          By connecting a wallet, I agree to OpenWorld <br /> <span>Terms of Use</span>, <span>Risks</span>,{" "}
-          <span>Cookies Policy</span>, use of <span>3rd party services</span> and <span>Privacy Policy</span>
+          By connecting a wallet, I agree to OpenWorld <br />{" "}
+          <a href="https://wiki.openworld.vision/terms-and-conditions" target="_blank" rel="noreferrer">
+            Terms of Use
+          </a>{" "}
+          and{" "}
+          <a href="https://wiki.openworld.vision/risk-management" target="_blank" rel="noreferrer">
+            Risks
+          </a>
         </div>
       </div>
 

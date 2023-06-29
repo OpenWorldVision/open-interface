@@ -581,7 +581,7 @@ button.App-connect-wallet:hover {
   font-weight: 700;
   font-size: 14px;
   line-height: 17px;
-  background: var(--cardTitleBackgroundColor);
+  background: var(--cardHeaderBackgroundColor);
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
 }
@@ -672,7 +672,7 @@ button.App-connect-wallet:hover {
 }
 
 .App-card-option {
-  margin: 0.62rem;
+  margin: 0.62rem 0;
 }
 
 .App-header a.App-header-link-main,
@@ -1325,7 +1325,9 @@ button.App-button {
 
 @media (max-width: 1300px) {
   .App-card-options {
-    margin-top: 1px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
   }
 }
 @media (max-width: 1033px) {

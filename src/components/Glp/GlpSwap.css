@@ -109,9 +109,13 @@
   height: 3.1rem;
 }
 
-/* .App-card-title-mark-icon img {
+.App-card-title-mark-icon.oap-logo img {
   content: var(--logoOAP);
-} */
+}
+
+.App-card-title-mark-icon.open-logo img {
+  content: var(--logoUrl);
+}
 
 .App-card-title-mark-icon .selected-network-symbol {
   position: absolute;
