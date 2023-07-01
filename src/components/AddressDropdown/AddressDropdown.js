@@ -26,7 +26,7 @@ function AddressDropdown({ account, accountUrl, disconnectAccountAndCloseSetting
             <Davatar size={20} address={account} />
           </div>
           <span className="user-address">{ensName || shortenAddress(account, breakpoint === "S" ? 9 : 13)}</span>
-          <FaChevronDown />
+          <FaChevronDown  color={'#f1f2f2'}/>
         </button>
       </Menu.Button>
       <div>

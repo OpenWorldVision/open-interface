@@ -268,7 +268,7 @@ export function AppHeaderUser({
           handleDiameter={15}
           className={"switch"}
           offColor={"#0F1A44"}
-          onColor={"#375BD2"}
+          onColor={"#adbdef"}
           onHandleColor={!isDarkTheme ? "#FFFFFF80" : "##FFFFFF"}
         />
       </SwitchThemeButton>
