@@ -577,13 +577,12 @@ button.App-connect-wallet:hover {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 12px 20px;
+  padding: 12px 22px;
   font-weight: 700;
   font-size: 14px;
   line-height: 17px;
   background: var(--cardHeaderBackgroundColor);
   border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
 }
 .App-card-title.bottom-line {
   // border-radius: 18px 0px 0px 0px;
@@ -669,6 +668,9 @@ button.App-connect-wallet:hover {
 .App-card-options {
   padding: unset;
   // margin: 10px -0.62rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
 }
 
 .App-card-option {

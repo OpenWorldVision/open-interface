@@ -941,7 +941,7 @@ export default function DashboardV2() {
               </div>
             </div>
             <div className="token-table-wrapper App-card">
-              <div className="App-card-title">
+              <div className="App-card-title bottom-line">
                 <Trans>OAP Index Composition</Trans>{" "}
                 {chainId === MAINNET && <img className="small-icon" src={icBscCircle} alt="bscIcon" />}
               </div>

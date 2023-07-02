@@ -368,10 +368,12 @@
   font-size: 1.2rem;
 }
 .ExchangeChart-bottom-controls .Tab .Tab-option.active {
+  color: #ffffff;
   background: var(--tabActiveColor);
 }
 .ExchangeChart-bottom-controls .Tab .Tab-option:hover {
-  background: var(--tabActiveColor);
+  /* background: var(--tabActiveColor); */
+  filter: invert(-1);
 }
 .ExchangeChart-bottom-controls .Tab {
   border: 0;
