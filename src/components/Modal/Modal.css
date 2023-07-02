@@ -27,14 +27,17 @@
   background: rgba(0, 0, 0, 0.9);
 }
 
+
 .Modal-content {
   z-index: 20;
   position: relative;
-  max-width: 100%;
+  max-width: 90%;
   max-height: 90vh;
   overflow: auto;
   background: var(--modalContentBackground);
   border-radius: 4px;
+
+
 }
 
 .divider {

@@ -99,5 +99,6 @@
 
   .StakeV2-total-rewards-card {
     grid-row: 4;
+    background: var(--cardBackgroundColor);
   }
 }

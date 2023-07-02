@@ -1,0 +1,74 @@
+.Modal.Connect-wallet-modal {
+  .Modal-content .Modal-title-bar .Modal-title {
+    font-weight: 800;
+    font-size: 2rem;
+    max-width: 400px;
+    // background: #fff;
+  }
+
+  .Modal-content .Modal-body .term-of-use {
+    font-size: 17px;
+    padding: 0 16px;
+
+    span {
+      color: var(--modalLinkText);
+    }
+  }
+  .Modal-content .Modal-body .term-of-use a {
+    color: var(--modalLinkText);
+    text-decoration: none;
+  }
+
+  .Modal-content .Modal-body .Wallet-btn {
+    background-color: var(--modalButtonBackground);
+    border-radius: 8px;
+    box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.1);
+    color: var(--modalButtonText);
+    width: 100%;
+    padding: 16px 16px;
+    font-size: 16px;
+    font-weight: 800px;
+  }
+
+  .Modal-content .Modal-body .new-to-ether-section {
+    border-radius: 8px;
+    background: var(--newEthSectionBackground);
+    display: flex;
+    padding: 16px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 8px;
+    align-self: stretch;
+    .title {
+      color: var(--textColor);
+      font-size: 22px;
+      // font-family: Inter;
+      font-weight: 600;
+    }
+    .subtitle {
+      color: var(--textColor);
+      font-size: 16px;
+      // font-family: Inter;
+      line-height: 150%;
+    }
+  }
+
+  .Modal-content {
+    @media only screen and (min-width: 1024px) {
+      width: 40%;
+    }
+
+    @media only screen and (min-width: 768px) and (max-width: 1024px) {
+      width: 50%;
+    }
+
+    @media only screen and (min-width: 480px) and (max-width: 768px) {
+      width: 90%;
+    }
+
+    @media only screen and (max-width: 480px) {
+      width: 90%;
+    }
+  }
+}

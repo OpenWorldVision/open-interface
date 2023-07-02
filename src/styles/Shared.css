@@ -19,14 +19,14 @@ body {
   -moz-osx-font-smoothing: grayscale;
 
   /* color */
-  --backgroundColor: #f2f6ff;
-  --textColor: #ffffff;
+  --backgroundColor: #f8fafc;
+  --textColor: #1a2b6b;
   --textColor2: #1a2b6b;
   --textColor3: #657290;
   --textColor4: #dfe7fb;
   --textColor5: #375bd2;
   --textColor6: #1a2b6b;
-  --textColor7: #375bd2;
+  --textColor7: #1a2b6b;
   --textColor8: #375bd2;
   --textColor9: #f1f2f2;
   --textColor10: #1a2b6b;
@@ -38,25 +38,28 @@ body {
   --textColor16: #ffffff;
   --textColor100: #0f1943;
   --textColor20: #1a2b6b;
-  --textHeaderActive: #375bd2;
-  --textHeaderInactive: #375bd280;
-  --cardHeaderBackgroundColor: #375bd2;
+  --textHeaderActive: #000000;
+  --textHeaderInactive: rgba(0, 0, 0, 0.6);
+  --cardHeaderBackgroundColor: #ffffff;
   --cardHeaderBackgroundColor2: #dfe7fbb2;
-  --cardTitleBackgroundColor: #375bd2;
-  --cardBackgroundColor: #dfe7fb;
-  --footerBackgroundColor: #375bd2;
+  --cardTitleBackgroundColor: #ffffff;
+  --cardBackgroundColor: #ffffff;
+  --footerBackgroundColor: #ffffff;
   --buttonLightBackground: #dfe7fb;
   --buttonDarkBackground: #375bd2;
   --buttonDarkBackground2: #375bd2;
   --buttonDarkBackground3: #375bd2;
+  --secondaryButtonBackground: rgba(243, 243, 243, 1);
+  --secondaryButtonTextColor: #000;
   --dividerColor: #adbdef;
-  --tooltipBackgroundColor: #dfe7fb;
+  --connectWalletDividerColor: rgba(193, 193, 193, 0.3);
+  --tooltipBackgroundColor: #eeeeee;
   --logoUrl: url("/src/img/logo_GMX.svg");
   --logoOAP: url("/src/img/logo_oap.svg");
   --chartHeaderBackgroundColor: #dfe7fbb2;
-  --boxBackgroundColor2: #dfe7fb;
-  --boxBackgroundColor: #ebf0ff;
-  --maxButtonColor: #375bd2;
+  --boxBackgroundColor2: #ffffff;
+  --boxBackgroundColor: #ffffff;
+  --maxButtonColor: linear-gradient(to right top, #375bd5, #3062db, #2869e0, #1f70e6, #1277eb);
   --inputColor: #6d7380;
   --dividerColor: rgba(109, 115, 128, 0.5);
   --sliderColor: #bdc9e7;
@@ -64,15 +67,29 @@ body {
   --tabActiveColor: #375bd2;
   --chartBackgroundColor: #edf2fe;
   --referralBoxBackgroundColor: #375bd2;
-  --modalContentBackground: #d8e1fb;
-  --modalButtonBackground: #375bd2;
-  --modalHeaderBackground: #adbdef50;
+  --modalContentBackground: #f8fafc;
+  --modalButtonBackground: #f8f8f8;
+  --modalButtonText: #000000;
+  --modalHeaderBackground: #f8fafc;
+  --modalLinkText: #375bd2;
+  --appHeaderBackground: #fff;
+  --footerSocialIconColor: #000;
+  --svgSocialColor: brightness(1) invert(0);
+  --swapBallBgColor: rgb(248 250 252);
+  --swapBallColor: #375bd2;
+  --primaryButtonBackground: linear-gradient(to right top, #375bd5, #3062db, #2869e0, #1f70e6, #1277eb);
+  --newEthSectionBackground: linear-gradient(180deg, #fff 0%, #e0e9ff 100%);
+  --exchangeSwapSectionBorder: 1px solid #ebf0ff;
+  --borderColor: #dfe7fb;
+  --listTabBackground: #fff;
+  --listTabColumnHeaderColor: #657290;
+  --settingPopupBackgroundColor: #ffffff;
 }
 body.dark-theme {
   /* color */
-  --backgroundColor: linear-gradient(180deg, #0a112b 0%, #0a1127 100%);
+  --backgroundColor: linear-gradient(180deg, #0a112b 0%, rgba(6, 13, 37, 1) 100%);
   --textColor: #ffffff;
-  --textColor2: #aab5d1;
+  --textColor2: #ffffff;
   --textColor3: #aab5d1;
   --textColor4: #1a2b6b;
   --textColor5: #dfe7fb;
@@ -91,33 +108,50 @@ body.dark-theme {
   --textColor100: #dfe7fb;
   --textHeaderActive: #ffffff;
   --textHeaderInactive: #ffffff80;
-  --cardHeaderBackgroundColor: #04091c80;
+  --cardHeaderBackgroundColor: rgba(134, 134, 134, 0.12);
   --cardHeaderBackgroundColor2: #04091c80;
-  --cardTitleBackgroundColor: #04091c;
-  --cardBackgroundColor: #04091c;
-  --footerBackgroundColor: #1a2b6b;
+  --cardTitleBackgroundColor: rgba(134, 134, 134, 0);
+  --cardBackgroundColor: rgba(134, 134, 134, 0.12);
+  --footerBackgroundColor: #04091e;
   --buttonLightBackground: #1a2b6b;
   --buttonDarkBackground: #375bd2;
   --buttonDarkBackground2: #0f1943;
   --buttonDarkBackground3: #1a2b6b;
+  --secondaryButtonBackground: rgba(32, 39, 62, 1);
+  --secondaryButtonTextColor: #ffffff;
   --dividerColor: #0f1a44;
-  --tooltipBackgroundColor: #1a2b6b;
+  --tooltipBackgroundColor: #202020;
   --logoUrl: url("/src/img/logo_open_white.svg");
   --logoOAP: url("/src/img/logo_oap_white.svg");
   --chartHeaderBackgroundColor: #04091c;
   --boxBackgroundColor2: #04091c;
   --boxBackgroundColor: #070e27;
-  --maxButtonColor: #1a2b6b;
+  --maxButtonColor: linear-gradient(to right top, #375bd5, #3062db, #2869e0, #1f70e6, #1277eb);
   --inputColor: #657290;
   --dividerColor: rgba(255, 255, 255, 0.1);
+  --connectWalletDividerColor: #0d1530;
   --sliderColor: #070e27;
   --tabInactiveColor: #1a2b6b80;
   --tabActiveColor: #1a2b6b;
   --chartBackgroundColor: #04091c;
   --referralBoxBackgroundColor: #0f1943;
-  --modalContentBackground: #0f1943;
-  --modalButtonBackground: #1a2b6b;
-  --modalHeaderBackground: #04091c80;
+  --modalContentBackground: #060d25;
+  --modalButtonBackground: #8686861f;
+  --modalButtonText: #ffffff;
+  --modalHeaderBackground: #060d25;
+  --modalLinkText: #90bdff;
+  --appHeaderBackground: rgba(4, 9, 30, 1);
+  --footerSocialIconColor: #fff;
+  --svgSocialColor: brightness(0) invert(1);
+  --swapBallBgColor: #375bd2;
+  --swapBallColor: rgb(248 250 252);
+  --primaryButtonBackground: linear-gradient(to right top, #375bd5, #3062db, #2869e0, #1f70e6, #1277eb);
+  --newEthSectionBackground: #8686861f;
+  --exchangeSwapSectionBorder: 1px solid rgba(235, 240, 255, 0.1);
+  --borderColor: rgba(223, 231, 251, 0.1);
+  --listTabBackground: #8686861f;
+  --listTabColumnHeaderColor: #fff;
+  --settingPopupBackgroundColor: rgb(23, 25, 48);
 }
 
 code {
@@ -126,13 +160,13 @@ code {
 
 * {
   box-sizing: border-box;
-  font-family: "DM Sans", "Montserrat", sans-serif;
+  font-family: "Inter", "DM Sans", "Montserrat", sans-serif;
   /* letter-spacing: 0.5px; */
   /* font-variant-numeric: tabular-nums; */
 }
 
 input {
-  font-family: "DM Sans";
+  font-family: "Inter";
 }
 
 ::-webkit-scrollbar {
@@ -312,7 +346,7 @@ a.plain {
 .default-btn {
   background: var(--buttonDarkBackground);
   border-radius: 4px;
-  font-size: 14px;
+  font-size: 1.4rem;
   line-height: 17px;
   font-weight: 700;
   letter-spacing: 0px;

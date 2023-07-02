@@ -81,10 +81,16 @@ a.btn {
   /* background: var(--dark-blue-active); */
 }
 .connect-wallet {
-  background: var(--buttonDarkBackground);
+  background: var(--secondaryButtonBackground);
   border-radius: 0.5rem;
   min-height: 3.6rem;
   display: flex;
+  /* border-radius: 8px;
+background: var(--second-button-light-bg, #F3F3F3); */
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.10);
+}
+.connect-wallet > *:not(svg) {
+  color: var(--secondaryButtonTextColor);
 }
 .connect-wallet span {
   font-weight: 700 !important;
@@ -95,7 +101,7 @@ a.btn {
 .connect-wallet-divider {
   width: 1.5px;
   min-height: 3.6rem;
-  background: var(--dividerColor);
+  background: var(--connectWalletDividerColor);
 }
 .btn-switch {
   margin-left: 1.25rem;
