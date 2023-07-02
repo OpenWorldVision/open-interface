@@ -19,7 +19,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 
   /* color */
-  --backgroundColor: rgba(248, 250, 252, 1);
+  --backgroundColor: #f8fafc;
   --textColor: #1a2b6b;
   --textColor2: #1a2b6b;
   --textColor3: #657290;
