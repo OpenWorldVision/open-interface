@@ -19,7 +19,6 @@ import {
   getDeltaStr,
   useAccountOrders,
   getPageTitle,
-  CHART_PERIODS,
   BUY,
 } from "lib/legacy";
 import { getConstant, getExplorerUrl, HARMONY } from "config/chains";

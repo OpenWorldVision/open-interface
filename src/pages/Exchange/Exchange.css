@@ -850,7 +850,7 @@ table.Exchange-list th {
 
 .Exchange-swap-section-bottom {
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: 4fr 1fr;
   padding-bottom: 0.31rem;
 }
 
@@ -863,6 +863,9 @@ table.Exchange-list th {
 .Exchange-swap-input-container {
   position: relative;
   overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px;
 }
 
 .Exchange-swap-max-container {
@@ -882,6 +885,7 @@ table.Exchange-list th {
   font-weight: 800;
   color: #fff;
   background: var(--maxButtonColor);
+  line-height: 1.5rem;
 }
 /*
 .Exchange-swap-max:hover {
@@ -906,8 +910,9 @@ table.Exchange-list th {
 }
 
 input.Exchange-swap-input {
+  flex: 5;
   padding: 0;
-  max-width: 100%;
+  /* max-width: 100%; */
   font-size: 2rem;
   width: 100%;
   padding-right: 2rem;
