@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import cx from "classnames";
 
 import { BiChevronDown } from "react-icons/bi";
@@ -34,10 +34,13 @@ export default function TokenSelector(props) {
 
   const visibleTokens = tokens;
 
-  const onSelectToken = (token) => {
-    setIsModalVisible(false);
-    props.onSelectToken(token);
-  };
+  const onSelectToken = useCallback(
+    (token) => {
+      setIsModalVisible(false);
+      props.onSelectToken(token);
+    },
+    [props]
+  );
 
   useEffect(() => {
     if (isModalVisible) {
@@ -45,15 +48,15 @@ export default function TokenSelector(props) {
     }
   }, [isModalVisible]);
 
+  const onSearchKeywordChange = useCallback((e) => {
+    setSearchKeyword(e.target.value);
+  }, []);
+
   if (!tokenInfo) {
     return null;
   }
 
-  // const tokenImage = showSymbolImage && importImage(`ic_${tokenInfo.symbol.toLowerCase()}_24.svg`);
-
-  const onSearchKeywordChange = (e) => {
-    setSearchKeyword(e.target.value);
-  };
+  const tokenImage = showSymbolImage && importImage(`ic_${tokenInfo.symbol.toLowerCase()}_24.svg`);
 
   const filteredTokens = visibleTokens.filter((item) => {
     return (
@@ -82,13 +85,13 @@ export default function TokenSelector(props) {
               type="text"
               placeholder={t`Search Token`}
               value={searchKeyword}
-              onChange={(e) => onSearchKeywordChange(e)}
+              onChange={onSearchKeywordChange}
               onKeyDown={_handleKeyDown}
               autoFocus
             />
           </div>
           {filteredTokens.map((token, tokenIndex) => {
-            // const tokenPopupImage = importImage(`ic_${token.symbol.toLowerCase()}_40.svg`);
+            const tokenPopupImage = importImage(`ic_${token.symbol.toLowerCase()}_40.svg`);
             let info = infoTokens ? infoTokens[token.address] : {};
             let mintAmount;
             let balance = info.balance;
@@ -124,7 +127,7 @@ export default function TokenSelector(props) {
                   />
                 )}
                 <div className="Token-info">
-                  {/* {showTokenImgInDropdown && <img src={tokenPopupImage} alt={token.name} className="token-logo" />} */}
+                  {showTokenImgInDropdown && <img src={tokenPopupImage} alt={token.name} className="token-logo" />}
                   <div className="Token-symbol">
                     <div className="Token-text">{token.symbol}</div>
                     <span className="text-accent">{token.name}</span>
@@ -158,7 +161,7 @@ export default function TokenSelector(props) {
       ) : (
         <div className="TokenSelector-box" onClick={() => setIsModalVisible(true)}>
           {tokenInfo.symbol}
-          {/* {showSymbolImage && <img src={tokenImage} alt={tokenInfo.symbol} className="TokenSelector-box-symbol" />} */}
+          {showSymbolImage && <img src={tokenImage} alt={tokenInfo.symbol} className="TokenSelector-box-symbol" />}
           {showNewCaret && <img src={dropDownIcon} alt="Dropdown Icon" className="TokenSelector-box-caret" />}
           {!showNewCaret && <BiChevronDown className="TokenSelector-caret" />}
         </div>

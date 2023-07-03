@@ -28,7 +28,8 @@
   position: relative;
   padding-left: 3.2rem;
   padding-right: 3.2rem;
-  background: transparent 0% 0% no-repeat padding-box;
+  // background: transparent 0% 0% no-repeat padding-box;
+  background: var(--appHeaderBackground) 0% 0% no-repeat padding-box;
   border-bottom: 1px solid #ffffff10;
 }
 
@@ -44,6 +45,8 @@
 
 .App-header.large .App-header-links {
   display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
 }
 
 .App-header.small {
@@ -326,7 +329,6 @@
   display: block;
   box-shadow: inset 0px 0px 1rem 0.5rem rgba(27, 30, 46, 0.2);
   background: #375bd2;
-  height: 5.1rem;
   width: 26.35rem;
   border: 1px solid var(--dark-blue-border);
   border-radius: 52px;
@@ -508,6 +510,7 @@ button.App-connect-wallet:hover {
   font-size: 14px;
   line-height: 17px;
   font-weight: 500;
+  margin-top: 8px;
 }
 
 .Page-description span,
@@ -546,6 +549,7 @@ button.App-connect-wallet:hover {
 .App-card {
   border-radius: 20px;
   box-sizing: border-box;
+  box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.05);
 }
 
 .App-card .token-table {
@@ -573,15 +577,18 @@ button.App-connect-wallet:hover {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 12px 20px;
+  padding: 12px 22px;
   font-weight: 700;
   font-size: 14px;
   line-height: 17px;
-  background: var(--cardTitleBackgroundColor);
+  background: var(--cardHeaderBackgroundColor);
   border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
 }
-
+.App-card-title.bottom-line {
+  // border-radius: 18px 0px 0px 0px;
+  border-bottom: 2px solid #375bd2;
+  // background: #FFF;
+}
 .App-card-title img {
   width: 3.1rem;
   height: 3.1rem;
@@ -600,7 +607,6 @@ button.App-connect-wallet:hover {
 
 .App-card-content-container {
   display: flex;
-  background: var(--cardBackgroundColor);
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
 }
@@ -662,10 +668,13 @@ button.App-connect-wallet:hover {
 .App-card-options {
   padding: unset;
   // margin: 10px -0.62rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
 }
 
 .App-card-option {
-  margin: 0.62rem;
+  margin: 0.62rem 0;
 }
 
 .App-header a.App-header-link-main,
@@ -883,7 +892,7 @@ button.App-cta {
   align-items: center;
   text-align: center;
   cursor: pointer;
-  border-radius: 52px;
+  border-radius: 8px;
 }
 
 // a.App-cta:hover,
@@ -983,7 +992,7 @@ button.App-button-option:disabled {
 .App-cta.Confirmation-box-button {
   margin-top: 1.5rem;
   background: var(--buttonDarkBackground) !important;
-  color: var(--textColor4) !important;
+  color: #ffffff !important;
 }
 
 .App-slippage-tolerance-input-container {
@@ -991,11 +1000,12 @@ button.App-button-option:disabled {
 }
 
 .App-slippage-tolerance-input {
-  border: 1px solid var(--textColor6);
+  border: 1px solid var(--borderColor);
   margin-top: 0.8rem;
   margin-bottom: 0.8rem;
   width: 100%;
   color: var(--textColor6);
+  border-radius: 8px;
 }
 
 .App-slippage-tolerance-input-percent {
@@ -1033,7 +1043,7 @@ a.App-social-link {
   margin-left: 1.1rem;
   margin-right: 1.1rem;
   font-size: 2.635rem;
-  color: white;
+  color: var(--footerSocialIconColor);
   opacity: 0.8;
 }
 
@@ -1317,7 +1327,9 @@ button.App-button {
 
 @media (max-width: 1300px) {
   .App-card-options {
-    margin-top: 1px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
   }
 }
 @media (max-width: 1033px) {
@@ -1387,7 +1399,7 @@ button.App-button {
     position: relative;
     padding-left: 1.6rem;
     padding-right: 1.6rem;
-    background: transparent 0% 0% no-repeat padding-box;
+    background: var(--appHeaderBackground) 0% 0% no-repeat padding-box;
     border-bottom: 1px solid #ffffff10;
   }
 
@@ -1531,6 +1543,7 @@ button.App-button {
     border-bottom-right-radius: 0;
   }
   .App-card-content-container {
+    background: var(--cardBackgroundColor);
     flex-direction: column-reverse;
   }
 }

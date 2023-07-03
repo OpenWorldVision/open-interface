@@ -1,4 +1,4 @@
-import { ReactNode, useState } from "react";
+import { ReactNode, useMemo, useState } from "react";
 import cx from "classnames";
 import "./Button.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -14,15 +14,18 @@ type Props = {
 
 export default function SwitchThemeButton({ children, onClick, className, small, isDarkTheme }: Props) {
   const classNames = cx("btn btn-primary btn-switch connect-wallet", className);
+  const style = {
+    background: isDarkTheme ? "linear-gradient(#9c47fc, #356ad2)" : "linear-gradient(#ffe259, #ffa751)",
+  };
   if (small) {
     return (
-      <div className={classNames} onClick={onClick}>
+      <div className={classNames} onClick={onClick} style={style}>
         {isDarkTheme ? <FontAwesomeIcon icon={faMoon} /> : <FontAwesomeIcon icon={faSun} />}
       </div>
     );
   }
   return (
-    <div className={classNames} style={{ cursor: "auto" }}>
+    <div className={classNames} onClick={onClick} style={style}>
       {isDarkTheme ? <FontAwesomeIcon icon={faMoon} /> : <FontAwesomeIcon icon={faSun} />}
       {children}
     </div>

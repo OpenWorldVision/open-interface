@@ -150,28 +150,7 @@ export function AppHeaderUser({
             document.body.classList.toggle("dark-theme");
           }}
           isDarkTheme={isDarkTheme}
-        >
-          <Switch
-            onChange={() => {
-              setIsDarkTheme((prev) => {
-                const newState = !prev;
-                localStorage.setItem(IS_LIGHT_THEME, `${prev}`);
-                return newState;
-              });
-              document.body.classList.toggle("dark-theme");
-            }}
-            checked={!isDarkTheme}
-            uncheckedIcon={false}
-            checkedIcon={false}
-            width={33}
-            height={20}
-            handleDiameter={15}
-            className={"switch"}
-            offColor={"#0F1A44"}
-            onColor={"#adbdef"}
-            onHandleColor={!isDarkTheme ? "#FFFFFF80" : "##FFFFFF"}
-          />
-        </SwitchThemeButton>
+        />
       </div>
     );
   }

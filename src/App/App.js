@@ -44,9 +44,6 @@ import "styles/Font.css";
 import "./App.scss";
 import "styles/Input.css";
 
-import metamaskImg from "img/metamask.png";
-import coinbaseImg from "img/coinbaseWallet.png";
-import walletConnectImg from "img/walletconnect-circle-blue.svg";
 import useEventToast from "components/EventToast/useEventToast";
 import EventToastContainer from "components/EventToast/EventToastContainer";
 import SEO from "components/Common/SEO";
@@ -105,6 +102,7 @@ import injectedModule from "@web3-onboard/injected-wallets";
 import { initializeApp } from "firebase/app";
 import { initializeAnalytics } from "firebase/analytics";
 
+import ConnectWalletModal from "components/ConnectWalletModal/ConnectWalletModal";
 
 const injected = injectedModule();
 init({
@@ -305,14 +303,15 @@ function FullApp() {
     activateInjectedProvider(providerName);
     connectInjectedWallet();
   };
+  const connectWalletModalRef = useRef();
 
-  const [walletModalVisible, setWalletModalVisible] = useState(false);
+  // const [walletModalVisible, setWalletModalVisible] = useState(false);
   const [redirectModalVisible, setRedirectModalVisible] = useState(false);
   const [shouldHideRedirectModal, setShouldHideRedirectModal] = useState(false);
   const [redirectPopupTimestamp, setRedirectPopupTimestamp, removeRedirectPopupTimestamp] =
     useLocalStorage(REDIRECT_POPUP_TIMESTAMP_KEY);
   const [selectedToPage, setSelectedToPage] = useState("");
-  const connectWallet = () => setWalletModalVisible(true);
+  const connectWallet = () => connectWalletModalRef?.current.setVisible(true);
 
   const [isSettingsVisible, setIsSettingsVisible] = useState(false);
   const [savedSlippageAmount, setSavedSlippageAmount] = useLocalStorageSerializeKey(
@@ -512,7 +511,7 @@ function FullApp() {
           <Header
             disconnectAccountAndCloseSettings={disconnectAccountAndCloseSettings}
             openSettings={openSettings}
-            setWalletModalVisible={setWalletModalVisible}
+            setWalletModalVisible={connectWalletModalRef?.current?.setVisible}
             redirectPopupTimestamp={redirectPopupTimestamp}
             showRedirectModal={showRedirectModal}
           />
@@ -649,31 +648,13 @@ function FullApp() {
         hideRedirectModal={hideRedirectModal}
       />
       <ModalIncomingFeature />
-      <Modal
-        className="Connect-wallet-modal"
-        isVisible={walletModalVisible}
-        setIsVisible={setWalletModalVisible}
-        label={t`Connect Wallet`}
-      >
-        <button className="Wallet-btn MetaMask-btn" onClick={activateMetaMask}>
-          <img src={metamaskImg} alt="MetaMask" />
-          <div>
-            <Trans>MetaMask</Trans>
-          </div>
-        </button>
-        <button className="Wallet-btn CoinbaseWallet-btn" onClick={activateCoinBase}>
-          <img src={coinbaseImg} alt="Coinbase Wallet" />
-          <div>
-            <Trans>Coinbase Wallet</Trans>
-          </div>
-        </button>
-        <button className="Wallet-btn WalletConnect-btn" onClick={activateWalletConnect}>
-          <img src={walletConnectImg} alt="WalletConnect" />
-          <div>
-            <Trans>WalletConnect</Trans>
-          </div>
-        </button>
-      </Modal>
+      <ConnectWalletModal
+        ref={connectWalletModalRef}
+        onActivateCoinbase={activateCoinBase}
+        onActivateMetamask={activateMetaMask}
+        onActivateWalletConnect={activateWalletConnect}
+      />
+
       <Modal
         className="App-settings"
         isVisible={isSettingsVisible}

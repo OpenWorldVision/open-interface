@@ -557,11 +557,11 @@ export default function DashboardV2() {
           <div className="DashboardV2-cards">
             <div className="App-card">
               <div className="App-card-header">
-                <div className="App-card-title">
+                <div className="App-card-title bottom-line">
                   <Trans>Overview</Trans>
                 </div>
               </div>
-              <div className="App-card-content">
+              <div className="App-card-content bottom-line">
                 <div className="App-card-row">
                   <div className="label">
                     <Trans>TVL</Trans>
@@ -747,9 +747,9 @@ export default function DashboardV2() {
             <div className="stats-wrapper stats-wrapper--gmx">
               <div className="App-card">
                 <div className="App-card-header">
-                  <div className="App-card-title">
+                  <div className="App-card-title bottom-line">
                     <div className="App-card-title-mark">
-                      <div className="App-card-title-mark-icon">
+                      <div className="App-card-title-mark-icon open-logo">
                         <img src={logoOPENWhite} alt="OPEN Token Icon" />
                       </div>
                       <div className="App-card-title-mark-info">
@@ -848,9 +848,9 @@ export default function DashboardV2() {
               </div>
               <div className="App-card">
                 <div className="App-card-header">
-                  <div className="App-card-title">
+                  <div className="App-card-title bottom-line">
                     <div className="App-card-title-mark">
-                      <div className="App-card-title-mark-icon">
+                      <div className="App-card-title-mark-icon oap-logo">
                         <img src={logoOAPWhite} alt="oap40Icon" />
                       </div>
                       <div className="App-card-title-mark-info">
@@ -941,7 +941,7 @@ export default function DashboardV2() {
               </div>
             </div>
             <div className="token-table-wrapper App-card">
-              <div className="App-card-title">
+              <div className="App-card-title bottom-line">
                 <Trans>OAP Index Composition</Trans>{" "}
                 {chainId === MAINNET && <img className="small-icon" src={icBscCircle} alt="bscIcon" />}
               </div>
@@ -949,19 +949,19 @@ export default function DashboardV2() {
                 <thead>
                   <tr>
                     <th>
-                      <Trans>TOKEN</Trans>
+                      <Trans>Token</Trans>
                     </th>
                     <th>
-                      <Trans>PRICE</Trans>
+                      <Trans>Price</Trans>
                     </th>
                     <th>
-                      <Trans>POOL</Trans>
+                      <Trans>Pool</Trans>
                     </th>
                     <th>
-                      <Trans>WEIGHT</Trans>
+                      <Trans>Weight</Trans>
                     </th>
                     <th>
-                      <Trans>UTILIZATION</Trans>
+                      <Trans>Utilization</Trans>
                     </th>
                   </tr>
                 </thead>
@@ -984,7 +984,7 @@ export default function DashboardV2() {
                           <div className="token-symbol-wrapper">
                             <div className="App-card-title-info">
                               <div className="App-card-title-info-icon">
-                                <img src={tokenImage} alt={token.symbol} width="40px" />
+                                <img src={tokenImage} alt={token.symbol} width="32px" />
                               </div>
                               <div className="App-card-title-info-text">
                                 <div className="App-card-info-title">{token.name}</div>

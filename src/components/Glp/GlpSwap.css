@@ -3,6 +3,7 @@
   justify-content: space-between;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
+  justify-content: center;
 }
 
 .App-card .App-card-divider-2 {
@@ -57,6 +58,7 @@
 .GlpSwap-content .GlpSwap-stats-card,
 .GlpSwap-content .GlpSwap-box {
   width: 100%;
+  background: var(--cardBackgroundColor);
 }
 
 .GlpSwap-content .GlpSwap-stats-card {
@@ -71,15 +73,32 @@
 }
 
 .GlpSwap-content .GlpSwap-box {
-  max-width: 47.95rem;
-  border-radius: 0.4rem;
+  max-width: 60rem;
+  border-radius: 8px;
   padding: 1.5rem;
   padding-top: 0;
+
+  box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.05);
 }
 
 .GlpSwap-box .Exchange-swap-option-tabs {
   margin: 1.5rem 0;
   border-radius: 18px;
+  font-size: 2rem;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.GlpSwap-box .Exchange-swap-option-tabs.Tab.block .Tab-option {
+  flex: none;
+}
+
+.Exchange-swap-option-tabs.Tab.block .Tab-option.Buy.active {
+  color: #01a789;
+}
+
+.Exchange-swap-option-tabs.Tab.block .Tab-option.Sell.active {
+  color: #e8636b;
 }
 
 .App-card-title-mark-icon {
@@ -90,9 +109,13 @@
   height: 3.1rem;
 }
 
-/* .App-card-title-mark-icon img {
+.App-card-title-mark-icon.oap-logo img {
   content: var(--logoOAP);
-} */
+}
+
+.App-card-title-mark-icon.open-logo img {
+  content: var(--logoUrl);
+}
 
 .App-card-title-mark-icon .selected-network-symbol {
   position: absolute;
@@ -154,6 +177,10 @@
   margin-right: 0.8rem;
   color: #a9a9b0;
   opacity: 1;
+}
+
+.GlpSwap-box .Tab-option {
+  color: var(--textColor);
 }
 
 .GlpSwap-cta {
@@ -238,16 +265,14 @@
 
 .token-table th {
   font-weight: 800;
-  font-size: 14px;
+  font-size: 1.4rem;
   line-height: 17px;
   color: var(--textColor3);
-  text-transform: uppercase;
 }
 
 .token-table .action-btn {
   width: 100%;
   justify-content: center;
-  background: var(--footerBackgroundColor);
 }
 .cap-reached {
   margin-left: 0.8rem;

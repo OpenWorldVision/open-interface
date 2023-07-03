@@ -46,7 +46,7 @@ function AssetDropdown({ assetSymbol, assetInfo }) {
           <>
             {arbitrum && (
               <ExternalLink href={arbitrum} className="asset-item">
-                <img src={arbitrumIcon} alt="Open in explorer" style={{ width: 16 }} />
+                <img src={arbitrumIcon} alt="Open in explorer" />
                 <p>
                   <Trans>Open in Explorer</Trans>
                 </p>
@@ -66,7 +66,7 @@ function AssetDropdown({ assetSymbol, assetInfo }) {
           <>
             {harmony && (
               <ExternalLink href={harmony} className="asset-item">
-                <img src={harmonyIcon} alt="Open in Harmony" style={{ width: 16 }} />
+                <img src={harmonyIcon} alt="Open in Harmony" />
                 <p>
                   <Trans>Open in Harmony</Trans>
                 </p>

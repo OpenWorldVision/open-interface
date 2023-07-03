@@ -1,16 +1,12 @@
-import React, { useEffect, useState } from "react";
-import { Link, useHistory } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { useHistory } from "react-router-dom";
 
 import GlpSwap from "components/Glp/GlpSwap";
-import buyGLPIcon from "img/ic_buy_glp.svg";
 import Footer from "components/Footer/Footer";
 import "./BuyGlp.css";
 
-import { Trans } from "@lingui/macro";
 import { getNativeToken } from "config/tokens";
 import { useChainId } from "lib/chains";
-import ExternalLink from "components/ExternalLink/ExternalLink";
-import { t } from "@lingui/macro";
 import icCoin from "img/ic_coin.svg";
 
 export default function BuyGlp(props) {
@@ -31,7 +27,7 @@ export default function BuyGlp(props) {
         <div className="section-title-icon">
           <img src={icCoin} alt="icCoin" />
         </div>
-        <div className="section-title-content">
+        {/* <div className="section-title-content">
           <div className="Page-title">
             <Trans>Buy / Sell OAP</Trans>
           </div>
@@ -48,7 +44,7 @@ export default function BuyGlp(props) {
               View <Link to="/earn">staking</Link> page.
             </Trans>
           </div>
-        </div>
+        </div> */}
       </div>
       <GlpSwap {...props} isBuying={isBuying} setIsBuying={setIsBuying} />
       <Footer />

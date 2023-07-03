@@ -18,7 +18,7 @@ export default function BuyInputSection(props) {
   } = props;
 
   return (
-    <div className="Exchange-swap-section buy-input">
+    <div className="Exchange-swap-section buy-input shadow-inner">
       <div className="Exchange-swap-section-top">
         <div className="muted">
           {topLeftLabel}: {balance}
