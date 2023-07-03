@@ -182,6 +182,7 @@
 
   @media (max-width: 450px) {
     .stats-piechart {
+      background: transparent;
       margin: auto;
     }
   }
