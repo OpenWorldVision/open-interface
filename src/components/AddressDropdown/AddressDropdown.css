@@ -5,13 +5,12 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  /* color: #375BD2 !important;
-  background-color: #DFE7FB !important; */
 }
 
 .user-address {
   margin-left: 1rem;
   margin-right: 1rem;
+  color: var(--textColor9) !important;
 }
 
 .App-header-user-address:hover {

@@ -205,12 +205,11 @@ export const TOKENS: { [chainId: number]: Token[] } = {
       isShortable: true,
       imageUrl: "https://assets.coingecko.com/coins/images/7598/thumb/wrapped_bitcoin_wbtc.png?1548822744",
     },
-
     {
-      name: "USD Coin",
-      symbol: "USDC",
-      decimals: 6,
+      name: "Bridged USDC (USDC.e)",
+      symbol: "USDC.e",
       address: "0xFF970A61A04b1cA14834A43f5dE4533eBDDB5CC8",
+      decimals: 6,
       isStable: true,
       imageUrl: "https://assets.coingecko.com/coins/images/6319/thumb/USD_Coin_icon.png?1547042389",
     },
@@ -558,6 +557,10 @@ export const ICONLINKS = {
     FRAX: {
       coingecko: "https://www.coingecko.com/en/coins/frax",
       arbitrum: "https://arbiscan.io/address/0x17fc002b466eec40dae837fc4be5c67993ddbd6f",
+    },
+    "USDC.e": {
+      coingecko: "https://www.coingecko.com/en/coins/usd-coin-avalanche-bridged-usdc-e",
+      arbitrum: "https://arbiscan.io/token/0xFF970A61A04b1cA14834A43f5dE4533eBDDB5CC8",
     },
   },
   [AVALANCHE]: {
