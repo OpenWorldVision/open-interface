@@ -778,7 +778,7 @@ export default function DashboardV2() {
                             renderContent={() => (
                               <>
                                 <StatsTooltipRow
-                                  label={t`Price on BSC`}
+                                  label={t`Price on Arbitrum`}
                                   value={formatAmount(openPriceFromBsc, 18, 4, true)}
                                   showDollar={true}
                                 />
