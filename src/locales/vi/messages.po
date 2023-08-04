@@ -2448,7 +2448,7 @@ msgstr "Price on Arbitrum"
 
 #: src/pages/Dashboard/DashboardV2.js
 #: src/pages/Stake/StakeV2.js
-msgid "Price on BSC"
+msgid "Price on Arbitrum"
 msgstr "Giá trên BSC"
 
 #: src/pages/Actions/Actions.js

@@ -2451,7 +2451,7 @@ msgstr ""
 
 #: src/components/StakeV2/OpenStaking.tsx
 #: src/pages/Dashboard/DashboardV2.js
-msgid "Price on BSC"
+msgid "Price on Arbitrum"
 msgstr ""
 
 #: src/pages/Actions/Actions.js
@@ -3891,7 +3891,7 @@ msgstr ""
 
 #: src/pages/Dashboard/DashboardV2.js
 #: src/pages/Stake/StakeV2.js
-#~ msgid "price on BSC"
+#~ msgid "price on Arbitrum"
 #~ msgstr ""
 
 #: src/pages/PositionsOverview/PositionsOverview.js

@@ -103,7 +103,7 @@ function OpenStaking(props: Props) {
                 handle={"$" + formatAmount(openPrice, 18, 4, true)}
                 renderContent={() => (
                   <>
-                    <StatsTooltipRow label={t`Price on BSC`} value={formatAmount(openPrice, 18, 4, true)} />
+                    <StatsTooltipRow label={t`Price on Arbitrum`} value={formatAmount(openPrice, 18, 4, true)} />
                   </>
                 )}
               />
